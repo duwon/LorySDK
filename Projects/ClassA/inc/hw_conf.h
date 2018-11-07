@@ -70,6 +70,7 @@ Maintainer: Miguel Luis and Gregory Cristian
 
   #include "stm32l1xx_hal.h"
   #include "stm32l1xx_hal_conf.h"
+  #include "LorySDK_hw_conf.h"
 	 
 /* --------Preprocessor compile swicth------------ */
 /* debug swicthes in debug.h */
