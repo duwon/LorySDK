@@ -1,0 +1,24 @@
+# 파일이름
+
+
+# / 디렉토리 전체를 무시
+LORAWAN/
+.vscode/
+
+# 와일드카드
+ignore-file*
+*.log
+*.d
+*.o
+*.dir
+*.crf
+*.sct
+*.map
+*.lnp
+*.dep
+*.hex
+*.axf
+*.DUWON
+*.TMP
+*.tmp
+*.lst
