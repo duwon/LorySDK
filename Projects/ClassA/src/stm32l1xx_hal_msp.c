@@ -47,7 +47,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "hw.h"
-//#include "delay.h"
+#include "delay.h"
 //#include "timeServer.h"
 /* when fast wake up is enabled, the mcu wakes up in ~20us  * and 
  * does not wait for the VREFINT to be settled. THis is ok for 
@@ -98,7 +98,7 @@ void HAL_MspInit(void)
   /* Configure all IOs in analog input              */
   /* Except PA143 and PA14 (SWCLK and SWD) for debug*/
   /* PA13 and PA14 are configured in debug_init     */
-  //HW_GpioInit( );
+  HW_GpioInit( );
 }
 
 

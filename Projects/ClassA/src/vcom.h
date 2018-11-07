@@ -6,18 +6,18 @@
 (______/|_____)_|_|_| \__)_____)\____)_| |_|
     (C)2013 Semtech
 
-Description: contains all hardware driver
+Description: virtual com port driver
 
 License: Revised BSD License, see LICENSE.TXT file include in the project
 
 Maintainer: Miguel Luis and Gregory Cristian
 */
  /******************************************************************************
-  * @file    hw.h
+  * @file    vcom.h
   * @author  MCD Application Team
   * @version V1.1.5
   * @date    30-March-2018
-  * @brief   contains all hardware driver
+  * @brief   Header for vcom.c module
   ******************************************************************************
   * @attention
   *
@@ -57,27 +57,86 @@ Maintainer: Miguel Luis and Gregory Cristian
   *
   ******************************************************************************
   */
-
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __HW_H__
-#define __HW_H__
+#ifndef __VCOM_H__
+#define __VCOM_H__
 
 #ifdef __cplusplus
  extern "C" {
 #endif
+   
 /* Includes ------------------------------------------------------------------*/
-#include <math.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include "hw_conf.h"
-#include "utilities.h"
-#include "hw_msp.h"
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+/* External variables --------------------------------------------------------*/
+
+/* Exported functions ------------------------------------------------------- */ 
+
+/** 
+* @brief  Init the VCOM.
+* @param  None
+* @return None
+*/
+void vcom_Init(void);
+
+   /** 
+* @brief  DeInit the VCOM.
+* @param  None
+* @return None
+*/
+void vcom_DeInit(void);
+
+   /** 
+* @brief  Init the VCOM IOs.
+* @param  None
+* @return None
+*/
+void vcom_IoInit(void);
+  
+   /** 
+* @brief  DeInit the VCOM IOs.
+* @param  None
+* @return None
+*/
+void vcom_IoDeInit(void);
+  
+/** 
+* @brief  Records string on circular Buffer and set SW interrupt
+* @note   Set NVIC to call vcom_Send
+* @param  string
+* @return None
+*/
+void vcom_Send( char *format, ... );
+
+/** 
+* @brief  Sends circular Buffer on com port in IT mode
+* @note   called from low Priority interrupt
+* @param  None
+* @return None
+*/
+void vcom_Print( void);
+
+/** 
+* @brief  Records string on circular Buffer
+* @note   To be called only from critical section from low power section
+*         Other wise use vcom_Send
+* @param  string
+* @return None
+*/
+void vcom_Send_Lp( char *format, ... );
+
+/* Exported macros -----------------------------------------------------------*/
+#if 1
+#define PRINTF(...)            vcom_Send(__VA_ARGS__)
+#else
+#define PRINTF(...)
+#endif
 
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __HW_H__ */
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+#endif /* __VCOM_H__*/
 
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

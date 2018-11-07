@@ -1,3 +1,4 @@
+
 /*
  / _____)             _              | |
 ( (____  _____ ____ _| |_ _____  ____| |__
@@ -6,18 +7,18 @@
 (______/|_____)_|_|_| \__)_____)\____)_| |_|
     (C)2013 Semtech
 
-Description: contains all hardware driver
+Description: Header for driver hw msp module
 
 License: Revised BSD License, see LICENSE.TXT file include in the project
 
 Maintainer: Miguel Luis and Gregory Cristian
 */
  /******************************************************************************
-  * @file    hw.h
+  * @file    hw_msp.h
   * @author  MCD Application Team
   * @version V1.1.5
   * @date    30-March-2018
-  * @brief   contains all hardware driver
+  * @brief   Header for driver hw msp module
   ******************************************************************************
   * @attention
   *
@@ -59,25 +60,109 @@ Maintainer: Miguel Luis and Gregory Cristian
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __HW_H__
-#define __HW_H__
+
+#ifndef __HW_MSP_H__
+#define __HW_MSP_H__
 
 #ifdef __cplusplus
  extern "C" {
 #endif
-/* Includes ------------------------------------------------------------------*/
-#include <math.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include "hw_conf.h"
-#include "utilities.h"
-#include "hw_msp.h"
 
+/* Includes ------------------------------------------------------------------*/
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+
+/* External variables --------------------------------------------------------*/
+/* Exported macros -----------------------------------------------------------*/
+
+/*!
+ * \brief GPIOs Macro
+ */
+
+#define RCC_GPIO_CLK_ENABLE( __GPIO_PORT__ )              \
+do {                                                    \
+    switch( __GPIO_PORT__)                                \
+    {                                                     \
+      case GPIOA_BASE: __HAL_RCC_GPIOA_CLK_ENABLE(); break;    \
+      case GPIOB_BASE: __HAL_RCC_GPIOB_CLK_ENABLE(); break;    \
+      case GPIOC_BASE: __HAL_RCC_GPIOC_CLK_ENABLE(); break;    \
+      case GPIOD_BASE: __HAL_RCC_GPIOD_CLK_ENABLE(); break;    \
+      case GPIOH_BASE: default:  __HAL_RCC_GPIOH_CLK_ENABLE(); \
+    }                                                    \
+  } while(0)  
+
+#define RCC_GPIO_CLK_DISABLE( __GPIO_PORT__ )              \
+do {                                                    \
+    switch( __GPIO_PORT__)                                \
+    {                                                     \
+      case GPIOA_BASE: __HAL_RCC_GPIOA_CLK_DISABLE(); break;    \
+      case GPIOB_BASE: __HAL_RCC_GPIOB_CLK_DISABLE(); break;    \
+      case GPIOC_BASE: __HAL_RCC_GPIOC_CLK_DISABLE(); break;    \
+      case GPIOD_BASE: __HAL_RCC_GPIOD_CLK_DISABLE(); break;    \
+      case GPIOH_BASE: default:  __HAL_RCC_GPIOH_CLK_ENABLE(); \
+    }                                                    \
+  } while(0) 
+
+/* Exported functions ------------------------------------------------------- */ 
+
+
+/*!
+ * \brief Initializes the boards peripherals.
+ */
+void HW_Init( void );
+
+  /*!
+ * \brief De-initializes the target board peripherals to decrease power
+ *        consumption.
+ */
+  
+void HW_DeInit( void );
+/*!
+ * Returns a pseudo random seed generated using the MCU Unique ID
+ *
+ * \retval seed Generated pseudo random seed
+ */
+uint32_t HW_GetRandomSeed( void );
+
+/*!
+ * \brief Gets the board 64 bits unique ID 
+ *
+ * \param [IN] id Pointer to an array that will contain the Unique ID
+ */
+void HW_GetUniqueId( uint8_t *id );
+
+  /*!
+ * \brief Initializes the HW and enters stope mode
+ */
+void HW_EnterStopMode( void);
+
+/*!
+ * \brief Exits stop mode and Initializes the HW
+ */
+void HW_ExitStopMode( void);
+
+/**
+  * @brief Enters Low Power Sleep Mode
+  * @note ARM exists the function when waking up
+  * @param none
+  * @retval none
+  */
+void HW_EnterSleepMode( void);
+
+void SystemClock_Config( void );
+
+/**
+  * @brief  Configure all GPIO's to Analog input to reduce the power consumption
+  * @param  None
+  * @retval None
+  */
+void HW_GpioInit(void);
+  
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __HW_H__ */
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+#endif /* __HW_MSP_H__ */
 
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
