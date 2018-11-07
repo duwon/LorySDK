@@ -6,18 +6,18 @@
 (______/|_____)_|_|_| \__)_____)\____)_| |_|
     (C)2013 Semtech
 
-Description: contains all hardware driver
+Description: Bleeper board GPIO driver implementation
 
 License: Revised BSD License, see LICENSE.TXT file include in the project
 
 Maintainer: Miguel Luis and Gregory Cristian
 */
  /******************************************************************************
-  * @file    hw.h
+  * @file    hw_gpio.h
   * @author  MCD Application Team
   * @version V1.1.5
   * @date    30-March-2018
-  * @brief   contains all hardware driver
+  * @brief   Header for driver hw_rtc.c module
   ******************************************************************************
   * @attention
   *
@@ -59,27 +59,96 @@ Maintainer: Miguel Luis and Gregory Cristian
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __HW_H__
-#define __HW_H__
+#ifndef __HW_GPIO_H__
+#define __HW_GPIO_H__
+
 
 #ifdef __cplusplus
  extern "C" {
 #endif
-/* Includes ------------------------------------------------------------------*/
-#include <math.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include "hw_conf.h"
-#include "hw_gpio.h"
-#include "bsp.h"	 
-#include "utilities.h"
-#include "hw_msp.h"
 
+   
+/* Exported types ------------------------------------------------------------*/
+   
+typedef void( GpioIrqHandler )( void );
+   
+/* Exported constants --------------------------------------------------------*/
+/* External variables --------------------------------------------------------*/
+/* Exported macros -----------------------------------------------------------*/
+/* Exported functions ------------------------------------------------------- */ 
+
+   
+/*!
+ * GPIO IRQ handler function prototype
+ */
+
+
+IRQn_Type MSP_GetIRQn( uint16_t gpioPin);
+
+
+/*!
+ * @brief Initializes the given GPIO object
+ *
+ * @param  GPIOx: where x can be (A..E and H)
+ * @param  GPIO_Pin: specifies the port bit to be written.
+ *                   This parameter can be one of GPIO_PIN_x where x can be (0..15).
+ *                   All port bits are not necessarily available on all GPIOs.
+ * @param [IN] initStruct  GPIO_InitTypeDef intit structure
+ * @retval none
+ */
+void HW_GPIO_Init( GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, GPIO_InitTypeDef* initStruct);
+
+/*!
+ * @brief Records the interrupt handler for the GPIO  object
+ *
+ * @param  GPIOx: where x can be (A..E and H) 
+ * @param  GPIO_Pin: specifies the port bit to be written.
+ *                   This parameter can be one of GPIO_PIN_x where x can be (0..15).
+ *                   All port bits are not necessarily available on all GPIOs.
+ * @param [IN] prio       NVIC priority (0 is highest)
+ * @param [IN] irqHandler  points to the  function to execute
+ * @retval none
+ */
+void HW_GPIO_SetIrq( GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin, uint32_t prio,  GpioIrqHandler *irqHandler );
+
+/*!
+ * @brief Execute the interrupt from the object
+ *
+ * @param  GPIOx: where x can be (A..E and H) 
+ * @param  GPIO_Pin: specifies the port bit to be written.
+ *                   This parameter can be one of GPIO_PIN_x where x can be (0..15).
+ *                   All port bits are not necessarily available on all GPIOs.
+ * @retval none
+ */
+void HW_GPIO_IrqHandler( uint16_t GPIO_Pin );
+
+/*!
+ * @brief Writes the given value to the GPIO output
+ *
+ * @param  GPIO_Pin: specifies the port bit to be written.
+ *                   This parameter can be one of GPIO_PIN_x where x can be (0..15).
+ *                   All port bits are not necessarily available on all GPIOs.
+ * @param [IN] value New GPIO output value
+ * @retval none
+ */
+void HW_GPIO_Write( GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin,  uint32_t value );
+
+/*!
+ * @brief Reads the current GPIO input value
+ *
+ * @param  GPIOx: where x can be (A..E and H) 
+ * @param  GPIO_Pin: specifies the port bit to be written.
+ *                   This parameter can be one of GPIO_PIN_x where x can be (0..15).
+ *                   All port bits are not necessarily available on all GPIOs.
+ * @retval value   Current GPIO input value
+ */
+uint32_t HW_GPIO_Read( GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin );
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __HW_H__ */
+#endif /* __HW_GPIO_H__ */
+
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 

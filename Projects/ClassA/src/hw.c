@@ -60,6 +60,7 @@ Maintainer: Miguel Luis and Gregory Cristian
 #include "hw.h"
 #include "vcom.h"
 
+
 /*!
  *  \brief Unique Devices IDs register set ( STM32L1xxx )
  */
@@ -85,7 +86,16 @@ void HW_Init( void )
     vcom_Init( );
     PRINTF("\r\n\r\nLorawan Starting.....");
 
-
+    BSP_LED_Init(LED_RDY);
+		BSP_LED_Init(LED_LINK);
+		LED_On(LED_RDY);
+		LED_Off(LED_LINK);
+		
+		BSP_SX1276POWER_Init();
+		BSP_SX1276POWER_On();
+		
+		BSP_PB_Init(BUTTON_KEY,BUTTON_MODE_GPIO);
+		
     McuInitialized = true;
   }
 }

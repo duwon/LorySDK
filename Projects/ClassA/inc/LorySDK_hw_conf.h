@@ -217,9 +217,9 @@ typedef enum
 #define __HAL_RCC_DBGMCU_CLK_ENABLE()
 #define __HAL_RCC_DBGMCU_CLK_DISABLE()
 
-#define LED_Toggle( x )                 
-#define LED_On( x )              
-#define LED_Off( x )              
+#define LED_Toggle( x )                 BSP_LED_Toggle( x );
+#define LED_On( x )                     BSP_LED_On( x );
+#define LED_Off( x )                    BSP_LED_Off( x );          
 
 
 /* ------------------ SX1276 Power Control redefinition -------------------------*/
