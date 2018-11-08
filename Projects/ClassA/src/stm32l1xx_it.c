@@ -155,3 +155,8 @@ void USART1_IRQHandler( void )
    vcom_Print( );
 }
 
+void RTC_Alarm_IRQHandler( void )
+{
+  HW_RTC_IrqHandler ( );
+}
+

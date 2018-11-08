@@ -424,6 +424,11 @@
               <FileType>1</FileType>
               <FilePath>..\src\hw.c</FilePath>
             </File>
+            <File>
+              <FileName>hw_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\hw_rtc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -547,6 +552,13 @@
         </Group>
         <Group>
           <GroupName>LoraLib/Utilites</GroupName>
+          <Files>
+            <File>
+              <FileName>low_power_manager.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Utilities\low_power_manager.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>LoraLib/Crypto</GroupName>

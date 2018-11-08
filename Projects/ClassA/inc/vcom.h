@@ -128,6 +128,7 @@ void vcom_Send_Lp( char *format, ... );
 /* Exported macros -----------------------------------------------------------*/
 #if 1
 #define PRINTF(...)            vcom_Send(__VA_ARGS__)
+#define DBG_PRINTF(...)
 #else
 #define PRINTF(...)
 #endif

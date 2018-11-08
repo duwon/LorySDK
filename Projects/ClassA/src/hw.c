@@ -91,10 +91,12 @@ void HW_Init( void )
 		LED_On(LED_RDY);
 		LED_Off(LED_LINK);
 		
-		BSP_SX1276POWER_Init();
-		BSP_SX1276POWER_On();
+    BSP_SX1276POWER_Init();
+    BSP_SX1276POWER_On();
 		
-		BSP_PB_Init(BUTTON_KEY,BUTTON_MODE_GPIO);
+    BSP_PB_Init(BUTTON_KEY,BUTTON_MODE_GPIO);
+		
+    HW_RTC_Init( );
 		
     McuInitialized = true;
   }

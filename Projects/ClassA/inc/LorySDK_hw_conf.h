@@ -92,7 +92,7 @@ typedef enum
 #define SPI1_AF                          GPIO_AF5_SPI1 
 
 /* --------------------------- RTC HW definition -------------------------------- */
-#define RTC_OUTPUT       DBG_RTC_OUTPUT
+#define RTC_OUTPUT       RTC_OUTPUT_DISABLE
 
 
 /* --------------------------- USART HW definition -------------------------------*/
