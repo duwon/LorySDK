@@ -558,6 +558,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\LoraLib\Utilities\low_power_manager.c</FilePath>
             </File>
+            <File>
+              <FileName>timeServer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Utilities\timeServer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

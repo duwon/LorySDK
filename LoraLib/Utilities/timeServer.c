@@ -62,7 +62,6 @@ Maintainer: Miguel Luis, Gregory Cristian and Wael Guibene
 #include <time.h>
 #include "hw.h"
 #include "timeServer.h"
-//#include "low_power.h"
 
 
 /*!

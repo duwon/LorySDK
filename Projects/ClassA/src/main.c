@@ -8,18 +8,20 @@
   */
 /* Includes ------------------------------------------------------------------*/
 #include "hw.h"
+#include "timeServer.h"
+#include "version.h"
 
 /* Private typedef -----------------------------------------------------------*/
 
 /* Private define ------------------------------------------------------------*/
-
+#define BUTTON_DUTYCYCLE                   1000
 /* Private macro -------------------------------------------------------------*/
 
 /* Private function prototypes -----------------------------------------------*/
-
+static void OnButtonTimerEvent( void );
 
 /* Private variables ---------------------------------------------------------*/
-
+static TimerEvent_t ButtonTimer;
 
 /* Private functions ---------------------------------------------------------*/
 
@@ -37,6 +39,9 @@ int main( void )
 	
 	HW_Init();
 
+	TimerInit( &ButtonTimer, OnButtonTimerEvent );
+	TimerSetValue( &ButtonTimer,  BUTTON_DUTYCYCLE); 
+	OnButtonTimerEvent();
 
   while(1)
   {			
@@ -44,6 +49,11 @@ int main( void )
 
   }
 
+}
+
+static void OnButtonTimerEvent( void )
+{
+	TimerStart( &ButtonTimer);
 }
 
 
