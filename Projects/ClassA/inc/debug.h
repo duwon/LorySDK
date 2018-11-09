@@ -1,23 +1,9 @@
-/*
- / _____)             _              | |
-( (____  _____ ____ _| |_ _____  ____| |__
- \____ \| ___ |    (_   _) ___ |/ ___)  _ \
- _____) ) ____| | | || |_| ____( (___| | | |
-(______/|_____)_|_|_| \__)_____)\____)_| |_|
-    (C)2013 Semtech
-
-Description: contains all hardware driver
-
-License: Revised BSD License, see LICENSE.TXT file include in the project
-
-Maintainer: Miguel Luis and Gregory Cristian
-*/
  /******************************************************************************
-  * @file    hw.h
+  * @file    debug.h
   * @author  MCD Application Team
   * @version V1.1.5
   * @date    30-March-2018
-  * @brief   contains all hardware driver
+  * @brief   Header for driver debug.c module
   ******************************************************************************
   * @attention
   *
@@ -59,31 +45,81 @@ Maintainer: Miguel Luis and Gregory Cristian
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __HW_H__
-#define __HW_H__
+#ifndef __DEBUG_H__
+#define __DEBUG_H__
 
 #ifdef __cplusplus
  extern "C" {
 #endif
+
 /* Includes ------------------------------------------------------------------*/
-#include <math.h>
-#include <stdbool.h>
-#include <stdint.h>
+
+
+
+#include <string.h>
+#include <stdio.h>
 #include "hw_conf.h"
-#include "hw_gpio.h"
-#include "hw_rtc.h"
-#include "hw_spi.h"
-#include "hw_msp.h"
 #include "vcom.h"
-#include "bsp.h"
-#include "utilities.h"
+
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+/* External variables --------------------------------------------------------*/
+/* Exported macros -----------------------------------------------------------*/
+/* Exported functions ------------------------------------------------------- */ 
+
+//void DBG_Init( void );
+
+//void Error_Handler( void );
+
+#ifdef DEBUG
+
+#define DBG_GPIO_WRITE( gpio, n, x )  HAL_GPIO_WritePin( gpio, n, (GPIO_PinState)(x) )
+
+#define DBG_GPIO_SET( gpio, n )       gpio->BSRR = n
+
+#define DBG_GPIO_RST( gpio, n )       gpio->BRR = n 
+
+#define DBG_RTC_OUTPUT RTC_OUTPUT_DISABLE; /* RTC_OUTPUT_ALARMA on PC13 */
+
+#define DBG( x )  do{ x } while(0)
+
+#ifdef TRACE
+
+#define DBG_PRINTF(...)    vcom_Send(__VA_ARGS__)
+
+#define DBG_PRINTF_CRITICAL(...)   vcom_Send_Lp(__VA_ARGS__)
+
+#else /*TRACE*/
+
+#define DBG_PRINTF(...) 
+
+#define DBG_PRINTF_CRITICAL(...) 
+
+#endif /*TRACE*/
 
 
+#else /* DEBUG */
+
+#define DBG_GPIO_WRITE( gpio, n, x )
+
+#define DBG_GPIO_SET( gpio, n )
+
+#define DBG_GPIO_RST( gpio, n )
+
+#define DBG( x ) do{  } while(0)
+
+#define DBG_PRINTF(...)
+
+#define DBG_PRINTF_CRITICAL(...) 
+                      
+#define DBG_RTC_OUTPUT RTC_OUTPUT_DISABLE;
+
+#endif /* DEBUG */
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __HW_H__ */
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+#endif /* __DEBUG_H__*/
 
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
