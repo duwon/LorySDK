@@ -405,9 +405,9 @@
               <FilePath>..\Src\bsp.c</FilePath>
             </File>
             <File>
-              <FileName>hw_gpio.c</FileName>
+              <FileName>vcom.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Src\hw_gpio.c</FilePath>
+              <FilePath>..\Src\vcom.c</FilePath>
             </File>
             <File>
               <FileName>hw_rtc.c</FileName>
@@ -415,9 +415,14 @@
               <FilePath>..\src\hw_rtc.c</FilePath>
             </File>
             <File>
-              <FileName>vcom.c</FileName>
+              <FileName>hw_spi.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Src\vcom.c</FilePath>
+              <FilePath>..\src\hw_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>hw_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\hw_gpio.c</FilePath>
             </File>
             <File>
               <FileName>stm32l1xx_it.c</FileName>

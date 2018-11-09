@@ -6,18 +6,18 @@
 (______/|_____)_|_|_| \__)_____)\____)_| |_|
     (C)2013 Semtech
 
-Description: contains all hardware driver
+Description: Header for driver hw spi module
 
 License: Revised BSD License, see LICENSE.TXT file include in the project
 
 Maintainer: Miguel Luis and Gregory Cristian
 */
  /******************************************************************************
-  * @file    hw.h
+  * @file    hw_spi.h
   * @author  MCD Application Team
   * @version V1.1.5
   * @date    30-March-2018
-  * @brief   contains all hardware driver
+  * @brief   Header for driver hw_spi.c module
   ******************************************************************************
   * @attention
   *
@@ -57,26 +57,55 @@ Maintainer: Miguel Luis and Gregory Cristian
   *
   ******************************************************************************
   */
-
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __HW_H__
-#define __HW_H__
+#ifndef __HW_SPI_H__
+#define __HW_SPI_H__
 
 #ifdef __cplusplus
  extern "C" {
 #endif
-/* Includes ------------------------------------------------------------------*/
-#include <math.h>
-#include <stdbool.h>
-#include <stdint.h>
-#include "hw_conf.h"
-#include "hw_gpio.h"
-#include "hw_rtc.h"
-#include "hw_spi.h"
-#include "hw_msp.h"
-#include "vcom.h"
-#include "bsp.h"
-#include "utilities.h"
+
+/* Exported types ------------------------------------------------------------*/
+/* Exported constants --------------------------------------------------------*/
+/* External variables --------------------------------------------------------*/
+/* Exported macros -----------------------------------------------------------*/
+/* Exported functions ------------------------------------------------------- */ 
+
+/*!
+ * @brief Initializes the SPI object and MCU peripheral
+ *
+ * @param [IN] none
+ */
+void HW_SPI_Init( void );
+
+/*!
+ * @brief De-initializes the SPI object and MCU peripheral
+ *
+ * @param [IN] none
+ */
+void HW_SPI_DeInit( void );
+
+/*!
+ * @brief Initializes the SPI IOs
+ *
+ * @param [IN] none
+ */
+void HW_SPI_IoInit( void );
+
+/*!
+ * @brief De-initializes the SPI IOs
+ *
+ * @param [IN] none
+ */
+void HW_SPI_IoDeInit( void );
+
+/*!
+ * @brief Sends outData and receives inData
+ *
+ * @param [IN] outData Byte to be sent
+ * @retval inData      Received byte.
+ */
+uint16_t HW_SPI_InOut( uint16_t outData );
 
 
 
@@ -84,6 +113,14 @@ Maintainer: Miguel Luis and Gregory Cristian
 }
 #endif
 
-#endif /* __HW_H__ */
+#endif  /* __HW_SPI_H__ */
+
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+
+
+
+
+
+
+
 

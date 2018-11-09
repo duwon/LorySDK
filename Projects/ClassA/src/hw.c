@@ -97,6 +97,7 @@ void HW_Init( void )
     BSP_PB_Init(BUTTON_KEY,BUTTON_MODE_GPIO);
 		
     HW_RTC_Init( );
+		HW_SPI_Init( );
 		
     McuInitialized = true;
   }
