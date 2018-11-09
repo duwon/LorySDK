@@ -15,14 +15,17 @@
 
 /* Private define ------------------------------------------------------------*/
 #define BUTTON_DUTYCYCLE                   1000
+#define LED_RDY_DUTYCYCLE                  1000
+
 /* Private macro -------------------------------------------------------------*/
 
 /* Private function prototypes -----------------------------------------------*/
 static void OnButtonTimerEvent( void );
+static void OnLedTimerEvent( void );
 
 /* Private variables ---------------------------------------------------------*/
 static TimerEvent_t ButtonTimer;
-
+static TimerEvent_t LedTimer;
 /* Private functions ---------------------------------------------------------*/
 
 
@@ -38,14 +41,17 @@ int main( void )
   SystemClock_Config( ); // Configure the system clock
 	
 	HW_Init();
-
+	
 	TimerInit( &ButtonTimer, OnButtonTimerEvent );
 	TimerSetValue( &ButtonTimer,  BUTTON_DUTYCYCLE); 
 	OnButtonTimerEvent();
+	
+	TimerInit( &LedTimer, OnLedTimerEvent );
+	TimerSetValue( &LedTimer, LED_RDY_DUTYCYCLE); 
+	OnLedTimerEvent();
 
   while(1)
-  {			
-
+  {
 
   }
 
@@ -54,6 +60,13 @@ int main( void )
 static void OnButtonTimerEvent( void )
 {
 	TimerStart( &ButtonTimer);
+	
+}
+
+static void OnLedTimerEvent( void )
+{
+	TimerStart( &LedTimer);
+	LED_Toggle(LED_RDY);
 }
 
 
@@ -65,6 +78,7 @@ static void OnButtonTimerEvent( void )
   */
 void _Error_Handler(char *file, int line)
 {
+	PRINTF("ERROR");
   /* User can add his own implementation to report the HAL error return state */
   while(1)
   {
