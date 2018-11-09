@@ -1236,9 +1236,8 @@ void SX1276Reset( void )
     DelayMs( 1 );
 
     // Configure RESET as input
-    //initStruct.Mode = GPIO_NOPULL;
-    //HW_GPIO_Init( RADIO_RESET_PORT, RADIO_RESET_PIN, &initStruct );
-	  HW_GPIO_Write(RADIO_RESET_PORT,RADIO_RESET_PIN,1);		
+    initStruct.Mode = GPIO_NOPULL;
+    HW_GPIO_Init( RADIO_RESET_PORT, RADIO_RESET_PIN, &initStruct );
 
     // Wait 6 ms
     DelayMs( 6 );
