@@ -269,7 +269,7 @@ void HW_RTC_setMcuWakeUpTime( void )
       
     McuWakeUpTime = (int16_t) ((now-hit));
     McuWakeUpTimeCal += McuWakeUpTime;
-
+    DBG_PRINTF("Cal=%d, %d\n\r",McuWakeUpTimeCal, McuWakeUpTime);
   }
 }
 
@@ -479,6 +479,7 @@ static void HW_RTC_StartWakeUpAlarm( uint32_t timeoutValue )
   RTC_DateTypeDef RTC_DateStruct = RtcTimerContext.RTC_Calndr_Date;
 
   HW_RTC_StopAlarm( );
+
   
   /*reverse counter */
   rtcAlarmSubSeconds =  PREDIV_S - RTC_TimeStruct.SubSeconds;
@@ -569,11 +570,6 @@ static void HW_RTC_StartWakeUpAlarm( uint32_t timeoutValue )
   
   /* Set RTC_Alarm */
   HAL_RTC_SetAlarm_IT( &RtcHandle, &RTC_AlarmStructure, RTC_FORMAT_BIN );
-  
-  /* Debug Printf*/
-  DBG_PRINTF("it's %d:%d:%d:%d ", RTC_TimeStruct.Hours, RTC_TimeStruct.Minutes, RTC_TimeStruct.Seconds, ((PREDIV_S - RTC_TimeStruct.SubSeconds)*1000)>>N_PREDIV_S);
-  DBG_PRINTF("WU@ %d:%d:%d:%d\n\r", rtcAlarmHours, rtcAlarmMinutes, rtcAlarmSeconds, (rtcAlarmSubSeconds*1000)>>N_PREDIV_S );
-  
 }
 
 

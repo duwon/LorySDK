@@ -48,7 +48,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "hw.h"
 #include "delay.h"
-//#include "timeServer.h"
+#include "timeServer.h"
 /* when fast wake up is enabled, the mcu wakes up in ~20us  * and 
  * does not wait for the VREFINT to be settled. THis is ok for 
  * most of the case except when adc must be used in this case before 
@@ -73,6 +73,16 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 {
    /* Return function status */
   return HAL_OK;
+}
+
+/**
+  * @brief This function provides delay (in ms)
+  * @param Delay: specifies the delay time length, in milliseconds.
+  * @retval None
+  */
+void HAL_Delay(__IO uint32_t Delay)
+{
+  DelayMs( Delay ); /* based on RTC */
 }
 
 /**
@@ -127,7 +137,7 @@ void HAL_RTC_MspInit(RTC_HandleTypeDef *hrtc)
   RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   if(HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
-    //Error_Handler();
+    Error_Handler();
   }
 
   /* -b- Select LSI as RTC clock source */
@@ -135,7 +145,7 @@ void HAL_RTC_MspInit(RTC_HandleTypeDef *hrtc)
   PeriphClkInitStruct.RTCClockSelection = RCC_RTCCLKSOURCE_LSI;
   if(HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
   { 
-    //Error_Handler();
+    Error_Handler();
   }
 
   /*##-2- Enable the RTC peripheral Clock ####################################*/
@@ -168,7 +178,7 @@ void HAL_RTC_MspDeInit(RTC_HandleTypeDef *hrtc)
   */
 void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
 {
-  //TimerIrqHandler( );
+  TimerIrqHandler( );
 }
 
 /**
@@ -178,7 +188,7 @@ void HAL_RTC_AlarmAEventCallback(RTC_HandleTypeDef *hrtc)
   */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  //HW_GPIO_IrqHandler( GPIO_Pin );
+  HW_GPIO_IrqHandler( GPIO_Pin );
 }
 
 /**
