@@ -20,14 +20,6 @@ typedef enum
 {
   LED1 = 0,
   LED_RDY = LED1,
-  LED2 = 1,
-  LED_LINK =LED2,
-  LED3 = 2,
-  LED_LOW =LED3,
-  LED4 = 3,
-  LED_MID =LED4,
-  LED5 = 4,
-  LED_HIGH =LED5	
 } Led_TypeDef;
 
 typedef enum 
@@ -49,8 +41,8 @@ typedef enum
 #define RADIO_DIO_4
 
 /* LORA I/O definition */
-#define RADIO_RESET_PORT                          GPIOC
-#define RADIO_RESET_PIN                           GPIO_PIN_15
+#define RADIO_RESET_PORT                          GPIOB
+#define RADIO_RESET_PIN                           GPIO_PIN_3
 
 #define RADIO_MOSI_PORT                           GPIOA
 #define RADIO_MOSI_PIN                            GPIO_PIN_7
@@ -64,8 +56,8 @@ typedef enum
 #define RADIO_NSS_PORT                            GPIOA
 #define RADIO_NSS_PIN                             GPIO_PIN_4
 
-#define RADIO_DIO_0_PORT                          GPIOC
-#define RADIO_DIO_0_PIN                           GPIO_PIN_13
+#define RADIO_DIO_0_PORT                          GPIOB
+#define RADIO_DIO_0_PIN                           GPIO_PIN_5
 
 #define RADIO_DIO_1_PORT                          GPIOB
 #define RADIO_DIO_1_PIN                           GPIO_PIN_6
@@ -81,11 +73,11 @@ typedef enum
 #define RADIO_DIO_4_PIN                           GPIO_PIN_9
 #endif
 
-#define RADIO_ANT_SWITCH_PORT                     GPIOC //CRF1
-#define RADIO_ANT_SWITCH_PIN                      GPIO_PIN_14
+#define RADIO_ANT_SWITCH_PORT                     GPIOB //CRF1
+#define RADIO_ANT_SWITCH_PIN                      GPIO_PIN_4
 
 #define BAT_LEVEL_PORT                            GPIOB
-#define BAT_LEVEL_PIN                             GPIO_PIN_1
+#define BAT_LEVEL_PIN                             GPIO_PIN_0
 
 /*  SPI MACRO redefinition */
 #define SPI_CLK_ENABLE()                __HAL_RCC_SPI1_CLK_ENABLE()
@@ -97,55 +89,35 @@ typedef enum
 
 /* --------------------------- USART HW definition -------------------------------*/
 
-#define USARTX                           USART1
-#define USARTX_CLK_ENABLE()              __USART1_CLK_ENABLE();
-#define USARTX_RX_GPIO_CLK_ENABLE()      __GPIOA_CLK_ENABLE()
-#define USARTX_TX_GPIO_CLK_ENABLE()      __GPIOA_CLK_ENABLE() 
+#define USARTX                           USART3
+#define USARTX_CLK_ENABLE()              __USART3_CLK_ENABLE();
+#define USARTX_RX_GPIO_CLK_ENABLE()      __GPIOB_CLK_ENABLE()
+#define USARTX_TX_GPIO_CLK_ENABLE()      __GPIOB_CLK_ENABLE() 
 
-#define USARTX_FORCE_RESET()             __USART1_FORCE_RESET()
-#define USARTX_RELEASE_RESET()           __USART1_RELEASE_RESET()
+#define USARTX_FORCE_RESET()             __USART3_FORCE_RESET()
+#define USARTX_RELEASE_RESET()           __USART3_RELEASE_RESET()
 
 
 /* Definition for USARTx Pins */
-#define USARTX_TX_PIN                  GPIO_PIN_9
-#define USARTX_TX_GPIO_PORT            GPIOA  
-#define USARTX_TX_AF                   GPIO_AF7_USART1
-#define USARTX_RX_PIN                  GPIO_PIN_10
-#define USARTX_RX_GPIO_PORT            GPIOA 
-#define USARTX_RX_AF                   GPIO_AF7_USART1
+#define USARTX_TX_PIN                  GPIO_PIN_10
+#define USARTX_TX_GPIO_PORT            GPIOB  
+#define USARTX_TX_AF                   GPIO_AF7_USART3
+#define USARTX_RX_PIN                  GPIO_PIN_11
+#define USARTX_RX_GPIO_PORT            GPIOB 
+#define USARTX_RX_AF                   GPIO_AF7_USART3
 
 /* Definition for USARTx's NVIC */
-#define USARTX_IRQn                      USART1_IRQn
-#define USARTX_IRQHandler                USART1_IRQHandler
+#define USARTX_IRQn                      USART3_IRQn
+#define USARTX_IRQHandler                USART3_IRQHandler
 
 
 /* --------------------------- LED definition -------------------------------*/
-#define LEDn                               5
+#define LEDn                               1
 
 #define LED1_PIN                           GPIO_PIN_12
 #define LED1_GPIO_PORT                     GPIOA
 #define LED1_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOA_CLK_ENABLE()  
 #define LED1_GPIO_CLK_DISABLE()          __HAL_RCC_GPIOA_CLK_DISABLE()
-
-#define LED2_PIN                           GPIO_PIN_11
-#define LED2_GPIO_PORT                     GPIOA
-#define LED2_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOA_CLK_ENABLE()  
-#define LED2_GPIO_CLK_DISABLE()          __HAL_RCC_GPIOA_CLK_DISABLE()
-
-#define LED3_PIN                           GPIO_PIN_12
-#define LED3_GPIO_PORT                     GPIOB
-#define LED3_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOB_CLK_ENABLE()  
-#define LED3_GPIO_CLK_DISABLE()          __HAL_RCC_GPIOB_CLK_DISABLE()
-
-#define LED4_PIN                           GPIO_PIN_13
-#define LED4_GPIO_PORT                     GPIOB
-#define LED4_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOB_CLK_ENABLE()  
-#define LED4_GPIO_CLK_DISABLE()          __HAL_RCC_GPIOB_CLK_DISABLE()
-
-#define LED5_PIN                           GPIO_PIN_14
-#define LED5_GPIO_PORT                     GPIOB
-#define LED5_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOB_CLK_ENABLE()  
-#define LED5_GPIO_CLK_DISABLE()          __HAL_RCC_GPIOB_CLK_DISABLE()
 
 #define LEDx_GPIO_CLK_ENABLE(__INDEX__)    do { \
                                                 switch( __INDEX__ ) \
@@ -153,18 +125,6 @@ typedef enum
                                                   case LED1: \
                                                     LED1_GPIO_CLK_ENABLE();   \
                                                     break;\
-                                                  case LED2: \
-                                                    LED2_GPIO_CLK_ENABLE();   \
-                                                    break;\
-                                                  case LED3: \
-                                                    LED3_GPIO_CLK_ENABLE();   \
-                                                    break;\
-                                                  case LED4: \
-                                                    LED4_GPIO_CLK_ENABLE();   \
-                                                    break;\
-                                                  case LED5: \
-                                                    LED5_GPIO_CLK_ENABLE();   \
-                                                    break; \
                                                   default:\
                                                     break;\
                                                 }\
@@ -175,18 +135,6 @@ typedef enum
                                                   case LED1: \
                                                     LED1_GPIO_CLK_DISABLE();   \
                                                     break;\
-                                                  case LED2: \
-                                                    LED2_GPIO_CLK_DISABLE();   \
-                                                    break;\
-                                                  case LED3: \
-                                                    LED3_GPIO_CLK_DISABLE();   \
-                                                    break;\
-                                                  case LED4: \
-                                                    LED4_GPIO_CLK_DISABLE();   \
-                                                    break;\
-                                                  case LED5: \
-                                                    LED5_GPIO_CLK_DISABLE();   \
-                                                    break;\
                                                   default:\
                                                     break;\
                                                 }\
@@ -196,12 +144,12 @@ typedef enum
 /* --------------------------- BUTTON definition -------------------------------*/
 #define BUTTONn                          1  
 
-#define USER_BUTTON_PIN                         GPIO_PIN_0
-#define USER_BUTTON_GPIO_PORT                   GPIOB
+#define USER_BUTTON_PIN                         GPIO_PIN_1
+#define USER_BUTTON_GPIO_PORT                   GPIOA
 #define USER_BUTTON_GPIO_CLK_ENABLE()           __HAL_RCC_GPIOB_CLK_ENABLE()   
 #define USER_BUTTON_GPIO_CLK_DISABLE()          __HAL_RCC_GPIOB_CLK_DISABLE()  
-#define USER_BUTTON_EXTI_LINE                   GPIO_PIN_2
-#define USER_BUTTON_EXTI_IRQn                   EXTI2_IRQn
+#define USER_BUTTON_EXTI_LINE                   GPIO_PIN_1
+#define USER_BUTTON_EXTI_IRQn                   EXTI1_IRQn
 /* Aliases */
 #define KEY_BUTTON_PIN                   USER_BUTTON_PIN
 #define KEY_BUTTON_GPIO_PORT             USER_BUTTON_GPIO_PORT

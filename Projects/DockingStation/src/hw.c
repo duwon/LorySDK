@@ -87,9 +87,7 @@ void HW_Init( void )
     PRINTF("\r\n\r\nLorawan Starting.....");
 
     BSP_LED_Init(LED_RDY);
-		BSP_LED_Init(LED_LINK);
 		LED_On(LED_RDY);
-		LED_Off(LED_LINK);
 		
     BSP_SX1276POWER_Init();
     BSP_SX1276POWER_On();

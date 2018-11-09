@@ -9,8 +9,8 @@
 /* Private macro -------------------------------------------------------------*/
 
 /* Private variables ---------------------------------------------------------*/
-GPIO_TypeDef* LED_PORT[LEDn] = {LED1_GPIO_PORT,LED2_GPIO_PORT,LED3_GPIO_PORT,LED4_GPIO_PORT,LED5_GPIO_PORT};
-const uint16_t LED_PIN[LEDn] = {LED1_PIN,LED2_PIN,LED3_PIN,LED4_PIN,LED5_PIN};
+GPIO_TypeDef* LED_PORT[LEDn] = {LED1_GPIO_PORT};
+const uint16_t LED_PIN[LEDn] = {LED1_PIN};
 
 GPIO_TypeDef* BUTTON_PORT[BUTTONn]  = {USER_BUTTON_GPIO_PORT}; 
 const uint16_t BUTTON_PIN[BUTTONn]  = {USER_BUTTON_PIN}; 
