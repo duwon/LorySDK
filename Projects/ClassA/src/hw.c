@@ -59,7 +59,7 @@ Maintainer: Miguel Luis and Gregory Cristian
   */
 #include "hw.h"
 #include "vcom.h"
-
+#include "radio.h"
 
 /*!
  *  \brief Unique Devices IDs register set ( STM32L1xxx )
@@ -98,6 +98,8 @@ void HW_Init( void )
 		
     HW_RTC_Init( );
 		HW_SPI_Init( );
+
+		Radio.IoInit( );
 		
     McuInitialized = true;
   }

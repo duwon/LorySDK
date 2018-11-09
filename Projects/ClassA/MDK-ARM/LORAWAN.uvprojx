@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32L151xBA REGION_US915_HYBRID</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;../../../Drivers\STM32L1xx_HAL_Driver\Inc;../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy;../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include;../../../Drivers/CMSIS/Include;../../../LoraLib\Utilities;../../../LoraLib\Core;../../../LoraLib\Crypto;../../../LoraLib\Mac;../../../LoraLib\Mac\region;../../../LoraLib\Phy;../../../Drivers\BSP\Components\sx1276;../../../Drivers\BSP\sx1276mb1las</IncludePath>
+              <IncludePath>../Inc;../../../Drivers\STM32L1xx_HAL_Driver\Inc;../../../Drivers/STM32L1xx_HAL_Driver/Inc/Legacy;../../../Drivers/CMSIS/Device/ST/STM32L1xx/Include;../../../Drivers/CMSIS/Include;../../../LoraLib\Utilities;../../../LoraLib\Core;../../../LoraLib\Crypto;../../../LoraLib\Mac;../../../LoraLib\Mac\region;../../../LoraLib\Phy;../../../Drivers\sx1276;../../../Drivers\sx1276mb1las</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -548,12 +548,98 @@
         </Group>
         <Group>
           <GroupName>LoraLib/Core</GroupName>
+          <Files>
+            <File>
+              <FileName>lora.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Core\lora.c</FilePath>
+            </File>
+            <File>
+              <FileName>lora-test.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Core\lora-test.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>LoraLib/Mac</GroupName>
+          <Files>
+            <File>
+              <FileName>LoRaMac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\LoRaMac.c</FilePath>
+            </File>
+            <File>
+              <FileName>LoRaMacCrypto.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\LoRaMacCrypto.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>LoraLib/Mac/Region</GroupName>
+          <Files>
+            <File>
+              <FileName>Region.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\Region.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionAS923.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionAS923.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionAU915.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionAU915.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionCN470.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionCN470.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionCN779.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionCN779.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionCommon.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionCommon.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionEU433.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionEU433.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionEU868.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionEU868.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionIN865.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionIN865.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionKR920.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionKR920.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionUS915.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionUS915.c</FilePath>
+            </File>
+            <File>
+              <FileName>RegionUS915-Hybrid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Mac\region\RegionUS915-Hybrid.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>LoraLib/Utilites</GroupName>
@@ -582,12 +668,38 @@
         </Group>
         <Group>
           <GroupName>LoraLib/Crypto</GroupName>
+          <Files>
+            <File>
+              <FileName>aes.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Crypto\aes.c</FilePath>
+            </File>
+            <File>
+              <FileName>cmac.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\LoraLib\Crypto\cmac.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/Component</GroupName>
+          <GroupName>Drivers/SX1276</GroupName>
+          <Files>
+            <File>
+              <FileName>sx1276.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Drivers\sx1276\sx1276.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>Drivers/sx1276mb1las</GroupName>
+          <Files>
+            <File>
+              <FileName>sx1276mb1las.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\Drivers\sx1276mb1las\sx1276mb1las.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
