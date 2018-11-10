@@ -33,7 +33,7 @@
 static uint8_t AppDataBuff[LORAWAN_APP_DATA_BUFF_SIZE]; //User application data
 static lora_AppData_t AppData={ AppDataBuff,  0 ,0 }; //User application data structure
 
-#define BUTTON_DUTYCYCLE                   1000
+#define BUTTON_DUTYCYCLE                   3000
 #define LED_RDY_DUTYCYCLE                  1000
 
 /* Private macro -------------------------------------------------------------*/
@@ -116,7 +116,7 @@ int main( void )
 static void OnButtonTimerEvent( void )
 {
 	TimerStart( &ButtonTimer);
-	
+	if(BSP_PB_GetState(BUTTON_USER)==GPIO_PIN_RESET) NVIC_SystemReset();
 }
 
 static void OnLedTimerEvent( void )
