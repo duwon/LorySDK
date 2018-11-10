@@ -27,7 +27,7 @@
 #define LORAWAN_DEFAULT_DATA_RATE                   DR_0 //LoRaWAN Default data Rate Data Rate
 #define LORAWAN_APP_PORT                            2 //LoRaWAN application port. do not use 224.
 #define JOINREQ_NBTRIALS                            3 //Number of trials for the join request.
-#define LORAWAN_DEFAULT_CLASS                       CLASS_A //LoRaWAN default endNode class port
+#define LORAWAN_DEFAULT_CLASS                       CLASS_C //LoRaWAN default endNode class port
 #define LORAWAN_DEFAULT_CONFIRM_MSG_STATE           LORAWAN_UNCONFIRMED_MSG //LoRaWAN default confirm state
 #define LORAWAN_APP_DATA_BUFF_SIZE                  64 //User application data buffer size
 static uint8_t AppDataBuff[LORAWAN_APP_DATA_BUFF_SIZE]; //User application data
