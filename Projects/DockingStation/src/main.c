@@ -22,7 +22,7 @@
 #define LPP_DATATYPE_BAROMETER         0x73
 #define LPP_APP_PORT                   99
 
-#define APP_TX_DUTYCYCLE                            4000 //data transmission duty cycle. 5s, value in [ms].
+#define APP_TX_DUTYCYCLE                            30000 //data transmission duty cycle. 5s, value in [ms].
 #define LORAWAN_ADR_STATE                           LORAWAN_ADR_ON
 #define LORAWAN_DEFAULT_DATA_RATE                   DR_0 //LoRaWAN Default data Rate Data Rate
 #define LORAWAN_APP_PORT                            2 //LoRaWAN application port. do not use 224.
