@@ -13,7 +13,7 @@ License: Revised BSD License, see LICENSE.TXT file include in the project
 Maintainer: Miguel Luis and Gregory Cristian
 */
  /*******************************************************************************
-  * @file    stm32l1xx_hw.c
+  * @file    hw.c
   * @author  MCD Application Team
   * @version V1.1.5
   * @date    30-March-2018

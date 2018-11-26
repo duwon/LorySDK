@@ -22,12 +22,11 @@
 #define LPP_DATATYPE_BAROMETER         0x73
 #define LPP_APP_PORT                   99
 
-#define APP_TX_DUTYCYCLE                            30000 //data transmission duty cycle. 5s, value in [ms].
+#define APP_TX_DUTYCYCLE                            30000 //data transmission duty cycle. 60s, value in [ms].
 #define LORAWAN_ADR_STATE                           LORAWAN_ADR_ON
 #define LORAWAN_DEFAULT_DATA_RATE                   DR_0 //LoRaWAN Default data Rate Data Rate
 #define LORAWAN_APP_PORT                            2 //LoRaWAN application port. do not use 224.
-#define JOINREQ_NBTRIALS                            3 //Number of trials for the join request.
-#define LORAWAN_DEFAULT_CLASS                       CLASS_C //LoRaWAN default endNode class port
+#define LORAWAN_DEFAULT_CLASS                       CLASS_C //LoRaWAN default endNode class
 #define LORAWAN_DEFAULT_CONFIRM_MSG_STATE           LORAWAN_UNCONFIRMED_MSG //LoRaWAN default confirm state
 #define LORAWAN_APP_DATA_BUFF_SIZE                  64 //User application data buffer size
 static uint8_t AppDataBuff[LORAWAN_APP_DATA_BUFF_SIZE]; //User application data
@@ -48,7 +47,6 @@ static void LORA_HasJoined( void ); /* call back when LoRa endNode has just join
 static void LORA_ConfirmClass ( DeviceClass_t Class ); /* call back when LoRa endNode has just switch the class*/
 static void LORA_TxNeeded ( void ); /* call back when server needs endNode to send a frame*/
 static void Send( void ); /* LoRa endNode send request*/
-static void LoraStartTx(TxEventType_t EventType); /* start the tx process*/
 
 uint8_t HW_GetBatteryLevel( void );
 uint16_t HW_GetTemperatureLevel( void );
@@ -89,6 +87,13 @@ int main( void )
 	
 	HW_Init();
 	
+	/* Configure the Lora Stack*/
+  LORA_Init( &LoRaMainCallbacks, &LoRaParamInit);
+  
+  PRINTF("VERSION: %X\n\r", VERSION);
+  
+  LORA_Join();
+
 	TimerInit( &ButtonTimer, OnButtonTimerEvent );
 	TimerSetValue( &ButtonTimer,  BUTTON_DUTYCYCLE); 
 	OnButtonTimerEvent();
@@ -96,15 +101,10 @@ int main( void )
 	TimerInit( &LedTimer, OnLedTimerEvent );
 	TimerSetValue( &LedTimer, LED_RDY_DUTYCYCLE); 
 	OnLedTimerEvent();
-
-	  /* Configure the Lora Stack*/
-  LORA_Init( &LoRaMainCallbacks, &LoRaParamInit);
-  
-  PRINTF("VERSION: %X\n\r", VERSION);
-  
-  LORA_Join();
-  
-  LoraStartTx( TX_ON_TIMER) ;
+	
+	TimerInit( &TxTimer, OnTxTimerEvent );
+	TimerSetValue( &TxTimer,  APP_TX_DUTYCYCLE); 
+	OnTxTimerEvent();	
 	
   while(1)
   {
@@ -127,32 +127,23 @@ static void OnLedTimerEvent( void )
 
 static void LORA_HasJoined( void )
 {
-#if( OVER_THE_AIR_ACTIVATION != 0 )
-  PRINTF("JOINED\n\r");
-#endif
+  PRINTF("%d JOINED\n\r", HW_RTC_GetTimerValue() );
   LORA_RequestClass( LORAWAN_DEFAULT_CLASS );
 }
 
 static void Send( void )
 {
-  /* USER CODE BEGIN 3 */
-  uint16_t pressure = 0;
-  int16_t temperature = 0;
-  uint16_t humidity = 0;
+  uint16_t pressure = 900;
+  int16_t temperature = 30;
+  uint16_t humidity = 80;
   
-  if ( LORA_JoinStatus () != LORA_SET)
+  if ( LORA_JoinStatus () != LORA_SET) /*Not joined, try again later*/
   {
-    /*Not joined, try again later*/
     LORA_Join();
     return;
   }
-  
-  DBG_PRINTF("SEND REQUEST\n\r");
 
   uint8_t cchannel=0;
-  temperature = HW_GetTemperatureLevel();
-  pressure    = 900;  
-  humidity    = 80;  
   uint32_t i = 0;
 
   AppData.Port = LPP_APP_PORT;
@@ -179,7 +170,7 @@ static void Send( void )
 static void LORA_RxData( lora_AppData_t *AppData )
 {
 
-  DBG_PRINTF("PACKET RECEIVED ON PORT %d\n\r", AppData->Port);
+  PRINTF("%d PACKET RECEIVED ON PORT %d\n\r", HW_RTC_GetTimerValue(), AppData->Port);
 
   switch (AppData->Port)
   {
@@ -215,13 +206,13 @@ static void LORA_RxData( lora_AppData_t *AppData )
 				AppLedStateOn = AppData->Buff[0] & 0x01;
 				if ( AppLedStateOn == RESET )
 				{
-					PRINTF("LED OFF\n\r");
-					LED_Off( LED_RDY ) ; 
+					PRINTF("%d LED OFF\n\r", HW_RTC_GetTimerValue() );
+					TimerStop(&LedTimer);
 				}
 				else
 				{
-					PRINTF("LED ON\n\r");
-					LED_On( LED_RDY ) ; 
+					PRINTF("%d LED TOGGLE ON\n\r", HW_RTC_GetTimerValue() );
+					OnLedTimerEvent();
 				}
 			}
     default:
@@ -231,37 +222,13 @@ static void LORA_RxData( lora_AppData_t *AppData )
 
 static void OnTxTimerEvent( void )
 {
-  Send( );
-  /*Wait for next tx slot*/
   TimerStart( &TxTimer);
-}
-
-static void LoraStartTx(TxEventType_t EventType)
-{
-  if (EventType == TX_ON_TIMER)
-  {
-    /* send everytime timer elapses */
-    TimerInit( &TxTimer, OnTxTimerEvent );
-    TimerSetValue( &TxTimer,  APP_TX_DUTYCYCLE); 
-    OnTxTimerEvent();
-  }
-  else
-  {
-    /* send everytime button is pushed */
-    GPIO_InitTypeDef initStruct={0};
-  
-    initStruct.Mode =GPIO_MODE_IT_RISING;
-    initStruct.Pull = GPIO_PULLUP;
-    initStruct.Speed = GPIO_SPEED_HIGH;
-
-    HW_GPIO_Init( USER_BUTTON_GPIO_PORT, USER_BUTTON_PIN, &initStruct );
-    HW_GPIO_SetIrq( USER_BUTTON_GPIO_PORT, USER_BUTTON_PIN, 0, Send );
-  }
+	Send( );  
 }
 
 static void LORA_ConfirmClass ( DeviceClass_t Class )
 {
-  PRINTF("switch to class %c done\n\r","ABC"[Class] );
+  PRINTF("%d switch to class %c done\n\r", HW_RTC_GetTimerValue(),"ABC"[Class] );
 
   /*Optionnal*/
   /*informs the server that switch has occurred ASAP*/
@@ -275,8 +242,8 @@ static void LORA_TxNeeded ( void )
 {
   AppData.BuffSize = 0;
   AppData.Port = LORAWAN_APP_PORT;
-  
   LORA_send( &AppData, LORAWAN_UNCONFIRMED_MSG);
+	PRINTF("%d LORA_TxNeeded", HW_RTC_GetTimerValue() );
 }
 
 /**

@@ -72,11 +72,6 @@ Maintainer: Miguel Luis and Gregory Cristian
   #include "stm32l1xx_hal_conf.h"
   #include "LorySDK_hw_conf.h"
 	 
-/* --------Preprocessor compile swicth------------ */
-/* debug swicthes in debug.h */
-//#define DEBUG
-//#define TRACE
-   
 /* uncomment below line to never enter lowpower modes in main.c*/
 #define LOW_POWER_DISABLE
    

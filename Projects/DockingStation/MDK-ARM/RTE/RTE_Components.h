@@ -4,7 +4,7 @@
  *      *** Do not modify ! ***
  *
  * Project: 'LORAWAN' 
- * Target:  'ClassA' 
+ * Target:  'ClassC' 
  */
 
 #ifndef RTE_COMPONENTS_H
