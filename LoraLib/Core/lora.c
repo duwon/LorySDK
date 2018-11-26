@@ -408,7 +408,7 @@ bool LORA_send(lora_AppData_t* AppData, LoraConfirm_t IsTxConfirmed)
 {
     McpsReq_t mcpsReq;
     LoRaMacTxInfo_t txInfo;
-  
+
     /*if certification test are on going, application data is not sent*/
     if (certif_running() == true)
     {
