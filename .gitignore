@@ -1,10 +1,12 @@
 ﻿# 파일이름
-
+Doxyfile
 
 # / 디렉토리 전체를 무시
 LORAWAN/
 .vscode/
 RTE/
+Documents/
+Document/
 
 # 와일드카드
 ignore-file*
