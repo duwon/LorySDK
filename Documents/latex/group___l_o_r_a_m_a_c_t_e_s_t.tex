@@ -1,0 +1,140 @@
+\hypertarget{group___l_o_r_a_m_a_c_t_e_s_t}{}\section{Lo\+Ra M\+AC layer test function implementation}
+\label{group___l_o_r_a_m_a_c_t_e_s_t}\index{Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c_t_e_s_t_ga3e8dc79232b2c86d12d8b4191324283d}{Lo\+Ra\+Mac\+Test\+Rx\+Windows\+On}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enabled or disables the reception windows \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c_t_e_s_t_ga191314e00a8a27f426427473ba6821a7}{Lo\+Ra\+Mac\+Test\+Set\+Mic}} (uint16\+\_\+t tx\+Packet\+Counter)
+\begin{DoxyCompactList}\small\item\em Enables the M\+IC field test \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865}{Lo\+Ra\+Mac\+Test\+Set\+Duty\+Cycle\+On}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Enabled or disables the duty cycle \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c_t_e_s_t_ga8cf3cc21ea237c5620536cea2750463e}{Lo\+Ra\+Mac\+Test\+Set\+Channel}} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Sets the channel index \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+This module specifies the A\+PI implementation of test function of the Lo\+Ra\+M\+AC layer. The functions in this file are only for testing purposes only. 
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c_t_e_s_t_ga3e8dc79232b2c86d12d8b4191324283d}\label{group___l_o_r_a_m_a_c_t_e_s_t_ga3e8dc79232b2c86d12d8b4191324283d}} 
+\index{Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}!Lo\+Ra\+Mac\+Test\+Rx\+Windows\+On@{Lo\+Ra\+Mac\+Test\+Rx\+Windows\+On}}
+\index{Lo\+Ra\+Mac\+Test\+Rx\+Windows\+On@{Lo\+Ra\+Mac\+Test\+Rx\+Windows\+On}!Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Test\+Rx\+Windows\+On()}{LoRaMacTestRxWindowsOn()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Test\+Rx\+Windows\+On (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enabled or disables the reception windows 
+
+This is a test function. It shall be used for testing purposes only. Changing this attribute may lead to a non-\/conformance Lo\+Ra\+Mac operation.
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & enable -\/ Enabled or disables the reception windows \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac.\+c 파일의 3417 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+3418 \{
+3419     \mbox{\hyperlink{_lo_ra_mac_8c_a60695a58f371fb7e366c4059ecbf563a}{IsRxWindowsEnabled}} = enable;
+3420 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c_t_e_s_t_ga8cf3cc21ea237c5620536cea2750463e}\label{group___l_o_r_a_m_a_c_t_e_s_t_ga8cf3cc21ea237c5620536cea2750463e}} 
+\index{Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}!Lo\+Ra\+Mac\+Test\+Set\+Channel@{Lo\+Ra\+Mac\+Test\+Set\+Channel}}
+\index{Lo\+Ra\+Mac\+Test\+Set\+Channel@{Lo\+Ra\+Mac\+Test\+Set\+Channel}!Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Test\+Set\+Channel()}{LoRaMacTestSetChannel()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Test\+Set\+Channel (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel }\end{DoxyParamCaption})}
+
+
+
+Sets the channel index 
+
+This is a test function. It shall be used for testing purposes only. Changing this attribute may lead to a non-\/conformance Lo\+Ra\+Mac operation.
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & channel -\/ Channel index \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac.\+c 파일의 3440 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+3441 \{
+3442     \mbox{\hyperlink{_lo_ra_mac_8c_a1ca6f01ca18afe402de51babe8c95f5e}{Channel}} = channel;
+3443 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865}\label{group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865}} 
+\index{Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}!Lo\+Ra\+Mac\+Test\+Set\+Duty\+Cycle\+On@{Lo\+Ra\+Mac\+Test\+Set\+Duty\+Cycle\+On}}
+\index{Lo\+Ra\+Mac\+Test\+Set\+Duty\+Cycle\+On@{Lo\+Ra\+Mac\+Test\+Set\+Duty\+Cycle\+On}!Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Test\+Set\+Duty\+Cycle\+On()}{LoRaMacTestSetDutyCycleOn()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Test\+Set\+Duty\+Cycle\+On (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Enabled or disables the duty cycle 
+
+This is a test function. It shall be used for testing purposes only. Changing this attribute may lead to a non-\/conformance Lo\+Ra\+Mac operation.
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & enable -\/ Enabled or disables the duty cycle \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac.\+c 파일의 3428 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+3429 \{
+3430     \mbox{\hyperlink{unionu_verify_params}{VerifyParams\_t}} verify;
+3431 
+3432     verify.\mbox{\hyperlink{unionu_verify_params_a72f580d8a64ab70f5c4f7e10a694c65b}{DutyCycle}} = enable;
+3433 
+3434     \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___r_e_g_i_o_n_ga7c1ff626bc1131889fa8de3197a1093a}{RegionVerify}}( \mbox{\hyperlink{_lo_ra_mac_8c_ab3e53bd4a0f4e547c9dbf450406acfe5}{LoRaMacRegion}}, &verify, 
+      \mbox{\hyperlink{group___r_e_g_i_o_n_gga51cbe8f5433d914fe9cf81b451de2c2dac66308571e624ecc28c79ee0deab8cf0}{PHY\_DUTY\_CYCLE}} ) == \textcolor{keyword}{true} )
+3435     \{
+3436         \mbox{\hyperlink{_lo_ra_mac_8c_af662c54719ba22aa5580de1fc74de2dc}{DutyCycleOn}} = enable;
+3437     \}
+3438 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 0
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c_t_e_s_t_ga191314e00a8a27f426427473ba6821a7}\label{group___l_o_r_a_m_a_c_t_e_s_t_ga191314e00a8a27f426427473ba6821a7}} 
+\index{Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}!Lo\+Ra\+Mac\+Test\+Set\+Mic@{Lo\+Ra\+Mac\+Test\+Set\+Mic}}
+\index{Lo\+Ra\+Mac\+Test\+Set\+Mic@{Lo\+Ra\+Mac\+Test\+Set\+Mic}!Lo\+Ra M\+A\+C layer test function implementation@{Lo\+Ra M\+A\+C layer test function implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Test\+Set\+Mic()}{LoRaMacTestSetMic()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Test\+Set\+Mic (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{tx\+Packet\+Counter }\end{DoxyParamCaption})}
+
+
+
+Enables the M\+IC field test 
+
+This is a test function. It shall be used for testing purposes only. Changing this attribute may lead to a non-\/conformance Lo\+Ra\+Mac operation.
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & tx\+Packet\+Counter -\/ Fixed Tx packet counter value \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac.\+c 파일의 3422 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+3423 \{
+3424     \mbox{\hyperlink{_lo_ra_mac_8c_ae8c54ca277e4d7295dfd498889e42fdd}{UpLinkCounter}} = txPacketCounter;
+3425     \mbox{\hyperlink{_lo_ra_mac_8c_a65360317f68eee4d85b01ed379037fc9}{IsUpLinkCounterFixed}} = \textcolor{keyword}{true};
+3426 \}
+\end{DoxyCode}

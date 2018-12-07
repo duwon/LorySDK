@@ -1,0 +1,348 @@
+\hypertarget{_region_c_n779_8c}{}\section{Lora\+Lib/\+Mac/region/\+Region\+C\+N779.c 파일 참조}
+\label{_region_c_n779_8c}\index{Lora\+Lib/\+Mac/region/\+Region\+C\+N779.\+c@{Lora\+Lib/\+Mac/region/\+Region\+C\+N779.\+c}}
+
+
+Region implementation for C\+N779  
+
+
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Region\+Common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Region\+C\+N779.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+Region\+C\+N779.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_region_c_n779_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}~1
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static int8\+\_\+t \mbox{\hyperlink{_region_c_n779_8c_ae06574681e2f7c3f3e604878c81743aa}{Get\+Next\+Lower\+Tx\+Dr}} (int8\+\_\+t dr, int8\+\_\+t min\+Dr)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{_region_c_n779_8c_afbe81e6d36760141722791d216d4ac60}{Get\+Bandwidth}} (uint32\+\_\+t dr\+Index)
+\item 
+static int8\+\_\+t \mbox{\hyperlink{_region_c_n779_8c_af2821991c6e6dad3e196b01f6cf1d542}{Limit\+Tx\+Power}} (int8\+\_\+t tx\+Power, int8\+\_\+t max\+Band\+Tx\+Power, int8\+\_\+t datarate, uint16\+\_\+t $\ast$channels\+Mask)
+\item 
+static bool \mbox{\hyperlink{_region_c_n779_8c_af6b3cfa164d4105815aaaa55f02d723e}{Verify\+Tx\+Freq}} (uint32\+\_\+t freq)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{_region_c_n779_8c_a84ed01aa0ea6f1e53707efb5aaa3bd97}{Count\+Nb\+Of\+Enabled\+Channels}} (bool joined, uint8\+\_\+t datarate, uint16\+\_\+t $\ast$channels\+Mask, \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} $\ast$channels, \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} $\ast$bands, uint8\+\_\+t $\ast$enabled\+Channels, uint8\+\_\+t $\ast$delay\+Tx)
+\item 
+\mbox{\hyperlink{group___r_e_g_i_o_n_gaed159b26e5c4677236b6e8677019db30}{Phy\+Param\+\_\+t}} \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gab45c9a48b25622ab197ab8510cc7cbc0}{Region\+C\+N779\+Get\+Phy\+Param}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gab471483fff904f4f89bbc03f7fc380ab}{Get\+Phy\+Params\+\_\+t}} $\ast$get\+Phy)
+\begin{DoxyCompactList}\small\item\em The function gets a value of a specific phy attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gab7e1485f1112861ad7dae9801995a2c4}{Region\+C\+N779\+Set\+Band\+Tx\+Done}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gad0524aa0673c0814a71e7a4f9cade3fc}{Set\+Band\+Tx\+Done\+Params\+\_\+t}} $\ast$tx\+Done)
+\begin{DoxyCompactList}\small\item\em Updates the last TX done parameters of the current channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga85953f37b52567b54689c354671a14f6}{Region\+C\+N779\+Init\+Defaults}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gaddc73ae10673ec925724e7870363bda9}{Init\+Type\+\_\+t}} type)
+\begin{DoxyCompactList}\small\item\em Initializes the channels masks and the channels. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga7108626b64685883842049a36d865208}{Region\+C\+N779\+Verify}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga966d97bc2f25df1c09e92e60ef652276}{Verify\+Params\+\_\+t}} $\ast$verify, \mbox{\hyperlink{group___r_e_g_i_o_n_ga9445b07fdf77581ecfaf389970e635f8}{Phy\+Attribute\+\_\+t}} phy\+Attribute)
+\begin{DoxyCompactList}\small\item\em Verifies a parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga7f02e6a802649d9b93c4c56eff271a26}{Region\+C\+N779\+Apply\+C\+F\+List}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga71588e9ad07e34b78fa91d51881fd3c6}{Apply\+C\+F\+List\+Params\+\_\+t}} $\ast$apply\+C\+F\+List)
+\begin{DoxyCompactList}\small\item\em The function parses the input buffer and sets up the channels of the CF list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga06c5fe5ebbc02741394fb573944467b7}{Region\+C\+N779\+Chan\+Mask\+Set}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga6d24f7da136006410827dfb29f6b9b9e}{Chan\+Mask\+Set\+Params\+\_\+t}} $\ast$chan\+Mask\+Set)
+\begin{DoxyCompactList}\small\item\em Sets a channels mask. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga4c114db1d998a5ba77bb87ab34316ff8}{Region\+C\+N779\+Adr\+Next}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga567c2742622326b350b4e91bbf61b4ce}{Adr\+Next\+Params\+\_\+t}} $\ast$adr\+Next, int8\+\_\+t $\ast$dr\+Out, int8\+\_\+t $\ast$tx\+Pow\+Out, uint32\+\_\+t $\ast$adr\+Ack\+Counter)
+\begin{DoxyCompactList}\small\item\em Calculates the next datarate to set, when A\+DR is on or off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga4f354a88e5bfee44eccaad7d2e18c87e}{Region\+C\+N779\+Compute\+Rx\+Window\+Parameters}} (int8\+\_\+t datarate, uint8\+\_\+t min\+Rx\+Symbols, uint32\+\_\+t rx\+Error, \mbox{\hyperlink{group___r_e_g_i_o_n_ga375c038078dfcfc7ef14280021db719e}{Rx\+Config\+Params\+\_\+t}} $\ast$rx\+Config\+Params)
+\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga89b2db72c7dd1dbaa07135d538e3c2fe}{Region\+C\+N779\+Rx\+Config}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga375c038078dfcfc7ef14280021db719e}{Rx\+Config\+Params\+\_\+t}} $\ast$rx\+Config, int8\+\_\+t $\ast$datarate)
+\begin{DoxyCompactList}\small\item\em Configuration of the RX windows. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gae628efcfcba9afc2620f3c1234b90c3d}{Region\+C\+N779\+Tx\+Config}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gabed730d4d04b0b60d4b6d1966d3f21d3}{Tx\+Config\+Params\+\_\+t}} $\ast$tx\+Config, int8\+\_\+t $\ast$tx\+Power, \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} $\ast$tx\+Time\+On\+Air)
+\begin{DoxyCompactList}\small\item\em TX configuration. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gae3bdb6e223de1fd6b72182eb278f3828}{Region\+C\+N779\+Link\+Adr\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gad4af503e8d4de1846129e26a799a1e8e}{Link\+Adr\+Req\+Params\+\_\+t}} $\ast$link\+Adr\+Req, int8\+\_\+t $\ast$dr\+Out, int8\+\_\+t $\ast$tx\+Pow\+Out, uint8\+\_\+t $\ast$nb\+Rep\+Out, uint8\+\_\+t $\ast$nb\+Bytes\+Parsed)
+\begin{DoxyCompactList}\small\item\em The function processes a Link A\+DR Request. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gad14dfe4070bdf46142d09d35d617b25c}{Region\+C\+N779\+Rx\+Param\+Setup\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga7165f282c670c728c36d534df2285157}{Rx\+Param\+Setup\+Req\+Params\+\_\+t}} $\ast$rx\+Param\+Setup\+Req)
+\begin{DoxyCompactList}\small\item\em The function processes a RX Parameter Setup Request. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gab4c6ffa72f1da0e2ef40431ab7fd72fa}{Region\+C\+N779\+New\+Channel\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gae2abcdb6dbb843c9faf5fd3009eca9d6}{New\+Channel\+Req\+Params\+\_\+t}} $\ast$new\+Channel\+Req)
+\begin{DoxyCompactList}\small\item\em The function processes a Channel Request. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga6dc963da2e0b143e7313780fcd946855}{Region\+C\+N779\+Tx\+Param\+Setup\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga26836ef2996e70410e42ef471073f855}{Tx\+Param\+Setup\+Req\+Params\+\_\+t}} $\ast$tx\+Param\+Setup\+Req)
+\begin{DoxyCompactList}\small\item\em The function processes a TX Param\+Setup Request. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gaa34ccc032a50e5bef17fc59ca5eb89bc}{Region\+C\+N779\+Dl\+Channel\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gae0d608ff1f8ea0a430e4f9a4c38ec7f3}{Dl\+Channel\+Req\+Params\+\_\+t}} $\ast$dl\+Channel\+Req)
+\begin{DoxyCompactList}\small\item\em The function processes a Dl\+Channel Request. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gaf8880a4368c2404e9d629205e9dc769b}{Region\+C\+N779\+Alternate\+Dr}} (int8\+\_\+t current\+Dr)
+\begin{DoxyCompactList}\small\item\em Alternates the datarate of the channel for the join request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga159d16a30e948dcab70399897672848b}{Region\+C\+N779\+Calc\+Back\+Off}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga7c5c9a8da174e6679eded8257dc92fd9}{Calc\+Back\+Off\+Params\+\_\+t}} $\ast$calc\+Back\+Off)
+\begin{DoxyCompactList}\small\item\em Calculates the back-\/off time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga30bd25657e10480f8605ee951b0ecfbd}{Lo\+Ra\+Mac\+Status\+\_\+t}} \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga37a1c6f7657dd872a54e0573c5f554f3}{Region\+C\+N779\+Next\+Channel}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga115f5e83afae352c0a3dcdc193374040}{Next\+Chan\+Params\+\_\+t}} $\ast$next\+Chan\+Params, uint8\+\_\+t $\ast$channel, \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} $\ast$time, \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} $\ast$aggregated\+Time\+Off)
+\begin{DoxyCompactList}\small\item\em Searches and set the next random available channel \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga30bd25657e10480f8605ee951b0ecfbd}{Lo\+Ra\+Mac\+Status\+\_\+t}} \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga087a9e4729bae8b825db62caca5f20d2}{Region\+C\+N779\+Channel\+Add}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gab1c5f3aa06614283202906cef4417860}{Channel\+Add\+Params\+\_\+t}} $\ast$channel\+Add)
+\begin{DoxyCompactList}\small\item\em Adds a channel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga3ea3d4f5fe7cb25f562f4e6f95396eed}{Region\+C\+N779\+Channels\+Remove}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gaa37468560d2fc81a977b57a48e5d72c0}{Channel\+Remove\+Params\+\_\+t}} $\ast$channel\+Remove)
+\begin{DoxyCompactList}\small\item\em Removes a channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga702d0d0348fdbcb2b66f7e9d5fb93a61}{Region\+C\+N779\+Set\+Continuous\+Wave}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gaf39bb5ba06921139c6d17f88a8d518cd}{Continuous\+Wave\+Params\+\_\+t}} $\ast$continuous\+Wave)
+\begin{DoxyCompactList}\small\item\em Sets the radio into continuous wave mode. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gab03fbee2e88e81b71c04f907af8b283e}{Region\+C\+N779\+Apply\+Dr\+Offset}} (uint8\+\_\+t downlink\+Dwell\+Time, int8\+\_\+t dr, int8\+\_\+t dr\+Offset)
+\begin{DoxyCompactList}\small\item\em Computes new datarate according to the given offset \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} \mbox{\hyperlink{_region_c_n779_8c_ad43b16563c3a87159ec34d1db860a3da}{Channels}} \mbox{[}\mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gaa23230e648a8147840e88f03f9d3b7fc}{C\+N779\+\_\+\+M\+A\+X\+\_\+\+N\+B\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}\mbox{]}
+\item 
+static \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} \mbox{\hyperlink{_region_c_n779_8c_af0fa082231b29a5cac086386277e6ecc}{Bands}} \mbox{[}\mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga605a78b9ce2c56ef5d320e029e369236}{C\+N779\+\_\+\+M\+A\+X\+\_\+\+N\+B\+\_\+\+B\+A\+N\+DS}}\mbox{]}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{_region_c_n779_8c_a2188957b5ca6af8092154d7ccbfa5757}{Channels\+Mask}} \mbox{[}\mbox{\hyperlink{_region_u_s915_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{_region_c_n779_8c_ac127b19779301713d5ed92eb03366a2d}{Channels\+Default\+Mask}} \mbox{[}\mbox{\hyperlink{_region_u_s915_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Region implementation for C\+N779 
+
+\begin{DoxyCopyright}{Copyright}
+Revised B\+SD License, see section L\+I\+C\+E\+N\+SE.
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+  \_\_\_\_\_\_                              \_
+ / \_\_\_\_\_)             \_              | |
+( (\_\_\_\_  \_\_\_\_\_ \_\_\_\_ \_| |\_ \_\_\_\_\_  \_\_\_\_| |\_\_
+ \(\backslash\)\_\_\_\_ \(\backslash\)| \_\_\_ |    (\_   \_) \_\_\_ |/ \_\_\_)  \_ \(\backslash\)
+ \_\_\_\_\_) ) \_\_\_\_| | | || |\_| \_\_\_\_( (\_\_\_| | | |
+(\_\_\_\_\_\_/|\_\_\_\_\_)\_|\_|\_| \(\backslash\)\_\_)\_\_\_\_\_)\(\backslash\)\_\_\_\_)\_| |\_|
+(C)2013-2017 Semtech
+
+ \_\_\_ \_\_\_\_\_ \_   \_\_\_ \_  \_\_\_\_\_ \_\_\_  \_\_\_  \_\_\_ \_\_\_
+/ \_\_|\_   \_/\_\(\backslash\) / \_\_| |/ / \_\_/ \_ \(\backslash\)| \_ \(\backslash\)/ \_\_| \_\_|
+\(\backslash\)\_\_ \(\backslash\) | |/ \_ \(\backslash\) (\_\_| \textcolor{stringliteral}{' <| \_| (\_) |   / (\_\_| \_|}
+\textcolor{stringliteral}{|\_\_\_/ |\_/\_/ \(\backslash\)\_\(\backslash\)\_\_\_|\_|\(\backslash\)\_\(\backslash\)\_| \(\backslash\)\_\_\_/|\_|\_\(\backslash\)\(\backslash\)\_\_\_|\_\_\_|}
+\textcolor{stringliteral}{embedded.connectivity.solutions===============}
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{작성자}
+Miguel Luis ( Semtech )
+
+Gregory Cristian ( Semtech )
+
+Daniel Jaeckle ( S\+T\+A\+C\+K\+F\+O\+R\+CE ) 
+\end{DoxyAuthor}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{_region_c_n779_8c_a1b20a8de3ae59c0b063fb313f0c70890}\label{_region_c_n779_8c_a1b20a8de3ae59c0b063fb313f0c70890}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}
+\index{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}{CHANNELS\_MASK\_SIZE}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE~1}
+
+
+
+Region\+C\+N779.\+c 파일의 38 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{_region_c_n779_8c_a84ed01aa0ea6f1e53707efb5aaa3bd97}\label{_region_c_n779_8c_a84ed01aa0ea6f1e53707efb5aaa3bd97}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Count\+Nb\+Of\+Enabled\+Channels@{Count\+Nb\+Of\+Enabled\+Channels}}
+\index{Count\+Nb\+Of\+Enabled\+Channels@{Count\+Nb\+Of\+Enabled\+Channels}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Count\+Nb\+Of\+Enabled\+Channels()}{CountNbOfEnabledChannels()}}
+{\footnotesize\ttfamily static uint8\+\_\+t Count\+Nb\+Of\+Enabled\+Channels (\begin{DoxyParamCaption}\item[{bool}]{joined,  }\item[{uint8\+\_\+t}]{datarate,  }\item[{uint16\+\_\+t $\ast$}]{channels\+Mask,  }\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} $\ast$}]{channels,  }\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} $\ast$}]{bands,  }\item[{uint8\+\_\+t $\ast$}]{enabled\+Channels,  }\item[{uint8\+\_\+t $\ast$}]{delay\+Tx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+C\+N779.\+c 파일의 119 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+120 \{
+121     uint8\_t nbEnabledChannels = 0;
+122     uint8\_t delayTransmission = 0;
+123 
+124     \textcolor{keywordflow}{for}( uint8\_t i = 0, k = 0; i < \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gaa23230e648a8147840e88f03f9d3b7fc}{CN779\_MAX\_NB\_CHANNELS}}; i += 16, k++ )
+125     \{
+126         \textcolor{keywordflow}{for}( uint8\_t j = 0; j < 16; j++ )
+127         \{
+128             \textcolor{keywordflow}{if}( ( channelsMask[k] & ( 1 << j ) ) != 0 )
+129             \{
+130                 \textcolor{keywordflow}{if}( channels[i + j].Frequency == 0 )
+131                 \{ \textcolor{comment}{// Check if the channel is enabled}
+132                     \textcolor{keywordflow}{continue};
+133                 \}
+134                 \textcolor{keywordflow}{if}( joined == \textcolor{keyword}{false} )
+135                 \{
+136                     \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gaad1a9c76c54bb1be159e6638c1aa768f}{CN779\_JOIN\_CHANNELS}} & ( 1 << j ) ) == 0 )
+137                     \{
+138                         \textcolor{keywordflow}{continue};
+139                     \}
+140                 \}
+141                 \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___r_e_g_i_o_n_c_o_m_m_o_n_gafdd1c80d953e18d755a631b72a9c3bd3}{RegionCommonValueInRange}}( datarate, channels[i + j].DrRange.
+      Fields.Min,
+142                                               channels[i + j].DrRange.Fields.Max ) == \textcolor{keyword}{false} )
+143                 \{ \textcolor{comment}{// Check if the current channel selection supports the given datarate}
+144                     \textcolor{keywordflow}{continue};
+145                 \}
+146                 \textcolor{keywordflow}{if}( bands[channels[i + j].Band].TimeOff > 0 )
+147                 \{ \textcolor{comment}{// Check if the band is available for transmission}
+148                     delayTransmission++;
+149                     \textcolor{keywordflow}{continue};
+150                 \}
+151                 enabledChannels[nbEnabledChannels++] = i + j;
+152             \}
+153         \}
+154     \}
+155 
+156     *delayTx = delayTransmission;
+157     \textcolor{keywordflow}{return} nbEnabledChannels;
+158 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{_region_c_n779_8c_afbe81e6d36760141722791d216d4ac60}\label{_region_c_n779_8c_afbe81e6d36760141722791d216d4ac60}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Get\+Bandwidth@{Get\+Bandwidth}}
+\index{Get\+Bandwidth@{Get\+Bandwidth}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Get\+Bandwidth()}{GetBandwidth()}}
+{\footnotesize\ttfamily static uint32\+\_\+t Get\+Bandwidth (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{dr\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+C\+N779.\+c 파일의 80 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+81 \{
+82     \textcolor{keywordflow}{switch}( \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gab4eef3dc42cf12e2e9fcb552cc5b137b}{BandwidthsCN779}}[drIndex] )
+83     \{
+84         \textcolor{keywordflow}{default}:
+85         \textcolor{keywordflow}{case} 125000:
+86             \textcolor{keywordflow}{return} 0;
+87         \textcolor{keywordflow}{case} 250000:
+88             \textcolor{keywordflow}{return} 1;
+89         \textcolor{keywordflow}{case} 500000:
+90             \textcolor{keywordflow}{return} 2;
+91     \}
+92 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{_region_c_n779_8c_ae06574681e2f7c3f3e604878c81743aa}\label{_region_c_n779_8c_ae06574681e2f7c3f3e604878c81743aa}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Get\+Next\+Lower\+Tx\+Dr@{Get\+Next\+Lower\+Tx\+Dr}}
+\index{Get\+Next\+Lower\+Tx\+Dr@{Get\+Next\+Lower\+Tx\+Dr}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Get\+Next\+Lower\+Tx\+Dr()}{GetNextLowerTxDr()}}
+{\footnotesize\ttfamily static int8\+\_\+t Get\+Next\+Lower\+Tx\+Dr (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{dr,  }\item[{int8\+\_\+t}]{min\+Dr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+C\+N779.\+c 파일의 65 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+66 \{
+67     uint8\_t nextLowerDr = 0;
+68 
+69     \textcolor{keywordflow}{if}( dr == minDr )
+70     \{
+71         nextLowerDr = minDr;
+72     \}
+73     \textcolor{keywordflow}{else}
+74     \{
+75         nextLowerDr = dr - 1;
+76     \}
+77     \textcolor{keywordflow}{return} nextLowerDr;
+78 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{_region_c_n779_8c_af2821991c6e6dad3e196b01f6cf1d542}\label{_region_c_n779_8c_af2821991c6e6dad3e196b01f6cf1d542}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Limit\+Tx\+Power@{Limit\+Tx\+Power}}
+\index{Limit\+Tx\+Power@{Limit\+Tx\+Power}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Limit\+Tx\+Power()}{LimitTxPower()}}
+{\footnotesize\ttfamily static int8\+\_\+t Limit\+Tx\+Power (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{tx\+Power,  }\item[{int8\+\_\+t}]{max\+Band\+Tx\+Power,  }\item[{int8\+\_\+t}]{datarate,  }\item[{uint16\+\_\+t $\ast$}]{channels\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+C\+N779.\+c 파일의 94 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+95 \{
+96     int8\_t txPowerResult = txPower;
+97 
+98     \textcolor{comment}{// Limit tx power to the band max}
+99     txPowerResult =  \mbox{\hyperlink{utilities_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}( txPower, maxBandTxPower );
+100 
+101     \textcolor{keywordflow}{return} txPowerResult;
+102 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{_region_c_n779_8c_af6b3cfa164d4105815aaaa55f02d723e}\label{_region_c_n779_8c_af6b3cfa164d4105815aaaa55f02d723e}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Verify\+Tx\+Freq@{Verify\+Tx\+Freq}}
+\index{Verify\+Tx\+Freq@{Verify\+Tx\+Freq}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Verify\+Tx\+Freq()}{VerifyTxFreq()}}
+{\footnotesize\ttfamily static bool Verify\+Tx\+Freq (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{freq }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+C\+N779.\+c 파일의 104 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+105 \{
+106     \textcolor{comment}{// Check radio driver support}
+107     \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276mb1las_8c_acf9fe61a72c16fa29a0dc449d23e3820}{Radio}}.\mbox{\hyperlink{struct_radio__s_a984f224d5ef26fb8a35f77d664f384df}{CheckRfFrequency}}( freq ) == false )
+108     \{
+109         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+110     \}
+111 
+112     \textcolor{keywordflow}{if}( ( freq < 779500000 ) || ( freq > 786500000 ) )
+113     \{
+114         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+115     \}
+116     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+117 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{_region_c_n779_8c_af0fa082231b29a5cac086386277e6ecc}\label{_region_c_n779_8c_af0fa082231b29a5cac086386277e6ecc}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Bands@{Bands}}
+\index{Bands@{Bands}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Bands}{Bands}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} Bands\mbox{[}\mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga605a78b9ce2c56ef5d320e029e369236}{C\+N779\+\_\+\+M\+A\+X\+\_\+\+N\+B\+\_\+\+B\+A\+N\+DS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}
+=
+\{
+    \mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_ga428819be1d6f97028be344a4bf8dff3e}{CN779\_BAND0}}
+\}
+\end{DoxyCode}
+Lo\+Ra\+Mac bands 
+
+Region\+C\+N779.\+c 파일의 49 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_region_c_n779_8c_ad43b16563c3a87159ec34d1db860a3da}\label{_region_c_n779_8c_ad43b16563c3a87159ec34d1db860a3da}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Channels@{Channels}}
+\index{Channels@{Channels}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Channels}{Channels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} Channels\mbox{[}\mbox{\hyperlink{group___r_e_g_i_o_n_c_n779_gaa23230e648a8147840e88f03f9d3b7fc}{C\+N779\+\_\+\+M\+A\+X\+\_\+\+N\+B\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Lo\+Ra\+M\+AC channels 
+
+Region\+C\+N779.\+c 파일의 44 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_region_c_n779_8c_ac127b19779301713d5ed92eb03366a2d}\label{_region_c_n779_8c_ac127b19779301713d5ed92eb03366a2d}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Channels\+Default\+Mask@{Channels\+Default\+Mask}}
+\index{Channels\+Default\+Mask@{Channels\+Default\+Mask}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Channels\+Default\+Mask}{ChannelsDefaultMask}}
+{\footnotesize\ttfamily uint16\+\_\+t Channels\+Default\+Mask\mbox{[}\mbox{\hyperlink{_region_u_s915_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Lo\+Ra\+Mac channels default mask 
+
+Region\+C\+N779.\+c 파일의 62 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_region_c_n779_8c_a2188957b5ca6af8092154d7ccbfa5757}\label{_region_c_n779_8c_a2188957b5ca6af8092154d7ccbfa5757}} 
+\index{Region\+C\+N779.\+c@{Region\+C\+N779.\+c}!Channels\+Mask@{Channels\+Mask}}
+\index{Channels\+Mask@{Channels\+Mask}!Region\+C\+N779.\+c@{Region\+C\+N779.\+c}}
+\subsubsection{\texorpdfstring{Channels\+Mask}{ChannelsMask}}
+{\footnotesize\ttfamily uint16\+\_\+t Channels\+Mask\mbox{[}\mbox{\hyperlink{_region_u_s915_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Lo\+Ra\+Mac channels mask 
+
+Region\+C\+N779.\+c 파일의 57 번째 라인에서 정의되었습니다.
+

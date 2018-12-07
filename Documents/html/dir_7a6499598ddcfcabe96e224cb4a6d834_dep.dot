@@ -1,0 +1,13 @@
+digraph "Projects" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_7a6499598ddcfcabe96e224cb4a6d834 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_7a6499598ddcfcabe96e224cb4a6d834.html"];
+    dir_7a6499598ddcfcabe96e224cb4a6d834 [shape=plaintext label="Projects"];
+    dir_2d5c189dde566096c30f6275caec84be [shape=box label="DockingStation" color="red" fillcolor="white" style="filled" URL="dir_2d5c189dde566096c30f6275caec84be.html"];
+  }
+  dir_878635d2ccdb6aa6ab3ba685c8bd0903 [shape=box label="LoraLib" fillcolor="white" style="filled" color="red" URL="dir_878635d2ccdb6aa6ab3ba685c8bd0903.html"];
+  dir_878635d2ccdb6aa6ab3ba685c8bd0903->dir_2d5c189dde566096c30f6275caec84be [headlabel="10", labeldistance=1.5 headhref="dir_000003_000014.html"];
+  dir_2d5c189dde566096c30f6275caec84be->dir_878635d2ccdb6aa6ab3ba685c8bd0903 [headlabel="10", labeldistance=1.5 headhref="dir_000014_000003.html"];
+}

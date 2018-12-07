@@ -1,0 +1,15 @@
+digraph "TimerGetElapsedTime"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node50 [label="TimerGetElapsedTime",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node50 -> Node51 [color="midnightblue",fontsize="10",style="solid"];
+  Node51 [label="HW_RTC_GetTimerValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gad0d80bf1ac3a9704f4b4b9d672f38daa",tooltip="Get the RTC timer value "];
+  Node51 -> Node52 [color="midnightblue",fontsize="10",style="solid"];
+  Node52 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gaf81b8dc866a5c7b125355b55e3953387",tooltip="get current time from calendar in ticks "];
+  Node50 -> Node53 [color="midnightblue",fontsize="10",style="solid"];
+  Node53 [label="HW_RTC_ms2Tick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gab105bfcf0c8b346a1b20b158b8f8a86e",tooltip="converts time in ms to time in ticks "];
+  Node50 -> Node54 [color="midnightblue",fontsize="10",style="solid"];
+  Node54 [label="HW_RTC_Tick2ms",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga8db2858eda135777ea359e20185c8524",tooltip="converts time in ticks to time in ms "];
+}

@@ -177,6 +177,10 @@ static TimerTime_t HW_RTC_GetCalendarValue(  RTC_DateTypeDef* RTC_DateStruct, RT
 
 /* Exported functions ---------------------------------------------------------*/
 
+/** @defgroup LorySDK_RTC_Functions RTC Functions
+  * @{
+  */ 
+
 /*!
  * @brief Initializes the RTC timer
  * @note The timer is based on the RTC
@@ -618,6 +622,9 @@ static TimerTime_t HW_RTC_GetCalendarValue( RTC_DateTypeDef* RTC_DateStruct, RTC
   return( calendarValue );
 }
 
+/**
+  * @}
+  */ 
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
 

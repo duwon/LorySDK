@@ -1,0 +1,19 @@
+digraph "LoraLib/Core" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_878635d2ccdb6aa6ab3ba685c8bd0903 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="LoraLib" fontname="Helvetica", fontsize="10", URL="dir_878635d2ccdb6aa6ab3ba685c8bd0903.html"]
+  dir_be08e10af6292c91f505dec4ce846625 [shape=box, label="Core", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_be08e10af6292c91f505dec4ce846625.html"];
+  }
+  dir_cdca82bb84e552384c32423304757306 [shape=box label="Utilities" URL="dir_cdca82bb84e552384c32423304757306.html"];
+  dir_7a6499598ddcfcabe96e224cb4a6d834 [shape=box label="Projects" fillcolor="white" style="filled" color="red" URL="dir_7a6499598ddcfcabe96e224cb4a6d834.html"];
+  dir_dcc3f3a2ef60cd59876b06f488984cc7 [shape=box label="Mac" fillcolor="white" style="filled" color="red" URL="dir_dcc3f3a2ef60cd59876b06f488984cc7.html"];
+  dir_be08e10af6292c91f505dec4ce846625->dir_cdca82bb84e552384c32423304757306 [headlabel="2", labeldistance=1.5 headhref="dir_000007_000012.html"];
+  dir_be08e10af6292c91f505dec4ce846625->dir_7a6499598ddcfcabe96e224cb4a6d834 [headlabel="3", labeldistance=1.5 headhref="dir_000007_000013.html"];
+  dir_be08e10af6292c91f505dec4ce846625->dir_dcc3f3a2ef60cd59876b06f488984cc7 [headlabel="5", labeldistance=1.5 headhref="dir_000007_000009.html"];
+  dir_cdca82bb84e552384c32423304757306->dir_7a6499598ddcfcabe96e224cb4a6d834 [headlabel="5", labeldistance=1.5 headhref="dir_000012_000013.html"];
+  dir_7a6499598ddcfcabe96e224cb4a6d834->dir_cdca82bb84e552384c32423304757306 [headlabel="7", labeldistance=1.5 headhref="dir_000013_000012.html"];
+  dir_dcc3f3a2ef60cd59876b06f488984cc7->dir_cdca82bb84e552384c32423304757306 [headlabel="6", labeldistance=1.5 headhref="dir_000009_000012.html"];
+  dir_dcc3f3a2ef60cd59876b06f488984cc7->dir_7a6499598ddcfcabe96e224cb4a6d834 [headlabel="2", labeldistance=1.5 headhref="dir_000009_000013.html"];
+}

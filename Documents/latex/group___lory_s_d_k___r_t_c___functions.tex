@@ -1,0 +1,928 @@
+\hypertarget{group___lory_s_d_k___r_t_c___functions}{}\section{R\+TC Functions}
+\label{group___lory_s_d_k___r_t_c___functions}\index{R\+T\+C Functions@{R\+T\+C Functions}}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga3021a4a33084812668411847ec35d71d}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the R\+TC timer \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga6eeed66a0970c9b0f48a7e2088b524f1}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em Configures the R\+TC timer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga3039d2d62291e76e72912133676433fd}{H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em calculates the wake up time between wake up and mcu start \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga62c900dca3a1beb9d4f2519664d3d274}{H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em returns the wake up time in us \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga254f9e5c17daff978fef15be01021c51}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout}} (void)
+\begin{DoxyCompactList}\small\item\em returns the wake up time in ticks \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gab105bfcf0c8b346a1b20b158b8f8a86e}{H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick}} (\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} time\+Micro\+Sec)
+\begin{DoxyCompactList}\small\item\em converts time in ms to time in ticks \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga8db2858eda135777ea359e20185c8524}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms}} (uint32\+\_\+t tick)
+\begin{DoxyCompactList}\small\item\em converts time in ticks to time in ms \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga09cec56d54c13de658fafdd003390771}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm}} (uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Set the alarm \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga7961116aa831950b62a413ecbbcfb02a}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer elapsed time since the last Alarm was set \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga227be06e4dc1332d46ff12519db183b5}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm}} (void)
+\begin{DoxyCompactList}\small\item\em Stop the Alarm \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gae8ae8ef64d3025701112d509285006d4}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em R\+TC I\+RQ Handler on the R\+TC Alarm \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gadad8cbf36cbe8a65bc1c70109146e307}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms}} (uint32\+\_\+t delay)
+\begin{DoxyCompactList}\small\item\em a delay of delay ms by polling R\+TC \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0a54228cfe8473d90b901ebd76de1d5}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context}} (void)
+\begin{DoxyCompactList}\small\item\em set Time Reference set also the R\+T\+C\+\_\+\+Date\+Struct and R\+T\+C\+\_\+\+Time\+Struct \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga1d964c4efab63ea6a4b4ba8f3773e5b0}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer Reference \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga38285b86b2811230b0a55416ce3c33c7}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em configure alarm at init \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga60703fcfc4abd73a2efc980e8bb6ad27}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Start\+Wake\+Up\+Alarm}} (uint32\+\_\+t timeout\+Value)
+\begin{DoxyCompactList}\small\item\em start wake up alarm \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gaf81b8dc866a5c7b125355b55e3953387}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Calendar\+Value}} (R\+T\+C\+\_\+\+Date\+Type\+Def $\ast$R\+T\+C\+\_\+\+Date\+Struct, R\+T\+C\+\_\+\+Time\+Type\+Def $\ast$R\+T\+C\+\_\+\+Time\+Struct)
+\begin{DoxyCompactList}\small\item\em get current time from calendar in ticks \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_gadad8cbf36cbe8a65bc1c70109146e307}\label{group___lory_s_d_k___r_t_c___functions_gadad8cbf36cbe8a65bc1c70109146e307}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms()}{HW\_RTC\_DelayMs()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{delay }\end{DoxyParamCaption})}
+
+
+
+a delay of delay ms by polling R\+TC 
+
+
+\begin{DoxyParams}{매개변수}
+{\em delay} & in ms \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 422 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+423 \{
+424   \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{TimerTime\_t}} delayValue = 0;
+425   \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{TimerTime\_t}} timeout = 0;
+426 
+427   delayValue = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gab105bfcf0c8b346a1b20b158b8f8a86e}{HW\_RTC\_ms2Tick}}( delay );
+428 
+429   \textcolor{comment}{/* Wait delay ms */}
+430   timeout = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}( );
+431   \textcolor{keywordflow}{while}( ( ( \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}( ) - timeout ) ) < delayValue )
+432   \{
+433     \_\_NOP( );
+434   \}
+435 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 0
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_gaf81b8dc866a5c7b125355b55e3953387}\label{group___lory_s_d_k___r_t_c___functions_gaf81b8dc866a5c7b125355b55e3953387}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Calendar\+Value@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Calendar\+Value}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Calendar\+Value@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Calendar\+Value}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Calendar\+Value()}{HW\_RTC\_GetCalendarValue()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Calendar\+Value (\begin{DoxyParamCaption}\item[{R\+T\+C\+\_\+\+Date\+Type\+Def $\ast$}]{R\+T\+C\+\_\+\+Date\+Struct,  }\item[{R\+T\+C\+\_\+\+Time\+Type\+Def $\ast$}]{R\+T\+C\+\_\+\+Time\+Struct }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+get current time from calendar in ticks 
+
+
+\begin{DoxyParams}{매개변수}
+{\em pointer} & to R\+T\+C\+\_\+\+Date\+Struct \\
+\hline
+{\em pointer} & to R\+T\+C\+\_\+\+Time\+Struct \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em time} & in ticks \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 586 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+587 \{
+588   \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{TimerTime\_t}} calendarValue = 0;
+589   uint32\_t first\_read;
+590   uint32\_t correction;
+591   
+592   \textcolor{comment}{/* Get Time and Date*/}
+593   HAL\_RTC\_GetTime( &\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}, RTC\_TimeStruct, RTC\_FORMAT\_BIN );
+594  
+595    \textcolor{comment}{/* make sure it is correct due to asynchronus nature of RTC*/}
+596   \textcolor{keywordflow}{do} \{
+597     first\_read = RTC\_TimeStruct->SubSeconds;
+598     HAL\_RTC\_GetDate( &\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}, RTC\_DateStruct, RTC\_FORMAT\_BIN );
+599     HAL\_RTC\_GetTime( &\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}, RTC\_TimeStruct, RTC\_FORMAT\_BIN );
+600   \} \textcolor{keywordflow}{while} (first\_read != RTC\_TimeStruct->SubSeconds);
+601  
+602   \textcolor{comment}{/* calculte amount of elapsed days since 01/01/2000 */}
+603   calendarValue= \mbox{\hyperlink{hw__rtc_8c_a4b8edf0de0e3751031e15807e73a6f8d}{DIVC}}( (\mbox{\hyperlink{hw__rtc_8c_a6d40c3278339e38839749bf1704a60cc}{DAYS\_IN\_YEAR}}*3 + \mbox{\hyperlink{hw__rtc_8c_a05269e1eafff6166976130c476ebf507}{DAYS\_IN\_LEAP\_YEAR}})* 
+      RTC\_DateStruct->Year , 4);
+604 
+605   correction = ( (RTC\_DateStruct->Year % 4) == 0 ) ? 
+      \mbox{\hyperlink{hw__rtc_8c_a86ee3d0452a7ab1bcfcf3fed56876304}{DAYS\_IN\_MONTH\_CORRECTION\_LEAP}} : 
+      \mbox{\hyperlink{hw__rtc_8c_adff7c2bae448b6eb8630747d64bdbe06}{DAYS\_IN\_MONTH\_CORRECTION\_NORM}} ;
+606  
+607   calendarValue +=( \mbox{\hyperlink{hw__rtc_8c_a4b8edf0de0e3751031e15807e73a6f8d}{DIVC}}( (RTC\_DateStruct->Month-1)*(30+31) ,2 ) - (((correction>> ((RTC\_DateStruct->
+      Month-1)*2) )&0x3)));
+608 
+609   calendarValue += (RTC\_DateStruct->Date -1);
+610   
+611   \textcolor{comment}{/* convert from days to seconds */}
+612   calendarValue *= \mbox{\hyperlink{hw__rtc_8c_acf2bd16d86f1ebf56e73b38adeafadf3}{SECONDS\_IN\_1DAY}}; 
+613 
+614   calendarValue += ( ( uint32\_t )RTC\_TimeStruct->Seconds + 
+615                      ( ( uint32\_t )RTC\_TimeStruct->Minutes * \mbox{\hyperlink{hw__rtc_8c_a6bb348cf6aae2bfed39e2edd5ce0383a}{SECONDS\_IN\_1MINUTE}} ) +
+616                      ( ( uint32\_t )RTC\_TimeStruct->Hours * \mbox{\hyperlink{hw__rtc_8c_a49351bd0651fa15e2a33dd94ba993002}{SECONDS\_IN\_1HOUR}} ) ) ;
+617 
+618 
+619   
+620   calendarValue = (calendarValue<<\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\_PREDIV\_S}}) + ( \mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{PREDIV\_S}} - RTC\_TimeStruct->SubSeconds);
+621 
+622   \textcolor{keywordflow}{return}( calendarValue );
+623 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga62c900dca3a1beb9d4f2519664d3d274}\label{group___lory_s_d_k___r_t_c___functions_ga62c900dca3a1beb9d4f2519664d3d274}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time@{H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time@{H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time()}{HW\_RTC\_getMcuWakeUpTime()}}
+{\footnotesize\ttfamily int16\+\_\+t H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+returns the wake up time in us 
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em wake} & up time in ticks \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 280 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+281 \{
+282   \textcolor{keywordflow}{return} \mbox{\hyperlink{hw__rtc_8c_a0d22e01d28d80ec5b4630686aec08e81}{McuWakeUpTimeCal}};
+283 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga254f9e5c17daff978fef15be01021c51}\label{group___lory_s_d_k___r_t_c___functions_ga254f9e5c17daff978fef15be01021c51}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout()}{HW\_RTC\_GetMinimumTimeout()}}
+{\footnotesize\ttfamily uint32\+\_\+t H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+returns the wake up time in ticks 
+
+Return the minimum timeout the R\+TC is able to handle
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em wake} & up time in ticks \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 290 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+291 \{
+292   \textcolor{keywordflow}{return}( \mbox{\hyperlink{hw__rtc_8c_a9d5b1559769779b90b2a3de5757e0038}{MIN\_ALARM\_DELAY}} );
+293 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga1d964c4efab63ea6a4b4ba8f3773e5b0}\label{group___lory_s_d_k___r_t_c___functions_ga1d964c4efab63ea6a4b4ba8f3773e5b0}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context()}{HW\_RTC\_GetTimerContext()}}
+{\footnotesize\ttfamily uint32\+\_\+t H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the R\+TC timer Reference 
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em Timer} & Value in Ticks \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 453 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+454 \{
+455   \textcolor{keywordflow}{return} (uint32\_t) \mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{RtcTimerContext}}.\mbox{\hyperlink{struct_rtc_timer_context__t_a05f48439ba05c77e6271805cff79760f}{Rtc\_Time}};
+456 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga7961116aa831950b62a413ecbbcfb02a}\label{group___lory_s_d_k___r_t_c___functions_ga7961116aa831950b62a413ecbbcfb02a}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time()}{HW\_RTC\_GetTimerElapsedTime()}}
+{\footnotesize\ttfamily uint32\+\_\+t H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the R\+TC timer elapsed time since the last Alarm was set 
+
+Get the R\+TC timer elapsed time since the last Reference was set
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em R\+TC} & Elapsed time in ticks \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 348 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+349 \{
+350   RTC\_TimeTypeDef RTC\_TimeStruct;
+351   RTC\_DateTypeDef RTC\_DateStruct;
+352   
+353   \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{TimerTime\_t}} CalendarValue = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gaf81b8dc866a5c7b125355b55e3953387}{HW\_RTC\_GetCalendarValue}}(&RTC\_DateStruct, &
+      RTC\_TimeStruct );
+354 
+355   \textcolor{keywordflow}{return}( ( uint32\_t )( CalendarValue - \mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{RtcTimerContext}}.\mbox{\hyperlink{struct_rtc_timer_context__t_a05f48439ba05c77e6271805cff79760f}{Rtc\_Time}} ));
+356 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}\label{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value()}{HW\_RTC\_GetTimerValue()}}
+{\footnotesize\ttfamily uint32\+\_\+t H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the R\+TC timer value 
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em R\+TC} & Timer value in ticks \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 363 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+364 \{
+365   RTC\_TimeTypeDef RTC\_TimeStruct;
+366   RTC\_DateTypeDef RTC\_DateStruct;
+367   
+368   uint32\_t CalendarValue = (uint32\_t) \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gaf81b8dc866a5c7b125355b55e3953387}{HW\_RTC\_GetCalendarValue}}(&RTC\_DateStruct, &
+      RTC\_TimeStruct );
+369 
+370   \textcolor{keywordflow}{return}( CalendarValue );
+371 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga3021a4a33084812668411847ec35d71d}\label{group___lory_s_d_k___r_t_c___functions_ga3021a4a33084812668411847ec35d71d}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Init@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Init}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Init@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Init}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Init()}{HW\_RTC\_Init()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+R\+T\+C\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the R\+TC timer 
+
+\begin{DoxyNote}{주의}
+The timer is based on the R\+TC 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 190 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+191 \{
+192   \textcolor{keywordflow}{if}( \mbox{\hyperlink{hw__rtc_8c_a0cc445fee543cc142d19757f0f583a21}{HW\_RTC\_Initalized}} == \textcolor{keyword}{false} )
+193   \{
+194     \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga6eeed66a0970c9b0f48a7e2088b524f1}{HW\_RTC\_SetConfig}}( );
+195     \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga38285b86b2811230b0a55416ce3c33c7}{HW\_RTC\_SetAlarmConfig}}( );
+196     \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0a54228cfe8473d90b901ebd76de1d5}{HW\_RTC\_SetTimerContext}}( );
+197     \mbox{\hyperlink{hw__rtc_8c_a0cc445fee543cc142d19757f0f583a21}{HW\_RTC\_Initalized}} = \textcolor{keyword}{true};
+198   \}
+199 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_gae8ae8ef64d3025701112d509285006d4}\label{group___lory_s_d_k___r_t_c___functions_gae8ae8ef64d3025701112d509285006d4}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler()}{HW\_RTC\_IrqHandler()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+R\+TC I\+RQ Handler on the R\+TC Alarm 
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 393 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+394 \{
+395   RTC\_HandleTypeDef* hrtc=&\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}};
+396   \textcolor{comment}{/* enable low power at irq*/}
+397   \mbox{\hyperlink{low__power__manager_8c_ac8a0ff787d7d417b9e1f0697a1d5fd6d}{LPM\_SetStopMode}}(\mbox{\hyperlink{utilities__conf_8h_acfda396432d3ff49786067a2271b5946aa8deb6dd6bf7825a5cd8fb7f727dc860}{LPM\_RTC\_Id}} , \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57a6fdf7ef1f943192b3507c74647d6d46c}{LPM\_Enable}} );
+398   
+399   \textcolor{comment}{/* Clear the EXTI's line Flag for RTC Alarm */}
+400   \_\_HAL\_RTC\_ALARM\_EXTI\_CLEAR\_FLAG();
+401   
+402     \textcolor{comment}{/* Get the AlarmA interrupt source enable status */}
+403   \textcolor{keywordflow}{if}(\_\_HAL\_RTC\_ALARM\_GET\_IT\_SOURCE(hrtc, RTC\_IT\_ALRA) != RESET)
+404   \{
+405     \textcolor{comment}{/* Get the pending status of the AlarmA Interrupt */}
+406     \textcolor{keywordflow}{if}(\_\_HAL\_RTC\_ALARM\_GET\_FLAG(hrtc, RTC\_FLAG\_ALRAF) != RESET)
+407     \{
+408       \textcolor{comment}{/* Clear the AlarmA interrupt pending bit */}
+409       \_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG(hrtc, RTC\_FLAG\_ALRAF); 
+410       \textcolor{comment}{/* AlarmA callback */}
+411       \mbox{\hyperlink{stm32l1xx__hal__msp_8c_a11aeff83fd498cddbed3bcddcf017e0a}{HAL\_RTC\_AlarmAEventCallback}}(hrtc);
+412     \}
+413   \}
+414 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 12
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_gab105bfcf0c8b346a1b20b158b8f8a86e}\label{group___lory_s_d_k___r_t_c___functions_gab105bfcf0c8b346a1b20b158b8f8a86e}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick@{H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick@{H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick()}{HW\_RTC\_ms2Tick()}}
+{\footnotesize\ttfamily uint32\+\_\+t H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}}}]{time\+Micro\+Sec }\end{DoxyParamCaption})}
+
+
+
+converts time in ms to time in ticks 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & time in milliseconds \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em returns} & time in timer ticks \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 300 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+301 \{
+302 \textcolor{comment}{/*return( ( timeMicroSec / RTC\_ALARM\_TIME\_BASE ) ); */}
+303   \textcolor{keywordflow}{return} ( uint32\_t) ( ( ((uint64\_t)timeMicroSec) * \mbox{\hyperlink{hw__rtc_8c_a661badebd0364de871f2cd2d0b185c55}{CONV\_DENOM}} ) / 
+      \mbox{\hyperlink{hw__rtc_8c_a8dbad53513ea56467eac68d23a1baf49}{CONV\_NUMER}} );
+304 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 13
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga09cec56d54c13de658fafdd003390771}\label{group___lory_s_d_k___r_t_c___functions_ga09cec56d54c13de658fafdd003390771}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm()}{HW\_RTC\_SetAlarm()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Set the alarm 
+
+\begin{DoxyNote}{주의}
+The alarm is set at now (read in this funtion) + timeout 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em timeout} & Duration of the Timer ticks \\
+\hline
+\end{DoxyParams}
+
+
+hw\+\_\+rtc.\+c 파일의 322 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+323 \{
+324   \textcolor{comment}{/* we don't go in Low Power mode for timeout below MIN\_ALARM\_DELAY */}
+325   \textcolor{keywordflow}{if} ( (\mbox{\hyperlink{hw__rtc_8c_a9d5b1559769779b90b2a3de5757e0038}{MIN\_ALARM\_DELAY}} + \mbox{\hyperlink{hw__rtc_8c_a0d22e01d28d80ec5b4630686aec08e81}{McuWakeUpTimeCal}} ) < ((timeout - 
+      \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga7961116aa831950b62a413ecbbcfb02a}{HW\_RTC\_GetTimerElapsedTime}}( ) )) )
+326   \{
+327     \mbox{\hyperlink{low__power__manager_8c_ac8a0ff787d7d417b9e1f0697a1d5fd6d}{LPM\_SetStopMode}}(\mbox{\hyperlink{utilities__conf_8h_acfda396432d3ff49786067a2271b5946aa8deb6dd6bf7825a5cd8fb7f727dc860}{LPM\_RTC\_Id}} , \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57a6fdf7ef1f943192b3507c74647d6d46c}{LPM\_Enable}} );
+328   \}
+329   \textcolor{keywordflow}{else}
+330   \{
+331     \mbox{\hyperlink{low__power__manager_8c_ac8a0ff787d7d417b9e1f0697a1d5fd6d}{LPM\_SetStopMode}}(\mbox{\hyperlink{utilities__conf_8h_acfda396432d3ff49786067a2271b5946aa8deb6dd6bf7825a5cd8fb7f727dc860}{LPM\_RTC\_Id}} , \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57aa998d97d7b8eb3b6234e5b69fce1f375}{LPM\_Disable}} );
+332   \}
+333 
+334   \textcolor{comment}{/*In case stop mode is required */}
+335   \textcolor{keywordflow}{if}( \mbox{\hyperlink{low__power__manager_8c_ae9107e412181f10977b724c346cebd45}{LPM\_GetMode}}() == \mbox{\hyperlink{low__power__manager_8h_acb31a7bf1fa8d421505bf31482304507a6cee594fb7226567d00054894c0b4c39}{LPM\_StopMode}} )
+336   \{
+337     timeout = timeout -  \mbox{\hyperlink{hw__rtc_8c_a0d22e01d28d80ec5b4630686aec08e81}{McuWakeUpTimeCal}};
+338   \}
+339 
+340   \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga60703fcfc4abd73a2efc980e8bb6ad27}{HW\_RTC\_StartWakeUpAlarm}}( timeout );
+341 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 14
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 15
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga38285b86b2811230b0a55416ce3c33c7}\label{group___lory_s_d_k___r_t_c___functions_ga38285b86b2811230b0a55416ce3c33c7}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm\+Config@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm\+Config}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm\+Config@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm\+Config}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm\+Config()}{HW\_RTC\_SetAlarmConfig()}}
+{\footnotesize\ttfamily static void H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+configure alarm at init 
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 464 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+465 \{
+466   HAL\_RTC\_DeactivateAlarm(&\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}, RTC\_ALARM\_A);
+467 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 16
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga6eeed66a0970c9b0f48a7e2088b524f1}\label{group___lory_s_d_k___r_t_c___functions_ga6eeed66a0970c9b0f48a7e2088b524f1}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Config@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Config}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Config@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Config}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Config()}{HW\_RTC\_SetConfig()}}
+{\footnotesize\ttfamily static void H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Configures the R\+TC timer 
+
+\begin{DoxyNote}{주의}
+The timer is based on the R\+TC 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 207 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+208 \{
+209   RTC\_TimeTypeDef RTC\_TimeStruct;
+210   RTC\_DateTypeDef RTC\_DateStruct;
+211 
+212   \mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}.Instance = RTC;
+213 
+214   \mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}.Init.HourFormat = RTC\_HOURFORMAT\_24;
+215   \mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}.Init.AsynchPrediv = \mbox{\hyperlink{hw__rtc_8c_a21e79e29c67db99f090e9996df18e2c7}{PREDIV\_A}}; \textcolor{comment}{/* RTC\_ASYNCH\_PREDIV; */}
+216   \mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}.Init.SynchPrediv = \mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{PREDIV\_S}}; \textcolor{comment}{/* RTC\_SYNCH\_PREDIV; */}
+217   \mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}.Init.OutPut = \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a0bb14714587a8eed5f490f2afc95f083}{RTC\_OUTPUT}};
+218   \mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}.Init.OutPutPolarity = RTC\_OUTPUT\_POLARITY\_HIGH;
+219   \mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}.Init.OutPutType = RTC\_OUTPUT\_TYPE\_OPENDRAIN;
+220 
+221   HAL\_RTC\_Init( &\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}} );
+222   
+223   \textcolor{comment}{/*Monday 1st January 2016*/}
+224   RTC\_DateStruct.Year = 0;
+225   RTC\_DateStruct.Month = RTC\_MONTH\_JANUARY;
+226   RTC\_DateStruct.Date = 1;
+227   RTC\_DateStruct.WeekDay = RTC\_WEEKDAY\_MONDAY;
+228   HAL\_RTC\_SetDate(&\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}} , &RTC\_DateStruct, RTC\_FORMAT\_BIN);
+229   
+230   \textcolor{comment}{/*at 0:0:0*/}
+231   RTC\_TimeStruct.Hours = 0;
+232   RTC\_TimeStruct.Minutes = 0;
+233 
+234   RTC\_TimeStruct.Seconds = 0;
+235   RTC\_TimeStruct.TimeFormat = 0;
+236   RTC\_TimeStruct.SubSeconds = 0;
+237   RTC\_TimeStruct.StoreOperation = RTC\_DAYLIGHTSAVING\_NONE;
+238   RTC\_TimeStruct.DayLightSaving = RTC\_STOREOPERATION\_RESET;
+239   
+240   HAL\_RTC\_SetTime(&\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}} , &RTC\_TimeStruct, RTC\_FORMAT\_BIN);
+241   
+242  \textcolor{comment}{/*Enable Direct Read of the calendar registers (not through Shadow) */}
+243   HAL\_RTCEx\_EnableBypassShadow(&\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}});
+244 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 17
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga3039d2d62291e76e72912133676433fd}\label{group___lory_s_d_k___r_t_c___functions_ga3039d2d62291e76e72912133676433fd}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time@{H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time@{H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time()}{HW\_RTC\_setMcuWakeUpTime()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+calculates the wake up time between wake up and mcu start 
+
+\begin{DoxyNote}{주의}
+resulotion in R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+SE in timer ticks 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 252 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+253 \{
+254   RTC\_TimeTypeDef RTC\_TimeStruct;
+255   RTC\_DateTypeDef RTC\_DateStruct;
+256   
+257   \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{TimerTime\_t}} now, hit;
+258   int16\_t McuWakeUpTime;
+259   
+260   \textcolor{keywordflow}{if} ((\mbox{\hyperlink{hw__rtc_8c_a9851a50ef4baf062b775d0cbd7c117b5}{McuWakeUpTimeInitialized}} == \textcolor{keyword}{false}) &&
+261       ( HAL\_NVIC\_GetPendingIRQ( RTC\_Alarm\_IRQn ) == 1))
+262   \{ \textcolor{comment}{/* warning: works ok if now is below 30 days}
+263 \textcolor{comment}{       it is ok since it's done once at first alarm wake-up*/}
+264     \mbox{\hyperlink{hw__rtc_8c_a9851a50ef4baf062b775d0cbd7c117b5}{McuWakeUpTimeInitialized}} = \textcolor{keyword}{true};
+265     now = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gaf81b8dc866a5c7b125355b55e3953387}{HW\_RTC\_GetCalendarValue}}( &RTC\_DateStruct, &RTC\_TimeStruct );
+266 
+267     HAL\_RTC\_GetAlarm(&\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}, &\mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}, RTC\_ALARM\_A, 
+      RTC\_FORMAT\_BIN );
+268     hit = \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.Seconds+
+269           60*(\mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.Minutes+
+270           60*(\mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.Hours+
+271           24*(\mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmDateWeekDay)));
+272     hit = ( hit << \mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\_PREDIV\_S}} ) + (\mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{PREDIV\_S}} - 
+      \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.SubSeconds);
+273       
+274     McuWakeUpTime = (int16\_t) ((now-hit));
+275     \mbox{\hyperlink{hw__rtc_8c_a0d22e01d28d80ec5b4630686aec08e81}{McuWakeUpTimeCal}} += McuWakeUpTime;
+276     \mbox{\hyperlink{debug_8h_abb51675b100c68d4729acede2f0cc7b6}{DBG\_PRINTF}}(\textcolor{stringliteral}{"Cal=%d, %d\(\backslash\)n\(\backslash\)r"},\mbox{\hyperlink{hw__rtc_8c_a0d22e01d28d80ec5b4630686aec08e81}{McuWakeUpTimeCal}}, McuWakeUpTime);
+277   \}
+278 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 18
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_gad0a54228cfe8473d90b901ebd76de1d5}\label{group___lory_s_d_k___r_t_c___functions_gad0a54228cfe8473d90b901ebd76de1d5}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context()}{HW\_RTC\_SetTimerContext()}}
+{\footnotesize\ttfamily uint32\+\_\+t H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+set Time Reference set also the R\+T\+C\+\_\+\+Date\+Struct and R\+T\+C\+\_\+\+Time\+Struct 
+
+Set the R\+TC timer Reference
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em Timer} & Value \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 442 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+443 \{
+444   \mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{RtcTimerContext}}.\mbox{\hyperlink{struct_rtc_timer_context__t_a05f48439ba05c77e6271805cff79760f}{Rtc\_Time}} = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gaf81b8dc866a5c7b125355b55e3953387}{HW\_RTC\_GetCalendarValue}}( &
+      \mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{RtcTimerContext}}.\mbox{\hyperlink{struct_rtc_timer_context__t_a50959be607deb58750ba2eb2afaa7f46}{RTC\_Calndr\_Date}}, &\mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{RtcTimerContext}}.
+      \mbox{\hyperlink{struct_rtc_timer_context__t_a605148ba4720b20b9ba2445a090a64d4}{RTC\_Calndr\_Time}} );
+445   \textcolor{keywordflow}{return} ( uint32\_t ) \mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{RtcTimerContext}}.\mbox{\hyperlink{struct_rtc_timer_context__t_a05f48439ba05c77e6271805cff79760f}{Rtc\_Time}};
+446 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 19
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 20
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga60703fcfc4abd73a2efc980e8bb6ad27}\label{group___lory_s_d_k___r_t_c___functions_ga60703fcfc4abd73a2efc980e8bb6ad27}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Start\+Wake\+Up\+Alarm@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Start\+Wake\+Up\+Alarm}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Start\+Wake\+Up\+Alarm@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Start\+Wake\+Up\+Alarm}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Start\+Wake\+Up\+Alarm()}{HW\_RTC\_StartWakeUpAlarm()}}
+{\footnotesize\ttfamily static void H\+W\+\_\+\+R\+T\+C\+\_\+\+Start\+Wake\+Up\+Alarm (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timeout\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+start wake up alarm 
+
+\begin{DoxyNote}{주의}
+alarm in Rtc\+Timer\+Context.\+Rtc\+\_\+\+Time + timeout\+Value 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em timeout\+Value} & in ticks \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 475 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+476 \{
+477   uint16\_t rtcAlarmSubSeconds = 0;
+478   uint16\_t rtcAlarmSeconds = 0;
+479   uint16\_t rtcAlarmMinutes = 0;
+480   uint16\_t rtcAlarmHours = 0;
+481   uint16\_t rtcAlarmDays = 0;
+482   RTC\_TimeTypeDef RTC\_TimeStruct = \mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{RtcTimerContext}}.
+      \mbox{\hyperlink{struct_rtc_timer_context__t_a605148ba4720b20b9ba2445a090a64d4}{RTC\_Calndr\_Time}};
+483   RTC\_DateTypeDef RTC\_DateStruct = \mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{RtcTimerContext}}.
+      \mbox{\hyperlink{struct_rtc_timer_context__t_a50959be607deb58750ba2eb2afaa7f46}{RTC\_Calndr\_Date}};
+484 
+485   \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga227be06e4dc1332d46ff12519db183b5}{HW\_RTC\_StopAlarm}}( );
+486 
+487   
+488   \textcolor{comment}{/*reverse counter */}
+489   rtcAlarmSubSeconds =  \mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{PREDIV\_S}} - RTC\_TimeStruct.SubSeconds;
+490   rtcAlarmSubSeconds += ( timeoutValue & \mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{PREDIV\_S}});
+491   \textcolor{comment}{/* convert timeout  to seconds */}
+492   timeoutValue >>= \mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\_PREDIV\_S}};  \textcolor{comment}{/* convert timeout  in seconds */}
+493   
+494   \textcolor{comment}{/*convert microsecs to RTC format and add to 'Now' */}
+495   rtcAlarmDays =  RTC\_DateStruct.Date;
+496   \textcolor{keywordflow}{while} (timeoutValue >= \mbox{\hyperlink{hw__rtc_8c_acf2bd16d86f1ebf56e73b38adeafadf3}{SECONDS\_IN\_1DAY}})
+497   \{
+498     timeoutValue -= \mbox{\hyperlink{hw__rtc_8c_acf2bd16d86f1ebf56e73b38adeafadf3}{SECONDS\_IN\_1DAY}};
+499     rtcAlarmDays++;
+500   \}
+501   
+502   \textcolor{comment}{/* calc hours */}
+503   rtcAlarmHours = RTC\_TimeStruct.Hours;
+504   \textcolor{keywordflow}{while} (timeoutValue >= \mbox{\hyperlink{hw__rtc_8c_a49351bd0651fa15e2a33dd94ba993002}{SECONDS\_IN\_1HOUR}})
+505   \{
+506     timeoutValue -= \mbox{\hyperlink{hw__rtc_8c_a49351bd0651fa15e2a33dd94ba993002}{SECONDS\_IN\_1HOUR}};
+507     rtcAlarmHours++;
+508   \}
+509   
+510   \textcolor{comment}{/* calc minutes */}
+511   rtcAlarmMinutes = RTC\_TimeStruct.Minutes;
+512   \textcolor{keywordflow}{while} (timeoutValue >= \mbox{\hyperlink{hw__rtc_8c_a6bb348cf6aae2bfed39e2edd5ce0383a}{SECONDS\_IN\_1MINUTE}})
+513   \{
+514     timeoutValue -= \mbox{\hyperlink{hw__rtc_8c_a6bb348cf6aae2bfed39e2edd5ce0383a}{SECONDS\_IN\_1MINUTE}};
+515     rtcAlarmMinutes++;
+516   \}
+517    
+518   \textcolor{comment}{/* calc seconds */}
+519   rtcAlarmSeconds =  RTC\_TimeStruct.Seconds + timeoutValue;
+520 
+521   \textcolor{comment}{/***** correct for modulo********/}
+522   \textcolor{keywordflow}{while} (rtcAlarmSubSeconds >= (\mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{PREDIV\_S}}+1))
+523   \{
+524     rtcAlarmSubSeconds -= (\mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{PREDIV\_S}}+1);
+525     rtcAlarmSeconds++;
+526   \}
+527   
+528   \textcolor{keywordflow}{while} (rtcAlarmSeconds >= \mbox{\hyperlink{hw__rtc_8c_a6bb348cf6aae2bfed39e2edd5ce0383a}{SECONDS\_IN\_1MINUTE}})
+529   \{ 
+530     rtcAlarmSeconds -= \mbox{\hyperlink{hw__rtc_8c_a6bb348cf6aae2bfed39e2edd5ce0383a}{SECONDS\_IN\_1MINUTE}};
+531     rtcAlarmMinutes++;
+532   \}
+533 
+534   \textcolor{keywordflow}{while} (rtcAlarmMinutes >= \mbox{\hyperlink{hw__rtc_8c_ae81e1b62f553cf38d5272acf84475f19}{MINUTES\_IN\_1HOUR}})
+535   \{
+536     rtcAlarmMinutes -= \mbox{\hyperlink{hw__rtc_8c_ae81e1b62f553cf38d5272acf84475f19}{MINUTES\_IN\_1HOUR}};
+537     rtcAlarmHours++;
+538   \}
+539   
+540   \textcolor{keywordflow}{while} (rtcAlarmHours >= \mbox{\hyperlink{hw__rtc_8c_acbe201bd95d21f649360773cb20ef4ff}{HOURS\_IN\_1DAY}})
+541   \{
+542     rtcAlarmHours -= \mbox{\hyperlink{hw__rtc_8c_acbe201bd95d21f649360773cb20ef4ff}{HOURS\_IN\_1DAY}};
+543     rtcAlarmDays++;
+544   \}
+545 
+546   \textcolor{keywordflow}{if}( RTC\_DateStruct.Year % 4 == 0 ) 
+547   \{
+548     \textcolor{keywordflow}{if}( rtcAlarmDays > \mbox{\hyperlink{hw__rtc_8c_aa0bc1427a9adc71a783c0b19e30f0384}{DaysInMonthLeapYear}}[ RTC\_DateStruct.Month - 1 ] )    
+549     \{
+550       rtcAlarmDays = rtcAlarmDays % \mbox{\hyperlink{hw__rtc_8c_aa0bc1427a9adc71a783c0b19e30f0384}{DaysInMonthLeapYear}}[ RTC\_DateStruct.Month - 1 ];
+551     \}
+552   \}
+553   \textcolor{keywordflow}{else}
+554   \{
+555     \textcolor{keywordflow}{if}( rtcAlarmDays > \mbox{\hyperlink{hw__rtc_8c_a158d7c21ca90ace02ea9a6345f722689}{DaysInMonth}}[ RTC\_DateStruct.Month - 1 ] )    
+556     \{   
+557       rtcAlarmDays = rtcAlarmDays % \mbox{\hyperlink{hw__rtc_8c_a158d7c21ca90ace02ea9a6345f722689}{DaysInMonth}}[ RTC\_DateStruct.Month - 1 ];
+558     \}
+559   \}
+560 
+561   \textcolor{comment}{/* Set RTC\_AlarmStructure with calculated values*/}
+562   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.SubSeconds = \mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{PREDIV\_S}}-rtcAlarmSubSeconds;
+563   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmSubSecondMask  = 
+      \mbox{\hyperlink{hw__rtc_8c_a4edfe64a5628c3b0b6e41d234443dce2}{HW\_RTC\_ALARMSUBSECONDMASK}}; 
+564   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.Seconds = rtcAlarmSeconds;
+565   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.Minutes = rtcAlarmMinutes;
+566   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.Hours   = rtcAlarmHours;
+567   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmDateWeekDay    = ( uint8\_t )rtcAlarmDays;
+568   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.TimeFormat   = RTC\_TimeStruct.TimeFormat;
+569   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmDateWeekDaySel   = RTC\_ALARMDATEWEEKDAYSEL\_DATE; 
+570   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmMask       = RTC\_ALARMMASK\_NONE;
+571   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.Alarm = RTC\_ALARM\_A;
+572   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.DayLightSaving = RTC\_DAYLIGHTSAVING\_NONE;
+573   \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}.AlarmTime.StoreOperation = RTC\_STOREOPERATION\_RESET;
+574   
+575   \textcolor{comment}{/* Set RTC\_Alarm */}
+576   HAL\_RTC\_SetAlarm\_IT( &\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}, &\mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{RTC\_AlarmStructure}}, RTC\_FORMAT\_BIN );
+577 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 21
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 22
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga227be06e4dc1332d46ff12519db183b5}\label{group___lory_s_d_k___r_t_c___functions_ga227be06e4dc1332d46ff12519db183b5}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm()}{HW\_RTC\_StopAlarm()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the Alarm 
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 378 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+379 \{
+380   \textcolor{comment}{/* Disable the Alarm A interrupt */}
+381   HAL\_RTC\_DeactivateAlarm(&\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}, RTC\_ALARM\_A );
+382   \textcolor{comment}{/* Clear RTC Alarm Flag */}
+383   \_\_HAL\_RTC\_ALARM\_CLEAR\_FLAG( &\mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{RtcHandle}}, RTC\_FLAG\_ALRAF);
+384   \textcolor{comment}{/* Clear the EXTI's line Flag for RTC Alarm */}  
+385   \_\_HAL\_RTC\_ALARM\_EXTI\_CLEAR\_FLAG();
+386 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 23
+\mbox{\Hypertarget{group___lory_s_d_k___r_t_c___functions_ga8db2858eda135777ea359e20185c8524}\label{group___lory_s_d_k___r_t_c___functions_ga8db2858eda135777ea359e20185c8524}} 
+\index{R\+T\+C Functions@{R\+T\+C Functions}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms}!R\+T\+C Functions@{R\+T\+C Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms()}{HW\_RTC\_Tick2ms()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{tick }\end{DoxyParamCaption})}
+
+
+
+converts time in ticks to time in ms 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & time in timer ticks \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em returns} & time in milliseconds \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+rtc.\+c 파일의 311 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+312 \{
+313 \textcolor{comment}{/*return( ( timeMicroSec * RTC\_ALARM\_TIME\_BASE ) ); */}
+314   \textcolor{keywordflow}{return}  ( ( (uint64\_t)( tick )* \mbox{\hyperlink{hw__rtc_8c_a8dbad53513ea56467eac68d23a1baf49}{CONV\_NUMER}} ) / \mbox{\hyperlink{hw__rtc_8c_a661badebd0364de871f2cd2d0b185c55}{CONV\_DENOM}} );
+315 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 24

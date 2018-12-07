@@ -1,0 +1,745 @@
+\hypertarget{main_8c}{}\section{Projects/\+Docking\+Station/src/main.c 파일 참조}
+\label{main_8c}\index{Projects/\+Docking\+Station/src/main.\+c@{Projects/\+Docking\+Station/src/main.\+c}}
+{\ttfamily \#include \char`\"{}hw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lora.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+Server.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}version.\+h\char`\"{}}\newline
+main.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a4b6167750da3890cbcc4141474aee3d8}{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+UT}}~0x0
+\item 
+\#define \mbox{\hyperlink{main_8c_a103aca896be68e475bb345459fbd3590}{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+UT}}~0x1
+\item 
+\#define \mbox{\hyperlink{main_8c_aadb8b74e86df948a84680aa6fd18ec80}{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY}}~0x68
+\item 
+\#define \mbox{\hyperlink{main_8c_ab659c352b93faeb7476fb34a9efb2330}{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+RE}}~0x67
+\item 
+\#define \mbox{\hyperlink{main_8c_a2aaa83d29bd85a613bd2550a458496f9}{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+B\+A\+R\+O\+M\+E\+T\+ER}}~0x73
+\item 
+\#define \mbox{\hyperlink{main_8c_a08058eb76dec59323856929f2cc6ffd7}{L\+P\+P\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT}}~99
+\item 
+\#define \mbox{\hyperlink{main_8c_a3cd10c4fa035293a39e0e2a10ecf3f34}{A\+P\+P\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}}~30000
+\item 
+\#define \mbox{\hyperlink{main_8c_a44e8c2fd95503afdcee5711f355941c3}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+S\+T\+A\+TE}}~\mbox{\hyperlink{lora_8h_adac4009d9987bc72cbd980c1cfed9d65}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON}}
+\item 
+\#define \mbox{\hyperlink{main_8c_a6b53dc00446f1927e9ab78659eb941b1}{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE}}~\mbox{\hyperlink{group___r_e_g_i_o_n_ga6c4ef966b4f3d5eb7597b087f2b97095}{D\+R\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{main_8c_aeaa33cf62bb1976e47fefbc1526a2bff}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT}}~2
+\item 
+\#define \mbox{\hyperlink{main_8c_aefc17c0f5cfb348f20d6bf70f54d42f5}{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+A\+SS}}~\mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6abfee35359a39adbacbc3f13eddc76cd0}{C\+L\+A\+S\+S\+\_\+C}}
+\item 
+\#define \mbox{\hyperlink{main_8c_a1baf489c13bd5f856d63321474d8009a}{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+M\+S\+G\+\_\+\+S\+T\+A\+TE}}~\mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG}}
+\item 
+\#define \mbox{\hyperlink{main_8c_ad68da80f74df53d59dda29ab77193067}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE}}~64
+\item 
+\#define \mbox{\hyperlink{main_8c_a1def767891c4b9d806e99a49c9426ca3}{B\+U\+T\+T\+O\+N\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}}~3000
+\item 
+\#define \mbox{\hyperlink{main_8c_a04406b4ef255ad68f97530a5031144cf}{L\+E\+D\+\_\+\+R\+D\+Y\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}}~1000
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{main_8c_af27dc6b9241a921349087a139ca57d1e}{On\+Button\+Timer\+Event}} (void)
+\item 
+static void \mbox{\hyperlink{main_8c_a57a758d5054f3e0648c080c33f5384c6}{On\+Led\+Timer\+Event}} (void)
+\item 
+static void \mbox{\hyperlink{main_8c_aa660732a6ebc018e235409094d603160}{On\+Tx\+Timer\+Event}} (void)
+\item 
+static void \mbox{\hyperlink{main_8c_af9b5cc17bd270c1734e3e6465b75f86f}{L\+O\+R\+A\+\_\+\+Rx\+Data}} (\mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{App\+Data}})
+\item 
+static void \mbox{\hyperlink{main_8c_a99d2e29a61a6f7dda81e6afcf4f35715}{L\+O\+R\+A\+\_\+\+Has\+Joined}} (void)
+\item 
+static void \mbox{\hyperlink{main_8c_abf14859b334f10d0a38ee8489bee4bc1}{L\+O\+R\+A\+\_\+\+Confirm\+Class}} (\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}} Class)
+\item 
+static void \mbox{\hyperlink{main_8c_a0bc8d6aec6bbd336bb8fd19cedd8a8b3}{L\+O\+R\+A\+\_\+\+Tx\+Needed}} (void)
+\item 
+static void \mbox{\hyperlink{main_8c_ac96d7cf33dce81bb57a803bb3839d458}{Send}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{main_8c_a305934a393e7a02a06c6a10b690d5a1a}{H\+W\+\_\+\+Get\+Battery\+Level}} (void)
+\begin{DoxyCompactList}\small\item\em This function return the battery level \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{main_8c_a2c48402327a47204302755e2dbf4f5bb}{H\+W\+\_\+\+Get\+Temperature\+Level}} (void)
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\begin{DoxyCompactList}\small\item\em Main program \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a829116a51f1db1a72ebd1120f60719d5}{\+\_\+\+Error\+\_\+\+Handler}} (char $\ast$file, int line)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{main_8c_a050fbd964ae3c5e4348a22e133f93470}{App\+Data\+Buff}} \mbox{[}\mbox{\hyperlink{main_8c_ad68da80f74df53d59dda29ab77193067}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+static \mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}} \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{App\+Data}} =\{ \mbox{\hyperlink{main_8c_a050fbd964ae3c5e4348a22e133f93470}{App\+Data\+Buff}}, 0 ,0 \}
+\item 
+static \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} \mbox{\hyperlink{main_8c_afc47b4f8eb49931aec48669e0769bcf6}{Button\+Timer}}
+\item 
+static \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} \mbox{\hyperlink{main_8c_a33a5884d9039cad0395b1a54dfffb3e6}{Led\+Timer}}
+\item 
+static \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} \mbox{\hyperlink{main_8c_a9c90f18306538aefe4077a35e2b8b133}{Tx\+Timer}}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{main_8c_a1d62fed92515172bb6d8a5694987ff52}{App\+Led\+State\+On}} = R\+E\+S\+ET
+\item 
+static \mbox{\hyperlink{lora_8h_a6d9d62812a66a54510e9dc9f3f7a2b5e}{Lo\+Ra\+Main\+Callback\+\_\+t}} \mbox{\hyperlink{main_8c_a79936f3677c8247e073e64561bb5b832}{Lo\+Ra\+Main\+Callbacks}}
+\item 
+static \mbox{\hyperlink{lora_8h_a34fefd9575c41bc86d86d7d740a38fe8}{Lo\+Ra\+Param\+\_\+t}} \mbox{\hyperlink{main_8c_a36e11dc118d0a0d89c57d65274e67771}{Lo\+Ra\+Param\+Init}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+\begin{DoxyAuthor}{작성자}
+Duwon Jung 
+\end{DoxyAuthor}
+\begin{DoxyDate}{날짜}
+2018-\/11-\/08  Main 
+\end{DoxyDate}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{main_8c_a3cd10c4fa035293a39e0e2a10ecf3f34}\label{main_8c_a3cd10c4fa035293a39e0e2a10ecf3f34}} 
+\index{main.\+c@{main.\+c}!A\+P\+P\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE@{A\+P\+P\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}}
+\index{A\+P\+P\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE@{A\+P\+P\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{A\+P\+P\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}{APP\_TX\_DUTYCYCLE}}
+{\footnotesize\ttfamily \#define A\+P\+P\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE~30000}
+
+data transmission duty cycle. 60s, value in \mbox{[}ms\mbox{]}. 
+
+main.\+c 파일의 42 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a1def767891c4b9d806e99a49c9426ca3}\label{main_8c_a1def767891c4b9d806e99a49c9426ca3}} 
+\index{main.\+c@{main.\+c}!B\+U\+T\+T\+O\+N\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE@{B\+U\+T\+T\+O\+N\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}}
+\index{B\+U\+T\+T\+O\+N\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE@{B\+U\+T\+T\+O\+N\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{B\+U\+T\+T\+O\+N\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}{BUTTON\_DUTYCYCLE}}
+{\footnotesize\ttfamily \#define B\+U\+T\+T\+O\+N\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE~3000}
+
+
+
+main.\+c 파일의 52 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a04406b4ef255ad68f97530a5031144cf}\label{main_8c_a04406b4ef255ad68f97530a5031144cf}} 
+\index{main.\+c@{main.\+c}!L\+E\+D\+\_\+\+R\+D\+Y\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE@{L\+E\+D\+\_\+\+R\+D\+Y\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}}
+\index{L\+E\+D\+\_\+\+R\+D\+Y\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE@{L\+E\+D\+\_\+\+R\+D\+Y\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+E\+D\+\_\+\+R\+D\+Y\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}{LED\_RDY\_DUTYCYCLE}}
+{\footnotesize\ttfamily \#define L\+E\+D\+\_\+\+R\+D\+Y\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE~1000}
+
+
+
+main.\+c 파일의 53 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a44e8c2fd95503afdcee5711f355941c3}\label{main_8c_a44e8c2fd95503afdcee5711f355941c3}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+S\+T\+A\+TE@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+S\+T\+A\+TE}}
+\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+S\+T\+A\+TE@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+S\+T\+A\+TE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+S\+T\+A\+TE}{LORAWAN\_ADR\_STATE}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+S\+T\+A\+TE~\mbox{\hyperlink{lora_8h_adac4009d9987bc72cbd980c1cfed9d65}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON}}}
+
+
+
+main.\+c 파일의 43 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_ad68da80f74df53d59dda29ab77193067}\label{main_8c_ad68da80f74df53d59dda29ab77193067}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE}}
+\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE}{LORAWAN\_APP\_DATA\_BUFF\_SIZE}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE~64}
+
+User application data buffer size 
+
+main.\+c 파일의 48 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_aeaa33cf62bb1976e47fefbc1526a2bff}\label{main_8c_aeaa33cf62bb1976e47fefbc1526a2bff}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT}}
+\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT}{LORAWAN\_APP\_PORT}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT~2}
+
+Lo\+Ra\+W\+AN application port. do not use 224. 
+
+main.\+c 파일의 45 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_aefc17c0f5cfb348f20d6bf70f54d42f5}\label{main_8c_aefc17c0f5cfb348f20d6bf70f54d42f5}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+A\+SS@{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+A\+SS}}
+\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+A\+SS@{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+A\+SS}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+A\+SS}{LORAWAN\_DEFAULT\_CLASS}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+A\+SS~\mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6abfee35359a39adbacbc3f13eddc76cd0}{C\+L\+A\+S\+S\+\_\+C}}}
+
+Lo\+Ra\+W\+AN default end\+Node class 
+
+main.\+c 파일의 46 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a1baf489c13bd5f856d63321474d8009a}\label{main_8c_a1baf489c13bd5f856d63321474d8009a}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+M\+S\+G\+\_\+\+S\+T\+A\+TE@{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+M\+S\+G\+\_\+\+S\+T\+A\+TE}}
+\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+M\+S\+G\+\_\+\+S\+T\+A\+TE@{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+M\+S\+G\+\_\+\+S\+T\+A\+TE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+M\+S\+G\+\_\+\+S\+T\+A\+TE}{LORAWAN\_DEFAULT\_CONFIRM\_MSG\_STATE}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+O\+N\+F\+I\+R\+M\+\_\+\+M\+S\+G\+\_\+\+S\+T\+A\+TE~\mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG}}}
+
+Lo\+Ra\+W\+AN default confirm state 
+
+main.\+c 파일의 47 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a6b53dc00446f1927e9ab78659eb941b1}\label{main_8c_a6b53dc00446f1927e9ab78659eb941b1}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE@{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE}}
+\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE@{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE}{LORAWAN\_DEFAULT\_DATA\_RATE}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+W\+A\+N\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+\_\+\+R\+A\+TE~\mbox{\hyperlink{group___r_e_g_i_o_n_ga6c4ef966b4f3d5eb7597b087f2b97095}{D\+R\+\_\+0}}}
+
+Lo\+Ra\+W\+AN Default data Rate Data Rate 
+
+main.\+c 파일의 44 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a08058eb76dec59323856929f2cc6ffd7}\label{main_8c_a08058eb76dec59323856929f2cc6ffd7}} 
+\index{main.\+c@{main.\+c}!L\+P\+P\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT@{L\+P\+P\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT}}
+\index{L\+P\+P\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT@{L\+P\+P\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+P\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT}{LPP\_APP\_PORT}}
+{\footnotesize\ttfamily \#define L\+P\+P\+\_\+\+A\+P\+P\+\_\+\+P\+O\+RT~99}
+
+
+
+main.\+c 파일의 40 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a2aaa83d29bd85a613bd2550a458496f9}\label{main_8c_a2aaa83d29bd85a613bd2550a458496f9}} 
+\index{main.\+c@{main.\+c}!L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+B\+A\+R\+O\+M\+E\+T\+ER@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+B\+A\+R\+O\+M\+E\+T\+ER}}
+\index{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+B\+A\+R\+O\+M\+E\+T\+ER@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+B\+A\+R\+O\+M\+E\+T\+ER}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+B\+A\+R\+O\+M\+E\+T\+ER}{LPP\_DATATYPE\_BAROMETER}}
+{\footnotesize\ttfamily \#define L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+B\+A\+R\+O\+M\+E\+T\+ER~0x73}
+
+
+
+main.\+c 파일의 39 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a4b6167750da3890cbcc4141474aee3d8}\label{main_8c_a4b6167750da3890cbcc4141474aee3d8}} 
+\index{main.\+c@{main.\+c}!L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+UT@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+UT}}
+\index{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+UT@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+UT}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+UT}{LPP\_DATATYPE\_DIGITAL\_INPUT}}
+{\footnotesize\ttfamily \#define L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+UT~0x0}
+
+
+
+main.\+c 파일의 35 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a103aca896be68e475bb345459fbd3590}\label{main_8c_a103aca896be68e475bb345459fbd3590}} 
+\index{main.\+c@{main.\+c}!L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+UT@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+UT}}
+\index{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+UT@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+UT}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+UT}{LPP\_DATATYPE\_DIGITAL\_OUTPUT}}
+{\footnotesize\ttfamily \#define L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+UT~0x1}
+
+
+
+main.\+c 파일의 36 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_aadb8b74e86df948a84680aa6fd18ec80}\label{main_8c_aadb8b74e86df948a84680aa6fd18ec80}} 
+\index{main.\+c@{main.\+c}!L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY}}
+\index{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY}{LPP\_DATATYPE\_HUMIDITY}}
+{\footnotesize\ttfamily \#define L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+H\+U\+M\+I\+D\+I\+TY~0x68}
+
+
+
+main.\+c 파일의 37 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_ab659c352b93faeb7476fb34a9efb2330}\label{main_8c_ab659c352b93faeb7476fb34a9efb2330}} 
+\index{main.\+c@{main.\+c}!L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+RE@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+RE}}
+\index{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+RE@{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+RE}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+RE}{LPP\_DATATYPE\_TEMPERATURE}}
+{\footnotesize\ttfamily \#define L\+P\+P\+\_\+\+D\+A\+T\+A\+T\+Y\+P\+E\+\_\+\+T\+E\+M\+P\+E\+R\+A\+T\+U\+RE~0x67}
+
+
+
+main.\+c 파일의 38 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{main_8c_a829116a51f1db1a72ebd1120f60719d5}\label{main_8c_a829116a51f1db1a72ebd1120f60719d5}} 
+\index{main.\+c@{main.\+c}!\+\_\+\+Error\+\_\+\+Handler@{\+\_\+\+Error\+\_\+\+Handler}}
+\index{\+\_\+\+Error\+\_\+\+Handler@{\+\_\+\+Error\+\_\+\+Handler}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+Error\+\_\+\+Handler()}{\_Error\_Handler()}}
+{\footnotesize\ttfamily void \+\_\+\+Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{char $\ast$}]{file,  }\item[{int}]{line }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em file} & The file name as string. \\
+\hline
+{\em line} & The line in file as a number. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+main.\+c 파일의 290 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+291 \{
+292     \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"ERROR"});
+293   \textcolor{comment}{/* User can add his own implementation to report the HAL error return state */}
+294   \textcolor{keywordflow}{while}(1)
+295   \{
+296   \}
+297   \textcolor{comment}{/* USER CODE END Error\_Handler\_Debug */}
+298 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a305934a393e7a02a06c6a10b690d5a1a}\label{main_8c_a305934a393e7a02a06c6a10b690d5a1a}} 
+\index{main.\+c@{main.\+c}!H\+W\+\_\+\+Get\+Battery\+Level@{H\+W\+\_\+\+Get\+Battery\+Level}}
+\index{H\+W\+\_\+\+Get\+Battery\+Level@{H\+W\+\_\+\+Get\+Battery\+Level}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Get\+Battery\+Level()}{HW\_GetBatteryLevel()}}
+{\footnotesize\ttfamily uint8\+\_\+t H\+W\+\_\+\+Get\+Battery\+Level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function return the battery level 
+
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em the} & battery level 1 (very low) to 254 (fully charged) \\
+\hline
+\end{DoxyRetVals}
+
+
+main.\+c 파일의 271 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+272 \{
+273   uint8\_t batteryLevel = 100;
+274   \textcolor{keywordflow}{return} batteryLevel;
+275 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_a2c48402327a47204302755e2dbf4f5bb}\label{main_8c_a2c48402327a47204302755e2dbf4f5bb}} 
+\index{main.\+c@{main.\+c}!H\+W\+\_\+\+Get\+Temperature\+Level@{H\+W\+\_\+\+Get\+Temperature\+Level}}
+\index{H\+W\+\_\+\+Get\+Temperature\+Level@{H\+W\+\_\+\+Get\+Temperature\+Level}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Get\+Temperature\+Level()}{HW\_GetTemperatureLevel()}}
+{\footnotesize\ttfamily uint16\+\_\+t H\+W\+\_\+\+Get\+Temperature\+Level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+main.\+c 파일의 277 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+278 \{
+279 
+280   uint16\_t temperatureDegreeC = 30;
+281   
+282   \textcolor{keywordflow}{return} (uint16\_t) temperatureDegreeC;
+283 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{main_8c_abf14859b334f10d0a38ee8489bee4bc1}\label{main_8c_abf14859b334f10d0a38ee8489bee4bc1}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+\_\+\+Confirm\+Class@{L\+O\+R\+A\+\_\+\+Confirm\+Class}}
+\index{L\+O\+R\+A\+\_\+\+Confirm\+Class@{L\+O\+R\+A\+\_\+\+Confirm\+Class}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Confirm\+Class()}{LORA\_ConfirmClass()}}
+{\footnotesize\ttfamily static void L\+O\+R\+A\+\_\+\+Confirm\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}}}]{Class }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+call back when Lo\+Ra end\+Node has just switch the class 
+
+main.\+c 파일의 246 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+247 \{
+248   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"%d switch to class %c done\(\backslash\)n\(\backslash\)r"}, \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}(),\textcolor{stringliteral}{"ABC"}[Class] );
+249 
+250   \textcolor{comment}{/*Optionnal*/}
+251   \textcolor{comment}{/*informs the server that switch has occurred ASAP*/}
+252   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_a52d0e53a3b318f8c75791c051159efb0}{BuffSize}} = 0;
+253   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_a4b93121f04819fbab96346736fa720a9}{Port}} = \mbox{\hyperlink{main_8c_aeaa33cf62bb1976e47fefbc1526a2bff}{LORAWAN\_APP\_PORT}};
+254   
+255   \mbox{\hyperlink{lora_8c_a343d8f2ddf9b21cb458e4a3e09076b5e}{LORA\_send}}( &\mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}, \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{LORAWAN\_UNCONFIRMED\_MSG}});
+256 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{main_8c_a99d2e29a61a6f7dda81e6afcf4f35715}\label{main_8c_a99d2e29a61a6f7dda81e6afcf4f35715}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+\_\+\+Has\+Joined@{L\+O\+R\+A\+\_\+\+Has\+Joined}}
+\index{L\+O\+R\+A\+\_\+\+Has\+Joined@{L\+O\+R\+A\+\_\+\+Has\+Joined}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Has\+Joined()}{LORA\_HasJoined()}}
+{\footnotesize\ttfamily static void L\+O\+R\+A\+\_\+\+Has\+Joined (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+call back when Lo\+Ra end\+Node has just joined 
+
+main.\+c 파일의 145 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+146 \{
+147   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"%d JOINED\(\backslash\)n\(\backslash\)r"}, \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}() );
+148   \mbox{\hyperlink{lora_8c_a547a61266532616789a8a34655e04e30}{LORA\_RequestClass}}( \mbox{\hyperlink{main_8c_aefc17c0f5cfb348f20d6bf70f54d42f5}{LORAWAN\_DEFAULT\_CLASS}} );
+149 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{main_8c_af9b5cc17bd270c1734e3e6465b75f86f}\label{main_8c_af9b5cc17bd270c1734e3e6465b75f86f}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+\_\+\+Rx\+Data@{L\+O\+R\+A\+\_\+\+Rx\+Data}}
+\index{L\+O\+R\+A\+\_\+\+Rx\+Data@{L\+O\+R\+A\+\_\+\+Rx\+Data}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Rx\+Data()}{LORA\_RxData()}}
+{\footnotesize\ttfamily static void L\+O\+R\+A\+\_\+\+Rx\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}} $\ast$}]{App\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+call back when Lo\+Ra end\+Node has received a frame 
+
+main.\+c 파일의 187 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+188 \{
+189 
+190   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"%d PACKET RECEIVED ON PORT %d\(\backslash\)n\(\backslash\)r"}, \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}(), 
+      \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_a4b93121f04819fbab96346736fa720a9}{Port}});
+191 
+192   \textcolor{keywordflow}{switch} (\mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_a4b93121f04819fbab96346736fa720a9}{Port}})
+193   \{
+194     \textcolor{keywordflow}{case} 3:
+195             \textcolor{comment}{/*this port switches the class*/}
+196             \textcolor{keywordflow}{if}( \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_a52d0e53a3b318f8c75791c051159efb0}{BuffSize}} == 1 )
+197             \{
+198                 \textcolor{keywordflow}{switch} (  \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[0] )
+199                 \{
+200                     \textcolor{keywordflow}{case} 0:
+201                     \{
+202                         \mbox{\hyperlink{lora_8c_a547a61266532616789a8a34655e04e30}{LORA\_RequestClass}}(\mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6a307ee33f71385819abc142fe4f23c3bb}{CLASS\_A}});
+203                         \textcolor{keywordflow}{break};
+204                     \}
+205                     \textcolor{keywordflow}{case} 1:
+206                     \{
+207                         \mbox{\hyperlink{lora_8c_a547a61266532616789a8a34655e04e30}{LORA\_RequestClass}}(\mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6a10611f4c3b970c7d722c98eaea63ddd5}{CLASS\_B}});
+208                         \textcolor{keywordflow}{break};
+209                     \}
+210                     \textcolor{keywordflow}{case} 2:
+211                     \{
+212                         \mbox{\hyperlink{lora_8c_a547a61266532616789a8a34655e04e30}{LORA\_RequestClass}}(\mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6abfee35359a39adbacbc3f13eddc76cd0}{CLASS\_C}});
+213                         \textcolor{keywordflow}{break};
+214                     \}
+215                     \textcolor{keywordflow}{default}:
+216                         \textcolor{keywordflow}{break};
+217                 \}
+218             \}
+219             \textcolor{keywordflow}{break};
+220     \textcolor{keywordflow}{case} \mbox{\hyperlink{main_8c_aeaa33cf62bb1976e47fefbc1526a2bff}{LORAWAN\_APP\_PORT}}:
+221             \textcolor{keywordflow}{if}( \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_a52d0e53a3b318f8c75791c051159efb0}{BuffSize}} == 1 )
+222             \{
+223                 \mbox{\hyperlink{main_8c_a1d62fed92515172bb6d8a5694987ff52}{AppLedStateOn}} = \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[0] & 0x01;
+224                 \textcolor{keywordflow}{if} ( \mbox{\hyperlink{main_8c_a1d62fed92515172bb6d8a5694987ff52}{AppLedStateOn}} == RESET )
+225                 \{
+226                     \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"%d LED OFF\(\backslash\)n\(\backslash\)r"}, \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}() );
+227                     \mbox{\hyperlink{time_server_8c_a8ae899c4e8a9abf49d825d6959aa6bcb}{TimerStop}}(&\mbox{\hyperlink{main_8c_a33a5884d9039cad0395b1a54dfffb3e6}{LedTimer}});
+228                 \}
+229                 \textcolor{keywordflow}{else}
+230                 \{
+231                     \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"%d LED TOGGLE ON\(\backslash\)n\(\backslash\)r"}, \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}() );
+232                     \mbox{\hyperlink{main_8c_a57a758d5054f3e0648c080c33f5384c6}{OnLedTimerEvent}}();
+233                 \}
+234             \}
+235     \textcolor{keywordflow}{default}:
+236             \textcolor{keywordflow}{break};
+237   \}
+238 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{main_8c_a0bc8d6aec6bbd336bb8fd19cedd8a8b3}\label{main_8c_a0bc8d6aec6bbd336bb8fd19cedd8a8b3}} 
+\index{main.\+c@{main.\+c}!L\+O\+R\+A\+\_\+\+Tx\+Needed@{L\+O\+R\+A\+\_\+\+Tx\+Needed}}
+\index{L\+O\+R\+A\+\_\+\+Tx\+Needed@{L\+O\+R\+A\+\_\+\+Tx\+Needed}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Tx\+Needed()}{LORA\_TxNeeded()}}
+{\footnotesize\ttfamily static void L\+O\+R\+A\+\_\+\+Tx\+Needed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+call back when server needs end\+Node to send a frame 
+
+main.\+c 파일의 258 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+259 \{
+260   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_a52d0e53a3b318f8c75791c051159efb0}{BuffSize}} = 0;
+261   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_a4b93121f04819fbab96346736fa720a9}{Port}} = \mbox{\hyperlink{main_8c_aeaa33cf62bb1976e47fefbc1526a2bff}{LORAWAN\_APP\_PORT}};
+262   \mbox{\hyperlink{lora_8c_a343d8f2ddf9b21cb458e4a3e09076b5e}{LORA\_send}}( &\mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}, \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{LORAWAN\_UNCONFIRMED\_MSG}});
+263     \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"%d LORA\_TxNeeded"}, \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}() );
+264 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Main program 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+main.\+c 파일의 99 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+100 \{
+101 
+102   HAL\_Init( ); \textcolor{comment}{// STM32 HAL library initialization}
+103   \mbox{\hyperlink{hw__msp_8h_a70af21c671abfcc773614a9a4f63d920}{SystemClock\_Config}}( ); \textcolor{comment}{// Configure the system clock}
+104     
+105     \mbox{\hyperlink{hw__msp_8h_a40660973b9d57d78bc7e6e56a7a1bf42}{HW\_Init}}();
+106     
+107     \textcolor{comment}{/* Configure the Lora Stack*/}
+108   \mbox{\hyperlink{lora_8c_a60e6c21550fcaf1cadb87454348046ad}{LORA\_Init}}( &\mbox{\hyperlink{main_8c_a79936f3677c8247e073e64561bb5b832}{LoRaMainCallbacks}}, &\mbox{\hyperlink{main_8c_a36e11dc118d0a0d89c57d65274e67771}{LoRaParamInit}});
+109   
+110   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"VERSION: %X\(\backslash\)n\(\backslash\)r"}, \mbox{\hyperlink{version_8h_a1c6d5de492ac61ad29aec7aa9a436bbf}{VERSION}});
+111   
+112   \mbox{\hyperlink{lora_8c_a3671e53923a80ddbbd43e56342fd94fa}{LORA\_Join}}();
+113 
+114     \mbox{\hyperlink{time_server_8c_a7e41004e0cd39ba368fb7d83c2cfd550}{TimerInit}}( &\mbox{\hyperlink{main_8c_afc47b4f8eb49931aec48669e0769bcf6}{ButtonTimer}}, \mbox{\hyperlink{main_8c_af27dc6b9241a921349087a139ca57d1e}{OnButtonTimerEvent}} );
+115     \mbox{\hyperlink{time_server_8c_ad56c30124de6deefb3e32bbee2a4ba46}{TimerSetValue}}( &\mbox{\hyperlink{main_8c_afc47b4f8eb49931aec48669e0769bcf6}{ButtonTimer}},  \mbox{\hyperlink{main_8c_a1def767891c4b9d806e99a49c9426ca3}{BUTTON\_DUTYCYCLE}}); 
+116     \mbox{\hyperlink{main_8c_af27dc6b9241a921349087a139ca57d1e}{OnButtonTimerEvent}}();
+117     
+118     \mbox{\hyperlink{time_server_8c_a7e41004e0cd39ba368fb7d83c2cfd550}{TimerInit}}( &\mbox{\hyperlink{main_8c_a33a5884d9039cad0395b1a54dfffb3e6}{LedTimer}}, \mbox{\hyperlink{main_8c_a57a758d5054f3e0648c080c33f5384c6}{OnLedTimerEvent}} );
+119     \mbox{\hyperlink{time_server_8c_ad56c30124de6deefb3e32bbee2a4ba46}{TimerSetValue}}( &\mbox{\hyperlink{main_8c_a33a5884d9039cad0395b1a54dfffb3e6}{LedTimer}}, \mbox{\hyperlink{main_8c_a04406b4ef255ad68f97530a5031144cf}{LED\_RDY\_DUTYCYCLE}}); 
+120     \mbox{\hyperlink{main_8c_a57a758d5054f3e0648c080c33f5384c6}{OnLedTimerEvent}}();
+121     
+122     \mbox{\hyperlink{time_server_8c_a7e41004e0cd39ba368fb7d83c2cfd550}{TimerInit}}( &\mbox{\hyperlink{main_8c_a9c90f18306538aefe4077a35e2b8b133}{TxTimer}}, \mbox{\hyperlink{main_8c_aa660732a6ebc018e235409094d603160}{OnTxTimerEvent}} );
+123     \mbox{\hyperlink{time_server_8c_ad56c30124de6deefb3e32bbee2a4ba46}{TimerSetValue}}( &\mbox{\hyperlink{main_8c_a9c90f18306538aefe4077a35e2b8b133}{TxTimer}},  \mbox{\hyperlink{main_8c_a3cd10c4fa035293a39e0e2a10ecf3f34}{APP\_TX\_DUTYCYCLE}}); 
+124     \mbox{\hyperlink{main_8c_aa660732a6ebc018e235409094d603160}{OnTxTimerEvent}}(); 
+125     
+126   \textcolor{keywordflow}{while}(1)
+127   \{
+128 
+129   \}
+130 
+131 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{main_8c_af27dc6b9241a921349087a139ca57d1e}\label{main_8c_af27dc6b9241a921349087a139ca57d1e}} 
+\index{main.\+c@{main.\+c}!On\+Button\+Timer\+Event@{On\+Button\+Timer\+Event}}
+\index{On\+Button\+Timer\+Event@{On\+Button\+Timer\+Event}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{On\+Button\+Timer\+Event()}{OnButtonTimerEvent()}}
+{\footnotesize\ttfamily static void On\+Button\+Timer\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Button timer callback function 
+
+main.\+c 파일의 133 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+134 \{
+135     \mbox{\hyperlink{time_server_8c_acd2c1f05aa1976f3bbedd389c8710a78}{TimerStart}}( &\mbox{\hyperlink{main_8c_afc47b4f8eb49931aec48669e0769bcf6}{ButtonTimer}});
+136     \textcolor{keywordflow}{if}(\mbox{\hyperlink{group___b_u_t_t_o_n___functions_ga8f0978b6cffda9c67266ddfdb3a0abf7}{BSP\_PB\_GetState}}(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a643816dfbad5c734fc25a29ce8d35bb1a6454f3dfd31c55a877e1b6684451d076}{BUTTON\_USER}})==GPIO\_PIN\_RESET) NVIC\_SystemReset();
+137 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\mbox{\Hypertarget{main_8c_a57a758d5054f3e0648c080c33f5384c6}\label{main_8c_a57a758d5054f3e0648c080c33f5384c6}} 
+\index{main.\+c@{main.\+c}!On\+Led\+Timer\+Event@{On\+Led\+Timer\+Event}}
+\index{On\+Led\+Timer\+Event@{On\+Led\+Timer\+Event}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{On\+Led\+Timer\+Event()}{OnLedTimerEvent()}}
+{\footnotesize\ttfamily static void On\+Led\+Timer\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+L\+ED timer callback function 
+
+main.\+c 파일의 139 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+140 \{
+141     \mbox{\hyperlink{time_server_8c_acd2c1f05aa1976f3bbedd389c8710a78}{TimerStart}}( &\mbox{\hyperlink{main_8c_a33a5884d9039cad0395b1a54dfffb3e6}{LedTimer}});
+142     \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a06cab35384151f62c5fd6ea37dbd2880}{LED\_Toggle}}(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecda1d7d2c7fd52cbef6c97fb5f45cda24f9}{LED\_RDY}});
+143 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+\mbox{\Hypertarget{main_8c_aa660732a6ebc018e235409094d603160}\label{main_8c_aa660732a6ebc018e235409094d603160}} 
+\index{main.\+c@{main.\+c}!On\+Tx\+Timer\+Event@{On\+Tx\+Timer\+Event}}
+\index{On\+Tx\+Timer\+Event@{On\+Tx\+Timer\+Event}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{On\+Tx\+Timer\+Event()}{OnTxTimerEvent()}}
+{\footnotesize\ttfamily static void On\+Tx\+Timer\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+TX timer callback function 
+
+main.\+c 파일의 240 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+241 \{
+242   \mbox{\hyperlink{time_server_8c_acd2c1f05aa1976f3bbedd389c8710a78}{TimerStart}}( &\mbox{\hyperlink{main_8c_a9c90f18306538aefe4077a35e2b8b133}{TxTimer}});
+243     \mbox{\hyperlink{main_8c_ac96d7cf33dce81bb57a803bb3839d458}{Send}}( );  
+244 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
+\mbox{\Hypertarget{main_8c_ac96d7cf33dce81bb57a803bb3839d458}\label{main_8c_ac96d7cf33dce81bb57a803bb3839d458}} 
+\index{main.\+c@{main.\+c}!Send@{Send}}
+\index{Send@{Send}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Send()}{Send()}}
+{\footnotesize\ttfamily static void Send (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Lo\+Ra end\+Node send request 
+
+main.\+c 파일의 151 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+152 \{
+153   uint16\_t pressure = 900;
+154   int16\_t temperature = 30;
+155   uint16\_t humidity = 80;
+156   
+157   \textcolor{keywordflow}{if} ( \mbox{\hyperlink{lora_8c_a4ee43844542608036b6a87a2650711ea}{LORA\_JoinStatus}} () != \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a93ff479e669b0c70884791ada2d4a377}{LORA\_SET}}) \textcolor{comment}{/*Not joined, try again later*/}
+158   \{
+159     \mbox{\hyperlink{lora_8c_a3671e53923a80ddbbd43e56342fd94fa}{LORA\_Join}}();
+160     \textcolor{keywordflow}{return};
+161   \}
+162 
+163   uint8\_t cchannel=0;
+164   uint32\_t i = 0;
+165 
+166   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_a4b93121f04819fbab96346736fa720a9}{Port}} = \mbox{\hyperlink{main_8c_a08058eb76dec59323856929f2cc6ffd7}{LPP\_APP\_PORT}};
+167 
+168   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = cchannel++;
+169   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = \mbox{\hyperlink{main_8c_a2aaa83d29bd85a613bd2550a458496f9}{LPP\_DATATYPE\_BAROMETER}};
+170   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = ( pressure >> 8 ) & 0xFF;
+171   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = pressure & 0xFF;
+172   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = cchannel++;
+173   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = \mbox{\hyperlink{main_8c_ab659c352b93faeb7476fb34a9efb2330}{LPP\_DATATYPE\_TEMPERATURE}}; 
+174   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = ( temperature >> 8 ) & 0xFF;
+175   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = temperature & 0xFF;
+176   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = cchannel++;
+177   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = \mbox{\hyperlink{main_8c_aadb8b74e86df948a84680aa6fd18ec80}{LPP\_DATATYPE\_HUMIDITY}};
+178   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}}[i++] = humidity & 0xFF;
+179 
+180   \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}.\mbox{\hyperlink{structlora___app_data__t_a52d0e53a3b318f8c75791c051159efb0}{BuffSize}} = i;
+181   
+182   \mbox{\hyperlink{lora_8c_a343d8f2ddf9b21cb458e4a3e09076b5e}{LORA\_send}}( &\mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}, \mbox{\hyperlink{main_8c_a1baf489c13bd5f856d63321474d8009a}{LORAWAN\_DEFAULT\_CONFIRM\_MSG\_STATE}});
+183   
+184 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 12
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 13
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}\label{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}} 
+\index{main.\+c@{main.\+c}!App\+Data@{App\+Data}}
+\index{App\+Data@{App\+Data}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{App\+Data}{AppData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}} App\+Data =\{ \mbox{\hyperlink{main_8c_a050fbd964ae3c5e4348a22e133f93470}{App\+Data\+Buff}}, 0 ,0 \}\hspace{0.3cm}{\ttfamily [static]}}
+
+User application data structure 
+
+main.\+c 파일의 50 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a050fbd964ae3c5e4348a22e133f93470}\label{main_8c_a050fbd964ae3c5e4348a22e133f93470}} 
+\index{main.\+c@{main.\+c}!App\+Data\+Buff@{App\+Data\+Buff}}
+\index{App\+Data\+Buff@{App\+Data\+Buff}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{App\+Data\+Buff}{AppDataBuff}}
+{\footnotesize\ttfamily uint8\+\_\+t App\+Data\+Buff\mbox{[}\mbox{\hyperlink{main_8c_ad68da80f74df53d59dda29ab77193067}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+P\+P\+\_\+\+D\+A\+T\+A\+\_\+\+B\+U\+F\+F\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+User application data 
+
+main.\+c 파일의 49 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a1d62fed92515172bb6d8a5694987ff52}\label{main_8c_a1d62fed92515172bb6d8a5694987ff52}} 
+\index{main.\+c@{main.\+c}!App\+Led\+State\+On@{App\+Led\+State\+On}}
+\index{App\+Led\+State\+On@{App\+Led\+State\+On}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{App\+Led\+State\+On}{AppLedStateOn}}
+{\footnotesize\ttfamily uint8\+\_\+t App\+Led\+State\+On = R\+E\+S\+ET\hspace{0.3cm}{\ttfamily [static]}}
+
+Specifies the state of the application L\+ED 
+
+main.\+c 파일의 76 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_afc47b4f8eb49931aec48669e0769bcf6}\label{main_8c_afc47b4f8eb49931aec48669e0769bcf6}} 
+\index{main.\+c@{main.\+c}!Button\+Timer@{Button\+Timer}}
+\index{Button\+Timer@{Button\+Timer}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Button\+Timer}{ButtonTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} Button\+Timer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+main.\+c 파일의 72 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a33a5884d9039cad0395b1a54dfffb3e6}\label{main_8c_a33a5884d9039cad0395b1a54dfffb3e6}} 
+\index{main.\+c@{main.\+c}!Led\+Timer@{Led\+Timer}}
+\index{Led\+Timer@{Led\+Timer}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Led\+Timer}{LedTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} Led\+Timer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+main.\+c 파일의 73 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a79936f3677c8247e073e64561bb5b832}\label{main_8c_a79936f3677c8247e073e64561bb5b832}} 
+\index{main.\+c@{main.\+c}!Lo\+Ra\+Main\+Callbacks@{Lo\+Ra\+Main\+Callbacks}}
+\index{Lo\+Ra\+Main\+Callbacks@{Lo\+Ra\+Main\+Callbacks}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Main\+Callbacks}{LoRaMainCallbacks}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lora_8h_a6d9d62812a66a54510e9dc9f3f7a2b5e}{Lo\+Ra\+Main\+Callback\+\_\+t}} Lo\+Ra\+Main\+Callbacks\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}
+= \{ \mbox{\hyperlink{main_8c_a305934a393e7a02a06c6a10b690d5a1a}{HW\_GetBatteryLevel}},
+                                                \mbox{\hyperlink{main_8c_a2c48402327a47204302755e2dbf4f5bb}{HW\_GetTemperatureLevel}},
+                                                \mbox{\hyperlink{hw__msp_8h_a5256ed7f349b8c486e4d493481605dc6}{HW\_GetUniqueId}},
+                                                \mbox{\hyperlink{hw__msp_8h_a3402576dea29f5b4f23d8ffed55e06c2}{HW\_GetRandomSeed}},
+                                                \mbox{\hyperlink{main_8c_af9b5cc17bd270c1734e3e6465b75f86f}{LORA\_RxData}},
+                                                \mbox{\hyperlink{main_8c_a99d2e29a61a6f7dda81e6afcf4f35715}{LORA\_HasJoined}},
+                                                \mbox{\hyperlink{main_8c_abf14859b334f10d0a38ee8489bee4bc1}{LORA\_ConfirmClass}},
+                                                \mbox{\hyperlink{main_8c_a0bc8d6aec6bbd336bb8fd19cedd8a8b3}{LORA\_TxNeeded}}\}
+\end{DoxyCode}
+
+
+main.\+c 파일의 79 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a36e11dc118d0a0d89c57d65274e67771}\label{main_8c_a36e11dc118d0a0d89c57d65274e67771}} 
+\index{main.\+c@{main.\+c}!Lo\+Ra\+Param\+Init@{Lo\+Ra\+Param\+Init}}
+\index{Lo\+Ra\+Param\+Init@{Lo\+Ra\+Param\+Init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Param\+Init}{LoRaParamInit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lora_8h_a34fefd9575c41bc86d86d7d740a38fe8}{Lo\+Ra\+Param\+\_\+t}} Lo\+Ra\+Param\+Init\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}
+= \{\mbox{\hyperlink{main_8c_a44e8c2fd95503afdcee5711f355941c3}{LORAWAN\_ADR\_STATE}},
+                                    \mbox{\hyperlink{main_8c_a6b53dc00446f1927e9ab78659eb941b1}{LORAWAN\_DEFAULT\_DATA\_RATE}},  
+                                    \mbox{\hyperlink{_commissioning__template_8h_aa3d87bc6a1dca396b576a8d83d3e3dbf}{LORAWAN\_PUBLIC\_NETWORK}}\}
+\end{DoxyCode}
+
+
+main.\+c 파일의 88 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{main_8c_a9c90f18306538aefe4077a35e2b8b133}\label{main_8c_a9c90f18306538aefe4077a35e2b8b133}} 
+\index{main.\+c@{main.\+c}!Tx\+Timer@{Tx\+Timer}}
+\index{Tx\+Timer@{Tx\+Timer}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Tx\+Timer}{TxTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} Tx\+Timer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+main.\+c 파일의 74 번째 라인에서 정의되었습니다.
+

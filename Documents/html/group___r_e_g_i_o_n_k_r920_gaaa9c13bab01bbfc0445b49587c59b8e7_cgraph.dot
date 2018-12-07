@@ -1,0 +1,13 @@
+digraph "RegionKR920SetContinuousWave"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node96 [label="RegionKR920SetContinuousWave",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node96 -> Node97 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node97 [label="LimitTxPower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_k_r920_8c.html#af2821991c6e6dad3e196b01f6cf1d542"];
+  Node96 -> Node98 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node98 [label="GetMaxEIRP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_k_r920_8c.html#a57ad10a17dfe52c07d7aea086766da89"];
+  Node96 -> Node99 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node99 [label="RegionCommonComputeTxPower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#gaa92800c8e9ce21366d383d14878cc391",tooltip="Computes the txPower, based on the max EIRP and the antenna gain. "];
+}

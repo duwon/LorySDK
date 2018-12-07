@@ -1,0 +1,11 @@
+digraph "LPM_ExitStopMode"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node42 [label="LPM_ExitStopMode",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node42 -> Node43 [color="midnightblue",fontsize="10",style="solid"];
+  Node43 [label="HW_IoInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html#aa3f8d771164a10a0885f7a467a46d684",tooltip="This function Initializes the hardware Ios "];
+  Node43 -> Node44 [color="midnightblue",fontsize="10",style="solid"];
+  Node44 [label="vcom_IoInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vcom_8h.html#aa6608584adfa555b835442b2e0f531c2",tooltip="Init the VCOM IOs. "];
+}

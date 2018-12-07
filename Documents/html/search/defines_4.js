@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['d2',['d2',['../aes_8c.html#a2087aa6d56cb1111b2483bc1207c050a',1,'aes.c']]],
+  ['data_5fcache_5fenable',['DATA_CACHE_ENABLE',['../stm32l1xx__hal__conf_8h.html#a5b4c32a40cf49b06c0d761e385949a6b',1,'stm32l1xx_hal_conf.h']]],
+  ['days_5fin_5fleap_5fyear',['DAYS_IN_LEAP_YEAR',['../hw__rtc_8c.html#a05269e1eafff6166976130c476ebf507',1,'hw_rtc.c']]],
+  ['days_5fin_5fmonth_5fcorrection_5fleap',['DAYS_IN_MONTH_CORRECTION_LEAP',['../hw__rtc_8c.html#a86ee3d0452a7ab1bcfcf3fed56876304',1,'hw_rtc.c']]],
+  ['days_5fin_5fmonth_5fcorrection_5fnorm',['DAYS_IN_MONTH_CORRECTION_NORM',['../hw__rtc_8c.html#adff7c2bae448b6eb8630747d64bdbe06',1,'hw_rtc.c']]],
+  ['days_5fin_5fyear',['DAYS_IN_YEAR',['../hw__rtc_8c.html#a6d40c3278339e38839749bf1704a60cc',1,'hw_rtc.c']]],
+  ['dbg',['DBG',['../debug_8h.html#a32adf79142f0a426b5e782fb7cd4cad3',1,'debug.h']]],
+  ['dbg_5fgpio_5frst',['DBG_GPIO_RST',['../debug_8h.html#a496556e3aa60c2b583a7660b944506db',1,'debug.h']]],
+  ['dbg_5fgpio_5fset',['DBG_GPIO_SET',['../debug_8h.html#acb644fa2c4f5ed928a67bb22f1c62f76',1,'debug.h']]],
+  ['dbg_5fgpio_5fwrite',['DBG_GPIO_WRITE',['../debug_8h.html#a0a3cbed166abc5cefe200d2420dcb304',1,'debug.h']]],
+  ['dbg_5fprintf',['DBG_PRINTF',['../debug_8h.html#abb51675b100c68d4729acede2f0cc7b6',1,'DBG_PRINTF():&#160;debug.h'],['../vcom_8h.html#abb51675b100c68d4729acede2f0cc7b6',1,'DBG_PRINTF():&#160;vcom.h']]],
+  ['dbg_5fprintf_5fcritical',['DBG_PRINTF_CRITICAL',['../debug_8h.html#a75cf565592d709a549bdc1a79b19d89b',1,'debug.h']]],
+  ['dbg_5frtc_5foutput',['DBG_RTC_OUTPUT',['../debug_8h.html#a0318ed394bd9c35b91bb374db6dbbf5f',1,'debug.h']]],
+  ['disable_5firq',['DISABLE_IRQ',['../utilities_8h.html#a8b665b7df8fbc1b5d693fa71fd48a7b7',1,'utilities.h']]],
+  ['divc',['DIVC',['../hw__rtc_8c.html#a4b8edf0de0e3751031e15807e73a6f8d',1,'hw_rtc.c']]],
+  ['dpoly',['DPOLY',['../aes_8c.html#a7dc5fb6478333a4f4cb3f55360f51d85',1,'aes.c']]]
+];

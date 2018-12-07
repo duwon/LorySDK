@@ -1,0 +1,9 @@
+var structs_adr_next_params =
+[
+    [ "AdrAckCounter", "structs_adr_next_params.html#a24f0356a3491bf07be9ac99ffa33896a", null ],
+    [ "AdrEnabled", "structs_adr_next_params.html#ab3e2fb44577c95786e11aacd56769703", null ],
+    [ "Datarate", "structs_adr_next_params.html#ae2f6080f3aa0e9485c55513ca56bb24d", null ],
+    [ "TxPower", "structs_adr_next_params.html#a037b4f849fa8ed4aa1d3c58aef2b28ec", null ],
+    [ "UpdateChanMask", "structs_adr_next_params.html#a708080da9c63d868556b2c48cb53003b", null ],
+    [ "UplinkDwellTime", "structs_adr_next_params.html#a0e6663762d6f9173bc8d8cb018f8f17a", null ]
+];

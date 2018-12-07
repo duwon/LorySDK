@@ -1,0 +1,21 @@
+digraph "rand1"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node82 [label="rand1",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node82 -> Node83 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="randr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$utilities_8h.html#af5d8ad6dae489ac64821e7d4f004595d",tooltip="Computes a random number between min and max "];
+  Node83 -> Node84 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="LORA_Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora_8h.html#a60e6c21550fcaf1cadb87454348046ad",tooltip="Lora Initialisation "];
+  Node84 -> Node85 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe",tooltip="Main program "];
+  Node83 -> Node86 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node86 [label="RegionUS915HybridGetPhyParam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gaf078bd0d293c1a677ca53b7b6ca96c6e",tooltip="The function gets a value of a specific phy attribute. "];
+  Node86 -> Node87 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="RegionUS915HybridAdrNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#ga6cf3188c00bf9a9eaa7c62686dd4b391",tooltip="Calculates the next datarate to set, when ADR is on or off. "];
+  Node86 -> Node88 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node88 [label="RegionUS915HybridLinkAdrReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gade4dc50b11235e0a6675b0d22240dea2",tooltip="The function processes a Link ADR Request. "];
+  Node83 -> Node89 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node89 [label="RegionUS915HybridNextChannel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gae74c05f827a9ed78b0ec0cacdec45f28",tooltip="Searches and set the next random available channel "];
+}

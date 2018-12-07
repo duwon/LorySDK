@@ -1,0 +1,37 @@
+digraph "OnRadioTxTimeout"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node270 [label="OnRadioTxTimeout",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node270 -> Node271 [color="midnightblue",fontsize="10",style="solid"];
+  Node271 [label="OpenContinuousRx2Window",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html#aeadfc508b9129926685664bc456db4f6",tooltip="Opens up a continuous RX 2 window. This is used for class c devices. "];
+  Node271 -> Node272 [color="midnightblue",fontsize="10",style="solid"];
+  Node272 [label="OnRxWindow2TimerEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html#a280d52c79c5de2428ef3f1e361043b23",tooltip="Function executed on second Rx window timer event "];
+  Node272 -> Node273 [color="midnightblue",fontsize="10",style="solid"];
+  Node273 [label="TimerStop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#a8ae899c4e8a9abf49d825d6959aa6bcb",tooltip="Stops and removes the timer object from the list of timer events "];
+  Node273 -> Node274 [color="midnightblue",fontsize="10",style="solid"];
+  Node274 [label="TimerSetTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#af90925c5246bd6bbc2863d08d4cca3a9",tooltip="Sets a timeout with the duration \"timestamp\" "];
+  Node274 -> Node275 [color="midnightblue",fontsize="10",style="solid"];
+  Node275 [label="HW_RTC_GetMinimumTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga254f9e5c17daff978fef15be01021c51",tooltip="Return the minimum timeout the RTC is able to handle "];
+  Node274 -> Node276 [color="midnightblue",fontsize="10",style="solid"];
+  Node276 [label="HW_RTC_GetTimerElapsedTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga7961116aa831950b62a413ecbbcfb02a",tooltip="Get the RTC timer elapsed time since the last Reference was set "];
+  Node276 -> Node277 [color="midnightblue",fontsize="10",style="solid"];
+  Node277 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gaf81b8dc866a5c7b125355b55e3953387",tooltip="get current time from calendar in ticks "];
+  Node274 -> Node278 [color="midnightblue",fontsize="10",style="solid"];
+  Node278 [label="HW_RTC_SetAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga09cec56d54c13de658fafdd003390771",tooltip="Set the alarm "];
+  Node278 -> Node276 [color="midnightblue",fontsize="10",style="solid"];
+  Node278 -> Node279 [color="midnightblue",fontsize="10",style="solid"];
+  Node279 [label="LPM_SetStopMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ac8a0ff787d7d417b9e1f0697a1d5fd6d",tooltip="This API notifies the low power manager if the specified user allows the Off mode or not..."];
+  Node278 -> Node280 [color="midnightblue",fontsize="10",style="solid"];
+  Node280 [label="LPM_GetMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ae9107e412181f10977b724c346cebd45",tooltip="This API returns the Low Power Mode selected that will be applied when the system will enter low powe..."];
+  Node278 -> Node281 [color="midnightblue",fontsize="10",style="solid"];
+  Node281 [label="HW_RTC_StartWakeUpAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga60703fcfc4abd73a2efc980e8bb6ad27",tooltip="start wake up alarm "];
+  Node281 -> Node282 [color="midnightblue",fontsize="10",style="solid"];
+  Node282 [label="HW_RTC_StopAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga227be06e4dc1332d46ff12519db183b5",tooltip="Stop the Alarm "];
+  Node273 -> Node282 [color="midnightblue",fontsize="10",style="solid"];
+  Node272 -> Node283 [color="midnightblue",fontsize="10",style="solid"];
+  Node283 [label="RegionRxConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#gaf89984d30239d6597190409068031465",tooltip="Configuration of the RX windows. "];
+  Node272 -> Node284 [color="midnightblue",fontsize="10",style="solid"];
+  Node284 [label="RxWindowSetup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html#a665f9a0f2130f97e3a3cc3ba8c14c208",tooltip="Initializes and opens the reception window "];
+}

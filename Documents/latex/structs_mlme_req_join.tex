@@ -1,0 +1,82 @@
+\hypertarget{structs_mlme_req_join}{}\section{s\+Mlme\+Req\+Join 구조체 참조}
+\label{structs_mlme_req_join}\index{s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}}
+
+
+{\ttfamily \#include $<$Lo\+Ra\+Mac.\+h$>$}
+
+
+
+s\+Mlme\+Req\+Join에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{structs_mlme_req_join_a2aa72c6d37233b51e7ae46f85398f888}{Dev\+Eui}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{structs_mlme_req_join_a9bef8882015afeb26d9a7fb5d601df96}{App\+Eui}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{structs_mlme_req_join_a560c2bd9214ee75105acac8593614bd9}{App\+Key}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mlme_req_join_a780280c12645b2666878162aab5d8cad}{Datarate}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra\+M\+AC M\+L\+M\+E-\/\+Request for the join service 
+
+Lo\+Ra\+Mac.\+h 파일의 988 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_mlme_req_join_a9bef8882015afeb26d9a7fb5d601df96}\label{structs_mlme_req_join_a9bef8882015afeb26d9a7fb5d601df96}} 
+\index{s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}!App\+Eui@{App\+Eui}}
+\index{App\+Eui@{App\+Eui}!s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}}
+\subsubsection{\texorpdfstring{App\+Eui}{AppEui}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ App\+Eui}
+
+Application identifier
+
+Lo\+Ra\+W\+AN Specification V1.\+0.\+2, chapter 6.\+1.\+2 
+
+Lo\+Ra\+Mac.\+h 파일의 1001 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mlme_req_join_a560c2bd9214ee75105acac8593614bd9}\label{structs_mlme_req_join_a560c2bd9214ee75105acac8593614bd9}} 
+\index{s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}!App\+Key@{App\+Key}}
+\index{App\+Key@{App\+Key}!s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}}
+\subsubsection{\texorpdfstring{App\+Key}{AppKey}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ App\+Key}
+
+A\+E\+S-\/128 application key
+
+Lo\+Ra\+W\+AN Specification V1.\+0.\+2, chapter 6.\+2.\+2 
+
+Lo\+Ra\+Mac.\+h 파일의 1007 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mlme_req_join_a780280c12645b2666878162aab5d8cad}\label{structs_mlme_req_join_a780280c12645b2666878162aab5d8cad}} 
+\index{s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}!Datarate@{Datarate}}
+\index{Datarate@{Datarate}!s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}}
+\subsubsection{\texorpdfstring{Datarate}{Datarate}}
+{\footnotesize\ttfamily uint8\+\_\+t Datarate}
+
+Datarate used for join request. 
+
+Lo\+Ra\+Mac.\+h 파일의 1011 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mlme_req_join_a2aa72c6d37233b51e7ae46f85398f888}\label{structs_mlme_req_join_a2aa72c6d37233b51e7ae46f85398f888}} 
+\index{s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}!Dev\+Eui@{Dev\+Eui}}
+\index{Dev\+Eui@{Dev\+Eui}!s\+Mlme\+Req\+Join@{s\+Mlme\+Req\+Join}}
+\subsubsection{\texorpdfstring{Dev\+Eui}{DevEui}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ Dev\+Eui}
+
+Globally unique end-\/device identifier
+
+Lo\+Ra\+W\+AN Specification V1.\+0.\+2, chapter 6.\+2.\+1 
+
+Lo\+Ra\+Mac.\+h 파일의 995 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/\mbox{\hyperlink{_lo_ra_mac_8h}{Lo\+Ra\+Mac.\+h}}\end{DoxyCompactItemize}

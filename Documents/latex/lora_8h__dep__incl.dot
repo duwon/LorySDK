@@ -1,0 +1,12 @@
+digraph "LoraLib/Core/lora.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node27 [label="LoraLib/Core/lora.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node27 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node28 [label="LoraLib/Core/lora-test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora-test_8c.html"];
+  Node27 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node29 [label="LoraLib/Core/lora.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora_8c.html"];
+  Node27 -> Node30 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node30 [label="Projects/DockingStation\l/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html"];
+}

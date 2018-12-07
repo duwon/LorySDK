@@ -1,0 +1,160 @@
+\hypertarget{group___docking_station___r_f___power___functions}{}\section{RF Power Functions}
+\label{group___docking_station___r_f___power___functions}\index{R\+F Power Functions@{R\+F Power Functions}}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___docking_station___r_f___power___functions_ga46ccfec03200a24f3737fc8015e2d5f7}{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Configure RF Power G\+P\+IO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___docking_station___r_f___power___functions_ga42c7cbbf0254f5f11135797d083bcb2c}{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+De\+Init}} ()
+\begin{DoxyCompactList}\small\item\em De\+Init RF Power G\+P\+IO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___docking_station___r_f___power___functions_gaef6814f684bbf7fa47adda1abc4c1129}{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+On}} ()
+\begin{DoxyCompactList}\small\item\em Power on S\+X1276. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___docking_station___r_f___power___functions_ga0514aa0607414fb41ea7e37a58ce6307}{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Off}} ()
+\begin{DoxyCompactList}\small\item\em Power off S\+X1276. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{group___docking_station___r_f___power___functions_ga42c7cbbf0254f5f11135797d083bcb2c}\label{group___docking_station___r_f___power___functions_ga42c7cbbf0254f5f11135797d083bcb2c}} 
+\index{R\+F Power Functions@{R\+F Power Functions}!B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+De\+Init@{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+De\+Init}}
+\index{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+De\+Init@{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+De\+Init}!R\+F Power Functions@{R\+F Power Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+De\+Init()}{BSP\_SX1276POWER\_DeInit()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+De\+Init RF Power G\+P\+IO. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 221 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+222 \{
+223   GPIO\_InitTypeDef  GPIO\_InitStruct;
+224 
+225   \textcolor{comment}{/* Turn off RFPOWER */}
+226   HAL\_GPIO\_WritePin(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8f8e11c368ec33b36ed1ba4d84bdc555}{RFPOWER\_GPIO\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a15fab54516f17b1b5a79b1fbfc397d79}{RFPOWER\_PIN}}, GPIO\_PIN\_RESET);
+227   \textcolor{comment}{/* DeInit the GPIO\_RFPOWER pin */}
+228   GPIO\_InitStruct.Pin = \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a15fab54516f17b1b5a79b1fbfc397d79}{RFPOWER\_PIN}};
+229   HAL\_GPIO\_DeInit(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8f8e11c368ec33b36ed1ba4d84bdc555}{RFPOWER\_GPIO\_PORT}}, GPIO\_InitStruct.Pin);
+230 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___docking_station___r_f___power___functions_ga46ccfec03200a24f3737fc8015e2d5f7}\label{group___docking_station___r_f___power___functions_ga46ccfec03200a24f3737fc8015e2d5f7}} 
+\index{R\+F Power Functions@{R\+F Power Functions}!B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Init@{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Init}}
+\index{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Init@{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Init}!R\+F Power Functions@{R\+F Power Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Init()}{BSP\_SX1276POWER\_Init()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure RF Power G\+P\+IO. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 200 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+201 \{
+202   GPIO\_InitTypeDef  GPIO\_InitStruct;
+203   
+204   \textcolor{comment}{/* Configure the GPIO\_LED pin */}
+205     GPIO\_InitStruct.Pin = \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a15fab54516f17b1b5a79b1fbfc397d79}{RFPOWER\_PIN}};
+206     GPIO\_InitStruct.Mode = GPIO\_MODE\_OUTPUT\_PP;
+207     GPIO\_InitStruct.Pull = GPIO\_NOPULL;
+208     GPIO\_InitStruct.Speed = GPIO\_SPEED\_FREQ\_VERY\_HIGH;
+209   
+210     HAL\_GPIO\_Init(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8f8e11c368ec33b36ed1ba4d84bdc555}{RFPOWER\_GPIO\_PORT}}, &GPIO\_InitStruct);        
+211 
+212   \textcolor{comment}{/* Reset PIN to switch off */}
+213     HAL\_GPIO\_WritePin(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8f8e11c368ec33b36ed1ba4d84bdc555}{RFPOWER\_GPIO\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a15fab54516f17b1b5a79b1fbfc397d79}{RFPOWER\_PIN}}, GPIO\_PIN\_RESET);
+214 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 0
+\mbox{\Hypertarget{group___docking_station___r_f___power___functions_ga0514aa0607414fb41ea7e37a58ce6307}\label{group___docking_station___r_f___power___functions_ga0514aa0607414fb41ea7e37a58ce6307}} 
+\index{R\+F Power Functions@{R\+F Power Functions}!B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Off@{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Off}}
+\index{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Off@{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Off}!R\+F Power Functions@{R\+F Power Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Off()}{BSP\_SX1276POWER\_Off()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+Off (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Power off S\+X1276. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 247 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+248 \{
+249   HAL\_GPIO\_WritePin(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8f8e11c368ec33b36ed1ba4d84bdc555}{RFPOWER\_GPIO\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a15fab54516f17b1b5a79b1fbfc397d79}{RFPOWER\_PIN}}, GPIO\_PIN\_RESET); 
+250 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___docking_station___r_f___power___functions_gaef6814f684bbf7fa47adda1abc4c1129}\label{group___docking_station___r_f___power___functions_gaef6814f684bbf7fa47adda1abc4c1129}} 
+\index{R\+F Power Functions@{R\+F Power Functions}!B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+On@{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+On}}
+\index{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+On@{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+On}!R\+F Power Functions@{R\+F Power Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+On()}{BSP\_SX1276POWER\_On()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+S\+X1276\+P\+O\+W\+E\+R\+\_\+\+On (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Power on S\+X1276. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 237 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+238 \{
+239   HAL\_GPIO\_WritePin(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8f8e11c368ec33b36ed1ba4d84bdc555}{RFPOWER\_GPIO\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a15fab54516f17b1b5a79b1fbfc397d79}{RFPOWER\_PIN}}, GPIO\_PIN\_SET); 
+240 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1

@@ -1,0 +1,196 @@
+\hypertarget{structs_mcps_indication}{}\section{s\+Mcps\+Indication 구조체 참조}
+\label{structs_mcps_indication}\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+
+
+{\ttfamily \#include $<$Lo\+Ra\+Mac.\+h$>$}
+
+
+
+s\+Mcps\+Indication에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga670d0c87a52aeb13391f303a4cf94f00}{Mcps\+\_\+t}} \mbox{\hyperlink{structs_mcps_indication_af45477156b4a2e186b2bfa2afb3a4efc}{Mcps\+Indication}}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_gac6ffc346a4c767f7a743c87a686c51b4}{Lo\+Ra\+Mac\+Event\+Info\+Status\+\_\+t}} \mbox{\hyperlink{structs_mcps_indication_ab360e499d5a7a9e0aa7b4df7239633b5}{Status}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_indication_acbaf0d718e63c5e2ed50a29cdcca27e0}{Multicast}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_indication_a4b93121f04819fbab96346736fa720a9}{Port}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_indication_a61e9e29ca015230436fe420bf88989e9}{Rx\+Datarate}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_indication_a123aed553ea78b5967618c22147a7f4c}{Frame\+Pending}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_indication_abf449ca64f34dbb66a7c5bf70fd55753}{Buffer\+Size}}
+\item 
+bool \mbox{\hyperlink{structs_mcps_indication_afa6d3de110fa10174203ce26682585c9}{Rx\+Data}}
+\item 
+int16\+\_\+t \mbox{\hyperlink{structs_mcps_indication_ae00742a7fb9199399f4e4d79e42fda78}{Rssi}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_indication_af053995b03762dc0e0cd4d11f7d06d05}{Snr}}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga082bd3322087fa2f42c902a0b360ff4f}{Lo\+Ra\+Mac\+Rx\+Slot\+\_\+t}} \mbox{\hyperlink{structs_mcps_indication_a0a258bf8cfad5219bfd579257e523fc1}{Rx\+Slot}}
+\item 
+bool \mbox{\hyperlink{structs_mcps_indication_ac59e1bd1c9450c7d136c7f475be89ded}{Ack\+Received}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structs_mcps_indication_a7a566925baf83b1b3da9209dfa4bb79a}{Down\+Link\+Counter}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra\+M\+AC M\+C\+P\+S-\/\+Indication primitive 
+
+Lo\+Ra\+Mac.\+h 파일의 870 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_mcps_indication_ac59e1bd1c9450c7d136c7f475be89ded}\label{structs_mcps_indication_ac59e1bd1c9450c7d136c7f475be89ded}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Ack\+Received@{Ack\+Received}}
+\index{Ack\+Received@{Ack\+Received}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Ack\+Received}{AckReceived}}
+{\footnotesize\ttfamily bool Ack\+Received}
+
+Set if an acknowledgement was received 
+
+Lo\+Ra\+Mac.\+h 파일의 923 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}\label{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Buffer@{Buffer}}
+\index{Buffer@{Buffer}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Buffer}{Buffer}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ Buffer}
+
+Pointer to the received data stream 
+
+Lo\+Ra\+Mac.\+h 파일의 899 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_abf449ca64f34dbb66a7c5bf70fd55753}\label{structs_mcps_indication_abf449ca64f34dbb66a7c5bf70fd55753}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Buffer\+Size@{Buffer\+Size}}
+\index{Buffer\+Size@{Buffer\+Size}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Buffer\+Size}{BufferSize}}
+{\footnotesize\ttfamily uint8\+\_\+t Buffer\+Size}
+
+Size of the received data stream 
+
+Lo\+Ra\+Mac.\+h 파일의 903 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_a7a566925baf83b1b3da9209dfa4bb79a}\label{structs_mcps_indication_a7a566925baf83b1b3da9209dfa4bb79a}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Down\+Link\+Counter@{Down\+Link\+Counter}}
+\index{Down\+Link\+Counter@{Down\+Link\+Counter}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Down\+Link\+Counter}{DownLinkCounter}}
+{\footnotesize\ttfamily uint32\+\_\+t Down\+Link\+Counter}
+
+The downlink counter value for the received frame 
+
+Lo\+Ra\+Mac.\+h 파일의 927 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_a123aed553ea78b5967618c22147a7f4c}\label{structs_mcps_indication_a123aed553ea78b5967618c22147a7f4c}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Frame\+Pending@{Frame\+Pending}}
+\index{Frame\+Pending@{Frame\+Pending}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Frame\+Pending}{FramePending}}
+{\footnotesize\ttfamily uint8\+\_\+t Frame\+Pending}
+
+Frame pending status 
+
+Lo\+Ra\+Mac.\+h 파일의 895 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_af45477156b4a2e186b2bfa2afb3a4efc}\label{structs_mcps_indication_af45477156b4a2e186b2bfa2afb3a4efc}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Mcps\+Indication@{Mcps\+Indication}}
+\index{Mcps\+Indication@{Mcps\+Indication}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Mcps\+Indication}{McpsIndication}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga670d0c87a52aeb13391f303a4cf94f00}{Mcps\+\_\+t}} Mcps\+Indication}
+
+M\+C\+P\+S-\/\+Indication type 
+
+Lo\+Ra\+Mac.\+h 파일의 875 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_acbaf0d718e63c5e2ed50a29cdcca27e0}\label{structs_mcps_indication_acbaf0d718e63c5e2ed50a29cdcca27e0}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Multicast@{Multicast}}
+\index{Multicast@{Multicast}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Multicast}{Multicast}}
+{\footnotesize\ttfamily uint8\+\_\+t Multicast}
+
+Multicast 
+
+Lo\+Ra\+Mac.\+h 파일의 883 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_a4b93121f04819fbab96346736fa720a9}\label{structs_mcps_indication_a4b93121f04819fbab96346736fa720a9}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Port@{Port}}
+\index{Port@{Port}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Port}{Port}}
+{\footnotesize\ttfamily uint8\+\_\+t Port}
+
+Application port 
+
+Lo\+Ra\+Mac.\+h 파일의 887 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_ae00742a7fb9199399f4e4d79e42fda78}\label{structs_mcps_indication_ae00742a7fb9199399f4e4d79e42fda78}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Rssi@{Rssi}}
+\index{Rssi@{Rssi}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Rssi}{Rssi}}
+{\footnotesize\ttfamily int16\+\_\+t Rssi}
+
+Rssi of the received packet 
+
+Lo\+Ra\+Mac.\+h 파일의 911 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_afa6d3de110fa10174203ce26682585c9}\label{structs_mcps_indication_afa6d3de110fa10174203ce26682585c9}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Rx\+Data@{Rx\+Data}}
+\index{Rx\+Data@{Rx\+Data}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Rx\+Data}{RxData}}
+{\footnotesize\ttfamily bool Rx\+Data}
+
+Indicates, if data is available 
+
+Lo\+Ra\+Mac.\+h 파일의 907 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_a61e9e29ca015230436fe420bf88989e9}\label{structs_mcps_indication_a61e9e29ca015230436fe420bf88989e9}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Rx\+Datarate@{Rx\+Datarate}}
+\index{Rx\+Datarate@{Rx\+Datarate}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Rx\+Datarate}{RxDatarate}}
+{\footnotesize\ttfamily uint8\+\_\+t Rx\+Datarate}
+
+Downlink datarate 
+
+Lo\+Ra\+Mac.\+h 파일의 891 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_a0a258bf8cfad5219bfd579257e523fc1}\label{structs_mcps_indication_a0a258bf8cfad5219bfd579257e523fc1}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Rx\+Slot@{Rx\+Slot}}
+\index{Rx\+Slot@{Rx\+Slot}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Rx\+Slot}{RxSlot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga082bd3322087fa2f42c902a0b360ff4f}{Lo\+Ra\+Mac\+Rx\+Slot\+\_\+t}} Rx\+Slot}
+
+Receive window 
+
+Lo\+Ra\+Mac.\+h 파일의 919 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_af053995b03762dc0e0cd4d11f7d06d05}\label{structs_mcps_indication_af053995b03762dc0e0cd4d11f7d06d05}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Snr@{Snr}}
+\index{Snr@{Snr}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Snr}{Snr}}
+{\footnotesize\ttfamily uint8\+\_\+t Snr}
+
+Snr of the received packet 
+
+Lo\+Ra\+Mac.\+h 파일의 915 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_indication_ab360e499d5a7a9e0aa7b4df7239633b5}\label{structs_mcps_indication_ab360e499d5a7a9e0aa7b4df7239633b5}} 
+\index{s\+Mcps\+Indication@{s\+Mcps\+Indication}!Status@{Status}}
+\index{Status@{Status}!s\+Mcps\+Indication@{s\+Mcps\+Indication}}
+\subsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_gac6ffc346a4c767f7a743c87a686c51b4}{Lo\+Ra\+Mac\+Event\+Info\+Status\+\_\+t}} Status}
+
+Status of the operation 
+
+Lo\+Ra\+Mac.\+h 파일의 879 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/\mbox{\hyperlink{_lo_ra_mac_8h}{Lo\+Ra\+Mac.\+h}}\end{DoxyCompactItemize}

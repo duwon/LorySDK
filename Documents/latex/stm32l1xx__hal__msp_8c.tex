@@ -1,0 +1,370 @@
+\hypertarget{stm32l1xx__hal__msp_8c}{}\section{Projects/\+Docking\+Station/src/stm32l1xx\+\_\+hal\+\_\+msp.c 파일 참조}
+\label{stm32l1xx__hal__msp_8c}\index{Projects/\+Docking\+Station/src/stm32l1xx\+\_\+hal\+\_\+msp.\+c@{Projects/\+Docking\+Station/src/stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+{\ttfamily \#include \char`\"{}hw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}delay.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+Server.\+h\char`\"{}}\newline
+stm32l1xx\+\_\+hal\+\_\+msp.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{stm32l1xx__hal__msp_8c_ae3120593d9f71137f1ba4b1141a15099}{E\+N\+A\+B\+L\+E\+\_\+\+F\+A\+S\+T\+\_\+\+W\+A\+K\+E\+UP}}
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+H\+A\+L\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{stm32l1xx__hal__msp_8c_a879cdb21ef051eb81ec51c18147397d5}{H\+A\+L\+\_\+\+Init\+Tick}} (uint32\+\_\+t Tick\+Priority)
+\begin{DoxyCompactList}\small\item\em This function configures the source of the time base. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__hal__msp_8c_ad0304dec8e33aca8c99e2836947b76d6}{H\+A\+L\+\_\+\+Delay}} (\+\_\+\+\_\+\+IO uint32\+\_\+t \mbox{\hyperlink{delay_8h_a5ec16209b453727929ce2c0ea4c11b62}{Delay}})
+\begin{DoxyCompactList}\small\item\em This function provides delay (in ms) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__hal__msp_8c_ae4fb8e66865c87d0ebab74a726a6891f}{H\+A\+L\+\_\+\+Msp\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the M\+SP. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__hal__msp_8c_aee6eddaa309c8c9829f1ca794d8f99c5}{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init}} (R\+T\+C\+\_\+\+Handle\+Type\+Def $\ast$hrtc)
+\begin{DoxyCompactList}\small\item\em R\+TC M\+SP Initialization This function configures the hardware resources used in this example\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__hal__msp_8c_a8767bc3a4d472d39a688090ab10ba6ce}{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+De\+Init}} (R\+T\+C\+\_\+\+Handle\+Type\+Def $\ast$hrtc)
+\begin{DoxyCompactList}\small\item\em R\+TC M\+SP De-\/\+Initialization This function freeze the hardware resources used in this example\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__hal__msp_8c_a11aeff83fd498cddbed3bcddcf017e0a}{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Alarm\+A\+Event\+Callback}} (R\+T\+C\+\_\+\+Handle\+Type\+Def $\ast$hrtc)
+\begin{DoxyCompactList}\small\item\em Alarm A callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__hal__msp_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback}} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em E\+X\+TI line detection callbacks. \end{DoxyCompactList}\item 
+I\+R\+Qn\+\_\+\+Type \mbox{\hyperlink{stm32l1xx__hal__msp_8c_afcf7f0a92af64ff4c9a6453831e05ad7}{M\+S\+P\+\_\+\+Get\+I\+R\+Qn}} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Gets I\+RQ number as a function of the G\+P\+I\+O\+\_\+\+Pin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_ae3120593d9f71137f1ba4b1141a15099}\label{stm32l1xx__hal__msp_8c_ae3120593d9f71137f1ba4b1141a15099}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!E\+N\+A\+B\+L\+E\+\_\+\+F\+A\+S\+T\+\_\+\+W\+A\+K\+E\+UP@{E\+N\+A\+B\+L\+E\+\_\+\+F\+A\+S\+T\+\_\+\+W\+A\+K\+E\+UP}}
+\index{E\+N\+A\+B\+L\+E\+\_\+\+F\+A\+S\+T\+\_\+\+W\+A\+K\+E\+UP@{E\+N\+A\+B\+L\+E\+\_\+\+F\+A\+S\+T\+\_\+\+W\+A\+K\+E\+UP}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{E\+N\+A\+B\+L\+E\+\_\+\+F\+A\+S\+T\+\_\+\+W\+A\+K\+E\+UP}{ENABLE\_FAST\_WAKEUP}}
+{\footnotesize\ttfamily \#define E\+N\+A\+B\+L\+E\+\_\+\+F\+A\+S\+T\+\_\+\+W\+A\+K\+E\+UP}
+
+
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 56 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_ad0304dec8e33aca8c99e2836947b76d6}\label{stm32l1xx__hal__msp_8c_ad0304dec8e33aca8c99e2836947b76d6}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!H\+A\+L\+\_\+\+Delay@{H\+A\+L\+\_\+\+Delay}}
+\index{H\+A\+L\+\_\+\+Delay@{H\+A\+L\+\_\+\+Delay}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+Delay()}{HAL\_Delay()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+Delay (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+\+IO uint32\+\_\+t}]{Delay }\end{DoxyParamCaption})}
+
+
+
+This function provides delay (in ms) 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Delay} & specifies the delay time length, in milliseconds. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 83 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+84 \{
+85   \mbox{\hyperlink{delay_8c_ae3a1c1a7a5024cf50a2e8672927f40cc}{DelayMs}}( \mbox{\hyperlink{delay_8c_a5ec16209b453727929ce2c0ea4c11b62}{Delay}} ); \textcolor{comment}{/* based on RTC */}
+86 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}\label{stm32l1xx__hal__msp_8c_a0cd91fd3a9608559c2a87a8ba6cba55f}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback@{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback}}
+\index{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback@{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback()}{HAL\_GPIO\_EXTI\_Callback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+G\+P\+I\+O\+\_\+\+E\+X\+T\+I\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+E\+X\+TI line detection callbacks. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+O\+\_\+\+Pin} & Specifies the pins connected to the E\+X\+TI line. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 189 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+190 \{
+191   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga9e4743d66ccc7e19b6cf051376ff5ce0}{HW\_GPIO\_IrqHandler}}( GPIO\_Pin );
+192 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_a879cdb21ef051eb81ec51c18147397d5}\label{stm32l1xx__hal__msp_8c_a879cdb21ef051eb81ec51c18147397d5}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!H\+A\+L\+\_\+\+Init\+Tick@{H\+A\+L\+\_\+\+Init\+Tick}}
+\index{H\+A\+L\+\_\+\+Init\+Tick@{H\+A\+L\+\_\+\+Init\+Tick}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+Init\+Tick()}{HAL\_InitTick()}}
+{\footnotesize\ttfamily H\+A\+L\+\_\+\+Status\+Type\+Def H\+A\+L\+\_\+\+Init\+Tick (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Tick\+Priority }\end{DoxyParamCaption})}
+
+
+
+This function configures the source of the time base. 
+
+don\textquotesingle{}t enable systick 
+\begin{DoxyParams}{매개변수}
+{\em Tick\+Priority} & Tick interrupt priority. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em H\+AL} & status \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 72 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+73 \{
+74    \textcolor{comment}{/* Return function status */}
+75   \textcolor{keywordflow}{return} HAL\_OK;
+76 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_ae4fb8e66865c87d0ebab74a726a6891f}\label{stm32l1xx__hal__msp_8c_ae4fb8e66865c87d0ebab74a726a6891f}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!H\+A\+L\+\_\+\+Msp\+Init@{H\+A\+L\+\_\+\+Msp\+Init}}
+\index{H\+A\+L\+\_\+\+Msp\+Init@{H\+A\+L\+\_\+\+Msp\+Init}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+Msp\+Init()}{HAL\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the M\+SP. 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 92 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+93 \{
+94     \_\_HAL\_RCC\_PWR\_CLK\_ENABLE();
+95   
+96   \textcolor{comment}{/* Disable the Power Voltage Detector */}
+97   HAL\_PWR\_DisablePVD( ); 
+98 
+99   \textcolor{comment}{/* Set MCU in ULP (Ultra Low Power) */}
+100   HAL\_PWREx\_EnableUltraLowPower( );
+101 \textcolor{preprocessor}{#ifdef ENABLE\_FAST\_WAKEUP}
+102   \textcolor{comment}{/*Disable fast wakeUp*/}  
+103   HAL\_PWREx\_EnableFastWakeUp( );
+104 \textcolor{preprocessor}{#else  }
+105   HAL\_PWREx\_DisableFastWakeUp( );
+106 \textcolor{preprocessor}{#endif}
+107   
+108   \textcolor{comment}{/* Configure all IOs in analog input              */}
+109   \textcolor{comment}{/* Except PA143 and PA14 (SWCLK and SWD) for debug*/}
+110   \textcolor{comment}{/* PA13 and PA14 are configured in debug\_init     */}
+111   \mbox{\hyperlink{hw__msp_8h_a80fa39e9fbfefb112ec977b339a66ab8}{HW\_GpioInit}}( );
+112 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_a11aeff83fd498cddbed3bcddcf017e0a}\label{stm32l1xx__hal__msp_8c_a11aeff83fd498cddbed3bcddcf017e0a}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Alarm\+A\+Event\+Callback@{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Alarm\+A\+Event\+Callback}}
+\index{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Alarm\+A\+Event\+Callback@{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Alarm\+A\+Event\+Callback}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Alarm\+A\+Event\+Callback()}{HAL\_RTC\_AlarmAEventCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Alarm\+A\+Event\+Callback (\begin{DoxyParamCaption}\item[{R\+T\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hrtc }\end{DoxyParamCaption})}
+
+
+
+Alarm A callback. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em hrtc} & R\+TC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 179 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+180 \{
+181   \mbox{\hyperlink{time_server_8c_a742ab8d86db201a8b5d900ce8e27cf90}{TimerIrqHandler}}( );
+182 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_a8767bc3a4d472d39a688090ab10ba6ce}\label{stm32l1xx__hal__msp_8c_a8767bc3a4d472d39a688090ab10ba6ce}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+De\+Init@{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+De\+Init}}
+\index{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+De\+Init@{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+De\+Init}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+De\+Init()}{HAL\_RTC\_MspDeInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{R\+T\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hrtc }\end{DoxyParamCaption})}
+
+
+
+R\+TC M\+SP De-\/\+Initialization This function freeze the hardware resources used in this example\+: 
+
+
+\begin{DoxyItemize}
+\item Disable the Peripheral\textquotesingle{}s clock 
+\begin{DoxyParams}{매개변수}
+{\em hrtc} & R\+TC handle pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+\end{DoxyItemize}
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 167 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+168 \{
+169   \textcolor{comment}{/* Reset peripherals */}
+170   \_\_HAL\_RCC\_RTC\_DISABLE();
+171 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_aee6eddaa309c8c9829f1ca794d8f99c5}\label{stm32l1xx__hal__msp_8c_aee6eddaa309c8c9829f1ca794d8f99c5}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init@{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init}}
+\index{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init@{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init()}{HAL\_RTC\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+R\+T\+C\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{R\+T\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{hrtc }\end{DoxyParamCaption})}
+
+
+
+R\+TC M\+SP Initialization This function configures the hardware resources used in this example\+: 
+
+
+\begin{DoxyItemize}
+\item Peripheral\textquotesingle{}s clock enable 
+\begin{DoxyParams}{매개변수}
+{\em hrtc} & R\+TC handle pointer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{주의}
+Care must be taken when H\+A\+L\+\_\+\+R\+C\+C\+Ex\+\_\+\+Periph\+C\+L\+K\+Config() is used to select the R\+TC clock source; in this case the Backup domain will be reset in ~\newline
+ order to modify the R\+TC Clock source, as consequence R\+TC registers (including the backup registers) and R\+C\+C\+\_\+\+C\+SR register are set to their reset values. ~\newline
+
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+\end{DoxyItemize}
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 128 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+129 \{
+130   RCC\_OscInitTypeDef RCC\_OscInitStruct;
+131   RCC\_PeriphCLKInitTypeDef  PeriphClkInitStruct;
+132 
+133   \textcolor{comment}{/*##-1- Configue the RTC clock soucre ######################################*/}
+134   \textcolor{comment}{/* -a- Enable LSE Oscillator */}
+135   RCC\_OscInitStruct.OscillatorType =  RCC\_OSCILLATORTYPE\_LSE;
+136   RCC\_OscInitStruct.PLL.PLLState = RCC\_PLL\_NONE;
+137   RCC\_OscInitStruct.LSEState = RCC\_LSE\_ON;
+138   \textcolor{keywordflow}{if}(HAL\_RCC\_OscConfig(&RCC\_OscInitStruct) != HAL\_OK)
+139   \{
+140     \mbox{\hyperlink{hw__conf_8h_a5593abbf196bdbd410b0939ef878b9d1}{Error\_Handler}}();
+141   \}
+142 
+143   \textcolor{comment}{/* -b- Select LSI as RTC clock source */}
+144   PeriphClkInitStruct.PeriphClockSelection = RCC\_PERIPHCLK\_RTC;
+145   PeriphClkInitStruct.RTCClockSelection = RCC\_RTCCLKSOURCE\_LSE;
+146   \textcolor{keywordflow}{if}(HAL\_RCCEx\_PeriphCLKConfig(&PeriphClkInitStruct) != HAL\_OK)
+147   \{ 
+148     \mbox{\hyperlink{hw__conf_8h_a5593abbf196bdbd410b0939ef878b9d1}{Error\_Handler}}();
+149   \}
+150 
+151   \textcolor{comment}{/*##-2- Enable the RTC peripheral Clock ####################################*/}
+152   \textcolor{comment}{/* Enable RTC Clock */}
+153   \_\_HAL\_RCC\_RTC\_ENABLE();
+154   
+155   \textcolor{comment}{/*##-3- Configure the NVIC for RTC Alarm ###################################*/}
+156   HAL\_NVIC\_SetPriority(RTC\_Alarm\_IRQn, 0x0, 0);
+157   HAL\_NVIC\_EnableIRQ(RTC\_Alarm\_IRQn);
+158 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__hal__msp_8c_afcf7f0a92af64ff4c9a6453831e05ad7}\label{stm32l1xx__hal__msp_8c_afcf7f0a92af64ff4c9a6453831e05ad7}} 
+\index{stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}!M\+S\+P\+\_\+\+Get\+I\+R\+Qn@{M\+S\+P\+\_\+\+Get\+I\+R\+Qn}}
+\index{M\+S\+P\+\_\+\+Get\+I\+R\+Qn@{M\+S\+P\+\_\+\+Get\+I\+R\+Qn}!stm32l1xx\+\_\+hal\+\_\+msp.\+c@{stm32l1xx\+\_\+hal\+\_\+msp.\+c}}
+\subsubsection{\texorpdfstring{M\+S\+P\+\_\+\+Get\+I\+R\+Qn()}{MSP\_GetIRQn()}}
+{\footnotesize\ttfamily I\+R\+Qn\+\_\+\+Type M\+S\+P\+\_\+\+Get\+I\+R\+Qn (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Gets I\+RQ number as a function of the G\+P\+I\+O\+\_\+\+Pin. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+O\+\_\+\+Pin} & Specifies the pins connected to the E\+X\+TI line. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em I\+RQ} & number \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 199 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+200 \{
+201   \textcolor{keywordflow}{switch}( GPIO\_Pin )
+202   \{
+203     \textcolor{keywordflow}{case} GPIO\_PIN\_0:  \textcolor{keywordflow}{return} EXTI0\_IRQn;
+204     \textcolor{keywordflow}{case} GPIO\_PIN\_1:  \textcolor{keywordflow}{return} EXTI1\_IRQn;
+205     \textcolor{keywordflow}{case} GPIO\_PIN\_2:  \textcolor{keywordflow}{return} EXTI2\_IRQn;
+206     \textcolor{keywordflow}{case} GPIO\_PIN\_3:  \textcolor{keywordflow}{return} EXTI3\_IRQn;
+207     \textcolor{keywordflow}{case} GPIO\_PIN\_4:  \textcolor{keywordflow}{return} EXTI4\_IRQn;
+208     \textcolor{keywordflow}{case} GPIO\_PIN\_5:  
+209     \textcolor{keywordflow}{case} GPIO\_PIN\_6:
+210     \textcolor{keywordflow}{case} GPIO\_PIN\_7:
+211     \textcolor{keywordflow}{case} GPIO\_PIN\_8:
+212     \textcolor{keywordflow}{case} GPIO\_PIN\_9:  \textcolor{keywordflow}{return} EXTI9\_5\_IRQn;
+213     \textcolor{keywordflow}{case} GPIO\_PIN\_10:
+214     \textcolor{keywordflow}{case} GPIO\_PIN\_11:
+215     \textcolor{keywordflow}{case} GPIO\_PIN\_12:
+216     \textcolor{keywordflow}{case} GPIO\_PIN\_13:
+217     \textcolor{keywordflow}{case} GPIO\_PIN\_14:
+218     \textcolor{keywordflow}{case} GPIO\_PIN\_15: 
+219     \textcolor{keywordflow}{default}: \textcolor{keywordflow}{return} EXTI15\_10\_IRQn;
+220   \}
+221 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6

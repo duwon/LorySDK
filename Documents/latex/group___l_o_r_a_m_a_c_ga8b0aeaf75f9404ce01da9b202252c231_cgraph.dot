@@ -1,0 +1,14 @@
+digraph "LoRaMacQueryTxPossible"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node275 [label="LoRaMacQueryTxPossible",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node275 -> Node276 [color="midnightblue",fontsize="10",style="solid"];
+  Node276 [label="RegionAdrNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#ga08cac64beeadd0555460ca5e756a0792",tooltip="Calculates the next datarate to set, when ADR is on or off. "];
+  Node275 -> Node277 [color="midnightblue",fontsize="10",style="solid"];
+  Node277 [label="RegionGetPhyParam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#gafbd084611ba512035a6cbe7f3aa5857b",tooltip="The function gets a value of a specific phy attribute. "];
+  Node275 -> Node278 [color="midnightblue",fontsize="10",style="solid"];
+  Node278 [label="ValidatePayloadLength",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html#ab496fc8c52b4322c7735a8a38c815c89",tooltip="Validates if the payload fits into the frame, taking the datarate into account. "];
+  Node278 -> Node277 [color="midnightblue",fontsize="10",style="solid"];
+}

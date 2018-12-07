@@ -1,0 +1,13 @@
+digraph "RegionCN470ComputeRxWindowParameters"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node23 [label="RegionCN470ComputeRxWindow\lParameters",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node23 -> Node24 [color="midnightblue",fontsize="10",style="solid"];
+  Node24 [label="GetBandwidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_c_n470_8c.html#afbe81e6d36760141722791d216d4ac60"];
+  Node23 -> Node25 [color="midnightblue",fontsize="10",style="solid"];
+  Node25 [label="RegionCommonComputeSymbol\lTimeLoRa",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#ga79ed8b6555b68276d3c9ff2626b20fc8",tooltip="Computes the symbol time for LoRa modulation. "];
+  Node23 -> Node26 [color="midnightblue",fontsize="10",style="solid"];
+  Node26 [label="RegionCommonComputeRxWindow\lParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#gaba7114d0ca01f04933710feb13646138",tooltip="Computes the RX window timeout and the RX window offset. "];
+}

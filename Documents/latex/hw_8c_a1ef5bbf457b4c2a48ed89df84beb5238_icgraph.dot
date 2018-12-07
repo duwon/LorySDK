@@ -1,0 +1,9 @@
+digraph "HW_IoDeInit"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node30 [label="HW_IoDeInit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node30 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node31 [label="LPM_EnterStopMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html#a3bb8517047a428748270c05d69f21cb6",tooltip="Enters Low Power Stop Mode "];
+}

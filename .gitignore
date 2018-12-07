@@ -5,8 +5,6 @@ Doxyfile
 LORAWAN/
 .vscode/
 RTE/
-Documents/
-Document/
 
 # 와일드카드
 ignore-file*

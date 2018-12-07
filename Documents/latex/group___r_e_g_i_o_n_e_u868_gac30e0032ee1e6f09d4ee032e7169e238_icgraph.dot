@@ -1,0 +1,11 @@
+digraph "RegionEU868ChannelsRemove"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node34 [label="RegionEU868ChannelsRemove",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node34 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node35 [label="RegionEU868ApplyCFList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_e_u868.html#ga87e838c747c248c577a44329c0013988",tooltip="The function parses the input buffer and sets up the channels of the CF list. "];
+  Node34 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node36 [label="RegionEU868NewChannelReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_e_u868.html#ga4325b111d5f14ddc4b33f5e827a8986e",tooltip="The function processes a Channel Request. "];
+}

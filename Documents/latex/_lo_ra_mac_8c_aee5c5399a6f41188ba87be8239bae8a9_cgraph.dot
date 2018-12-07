@@ -1,0 +1,33 @@
+digraph "OnRxWindow1TimerEvent"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node289 [label="OnRxWindow1TimerEvent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node289 -> Node290 [color="midnightblue",fontsize="10",style="solid"];
+  Node290 [label="TimerStop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#a8ae899c4e8a9abf49d825d6959aa6bcb",tooltip="Stops and removes the timer object from the list of timer events "];
+  Node290 -> Node291 [color="midnightblue",fontsize="10",style="solid"];
+  Node291 [label="TimerSetTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#af90925c5246bd6bbc2863d08d4cca3a9",tooltip="Sets a timeout with the duration \"timestamp\" "];
+  Node291 -> Node292 [color="midnightblue",fontsize="10",style="solid"];
+  Node292 [label="HW_RTC_GetMinimumTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga254f9e5c17daff978fef15be01021c51",tooltip="Return the minimum timeout the RTC is able to handle "];
+  Node291 -> Node293 [color="midnightblue",fontsize="10",style="solid"];
+  Node293 [label="HW_RTC_GetTimerElapsedTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga7961116aa831950b62a413ecbbcfb02a",tooltip="Get the RTC timer elapsed time since the last Reference was set "];
+  Node293 -> Node294 [color="midnightblue",fontsize="10",style="solid"];
+  Node294 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gaf81b8dc866a5c7b125355b55e3953387",tooltip="get current time from calendar in ticks "];
+  Node291 -> Node295 [color="midnightblue",fontsize="10",style="solid"];
+  Node295 [label="HW_RTC_SetAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga09cec56d54c13de658fafdd003390771",tooltip="Set the alarm "];
+  Node295 -> Node293 [color="midnightblue",fontsize="10",style="solid"];
+  Node295 -> Node296 [color="midnightblue",fontsize="10",style="solid"];
+  Node296 [label="LPM_SetStopMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ac8a0ff787d7d417b9e1f0697a1d5fd6d",tooltip="This API notifies the low power manager if the specified user allows the Off mode or not..."];
+  Node295 -> Node297 [color="midnightblue",fontsize="10",style="solid"];
+  Node297 [label="LPM_GetMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ae9107e412181f10977b724c346cebd45",tooltip="This API returns the Low Power Mode selected that will be applied when the system will enter low powe..."];
+  Node295 -> Node298 [color="midnightblue",fontsize="10",style="solid"];
+  Node298 [label="HW_RTC_StartWakeUpAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga60703fcfc4abd73a2efc980e8bb6ad27",tooltip="start wake up alarm "];
+  Node298 -> Node299 [color="midnightblue",fontsize="10",style="solid"];
+  Node299 [label="HW_RTC_StopAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga227be06e4dc1332d46ff12519db183b5",tooltip="Stop the Alarm "];
+  Node290 -> Node299 [color="midnightblue",fontsize="10",style="solid"];
+  Node289 -> Node300 [color="midnightblue",fontsize="10",style="solid"];
+  Node300 [label="RegionRxConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#gaf89984d30239d6597190409068031465",tooltip="Configuration of the RX windows. "];
+  Node289 -> Node301 [color="midnightblue",fontsize="10",style="solid"];
+  Node301 [label="RxWindowSetup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html#a665f9a0f2130f97e3a3cc3ba8c14c208",tooltip="Initializes and opens the reception window "];
+}

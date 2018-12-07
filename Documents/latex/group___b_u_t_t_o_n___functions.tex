@@ -1,0 +1,156 @@
+\hypertarget{group___b_u_t_t_o_n___functions}{}\section{B\+U\+T\+T\+ON Functions}
+\label{group___b_u_t_t_o_n___functions}\index{B\+U\+T\+T\+O\+N Functions@{B\+U\+T\+T\+O\+N Functions}}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___b_u_t_t_o_n___functions_gad31c8db50a71c1f6dbfe132d72ba0bc6}{B\+S\+P\+\_\+\+P\+B\+\_\+\+Init}} (\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a643816dfbad5c734fc25a29ce8d35bb1}{Button\+\_\+\+Type\+Def}} Button, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a48825b7c7d851c440ef8e808fd9d8f0a}{Button\+Mode\+\_\+\+Type\+Def}} Button\+Mode)
+\begin{DoxyCompactList}\small\item\em Configures Button G\+P\+IO and E\+X\+TI Line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___b_u_t_t_o_n___functions_gac1bd746e7f6037d50ca3784ebe05686e}{B\+S\+P\+\_\+\+P\+B\+\_\+\+De\+Init}} (\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a643816dfbad5c734fc25a29ce8d35bb1}{Button\+\_\+\+Type\+Def}} Button)
+\begin{DoxyCompactList}\small\item\em Push Button De\+Init. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___b_u_t_t_o_n___functions_ga8f0978b6cffda9c67266ddfdb3a0abf7}{B\+S\+P\+\_\+\+P\+B\+\_\+\+Get\+State}} (\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a643816dfbad5c734fc25a29ce8d35bb1}{Button\+\_\+\+Type\+Def}} Button)
+\begin{DoxyCompactList}\small\item\em Returns the selected Button state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{group___b_u_t_t_o_n___functions_gac1bd746e7f6037d50ca3784ebe05686e}\label{group___b_u_t_t_o_n___functions_gac1bd746e7f6037d50ca3784ebe05686e}} 
+\index{B\+U\+T\+T\+O\+N Functions@{B\+U\+T\+T\+O\+N Functions}!B\+S\+P\+\_\+\+P\+B\+\_\+\+De\+Init@{B\+S\+P\+\_\+\+P\+B\+\_\+\+De\+Init}}
+\index{B\+S\+P\+\_\+\+P\+B\+\_\+\+De\+Init@{B\+S\+P\+\_\+\+P\+B\+\_\+\+De\+Init}!B\+U\+T\+T\+O\+N Functions@{B\+U\+T\+T\+O\+N Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+P\+B\+\_\+\+De\+Init()}{BSP\_PB\_DeInit()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+P\+B\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a643816dfbad5c734fc25a29ce8d35bb1}{Button\+\_\+\+Type\+Def}}}]{Button }\end{DoxyParamCaption})}
+
+
+
+Push Button De\+Init. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Button} & Button to be configured This parameter should be\+: \begin{DoxyItemize}
+\item B\+U\+T\+T\+O\+N\+\_\+\+U\+S\+ER ~\newline
+\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{주의}
+PB De\+Init does not disable the G\+P\+IO clock 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 166 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+167 \{
+168   GPIO\_InitTypeDef gpio\_init\_structure;
+169 
+170   gpio\_init\_structure.Pin = \mbox{\hyperlink{bsp_8c_adf78f2d71408a01f8d30929c2d2da82b}{BUTTON\_PIN}}[Button];
+171   HAL\_NVIC\_DisableIRQ((IRQn\_Type)(\mbox{\hyperlink{bsp_8c_a13c3e27c584df9fccc4697dd535ea1cd}{BUTTON\_IRQn}}[Button]));
+172   HAL\_GPIO\_DeInit(\mbox{\hyperlink{bsp_8c_ad63ed42b4071e78f80f7462227da4f35}{BUTTON\_PORT}}[Button], gpio\_init\_structure.Pin);
+173 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___b_u_t_t_o_n___functions_ga8f0978b6cffda9c67266ddfdb3a0abf7}\label{group___b_u_t_t_o_n___functions_ga8f0978b6cffda9c67266ddfdb3a0abf7}} 
+\index{B\+U\+T\+T\+O\+N Functions@{B\+U\+T\+T\+O\+N Functions}!B\+S\+P\+\_\+\+P\+B\+\_\+\+Get\+State@{B\+S\+P\+\_\+\+P\+B\+\_\+\+Get\+State}}
+\index{B\+S\+P\+\_\+\+P\+B\+\_\+\+Get\+State@{B\+S\+P\+\_\+\+P\+B\+\_\+\+Get\+State}!B\+U\+T\+T\+O\+N Functions@{B\+U\+T\+T\+O\+N Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+P\+B\+\_\+\+Get\+State()}{BSP\_PB\_GetState()}}
+{\footnotesize\ttfamily uint32\+\_\+t B\+S\+P\+\_\+\+P\+B\+\_\+\+Get\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a643816dfbad5c734fc25a29ce8d35bb1}{Button\+\_\+\+Type\+Def}}}]{Button }\end{DoxyParamCaption})}
+
+
+
+Returns the selected Button state. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Button} & Specifies the Button to be checked. This parameter should be\+: \begin{DoxyItemize}
+\item B\+U\+T\+T\+O\+N\+\_\+\+U\+S\+ER ~\newline
+\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em Button} & state. \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 182 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+183 \{
+184   \textcolor{keywordflow}{return} HAL\_GPIO\_ReadPin(\mbox{\hyperlink{bsp_8c_ad63ed42b4071e78f80f7462227da4f35}{BUTTON\_PORT}}[Button], \mbox{\hyperlink{bsp_8c_adf78f2d71408a01f8d30929c2d2da82b}{BUTTON\_PIN}}[Button]);
+185 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 0
+\mbox{\Hypertarget{group___b_u_t_t_o_n___functions_gad31c8db50a71c1f6dbfe132d72ba0bc6}\label{group___b_u_t_t_o_n___functions_gad31c8db50a71c1f6dbfe132d72ba0bc6}} 
+\index{B\+U\+T\+T\+O\+N Functions@{B\+U\+T\+T\+O\+N Functions}!B\+S\+P\+\_\+\+P\+B\+\_\+\+Init@{B\+S\+P\+\_\+\+P\+B\+\_\+\+Init}}
+\index{B\+S\+P\+\_\+\+P\+B\+\_\+\+Init@{B\+S\+P\+\_\+\+P\+B\+\_\+\+Init}!B\+U\+T\+T\+O\+N Functions@{B\+U\+T\+T\+O\+N Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+P\+B\+\_\+\+Init()}{BSP\_PB\_Init()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+P\+B\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a643816dfbad5c734fc25a29ce8d35bb1}{Button\+\_\+\+Type\+Def}}}]{Button,  }\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a48825b7c7d851c440ef8e808fd9d8f0a}{Button\+Mode\+\_\+\+Type\+Def}}}]{Button\+Mode }\end{DoxyParamCaption})}
+
+
+
+Configures Button G\+P\+IO and E\+X\+TI Line. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Button} & Specifies the Button to be configured. This parameter should be\+: B\+U\+T\+T\+O\+N\+\_\+\+U\+S\+ER \\
+\hline
+{\em Button\+Mode} & Specifies Button mode. This parameter can be one of following parameters\+: ~\newline
+ \begin{DoxyItemize}
+\item B\+U\+T\+T\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+G\+P\+IO\+: Button will be used as simple IO \item B\+U\+T\+T\+O\+N\+\_\+\+M\+O\+D\+E\+\_\+\+E\+X\+TI\+: Button will be connected to E\+X\+TI line with interrupt generation capability ~\newline
+\end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 127 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+128 \{
+129   GPIO\_InitTypeDef gpioinitstruct;
+130 
+131   \textcolor{comment}{/* Enable the BUTTON Clock */}
+132   \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa397abaece51f4d7aafb07fd79640f3e}{BUTTONx\_GPIO\_CLK\_ENABLE}}(Button);
+133 
+134   gpioinitstruct.Pin = \mbox{\hyperlink{bsp_8c_adf78f2d71408a01f8d30929c2d2da82b}{BUTTON\_PIN}}[Button];
+135   gpioinitstruct.Pull = GPIO\_NOPULL;
+136   gpioinitstruct.Speed = GPIO\_SPEED\_FREQ\_MEDIUM;
+137 
+138   \textcolor{keywordflow}{if} (ButtonMode == \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a48825b7c7d851c440ef8e808fd9d8f0aa9411f3542831027b24c493abfb998522}{BUTTON\_MODE\_GPIO}})
+139   \{
+140     \textcolor{comment}{/* Configure Button pin as input */}
+141     gpioinitstruct.Mode   = GPIO\_MODE\_INPUT;
+142   
+143     HAL\_GPIO\_Init(\mbox{\hyperlink{bsp_8c_ad63ed42b4071e78f80f7462227da4f35}{BUTTON\_PORT}}[Button], &gpioinitstruct);
+144   \}
+145  
+146   \textcolor{keywordflow}{if} (ButtonMode == \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a48825b7c7d851c440ef8e808fd9d8f0aa13c1ad97bc3db33d7f2b5a7c116bc8f5}{BUTTON\_MODE\_EXTI}})
+147   \{
+148     \textcolor{comment}{/* Configure Button pin as input with External interrupt */}
+149     gpioinitstruct.Mode   = GPIO\_MODE\_IT\_FALLING; 
+150     HAL\_GPIO\_Init(\mbox{\hyperlink{bsp_8c_ad63ed42b4071e78f80f7462227da4f35}{BUTTON\_PORT}}[Button], &gpioinitstruct);
+151 
+152     \textcolor{comment}{/* Enable and set Button EXTI Interrupt to the lowest priority */}
+153     HAL\_NVIC\_SetPriority((IRQn\_Type)(\mbox{\hyperlink{bsp_8c_a13c3e27c584df9fccc4697dd535ea1cd}{BUTTON\_IRQn}}[Button]), 0x0F, 0);
+154     HAL\_NVIC\_EnableIRQ((IRQn\_Type)(\mbox{\hyperlink{bsp_8c_a13c3e27c584df9fccc4697dd535ea1cd}{BUTTON\_IRQn}}[Button]));
+155   \}
+156 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1

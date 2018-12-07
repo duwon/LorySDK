@@ -1,0 +1,716 @@
+\hypertarget{lora_8h}{}\section{Lora\+Lib/\+Core/lora.h 파일 참조}
+\label{lora_8h}\index{Lora\+Lib/\+Core/lora.\+h@{Lora\+Lib/\+Core/lora.\+h}}
+{\ttfamily \#include \char`\"{}Commissioning.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lo\+Ra\+Mac.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}region/\+Region.\+h\char`\"{}}\newline
+lora.\+h에 대한 include 의존 그래프
+% FIG 0
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 1
+\subsection*{데이터 구조}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structs_lo_ra_param}{s\+Lo\+Ra\+Param}}
+\item 
+struct \mbox{\hyperlink{structs_lo_ra_main_callback}{s\+Lo\+Ra\+Main\+Callback}}
+\end{DoxyCompactItemize}
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lora_8h_adac4009d9987bc72cbd980c1cfed9d65}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON}}~1
+\item 
+\#define \mbox{\hyperlink{lora_8h_aa1e846a8eecb64e0a26eab171de5ae28}{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+O\+FF}}~0
+\end{DoxyCompactItemize}
+\subsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{lora_8h_a720c475eb13bb6b5523f349e34b1b813}{e\+Tx\+Event\+Type}} \mbox{\hyperlink{lora_8h_ad214b606ffdf2be60abb61bcebbbc83e}{Tx\+Event\+Type\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structs_lo_ra_param}{s\+Lo\+Ra\+Param}} \mbox{\hyperlink{lora_8h_a34fefd9575c41bc86d86d7d740a38fe8}{Lo\+Ra\+Param\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{structs_lo_ra_main_callback}{s\+Lo\+Ra\+Main\+Callback}} \mbox{\hyperlink{lora_8h_a6d9d62812a66a54510e9dc9f3f7a2b5e}{Lo\+Ra\+Main\+Callback\+\_\+t}}
+\end{DoxyCompactItemize}
+\subsection*{열거형 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2}{Lora\+Flag\+Status}} \{ \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a9027ec5e4a30b48e8969895b47d6f623}{L\+O\+R\+A\+\_\+\+R\+E\+S\+ET}} = 0, 
+\mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a93ff479e669b0c70884791ada2d4a377}{L\+O\+R\+A\+\_\+\+S\+ET}} = !\+L\+O\+R\+A\+\_\+\+R\+E\+S\+ET
+ \}
+\item 
+enum \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817}{Lora\+Error\+Status}} \{ \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817abd3ec2bc73477fca9756cd710bae6f8a}{L\+O\+R\+A\+\_\+\+E\+R\+R\+OR}} = -\/1, 
+\mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817a2aaaddb8e03d6a930665b2eac2d0a1a9}{L\+O\+R\+A\+\_\+\+S\+U\+C\+C\+E\+SS}} = 0
+ \}
+\item 
+enum \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20}{Lora\+Confirm\+\_\+t}} \{ \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG}} = 0, 
+\mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20a10490b6d39a4ebf5cddd2fdbddebb729}{L\+O\+R\+A\+W\+A\+N\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG}} = !\+L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG
+ \}
+\item 
+enum \mbox{\hyperlink{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0e}{Lora\+Bool\+\_\+t}} \{ \mbox{\hyperlink{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea6be3bc17af806a907f460076bc29b9a9}{L\+O\+R\+A\+\_\+\+T\+R\+UE}} = 0, 
+\mbox{\hyperlink{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea1f8ccb3f89b4af431718863442d93eaa}{L\+O\+R\+A\+\_\+\+F\+A\+L\+SE}} = !\+L\+O\+R\+A\+\_\+\+T\+R\+UE
+ \}
+\item 
+enum \mbox{\hyperlink{lora_8h_a720c475eb13bb6b5523f349e34b1b813}{e\+Tx\+Event\+Type}} \{ \mbox{\hyperlink{lora_8h_a720c475eb13bb6b5523f349e34b1b813a4f3161e467887e98bcedd864f3cfc16e}{T\+X\+\_\+\+O\+N\+\_\+\+T\+I\+M\+ER}}, 
+\mbox{\hyperlink{lora_8h_a720c475eb13bb6b5523f349e34b1b813a2d3c00188e9ba996f5f291272d029d52}{T\+X\+\_\+\+O\+N\+\_\+\+E\+V\+E\+NT}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lora_8h_a60e6c21550fcaf1cadb87454348046ad}{L\+O\+R\+A\+\_\+\+Init}} (\mbox{\hyperlink{lora_8h_a6d9d62812a66a54510e9dc9f3f7a2b5e}{Lo\+Ra\+Main\+Callback\+\_\+t}} $\ast$callbacks, \mbox{\hyperlink{lora_8h_a34fefd9575c41bc86d86d7d740a38fe8}{Lo\+Ra\+Param\+\_\+t}} $\ast$Lo\+Ra\+Param)
+\begin{DoxyCompactList}\small\item\em Lora Initialisation \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{lora_8h_a343d8f2ddf9b21cb458e4a3e09076b5e}{L\+O\+R\+A\+\_\+send}} (\mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{App\+Data}}, \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20}{Lora\+Confirm\+\_\+t}} \mbox{\hyperlink{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}{Is\+Tx\+Confirmed}})
+\begin{DoxyCompactList}\small\item\em run Lora classA state Machine \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lora_8h_a3671e53923a80ddbbd43e56342fd94fa}{L\+O\+R\+A\+\_\+\+Join}} (void)
+\begin{DoxyCompactList}\small\item\em Join a Lora Network in classA  if the device is A\+BP, this is a pass through functon \end{DoxyCompactList}\item 
+\mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2}{Lora\+Flag\+Status}} \mbox{\hyperlink{lora_8h_a4ee43844542608036b6a87a2650711ea}{L\+O\+R\+A\+\_\+\+Join\+Status}} (void)
+\begin{DoxyCompactList}\small\item\em Check whether the Device is joined to the network \end{DoxyCompactList}\item 
+\mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817}{Lora\+Error\+Status}} \mbox{\hyperlink{lora_8h_a547a61266532616789a8a34655e04e30}{L\+O\+R\+A\+\_\+\+Request\+Class}} (\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}} new\+Class)
+\begin{DoxyCompactList}\small\item\em change Lora Class  callback L\+O\+R\+A\+\_\+\+Confirm\+Class informs upper layer that the change has occured  Only switch from class A to class B/C OR from class B/C to class A is allowed  can be calld only in L\+O\+R\+A\+\_\+\+Class\+Switch\+Slot or L\+O\+R\+A\+\_\+\+Rx\+Data callbacks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{lora_8h_a0d61d347bbf8db90b8ce87df9347b29a}{L\+O\+R\+A\+\_\+\+Get\+Current\+Class}} (\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}} $\ast$current\+Class)
+\begin{DoxyCompactList}\small\item\em get the current Lora Class \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{lora_8h_aa1e846a8eecb64e0a26eab171de5ae28}\label{lora_8h_aa1e846a8eecb64e0a26eab171de5ae28}} 
+\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+O\+FF@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+O\+FF}}
+\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+O\+FF@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+O\+FF}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+O\+FF}{LORAWAN\_ADR\_OFF}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+O\+FF~0}
+
+
+
+lora.\+h 파일의 80 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{lora_8h_adac4009d9987bc72cbd980c1cfed9d65}\label{lora_8h_adac4009d9987bc72cbd980c1cfed9d65}} 
+\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON}}
+\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON@{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON}{LORAWAN\_ADR\_ON}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+W\+A\+N\+\_\+\+A\+D\+R\+\_\+\+ON~1}
+
+Lo\+Ra\+W\+AN confirmed messages 
+
+lora.\+h 파일의 79 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{타입정의 문서화}
+\mbox{\Hypertarget{lora_8h_a6d9d62812a66a54510e9dc9f3f7a2b5e}\label{lora_8h_a6d9d62812a66a54510e9dc9f3f7a2b5e}} 
+\index{lora.\+h@{lora.\+h}!Lo\+Ra\+Main\+Callback\+\_\+t@{Lo\+Ra\+Main\+Callback\+\_\+t}}
+\index{Lo\+Ra\+Main\+Callback\+\_\+t@{Lo\+Ra\+Main\+Callback\+\_\+t}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Main\+Callback\+\_\+t}{LoRaMainCallback\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs_lo_ra_main_callback}{s\+Lo\+Ra\+Main\+Callback}}  \mbox{\hyperlink{lora_8h_a6d9d62812a66a54510e9dc9f3f7a2b5e}{Lo\+Ra\+Main\+Callback\+\_\+t}}}
+
+\mbox{\Hypertarget{lora_8h_a34fefd9575c41bc86d86d7d740a38fe8}\label{lora_8h_a34fefd9575c41bc86d86d7d740a38fe8}} 
+\index{lora.\+h@{lora.\+h}!Lo\+Ra\+Param\+\_\+t@{Lo\+Ra\+Param\+\_\+t}}
+\index{Lo\+Ra\+Param\+\_\+t@{Lo\+Ra\+Param\+\_\+t}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Param\+\_\+t}{LoRaParam\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs_lo_ra_param}{s\+Lo\+Ra\+Param}}  \mbox{\hyperlink{lora_8h_a34fefd9575c41bc86d86d7d740a38fe8}{Lo\+Ra\+Param\+\_\+t}}}
+
+Lo\+Ra State Machine states \mbox{\Hypertarget{lora_8h_ad214b606ffdf2be60abb61bcebbbc83e}\label{lora_8h_ad214b606ffdf2be60abb61bcebbbc83e}} 
+\index{lora.\+h@{lora.\+h}!Tx\+Event\+Type\+\_\+t@{Tx\+Event\+Type\+\_\+t}}
+\index{Tx\+Event\+Type\+\_\+t@{Tx\+Event\+Type\+\_\+t}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{Tx\+Event\+Type\+\_\+t}{TxEventType\_t}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{lora_8h_a720c475eb13bb6b5523f349e34b1b813}{e\+Tx\+Event\+Type}}  \mbox{\hyperlink{lora_8h_ad214b606ffdf2be60abb61bcebbbc83e}{Tx\+Event\+Type\+\_\+t}}}
+
+Lo\+Ra State Machine states 
+
+\subsection{열거형 타입 문서화}
+\mbox{\Hypertarget{lora_8h_a720c475eb13bb6b5523f349e34b1b813}\label{lora_8h_a720c475eb13bb6b5523f349e34b1b813}} 
+\index{lora.\+h@{lora.\+h}!e\+Tx\+Event\+Type@{e\+Tx\+Event\+Type}}
+\index{e\+Tx\+Event\+Type@{e\+Tx\+Event\+Type}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{e\+Tx\+Event\+Type}{eTxEventType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lora_8h_a720c475eb13bb6b5523f349e34b1b813}{e\+Tx\+Event\+Type}}}
+
+Lo\+Ra State Machine states \begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+X\+\_\+\+O\+N\+\_\+\+T\+I\+M\+ER@{T\+X\+\_\+\+O\+N\+\_\+\+T\+I\+M\+ER}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!T\+X\+\_\+\+O\+N\+\_\+\+T\+I\+M\+ER@{T\+X\+\_\+\+O\+N\+\_\+\+T\+I\+M\+ER}}}\mbox{\Hypertarget{lora_8h_a720c475eb13bb6b5523f349e34b1b813a4f3161e467887e98bcedd864f3cfc16e}\label{lora_8h_a720c475eb13bb6b5523f349e34b1b813a4f3161e467887e98bcedd864f3cfc16e}} 
+T\+X\+\_\+\+O\+N\+\_\+\+T\+I\+M\+ER&Appdata\+Transmition issue based on timer every Tx\+Duty\+Cycle\+Time \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+X\+\_\+\+O\+N\+\_\+\+E\+V\+E\+NT@{T\+X\+\_\+\+O\+N\+\_\+\+E\+V\+E\+NT}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!T\+X\+\_\+\+O\+N\+\_\+\+E\+V\+E\+NT@{T\+X\+\_\+\+O\+N\+\_\+\+E\+V\+E\+NT}}}\mbox{\Hypertarget{lora_8h_a720c475eb13bb6b5523f349e34b1b813a2d3c00188e9ba996f5f291272d029d52}\label{lora_8h_a720c475eb13bb6b5523f349e34b1b813a2d3c00188e9ba996f5f291272d029d52}} 
+T\+X\+\_\+\+O\+N\+\_\+\+E\+V\+E\+NT&Appdata\+Transmition external event plugged on On\+Send\+Event( ) \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+lora.\+h 파일의 126 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+127 \{
+131     \mbox{\hyperlink{lora_8h_a720c475eb13bb6b5523f349e34b1b813a4f3161e467887e98bcedd864f3cfc16e}{TX\_ON\_TIMER}},
+135     \mbox{\hyperlink{lora_8h_a720c475eb13bb6b5523f349e34b1b813a2d3c00188e9ba996f5f291272d029d52}{TX\_ON\_EVENT}}
+136 \} \mbox{\hyperlink{lora_8h_ad214b606ffdf2be60abb61bcebbbc83e}{TxEventType\_t}};
+\end{DoxyCode}
+\mbox{\Hypertarget{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0e}\label{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0e}} 
+\index{lora.\+h@{lora.\+h}!Lora\+Bool\+\_\+t@{Lora\+Bool\+\_\+t}}
+\index{Lora\+Bool\+\_\+t@{Lora\+Bool\+\_\+t}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{Lora\+Bool\+\_\+t}{LoraBool\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0e}{Lora\+Bool\+\_\+t}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+R\+A\+\_\+\+T\+R\+UE@{L\+O\+R\+A\+\_\+\+T\+R\+UE}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+T\+R\+UE@{L\+O\+R\+A\+\_\+\+T\+R\+UE}}}\mbox{\Hypertarget{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea6be3bc17af806a907f460076bc29b9a9}\label{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea6be3bc17af806a907f460076bc29b9a9}} 
+L\+O\+R\+A\+\_\+\+T\+R\+UE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+R\+A\+\_\+\+F\+A\+L\+SE@{L\+O\+R\+A\+\_\+\+F\+A\+L\+SE}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+F\+A\+L\+SE@{L\+O\+R\+A\+\_\+\+F\+A\+L\+SE}}}\mbox{\Hypertarget{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea1f8ccb3f89b4af431718863442d93eaa}\label{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea1f8ccb3f89b4af431718863442d93eaa}} 
+L\+O\+R\+A\+\_\+\+F\+A\+L\+SE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+lora.\+h 파일의 117 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+118 \{
+119   \mbox{\hyperlink{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea6be3bc17af806a907f460076bc29b9a9}{LORA\_TRUE}} = 0, 
+120   \mbox{\hyperlink{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea1f8ccb3f89b4af431718863442d93eaa}{LORA\_FALSE}} = !\mbox{\hyperlink{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0ea6be3bc17af806a907f460076bc29b9a9}{LORA\_TRUE}}
+121 \} \mbox{\hyperlink{lora_8h_aa8314c1fc56d4dd57ff6e00e4edb4d0e}{LoraBool\_t}};
+\end{DoxyCode}
+\mbox{\Hypertarget{lora_8h_abb50b325793cb04a67bdef9c8c198c20}\label{lora_8h_abb50b325793cb04a67bdef9c8c198c20}} 
+\index{lora.\+h@{lora.\+h}!Lora\+Confirm\+\_\+t@{Lora\+Confirm\+\_\+t}}
+\index{Lora\+Confirm\+\_\+t@{Lora\+Confirm\+\_\+t}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{Lora\+Confirm\+\_\+t}{LoraConfirm\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20}{Lora\+Confirm\+\_\+t}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG@{L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG@{L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG}}}\mbox{\Hypertarget{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}\label{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}} 
+L\+O\+R\+A\+W\+A\+N\+\_\+\+U\+N\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+R\+A\+W\+A\+N\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG@{L\+O\+R\+A\+W\+A\+N\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+W\+A\+N\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG@{L\+O\+R\+A\+W\+A\+N\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG}}}\mbox{\Hypertarget{lora_8h_abb50b325793cb04a67bdef9c8c198c20a10490b6d39a4ebf5cddd2fdbddebb729}\label{lora_8h_abb50b325793cb04a67bdef9c8c198c20a10490b6d39a4ebf5cddd2fdbddebb729}} 
+L\+O\+R\+A\+W\+A\+N\+\_\+\+C\+O\+N\+F\+I\+R\+M\+E\+D\+\_\+\+M\+SG&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+lora.\+h 파일의 111 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+112 \{
+113   \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{LORAWAN\_UNCONFIRMED\_MSG}} = 0, 
+114   \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20a10490b6d39a4ebf5cddd2fdbddebb729}{LORAWAN\_CONFIRMED\_MSG}} = !\mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{LORAWAN\_UNCONFIRMED\_MSG}}
+115 \} \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20}{LoraConfirm\_t}};
+\end{DoxyCode}
+\mbox{\Hypertarget{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817}\label{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817}} 
+\index{lora.\+h@{lora.\+h}!Lora\+Error\+Status@{Lora\+Error\+Status}}
+\index{Lora\+Error\+Status@{Lora\+Error\+Status}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{Lora\+Error\+Status}{LoraErrorStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817}{Lora\+Error\+Status}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+R\+A\+\_\+\+E\+R\+R\+OR@{L\+O\+R\+A\+\_\+\+E\+R\+R\+OR}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+E\+R\+R\+OR@{L\+O\+R\+A\+\_\+\+E\+R\+R\+OR}}}\mbox{\Hypertarget{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817abd3ec2bc73477fca9756cd710bae6f8a}\label{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817abd3ec2bc73477fca9756cd710bae6f8a}} 
+L\+O\+R\+A\+\_\+\+E\+R\+R\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+R\+A\+\_\+\+S\+U\+C\+C\+E\+SS@{L\+O\+R\+A\+\_\+\+S\+U\+C\+C\+E\+SS}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+S\+U\+C\+C\+E\+SS@{L\+O\+R\+A\+\_\+\+S\+U\+C\+C\+E\+SS}}}\mbox{\Hypertarget{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817a2aaaddb8e03d6a930665b2eac2d0a1a9}\label{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817a2aaaddb8e03d6a930665b2eac2d0a1a9}} 
+L\+O\+R\+A\+\_\+\+S\+U\+C\+C\+E\+SS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+lora.\+h 파일의 105 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+106 \{
+107   \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817abd3ec2bc73477fca9756cd710bae6f8a}{LORA\_ERROR}} = -1, 
+108   \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817a2aaaddb8e03d6a930665b2eac2d0a1a9}{LORA\_SUCCESS}} = 0
+109 \} \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817}{LoraErrorStatus}};
+\end{DoxyCode}
+\mbox{\Hypertarget{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2}\label{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2}} 
+\index{lora.\+h@{lora.\+h}!Lora\+Flag\+Status@{Lora\+Flag\+Status}}
+\index{Lora\+Flag\+Status@{Lora\+Flag\+Status}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{Lora\+Flag\+Status}{LoraFlagStatus}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2}{Lora\+Flag\+Status}}}
+
+\begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+R\+A\+\_\+\+R\+E\+S\+ET@{L\+O\+R\+A\+\_\+\+R\+E\+S\+ET}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+R\+E\+S\+ET@{L\+O\+R\+A\+\_\+\+R\+E\+S\+ET}}}\mbox{\Hypertarget{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a9027ec5e4a30b48e8969895b47d6f623}\label{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a9027ec5e4a30b48e8969895b47d6f623}} 
+L\+O\+R\+A\+\_\+\+R\+E\+S\+ET&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+R\+A\+\_\+\+S\+ET@{L\+O\+R\+A\+\_\+\+S\+ET}!lora.\+h@{lora.\+h}}\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+S\+ET@{L\+O\+R\+A\+\_\+\+S\+ET}}}\mbox{\Hypertarget{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a93ff479e669b0c70884791ada2d4a377}\label{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a93ff479e669b0c70884791ada2d4a377}} 
+L\+O\+R\+A\+\_\+\+S\+ET&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+lora.\+h 파일의 99 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+100 \{
+101   \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a9027ec5e4a30b48e8969895b47d6f623}{LORA\_RESET}} = 0, 
+102   \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a93ff479e669b0c70884791ada2d4a377}{LORA\_SET}} = !\mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a9027ec5e4a30b48e8969895b47d6f623}{LORA\_RESET}}
+103 \} \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2}{LoraFlagStatus}};
+\end{DoxyCode}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{lora_8h_a0d61d347bbf8db90b8ce87df9347b29a}\label{lora_8h_a0d61d347bbf8db90b8ce87df9347b29a}} 
+\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+Get\+Current\+Class@{L\+O\+R\+A\+\_\+\+Get\+Current\+Class}}
+\index{L\+O\+R\+A\+\_\+\+Get\+Current\+Class@{L\+O\+R\+A\+\_\+\+Get\+Current\+Class}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Get\+Current\+Class()}{LORA\_GetCurrentClass()}}
+{\footnotesize\ttfamily void L\+O\+R\+A\+\_\+\+Get\+Current\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}} $\ast$}]{current\+Class }\end{DoxyParamCaption})}
+
+
+
+get the current Lora Class 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & Device\+Class\+\_\+t New\+Class \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+c 파일의 510 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+511 \{
+512   \mbox{\hyperlink{structe_mib_request_confirm}{MibRequestConfirm\_t}} \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}};
+513   
+514   \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ac0426517132356c9977dcdafa5ab3a7f}{MIB\_DEVICE\_CLASS}};
+515   \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga3e208a4f73213aa801eeb9d9da7b71dd}{LoRaMacMibGetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+516   
+517   *currentClass = \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a1ca946ebc53171e9f0f1fc39c005a7a6}{Class}};
+518 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{lora_8h_a60e6c21550fcaf1cadb87454348046ad}\label{lora_8h_a60e6c21550fcaf1cadb87454348046ad}} 
+\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+Init@{L\+O\+R\+A\+\_\+\+Init}}
+\index{L\+O\+R\+A\+\_\+\+Init@{L\+O\+R\+A\+\_\+\+Init}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Init()}{LORA\_Init()}}
+{\footnotesize\ttfamily void L\+O\+R\+A\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{lora_8h_a6d9d62812a66a54510e9dc9f3f7a2b5e}{Lo\+Ra\+Main\+Callback\+\_\+t}} $\ast$}]{callbacks,  }\item[{\mbox{\hyperlink{lora_8h_a34fefd9575c41bc86d86d7d740a38fe8}{Lo\+Ra\+Param\+\_\+t}} $\ast$}]{Lo\+Ra\+Param }\end{DoxyParamCaption})}
+
+
+
+Lora Initialisation 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & Lo\+Ra\+Main\+Callback\+\_\+t \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & application parmaters \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & lora Init \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+c 파일의 269 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+270 \{
+271   \textcolor{comment}{/* init the Tx Duty Cycle*/}
+272   \mbox{\hyperlink{lora_8c_a9ef5991cab77e2e125591455cdcfb173}{LoRaParamInit}} = LoRaParam;
+273   
+274   \textcolor{comment}{/* init the main call backs*/}
+275   \mbox{\hyperlink{lora_8c_a32fd52403b45136addc61317451bfb61}{LoRaMainCallbacks}} = callbacks;
+276   
+277 \textcolor{preprocessor}{#if (STATIC\_DEVICE\_EUI != 1)}
+278   \mbox{\hyperlink{lora_8c_a32fd52403b45136addc61317451bfb61}{LoRaMainCallbacks}}->\mbox{\hyperlink{structs_lo_ra_main_callback_a977e227d039bd23ba078f393a856fe3d}{BoardGetUniqueId}}( \mbox{\hyperlink{lora_8c_a559e145046915c83d8d4cd1034dcd48d}{DevEui}} );  
+279 \textcolor{preprocessor}{#endif}
+280   
+281 \textcolor{preprocessor}{#if( OVER\_THE\_AIR\_ACTIVATION != 0 )}
+282 
+283   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"OTAA\(\backslash\)n\(\backslash\)r"}); 
+284   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"DevEui= %02X"}, \mbox{\hyperlink{lora_8c_a559e145046915c83d8d4cd1034dcd48d}{DevEui}}[0]) ;\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<8 ; i++) \{\mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"-%02X"}, 
+      \mbox{\hyperlink{lora_8c_a559e145046915c83d8d4cd1034dcd48d}{DevEui}}[i]); \}; \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)r"});
+285   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"AppEui= %02X"}, \mbox{\hyperlink{lora_8c_aeb7c5cb4ee9f2d92b3ee178bce539626}{AppEui}}[0]) ;\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<8 ; i++) \{\mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"-%02X"}, 
+      \mbox{\hyperlink{lora_8c_aeb7c5cb4ee9f2d92b3ee178bce539626}{AppEui}}[i]); \}; \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)r"});
+286   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"AppKey= %02X"}, \mbox{\hyperlink{lora_8c_a6456b5f4ecdf15e4968b32065d48e2d2}{AppKey}}[0]) ;\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<16; i++) \{\mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{" %02X"}, 
+      \mbox{\hyperlink{lora_8c_a6456b5f4ecdf15e4968b32065d48e2d2}{AppKey}}[i]); \}; \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n\(\backslash\)r"});
+287 \textcolor{preprocessor}{#else}
+288 
+289 \textcolor{preprocessor}{#if (STATIC\_DEVICE\_ADDRESS != 1)}
+290   \textcolor{comment}{// Random seed initialization}
+291   \mbox{\hyperlink{utilities_8c_aeb9a45da74fe6c260b78b181882d7275}{srand1}}( \mbox{\hyperlink{lora_8c_a32fd52403b45136addc61317451bfb61}{LoRaMainCallbacks}}->\mbox{\hyperlink{structs_lo_ra_main_callback_a37eb88e46a53c5b95593370b046fd9c0}{BoardGetRandomSeed}}( ) );
+292   \textcolor{comment}{// Choose a random device address}
+293   \mbox{\hyperlink{lora_8c_a8644153b1c46ffcaeb2b44b5544a2c1a}{DevAddr}} = \mbox{\hyperlink{utilities_8c_af5d8ad6dae489ac64821e7d4f004595d}{randr}}( 0, 0x01FFFFFF );
+294 \textcolor{preprocessor}{#endif}
+295   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"ABP\(\backslash\)n\(\backslash\)r"}); 
+296   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"DevEui= %02X"}, \mbox{\hyperlink{lora_8c_a559e145046915c83d8d4cd1034dcd48d}{DevEui}}[0]) ;\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<8 ; i++) \{\mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"-%02X"}, 
+      \mbox{\hyperlink{lora_8c_a559e145046915c83d8d4cd1034dcd48d}{DevEui}}[i]); \}; \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)r"});
+297   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"DevAdd=  %08X\(\backslash\)n\(\backslash\)r"}, \mbox{\hyperlink{lora_8c_a8644153b1c46ffcaeb2b44b5544a2c1a}{DevAddr}}) ;
+298   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"NwkSKey= %02X"}, \mbox{\hyperlink{lora_8c_ab2f0eaa01122296a4d74adac32ddfae0}{NwkSKey}}[0]) ;\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<16 ; i++) \{
+      \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{" %02X"}, \mbox{\hyperlink{lora_8c_ab2f0eaa01122296a4d74adac32ddfae0}{NwkSKey}}[i]); \}; \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)r"});
+299   \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"AppSKey= %02X"}, \mbox{\hyperlink{lora_8c_ae9c6b731057236e29f0a9ede66c9a7dd}{AppSKey}}[0]) ;\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1; i<16 ; i++) \{
+      \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{" %02X"}, \mbox{\hyperlink{lora_8c_ae9c6b731057236e29f0a9ede66c9a7dd}{AppSKey}}[i]); \}; \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)r"});
+300 \textcolor{preprocessor}{#endif}
+301         \mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}.\mbox{\hyperlink{structs_lo_ra_mac_primitives_a2b7cb648bbe609f5fb6fe4e3d0bcda41}{MacMcpsConfirm}} = 
+      \mbox{\hyperlink{lora_8c_a7e94673a3e7e54cf2e49675d12189070}{McpsConfirm}};
+302         \mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}.\mbox{\hyperlink{structs_lo_ra_mac_primitives_a89cb88517df5ff62828e4cf29454d9e5}{MacMcpsIndication}} = 
+      \mbox{\hyperlink{lora_8c_aa62f56dcd70e02213fc6e5d0f04b3d1c}{McpsIndication}};
+303         \mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}.\mbox{\hyperlink{structs_lo_ra_mac_primitives_ade47d176982e0843084c5932445898a2}{MacMlmeConfirm}} = 
+      \mbox{\hyperlink{lora_8c_ab72b68cc96c6187003c5dd6e325a74c7}{MlmeConfirm}};
+304         \mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}.\mbox{\hyperlink{structs_lo_ra_mac_primitives_a353881c42ec9e21f3112dd548a3da87a}{MacMlmeIndication}} = 
+      \mbox{\hyperlink{lora_8c_ac778062b2493443f2c69391ad03e22e8}{MlmeIndication}};
+305         \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}.\mbox{\hyperlink{structs_lo_ra_mac_callback_ae0f26df23b50220cf30bc5a1db6bfefa}{GetBatteryLevel}} = 
+      \mbox{\hyperlink{lora_8c_a32fd52403b45136addc61317451bfb61}{LoRaMainCallbacks}}->\mbox{\hyperlink{structs_lo_ra_main_callback_ac4412349f783b6e7653afd9e3725f436}{BoardGetBatteryLevel}};
+306 \textcolor{preprocessor}{#if defined( REGION\_AS923 )}
+307         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afa5b791cd5d892cd4ffdc891177f9c424f}{LORAMAC\_REGION\_AS923}} );
+308 \textcolor{preprocessor}{#elif defined( REGION\_AU915 )}
+309         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afa31c5134a31ba71dd67fffc7cd2e8d402}{LORAMAC\_REGION\_AU915}} );
+310 \textcolor{preprocessor}{#elif defined( REGION\_CN470 )}
+311         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afa8bf5c395dec14c8c24bc629e9cb4ab64}{LORAMAC\_REGION\_CN470}} );
+312 \textcolor{preprocessor}{#elif defined( REGION\_CN779 )}
+313         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afaa462c6a59045bcdbe27177b3c7d91ed0}{LORAMAC\_REGION\_CN779}} );
+314 \textcolor{preprocessor}{#elif defined( REGION\_EU433 )}
+315         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afa484c9c5522a1bd8411920cc7703d3977}{LORAMAC\_REGION\_EU433}} );
+316 \textcolor{preprocessor}{ #elif defined( REGION\_IN865 )}
+317         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afa58507c2e7248ab724cd3e0d0144ebd77}{LORAMAC\_REGION\_IN865}} );
+318 \textcolor{preprocessor}{#elif defined( REGION\_EU868 )}
+319         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afadbfed23153fb6254b9ca2301ec19c24f}{LORAMAC\_REGION\_EU868}} );
+320 \textcolor{preprocessor}{#elif defined( REGION\_KR920 )}
+321         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afa2f45370a935e8767a90e19e24101f859}{LORAMAC\_REGION\_KR920}} );
+322 \textcolor{preprocessor}{#elif defined( REGION\_US915 )}
+323         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afab2c106945b06878a5ded0cb466330412}{LORAMAC\_REGION\_US915}} );
+324 \textcolor{preprocessor}{#elif defined( REGION\_US915\_HYBRID )}
+325         \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7ca445cf825e45999810b3991273eba5}{LoRaMacInitialization}}( &\mbox{\hyperlink{lora_8c_a796121aa8a83d30f3d47961b67b53941}{LoRaMacPrimitives}}, &
+      \mbox{\hyperlink{lora_8c_a58e56c536557246fc3a2cee4fa89b31d}{LoRaMacCallbacks}}, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga5d863ec55bc300e0ffeef88bcbeb70afa973a53fba592cda6ade4592cf7b814b0}{LORAMAC\_REGION\_US915\_HYBRID}} );
+326 \textcolor{preprocessor}{#else}
+327 \textcolor{preprocessor}{    #error "Please define a region in the compiler options."}
+328 \textcolor{preprocessor}{#endif}
+329       
+330       \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a756ff0b66217e3e4ddd0442c8aa56802}{MIB\_ADR}};
+331       \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a04efa8698eeea64f27b216d64e598c0d}{AdrEnable}} = \mbox{\hyperlink{lora_8c_a9ef5991cab77e2e125591455cdcfb173}{LoRaParamInit}}->
+      \mbox{\hyperlink{structs_lo_ra_param_a04efa8698eeea64f27b216d64e598c0d}{AdrEnable}};
+332       \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+333 
+334       \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ab2819c46ba94b53c1fb2c3a0bfa75e48}{MIB\_PUBLIC\_NETWORK}};
+335       \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_aff3bd8c7ac1d2fe36ed22c15c25273aa}{EnablePublicNetwork}} = 
+      \mbox{\hyperlink{lora_8c_a9ef5991cab77e2e125591455cdcfb173}{LoRaParamInit}}->\mbox{\hyperlink{structs_lo_ra_param_aff3bd8c7ac1d2fe36ed22c15c25273aa}{EnablePublicNetwork}};
+336       \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+337                       
+338       \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ac0426517132356c9977dcdafa5ab3a7f}{MIB\_DEVICE\_CLASS}};
+339       \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a1ca946ebc53171e9f0f1fc39c005a7a6}{Class}}= \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6a307ee33f71385819abc142fe4f23c3bb}{CLASS\_A}};
+340       \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+341 
+342 \textcolor{preprocessor}{#if defined( REGION\_EU868 )}
+343       \mbox{\hyperlink{group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865}{LoRaMacTestSetDutyCycleOn}}( LORAWAN\_DUTYCYCLE\_ON );
+344 \textcolor{preprocessor}{#endif}
+345 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{lora_8h_a3671e53923a80ddbbd43e56342fd94fa}\label{lora_8h_a3671e53923a80ddbbd43e56342fd94fa}} 
+\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+Join@{L\+O\+R\+A\+\_\+\+Join}}
+\index{L\+O\+R\+A\+\_\+\+Join@{L\+O\+R\+A\+\_\+\+Join}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Join()}{LORA\_Join()}}
+{\footnotesize\ttfamily void L\+O\+R\+A\+\_\+\+Join (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Join a Lora Network in classA  if the device is A\+BP, this is a pass through functon 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & none \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+c 파일의 348 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+349 \{
+350     \mbox{\hyperlink{structs_mlme_req}{MlmeReq\_t}} mlmeReq;
+351   
+352     mlmeReq.\mbox{\hyperlink{structs_mlme_req_a83b9239b834fa1a95fba118c0a392a8b}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga320f4c08fe99747b08463689be624f7ba475ad5dea1c4c13b93b31095c665e92e}{MLME\_JOIN}};
+353     mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_a172a908e5643a97e1e911d97d8b2c363}{Join}}.\mbox{\hyperlink{structs_mlme_req_join_a2aa72c6d37233b51e7ae46f85398f888}{DevEui}} = \mbox{\hyperlink{lora_8c_a559e145046915c83d8d4cd1034dcd48d}{DevEui}};
+354     mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_a172a908e5643a97e1e911d97d8b2c363}{Join}}.\mbox{\hyperlink{structs_mlme_req_join_a9bef8882015afeb26d9a7fb5d601df96}{AppEui}} = \mbox{\hyperlink{lora_8c_aeb7c5cb4ee9f2d92b3ee178bce539626}{AppEui}};
+355     mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_a172a908e5643a97e1e911d97d8b2c363}{Join}}.\mbox{\hyperlink{structs_mlme_req_join_a560c2bd9214ee75105acac8593614bd9}{AppKey}} = \mbox{\hyperlink{lora_8c_a6456b5f4ecdf15e4968b32065d48e2d2}{AppKey}};
+356     mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_a172a908e5643a97e1e911d97d8b2c363}{Join}}.\mbox{\hyperlink{structs_mlme_req_join_a780280c12645b2666878162aab5d8cad}{Datarate}} = \mbox{\hyperlink{lora_8c_a9ef5991cab77e2e125591455cdcfb173}{LoRaParamInit}}->
+      \mbox{\hyperlink{structs_lo_ra_param_afc6f53fb662fc66362f998d1351e9c5a}{TxDatarate}};
+357   
+358     \mbox{\hyperlink{lora_8c_aaa245b1db1384dd6fc0257bc479e760c}{JoinParameters}} = mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_a172a908e5643a97e1e911d97d8b2c363}{Join}};
+359 
+360 \textcolor{preprocessor}{#if( OVER\_THE\_AIR\_ACTIVATION != 0 )}
+361     \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga097113f30feecc17c780940ff74af33e}{LoRaMacMlmeRequest}}( &mlmeReq );
+362 \textcolor{preprocessor}{#else}
+363     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a982c4b7cc1e276633134aa89298c96b0}{MIB\_NET\_ID}};
+364     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a84a14c879508144e9961372ace234169}{NetID}} = LORAWAN\_NETWORK\_ID;
+365     \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+366 
+367     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ab1459b05690ffa347a71393006b526ac}{MIB\_DEV\_ADDR}};
+368     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a8644153b1c46ffcaeb2b44b5544a2c1a}{DevAddr}} = \mbox{\hyperlink{lora_8c_a8644153b1c46ffcaeb2b44b5544a2c1a}{DevAddr}};
+369     \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+370 
+371     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a60d7688e714c9b140648aadd2e7ab36e}{MIB\_NWK\_SKEY}};
+372     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a04e90b783b4e6841ecda8d32d10dc90e}{NwkSKey}} = \mbox{\hyperlink{lora_8c_ab2f0eaa01122296a4d74adac32ddfae0}{NwkSKey}};
+373     \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+374 
+375     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ae65b7c035d9969666eb5e26a2b3c19fd}{MIB\_APP\_SKEY}};
+376     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a46a2c1c82bda378fb02d20db36bbe414}{AppSKey}} = \mbox{\hyperlink{lora_8c_ae9c6b731057236e29f0a9ede66c9a7dd}{AppSKey}};
+377     \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+378 
+379     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a2e2a91bfbbb7bbbe1467eec239effbd0}{MIB\_NETWORK\_JOINED}};
+380     \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a1a4811dfe6101a9f87ecb1aaaf61e6c7}{IsNetworkJoined}} = \textcolor{keyword}{true};
+381     \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+382 
+383     \mbox{\hyperlink{lora_8c_a32fd52403b45136addc61317451bfb61}{LoRaMainCallbacks}}->\mbox{\hyperlink{structs_lo_ra_main_callback_a956862bc1dcb958fc8b232f61535c5aa}{LORA\_HasJoined}}();
+384 \textcolor{preprocessor}{#endif}
+385 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\mbox{\Hypertarget{lora_8h_a4ee43844542608036b6a87a2650711ea}\label{lora_8h_a4ee43844542608036b6a87a2650711ea}} 
+\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+Join\+Status@{L\+O\+R\+A\+\_\+\+Join\+Status}}
+\index{L\+O\+R\+A\+\_\+\+Join\+Status@{L\+O\+R\+A\+\_\+\+Join\+Status}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Join\+Status()}{LORA\_JoinStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2}{Lora\+Flag\+Status}} L\+O\+R\+A\+\_\+\+Join\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check whether the Device is joined to the network 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & none \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em returns} & L\+O\+R\+A\+\_\+\+S\+ET if joined \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+c 파일의 387 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+388 \{
+389   \mbox{\hyperlink{structe_mib_request_confirm}{MibRequestConfirm\_t}} \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}};
+390 
+391   \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a2e2a91bfbbb7bbbe1467eec239effbd0}{MIB\_NETWORK\_JOINED}};
+392   
+393   \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga3e208a4f73213aa801eeb9d9da7b71dd}{LoRaMacMibGetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+394 
+395   \textcolor{keywordflow}{if}( \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a1a4811dfe6101a9f87ecb1aaaf61e6c7}{IsNetworkJoined}} == \textcolor{keyword}{true} )
+396   \{
+397     \textcolor{keywordflow}{return} \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a93ff479e669b0c70884791ada2d4a377}{LORA\_SET}};
+398   \}
+399   \textcolor{keywordflow}{else}
+400   \{
+401     \textcolor{keywordflow}{return} \mbox{\hyperlink{lora_8h_ad0958c53d9361b8d0f32db54ccb73ac2a9027ec5e4a30b48e8969895b47d6f623}{LORA\_RESET}};
+402   \}
+403 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+\mbox{\Hypertarget{lora_8h_a547a61266532616789a8a34655e04e30}\label{lora_8h_a547a61266532616789a8a34655e04e30}} 
+\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+\+Request\+Class@{L\+O\+R\+A\+\_\+\+Request\+Class}}
+\index{L\+O\+R\+A\+\_\+\+Request\+Class@{L\+O\+R\+A\+\_\+\+Request\+Class}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Request\+Class()}{LORA\_RequestClass()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817}{Lora\+Error\+Status}} L\+O\+R\+A\+\_\+\+Request\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}}}]{new\+Class }\end{DoxyParamCaption})}
+
+
+
+change Lora Class  callback L\+O\+R\+A\+\_\+\+Confirm\+Class informs upper layer that the change has occured  Only switch from class A to class B/C OR from class B/C to class A is allowed  can be calld only in L\+O\+R\+A\+\_\+\+Class\+Switch\+Slot or L\+O\+R\+A\+\_\+\+Rx\+Data callbacks 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & Device\+Class\+\_\+t New\+Class \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em Lora\+Error\+Status} & \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+c 파일의 453 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+454 \{
+455   \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817}{LoraErrorStatus}} Errorstatus = \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817a2aaaddb8e03d6a930665b2eac2d0a1a9}{LORA\_SUCCESS}};
+456   \mbox{\hyperlink{structe_mib_request_confirm}{MibRequestConfirm\_t}} \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}};
+457   \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{DeviceClass\_t}} currentClass;
+458   
+459   \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ac0426517132356c9977dcdafa5ab3a7f}{MIB\_DEVICE\_CLASS}};
+460   \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga3e208a4f73213aa801eeb9d9da7b71dd}{LoRaMacMibGetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+461   
+462   currentClass = \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a1ca946ebc53171e9f0f1fc39c005a7a6}{Class}};
+463   \textcolor{comment}{/*attempt to swicth only if class update*/}
+464   \textcolor{keywordflow}{if} (currentClass != newClass)
+465   \{
+466     \textcolor{keywordflow}{switch} (newClass)
+467     \{
+468       \textcolor{keywordflow}{case} \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6a307ee33f71385819abc142fe4f23c3bb}{CLASS\_A}}:
+469       \{
+470         \textcolor{keywordflow}{if} (currentClass == \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6a307ee33f71385819abc142fe4f23c3bb}{CLASS\_A}})
+471         \{
+472           \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a1ca946ebc53171e9f0f1fc39c005a7a6}{Class}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6a307ee33f71385819abc142fe4f23c3bb}{CLASS\_A}};
+473           \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} ) == 
+      \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga1d18f26b344040b3ec5c3db662919661a03db5fca052313edb3823c014b653a74}{LORAMAC\_STATUS\_OK}} )
+474           \{
+475           \textcolor{comment}{/*switch is instantanuous*/}
+476             \mbox{\hyperlink{lora_8c_a32fd52403b45136addc61317451bfb61}{LoRaMainCallbacks}}->\mbox{\hyperlink{structs_lo_ra_main_callback_abfbc0131a4d9b3702c8fb93228f342a8}{LORA\_ConfirmClass}}(
+      \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6a307ee33f71385819abc142fe4f23c3bb}{CLASS\_A}});
+477           \}
+478           \textcolor{keywordflow}{else}
+479           \{
+480             Errorstatus = \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817abd3ec2bc73477fca9756cd710bae6f8a}{LORA\_ERROR}};
+481           \}
+482         \}
+483         \textcolor{keywordflow}{break};
+484       \}
+485       \textcolor{keywordflow}{case} \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6abfee35359a39adbacbc3f13eddc76cd0}{CLASS\_C}}:
+486       \{
+487         \textcolor{keywordflow}{if} (currentClass != \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6a307ee33f71385819abc142fe4f23c3bb}{CLASS\_A}})
+488         \{
+489           Errorstatus = \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817abd3ec2bc73477fca9756cd710bae6f8a}{LORA\_ERROR}};
+490         \}
+491         \textcolor{comment}{/*switch is instantanuous*/}
+492         \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a1ca946ebc53171e9f0f1fc39c005a7a6}{Class}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6abfee35359a39adbacbc3f13eddc76cd0}{CLASS\_C}};
+493         \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} ) == 
+      \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga1d18f26b344040b3ec5c3db662919661a03db5fca052313edb3823c014b653a74}{LORAMAC\_STATUS\_OK}} )
+494         \{
+495           \mbox{\hyperlink{lora_8c_a32fd52403b45136addc61317451bfb61}{LoRaMainCallbacks}}->\mbox{\hyperlink{structs_lo_ra_main_callback_abfbc0131a4d9b3702c8fb93228f342a8}{LORA\_ConfirmClass}}(
+      \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga133e92597739340bac439d1b0916dcb6abfee35359a39adbacbc3f13eddc76cd0}{CLASS\_C}});
+496         \}
+497         \textcolor{keywordflow}{else}
+498         \{
+499             Errorstatus = \mbox{\hyperlink{lora_8h_ac35af0971b4bba7ef5ec13f48dd8e817abd3ec2bc73477fca9756cd710bae6f8a}{LORA\_ERROR}};
+500         \}
+501         \textcolor{keywordflow}{break};
+502       \}
+503       \textcolor{keywordflow}{default}:
+504         \textcolor{keywordflow}{break};
+505     \} 
+506   \}
+507   \textcolor{keywordflow}{return} Errorstatus;
+508 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+\mbox{\Hypertarget{lora_8h_a343d8f2ddf9b21cb458e4a3e09076b5e}\label{lora_8h_a343d8f2ddf9b21cb458e4a3e09076b5e}} 
+\index{lora.\+h@{lora.\+h}!L\+O\+R\+A\+\_\+send@{L\+O\+R\+A\+\_\+send}}
+\index{L\+O\+R\+A\+\_\+send@{L\+O\+R\+A\+\_\+send}!lora.\+h@{lora.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+send()}{LORA\_send()}}
+{\footnotesize\ttfamily bool L\+O\+R\+A\+\_\+send (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}} $\ast$}]{App\+Data,  }\item[{\mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20}{Lora\+Confirm\+\_\+t}}}]{Is\+Tx\+Confirmed }\end{DoxyParamCaption})}
+
+
+
+run Lora classA state Machine 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & none \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+c 파일의 407 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+408 \{
+409     \mbox{\hyperlink{structs_mcps_req}{McpsReq\_t}} mcpsReq;
+410     \mbox{\hyperlink{structs_lo_ra_mac_tx_info}{LoRaMacTxInfo\_t}} txInfo;
+411 
+412     \textcolor{comment}{/*if certification test are on going, application data is not sent*/}
+413     \textcolor{keywordflow}{if} (\mbox{\hyperlink{lora-test_8c_ae856642063d609fa42633f12c85fa318}{certif\_running}}() == \textcolor{keyword}{true})
+414     \{
+415       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+416     \}
+417     
+418     \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8b0aeaf75f9404ce01da9b202252c231}{LoRaMacQueryTxPossible}}( \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_a52d0e53a3b318f8c75791c051159efb0}{BuffSize}}, &txInfo ) != 
+      \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga1d18f26b344040b3ec5c3db662919661a03db5fca052313edb3823c014b653a74}{LORAMAC\_STATUS\_OK}} )
+419     \{
+420         \textcolor{comment}{// Send empty frame in order to flush MAC commands}
+421         mcpsReq.\mbox{\hyperlink{structs_mcps_req_a29993a5d65888bf0f36ec406896bb540}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga7b080a046606f23fe030d0aa6d2a0e30a340afc087e96410da04d07fb0470f84a}{MCPS\_UNCONFIRMED}};
+422         mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a2e9f11cf5a8f2a797999359bedee31af}{fBuffer}} = NULL;
+423         mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a6b4fc83528d7391a193516d9f4ba985b}{fBufferSize}} = 0;
+424         mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_ae2f6080f3aa0e9485c55513ca56bb24d}{Datarate}} = \mbox{\hyperlink{lora_8c_a9ef5991cab77e2e125591455cdcfb173}{LoRaParamInit}}->
+      \mbox{\hyperlink{structs_lo_ra_param_afc6f53fb662fc66362f998d1351e9c5a}{TxDatarate}};
+425     \}
+426     \textcolor{keywordflow}{else}
+427     \{
+428         \textcolor{keywordflow}{if}( \mbox{\hyperlink{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}{IsTxConfirmed}} == \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{LORAWAN\_UNCONFIRMED\_MSG}} )
+429         \{
+430             mcpsReq.\mbox{\hyperlink{structs_mcps_req_a29993a5d65888bf0f36ec406896bb540}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga7b080a046606f23fe030d0aa6d2a0e30a340afc087e96410da04d07fb0470f84a}{MCPS\_UNCONFIRMED}};
+431             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a2973de9ac0ab5e876b80362bc4c6a88b}{fPort}} = \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->
+      \mbox{\hyperlink{structlora___app_data__t_a4b93121f04819fbab96346736fa720a9}{Port}};
+432             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a6b4fc83528d7391a193516d9f4ba985b}{fBufferSize}} = 
+      \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_a52d0e53a3b318f8c75791c051159efb0}{BuffSize}};
+433             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a2e9f11cf5a8f2a797999359bedee31af}{fBuffer}} = \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->
+      \mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}};
+434             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_ae2f6080f3aa0e9485c55513ca56bb24d}{Datarate}} = 
+      \mbox{\hyperlink{lora_8c_a9ef5991cab77e2e125591455cdcfb173}{LoRaParamInit}}->\mbox{\hyperlink{structs_lo_ra_param_afc6f53fb662fc66362f998d1351e9c5a}{TxDatarate}};
+435         \}
+436         \textcolor{keywordflow}{else}
+437         \{
+438             mcpsReq.\mbox{\hyperlink{structs_mcps_req_a29993a5d65888bf0f36ec406896bb540}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga7b080a046606f23fe030d0aa6d2a0e30a5eb18aef0f2abda0d56add7e868b8546}{MCPS\_CONFIRMED}};
+439             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_a2973de9ac0ab5e876b80362bc4c6a88b}{fPort}} = \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->\mbox{\hyperlink{structlora___app_data__t_a4b93121f04819fbab96346736fa720a9}{Port}};
+440             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_a6b4fc83528d7391a193516d9f4ba985b}{fBufferSize}} = \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->
+      \mbox{\hyperlink{structlora___app_data__t_a52d0e53a3b318f8c75791c051159efb0}{BuffSize}};
+441             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_a2e9f11cf5a8f2a797999359bedee31af}{fBuffer}} = \mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{AppData}}->
+      \mbox{\hyperlink{structlora___app_data__t_aead7dd380dc6a9f1711bd8f7b821a7fc}{Buff}};
+442             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_a9da59688c25c389a323e4d155fca3a47}{NbTrials}} = 8;
+443             mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_ae2f6080f3aa0e9485c55513ca56bb24d}{Datarate}} = \mbox{\hyperlink{lora_8c_a9ef5991cab77e2e125591455cdcfb173}{LoRaParamInit}}->
+      \mbox{\hyperlink{structs_lo_ra_param_afc6f53fb662fc66362f998d1351e9c5a}{TxDatarate}};
+444         \}
+445     \}
+446     \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga79768f8a3c22aaff84d4dfcc77ad508c}{LoRaMacMcpsRequest}}( &mcpsReq ) == \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga1d18f26b344040b3ec5c3db662919661a03db5fca052313edb3823c014b653a74}{LORAMAC\_STATUS\_OK}} )
+447     \{
+448         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+449     \}
+450     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+451 \}  
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 12

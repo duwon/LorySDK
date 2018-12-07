@@ -1,0 +1,32 @@
+digraph "RegionCN779NextChannel"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node75 [label="RegionCN779NextChannel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node75 -> Node76 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node76 [label="RegionCommonCountChannels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#gac23f0831812f610f57f42f6cf87368c9",tooltip="Counts the number of active channels in a given channels mask. This is a generic function and valid f..."];
+  Node76 -> Node77 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node77 [label="CountChannels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_common_8c.html#aef7feee8e47f43eb01f62249bfcc2a06"];
+  Node75 -> Node78 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node78 [label="TimerGetElapsedTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#a9ca7e27f3d6474daff63f2e093a2e91e",tooltip="Return the Time elapsed since a fix moment in Time "];
+  Node78 -> Node79 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node79 [label="HW_RTC_GetTimerValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gad0d80bf1ac3a9704f4b4b9d672f38daa",tooltip="Get the RTC timer value "];
+  Node79 -> Node80 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node80 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gaf81b8dc866a5c7b125355b55e3953387",tooltip="get current time from calendar in ticks "];
+  Node78 -> Node81 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node81 [label="HW_RTC_ms2Tick",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gab105bfcf0c8b346a1b20b158b8f8a86e",tooltip="converts time in ms to time in ticks "];
+  Node78 -> Node82 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node82 [label="HW_RTC_Tick2ms",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga8db2858eda135777ea359e20185c8524",tooltip="converts time in ticks to time in ms "];
+  Node75 -> Node83 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node83 [label="RegionCommonUpdateBandTimeOff",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#ga2e26fe6b49ca26edf7052eadd7f18b3a",tooltip="Updates the time-offs of the bands. This is a generic function and valid for all regions. "];
+  Node83 -> Node78 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node75 -> Node84 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node84 [label="CountNbOfEnabledChannels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_c_n779_8c.html#a84ed01aa0ea6f1e53707efb5aaa3bd97"];
+  Node84 -> Node85 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node85 [label="RegionCommonValueInRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#gafdd1c80d953e18d755a631b72a9c3bd3",tooltip="Verifies, if a value is in a given range. This is a generic function and valid for all regions..."];
+  Node75 -> Node86 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node86 [label="randr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$utilities_8c.html#af5d8ad6dae489ac64821e7d4f004595d",tooltip="Computes a random number between min and max "];
+  Node86 -> Node87 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node87 [label="rand1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$utilities_8c.html#a682de7091382ea1fcb2919b0f1cf6cdc"];
+}

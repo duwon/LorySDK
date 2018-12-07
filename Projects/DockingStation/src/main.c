@@ -1,11 +1,28 @@
-/******************************************************************************
+/** 
   * @file    main.c
   * @author  Duwon Jung
-  * @version 
   * @date    2018-11-08
-  * @brief   
-  ******************************************************************************
+  * @brif    Main
   */
+
+/**
+  * @mainpage DockingStation 
+    @section intro 소개
+    - LorySDK, Lorawan Class-C project
+
+  * @section info 정보
+    - DockingStaion에 Lorawan 포팅
+
+  * @section  CREATEINFO      작성정보
+    - 작성자      :   Duwon Jung
+    - 작성일      :   2018-11-08
+
+  * @section  MODIFYINFO      수정정보
+    - 2018-11-08    :    일부 수정
+  
+  */
+
+
 /* Includes ------------------------------------------------------------------*/
 #include "hw.h"
 #include "lora.h"
@@ -22,15 +39,15 @@
 #define LPP_DATATYPE_BAROMETER         0x73
 #define LPP_APP_PORT                   99
 
-#define APP_TX_DUTYCYCLE                            30000 //data transmission duty cycle. 60s, value in [ms].
+#define APP_TX_DUTYCYCLE                            30000 /**< data transmission duty cycle. 60s, value in [ms]. */
 #define LORAWAN_ADR_STATE                           LORAWAN_ADR_ON
-#define LORAWAN_DEFAULT_DATA_RATE                   DR_0 //LoRaWAN Default data Rate Data Rate
-#define LORAWAN_APP_PORT                            2 //LoRaWAN application port. do not use 224.
-#define LORAWAN_DEFAULT_CLASS                       CLASS_C //LoRaWAN default endNode class
-#define LORAWAN_DEFAULT_CONFIRM_MSG_STATE           LORAWAN_UNCONFIRMED_MSG //LoRaWAN default confirm state
-#define LORAWAN_APP_DATA_BUFF_SIZE                  64 //User application data buffer size
-static uint8_t AppDataBuff[LORAWAN_APP_DATA_BUFF_SIZE]; //User application data
-static lora_AppData_t AppData={ AppDataBuff,  0 ,0 }; //User application data structure
+#define LORAWAN_DEFAULT_DATA_RATE                   DR_0 /**< LoRaWAN Default data Rate Data Rate */
+#define LORAWAN_APP_PORT                            2 /**< LoRaWAN application port. do not use 224. */
+#define LORAWAN_DEFAULT_CLASS                       CLASS_C /**< LoRaWAN default endNode class */
+#define LORAWAN_DEFAULT_CONFIRM_MSG_STATE           LORAWAN_UNCONFIRMED_MSG /**< LoRaWAN default confirm state */
+#define LORAWAN_APP_DATA_BUFF_SIZE                  64 /**< User application data buffer size */
+static uint8_t AppDataBuff[LORAWAN_APP_DATA_BUFF_SIZE]; /**< User application data */
+static lora_AppData_t AppData={ AppDataBuff,  0 ,0 }; /**< User application data structure */
 
 #define BUTTON_DUTYCYCLE                   3000
 #define LED_RDY_DUTYCYCLE                  1000
@@ -38,15 +55,15 @@ static lora_AppData_t AppData={ AppDataBuff,  0 ,0 }; //User application data st
 /* Private macro -------------------------------------------------------------*/
 
 /* Private function prototypes -----------------------------------------------*/
-static void OnButtonTimerEvent( void );
-static void OnLedTimerEvent( void );
-static void OnTxTimerEvent( void ); /* tx timer callback function*/
+static void OnButtonTimerEvent( void ); /**< Button timer callback function */
+static void OnLedTimerEvent( void ); /**< LED timer callback function */
+static void OnTxTimerEvent( void ); /**< TX timer callback function */
 
-static void LORA_RxData( lora_AppData_t *AppData); /* call back when LoRa endNode has received a frame*/
-static void LORA_HasJoined( void ); /* call back when LoRa endNode has just joined*/
-static void LORA_ConfirmClass ( DeviceClass_t Class ); /* call back when LoRa endNode has just switch the class*/
-static void LORA_TxNeeded ( void ); /* call back when server needs endNode to send a frame*/
-static void Send( void ); /* LoRa endNode send request*/
+static void LORA_RxData( lora_AppData_t *AppData); /**< call back when LoRa endNode has received a frame */
+static void LORA_HasJoined( void ); /**< call back when LoRa endNode has just joined */
+static void LORA_ConfirmClass ( DeviceClass_t Class ); /**< call back when LoRa endNode has just switch the class */
+static void LORA_TxNeeded ( void ); /**< call back when server needs endNode to send a frame */
+static void Send( void ); /**< LoRa endNode send request */
 
 uint8_t HW_GetBatteryLevel( void );
 uint16_t HW_GetTemperatureLevel( void );
@@ -56,7 +73,7 @@ static TimerEvent_t ButtonTimer;
 static TimerEvent_t LedTimer;
 static TimerEvent_t TxTimer;
 
-static uint8_t AppLedStateOn = RESET; //Specifies the state of the application LED
+static uint8_t AppLedStateOn = RESET; /**<Specifies the state of the application LED */
 
 /* load Main call backs structure*/
 static LoRaMainCallback_t LoRaMainCallbacks = { HW_GetBatteryLevel,

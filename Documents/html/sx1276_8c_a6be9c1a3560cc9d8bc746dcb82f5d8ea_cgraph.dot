@@ -1,0 +1,43 @@
+digraph "SX1276OnDio2Irq"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node140 [label="SX1276OnDio2Irq",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node140 -> Node141 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node141 [label="TimerStop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#a8ae899c4e8a9abf49d825d6959aa6bcb",tooltip="Stops and removes the timer object from the list of timer events "];
+  Node141 -> Node142 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node142 [label="TimerSetTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#af90925c5246bd6bbc2863d08d4cca3a9",tooltip="Sets a timeout with the duration \"timestamp\" "];
+  Node142 -> Node143 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node143 [label="HW_RTC_GetMinimumTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga254f9e5c17daff978fef15be01021c51",tooltip="Return the minimum timeout the RTC is able to handle "];
+  Node142 -> Node144 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node144 [label="HW_RTC_GetTimerElapsedTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga7961116aa831950b62a413ecbbcfb02a",tooltip="Get the RTC timer elapsed time since the last Reference was set "];
+  Node144 -> Node145 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node145 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gaf81b8dc866a5c7b125355b55e3953387",tooltip="get current time from calendar in ticks "];
+  Node142 -> Node146 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node146 [label="HW_RTC_SetAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga09cec56d54c13de658fafdd003390771",tooltip="Set the alarm "];
+  Node146 -> Node144 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node146 -> Node147 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node147 [label="LPM_SetStopMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ac8a0ff787d7d417b9e1f0697a1d5fd6d",tooltip="This API notifies the low power manager if the specified user allows the Off mode or not..."];
+  Node146 -> Node148 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node148 [label="LPM_GetMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ae9107e412181f10977b724c346cebd45",tooltip="This API returns the Low Power Mode selected that will be applied when the system will enter low powe..."];
+  Node146 -> Node149 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node149 [label="HW_RTC_StartWakeUpAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga60703fcfc4abd73a2efc980e8bb6ad27",tooltip="start wake up alarm "];
+  Node149 -> Node150 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node150 [label="HW_RTC_StopAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga227be06e4dc1332d46ff12519db183b5",tooltip="Stop the Alarm "];
+  Node141 -> Node150 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node140 -> Node151 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node151 [label="SX1276Read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a1c0054da62dacb13d6286a7cfe01d863",tooltip="Reads the radio register at the specified address "];
+  Node151 -> Node152 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node152 [label="SX1276ReadBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a9b3df4400813ac6aed7b77f400436ad0",tooltip="Reads multiple radio registers starting at address "];
+  Node152 -> Node153 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node153 [label="HW_GPIO_Write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___g_p_i_o___functions.html#ga64b37e6d4da7e8f148c92f898aed98de",tooltip="Writes the given value to the GPIO output "];
+  Node152 -> Node154 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node154 [label="HW_SPI_InOut",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__spi_8h.html#ae0d3f21fb84de59193e82bd1943d5563",tooltip="Sends outData and receives inData "];
+  Node140 -> Node155 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node155 [label="SX1276Write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a15374c2bed5d3ff2d6b95fdf177b645e",tooltip="Writes the radio register at the specified address "];
+  Node155 -> Node156 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node156 [label="SX1276WriteBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#aba51c12ba7f6d704cdeed69201507983",tooltip="Writes multiple radio registers starting at address "];
+  Node156 -> Node153 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node156 -> Node154 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

@@ -1,0 +1,43 @@
+digraph "Projects/DockingStation/inc/hw_gpio.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Projects/DockingStation\l/inc/hw_gpio.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Projects/DockingStation\l/inc/hw.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8h.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="Drivers/sx1276/sx1276.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html",tooltip="SX1276 driver implementation "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Drivers/sx1276mb1las\l/sx1276mb1las.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276mb1las_8c.html"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="LoraLib/Core/lora-test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora-test_8c.html"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="LoraLib/Core/lora.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora_8c.html"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="LoraLib/Utilities/delay.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$delay_8c.html"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="LoraLib/Utilities/low\l_power_manager.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html",tooltip="Low Power Manager "];
+  Node2 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="LoraLib/Utilities/timeServer.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html"];
+  Node2 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="Projects/DockingStation\l/inc/bsp.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bsp_8h.html"];
+  Node10 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="Projects/DockingStation\l/src/bsp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$bsp_8c.html"];
+  Node2 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="Projects/DockingStation\l/src/hw.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html"];
+  Node2 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="Projects/DockingStation\l/src/hw_gpio.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__gpio_8c.html"];
+  Node2 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="Projects/DockingStation\l/src/hw_rtc.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html"];
+  Node2 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="Projects/DockingStation\l/src/hw_spi.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__spi_8c.html"];
+  Node2 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="Projects/DockingStation\l/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html"];
+  Node2 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="Projects/DockingStation\l/src/stm32l1xx_hal_msp.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stm32l1xx__hal__msp_8c.html"];
+  Node2 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="Projects/DockingStation\l/src/stm32l1xx_it.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$stm32l1xx__it_8c.html",tooltip="Interrupt Service Routines. "];
+  Node2 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="Projects/DockingStation\l/src/vcom.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vcom_8c.html"];
+}

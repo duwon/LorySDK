@@ -1,0 +1,11 @@
+digraph "RegionCN470GetPhyParam"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node34 [label="RegionCN470GetPhyParam",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node34 -> Node35 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node35 [label="RegionCN470AdrNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_n470.html#ga5205fdda3f4a869d78f4ccd791de359e",tooltip="Calculates the next datarate to set, when ADR is on or off. "];
+  Node34 -> Node36 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node36 [label="RegionCN470LinkAdrReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_n470.html#ga8390f178b68e708cd9741caba00cb05d",tooltip="The function processes a Link ADR Request. "];
+}

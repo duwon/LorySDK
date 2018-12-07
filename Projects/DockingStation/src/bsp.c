@@ -20,12 +20,15 @@ const uint8_t  BUTTON_IRQn[BUTTONn] = {USER_BUTTON_EXTI_IRQn };
 
 /* Exported functions --------------------------------------------------------*/
 
+/** @defgroup LorySDK_LED_Functions LED Functions
+  * @{
+  */ 
 
 /**
   * @brief  Configures LED GPIO.
   * @param  Led: Led to be configured. 
   *          This parameter can be one of the following values:
-  *     @arg LED2
+  *     @arg LED_RDY
   * @retval None
   */
 void BSP_LED_Init(Led_TypeDef Led)
@@ -51,7 +54,7 @@ void BSP_LED_Init(Led_TypeDef Led)
   * @brief  DeInit LEDs.
   * @param  Led: LED to be de-init. 
   *   This parameter can be one of the following values:
-  *     @arg  LED2
+  *     @arg  LED_RDY
   * @note Led DeInit does not disable the GPIO clock nor disable the Mfx 
   * @retval None
   */
@@ -70,7 +73,7 @@ void BSP_LED_DeInit(Led_TypeDef Led)
   * @brief  Turns selected LED On.
   * @param  Led: Specifies the Led to be set on. 
   *   This parameter can be one of following parameters:
-  *     @arg LED2
+  *     @arg LED_RDY
   * @retval None
   */
 void BSP_LED_On(Led_TypeDef Led)
@@ -82,7 +85,7 @@ void BSP_LED_On(Led_TypeDef Led)
   * @brief  Turns selected LED Off.
   * @param  Led: Specifies the Led to be set off. 
   *   This parameter can be one of following parameters:
-  *     @arg LED2
+  *     @arg LED_RDY
   * @retval None
   */
 void BSP_LED_Off(Led_TypeDef Led)
@@ -94,7 +97,7 @@ void BSP_LED_Off(Led_TypeDef Led)
   * @brief  Toggles the selected LED.
   * @param  Led: Specifies the Led to be toggled. 
   *   This parameter can be one of following parameters:
-  *            @arg  LED2
+  *            @arg  LED_RDY
   * @retval None
   */
 void BSP_LED_Toggle(Led_TypeDef Led)
@@ -106,7 +109,7 @@ void BSP_LED_Toggle(Led_TypeDef Led)
   * @}
   */ 
 
-/** @defgroup STM32L1XX_NUCLEO_BUTTON_Functions BUTTON Functions
+/** @defgroup BUTTON_Functions BUTTON Functions
   * @{
   */ 
 
@@ -155,7 +158,8 @@ void BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)
 /**
   * @brief  Push Button DeInit.
   * @param  Button: Button to be configured
-  *   This parameter should be: BUTTON_USER  
+  *   This parameter should be: 
+  *   @arg BUTTON_USER  
   * @note PB DeInit does not disable the GPIO clock
   * @retval None
   */
@@ -171,7 +175,8 @@ void BSP_PB_DeInit(Button_TypeDef Button)
 /**
   * @brief  Returns the selected Button state.
   * @param  Button: Specifies the Button to be checked.
-  *   This parameter should be: BUTTON_USER  
+  *   This parameter should be: 
+  *   @arg BUTTON_USER  
   * @retval Button state.
   */
 uint32_t BSP_PB_GetState(Button_TypeDef Button)
@@ -179,6 +184,19 @@ uint32_t BSP_PB_GetState(Button_TypeDef Button)
   return HAL_GPIO_ReadPin(BUTTON_PORT[Button], BUTTON_PIN[Button]);
 }
 
+/**
+  * @}
+  */ 
+
+ /** @defgroup DockingStation_RF_Power_Functions RF Power Functions
+  * @{
+  */ 
+
+ /**
+  * @brief  Configure RF Power GPIO.
+  * @param  None
+  * @retval None
+  */
 void BSP_SX1276POWER_Init()
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
@@ -195,26 +213,42 @@ void BSP_SX1276POWER_Init()
     HAL_GPIO_WritePin(RFPOWER_GPIO_PORT, RFPOWER_PIN, GPIO_PIN_RESET);
 }
 
-
+ /**
+  * @brief  DeInit RF Power GPIO.
+  * @param  None
+  * @retval None
+  */
 void BSP_SX1276POWER_DeInit()
 {
   GPIO_InitTypeDef  GPIO_InitStruct;
 
-  /* Turn off LED */
+  /* Turn off RFPOWER */
   HAL_GPIO_WritePin(RFPOWER_GPIO_PORT, RFPOWER_PIN, GPIO_PIN_RESET);
-  /* DeInit the GPIO_LED pin */
+  /* DeInit the GPIO_RFPOWER pin */
   GPIO_InitStruct.Pin = RFPOWER_PIN;
   HAL_GPIO_DeInit(RFPOWER_GPIO_PORT, GPIO_InitStruct.Pin);
 }
 
-
+ /**
+  * @brief  Power on SX1276.
+  * @param  None
+  * @retval None
+  */
 void BSP_SX1276POWER_On()
 {
   HAL_GPIO_WritePin(RFPOWER_GPIO_PORT, RFPOWER_PIN, GPIO_PIN_SET); 
 }
 
-
+ /**
+  * @brief  Power off SX1276.
+  * @param  None
+  * @retval None
+  */
 void BSP_SX1276POWER_Off()
 {
   HAL_GPIO_WritePin(RFPOWER_GPIO_PORT, RFPOWER_PIN, GPIO_PIN_RESET); 
 }
+
+/**
+  * @}
+  */ 

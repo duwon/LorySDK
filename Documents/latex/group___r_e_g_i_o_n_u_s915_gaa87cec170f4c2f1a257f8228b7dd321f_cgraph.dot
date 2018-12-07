@@ -1,0 +1,15 @@
+digraph "RegionUS915SetContinuousWave"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node81 [label="RegionUS915SetContinuousWave",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node81 -> Node82 [color="midnightblue",fontsize="10",style="solid"];
+  Node82 [label="LimitTxPower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_u_s915_8c.html#af2821991c6e6dad3e196b01f6cf1d542"];
+  Node82 -> Node83 [color="midnightblue",fontsize="10",style="solid"];
+  Node83 [label="RegionCommonCountChannels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#gac23f0831812f610f57f42f6cf87368c9",tooltip="Counts the number of active channels in a given channels mask. This is a generic function and valid f..."];
+  Node83 -> Node84 [color="midnightblue",fontsize="10",style="solid"];
+  Node84 [label="CountChannels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_common_8c.html#aef7feee8e47f43eb01f62249bfcc2a06"];
+  Node81 -> Node85 [color="midnightblue",fontsize="10",style="solid"];
+  Node85 [label="RegionCommonComputeTxPower",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#gaa92800c8e9ce21366d383d14878cc391",tooltip="Computes the txPower, based on the max EIRP and the antenna gain. "];
+}

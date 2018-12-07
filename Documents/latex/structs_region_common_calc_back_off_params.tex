@@ -1,0 +1,124 @@
+\hypertarget{structs_region_common_calc_back_off_params}{}\section{s\+Region\+Common\+Calc\+Back\+Off\+Params 구조체 참조}
+\label{structs_region_common_calc_back_off_params}\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+
+
+{\ttfamily \#include $<$Region\+Common.\+h$>$}
+
+
+
+s\+Region\+Common\+Calc\+Back\+Off\+Params에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} $\ast$ \mbox{\hyperlink{structs_region_common_calc_back_off_params_afecbd1e457cbd79eb7072bd140ff33d4}{Channels}}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} $\ast$ \mbox{\hyperlink{structs_region_common_calc_back_off_params_a18afce97f43b46e9d294e5babbb15f15}{Bands}}
+\item 
+bool \mbox{\hyperlink{structs_region_common_calc_back_off_params_a4088d0ca2ff21fd5cdc110e14816dd53}{Last\+Tx\+Is\+Join\+Request}}
+\item 
+bool \mbox{\hyperlink{structs_region_common_calc_back_off_params_ac2f6caa0f3b02d2ac5056c3ee7c22652}{Joined}}
+\item 
+bool \mbox{\hyperlink{structs_region_common_calc_back_off_params_a4d755868e0e80089462286c3ba6a6f18}{Duty\+Cycle\+Enabled}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_region_common_calc_back_off_params_a1ca6f01ca18afe402de51babe8c95f5e}{Channel}}
+\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{structs_region_common_calc_back_off_params_a2ece30988e7a5bac284623173173c71a}{Elapsed\+Time}}
+\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{structs_region_common_calc_back_off_params_aa17a8607485db100d315e74853dd217e}{Tx\+Time\+On\+Air}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+Region\+Common.\+h 파일의 128 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_region_common_calc_back_off_params_a18afce97f43b46e9d294e5babbb15f15}\label{structs_region_common_calc_back_off_params_a18afce97f43b46e9d294e5babbb15f15}} 
+\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}!Bands@{Bands}}
+\index{Bands@{Bands}!s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+\subsubsection{\texorpdfstring{Bands}{Bands}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}}$\ast$ Bands}
+
+A pointer to region specific bands. 
+
+Region\+Common.\+h 파일의 137 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_region_common_calc_back_off_params_a1ca6f01ca18afe402de51babe8c95f5e}\label{structs_region_common_calc_back_off_params_a1ca6f01ca18afe402de51babe8c95f5e}} 
+\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}!Channel@{Channel}}
+\index{Channel@{Channel}!s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+\subsubsection{\texorpdfstring{Channel}{Channel}}
+{\footnotesize\ttfamily uint8\+\_\+t Channel}
+
+The current channel. 
+
+Region\+Common.\+h 파일의 153 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_region_common_calc_back_off_params_afecbd1e457cbd79eb7072bd140ff33d4}\label{structs_region_common_calc_back_off_params_afecbd1e457cbd79eb7072bd140ff33d4}} 
+\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}!Channels@{Channels}}
+\index{Channels@{Channels}!s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+\subsubsection{\texorpdfstring{Channels}{Channels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}}$\ast$ Channels}
+
+A pointer to region specific channels. 
+
+Region\+Common.\+h 파일의 133 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_region_common_calc_back_off_params_a4d755868e0e80089462286c3ba6a6f18}\label{structs_region_common_calc_back_off_params_a4d755868e0e80089462286c3ba6a6f18}} 
+\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}!Duty\+Cycle\+Enabled@{Duty\+Cycle\+Enabled}}
+\index{Duty\+Cycle\+Enabled@{Duty\+Cycle\+Enabled}!s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+\subsubsection{\texorpdfstring{Duty\+Cycle\+Enabled}{DutyCycleEnabled}}
+{\footnotesize\ttfamily bool Duty\+Cycle\+Enabled}
+
+Set to true, if the duty cycle is enabled. 
+
+Region\+Common.\+h 파일의 149 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_region_common_calc_back_off_params_a2ece30988e7a5bac284623173173c71a}\label{structs_region_common_calc_back_off_params_a2ece30988e7a5bac284623173173c71a}} 
+\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}!Elapsed\+Time@{Elapsed\+Time}}
+\index{Elapsed\+Time@{Elapsed\+Time}!s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+\subsubsection{\texorpdfstring{Elapsed\+Time}{ElapsedTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Elapsed\+Time}
+
+The elapsed time since initialization. 
+
+Region\+Common.\+h 파일의 157 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_region_common_calc_back_off_params_ac2f6caa0f3b02d2ac5056c3ee7c22652}\label{structs_region_common_calc_back_off_params_ac2f6caa0f3b02d2ac5056c3ee7c22652}} 
+\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}!Joined@{Joined}}
+\index{Joined@{Joined}!s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+\subsubsection{\texorpdfstring{Joined}{Joined}}
+{\footnotesize\ttfamily bool Joined}
+
+Set to true, if the node is joined. 
+
+Region\+Common.\+h 파일의 145 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_region_common_calc_back_off_params_a4088d0ca2ff21fd5cdc110e14816dd53}\label{structs_region_common_calc_back_off_params_a4088d0ca2ff21fd5cdc110e14816dd53}} 
+\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}!Last\+Tx\+Is\+Join\+Request@{Last\+Tx\+Is\+Join\+Request}}
+\index{Last\+Tx\+Is\+Join\+Request@{Last\+Tx\+Is\+Join\+Request}!s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+\subsubsection{\texorpdfstring{Last\+Tx\+Is\+Join\+Request}{LastTxIsJoinRequest}}
+{\footnotesize\ttfamily bool Last\+Tx\+Is\+Join\+Request}
+
+Set to true, if the last uplink was a join request. 
+
+Region\+Common.\+h 파일의 141 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_region_common_calc_back_off_params_aa17a8607485db100d315e74853dd217e}\label{structs_region_common_calc_back_off_params_aa17a8607485db100d315e74853dd217e}} 
+\index{s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}!Tx\+Time\+On\+Air@{Tx\+Time\+On\+Air}}
+\index{Tx\+Time\+On\+Air@{Tx\+Time\+On\+Air}!s\+Region\+Common\+Calc\+Back\+Off\+Params@{s\+Region\+Common\+Calc\+Back\+Off\+Params}}
+\subsubsection{\texorpdfstring{Tx\+Time\+On\+Air}{TxTimeOnAir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Tx\+Time\+On\+Air}
+
+The time on air of the last Tx frame. 
+
+Region\+Common.\+h 파일의 161 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/region/\mbox{\hyperlink{_region_common_8h}{Region\+Common.\+h}}\end{DoxyCompactItemize}

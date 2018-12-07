@@ -1,0 +1,253 @@
+\hypertarget{aes_8h}{}\section{Lora\+Lib/\+Crypto/aes.h 파일 참조}
+\label{aes_8h}\index{Lora\+Lib/\+Crypto/aes.\+h@{Lora\+Lib/\+Crypto/aes.\+h}}
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+aes.\+h에 대한 include 의존 그래프
+% FIG 0
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 1
+\subsection*{데이터 구조}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structaes__context}{aes\+\_\+context}}
+\end{DoxyCompactItemize}
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{aes_8h_ae0288db3791855c74ec47f875ba3f131}{A\+E\+S\+\_\+\+E\+N\+C\+\_\+\+P\+R\+E\+K\+E\+Y\+ED}}~/$\ast$ A\+ES encryption with a precomputed key schedule  $\ast$/
+\item 
+\#define \mbox{\hyperlink{aes_8h_a397e692f15f1a68ad71f333267f94f89}{N\+\_\+\+R\+OW}}~4
+\item 
+\#define \mbox{\hyperlink{aes_8h_aa1ca982cd5aa9c974edfddab55fb994b}{N\+\_\+\+C\+OL}}~4
+\item 
+\#define \mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\+\_\+\+B\+L\+O\+CK}}~(\mbox{\hyperlink{aes_8h_a397e692f15f1a68ad71f333267f94f89}{N\+\_\+\+R\+OW}} $\ast$ \mbox{\hyperlink{aes_8h_aa1ca982cd5aa9c974edfddab55fb994b}{N\+\_\+\+C\+OL}})
+\item 
+\#define \mbox{\hyperlink{aes_8h_af8b900ecc3a113f2aed001ac9e1cb11e}{N\+\_\+\+M\+A\+X\+\_\+\+R\+O\+U\+N\+DS}}~14
+\end{DoxyCompactItemize}
+\subsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}{return\+\_\+type}}
+\item 
+typedef uint8\+\_\+t \mbox{\hyperlink{aes_8h_a9bedd830746c77c108ff50ec5c704256}{length\+\_\+type}}
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}{return\+\_\+type}} \mbox{\hyperlink{aes_8h_a0ffc37ee1bbb50e7147bf6e7de5d73a1}{aes\+\_\+set\+\_\+key}} (const uint8\+\_\+t key\mbox{[}$\,$\mbox{]}, \mbox{\hyperlink{aes_8h_a9bedd830746c77c108ff50ec5c704256}{length\+\_\+type}} keylen, \mbox{\hyperlink{structaes__context}{aes\+\_\+context}} ctx\mbox{[}1\mbox{]})
+\item 
+\mbox{\hyperlink{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}{return\+\_\+type}} \mbox{\hyperlink{aes_8h_ac88fd4e9cb53f78713a8fce1a6fcffc0}{aes\+\_\+encrypt}} (const uint8\+\_\+t in\mbox{[}\mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\+\_\+\+B\+L\+O\+CK}}\mbox{]}, uint8\+\_\+t out\mbox{[}\mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\+\_\+\+B\+L\+O\+CK}}\mbox{]}, const \mbox{\hyperlink{structaes__context}{aes\+\_\+context}} ctx\mbox{[}1\mbox{]})
+\item 
+\mbox{\hyperlink{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}{return\+\_\+type}} \mbox{\hyperlink{aes_8h_aafdeb6720bdc985cefd83f837bbb55da}{aes\+\_\+cbc\+\_\+encrypt}} (const uint8\+\_\+t $\ast$in, uint8\+\_\+t $\ast$out, int32\+\_\+t n\+\_\+block, uint8\+\_\+t iv\mbox{[}\mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\+\_\+\+B\+L\+O\+CK}}\mbox{]}, const \mbox{\hyperlink{structaes__context}{aes\+\_\+context}} ctx\mbox{[}1\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{aes_8h_ae0288db3791855c74ec47f875ba3f131}\label{aes_8h_ae0288db3791855c74ec47f875ba3f131}} 
+\index{aes.\+h@{aes.\+h}!A\+E\+S\+\_\+\+E\+N\+C\+\_\+\+P\+R\+E\+K\+E\+Y\+ED@{A\+E\+S\+\_\+\+E\+N\+C\+\_\+\+P\+R\+E\+K\+E\+Y\+ED}}
+\index{A\+E\+S\+\_\+\+E\+N\+C\+\_\+\+P\+R\+E\+K\+E\+Y\+ED@{A\+E\+S\+\_\+\+E\+N\+C\+\_\+\+P\+R\+E\+K\+E\+Y\+ED}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{A\+E\+S\+\_\+\+E\+N\+C\+\_\+\+P\+R\+E\+K\+E\+Y\+ED}{AES\_ENC\_PREKEYED}}
+{\footnotesize\ttfamily \#define A\+E\+S\+\_\+\+E\+N\+C\+\_\+\+P\+R\+E\+K\+E\+Y\+ED~/$\ast$ A\+ES encryption with a precomputed key schedule  $\ast$/}
+
+
+
+aes.\+h 파일의 37 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}\label{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}} 
+\index{aes.\+h@{aes.\+h}!N\+\_\+\+B\+L\+O\+CK@{N\+\_\+\+B\+L\+O\+CK}}
+\index{N\+\_\+\+B\+L\+O\+CK@{N\+\_\+\+B\+L\+O\+CK}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{N\+\_\+\+B\+L\+O\+CK}{N\_BLOCK}}
+{\footnotesize\ttfamily \#define N\+\_\+\+B\+L\+O\+CK~(\mbox{\hyperlink{aes_8h_a397e692f15f1a68ad71f333267f94f89}{N\+\_\+\+R\+OW}} $\ast$ \mbox{\hyperlink{aes_8h_aa1ca982cd5aa9c974edfddab55fb994b}{N\+\_\+\+C\+OL}})}
+
+
+
+aes.\+h 파일의 57 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{aes_8h_aa1ca982cd5aa9c974edfddab55fb994b}\label{aes_8h_aa1ca982cd5aa9c974edfddab55fb994b}} 
+\index{aes.\+h@{aes.\+h}!N\+\_\+\+C\+OL@{N\+\_\+\+C\+OL}}
+\index{N\+\_\+\+C\+OL@{N\+\_\+\+C\+OL}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{N\+\_\+\+C\+OL}{N\_COL}}
+{\footnotesize\ttfamily \#define N\+\_\+\+C\+OL~4}
+
+
+
+aes.\+h 파일의 56 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{aes_8h_af8b900ecc3a113f2aed001ac9e1cb11e}\label{aes_8h_af8b900ecc3a113f2aed001ac9e1cb11e}} 
+\index{aes.\+h@{aes.\+h}!N\+\_\+\+M\+A\+X\+\_\+\+R\+O\+U\+N\+DS@{N\+\_\+\+M\+A\+X\+\_\+\+R\+O\+U\+N\+DS}}
+\index{N\+\_\+\+M\+A\+X\+\_\+\+R\+O\+U\+N\+DS@{N\+\_\+\+M\+A\+X\+\_\+\+R\+O\+U\+N\+DS}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{N\+\_\+\+M\+A\+X\+\_\+\+R\+O\+U\+N\+DS}{N\_MAX\_ROUNDS}}
+{\footnotesize\ttfamily \#define N\+\_\+\+M\+A\+X\+\_\+\+R\+O\+U\+N\+DS~14}
+
+
+
+aes.\+h 파일의 58 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{aes_8h_a397e692f15f1a68ad71f333267f94f89}\label{aes_8h_a397e692f15f1a68ad71f333267f94f89}} 
+\index{aes.\+h@{aes.\+h}!N\+\_\+\+R\+OW@{N\+\_\+\+R\+OW}}
+\index{N\+\_\+\+R\+OW@{N\+\_\+\+R\+OW}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{N\+\_\+\+R\+OW}{N\_ROW}}
+{\footnotesize\ttfamily \#define N\+\_\+\+R\+OW~4}
+
+
+
+aes.\+h 파일의 55 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{타입정의 문서화}
+\mbox{\Hypertarget{aes_8h_a9bedd830746c77c108ff50ec5c704256}\label{aes_8h_a9bedd830746c77c108ff50ec5c704256}} 
+\index{aes.\+h@{aes.\+h}!length\+\_\+type@{length\+\_\+type}}
+\index{length\+\_\+type@{length\+\_\+type}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{length\+\_\+type}{length\_type}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{aes_8h_a9bedd830746c77c108ff50ec5c704256}{length\+\_\+type}}}
+
+
+
+aes.\+h 파일의 66 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}\label{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}} 
+\index{aes.\+h@{aes.\+h}!return\+\_\+type@{return\+\_\+type}}
+\index{return\+\_\+type@{return\+\_\+type}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{return\+\_\+type}{return\_type}}
+{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}{return\+\_\+type}}}
+
+
+
+aes.\+h 파일의 60 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{aes_8h_aafdeb6720bdc985cefd83f837bbb55da}\label{aes_8h_aafdeb6720bdc985cefd83f837bbb55da}} 
+\index{aes.\+h@{aes.\+h}!aes\+\_\+cbc\+\_\+encrypt@{aes\+\_\+cbc\+\_\+encrypt}}
+\index{aes\+\_\+cbc\+\_\+encrypt@{aes\+\_\+cbc\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{aes\+\_\+cbc\+\_\+encrypt()}{aes\_cbc\_encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}{return\+\_\+type}} aes\+\_\+cbc\+\_\+encrypt (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{in,  }\item[{uint8\+\_\+t $\ast$}]{out,  }\item[{int32\+\_\+t}]{n\+\_\+block,  }\item[{uint8\+\_\+t}]{iv\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]},  }\item[{const \mbox{\hyperlink{structaes__context}{aes\+\_\+context}}}]{ctx\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+aes.\+c 파일의 597 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+599 \{
+600 
+601     \textcolor{keywordflow}{while}(n\_block--)
+602     \{
+603         \mbox{\hyperlink{aes_8c_aafcd677b2384ebb1d46cf3dec70d3707}{xor\_block}}(iv, in);
+604         \textcolor{keywordflow}{if}(\mbox{\hyperlink{aes_8c_ac88fd4e9cb53f78713a8fce1a6fcffc0}{aes\_encrypt}}(iv, iv, ctx) != EXIT\_SUCCESS)
+605             \textcolor{keywordflow}{return} EXIT\_FAILURE;
+606         \textcolor{comment}{//memcpy(out, iv, N\_BLOCK);}
+607         \mbox{\hyperlink{aes_8c_a85797c367f802e5a095e54157b12b785}{block\_copy}}(out, iv);
+608         in += \mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\_BLOCK}};
+609         out += \mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\_BLOCK}};
+610     \}
+611     \textcolor{keywordflow}{return} EXIT\_SUCCESS;
+612 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{aes_8h_ac88fd4e9cb53f78713a8fce1a6fcffc0}\label{aes_8h_ac88fd4e9cb53f78713a8fce1a6fcffc0}} 
+\index{aes.\+h@{aes.\+h}!aes\+\_\+encrypt@{aes\+\_\+encrypt}}
+\index{aes\+\_\+encrypt@{aes\+\_\+encrypt}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{aes\+\_\+encrypt()}{aes\_encrypt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}{return\+\_\+type}} aes\+\_\+encrypt (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{in\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]},  }\item[{uint8\+\_\+t}]{out\mbox{[}\+N\+\_\+\+B\+L\+O\+C\+K\mbox{]},  }\item[{const \mbox{\hyperlink{structaes__context}{aes\+\_\+context}}}]{ctx\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+aes.\+c 파일의 568 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+569 \{
+570     \textcolor{keywordflow}{if}( ctx->\mbox{\hyperlink{structaes__context_ad1a4ecf3125fbcc9447f70f7361f2fb0}{rnd}} )
+571     \{
+572         uint8\_t s1[\mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\_BLOCK}}], r;
+573         \mbox{\hyperlink{aes_8c_a8166c0ad4d3789a4d2f4e83a3e5e4d97}{copy\_and\_key}}( s1, in, ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}} );
+574 
+575         \textcolor{keywordflow}{for}( r = 1 ; r < ctx->\mbox{\hyperlink{structaes__context_ad1a4ecf3125fbcc9447f70f7361f2fb0}{rnd}} ; ++r )
+576 #\textcolor{keywordflow}{if} defined( \mbox{\hyperlink{aes_8c_ac40209feb00db6f009389419498d2066}{VERSION\_1}} )
+577         \{
+578             \mbox{\hyperlink{aes_8c_afa9f83c53abecf3a81de7cb31ef04712}{mix\_sub\_columns}}( s1 );
+579             \mbox{\hyperlink{aes_8c_ae1911494dc4fea7f043ff14aac0b9b6d}{add\_round\_key}}( s1, ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}} + r * \mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\_BLOCK}});
+580         \}
+581 \textcolor{preprocessor}{#else}
+582         \{   uint8\_t s2[\mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\_BLOCK}}];
+583             \mbox{\hyperlink{aes_8c_afa9f83c53abecf3a81de7cb31ef04712}{mix\_sub\_columns}}( s2, s1 );
+584             \mbox{\hyperlink{aes_8c_a8166c0ad4d3789a4d2f4e83a3e5e4d97}{copy\_and\_key}}( s1, s2, ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}} + r * \mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\_BLOCK}});
+585         \}
+586 \textcolor{preprocessor}{#endif}
+587         \mbox{\hyperlink{aes_8c_a7b4821df13a3c7109fe5a6d588f0f9d3}{shift\_sub\_rows}}( s1 );
+588         \mbox{\hyperlink{aes_8c_a8166c0ad4d3789a4d2f4e83a3e5e4d97}{copy\_and\_key}}( out, s1, ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}} + r * \mbox{\hyperlink{aes_8h_a64c8b1a34c03210cc4c214735bb4f186}{N\_BLOCK}} );
+589     \}
+590     \textcolor{keywordflow}{else}
+591         \textcolor{keywordflow}{return} ( uint8\_t )-1;
+592     \textcolor{keywordflow}{return} 0;
+593 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{aes_8h_a0ffc37ee1bbb50e7147bf6e7de5d73a1}\label{aes_8h_a0ffc37ee1bbb50e7147bf6e7de5d73a1}} 
+\index{aes.\+h@{aes.\+h}!aes\+\_\+set\+\_\+key@{aes\+\_\+set\+\_\+key}}
+\index{aes\+\_\+set\+\_\+key@{aes\+\_\+set\+\_\+key}!aes.\+h@{aes.\+h}}
+\subsubsection{\texorpdfstring{aes\+\_\+set\+\_\+key()}{aes\_set\_key()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{aes_8h_a939cc04a88913455efd7cc8fc15f80cf}{return\+\_\+type}} aes\+\_\+set\+\_\+key (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{key\mbox{[}$\,$\mbox{]},  }\item[{\mbox{\hyperlink{aes_8h_a9bedd830746c77c108ff50ec5c704256}{length\+\_\+type}}}]{keylen,  }\item[{\mbox{\hyperlink{structaes__context}{aes\+\_\+context}}}]{ctx\mbox{[}1\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+aes.\+c 파일의 513 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+514 \{
+515     uint8\_t cc, rc, hi;
+516 
+517     \textcolor{keywordflow}{switch}( keylen )
+518     \{
+519     \textcolor{keywordflow}{case} 16:
+520     \textcolor{keywordflow}{case} 24:
+521     \textcolor{keywordflow}{case} 32:
+522         \textcolor{keywordflow}{break};
+523     \textcolor{keywordflow}{default}:
+524         ctx->\mbox{\hyperlink{structaes__context_ad1a4ecf3125fbcc9447f70f7361f2fb0}{rnd}} = 0;
+525         \textcolor{keywordflow}{return} ( uint8\_t )-1;
+526     \}
+527     \mbox{\hyperlink{aes_8c_ab4a934eb025568ddd7da2acb02c7001d}{block\_copy\_nn}}(ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}, key, keylen);
+528     hi = (keylen + 28) << 2;
+529     ctx->\mbox{\hyperlink{structaes__context_ad1a4ecf3125fbcc9447f70f7361f2fb0}{rnd}} = (hi >> 4) - 1;
+530     \textcolor{keywordflow}{for}( cc = keylen, rc = 1; cc < hi; cc += 4 )
+531     \{   uint8\_t tt, t0, t1, t2, t3;
+532 
+533         t0 = ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[cc - 4];
+534         t1 = ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[cc - 3];
+535         t2 = ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[cc - 2];
+536         t3 = ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[cc - 1];
+537         \textcolor{keywordflow}{if}( cc % keylen == 0 )
+538         \{
+539             tt = t0;
+540             t0 = \mbox{\hyperlink{aes_8c_a9006aafb3746fe0f41fb827589734d2f}{s\_box}}(t1) ^ rc;
+541             t1 = \mbox{\hyperlink{aes_8c_a9006aafb3746fe0f41fb827589734d2f}{s\_box}}(t2);
+542             t2 = \mbox{\hyperlink{aes_8c_a9006aafb3746fe0f41fb827589734d2f}{s\_box}}(t3);
+543             t3 = \mbox{\hyperlink{aes_8c_a9006aafb3746fe0f41fb827589734d2f}{s\_box}}(tt);
+544             rc = \mbox{\hyperlink{aes_8c_a5cd67c8452696b8eebb34709acc71f36}{f2}}(rc);
+545         \}
+546         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( keylen > 24 && cc % keylen == 16 )
+547         \{
+548             t0 = \mbox{\hyperlink{aes_8c_a9006aafb3746fe0f41fb827589734d2f}{s\_box}}(t0);
+549             t1 = \mbox{\hyperlink{aes_8c_a9006aafb3746fe0f41fb827589734d2f}{s\_box}}(t1);
+550             t2 = \mbox{\hyperlink{aes_8c_a9006aafb3746fe0f41fb827589734d2f}{s\_box}}(t2);
+551             t3 = \mbox{\hyperlink{aes_8c_a9006aafb3746fe0f41fb827589734d2f}{s\_box}}(t3);
+552         \}
+553         tt = cc - keylen;
+554         ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[cc + 0] = ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[tt + 0] ^ t0;
+555         ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[cc + 1] = ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[tt + 1] ^ t1;
+556         ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[cc + 2] = ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[tt + 2] ^ t2;
+557         ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[cc + 3] = ctx->\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}[tt + 3] ^ t3;
+558     \}
+559     \textcolor{keywordflow}{return} 0;
+560 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5

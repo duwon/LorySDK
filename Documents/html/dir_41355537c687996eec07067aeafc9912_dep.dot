@@ -1,0 +1,15 @@
+digraph "LoraLib/Mac/region" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_dcc3f3a2ef60cd59876b06f488984cc7 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Mac" fontname="Helvetica", fontsize="10", URL="dir_dcc3f3a2ef60cd59876b06f488984cc7.html"]
+  dir_41355537c687996eec07067aeafc9912 [shape=box, label="region", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_41355537c687996eec07067aeafc9912.html"];
+  }
+  dir_cdca82bb84e552384c32423304757306 [shape=box label="Utilities" URL="dir_cdca82bb84e552384c32423304757306.html"];
+  dir_7a6499598ddcfcabe96e224cb4a6d834 [shape=box label="Projects" fillcolor="white" style="filled" color="red" URL="dir_7a6499598ddcfcabe96e224cb4a6d834.html"];
+  dir_cdca82bb84e552384c32423304757306->dir_7a6499598ddcfcabe96e224cb4a6d834 [headlabel="5", labeldistance=1.5 headhref="dir_000012_000013.html"];
+  dir_7a6499598ddcfcabe96e224cb4a6d834->dir_cdca82bb84e552384c32423304757306 [headlabel="7", labeldistance=1.5 headhref="dir_000013_000012.html"];
+  dir_41355537c687996eec07067aeafc9912->dir_cdca82bb84e552384c32423304757306 [headlabel="2", labeldistance=1.5 headhref="dir_000010_000012.html"];
+  dir_41355537c687996eec07067aeafc9912->dir_7a6499598ddcfcabe96e224cb4a6d834 [headlabel="1", labeldistance=1.5 headhref="dir_000010_000013.html"];
+}

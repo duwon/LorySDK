@@ -1,0 +1,33 @@
+digraph "HW_RTC_GetCalendarValue"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node6 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="HW_RTC_setMcuWakeUpTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#a3039d2d62291e76e72912133676433fd",tooltip="calculates the wake up time between wake up and mcu start "];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="HW_RTC_GetTimerElapsedTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#a7961116aa831950b62a413ecbbcfb02a",tooltip="Get the RTC timer elapsed time since the last Alarm was set "];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="HW_RTC_SetAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#a09cec56d54c13de658fafdd003390771",tooltip="Set the alarm "];
+  Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="HW_RTC_GetTimerValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#ad0d80bf1ac3a9704f4b4b9d672f38daa",tooltip="Get the RTC timer value "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="HW_RTC_DelayMs",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#adad8cbf36cbe8a65bc1c70109146e307",tooltip="a delay of delay ms by polling RTC "];
+  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="LORA_HasJoined",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a99d2e29a61a6f7dda81e6afcf4f35715"];
+  Node10 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="LORA_RxData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#af9b5cc17bd270c1734e3e6465b75f86f"];
+  Node10 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="LORA_ConfirmClass",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#abf14859b334f10d0a38ee8489bee4bc1"];
+  Node10 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="LORA_TxNeeded",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a0bc8d6aec6bbd336bb8fd19cedd8a8b3"];
+  Node6 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="HW_RTC_SetTimerContext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#ad0a54228cfe8473d90b901ebd76de1d5",tooltip="set Time Reference set also the RTC_DateStruct and RTC_TimeStruct "];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="HW_RTC_Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#a3021a4a33084812668411847ec35d71d",tooltip="Initializes the RTC timer "];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="HW_Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html#a40660973b9d57d78bc7e6e56a7a1bf42",tooltip="This function initializes the hardware "];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node19 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe",tooltip="Main program "];
+}

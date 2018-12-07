@@ -1,0 +1,13 @@
+digraph "GetNextLowerTxDr"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node9 [label="GetNextLowerTxDr",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="RegionUS915GetPhyParam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915.html#ga644569c2f1367a399ff93a81f160a7d9",tooltip="The function gets a value of a specific phy attribute. "];
+  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="RegionUS915AdrNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915.html#gaf76316af68c44cbbc44818e0a51cb4d6",tooltip="Calculates the next datarate to set, when ADR is on or off. "];
+  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="RegionUS915LinkAdrReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915.html#gab4977ffc251303aaae4efec0eed63c23",tooltip="The function processes a Link ADR Request. "];
+}

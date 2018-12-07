@@ -1,0 +1,13 @@
+digraph "HW_RTC_SetTimerContext"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node74 [label="HW_RTC_SetTimerContext",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node74 -> Node75 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node75 [label="HW_RTC_Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#a3021a4a33084812668411847ec35d71d",tooltip="Initializes the RTC timer "];
+  Node75 -> Node76 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node76 [label="HW_Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html#a40660973b9d57d78bc7e6e56a7a1bf42",tooltip="This function initializes the hardware "];
+  Node76 -> Node77 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node77 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe",tooltip="Main program "];
+}

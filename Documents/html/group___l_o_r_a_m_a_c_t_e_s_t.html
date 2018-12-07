@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LorySDK: LoRa MAC layer test function implementation</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LorySDK
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('group___l_o_r_a_m_a_c_t_e_s_t.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">함수</a>  </div>
+  <div class="headertitle">
+<div class="title">LoRa MAC layer test function implementation</div>  </div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+함수</h2></td></tr>
+<tr class="memitem:ga3e8dc79232b2c86d12d8b4191324283d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___l_o_r_a_m_a_c_t_e_s_t.html#ga3e8dc79232b2c86d12d8b4191324283d">LoRaMacTestRxWindowsOn</a> (bool enable)</td></tr>
+<tr class="memdesc:ga3e8dc79232b2c86d12d8b4191324283d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enabled or disables the reception windows  <a href="#ga3e8dc79232b2c86d12d8b4191324283d">더 자세히 ...</a><br /></td></tr>
+<tr class="separator:ga3e8dc79232b2c86d12d8b4191324283d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga191314e00a8a27f426427473ba6821a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___l_o_r_a_m_a_c_t_e_s_t.html#ga191314e00a8a27f426427473ba6821a7">LoRaMacTestSetMic</a> (uint16_t txPacketCounter)</td></tr>
+<tr class="memdesc:ga191314e00a8a27f426427473ba6821a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables the MIC field test  <a href="#ga191314e00a8a27f426427473ba6821a7">더 자세히 ...</a><br /></td></tr>
+<tr class="separator:ga191314e00a8a27f426427473ba6821a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacee5e0492e548af9e1ec5a995e460865"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___l_o_r_a_m_a_c_t_e_s_t.html#gacee5e0492e548af9e1ec5a995e460865">LoRaMacTestSetDutyCycleOn</a> (bool enable)</td></tr>
+<tr class="memdesc:gacee5e0492e548af9e1ec5a995e460865"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enabled or disables the duty cycle  <a href="#gacee5e0492e548af9e1ec5a995e460865">더 자세히 ...</a><br /></td></tr>
+<tr class="separator:gacee5e0492e548af9e1ec5a995e460865"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8cf3cc21ea237c5620536cea2750463e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___l_o_r_a_m_a_c_t_e_s_t.html#ga8cf3cc21ea237c5620536cea2750463e">LoRaMacTestSetChannel</a> (uint8_t channel)</td></tr>
+<tr class="memdesc:ga8cf3cc21ea237c5620536cea2750463e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the channel index  <a href="#ga8cf3cc21ea237c5620536cea2750463e">더 자세히 ...</a><br /></td></tr>
+<tr class="separator:ga8cf3cc21ea237c5620536cea2750463e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">상세한 설명</h2>
+<p>This module specifies the API implementation of test function of the LoRaMAC layer. The functions in this file are only for testing purposes only. </p>
+<h2 class="groupheader">함수 문서화</h2>
+<a id="ga3e8dc79232b2c86d12d8b4191324283d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3e8dc79232b2c86d12d8b4191324283d">&#9670;&nbsp;</a></span>LoRaMacTestRxWindowsOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoRaMacTestRxWindowsOn </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enabled or disables the reception windows </p>
+<p>This is a test function. It shall be used for testing purposes only. Changing this attribute may lead to a non-conformance LoRaMac operation.</p>
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[IN]</td><td>enable - Enabled or disables the reception windows </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"><a class="el" href="_lo_ra_mac_8c_source.html">LoRaMac.c</a> 파일의 <a class="el" href="_lo_ra_mac_8c_source.html#l03417">3417</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l03418"></a><span class="lineno"> 3418</span>&#160;{</div><div class="line"><a name="l03419"></a><span class="lineno"> 3419</span>&#160;    <a class="code" href="_lo_ra_mac_8c.html#a60695a58f371fb7e366c4059ecbf563a">IsRxWindowsEnabled</a> = enable;</div><div class="line"><a name="l03420"></a><span class="lineno"> 3420</span>&#160;}</div><div class="ttc" id="_lo_ra_mac_8c_html_a60695a58f371fb7e366c4059ecbf563a"><div class="ttname"><a href="_lo_ra_mac_8c.html#a60695a58f371fb7e366c4059ecbf563a">IsRxWindowsEnabled</a></div><div class="ttdeci">static bool IsRxWindowsEnabled</div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_mac_8c_source.html#l00190">LoRaMac.c:190</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ga8cf3cc21ea237c5620536cea2750463e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8cf3cc21ea237c5620536cea2750463e">&#9670;&nbsp;</a></span>LoRaMacTestSetChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoRaMacTestSetChannel </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>channel</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the channel index </p>
+<p>This is a test function. It shall be used for testing purposes only. Changing this attribute may lead to a non-conformance LoRaMac operation.</p>
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[IN]</td><td>channel - Channel index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"><a class="el" href="_lo_ra_mac_8c_source.html">LoRaMac.c</a> 파일의 <a class="el" href="_lo_ra_mac_8c_source.html#l03440">3440</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l03441"></a><span class="lineno"> 3441</span>&#160;{</div><div class="line"><a name="l03442"></a><span class="lineno"> 3442</span>&#160;    <a class="code" href="_lo_ra_mac_8c.html#a1ca6f01ca18afe402de51babe8c95f5e">Channel</a> = channel;</div><div class="line"><a name="l03443"></a><span class="lineno"> 3443</span>&#160;}</div><div class="ttc" id="_lo_ra_mac_8c_html_a1ca6f01ca18afe402de51babe8c95f5e"><div class="ttname"><a href="_lo_ra_mac_8c.html#a1ca6f01ca18afe402de51babe8c95f5e">Channel</a></div><div class="ttdeci">static uint8_t Channel</div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_mac_8c_source.html#l00280">LoRaMac.c:280</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="gacee5e0492e548af9e1ec5a995e460865"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacee5e0492e548af9e1ec5a995e460865">&#9670;&nbsp;</a></span>LoRaMacTestSetDutyCycleOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoRaMacTestSetDutyCycleOn </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>enable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enabled or disables the duty cycle </p>
+<p>This is a test function. It shall be used for testing purposes only. Changing this attribute may lead to a non-conformance LoRaMac operation.</p>
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[IN]</td><td>enable - Enabled or disables the duty cycle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"><a class="el" href="_lo_ra_mac_8c_source.html">LoRaMac.c</a> 파일의 <a class="el" href="_lo_ra_mac_8c_source.html#l03428">3428</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l03429"></a><span class="lineno"> 3429</span>&#160;{</div><div class="line"><a name="l03430"></a><span class="lineno"> 3430</span>&#160;    <a class="code" href="unionu_verify_params.html">VerifyParams_t</a> verify;</div><div class="line"><a name="l03431"></a><span class="lineno"> 3431</span>&#160;</div><div class="line"><a name="l03432"></a><span class="lineno"> 3432</span>&#160;    verify.<a class="code" href="unionu_verify_params.html#a72f580d8a64ab70f5c4f7e10a694c65b">DutyCycle</a> = enable;</div><div class="line"><a name="l03433"></a><span class="lineno"> 3433</span>&#160;</div><div class="line"><a name="l03434"></a><span class="lineno"> 3434</span>&#160;    <span class="keywordflow">if</span>( <a class="code" href="group___r_e_g_i_o_n.html#ga7c1ff626bc1131889fa8de3197a1093a">RegionVerify</a>( <a class="code" href="_lo_ra_mac_8c.html#ab3e53bd4a0f4e547c9dbf450406acfe5">LoRaMacRegion</a>, &amp;verify, <a class="code" href="group___r_e_g_i_o_n.html#gga51cbe8f5433d914fe9cf81b451de2c2dac66308571e624ecc28c79ee0deab8cf0">PHY_DUTY_CYCLE</a> ) == <span class="keyword">true</span> )</div><div class="line"><a name="l03435"></a><span class="lineno"> 3435</span>&#160;    {</div><div class="line"><a name="l03436"></a><span class="lineno"> 3436</span>&#160;        <a class="code" href="_lo_ra_mac_8c.html#af662c54719ba22aa5580de1fc74de2dc">DutyCycleOn</a> = enable;</div><div class="line"><a name="l03437"></a><span class="lineno"> 3437</span>&#160;    }</div><div class="line"><a name="l03438"></a><span class="lineno"> 3438</span>&#160;}</div><div class="ttc" id="unionu_verify_params_html_a72f580d8a64ab70f5c4f7e10a694c65b"><div class="ttname"><a href="unionu_verify_params.html#a72f580d8a64ab70f5c4f7e10a694c65b">uVerifyParams::DutyCycle</a></div><div class="ttdeci">bool DutyCycle</div><div class="ttdef"><b>Definition:</b> <a href="_region_8h_source.html#l00772">Region.h:772</a></div></div>
+<div class="ttc" id="_lo_ra_mac_8c_html_ab3e53bd4a0f4e547c9dbf450406acfe5"><div class="ttname"><a href="_lo_ra_mac_8c.html#ab3e53bd4a0f4e547c9dbf450406acfe5">LoRaMacRegion</a></div><div class="ttdeci">static LoRaMacRegion_t LoRaMacRegion</div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_mac_8c_source.html#l00063">LoRaMac.c:63</a></div></div>
+<div class="ttc" id="_lo_ra_mac_8c_html_af662c54719ba22aa5580de1fc74de2dc"><div class="ttname"><a href="_lo_ra_mac_8c.html#af662c54719ba22aa5580de1fc74de2dc">DutyCycleOn</a></div><div class="ttdeci">static bool DutyCycleOn</div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_mac_8c_source.html#l00275">LoRaMac.c:275</a></div></div>
+<div class="ttc" id="group___r_e_g_i_o_n_html_gga51cbe8f5433d914fe9cf81b451de2c2dac66308571e624ecc28c79ee0deab8cf0"><div class="ttname"><a href="group___r_e_g_i_o_n.html#gga51cbe8f5433d914fe9cf81b451de2c2dac66308571e624ecc28c79ee0deab8cf0">PHY_DUTY_CYCLE</a></div><div class="ttdef"><b>Definition:</b> <a href="_region_8h_source.html#l00577">Region.h:577</a></div></div>
+<div class="ttc" id="group___r_e_g_i_o_n_html_ga7c1ff626bc1131889fa8de3197a1093a"><div class="ttname"><a href="group___r_e_g_i_o_n.html#ga7c1ff626bc1131889fa8de3197a1093a">RegionVerify</a></div><div class="ttdeci">bool RegionVerify(LoRaMacRegion_t region, VerifyParams_t *verify, PhyAttribute_t phyAttribute)</div><div class="ttdoc">Verifies a parameter. </div><div class="ttdef"><b>Definition:</b> <a href="_region_8c_source.html#l00639">Region.c:639</a></div></div>
+<div class="ttc" id="unionu_verify_params_html"><div class="ttname"><a href="unionu_verify_params.html">uVerifyParams</a></div><div class="ttdef"><b>Definition:</b> <a href="_region_8h_source.html#l00763">Region.h:763</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865_cgraph.png" border="0" usemap="#group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865_cgraph" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+<div class="dynheader">
+이 함수를 호출하는 함수들에 대한 그래프입니다.:</div>
+<div class="dyncontent">
+<div class="center"><img src="group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865_icgraph.png" border="0" usemap="#group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865_icgraph" alt=""/></div>
+<!-- MAP 1 -->
+</div>
+
+</div>
+</div>
+<a id="ga191314e00a8a27f426427473ba6821a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga191314e00a8a27f426427473ba6821a7">&#9670;&nbsp;</a></span>LoRaMacTestSetMic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void LoRaMacTestSetMic </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>txPacketCounter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enables the MIC field test </p>
+<p>This is a test function. It shall be used for testing purposes only. Changing this attribute may lead to a non-conformance LoRaMac operation.</p>
+<dl class="params"><dt>매개변수</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">[IN]</td><td>txPacketCounter - Fixed Tx packet counter value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"><a class="el" href="_lo_ra_mac_8c_source.html">LoRaMac.c</a> 파일의 <a class="el" href="_lo_ra_mac_8c_source.html#l03422">3422</a> 번째 라인에서 정의되었습니다.</p>
+<div class="fragment"><div class="line"><a name="l03423"></a><span class="lineno"> 3423</span>&#160;{</div><div class="line"><a name="l03424"></a><span class="lineno"> 3424</span>&#160;    <a class="code" href="_lo_ra_mac_8c.html#ae8c54ca277e4d7295dfd498889e42fdd">UpLinkCounter</a> = txPacketCounter;</div><div class="line"><a name="l03425"></a><span class="lineno"> 3425</span>&#160;    <a class="code" href="_lo_ra_mac_8c.html#a65360317f68eee4d85b01ed379037fc9">IsUpLinkCounterFixed</a> = <span class="keyword">true</span>;</div><div class="line"><a name="l03426"></a><span class="lineno"> 3426</span>&#160;}</div><div class="ttc" id="_lo_ra_mac_8c_html_a65360317f68eee4d85b01ed379037fc9"><div class="ttname"><a href="_lo_ra_mac_8c.html#a65360317f68eee4d85b01ed379037fc9">IsUpLinkCounterFixed</a></div><div class="ttdeci">static bool IsUpLinkCounterFixed</div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_mac_8c_source.html#l00185">LoRaMac.c:185</a></div></div>
+<div class="ttc" id="_lo_ra_mac_8c_html_ae8c54ca277e4d7295dfd498889e42fdd"><div class="ttname"><a href="_lo_ra_mac_8c.html#ae8c54ca277e4d7295dfd498889e42fdd">UpLinkCounter</a></div><div class="ttdeci">static uint32_t UpLinkCounter</div><div class="ttdef"><b>Definition:</b> <a href="_lo_ra_mac_8c_source.html#l00173">LoRaMac.c:173</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

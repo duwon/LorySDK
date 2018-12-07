@@ -1,0 +1,150 @@
+\hypertarget{radio_8h}{}\section{Lora\+Lib/\+Phy/radio.h 파일 참조}
+\label{radio_8h}\index{Lora\+Lib/\+Phy/radio.\+h@{Lora\+Lib/\+Phy/radio.\+h}}
+
+
+Radio driver A\+PI definition  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+radio.\+h에 대한 include 의존 그래프
+% FIG 0
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 1
+\subsection*{데이터 구조}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_radio_events__t}{Radio\+Events\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Radio driver callback functions \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_radio__s}{Radio\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Radio driver definition \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{열거형 타입}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{M\+O\+D\+E\+M\+\_\+\+F\+SK}} = 0, 
+\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{M\+O\+D\+E\+M\+\_\+\+L\+O\+RA}}
+ \}
+\item 
+enum \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}{Radio\+State\+\_\+t}} \{ \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a89c1ff89fc074c1c80f96d186c99f899}{R\+F\+\_\+\+I\+D\+LE}} = 0, 
+\mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a5a6a549e66aa54871013a612aa2aba45}{R\+F\+\_\+\+R\+X\+\_\+\+R\+U\+N\+N\+I\+NG}}, 
+\mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5add0cb5bc08318df9a5e688f4802ed99d}{R\+F\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG}}, 
+\mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a6798b346c6d95e2970d33ccd04c5d39c}{R\+F\+\_\+\+C\+AD}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+const struct \mbox{\hyperlink{struct_radio__s}{Radio\+\_\+s}} \mbox{\hyperlink{radio_8h_acf9fe61a72c16fa29a0dc449d23e3820}{Radio}}
+\begin{DoxyCompactList}\small\item\em Radio driver \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Radio driver A\+PI definition 
+
+\begin{DoxyCopyright}{Copyright}
+Revised B\+SD License, see section L\+I\+C\+E\+N\+SE.
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+  \_\_\_\_\_\_                              \_
+ / \_\_\_\_\_)             \_              | |
+( (\_\_\_\_  \_\_\_\_\_ \_\_\_\_ \_| |\_ \_\_\_\_\_  \_\_\_\_| |\_\_
+ \(\backslash\)\_\_\_\_ \(\backslash\)| \_\_\_ |    (\_   \_) \_\_\_ |/ \_\_\_)  \_ \(\backslash\)
+ \_\_\_\_\_) ) \_\_\_\_| | | || |\_| \_\_\_\_( (\_\_\_| | | |
+(\_\_\_\_\_\_/|\_\_\_\_\_)\_|\_|\_| \(\backslash\)\_\_)\_\_\_\_\_)\(\backslash\)\_\_\_\_)\_| |\_|
+(C)2013-2017 Semtech
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{작성자}
+Miguel Luis ( Semtech )
+
+Gregory Cristian ( Semtech ) 
+\end{DoxyAuthor}
+
+
+\subsection{열거형 타입 문서화}
+\mbox{\Hypertarget{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}\label{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}} 
+\index{radio.\+h@{radio.\+h}!Radio\+Modems\+\_\+t@{Radio\+Modems\+\_\+t}}
+\index{Radio\+Modems\+\_\+t@{Radio\+Modems\+\_\+t}!radio.\+h@{radio.\+h}}
+\subsubsection{\texorpdfstring{Radio\+Modems\+\_\+t}{RadioModems\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}}}
+
+Radio driver supported modems \begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+O\+D\+E\+M\+\_\+\+F\+SK@{M\+O\+D\+E\+M\+\_\+\+F\+SK}!radio.\+h@{radio.\+h}}\index{radio.\+h@{radio.\+h}!M\+O\+D\+E\+M\+\_\+\+F\+SK@{M\+O\+D\+E\+M\+\_\+\+F\+SK}}}\mbox{\Hypertarget{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}\label{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}} 
+M\+O\+D\+E\+M\+\_\+\+F\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+O\+D\+E\+M\+\_\+\+L\+O\+RA@{M\+O\+D\+E\+M\+\_\+\+L\+O\+RA}!radio.\+h@{radio.\+h}}\index{radio.\+h@{radio.\+h}!M\+O\+D\+E\+M\+\_\+\+L\+O\+RA@{M\+O\+D\+E\+M\+\_\+\+L\+O\+RA}}}\mbox{\Hypertarget{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}\label{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}} 
+M\+O\+D\+E\+M\+\_\+\+L\+O\+RA&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+radio.\+h 파일의 32 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+33 \{
+34     \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} = 0,
+35     \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}},
+36 \}\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{RadioModems\_t}};
+\end{DoxyCode}
+\mbox{\Hypertarget{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}\label{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}} 
+\index{radio.\+h@{radio.\+h}!Radio\+State\+\_\+t@{Radio\+State\+\_\+t}}
+\index{Radio\+State\+\_\+t@{Radio\+State\+\_\+t}!radio.\+h@{radio.\+h}}
+\subsubsection{\texorpdfstring{Radio\+State\+\_\+t}{RadioState\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}{Radio\+State\+\_\+t}}}
+
+Radio driver internal state machine states definition \begin{DoxyEnumFields}{열거형 멤버}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+F\+\_\+\+I\+D\+LE@{R\+F\+\_\+\+I\+D\+LE}!radio.\+h@{radio.\+h}}\index{radio.\+h@{radio.\+h}!R\+F\+\_\+\+I\+D\+LE@{R\+F\+\_\+\+I\+D\+LE}}}\mbox{\Hypertarget{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a89c1ff89fc074c1c80f96d186c99f899}\label{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a89c1ff89fc074c1c80f96d186c99f899}} 
+R\+F\+\_\+\+I\+D\+LE&The radio is idle \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+F\+\_\+\+R\+X\+\_\+\+R\+U\+N\+N\+I\+NG@{R\+F\+\_\+\+R\+X\+\_\+\+R\+U\+N\+N\+I\+NG}!radio.\+h@{radio.\+h}}\index{radio.\+h@{radio.\+h}!R\+F\+\_\+\+R\+X\+\_\+\+R\+U\+N\+N\+I\+NG@{R\+F\+\_\+\+R\+X\+\_\+\+R\+U\+N\+N\+I\+NG}}}\mbox{\Hypertarget{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a5a6a549e66aa54871013a612aa2aba45}\label{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a5a6a549e66aa54871013a612aa2aba45}} 
+R\+F\+\_\+\+R\+X\+\_\+\+R\+U\+N\+N\+I\+NG&The radio is in reception state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+F\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG@{R\+F\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG}!radio.\+h@{radio.\+h}}\index{radio.\+h@{radio.\+h}!R\+F\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG@{R\+F\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG}}}\mbox{\Hypertarget{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5add0cb5bc08318df9a5e688f4802ed99d}\label{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5add0cb5bc08318df9a5e688f4802ed99d}} 
+R\+F\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG&The radio is in transmission state \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+F\+\_\+\+C\+AD@{R\+F\+\_\+\+C\+AD}!radio.\+h@{radio.\+h}}\index{radio.\+h@{radio.\+h}!R\+F\+\_\+\+C\+AD@{R\+F\+\_\+\+C\+AD}}}\mbox{\Hypertarget{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a6798b346c6d95e2970d33ccd04c5d39c}\label{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a6798b346c6d95e2970d33ccd04c5d39c}} 
+R\+F\+\_\+\+C\+AD&The radio is doing channel activity detection \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+radio.\+h 파일의 41 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+42 \{
+43     \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a89c1ff89fc074c1c80f96d186c99f899}{RF\_IDLE}} = 0,   
+44     \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a5a6a549e66aa54871013a612aa2aba45}{RF\_RX\_RUNNING}}, 
+45     \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5add0cb5bc08318df9a5e688f4802ed99d}{RF\_TX\_RUNNING}}, 
+46     \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a6798b346c6d95e2970d33ccd04c5d39c}{RF\_CAD}},        
+47 \}\mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}{RadioState\_t}};
+\end{DoxyCode}
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{radio_8h_acf9fe61a72c16fa29a0dc449d23e3820}\label{radio_8h_acf9fe61a72c16fa29a0dc449d23e3820}} 
+\index{radio.\+h@{radio.\+h}!Radio@{Radio}}
+\index{Radio@{Radio}!radio.\+h@{radio.\+h}}
+\subsubsection{\texorpdfstring{Radio}{Radio}}
+{\footnotesize\ttfamily const struct \mbox{\hyperlink{struct_radio__s}{Radio\+\_\+s}} Radio}
+
+
+
+Radio driver 
+
+\begin{DoxyRemark}{Remarks}
+This variable is defined and initialized in the specific radio board implementation
+\end{DoxyRemark}
+Radio driver structure initialization 
+
+sx1276mb1las.\+c 파일의 101 번째 라인에서 정의되었습니다.
+

@@ -1,0 +1,468 @@
+\hypertarget{time_server_8h}{}\section{Lora\+Lib/\+Utilities/time\+Server.h 파일 참조}
+\label{time_server_8h}\index{Lora\+Lib/\+Utilities/time\+Server.\+h@{Lora\+Lib/\+Utilities/time\+Server.\+h}}
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\newline
+time\+Server.\+h에 대한 include 의존 그래프
+% FIG 0
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 1
+\subsection*{데이터 구조}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_timer_event__s}{Timer\+Event\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Timer object description \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_timer_event__s}{Timer\+Event\+\_\+s}} \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Timer object description \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{time_server_8h_a7e41004e0cd39ba368fb7d83c2cfd550}{Timer\+Init}} (\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$obj, void($\ast$callback)(void))
+\begin{DoxyCompactList}\small\item\em Initializes the timer object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{time_server_8h_a742ab8d86db201a8b5d900ce8e27cf90}{Timer\+Irq\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em Timer I\+RQ event handler \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{time_server_8h_acd2c1f05aa1976f3bbedd389c8710a78}{Timer\+Start}} (\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Starts and adds the timer object to the list of timer events \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{time_server_8h_a8ae899c4e8a9abf49d825d6959aa6bcb}{Timer\+Stop}} (\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Stops and removes the timer object from the list of timer events \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{time_server_8h_a7fbd64c53ec871110fabc5b14f212904}{Timer\+Reset}} (\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Resets the timer object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{time_server_8h_ad56c30124de6deefb3e32bbee2a4ba46}{Timer\+Set\+Value}} (\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$obj, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Set timer new timeout value \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{time_server_8h_a2b801c1a13b71247424701f9a034f7ca}{Timer\+Get\+Current\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Read the current time \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{time_server_8h_a089138b11985528a8a02147e3209f181}{Timer\+Get\+Elapsed\+Time}} (\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} saved\+Time)
+\begin{DoxyCompactList}\small\item\em Return the Time elapsed since a fix moment in Time \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{타입정의 문서화}
+\mbox{\Hypertarget{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}\label{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Event\+\_\+t@{Timer\+Event\+\_\+t}}
+\index{Timer\+Event\+\_\+t@{Timer\+Event\+\_\+t}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Event\+\_\+t}{TimerEvent\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_timer_event__s}{Timer\+Event\+\_\+s}}  \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}}}
+
+
+
+Timer object description 
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{time_server_8h_a2b801c1a13b71247424701f9a034f7ca}\label{time_server_8h_a2b801c1a13b71247424701f9a034f7ca}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Get\+Current\+Time@{Timer\+Get\+Current\+Time}}
+\index{Timer\+Get\+Current\+Time@{Timer\+Get\+Current\+Time}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Get\+Current\+Time()}{TimerGetCurrentTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Timer\+Get\+Current\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Read the current time 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em returns} & current time in ms \\
+\hline
+\end{DoxyRetVals}
+
+
+time\+Server.\+c 파일의 381 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+382 \{
+383   uint32\_t now = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}( );
+384   \textcolor{keywordflow}{return}  \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga8db2858eda135777ea359e20185c8524}{HW\_RTC\_Tick2ms}}(now);
+385 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{time_server_8h_a089138b11985528a8a02147e3209f181}\label{time_server_8h_a089138b11985528a8a02147e3209f181}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Get\+Elapsed\+Time@{Timer\+Get\+Elapsed\+Time}}
+\index{Timer\+Get\+Elapsed\+Time@{Timer\+Get\+Elapsed\+Time}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Get\+Elapsed\+Time()}{TimerGetElapsedTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Timer\+Get\+Elapsed\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}}}]{saved\+Time }\end{DoxyParamCaption})}
+
+
+
+Return the Time elapsed since a fix moment in Time 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & saved\+Time fix moment in Time \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em time} & returns elapsed time in ms \\
+\hline
+\end{DoxyRetVals}
+
+
+time\+Server.\+c 파일의 387 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+388 \{
+389   uint32\_t nowInTicks = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{HW\_RTC\_GetTimerValue}}( );
+390   uint32\_t pastInTicks = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gab105bfcf0c8b346a1b20b158b8f8a86e}{HW\_RTC\_ms2Tick}}( past );
+391   \textcolor{comment}{/* intentional wrap around. Works Ok if tick duation below 1ms */}
+392   \textcolor{keywordflow}{return} \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga8db2858eda135777ea359e20185c8524}{HW\_RTC\_Tick2ms}}( nowInTicks- pastInTicks );
+393 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{time_server_8h_a7e41004e0cd39ba368fb7d83c2cfd550}\label{time_server_8h_a7e41004e0cd39ba368fb7d83c2cfd550}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Init@{Timer\+Init}}
+\index{Timer\+Init@{Timer\+Init}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Init()}{TimerInit()}}
+{\footnotesize\ttfamily void Timer\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$}]{obj,  }\item[{void($\ast$)(void)}]{callback }\end{DoxyParamCaption})}
+
+
+
+Initializes the timer object 
+
+\begin{DoxyRemark}{Remarks}
+Timer\+Set\+Value function must be called before starting the timer. this function initializes timestamp and reload value at 0.
+\end{DoxyRemark}
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & obj Structure containing the timer object parameters \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & callback Function callback called at the end of the timeout \\
+\hline
+\end{DoxyParams}
+
+
+time\+Server.\+c 파일의 129 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+130 \{
+131   obj->\mbox{\hyperlink{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}{Timestamp}} = 0;
+132   obj->\mbox{\hyperlink{struct_timer_event__s_a670045cfad50e7e4b3a31c0119d6e4fd}{ReloadValue}} = 0;
+133   obj->\mbox{\hyperlink{struct_timer_event__s_af5cb1246be24f89c7a5f720af0c92559}{IsRunning}} = \textcolor{keyword}{false};
+134   obj->\mbox{\hyperlink{struct_timer_event__s_ad008a5ba5a1c8dea486486fae73fd421}{Callback}} = callback;
+135   obj->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}} = NULL;
+136 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\mbox{\Hypertarget{time_server_8h_a742ab8d86db201a8b5d900ce8e27cf90}\label{time_server_8h_a742ab8d86db201a8b5d900ce8e27cf90}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Irq\+Handler@{Timer\+Irq\+Handler}}
+\index{Timer\+Irq\+Handler@{Timer\+Irq\+Handler}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Irq\+Handler()}{TimerIrqHandler()}}
+{\footnotesize\ttfamily void Timer\+Irq\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Timer I\+RQ event handler 
+
+\begin{DoxyNote}{주의}
+Head Timer Object is automaitcally removed from the List
+
+e.\+g. it is snot needded to stop it 
+\end{DoxyNote}
+
+
+time\+Server.\+c 파일의 215 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+216 \{
+217   \mbox{\hyperlink{struct_timer_event__s}{TimerEvent\_t}}* cur;
+218   \mbox{\hyperlink{struct_timer_event__s}{TimerEvent\_t}}* \mbox{\hyperlink{utilities_8c_a9b4556b86497af3cd53528515556b0f3}{next}};
+219   
+220 
+221   
+222   uint32\_t old =  \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga1d964c4efab63ea6a4b4ba8f3773e5b0}{HW\_RTC\_GetTimerContext}}( );
+223   uint32\_t now =  \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0a54228cfe8473d90b901ebd76de1d5}{HW\_RTC\_SetTimerContext}}( );
+224   uint32\_t DeltaContext = now - old; \textcolor{comment}{//intentionnal wrap around}
+225   
+226   \textcolor{comment}{/* update timeStamp based upon new Time Reference*/}
+227   \textcolor{comment}{/* beacuse delta context should never exceed 2^32*/}
+228   \textcolor{keywordflow}{if} ( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} != NULL )
+229   \{
+230     \textcolor{keywordflow}{for} (cur=\mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}; cur->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}} != NULL; cur= cur->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}})
+231     \{
+232       \mbox{\hyperlink{utilities_8c_a9b4556b86497af3cd53528515556b0f3}{next}} =cur->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}};
+233       \textcolor{keywordflow}{if} (\mbox{\hyperlink{utilities_8c_a9b4556b86497af3cd53528515556b0f3}{next}}->Timestamp > DeltaContext)
+234       \{
+235         \mbox{\hyperlink{utilities_8c_a9b4556b86497af3cd53528515556b0f3}{next}}->Timestamp -= DeltaContext;
+236       \}
+237       \textcolor{keywordflow}{else}
+238       \{
+239         \mbox{\hyperlink{utilities_8c_a9b4556b86497af3cd53528515556b0f3}{next}}->Timestamp = 0 ;
+240       \}
+241     \}
+242   \}
+243   
+244   \textcolor{comment}{/* execute imediately the alarm callback */}
+245   \textcolor{keywordflow}{if} ( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} != NULL )
+246   \{
+247     cur = \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}};
+248     \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} = \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}};
+249     \mbox{\hyperlink{time_server_8c_ac37d8a2dec99b904a48827bedbb19865}{exec\_cb}}( cur->\mbox{\hyperlink{struct_timer_event__s_ad008a5ba5a1c8dea486486fae73fd421}{Callback}} );
+250   \}
+251 
+252 
+253   \textcolor{comment}{// remove all the expired object from the list}
+254   \textcolor{keywordflow}{while}( ( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} != NULL ) && ( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->
+      \mbox{\hyperlink{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}{Timestamp}} < \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga7961116aa831950b62a413ecbbcfb02a}{HW\_RTC\_GetTimerElapsedTime}}(  )  ))
+255   \{
+256    cur = \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}};
+257    \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} = \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}};
+258    \mbox{\hyperlink{time_server_8c_ac37d8a2dec99b904a48827bedbb19865}{exec\_cb}}( cur->\mbox{\hyperlink{struct_timer_event__s_ad008a5ba5a1c8dea486486fae73fd421}{Callback}} );
+259   \}
+260 
+261   \textcolor{comment}{/* start the next TimerListHead if it exists AND NOT running */}
+262   \textcolor{keywordflow}{if}(( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} != NULL ) && (\mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->
+      \mbox{\hyperlink{struct_timer_event__s_af5cb1246be24f89c7a5f720af0c92559}{IsRunning}} == \textcolor{keyword}{false}))
+263   \{
+264     \mbox{\hyperlink{time_server_8c_af90925c5246bd6bbc2863d08d4cca3a9}{TimerSetTimeout}}( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} );
+265   \}
+266 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+\mbox{\Hypertarget{time_server_8h_a7fbd64c53ec871110fabc5b14f212904}\label{time_server_8h_a7fbd64c53ec871110fabc5b14f212904}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Reset@{Timer\+Reset}}
+\index{Timer\+Reset@{Timer\+Reset}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Reset()}{TimerReset()}}
+{\footnotesize\ttfamily void Timer\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Resets the timer object 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & obj Structure containing the timer object parameters \\
+\hline
+\end{DoxyParams}
+
+
+time\+Server.\+c 파일의 357 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+358 \{
+359   \mbox{\hyperlink{time_server_8c_a8ae899c4e8a9abf49d825d6959aa6bcb}{TimerStop}}( obj );
+360   \mbox{\hyperlink{time_server_8c_acd2c1f05aa1976f3bbedd389c8710a78}{TimerStart}}( obj );
+361 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+\mbox{\Hypertarget{time_server_8h_ad56c30124de6deefb3e32bbee2a4ba46}\label{time_server_8h_ad56c30124de6deefb3e32bbee2a4ba46}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Set\+Value@{Timer\+Set\+Value}}
+\index{Timer\+Set\+Value@{Timer\+Set\+Value}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Set\+Value()}{TimerSetValue()}}
+{\footnotesize\ttfamily void Timer\+Set\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$}]{obj,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Set timer new timeout value 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & obj Structure containing the timer object parameters \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & value New timer timeout value \\
+\hline
+\end{DoxyParams}
+
+
+time\+Server.\+c 파일의 363 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+364 \{
+365   uint32\_t minValue = 0;
+366   uint32\_t ticks = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gab105bfcf0c8b346a1b20b158b8f8a86e}{HW\_RTC\_ms2Tick}}( value );
+367 
+368   \mbox{\hyperlink{time_server_8c_a8ae899c4e8a9abf49d825d6959aa6bcb}{TimerStop}}( obj );
+369 
+370   minValue = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga254f9e5c17daff978fef15be01021c51}{HW\_RTC\_GetMinimumTimeout}}( );
+371   
+372   \textcolor{keywordflow}{if}( ticks < minValue )
+373   \{
+374     ticks = minValue;
+375   \}
+376 
+377   obj->\mbox{\hyperlink{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}{Timestamp}} = ticks;
+378   obj->\mbox{\hyperlink{struct_timer_event__s_a670045cfad50e7e4b3a31c0119d6e4fd}{ReloadValue}} = ticks;
+379 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
+\mbox{\Hypertarget{time_server_8h_acd2c1f05aa1976f3bbedd389c8710a78}\label{time_server_8h_acd2c1f05aa1976f3bbedd389c8710a78}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Start@{Timer\+Start}}
+\index{Timer\+Start@{Timer\+Start}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Start()}{TimerStart()}}
+{\footnotesize\ttfamily void Timer\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Starts and adds the timer object to the list of timer events 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & obj Structure containing the timer object parameters \\
+\hline
+\end{DoxyParams}
+
+
+time\+Server.\+c 파일의 138 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+139 \{
+140   uint32\_t elapsedTime = 0;
+141   
+142   \mbox{\hyperlink{utilities_8h_a6b5ac3331353a25a25e666b004b3aaef}{BACKUP\_PRIMASK}}();
+143   
+144   \mbox{\hyperlink{utilities_8h_a8b665b7df8fbc1b5d693fa71fd48a7b7}{DISABLE\_IRQ}}( );
+145   
+146 
+147   \textcolor{keywordflow}{if}( ( obj == NULL ) || ( \mbox{\hyperlink{time_server_8c_a496e7edd41e6441d879e27d0043444f5}{TimerExists}}( obj ) == \textcolor{keyword}{true} ) )
+148   \{
+149     \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}( );
+150     \textcolor{keywordflow}{return};
+151   \}
+152   obj->\mbox{\hyperlink{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}{Timestamp}} = obj->\mbox{\hyperlink{struct_timer_event__s_a670045cfad50e7e4b3a31c0119d6e4fd}{ReloadValue}};
+153   obj->\mbox{\hyperlink{struct_timer_event__s_af5cb1246be24f89c7a5f720af0c92559}{IsRunning}} = \textcolor{keyword}{false};
+154 
+155   \textcolor{keywordflow}{if}( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} == NULL )
+156   \{
+157     \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0a54228cfe8473d90b901ebd76de1d5}{HW\_RTC\_SetTimerContext}}( );
+158     \mbox{\hyperlink{time_server_8c_abeff03f3b0a3356be8c833bb93d24458}{TimerInsertNewHeadTimer}}( obj ); \textcolor{comment}{// insert a timeout at now+obj->Timestamp}
+159   \}
+160   \textcolor{keywordflow}{else} 
+161   \{
+162     elapsedTime = \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga7961116aa831950b62a413ecbbcfb02a}{HW\_RTC\_GetTimerElapsedTime}}( );
+163     obj->\mbox{\hyperlink{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}{Timestamp}} += elapsedTime;
+164   
+165     \textcolor{keywordflow}{if}( obj->\mbox{\hyperlink{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}{Timestamp}} < \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}{Timestamp}} )
+166     \{
+167       \mbox{\hyperlink{time_server_8c_abeff03f3b0a3356be8c833bb93d24458}{TimerInsertNewHeadTimer}}( obj);
+168     \}
+169     \textcolor{keywordflow}{else}
+170     \{
+171       \mbox{\hyperlink{time_server_8c_a0901cb54acad3ea19d052c0d00d547e3}{TimerInsertTimer}}( obj);
+172     \}
+173   \}
+174   \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}( );
+175 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 12
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 13
+\mbox{\Hypertarget{time_server_8h_a8ae899c4e8a9abf49d825d6959aa6bcb}\label{time_server_8h_a8ae899c4e8a9abf49d825d6959aa6bcb}} 
+\index{time\+Server.\+h@{time\+Server.\+h}!Timer\+Stop@{Timer\+Stop}}
+\index{Timer\+Stop@{Timer\+Stop}!time\+Server.\+h@{time\+Server.\+h}}
+\subsubsection{\texorpdfstring{Timer\+Stop()}{TimerStop()}}
+{\footnotesize\ttfamily void Timer\+Stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Stops and removes the timer object from the list of timer events 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & obj Structure containing the timer object parameters \\
+\hline
+\end{DoxyParams}
+
+
+time\+Server.\+c 파일의 268 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+269 \{
+270   \mbox{\hyperlink{utilities_8h_a6b5ac3331353a25a25e666b004b3aaef}{BACKUP\_PRIMASK}}();
+271   
+272   \mbox{\hyperlink{utilities_8h_a8b665b7df8fbc1b5d693fa71fd48a7b7}{DISABLE\_IRQ}}( );
+273   
+274   \mbox{\hyperlink{struct_timer_event__s}{TimerEvent\_t}}* prev = \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}};
+275   \mbox{\hyperlink{struct_timer_event__s}{TimerEvent\_t}}* cur = \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}};
+276 
+277   \textcolor{comment}{// List is empty or the Obj to stop does not exist }
+278   \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} == NULL ) || ( obj == NULL ) )
+279   \{
+280     \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}( );
+281     \textcolor{keywordflow}{return};
+282   \}
+283 
+284   \textcolor{keywordflow}{if}( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} == obj ) \textcolor{comment}{// Stop the Head                  }
+285   \{
+286     \textcolor{keywordflow}{if}( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_af5cb1246be24f89c7a5f720af0c92559}{IsRunning}} == \textcolor{keyword}{true} ) \textcolor{comment}{// The head is already running }
+287     \{  
+288       
+289       \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_af5cb1246be24f89c7a5f720af0c92559}{IsRunning}} = \textcolor{keyword}{false};
+290       \textcolor{keywordflow}{if}( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}} != NULL )
+291       \{
+292         \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} = \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}};
+293         \mbox{\hyperlink{time_server_8c_af90925c5246bd6bbc2863d08d4cca3a9}{TimerSetTimeout}}( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} );
+294       \}
+295       \textcolor{keywordflow}{else}
+296       \{
+297         \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga227be06e4dc1332d46ff12519db183b5}{HW\_RTC\_StopAlarm}}( );
+298         \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} = NULL;
+299       \}
+300     \}
+301     \textcolor{keywordflow}{else} \textcolor{comment}{// Stop the head before it is started}
+302     \{   
+303       \textcolor{keywordflow}{if}( \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}} != NULL )   
+304       \{
+305         \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} = \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}}->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}};
+306       \}
+307       \textcolor{keywordflow}{else}
+308       \{
+309         \mbox{\hyperlink{time_server_8c_a87a167422ed3320eaed4f1160c9a9c98}{TimerListHead}} = NULL;
+310       \}
+311     \}
+312   \}
+313   \textcolor{keywordflow}{else} \textcolor{comment}{// Stop an object within the list}
+314   \{      
+315     \textcolor{keywordflow}{while}( cur != NULL )
+316     \{
+317       \textcolor{keywordflow}{if}( cur == obj )
+318       \{
+319         \textcolor{keywordflow}{if}( cur->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}} != NULL )
+320         \{
+321           cur = cur->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}};
+322           prev->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}} = cur;
+323         \}
+324         \textcolor{keywordflow}{else}
+325         \{
+326           cur = NULL;
+327           prev->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}} = cur;
+328         \}
+329         \textcolor{keywordflow}{break};
+330       \}
+331       \textcolor{keywordflow}{else}
+332       \{
+333         prev = cur;
+334         cur = cur->\mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}};
+335       \}
+336     \}   
+337   \}
+338   
+339   \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}( );
+340 \}  
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 14
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 15

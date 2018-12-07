@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LorySDK: LoraLib/Utilities/low_power_manager.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LorySDK
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('low__power__manager_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">low_power_manager.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="low__power__manager_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* Define to prevent recursive inclusion -------------------------------------*/</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifndef __STM32_LPM__H</span></div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define __STM32_LPM__H</span></div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">/* Includes ------------------------------------------------------------------*/</span></div><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utilities__conf_8h.html">utilities_conf.h</a>&quot;</span></div><div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div><div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57">   62</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;{</div><div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57a6fdf7ef1f943192b3507c74647d6d46c">   64</a></span>&#160;  <a class="code" href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57a6fdf7ef1f943192b3507c74647d6d46c">LPM_Enable</a>=0,</div><div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57aa998d97d7b8eb3b6234e5b69fce1f375">   65</a></span>&#160;  <a class="code" href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57aa998d97d7b8eb3b6234e5b69fce1f375">LPM_Disable</a>,</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <a class="code" href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57">LPM_SetMode_t</a>;</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div><div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507">   68</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div><div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a26767bc04b0d5ff4c4a8c3ef63b62b05">   70</a></span>&#160;  <a class="code" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a26767bc04b0d5ff4c4a8c3ef63b62b05">LPM_SleepMode</a>,</div><div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a6cee594fb7226567d00054894c0b4c39">   71</a></span>&#160;  <a class="code" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a6cee594fb7226567d00054894c0b4c39">LPM_StopMode</a>,</div><div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a69c6e4387896ade87585bea3b7f79511">   72</a></span>&#160;  <a class="code" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a69c6e4387896ade87585bea3b7f79511">LPM_OffMode</a>,</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <a class="code" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507">LPM_GetMode_t</a>;</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/* Exported constants --------------------------------------------------------*/</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">/* External variables --------------------------------------------------------*/</span></div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">/* Exported macros -----------------------------------------------------------*/</span></div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">/* Exported functions ------------------------------------------------------- */</span></div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<a class="code" href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507">LPM_GetMode_t</a> <a class="code" href="low__power__manager_8h.html#ae9107e412181f10977b724c346cebd45">LPM_GetMode</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#ac8a0ff787d7d417b9e1f0697a1d5fd6d">LPM_SetStopMode</a>(<a class="code" href="utilities__conf_8h.html#acfda396432d3ff49786067a2271b5946">LPM_Id_t</a> <span class="keywordtype">id</span>, <a class="code" href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57">LPM_SetMode_t</a> mode);</div><div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#ad7400bf9ef582509093958cd1674397a">LPM_SetOffMode</a>(<a class="code" href="utilities__conf_8h.html#acfda396432d3ff49786067a2271b5946">LPM_Id_t</a> <span class="keywordtype">id</span>, <a class="code" href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57">LPM_SetMode_t</a> mode);</div><div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#a8173fa7c3aad5bb718c9ebf5ba44efe3">LPM_EnterLowPower</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div><div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#a8374b9a847eb1818edaf8bc5f47b9f6b">LPM_EnterSleepMode</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#af01d8afec854041422043e1549530bc4">LPM_ExitSleepMode</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div><div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#a3bb8517047a428748270c05d69f21cb6">LPM_EnterStopMode</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div><div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#a04976d6794610b55c560b434c0d08c8b">LPM_ExitStopMode</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#aecc9c30efeed1c5306ca30d3d89e41c5">LPM_EnterOffMode</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div><div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="keywordtype">void</span> <a class="code" href="low__power__manager_8h.html#a5841f36f61d5ff3fc2cefa741ddb6669">LPM_ExitOffMode</a>(<span class="keywordtype">void</span>);</div><div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div><div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;</div><div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*__STM32_LPM__H */</span><span class="preprocessor"></span></div><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment">/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/</span></div><div class="ttc" id="low__power__manager_8h_html_ac8a0ff787d7d417b9e1f0697a1d5fd6d"><div class="ttname"><a href="low__power__manager_8h.html#ac8a0ff787d7d417b9e1f0697a1d5fd6d">LPM_SetStopMode</a></div><div class="ttdeci">void LPM_SetStopMode(LPM_Id_t id, LPM_SetMode_t mode)</div><div class="ttdoc">This API notifies the low power manager if the specified user allows the Off mode or not...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00090">low_power_manager.c:90</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_a5841f36f61d5ff3fc2cefa741ddb6669"><div class="ttname"><a href="low__power__manager_8h.html#a5841f36f61d5ff3fc2cefa741ddb6669">LPM_ExitOffMode</a></div><div class="ttdeci">void LPM_ExitOffMode(void)</div><div class="ttdoc">This API is called by the low power manager in a critical section (PRIMASK bit set) to allow the appl...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00184">low_power_manager.c:184</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_acb31a7bf1fa8d421505bf31482304507"><div class="ttname"><a href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507">LPM_GetMode_t</a></div><div class="ttdeci">LPM_GetMode_t</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8h_source.html#l00068">low_power_manager.h:68</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_ae9107e412181f10977b724c346cebd45"><div class="ttname"><a href="low__power__manager_8h.html#ae9107e412181f10977b724c346cebd45">LPM_GetMode</a></div><div class="ttdeci">LPM_GetMode_t LPM_GetMode(void)</div><div class="ttdoc">This API returns the Low Power Mode selected that will be applied when the system will enter low powe...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00150">low_power_manager.c:150</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_a3bb8517047a428748270c05d69f21cb6"><div class="ttname"><a href="low__power__manager_8h.html#a3bb8517047a428748270c05d69f21cb6">LPM_EnterStopMode</a></div><div class="ttdeci">void LPM_EnterStopMode(void)</div><div class="ttdoc">This API is called by the low power manager in a critical section (PRIMASK bit set) to allow the appl...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00181">low_power_manager.c:181</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_ad7400bf9ef582509093958cd1674397a"><div class="ttname"><a href="low__power__manager_8h.html#ad7400bf9ef582509093958cd1674397a">LPM_SetOffMode</a></div><div class="ttdeci">void LPM_SetOffMode(LPM_Id_t id, LPM_SetMode_t mode)</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00062">low_power_manager.c:62</a></div></div>
+<div class="ttc" id="utilities__conf_8h_html"><div class="ttname"><a href="utilities__conf_8h.html">utilities_conf.h</a></div><div class="ttdoc">configuration for utilities </div></div>
+<div class="ttc" id="low__power__manager_8h_html_acb31a7bf1fa8d421505bf31482304507a26767bc04b0d5ff4c4a8c3ef63b62b05"><div class="ttname"><a href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a26767bc04b0d5ff4c4a8c3ef63b62b05">LPM_SleepMode</a></div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8h_source.html#l00070">low_power_manager.h:70</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_a271e41b451de2369d381b2976f39de57aa998d97d7b8eb3b6234e5b69fce1f375"><div class="ttname"><a href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57aa998d97d7b8eb3b6234e5b69fce1f375">LPM_Disable</a></div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8h_source.html#l00065">low_power_manager.h:65</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_aecc9c30efeed1c5306ca30d3d89e41c5"><div class="ttname"><a href="low__power__manager_8h.html#aecc9c30efeed1c5306ca30d3d89e41c5">LPM_EnterOffMode</a></div><div class="ttdeci">void LPM_EnterOffMode(void)</div><div class="ttdoc">This API is called by the low power manager in a critical section (PRIMASK bit set) to allow the appl...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00183">low_power_manager.c:183</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_a271e41b451de2369d381b2976f39de57a6fdf7ef1f943192b3507c74647d6d46c"><div class="ttname"><a href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57a6fdf7ef1f943192b3507c74647d6d46c">LPM_Enable</a></div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8h_source.html#l00064">low_power_manager.h:64</a></div></div>
+<div class="ttc" id="utilities__conf_8h_html_acfda396432d3ff49786067a2271b5946"><div class="ttname"><a href="utilities__conf_8h.html#acfda396432d3ff49786067a2271b5946">LPM_Id_t</a></div><div class="ttdeci">LPM_Id_t</div><div class="ttdef"><b>Definition:</b> <a href="utilities__conf_8h_source.html#l00057">utilities_conf.h:57</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_acb31a7bf1fa8d421505bf31482304507a69c6e4387896ade87585bea3b7f79511"><div class="ttname"><a href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a69c6e4387896ade87585bea3b7f79511">LPM_OffMode</a></div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8h_source.html#l00072">low_power_manager.h:72</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_a271e41b451de2369d381b2976f39de57"><div class="ttname"><a href="low__power__manager_8h.html#a271e41b451de2369d381b2976f39de57">LPM_SetMode_t</a></div><div class="ttdeci">LPM_SetMode_t</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8h_source.html#l00062">low_power_manager.h:62</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_acb31a7bf1fa8d421505bf31482304507a6cee594fb7226567d00054894c0b4c39"><div class="ttname"><a href="low__power__manager_8h.html#acb31a7bf1fa8d421505bf31482304507a6cee594fb7226567d00054894c0b4c39">LPM_StopMode</a></div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8h_source.html#l00071">low_power_manager.h:71</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_a04976d6794610b55c560b434c0d08c8b"><div class="ttname"><a href="low__power__manager_8h.html#a04976d6794610b55c560b434c0d08c8b">LPM_ExitStopMode</a></div><div class="ttdeci">void LPM_ExitStopMode(void)</div><div class="ttdoc">This API is called by the low power manager in a critical section (PRIMASK bit set) to allow the appl...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00182">low_power_manager.c:182</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_a8374b9a847eb1818edaf8bc5f47b9f6b"><div class="ttname"><a href="low__power__manager_8h.html#a8374b9a847eb1818edaf8bc5f47b9f6b">LPM_EnterSleepMode</a></div><div class="ttdeci">void LPM_EnterSleepMode(void)</div><div class="ttdoc">This API is called by the low power manager in a critical section (PRIMASK bit set) to allow the appl...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00179">low_power_manager.c:179</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_af01d8afec854041422043e1549530bc4"><div class="ttname"><a href="low__power__manager_8h.html#af01d8afec854041422043e1549530bc4">LPM_ExitSleepMode</a></div><div class="ttdeci">void LPM_ExitSleepMode(void)</div><div class="ttdoc">This API is called by the low power manager in a critical section (PRIMASK bit set) to allow the appl...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00180">low_power_manager.c:180</a></div></div>
+<div class="ttc" id="low__power__manager_8h_html_a8173fa7c3aad5bb718c9ebf5ba44efe3"><div class="ttname"><a href="low__power__manager_8h.html#a8173fa7c3aad5bb718c9ebf5ba44efe3">LPM_EnterLowPower</a></div><div class="ttdeci">void LPM_EnterLowPower(void)</div><div class="ttdoc">This API shall be used by the application when there is no more code to execute so that the system ma...</div><div class="ttdef"><b>Definition:</b> <a href="low__power__manager_8c_source.html#l00117">low_power_manager.c:117</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_878635d2ccdb6aa6ab3ba685c8bd0903.html">LoraLib</a></li><li class="navelem"><a class="el" href="dir_cdca82bb84e552384c32423304757306.html">Utilities</a></li><li class="navelem"><a class="el" href="low__power__manager_8h.html">low_power_manager.h</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

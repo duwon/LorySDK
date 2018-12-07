@@ -1,0 +1,38 @@
+\hypertarget{hw__rtc_8h}{}\section{Projects/\+Docking\+Station/inc/hw\+\_\+rtc.h 파일 참조}
+\label{hw__rtc_8h}\index{Projects/\+Docking\+Station/inc/hw\+\_\+rtc.\+h@{Projects/\+Docking\+Station/inc/hw\+\_\+rtc.\+h}}
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\newline
+hw\+\_\+rtc.\+h에 대한 include 의존 그래프
+% FIG 0
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 1
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga3021a4a33084812668411847ec35d71d}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the R\+TC timer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga227be06e4dc1332d46ff12519db183b5}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm}} (void)
+\begin{DoxyCompactList}\small\item\em Stop the Alarm \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga254f9e5c17daff978fef15be01021c51}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout}} (void)
+\begin{DoxyCompactList}\small\item\em Return the minimum timeout the R\+TC is able to handle \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga09cec56d54c13de658fafdd003390771}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm}} (uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Set the alarm \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga7961116aa831950b62a413ecbbcfb02a}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer elapsed time since the last Reference was set \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer value \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0a54228cfe8473d90b901ebd76de1d5}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context}} (void)
+\begin{DoxyCompactList}\small\item\em Set the R\+TC timer Reference \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga1d964c4efab63ea6a4b4ba8f3773e5b0}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer Reference \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gae8ae8ef64d3025701112d509285006d4}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em R\+TC I\+RQ Handler on the R\+TC Alarm \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gadad8cbf36cbe8a65bc1c70109146e307}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms}} (uint32\+\_\+t delay)
+\begin{DoxyCompactList}\small\item\em a delay of delay ms by polling R\+TC \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga3039d2d62291e76e72912133676433fd}{H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em calculates the wake up time between wake up and mcu start \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga62c900dca3a1beb9d4f2519664d3d274}{H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em returns the wake up time in us \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gab105bfcf0c8b346a1b20b158b8f8a86e}{H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick}} (\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} time\+Micro\+Sec)
+\begin{DoxyCompactList}\small\item\em converts time in ms to time in ticks \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga8db2858eda135777ea359e20185c8524}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms}} (uint32\+\_\+t tick)
+\begin{DoxyCompactList}\small\item\em converts time in ticks to time in ms \end{DoxyCompactList}\end{DoxyCompactItemize}

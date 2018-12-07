@@ -1,0 +1,11 @@
+digraph "LimitTxPower"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node14 [label="LimitTxPower",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="RegionEU433TxConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_e_u433.html#ga29a68f1a72dfccfe89f01de36ddc542b",tooltip="TX configuration. "];
+  Node14 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="RegionEU433SetContinuousWave",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_e_u433.html#ga76561de6c45317a54ded972f7ac80836",tooltip="Sets the radio into continuous wave mode. "];
+}

@@ -1,0 +1,142 @@
+\hypertarget{structs_board_callback}{}\section{s\+Board\+Callback 구조체 참조}
+\label{structs_board_callback}\index{s\+Board\+Callback@{s\+Board\+Callback}}
+
+
+{\ttfamily \#include $<$sx1276.\+h$>$}
+
+
+
+s\+Board\+Callback에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{structs_board_callback_ad7ed5ef4ab2e13b2839e6df3b1f049a3}{S\+X1276\+Board\+Set\+XO}} )(uint8\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em Set XO state on the board \end{DoxyCompactList}\item 
+uint32\+\_\+t($\ast$ \mbox{\hyperlink{structs_board_callback_a731a806acb4adddba9464cf0b4b6dd9e}{S\+X1276\+Board\+Get\+Wake\+Time}} )(void)
+\begin{DoxyCompactList}\small\item\em Get Board Wake Up time \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{structs_board_callback_a400401342a36091fbcf88f1a8ef81db7}{S\+X1276\+Board\+Io\+Irq\+Init}} )(\mbox{\hyperlink{sx1276_8h_af462584f307238535daaea42f6ce791c}{Dio\+Irq\+Handler}} $\ast$$\ast$irq\+Handlers)
+\begin{DoxyCompactList}\small\item\em Initializes the radio I/\+Os Irq \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{structs_board_callback_aa681fd32fe9ab596fbc60624d0510bb6}{S\+X1276\+Board\+Set\+Rf\+Tx\+Power}} )(int8\+\_\+t power)
+\begin{DoxyCompactList}\small\item\em Sets the radio output power. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{structs_board_callback_a05048f8c28130f39b11552ccd1668125}{S\+X1276\+Board\+Set\+Ant\+Sw\+Low\+Power}} )(bool status)
+\begin{DoxyCompactList}\small\item\em Set the RF Switch I/\+Os pins in Low Power mode \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{structs_board_callback_aff31b16510fde832787af55c87e9d1b7}{S\+X1276\+Board\+Set\+Ant\+Sw}} )(uint8\+\_\+t op\+Mode)
+\begin{DoxyCompactList}\small\item\em Controls the antena switch if necessary. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+sx1276.\+h 파일의 232 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_board_callback_a731a806acb4adddba9464cf0b4b6dd9e}\label{structs_board_callback_a731a806acb4adddba9464cf0b4b6dd9e}} 
+\index{s\+Board\+Callback@{s\+Board\+Callback}!S\+X1276\+Board\+Get\+Wake\+Time@{S\+X1276\+Board\+Get\+Wake\+Time}}
+\index{S\+X1276\+Board\+Get\+Wake\+Time@{S\+X1276\+Board\+Get\+Wake\+Time}!s\+Board\+Callback@{s\+Board\+Callback}}
+\subsubsection{\texorpdfstring{S\+X1276\+Board\+Get\+Wake\+Time}{SX1276BoardGetWakeTime}}
+{\footnotesize\ttfamily uint32\+\_\+t( $\ast$ S\+X1276\+Board\+Get\+Wake\+Time) (void)}
+
+
+
+Get Board Wake Up time 
+
+
+
+sx1276.\+h 파일의 241 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_board_callback_a400401342a36091fbcf88f1a8ef81db7}\label{structs_board_callback_a400401342a36091fbcf88f1a8ef81db7}} 
+\index{s\+Board\+Callback@{s\+Board\+Callback}!S\+X1276\+Board\+Io\+Irq\+Init@{S\+X1276\+Board\+Io\+Irq\+Init}}
+\index{S\+X1276\+Board\+Io\+Irq\+Init@{S\+X1276\+Board\+Io\+Irq\+Init}!s\+Board\+Callback@{s\+Board\+Callback}}
+\subsubsection{\texorpdfstring{S\+X1276\+Board\+Io\+Irq\+Init}{SX1276BoardIoIrqInit}}
+{\footnotesize\ttfamily void( $\ast$ S\+X1276\+Board\+Io\+Irq\+Init) (\mbox{\hyperlink{sx1276_8h_af462584f307238535daaea42f6ce791c}{Dio\+Irq\+Handler}} $\ast$$\ast$irq\+Handlers)}
+
+
+
+Initializes the radio I/\+Os Irq 
+
+
+
+sx1276.\+h 파일의 245 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_board_callback_aff31b16510fde832787af55c87e9d1b7}\label{structs_board_callback_aff31b16510fde832787af55c87e9d1b7}} 
+\index{s\+Board\+Callback@{s\+Board\+Callback}!S\+X1276\+Board\+Set\+Ant\+Sw@{S\+X1276\+Board\+Set\+Ant\+Sw}}
+\index{S\+X1276\+Board\+Set\+Ant\+Sw@{S\+X1276\+Board\+Set\+Ant\+Sw}!s\+Board\+Callback@{s\+Board\+Callback}}
+\subsubsection{\texorpdfstring{S\+X1276\+Board\+Set\+Ant\+Sw}{SX1276BoardSetAntSw}}
+{\footnotesize\ttfamily void( $\ast$ S\+X1276\+Board\+Set\+Ant\+Sw) (uint8\+\_\+t op\+Mode)}
+
+
+
+Controls the antena switch if necessary. 
+
+\begin{DoxyRemark}{Remarks}
+see errata note
+\end{DoxyRemark}
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & op\+Mode Current radio operating mode \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+h 파일의 265 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_board_callback_a05048f8c28130f39b11552ccd1668125}\label{structs_board_callback_a05048f8c28130f39b11552ccd1668125}} 
+\index{s\+Board\+Callback@{s\+Board\+Callback}!S\+X1276\+Board\+Set\+Ant\+Sw\+Low\+Power@{S\+X1276\+Board\+Set\+Ant\+Sw\+Low\+Power}}
+\index{S\+X1276\+Board\+Set\+Ant\+Sw\+Low\+Power@{S\+X1276\+Board\+Set\+Ant\+Sw\+Low\+Power}!s\+Board\+Callback@{s\+Board\+Callback}}
+\subsubsection{\texorpdfstring{S\+X1276\+Board\+Set\+Ant\+Sw\+Low\+Power}{SX1276BoardSetAntSwLowPower}}
+{\footnotesize\ttfamily void( $\ast$ S\+X1276\+Board\+Set\+Ant\+Sw\+Low\+Power) (bool status)}
+
+
+
+Set the RF Switch I/\+Os pins in Low Power mode 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & status enable or disable \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+h 파일의 257 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_board_callback_aa681fd32fe9ab596fbc60624d0510bb6}\label{structs_board_callback_aa681fd32fe9ab596fbc60624d0510bb6}} 
+\index{s\+Board\+Callback@{s\+Board\+Callback}!S\+X1276\+Board\+Set\+Rf\+Tx\+Power@{S\+X1276\+Board\+Set\+Rf\+Tx\+Power}}
+\index{S\+X1276\+Board\+Set\+Rf\+Tx\+Power@{S\+X1276\+Board\+Set\+Rf\+Tx\+Power}!s\+Board\+Callback@{s\+Board\+Callback}}
+\subsubsection{\texorpdfstring{S\+X1276\+Board\+Set\+Rf\+Tx\+Power}{SX1276BoardSetRfTxPower}}
+{\footnotesize\ttfamily void( $\ast$ S\+X1276\+Board\+Set\+Rf\+Tx\+Power) (int8\+\_\+t power)}
+
+
+
+Sets the radio output power. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & power Sets the RF output power \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+h 파일의 251 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_board_callback_ad7ed5ef4ab2e13b2839e6df3b1f049a3}\label{structs_board_callback_ad7ed5ef4ab2e13b2839e6df3b1f049a3}} 
+\index{s\+Board\+Callback@{s\+Board\+Callback}!S\+X1276\+Board\+Set\+XO@{S\+X1276\+Board\+Set\+XO}}
+\index{S\+X1276\+Board\+Set\+XO@{S\+X1276\+Board\+Set\+XO}!s\+Board\+Callback@{s\+Board\+Callback}}
+\subsubsection{\texorpdfstring{S\+X1276\+Board\+Set\+XO}{SX1276BoardSetXO}}
+{\footnotesize\ttfamily void( $\ast$ S\+X1276\+Board\+Set\+XO) (uint8\+\_\+t state)}
+
+
+
+Set XO state on the board 
+
+
+
+sx1276.\+h 파일의 237 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/sx1276/\mbox{\hyperlink{sx1276_8h}{sx1276.\+h}}\end{DoxyCompactItemize}

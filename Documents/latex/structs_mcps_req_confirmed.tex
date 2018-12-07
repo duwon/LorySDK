@@ -1,0 +1,113 @@
+\hypertarget{structs_mcps_req_confirmed}{}\section{s\+Mcps\+Req\+Confirmed 구조체 참조}
+\label{structs_mcps_req_confirmed}\index{s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}}
+
+
+{\ttfamily \#include $<$Lo\+Ra\+Mac.\+h$>$}
+
+
+
+s\+Mcps\+Req\+Confirmed에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_req_confirmed_a2973de9ac0ab5e876b80362bc4c6a88b}{f\+Port}}
+\item 
+void $\ast$ \mbox{\hyperlink{structs_mcps_req_confirmed_a2e9f11cf5a8f2a797999359bedee31af}{f\+Buffer}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structs_mcps_req_confirmed_a6b4fc83528d7391a193516d9f4ba985b}{f\+Buffer\+Size}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{structs_mcps_req_confirmed_ae2f6080f3aa0e9485c55513ca56bb24d}{Datarate}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_req_confirmed_a9da59688c25c389a323e4d155fca3a47}{Nb\+Trials}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra\+M\+AC M\+C\+P\+S-\/\+Request for a confirmed frame 
+
+Lo\+Ra\+Mac.\+h 파일의 731 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_mcps_req_confirmed_ae2f6080f3aa0e9485c55513ca56bb24d}\label{structs_mcps_req_confirmed_ae2f6080f3aa0e9485c55513ca56bb24d}} 
+\index{s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}!Datarate@{Datarate}}
+\index{Datarate@{Datarate}!s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}}
+\subsubsection{\texorpdfstring{Datarate}{Datarate}}
+{\footnotesize\ttfamily int8\+\_\+t Datarate}
+
+Uplink datarate, if A\+DR is off 
+
+Lo\+Ra\+Mac.\+h 파일의 751 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_req_confirmed_a2e9f11cf5a8f2a797999359bedee31af}\label{structs_mcps_req_confirmed_a2e9f11cf5a8f2a797999359bedee31af}} 
+\index{s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}!f\+Buffer@{f\+Buffer}}
+\index{f\+Buffer@{f\+Buffer}!s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}}
+\subsubsection{\texorpdfstring{f\+Buffer}{fBuffer}}
+{\footnotesize\ttfamily void$\ast$ f\+Buffer}
+
+Pointer to the buffer of the frame payload 
+
+Lo\+Ra\+Mac.\+h 파일의 743 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_req_confirmed_a6b4fc83528d7391a193516d9f4ba985b}\label{structs_mcps_req_confirmed_a6b4fc83528d7391a193516d9f4ba985b}} 
+\index{s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}!f\+Buffer\+Size@{f\+Buffer\+Size}}
+\index{f\+Buffer\+Size@{f\+Buffer\+Size}!s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}}
+\subsubsection{\texorpdfstring{f\+Buffer\+Size}{fBufferSize}}
+{\footnotesize\ttfamily uint16\+\_\+t f\+Buffer\+Size}
+
+Size of the frame payload 
+
+Lo\+Ra\+Mac.\+h 파일의 747 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_req_confirmed_a2973de9ac0ab5e876b80362bc4c6a88b}\label{structs_mcps_req_confirmed_a2973de9ac0ab5e876b80362bc4c6a88b}} 
+\index{s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}!f\+Port@{f\+Port}}
+\index{f\+Port@{f\+Port}!s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}}
+\subsubsection{\texorpdfstring{f\+Port}{fPort}}
+{\footnotesize\ttfamily uint8\+\_\+t f\+Port}
+
+Frame port field. Must be set if the payload is not empty. Use the application specific frame port values\+: \mbox{[}1...223\mbox{]}
+
+Lo\+Ra\+W\+AN Specification V1.\+0.\+2, chapter 4.\+3.\+2 
+
+Lo\+Ra\+Mac.\+h 파일의 739 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_req_confirmed_a9da59688c25c389a323e4d155fca3a47}\label{structs_mcps_req_confirmed_a9da59688c25c389a323e4d155fca3a47}} 
+\index{s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}!Nb\+Trials@{Nb\+Trials}}
+\index{Nb\+Trials@{Nb\+Trials}!s\+Mcps\+Req\+Confirmed@{s\+Mcps\+Req\+Confirmed}}
+\subsubsection{\texorpdfstring{Nb\+Trials}{NbTrials}}
+{\footnotesize\ttfamily uint8\+\_\+t Nb\+Trials}
+
+Number of trials to transmit the frame, if the Lo\+Ra\+M\+AC layer did not receive an acknowledgment. The M\+AC performs a datarate adaptation, according to the Lo\+Ra\+W\+AN Specification V1.\+0.\+2, chapter 18.\+4, according to the following table\+:
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Transmission nb  }&\textbf{ Data Rate   }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Transmission nb  }&\textbf{ Data Rate   }\\\cline{1-2}
+\endhead
+1 (first)  &DR   \\\cline{1-2}
+2  &DR   \\\cline{1-2}
+3  &max(D\+R-\/1,0)   \\\cline{1-2}
+4  &max(D\+R-\/1,0)   \\\cline{1-2}
+5  &max(D\+R-\/2,0)   \\\cline{1-2}
+6  &max(D\+R-\/2,0)   \\\cline{1-2}
+7  &max(D\+R-\/3,0)   \\\cline{1-2}
+8  &max(D\+R-\/3,0)   \\\cline{1-2}
+\end{longtabu}
+
+
+Note, that if Nb\+Trials is set to 1 or 2, the M\+AC will not decrease the datarate, in case the Lo\+Ra\+M\+AC layer did not receive an acknowledgment 
+
+Lo\+Ra\+Mac.\+h 파일의 772 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/\mbox{\hyperlink{_lo_ra_mac_8h}{Lo\+Ra\+Mac.\+h}}\end{DoxyCompactItemize}

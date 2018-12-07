@@ -1,0 +1,193 @@
+\hypertarget{sx1276mb1las_8h}{}\section{Drivers/sx1276mb1las/sx1276mb1las.h 파일 참조}
+\label{sx1276mb1las_8h}\index{Drivers/sx1276mb1las/sx1276mb1las.\+h@{Drivers/sx1276mb1las/sx1276mb1las.\+h}}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sx1276mb1las_8h_a78c580ed3e257ad98461abef9d7ba09a}{B\+O\+A\+R\+D\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME}}~0
+\item 
+\#define \mbox{\hyperlink{sx1276mb1las_8h_a1db70ae2451438649d74ccfbb3ebe1fa}{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+TX}}~1
+\item 
+\#define \mbox{\hyperlink{sx1276mb1las_8h_a63780da40ce0c1fc3d6bd7e1dc9919d8}{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+RX}}~0
+\item 
+\#define \mbox{\hyperlink{sx1276mb1las_8h_a51ad727a195c907dda006b5a40467136}{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH}}~525000000
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sx1276mb1las_8h_aec7b264fbf1e700d90003a683624ca36}{S\+X1276\+Io\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the radio I/\+Os pins interface \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276mb1las_8h_a70543ce2709079b385832bbe62ef0bb4}{S\+X1276\+Io\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De-\/initializes the radio I/\+Os pins interface. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{sx1276mb1las_8h_a123588d3d6564909f2dc8ecf40a71214}{S\+X1276\+Check\+Rf\+Frequency}} (uint32\+\_\+t frequency)
+\begin{DoxyCompactList}\small\item\em Checks if the given RF frequency is supported by the hardware \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sx1276_8h_acf7f83d7d25c85897b88fcdc94345e56}{S\+X1276\+\_\+t}} \mbox{\hyperlink{sx1276mb1las_8h_a91a81a798b3d849e2cc114c18bf9c5cc}{S\+X1276}}
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{sx1276mb1las_8h_a78c580ed3e257ad98461abef9d7ba09a}\label{sx1276mb1las_8h_a78c580ed3e257ad98461abef9d7ba09a}} 
+\index{sx1276mb1las.\+h@{sx1276mb1las.\+h}!B\+O\+A\+R\+D\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME@{B\+O\+A\+R\+D\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME}}
+\index{B\+O\+A\+R\+D\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME@{B\+O\+A\+R\+D\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME}!sx1276mb1las.\+h@{sx1276mb1las.\+h}}
+\subsubsection{\texorpdfstring{B\+O\+A\+R\+D\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME}{BOARD\_WAKEUP\_TIME}}
+{\footnotesize\ttfamily \#define B\+O\+A\+R\+D\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME~0}
+
+
+
+sx1276mb1las.\+h 파일의 62 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276mb1las_8h_a63780da40ce0c1fc3d6bd7e1dc9919d8}\label{sx1276mb1las_8h_a63780da40ce0c1fc3d6bd7e1dc9919d8}} 
+\index{sx1276mb1las.\+h@{sx1276mb1las.\+h}!R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+RX@{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+RX}}
+\index{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+RX@{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+RX}!sx1276mb1las.\+h@{sx1276mb1las.\+h}}
+\subsubsection{\texorpdfstring{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+RX}{RADIO\_ANT\_SWITCH\_SET\_RX}}
+{\footnotesize\ttfamily \#define R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+RX~0}
+
+
+
+sx1276mb1las.\+h 파일의 65 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276mb1las_8h_a1db70ae2451438649d74ccfbb3ebe1fa}\label{sx1276mb1las_8h_a1db70ae2451438649d74ccfbb3ebe1fa}} 
+\index{sx1276mb1las.\+h@{sx1276mb1las.\+h}!R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+TX@{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+TX}}
+\index{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+TX@{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+TX}!sx1276mb1las.\+h@{sx1276mb1las.\+h}}
+\subsubsection{\texorpdfstring{R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+TX}{RADIO\_ANT\_SWITCH\_SET\_TX}}
+{\footnotesize\ttfamily \#define R\+A\+D\+I\+O\+\_\+\+A\+N\+T\+\_\+\+S\+W\+I\+T\+C\+H\+\_\+\+S\+E\+T\+\_\+\+TX~1}
+
+
+
+sx1276mb1las.\+h 파일의 64 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276mb1las_8h_a51ad727a195c907dda006b5a40467136}\label{sx1276mb1las_8h_a51ad727a195c907dda006b5a40467136}} 
+\index{sx1276mb1las.\+h@{sx1276mb1las.\+h}!R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH@{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH}}
+\index{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH@{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH}!sx1276mb1las.\+h@{sx1276mb1las.\+h}}
+\subsubsection{\texorpdfstring{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH}{RF\_MID\_BAND\_THRESH}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH~525000000}
+
+
+
+sx1276mb1las.\+h 파일의 70 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{sx1276mb1las_8h_a123588d3d6564909f2dc8ecf40a71214}\label{sx1276mb1las_8h_a123588d3d6564909f2dc8ecf40a71214}} 
+\index{sx1276mb1las.\+h@{sx1276mb1las.\+h}!S\+X1276\+Check\+Rf\+Frequency@{S\+X1276\+Check\+Rf\+Frequency}}
+\index{S\+X1276\+Check\+Rf\+Frequency@{S\+X1276\+Check\+Rf\+Frequency}!sx1276mb1las.\+h@{sx1276mb1las.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Check\+Rf\+Frequency()}{SX1276CheckRfFrequency()}}
+{\footnotesize\ttfamily bool S\+X1276\+Check\+Rf\+Frequency (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Checks if the given RF frequency is supported by the hardware 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & frequency RF frequency to be checked \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em is\+Supported} & \mbox{[}true\+: supported, false\+: unsupported\mbox{]} \\
+\hline
+\end{DoxyRetVals}
+
+
+sx1276mb1las.\+c 파일의 308 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+309 \{
+310     \textcolor{comment}{// Implement check. Currently all frequencies are supported}
+311     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+312 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{sx1276mb1las_8h_a70543ce2709079b385832bbe62ef0bb4}\label{sx1276mb1las_8h_a70543ce2709079b385832bbe62ef0bb4}} 
+\index{sx1276mb1las.\+h@{sx1276mb1las.\+h}!S\+X1276\+Io\+De\+Init@{S\+X1276\+Io\+De\+Init}}
+\index{S\+X1276\+Io\+De\+Init@{S\+X1276\+Io\+De\+Init}!sx1276mb1las.\+h@{sx1276mb1las.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Io\+De\+Init()}{SX1276IoDeInit()}}
+{\footnotesize\ttfamily void S\+X1276\+Io\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+De-\/initializes the radio I/\+Os pins interface. 
+
+\begin{DoxyRemark}{Remarks}
+Useful when going in M\+CU lowpower modes 
+\end{DoxyRemark}
+
+
+sx1276mb1las.\+c 파일의 163 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+164 \{
+165   GPIO\_InitTypeDef initStruct=\{0\};
+166 
+167   initStruct.Mode = GPIO\_MODE\_IT\_RISING ;
+168   initStruct.Pull = GPIO\_PULLDOWN;
+169   
+170   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a4a52e2d800fc19e863a9c9b594d764ff}{RADIO\_DIO\_0\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a55883972120dfa16b68c596591324d11}{RADIO\_DIO\_0\_PIN}}, &initStruct )
+      ;
+171   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a9fc33ef020b11cf9c065494b73de5d7f}{RADIO\_DIO\_1\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a6663d0e4b9ea1d3886d50346bc1ee781}{RADIO\_DIO\_1\_PIN}}, &initStruct )
+      ;
+172   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a07c3e58869babb40a346c892b2888969}{RADIO\_DIO\_2\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a4f94ccdf29f8b9400d551af0c91ffa94}{RADIO\_DIO\_2\_PIN}}, &initStruct )
+      ;
+173   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a7393d318a0bb16d1f8d2c4b4edf6d95b}{RADIO\_DIO\_3\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aff1a74fa377be0361d00db1b4c4a4b18}{RADIO\_DIO\_3\_PIN}}, &initStruct )
+      ;
+174 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{sx1276mb1las_8h_aec7b264fbf1e700d90003a683624ca36}\label{sx1276mb1las_8h_aec7b264fbf1e700d90003a683624ca36}} 
+\index{sx1276mb1las.\+h@{sx1276mb1las.\+h}!S\+X1276\+Io\+Init@{S\+X1276\+Io\+Init}}
+\index{S\+X1276\+Io\+Init@{S\+X1276\+Io\+Init}!sx1276mb1las.\+h@{sx1276mb1las.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Io\+Init()}{SX1276IoInit()}}
+{\footnotesize\ttfamily void S\+X1276\+Io\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the radio I/\+Os pins interface 
+
+
+
+sx1276mb1las.\+c 파일의 139 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+140 \{
+141   GPIO\_InitTypeDef initStruct=\{0\};
+142   
+143   \mbox{\hyperlink{sx1276_8c_afad8cc2a5afd223af9eba509bfaa15f4}{SX1276BoardInit}}( &\mbox{\hyperlink{sx1276mb1las_8c_a5dfe33557a2a83b277cfee3e97112151}{BoardCallbacks}} );
+144   
+145   initStruct.Mode = GPIO\_MODE\_IT\_RISING;
+146   initStruct.Pull = GPIO\_PULLDOWN;
+147   initStruct.Speed = GPIO\_SPEED\_HIGH;
+148 
+149   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a4a52e2d800fc19e863a9c9b594d764ff}{RADIO\_DIO\_0\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a55883972120dfa16b68c596591324d11}{RADIO\_DIO\_0\_PIN}}, &initStruct )
+      ;
+150   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a9fc33ef020b11cf9c065494b73de5d7f}{RADIO\_DIO\_1\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a6663d0e4b9ea1d3886d50346bc1ee781}{RADIO\_DIO\_1\_PIN}}, &initStruct )
+      ;
+151   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a07c3e58869babb40a346c892b2888969}{RADIO\_DIO\_2\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a4f94ccdf29f8b9400d551af0c91ffa94}{RADIO\_DIO\_2\_PIN}}, &initStruct )
+      ;
+152   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a7393d318a0bb16d1f8d2c4b4edf6d95b}{RADIO\_DIO\_3\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aff1a74fa377be0361d00db1b4c4a4b18}{RADIO\_DIO\_3\_PIN}}, &initStruct )
+      ;
+153 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{sx1276mb1las_8h_a91a81a798b3d849e2cc114c18bf9c5cc}\label{sx1276mb1las_8h_a91a81a798b3d849e2cc114c18bf9c5cc}} 
+\index{sx1276mb1las.\+h@{sx1276mb1las.\+h}!S\+X1276@{S\+X1276}}
+\index{S\+X1276@{S\+X1276}!sx1276mb1las.\+h@{sx1276mb1las.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276}{SX1276}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sx1276_8h_acf7f83d7d25c85897b88fcdc94345e56}{S\+X1276\+\_\+t}} S\+X1276}
+
+Radio hardware and global parameters 
+
+sx1276.\+c 파일의 234 번째 라인에서 정의되었습니다.
+

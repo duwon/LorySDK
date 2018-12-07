@@ -1,0 +1,55 @@
+\hypertarget{delay_8h}{}\section{Lora\+Lib/\+Utilities/delay.h 파일 참조}
+\label{delay_8h}\index{Lora\+Lib/\+Utilities/delay.\+h@{Lora\+Lib/\+Utilities/delay.\+h}}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 0
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{delay_8h_a5ec16209b453727929ce2c0ea4c11b62}{Delay}} (float s)
+\item 
+void \mbox{\hyperlink{delay_8h_ae3a1c1a7a5024cf50a2e8672927f40cc}{Delay\+Ms}} (uint32\+\_\+t ms)
+\end{DoxyCompactItemize}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{delay_8h_a5ec16209b453727929ce2c0ea4c11b62}\label{delay_8h_a5ec16209b453727929ce2c0ea4c11b62}} 
+\index{delay.\+h@{delay.\+h}!Delay@{Delay}}
+\index{Delay@{Delay}!delay.\+h@{delay.\+h}}
+\subsubsection{\texorpdfstring{Delay()}{Delay()}}
+{\footnotesize\ttfamily void Delay (\begin{DoxyParamCaption}\item[{float}]{s }\end{DoxyParamCaption})}
+
+Blocking delay of \char`\"{}s\char`\"{} seconds 
+
+delay.\+c 파일의 71 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+72 \{
+73     \mbox{\hyperlink{delay_8c_ae3a1c1a7a5024cf50a2e8672927f40cc}{DelayMs}}( (uint32\_t) (s * 1000.0f) );
+74 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{delay_8h_ae3a1c1a7a5024cf50a2e8672927f40cc}\label{delay_8h_ae3a1c1a7a5024cf50a2e8672927f40cc}} 
+\index{delay.\+h@{delay.\+h}!Delay\+Ms@{Delay\+Ms}}
+\index{Delay\+Ms@{Delay\+Ms}!delay.\+h@{delay.\+h}}
+\subsubsection{\texorpdfstring{Delay\+Ms()}{DelayMs()}}
+{\footnotesize\ttfamily void Delay\+Ms (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ms }\end{DoxyParamCaption})}
+
+Blocking delay of \char`\"{}ms\char`\"{} milliseconds 
+
+delay.\+c 파일의 65 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+66 \{
+67   \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gadad8cbf36cbe8a65bc1c70109146e307}{HW\_RTC\_DelayMs}}( ms );
+68 
+69 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4

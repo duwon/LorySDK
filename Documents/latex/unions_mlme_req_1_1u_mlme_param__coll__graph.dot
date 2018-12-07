@@ -1,0 +1,10 @@
+digraph "sMlmeReq::uMlmeParam"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{sMlmeReq::uMlmeParam\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +Join" ,arrowhead="odiamond"];
+  Node2 [label="{sMlmeReqJoin\n|+ DevEui\l+ AppEui\l+ AppKey\l+ Datarate\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs_mlme_req_join.html"];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +TxCw" ,arrowhead="odiamond"];
+  Node3 [label="{sMlmeReqTxCw\n|+ Timeout\l+ Frequency\l+ Power\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs_mlme_req_tx_cw.html"];
+}

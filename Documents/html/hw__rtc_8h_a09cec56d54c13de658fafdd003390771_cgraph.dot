@@ -1,0 +1,15 @@
+digraph "HW_RTC_SetAlarm"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node38 [label="HW_RTC_SetAlarm",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node38 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node39 [label="HW_RTC_GetTimerElapsedTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#a7961116aa831950b62a413ecbbcfb02a",tooltip="Get the RTC timer elapsed time since the last Alarm was set "];
+  Node39 -> Node40 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node40 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#af81b8dc866a5c7b125355b55e3953387",tooltip="get current time from calendar in ticks "];
+  Node38 -> Node41 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node41 [label="HW_RTC_StartWakeUpAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#a60703fcfc4abd73a2efc980e8bb6ad27",tooltip="start wake up alarm "];
+  Node41 -> Node42 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node42 [label="HW_RTC_StopAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__rtc_8c.html#a227be06e4dc1332d46ff12519db183b5",tooltip="Stop the Alarm "];
+}

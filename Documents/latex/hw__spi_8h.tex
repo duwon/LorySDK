@@ -1,0 +1,240 @@
+\hypertarget{hw__spi_8h}{}\section{Projects/\+Docking\+Station/inc/hw\+\_\+spi.h 파일 참조}
+\label{hw__spi_8h}\index{Projects/\+Docking\+Station/inc/hw\+\_\+spi.\+h@{Projects/\+Docking\+Station/inc/hw\+\_\+spi.\+h}}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 0
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hw__spi_8h_a3a11e3e6514321f6bf576e3069331ddd}{H\+W\+\_\+\+S\+P\+I\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+PI object and M\+CU peripheral \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__spi_8h_aac8372814475e25698476e38cf0b4720}{H\+W\+\_\+\+S\+P\+I\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De-\/initializes the S\+PI object and M\+CU peripheral \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__spi_8h_ad538b8fe3714659c9700f12b7e1bd486}{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+PI I\+Os \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__spi_8h_af4375378a2dc9b3183d1b5e79adc000d}{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De-\/initializes the S\+PI I\+Os \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{hw__spi_8h_ae0d3f21fb84de59193e82bd1943d5563}{H\+W\+\_\+\+S\+P\+I\+\_\+\+In\+Out}} (uint16\+\_\+t out\+Data)
+\begin{DoxyCompactList}\small\item\em Sends out\+Data and receives in\+Data \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{hw__spi_8h_aac8372814475e25698476e38cf0b4720}\label{hw__spi_8h_aac8372814475e25698476e38cf0b4720}} 
+\index{hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}!H\+W\+\_\+\+S\+P\+I\+\_\+\+De\+Init@{H\+W\+\_\+\+S\+P\+I\+\_\+\+De\+Init}}
+\index{H\+W\+\_\+\+S\+P\+I\+\_\+\+De\+Init@{H\+W\+\_\+\+S\+P\+I\+\_\+\+De\+Init}!hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+S\+P\+I\+\_\+\+De\+Init()}{HW\_SPI\_DeInit()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+S\+P\+I\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+De-\/initializes the S\+PI object and M\+CU peripheral 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & none \\
+\hline
+\end{DoxyParams}
+
+
+hw\+\_\+spi.\+c 파일의 126 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+127 \{
+128 
+129   HAL\_SPI\_DeInit( &\mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}});
+130 
+131     \textcolor{comment}{/*##-1- Reset peripherals ####*/}
+132   \_\_HAL\_RCC\_SPI1\_FORCE\_RESET();
+133   \_\_HAL\_RCC\_SPI1\_RELEASE\_RESET();
+134   \textcolor{comment}{/*##-2- Configure the SPI GPIOs */}
+135   \mbox{\hyperlink{hw__spi_8c_af4375378a2dc9b3183d1b5e79adc000d}{HW\_SPI\_IoDeInit}}( );
+136 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{hw__spi_8h_a3a11e3e6514321f6bf576e3069331ddd}\label{hw__spi_8h_a3a11e3e6514321f6bf576e3069331ddd}} 
+\index{hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}!H\+W\+\_\+\+S\+P\+I\+\_\+\+Init@{H\+W\+\_\+\+S\+P\+I\+\_\+\+Init}}
+\index{H\+W\+\_\+\+S\+P\+I\+\_\+\+Init@{H\+W\+\_\+\+S\+P\+I\+\_\+\+Init}!hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+S\+P\+I\+\_\+\+Init()}{HW\_SPI\_Init()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+S\+P\+I\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the S\+PI object and M\+CU peripheral 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & none \\
+\hline
+\end{DoxyParams}
+
+
+hw\+\_\+spi.\+c 파일의 88 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+89 \{
+90   
+91   \textcolor{comment}{/*##-1- Configure the SPI peripheral */}
+92   \textcolor{comment}{/* Set the SPI parameters */}
+93 
+94   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Instance = SPI1;
+95 
+96   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.BaudRatePrescaler = \mbox{\hyperlink{hw__spi_8c_adfc3a3afab7cff66fba906639c8a34c2}{SpiFrequency}}( 10000000 );
+97   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.Direction      = SPI\_DIRECTION\_2LINES;
+98   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.Mode           = SPI\_MODE\_MASTER;
+99   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.CLKPolarity    = SPI\_POLARITY\_LOW;
+100   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.CLKPhase       = SPI\_PHASE\_1EDGE;
+101   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.DataSize       = SPI\_DATASIZE\_8BIT;
+102   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.CRCCalculation = SPI\_CRCCALCULATION\_DISABLE;  
+103   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.FirstBit       = SPI\_FIRSTBIT\_MSB;
+104   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.NSS            = SPI\_NSS\_SOFT;
+105   \mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}.Init.TIMode         = SPI\_TIMODE\_DISABLE;
+106 
+107 
+108   \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a6d11b36412fb01421c59363443163518}{SPI\_CLK\_ENABLE}}(); 
+109 
+110 
+111   \textcolor{keywordflow}{if}(HAL\_SPI\_Init( &\mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}) != HAL\_OK)
+112   \{
+113     \textcolor{comment}{/* Initialization Error */}
+114      \mbox{\hyperlink{hw__conf_8h_a5593abbf196bdbd410b0939ef878b9d1}{Error\_Handler}}();
+115   \}
+116 
+117   \textcolor{comment}{/*##-2- Configure the SPI GPIOs */}
+118   \mbox{\hyperlink{hw__spi_8c_ad538b8fe3714659c9700f12b7e1bd486}{HW\_SPI\_IoInit}}(  );
+119 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{hw__spi_8h_ae0d3f21fb84de59193e82bd1943d5563}\label{hw__spi_8h_ae0d3f21fb84de59193e82bd1943d5563}} 
+\index{hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}!H\+W\+\_\+\+S\+P\+I\+\_\+\+In\+Out@{H\+W\+\_\+\+S\+P\+I\+\_\+\+In\+Out}}
+\index{H\+W\+\_\+\+S\+P\+I\+\_\+\+In\+Out@{H\+W\+\_\+\+S\+P\+I\+\_\+\+In\+Out}!hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+S\+P\+I\+\_\+\+In\+Out()}{HW\_SPI\_InOut()}}
+{\footnotesize\ttfamily uint16\+\_\+t H\+W\+\_\+\+S\+P\+I\+\_\+\+In\+Out (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{tx\+Data }\end{DoxyParamCaption})}
+
+
+
+Sends out\+Data and receives in\+Data 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & out\+Data Byte to be sent \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em in\+Data} & Received byte. \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+spi.\+c 파일의 189 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+190 \{
+191   uint16\_t rxData ;
+192 
+193   HAL\_SPI\_TransmitReceive( &\mbox{\hyperlink{hw__spi_8c_aa54d734ae697f1b01b065c7871eeaa80}{hspi}}, ( uint8\_t * ) &txData, ( uint8\_t* ) &rxData, 1, HAL\_MAX\_DELAY);   
+194 
+195   \textcolor{keywordflow}{return} rxData;
+196 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{hw__spi_8h_af4375378a2dc9b3183d1b5e79adc000d}\label{hw__spi_8h_af4375378a2dc9b3183d1b5e79adc000d}} 
+\index{hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}!H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+De\+Init@{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+De\+Init}}
+\index{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+De\+Init@{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+De\+Init}!hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+De\+Init()}{HW\_SPI\_IoDeInit()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+De-\/initializes the S\+PI I\+Os 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & none \\
+\hline
+\end{DoxyParams}
+
+
+hw\+\_\+spi.\+c 파일의 160 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+161 \{
+162   GPIO\_InitTypeDef initStruct=\{0\};
+163     
+164   initStruct.Mode =GPIO\_MODE\_OUTPUT\_PP;
+165 
+166   initStruct.Pull =GPIO\_PULLDOWN  ;
+167   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}} ( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a6622b68f74797e6f261d6810831c9e73}{RADIO\_MOSI\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_addd438d1355702c3c58de370a24bb6d2}{RADIO\_MOSI\_PIN}}, &initStruct ); 
+168   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a6622b68f74797e6f261d6810831c9e73}{RADIO\_MOSI\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_addd438d1355702c3c58de370a24bb6d2}{RADIO\_MOSI\_PIN}}, 0 );
+169   
+170   initStruct.Pull =GPIO\_PULLDOWN; 
+171   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}} ( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8a3e0b5d61d02f7931fa411a6b6a5eba}{RADIO\_MISO\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a5c2b6ccd6932cf667a587a6c6298b9bf}{RADIO\_MISO\_PIN}}, &initStruct ); 
+172   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8a3e0b5d61d02f7931fa411a6b6a5eba}{RADIO\_MISO\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a5c2b6ccd6932cf667a587a6c6298b9bf}{RADIO\_MISO\_PIN}}, 0 );
+173   
+174   initStruct.Pull =GPIO\_PULLDOWN  ; 
+175   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}} ( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_abb1f293d3372d77d9aae0151b5185f4d}{RADIO\_SCLK\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa80ffcff6eeaf34a2c86f33ff89aa979}{RADIO\_SCLK\_PIN}}, &initStruct ); 
+176   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}(  \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_abb1f293d3372d77d9aae0151b5185f4d}{RADIO\_SCLK\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa80ffcff6eeaf34a2c86f33ff89aa979}{RADIO\_SCLK\_PIN}}, 0 );
+177 
+178   initStruct.Pull = GPIO\_PULLUP;
+179   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}} ( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_af38dc62dd556ab94739deb56a6aeba22}{RADIO\_NSS\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a95e5a9f989319ebc0679d80521953832}{RADIO\_NSS\_PIN}} , &initStruct ); 
+180   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_af38dc62dd556ab94739deb56a6aeba22}{RADIO\_NSS\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a95e5a9f989319ebc0679d80521953832}{RADIO\_NSS\_PIN}} , 1 );
+181 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\mbox{\Hypertarget{hw__spi_8h_ad538b8fe3714659c9700f12b7e1bd486}\label{hw__spi_8h_ad538b8fe3714659c9700f12b7e1bd486}} 
+\index{hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}!H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+Init@{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+Init}}
+\index{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+Init@{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+Init}!hw\+\_\+spi.\+h@{hw\+\_\+spi.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+Init()}{HW\_SPI\_IoInit()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+S\+P\+I\+\_\+\+Io\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the S\+PI I\+Os 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & none \\
+\hline
+\end{DoxyParams}
+
+
+hw\+\_\+spi.\+c 파일의 138 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+139 \{
+140   GPIO\_InitTypeDef initStruct=\{0\};
+141   
+142 
+143   initStruct.Mode =GPIO\_MODE\_AF\_PP;
+144   initStruct.Pull = GPIO\_PULLDOWN;
+145   initStruct.Speed = GPIO\_SPEED\_HIGH;
+146   initStruct.Alternate= \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_ab1e348c32884ea0f339f9b1ee55f8783}{SPI1\_AF}} ;
+147 
+148   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_abb1f293d3372d77d9aae0151b5185f4d}{RADIO\_SCLK\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa80ffcff6eeaf34a2c86f33ff89aa979}{RADIO\_SCLK\_PIN}}, &initStruct);
+149   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a8a3e0b5d61d02f7931fa411a6b6a5eba}{RADIO\_MISO\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a5c2b6ccd6932cf667a587a6c6298b9bf}{RADIO\_MISO\_PIN}}, &initStruct);
+150   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a6622b68f74797e6f261d6810831c9e73}{RADIO\_MOSI\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_addd438d1355702c3c58de370a24bb6d2}{RADIO\_MOSI\_PIN}}, &initStruct);
+151 
+152   initStruct.Mode = GPIO\_MODE\_OUTPUT\_PP;
+153   initStruct.Pull = GPIO\_PULLUP;
+154 
+155   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}(  \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_af38dc62dd556ab94739deb56a6aeba22}{RADIO\_NSS\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a95e5a9f989319ebc0679d80521953832}{RADIO\_NSS\_PIN}}, &initStruct );
+156 
+157   \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}} ( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_af38dc62dd556ab94739deb56a6aeba22}{RADIO\_NSS\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a95e5a9f989319ebc0679d80521953832}{RADIO\_NSS\_PIN}}, 1 );
+158 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8

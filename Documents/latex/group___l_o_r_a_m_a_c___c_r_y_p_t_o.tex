@@ -1,0 +1,358 @@
+\hypertarget{group___l_o_r_a_m_a_c___c_r_y_p_t_o}{}\section{Lo\+Ra M\+AC layer cryptography implementation}
+\label{group___l_o_r_a_m_a_c___c_r_y_p_t_o}\index{Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga6ee265070494b83255e7fdc4dff985da}{Lo\+Ra\+Mac\+Compute\+Mic}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint32\+\_\+t address, uint8\+\_\+t dir, uint32\+\_\+t sequence\+Counter, uint32\+\_\+t $\ast$mic)
+\begin{DoxyCompactList}\small\item\em Computes the Lo\+Ra\+M\+AC frame M\+IC field \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga50339e60abea2186ca7e584b489718b1}{Lo\+Ra\+Mac\+Payload\+Encrypt}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint32\+\_\+t address, uint8\+\_\+t dir, uint32\+\_\+t sequence\+Counter, uint8\+\_\+t $\ast$enc\+Buffer)
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga41f9ba19f61b195420914ed58c8b94c7}{Lo\+Ra\+Mac\+Payload\+Decrypt}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint32\+\_\+t address, uint8\+\_\+t dir, uint32\+\_\+t sequence\+Counter, uint8\+\_\+t $\ast$dec\+Buffer)
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gac9216af326316c9e7f207d4e73aed199}{Lo\+Ra\+Mac\+Join\+Compute\+Mic}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint32\+\_\+t $\ast$mic)
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gac2379cd7cbeb6febaa2a7be5d9f04b5c}{Lo\+Ra\+Mac\+Join\+Decrypt}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint8\+\_\+t $\ast$dec\+Buffer)
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gad6fc2ace27fa388ec860fc2e5ae1f544}{Lo\+Ra\+Mac\+Join\+Compute\+S\+Keys}} (const uint8\+\_\+t $\ast$key, const uint8\+\_\+t $\ast$app\+Nonce, uint16\+\_\+t dev\+Nonce, uint8\+\_\+t $\ast$nwk\+S\+Key, uint8\+\_\+t $\ast$app\+S\+Key)
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+This module covers the implementation of cryptographic functions of the Lo\+Ra\+M\+AC layer. 
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga6ee265070494b83255e7fdc4dff985da}\label{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga6ee265070494b83255e7fdc4dff985da}} 
+\index{Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}!Lo\+Ra\+Mac\+Compute\+Mic@{Lo\+Ra\+Mac\+Compute\+Mic}}
+\index{Lo\+Ra\+Mac\+Compute\+Mic@{Lo\+Ra\+Mac\+Compute\+Mic}!Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Compute\+Mic()}{LoRaMacComputeMic()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Compute\+Mic (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{size,  }\item[{const uint8\+\_\+t $\ast$}]{key,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{dir,  }\item[{uint32\+\_\+t}]{sequence\+Counter,  }\item[{uint32\+\_\+t $\ast$}]{mic }\end{DoxyParamCaption})}
+
+
+
+Computes the Lo\+Ra\+M\+AC frame M\+IC field 
+
+Computes the Lo\+Ra\+M\+AC frame M\+IC field
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer -\/ Data buffer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size -\/ Data buffer size \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & key -\/ A\+ES key to be used \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & address -\/ Frame address \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & dir -\/ Frame direction \mbox{[}0\+: uplink, 1\+: downlink\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & sequence\+Counter -\/ Frame sequence counter \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & mic -\/ Computed M\+IC field\\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer Data buffer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size Data buffer size \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & key A\+ES key to be used \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & address Frame address \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & dir Frame direction \mbox{[}0\+: uplink, 1\+: downlink\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & sequence\+Counter Frame sequence counter \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & mic Computed M\+IC field \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 88 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+89 \{
+90     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[5] = dir;
+91     
+92     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[6] = ( address ) & 0xFF;
+93     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[7] = ( address >> 8 ) & 0xFF;
+94     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[8] = ( address >> 16 ) & 0xFF;
+95     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[9] = ( address >> 24 ) & 0xFF;
+96 
+97     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[10] = ( sequenceCounter ) & 0xFF;
+98     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[11] = ( sequenceCounter >> 8 ) & 0xFF;
+99     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[12] = ( sequenceCounter >> 16 ) & 0xFF;
+100     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[13] = ( sequenceCounter >> 24 ) & 0xFF;
+101 
+102     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}[15] = size & 0xFF;
+103 
+104     \mbox{\hyperlink{cmac_8c_a0344ba56e27c8029332069892af08737}{AES\_CMAC\_Init}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}} );
+105 
+106     \mbox{\hyperlink{cmac_8c_a0cbe43f8858ba5fbf5bbd5f03e362170}{AES\_CMAC\_SetKey}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}}, key );
+107 
+108     \mbox{\hyperlink{cmac_8c_ad1be03bf3df1635dd5cbf8943f4d04f6}{AES\_CMAC\_Update}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}}, \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{MicBlockB0}}, 
+      \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a5c3d9a633ffde7d6b49116095bf4395e}{LORAMAC\_MIC\_BLOCK\_B0\_SIZE}} );
+109     
+110     \mbox{\hyperlink{cmac_8c_ad1be03bf3df1635dd5cbf8943f4d04f6}{AES\_CMAC\_Update}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}}, buffer, size & 0xFF );
+111     
+112     \mbox{\hyperlink{cmac_8c_a8ea4da33d50984199d8a91bc0ab86b15}{AES\_CMAC\_Final}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}, \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}} );
+113     
+114     *mic = ( uint32\_t )( ( uint32\_t )\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}[3] << 24 | ( uint32\_t )\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}[2] << 16 | ( uint32\_t )
+      \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}[1] << 8 | ( uint32\_t )\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}[0] );
+115 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 0
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gac9216af326316c9e7f207d4e73aed199}\label{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gac9216af326316c9e7f207d4e73aed199}} 
+\index{Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}!Lo\+Ra\+Mac\+Join\+Compute\+Mic@{Lo\+Ra\+Mac\+Join\+Compute\+Mic}}
+\index{Lo\+Ra\+Mac\+Join\+Compute\+Mic@{Lo\+Ra\+Mac\+Join\+Compute\+Mic}!Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Join\+Compute\+Mic()}{LoRaMacJoinComputeMic()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Join\+Compute\+Mic (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{size,  }\item[{const uint8\+\_\+t $\ast$}]{key,  }\item[{uint32\+\_\+t $\ast$}]{mic }\end{DoxyParamCaption})}
+
+Computes the Lo\+Ra\+M\+AC Join Request frame M\+IC field
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer -\/ Data buffer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size -\/ Data buffer size \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & key -\/ A\+ES key to be used \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & mic -\/ Computed M\+IC field \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 167 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+168 \{
+169     \mbox{\hyperlink{cmac_8c_a0344ba56e27c8029332069892af08737}{AES\_CMAC\_Init}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}} );
+170 
+171     \mbox{\hyperlink{cmac_8c_a0cbe43f8858ba5fbf5bbd5f03e362170}{AES\_CMAC\_SetKey}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}}, key );
+172 
+173     \mbox{\hyperlink{cmac_8c_ad1be03bf3df1635dd5cbf8943f4d04f6}{AES\_CMAC\_Update}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}}, buffer, size & 0xFF );
+174 
+175     \mbox{\hyperlink{cmac_8c_a8ea4da33d50984199d8a91bc0ab86b15}{AES\_CMAC\_Final}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}, \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{AesCmacCtx}} );
+176 
+177     *mic = ( uint32\_t )( ( uint32\_t )\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}[3] << 24 | ( uint32\_t )\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}[2] << 16 | ( uint32\_t )
+      \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}[1] << 8 | ( uint32\_t )\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}}[0] );
+178 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gad6fc2ace27fa388ec860fc2e5ae1f544}\label{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gad6fc2ace27fa388ec860fc2e5ae1f544}} 
+\index{Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}!Lo\+Ra\+Mac\+Join\+Compute\+S\+Keys@{Lo\+Ra\+Mac\+Join\+Compute\+S\+Keys}}
+\index{Lo\+Ra\+Mac\+Join\+Compute\+S\+Keys@{Lo\+Ra\+Mac\+Join\+Compute\+S\+Keys}!Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Join\+Compute\+S\+Keys()}{LoRaMacJoinComputeSKeys()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Join\+Compute\+S\+Keys (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{key,  }\item[{const uint8\+\_\+t $\ast$}]{app\+Nonce,  }\item[{uint16\+\_\+t}]{dev\+Nonce,  }\item[{uint8\+\_\+t $\ast$}]{nwk\+S\+Key,  }\item[{uint8\+\_\+t $\ast$}]{app\+S\+Key }\end{DoxyParamCaption})}
+
+Computes the Lo\+Ra\+M\+AC join frame decryption
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & key -\/ A\+ES key to be used \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & app\+Nonce -\/ Application nonce \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & dev\+Nonce -\/ Device nonce \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & nwk\+S\+Key -\/ Network session key \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & app\+S\+Key -\/ Application session key \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 192 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+193 \{
+194     uint8\_t nonce[16];
+195     uint8\_t *pDevNonce = ( uint8\_t * )&devNonce;
+196     
+197     \mbox{\hyperlink{utilities_8c_a272ed6d691263d9762c98ed720b1fa3a}{memset1}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}}.\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}, \textcolor{charliteral}{'\(\backslash\)0'}, 240 );
+198     \mbox{\hyperlink{aes_8c_a0ffc37ee1bbb50e7147bf6e7de5d73a1}{aes\_set\_key}}( key, 16, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+199 
+200     \mbox{\hyperlink{utilities_8c_a272ed6d691263d9762c98ed720b1fa3a}{memset1}}( nonce, 0, \textcolor{keyword}{sizeof}( nonce ) );
+201     nonce[0] = 0x01;
+202     \mbox{\hyperlink{utilities_8c_abfbe672c7136122f16c9214bc4ba8d21}{memcpy1}}( nonce + 1, appNonce, 6 );
+203     \mbox{\hyperlink{utilities_8c_abfbe672c7136122f16c9214bc4ba8d21}{memcpy1}}( nonce + 7, pDevNonce, 2 );
+204     \mbox{\hyperlink{aes_8c_ac88fd4e9cb53f78713a8fce1a6fcffc0}{aes\_encrypt}}( nonce, nwkSKey, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+205 
+206     \mbox{\hyperlink{utilities_8c_a272ed6d691263d9762c98ed720b1fa3a}{memset1}}( nonce, 0, \textcolor{keyword}{sizeof}( nonce ) );
+207     nonce[0] = 0x02;
+208     \mbox{\hyperlink{utilities_8c_abfbe672c7136122f16c9214bc4ba8d21}{memcpy1}}( nonce + 1, appNonce, 6 );
+209     \mbox{\hyperlink{utilities_8c_abfbe672c7136122f16c9214bc4ba8d21}{memcpy1}}( nonce + 7, pDevNonce, 2 );
+210     \mbox{\hyperlink{aes_8c_ac88fd4e9cb53f78713a8fce1a6fcffc0}{aes\_encrypt}}( nonce, appSKey, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+211 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gac2379cd7cbeb6febaa2a7be5d9f04b5c}\label{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gac2379cd7cbeb6febaa2a7be5d9f04b5c}} 
+\index{Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}!Lo\+Ra\+Mac\+Join\+Decrypt@{Lo\+Ra\+Mac\+Join\+Decrypt}}
+\index{Lo\+Ra\+Mac\+Join\+Decrypt@{Lo\+Ra\+Mac\+Join\+Decrypt}!Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Join\+Decrypt()}{LoRaMacJoinDecrypt()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Join\+Decrypt (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{size,  }\item[{const uint8\+\_\+t $\ast$}]{key,  }\item[{uint8\+\_\+t $\ast$}]{dec\+Buffer }\end{DoxyParamCaption})}
+
+Computes the Lo\+Ra\+M\+AC join frame decryption
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer -\/ Data buffer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size -\/ Data buffer size \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & key -\/ A\+ES key to be used \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & dec\+Buffer -\/ Decrypted buffer \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 180 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+181 \{
+182     \mbox{\hyperlink{utilities_8c_a272ed6d691263d9762c98ed720b1fa3a}{memset1}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}}.\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}, \textcolor{charliteral}{'\(\backslash\)0'}, 240 );
+183     \mbox{\hyperlink{aes_8c_a0ffc37ee1bbb50e7147bf6e7de5d73a1}{aes\_set\_key}}( key, 16, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+184     \mbox{\hyperlink{aes_8c_ac88fd4e9cb53f78713a8fce1a6fcffc0}{aes\_encrypt}}( buffer, decBuffer, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+185     \textcolor{comment}{// Check if optional CFList is included}
+186     \textcolor{keywordflow}{if}( size >= 16 )
+187     \{
+188         \mbox{\hyperlink{aes_8c_ac88fd4e9cb53f78713a8fce1a6fcffc0}{aes\_encrypt}}( buffer + 16, decBuffer + 16, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+189     \}
+190 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga41f9ba19f61b195420914ed58c8b94c7}\label{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga41f9ba19f61b195420914ed58c8b94c7}} 
+\index{Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}!Lo\+Ra\+Mac\+Payload\+Decrypt@{Lo\+Ra\+Mac\+Payload\+Decrypt}}
+\index{Lo\+Ra\+Mac\+Payload\+Decrypt@{Lo\+Ra\+Mac\+Payload\+Decrypt}!Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Payload\+Decrypt()}{LoRaMacPayloadDecrypt()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Payload\+Decrypt (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{size,  }\item[{const uint8\+\_\+t $\ast$}]{key,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{dir,  }\item[{uint32\+\_\+t}]{sequence\+Counter,  }\item[{uint8\+\_\+t $\ast$}]{dec\+Buffer }\end{DoxyParamCaption})}
+
+Computes the Lo\+Ra\+M\+AC payload decryption
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer -\/ Data buffer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size -\/ Data buffer size \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & key -\/ A\+ES key to be used \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & address -\/ Frame address \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & dir -\/ Frame direction \mbox{[}0\+: uplink, 1\+: downlink\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & sequence\+Counter -\/ Frame sequence counter \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & dec\+Buffer -\/ Decrypted buffer \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 162 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+163 \{
+164     \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga50339e60abea2186ca7e584b489718b1}{LoRaMacPayloadEncrypt}}( buffer, size, key, address, dir, sequenceCounter, decBuffer
+       );
+165 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+\mbox{\Hypertarget{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga50339e60abea2186ca7e584b489718b1}\label{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga50339e60abea2186ca7e584b489718b1}} 
+\index{Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}!Lo\+Ra\+Mac\+Payload\+Encrypt@{Lo\+Ra\+Mac\+Payload\+Encrypt}}
+\index{Lo\+Ra\+Mac\+Payload\+Encrypt@{Lo\+Ra\+Mac\+Payload\+Encrypt}!Lo\+Ra M\+A\+C layer cryptography implementation@{Lo\+Ra M\+A\+C layer cryptography implementation}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Mac\+Payload\+Encrypt()}{LoRaMacPayloadEncrypt()}}
+{\footnotesize\ttfamily void Lo\+Ra\+Mac\+Payload\+Encrypt (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint16\+\_\+t}]{size,  }\item[{const uint8\+\_\+t $\ast$}]{key,  }\item[{uint32\+\_\+t}]{address,  }\item[{uint8\+\_\+t}]{dir,  }\item[{uint32\+\_\+t}]{sequence\+Counter,  }\item[{uint8\+\_\+t $\ast$}]{enc\+Buffer }\end{DoxyParamCaption})}
+
+Computes the Lo\+Ra\+M\+AC payload encryption
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer -\/ Data buffer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size -\/ Data buffer size \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & key -\/ A\+ES key to be used \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & address -\/ Frame address \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & dir -\/ Frame direction \mbox{[}0\+: uplink, 1\+: downlink\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & sequence\+Counter -\/ Frame sequence counter \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & enc\+Buffer -\/ Encrypted buffer \\
+\hline
+\end{DoxyParams}
+
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 117 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+118 \{
+119     uint16\_t i;
+120     uint8\_t bufferIndex = 0;
+121     uint16\_t ctr = 1;
+122 
+123     \mbox{\hyperlink{utilities_8c_a272ed6d691263d9762c98ed720b1fa3a}{memset1}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}}.\mbox{\hyperlink{structaes__context_a4a906db8aa15b44c3df5838cbd99cb1d}{ksch}}, \textcolor{charliteral}{'\(\backslash\)0'}, 240 );
+124     \mbox{\hyperlink{aes_8c_a0ffc37ee1bbb50e7147bf6e7de5d73a1}{aes\_set\_key}}( key, 16, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+125 
+126     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[5] = dir;
+127 
+128     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[6] = ( address ) & 0xFF;
+129     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[7] = ( address >> 8 ) & 0xFF;
+130     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[8] = ( address >> 16 ) & 0xFF;
+131     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[9] = ( address >> 24 ) & 0xFF;
+132 
+133     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[10] = ( sequenceCounter ) & 0xFF;
+134     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[11] = ( sequenceCounter >> 8 ) & 0xFF;
+135     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[12] = ( sequenceCounter >> 16 ) & 0xFF;
+136     \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[13] = ( sequenceCounter >> 24 ) & 0xFF;
+137 
+138     \textcolor{keywordflow}{while}( size >= 16 )
+139     \{
+140         \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[15] = ( ( ctr ) & 0xFF );
+141         ctr++;
+142         \mbox{\hyperlink{aes_8c_ac88fd4e9cb53f78713a8fce1a6fcffc0}{aes\_encrypt}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}, \mbox{\hyperlink{_lo_ra_mac_crypto_8c_af3c68fef5488da81bfffbc456373746b}{sBlock}}, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+143         \textcolor{keywordflow}{for}( i = 0; i < 16; i++ )
+144         \{
+145             encBuffer[bufferIndex + i] = buffer[bufferIndex + i] ^ \mbox{\hyperlink{_lo_ra_mac_crypto_8c_af3c68fef5488da81bfffbc456373746b}{sBlock}}[i];
+146         \}
+147         size -= 16;
+148         bufferIndex += 16;
+149     \}
+150 
+151     \textcolor{keywordflow}{if}( size > 0 )
+152     \{
+153         \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}[15] = ( ( ctr ) & 0xFF );
+154         \mbox{\hyperlink{aes_8c_ac88fd4e9cb53f78713a8fce1a6fcffc0}{aes\_encrypt}}( \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{aBlock}}, \mbox{\hyperlink{_lo_ra_mac_crypto_8c_af3c68fef5488da81bfffbc456373746b}{sBlock}}, &\mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{AesContext}} );
+155         \textcolor{keywordflow}{for}( i = 0; i < size; i++ )
+156         \{
+157             encBuffer[bufferIndex + i] = buffer[bufferIndex + i] ^ \mbox{\hyperlink{_lo_ra_mac_crypto_8c_af3c68fef5488da81bfffbc456373746b}{sBlock}}[i];
+158         \}
+159     \}
+160 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11

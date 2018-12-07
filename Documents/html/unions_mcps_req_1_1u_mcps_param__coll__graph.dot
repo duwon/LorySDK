@@ -1,0 +1,12 @@
+digraph "sMcpsReq::uMcpsParam"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{sMcpsReq::uMcpsParam\n||}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +Confirmed" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{sMcpsReqConfirmed\n|+ fPort\l+ fBuffer\l+ fBufferSize\l+ Datarate\l+ NbTrials\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs_mcps_req_confirmed.html"];
+  Node3 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +Unconfirmed" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{sMcpsReqUnconfirmed\n|+ fPort\l+ fBuffer\l+ fBufferSize\l+ Datarate\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs_mcps_req_unconfirmed.html"];
+  Node4 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +Proprietary" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node4 [label="{sMcpsReqProprietary\n|+ fBuffer\l+ fBufferSize\l+ Datarate\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structs_mcps_req_proprietary.html"];
+}

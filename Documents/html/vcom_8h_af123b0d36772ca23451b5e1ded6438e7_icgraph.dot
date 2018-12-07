@@ -1,0 +1,13 @@
+digraph "vcom_IoDeInit"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node8 [label="vcom_IoDeInit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="HW_IoDeInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html#a1ef5bbf457b4c2a48ed89df84beb5238",tooltip="This function Deinitializes the hardware Ios "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="LPM_EnterStopMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html#a3bb8517047a428748270c05d69f21cb6",tooltip="Enters Low Power Stop Mode "];
+  Node8 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="HAL_UART_MspDeInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vcom_8c.html#a718f39804e3b910d738a0e1e46151188",tooltip="UART MSP DeInit "];
+}

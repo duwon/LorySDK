@@ -1,0 +1,11 @@
+digraph "MSP_GetIRQn"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node38 [label="MSP_GetIRQn",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node38 -> Node39 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node39 [label="HW_GPIO_SetIrq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___g_p_i_o___functions.html#ga1dcd4c3db791178fee479a8e54155573",tooltip="Records the interrupt handler for the GPIO object "];
+  Node39 -> Node40 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node40 [label="SX1276IoIrqInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276mb1las_8c.html#a13aadc4f50dae9872aa92654c1b886d8"];
+}

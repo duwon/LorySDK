@@ -1,0 +1,166 @@
+\hypertarget{struct_radio_events__t}{}\section{Radio\+Events\+\_\+t 구조체 참조}
+\label{struct_radio_events__t}\index{Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}}
+
+
+Radio driver callback functions  
+
+
+
+
+{\ttfamily \#include $<$radio.\+h$>$}
+
+
+
+Radio\+Events\+\_\+t에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{struct_radio_events__t_af3d5845be2b1d9298fec8aea76ac07aa}{Tx\+Done}} )(void)
+\begin{DoxyCompactList}\small\item\em Tx Done callback prototype. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio_events__t_a869fb2c61e5aee8f8b104345d510e7f3}{Tx\+Timeout}} )(void)
+\begin{DoxyCompactList}\small\item\em Tx Timeout callback prototype. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio_events__t_a7b337c532d25153f0197537cb81eed49}{Rx\+Done}} )(uint8\+\_\+t $\ast$payload, uint16\+\_\+t size, int16\+\_\+t rssi, int8\+\_\+t snr)
+\begin{DoxyCompactList}\small\item\em Rx Done callback prototype. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio_events__t_a0baf0babc5416ab7f30e59e5afd3af7f}{Rx\+Timeout}} )(void)
+\begin{DoxyCompactList}\small\item\em Rx Timeout callback prototype. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio_events__t_aa218d9f2e2bd1a4188b50b2cee24e8ad}{Rx\+Error}} )(void)
+\begin{DoxyCompactList}\small\item\em Rx Error callback prototype. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio_events__t_ac80306a77a53595fed3bca4a1a72ce54}{Fhss\+Change\+Channel}} )(uint8\+\_\+t current\+Channel)
+\begin{DoxyCompactList}\small\item\em F\+H\+SS Change Channel callback prototype. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio_events__t_a554a1c53c1b150353f5711ab4e43b577}{Cad\+Done}} )(bool channel\+Activity\+Detected)
+\begin{DoxyCompactList}\small\item\em C\+AD Done callback prototype. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Radio driver callback functions 
+
+radio.\+h 파일의 52 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{struct_radio_events__t_a554a1c53c1b150353f5711ab4e43b577}\label{struct_radio_events__t_a554a1c53c1b150353f5711ab4e43b577}} 
+\index{Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}!Cad\+Done@{Cad\+Done}}
+\index{Cad\+Done@{Cad\+Done}!Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}}
+\subsubsection{\texorpdfstring{Cad\+Done}{CadDone}}
+{\footnotesize\ttfamily void( $\ast$ Cad\+Done) (bool channel\+Activity\+Detected)}
+
+
+
+C\+AD Done callback prototype. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & channel\+Detected Channel Activity detected during the C\+AD \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 93 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio_events__t_ac80306a77a53595fed3bca4a1a72ce54}\label{struct_radio_events__t_ac80306a77a53595fed3bca4a1a72ce54}} 
+\index{Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}!Fhss\+Change\+Channel@{Fhss\+Change\+Channel}}
+\index{Fhss\+Change\+Channel@{Fhss\+Change\+Channel}!Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}}
+\subsubsection{\texorpdfstring{Fhss\+Change\+Channel}{FhssChangeChannel}}
+{\footnotesize\ttfamily void( $\ast$ Fhss\+Change\+Channel) (uint8\+\_\+t current\+Channel)}
+
+
+
+F\+H\+SS Change Channel callback prototype. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & current\+Channel Index number of the current channel \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 86 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio_events__t_a7b337c532d25153f0197537cb81eed49}\label{struct_radio_events__t_a7b337c532d25153f0197537cb81eed49}} 
+\index{Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}!Rx\+Done@{Rx\+Done}}
+\index{Rx\+Done@{Rx\+Done}!Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}}
+\subsubsection{\texorpdfstring{Rx\+Done}{RxDone}}
+{\footnotesize\ttfamily void( $\ast$ Rx\+Done) (uint8\+\_\+t $\ast$payload, uint16\+\_\+t size, int16\+\_\+t rssi, int8\+\_\+t snr)}
+
+
+
+Rx Done callback prototype. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & payload Received buffer pointer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size Received buffer size \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & rssi R\+S\+SI value computed while receiving the frame \mbox{[}d\+Bm\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & snr Raw S\+NR value given by the radio hardware F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: S\+NR value in dB \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 72 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio_events__t_aa218d9f2e2bd1a4188b50b2cee24e8ad}\label{struct_radio_events__t_aa218d9f2e2bd1a4188b50b2cee24e8ad}} 
+\index{Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}!Rx\+Error@{Rx\+Error}}
+\index{Rx\+Error@{Rx\+Error}!Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}}
+\subsubsection{\texorpdfstring{Rx\+Error}{RxError}}
+{\footnotesize\ttfamily void( $\ast$ Rx\+Error) (void)}
+
+
+
+Rx Error callback prototype. 
+
+
+
+radio.\+h 파일의 80 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio_events__t_a0baf0babc5416ab7f30e59e5afd3af7f}\label{struct_radio_events__t_a0baf0babc5416ab7f30e59e5afd3af7f}} 
+\index{Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}!Rx\+Timeout@{Rx\+Timeout}}
+\index{Rx\+Timeout@{Rx\+Timeout}!Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}}
+\subsubsection{\texorpdfstring{Rx\+Timeout}{RxTimeout}}
+{\footnotesize\ttfamily void( $\ast$ Rx\+Timeout) (void)}
+
+
+
+Rx Timeout callback prototype. 
+
+
+
+radio.\+h 파일의 76 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio_events__t_af3d5845be2b1d9298fec8aea76ac07aa}\label{struct_radio_events__t_af3d5845be2b1d9298fec8aea76ac07aa}} 
+\index{Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}!Tx\+Done@{Tx\+Done}}
+\index{Tx\+Done@{Tx\+Done}!Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}}
+\subsubsection{\texorpdfstring{Tx\+Done}{TxDone}}
+{\footnotesize\ttfamily void( $\ast$ Tx\+Done) (void)}
+
+
+
+Tx Done callback prototype. 
+
+
+
+radio.\+h 파일의 57 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio_events__t_a869fb2c61e5aee8f8b104345d510e7f3}\label{struct_radio_events__t_a869fb2c61e5aee8f8b104345d510e7f3}} 
+\index{Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}!Tx\+Timeout@{Tx\+Timeout}}
+\index{Tx\+Timeout@{Tx\+Timeout}!Radio\+Events\+\_\+t@{Radio\+Events\+\_\+t}}
+\subsubsection{\texorpdfstring{Tx\+Timeout}{TxTimeout}}
+{\footnotesize\ttfamily void( $\ast$ Tx\+Timeout) (void)}
+
+
+
+Tx Timeout callback prototype. 
+
+
+
+radio.\+h 파일의 61 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Phy/\mbox{\hyperlink{radio_8h}{radio.\+h}}\end{DoxyCompactItemize}

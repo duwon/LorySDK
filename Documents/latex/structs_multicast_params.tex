@@ -1,0 +1,88 @@
+\hypertarget{structs_multicast_params}{}\section{s\+Multicast\+Params 구조체 참조}
+\label{structs_multicast_params}\index{s\+Multicast\+Params@{s\+Multicast\+Params}}
+
+
+{\ttfamily \#include $<$Lo\+Ra\+Mac.\+h$>$}
+
+
+
+s\+Multicast\+Params에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structs_multicast_params_aca1b23fd721c8d8dc70a8227e336b6e8}{Address}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_multicast_params_adb8f473333a3f15032a04a78260f8ead}{Nwk\+S\+Key}} \mbox{[}16\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_multicast_params_a44d7cdeb3d44f4e7f8a0cefc938aaa5c}{App\+S\+Key}} \mbox{[}16\mbox{]}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structs_multicast_params_a7a566925baf83b1b3da9209dfa4bb79a}{Down\+Link\+Counter}}
+\item 
+struct \mbox{\hyperlink{structs_multicast_params}{s\+Multicast\+Params}} $\ast$ \mbox{\hyperlink{structs_multicast_params_ac9765374ff15c55462baa90d1331b3b4}{Next}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra\+M\+AC multicast channel parameter 
+
+Lo\+Ra\+Mac.\+h 파일의 308 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_multicast_params_aca1b23fd721c8d8dc70a8227e336b6e8}\label{structs_multicast_params_aca1b23fd721c8d8dc70a8227e336b6e8}} 
+\index{s\+Multicast\+Params@{s\+Multicast\+Params}!Address@{Address}}
+\index{Address@{Address}!s\+Multicast\+Params@{s\+Multicast\+Params}}
+\subsubsection{\texorpdfstring{Address}{Address}}
+{\footnotesize\ttfamily uint32\+\_\+t Address}
+
+Address 
+
+Lo\+Ra\+Mac.\+h 파일의 313 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_multicast_params_a44d7cdeb3d44f4e7f8a0cefc938aaa5c}\label{structs_multicast_params_a44d7cdeb3d44f4e7f8a0cefc938aaa5c}} 
+\index{s\+Multicast\+Params@{s\+Multicast\+Params}!App\+S\+Key@{App\+S\+Key}}
+\index{App\+S\+Key@{App\+S\+Key}!s\+Multicast\+Params@{s\+Multicast\+Params}}
+\subsubsection{\texorpdfstring{App\+S\+Key}{AppSKey}}
+{\footnotesize\ttfamily uint8\+\_\+t App\+S\+Key\mbox{[}16\mbox{]}}
+
+Application session key 
+
+Lo\+Ra\+Mac.\+h 파일의 321 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_multicast_params_a7a566925baf83b1b3da9209dfa4bb79a}\label{structs_multicast_params_a7a566925baf83b1b3da9209dfa4bb79a}} 
+\index{s\+Multicast\+Params@{s\+Multicast\+Params}!Down\+Link\+Counter@{Down\+Link\+Counter}}
+\index{Down\+Link\+Counter@{Down\+Link\+Counter}!s\+Multicast\+Params@{s\+Multicast\+Params}}
+\subsubsection{\texorpdfstring{Down\+Link\+Counter}{DownLinkCounter}}
+{\footnotesize\ttfamily uint32\+\_\+t Down\+Link\+Counter}
+
+Downlink counter 
+
+Lo\+Ra\+Mac.\+h 파일의 325 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_multicast_params_ac9765374ff15c55462baa90d1331b3b4}\label{structs_multicast_params_ac9765374ff15c55462baa90d1331b3b4}} 
+\index{s\+Multicast\+Params@{s\+Multicast\+Params}!Next@{Next}}
+\index{Next@{Next}!s\+Multicast\+Params@{s\+Multicast\+Params}}
+\subsubsection{\texorpdfstring{Next}{Next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structs_multicast_params}{s\+Multicast\+Params}}$\ast$ Next}
+
+Reference pointer to the next multicast channel parameters in the list 
+
+Lo\+Ra\+Mac.\+h 파일의 329 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_multicast_params_adb8f473333a3f15032a04a78260f8ead}\label{structs_multicast_params_adb8f473333a3f15032a04a78260f8ead}} 
+\index{s\+Multicast\+Params@{s\+Multicast\+Params}!Nwk\+S\+Key@{Nwk\+S\+Key}}
+\index{Nwk\+S\+Key@{Nwk\+S\+Key}!s\+Multicast\+Params@{s\+Multicast\+Params}}
+\subsubsection{\texorpdfstring{Nwk\+S\+Key}{NwkSKey}}
+{\footnotesize\ttfamily uint8\+\_\+t Nwk\+S\+Key\mbox{[}16\mbox{]}}
+
+Network session key 
+
+Lo\+Ra\+Mac.\+h 파일의 317 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/\mbox{\hyperlink{_lo_ra_mac_8h}{Lo\+Ra\+Mac.\+h}}\end{DoxyCompactItemize}

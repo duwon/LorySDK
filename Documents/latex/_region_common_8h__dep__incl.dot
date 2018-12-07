@@ -1,0 +1,10 @@
+digraph "LoraLib/Mac/region/RegionCommon.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node26 [label="LoraLib/Mac/region\l/RegionCommon.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node26 -> Node27 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node27 [label="LoraLib/Mac/region\l/RegionCommon.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_common_8c.html",tooltip="LoRa MAC common region implementation "];
+  Node26 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node28 [label="LoraLib/Mac/region\l/RegionUS915-Hybrid.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_u_s915-_hybrid_8c.html",tooltip="Region implementation for US915 Hybrid "];
+}

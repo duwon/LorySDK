@@ -1,0 +1,422 @@
+\hypertarget{hw__rtc_8c}{}\section{Projects/\+Docking\+Station/src/hw\+\_\+rtc.c 파일 참조}
+\label{hw__rtc_8c}\index{Projects/\+Docking\+Station/src/hw\+\_\+rtc.\+c@{Projects/\+Docking\+Station/src/hw\+\_\+rtc.\+c}}
+{\ttfamily \#include \char`\"{}hw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}low\+\_\+power\+\_\+manager.\+h\char`\"{}}\newline
+hw\+\_\+rtc.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{데이터 구조}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_rtc_timer_context__t}{Rtc\+Timer\+Context\+\_\+t}}
+\end{DoxyCompactItemize}
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a9d5b1559769779b90b2a3de5757e0038}{M\+I\+N\+\_\+\+A\+L\+A\+R\+M\+\_\+\+D\+E\+L\+AY}}~3 /$\ast$ in ticks $\ast$/
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}}~10
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}{P\+R\+E\+D\+I\+V\+\_\+S}}~((1$<$$<$\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}})-\/1)
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a21e79e29c67db99f090e9996df18e2c7}{P\+R\+E\+D\+I\+V\+\_\+A}}~(1$<$$<$(15-\/\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}}))-\/1
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a4edfe64a5628c3b0b6e41d234443dce2}{H\+W\+\_\+\+R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+SK}}~R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+S\+K\+\_\+\+S\+S14\+\_\+10
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_af3934d5d924c9a3b9f9bee6cc9e25945}{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}~1000000
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a5976f980e4aecbba0ab173b8e73f70d9}{M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}~(\mbox{\hyperlink{hw__rtc_8c_af3934d5d924c9a3b9f9bee6cc9e25945}{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}/1000)
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a72bd8d096a8ba24daacc79e30844e20c}{R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+SE}}~(\mbox{\hyperlink{hw__rtc_8c_af3934d5d924c9a3b9f9bee6cc9e25945}{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}$>$$>$\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}})
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_ab4fc49ac0b9e4fccffe78ecdb418912f}{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR}}~3
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a8dbad53513ea56467eac68d23a1baf49}{C\+O\+N\+V\+\_\+\+N\+U\+M\+ER}}~(\mbox{\hyperlink{hw__rtc_8c_a5976f980e4aecbba0ab173b8e73f70d9}{M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}$>$$>$\mbox{\hyperlink{hw__rtc_8c_ab4fc49ac0b9e4fccffe78ecdb418912f}{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR}})
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a661badebd0364de871f2cd2d0b185c55}{C\+O\+N\+V\+\_\+\+D\+E\+N\+OM}}~(1$<$$<$(\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}}-\/\mbox{\hyperlink{hw__rtc_8c_ab4fc49ac0b9e4fccffe78ecdb418912f}{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR}}))
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a05269e1eafff6166976130c476ebf507}{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR}}~(uint32\+\_\+t) 366
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a6d40c3278339e38839749bf1704a60cc}{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+Y\+E\+AR}}~(uint32\+\_\+t) 365
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_acf2bd16d86f1ebf56e73b38adeafadf3}{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+D\+AY}}~(uint32\+\_\+t) 86400
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a49351bd0651fa15e2a33dd94ba993002}{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR}}~(uint32\+\_\+t) 3600
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a6bb348cf6aae2bfed39e2edd5ce0383a}{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+M\+I\+N\+U\+TE}}~(uint32\+\_\+t) 60
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_ae81e1b62f553cf38d5272acf84475f19}{M\+I\+N\+U\+T\+E\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR}}~(uint32\+\_\+t) 60
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_acbe201bd95d21f649360773cb20ef4ff}{H\+O\+U\+R\+S\+\_\+\+I\+N\+\_\+1\+D\+AY}}~(uint32\+\_\+t) 24
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_adff7c2bae448b6eb8630747d64bdbe06}{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+RM}}~((uint32\+\_\+t) 0x99\+A\+A\+A0 )
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a86ee3d0452a7ab1bcfcf3fed56876304}{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+L\+E\+AP}}~((uint32\+\_\+t) 0x445550 )
+\item 
+\#define \mbox{\hyperlink{hw__rtc_8c_a4b8edf0de0e3751031e15807e73a6f8d}{D\+I\+VC}}(X,  N)~( ( (X) + (N) -\/1 ) / (N) )
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga6eeed66a0970c9b0f48a7e2088b524f1}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em Configures the R\+TC timer \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga38285b86b2811230b0a55416ce3c33c7}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em configure alarm at init \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga60703fcfc4abd73a2efc980e8bb6ad27}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Start\+Wake\+Up\+Alarm}} (uint32\+\_\+t timeout\+Value)
+\begin{DoxyCompactList}\small\item\em start wake up alarm \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gaf81b8dc866a5c7b125355b55e3953387}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Calendar\+Value}} (R\+T\+C\+\_\+\+Date\+Type\+Def $\ast$R\+T\+C\+\_\+\+Date\+Struct, R\+T\+C\+\_\+\+Time\+Type\+Def $\ast$R\+T\+C\+\_\+\+Time\+Struct)
+\begin{DoxyCompactList}\small\item\em get current time from calendar in ticks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga3021a4a33084812668411847ec35d71d}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the R\+TC timer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga3039d2d62291e76e72912133676433fd}{H\+W\+\_\+\+R\+T\+C\+\_\+set\+Mcu\+Wake\+Up\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em calculates the wake up time between wake up and mcu start \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga62c900dca3a1beb9d4f2519664d3d274}{H\+W\+\_\+\+R\+T\+C\+\_\+get\+Mcu\+Wake\+Up\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em returns the wake up time in us \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga254f9e5c17daff978fef15be01021c51}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Minimum\+Timeout}} (void)
+\begin{DoxyCompactList}\small\item\em returns the wake up time in ticks \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gab105bfcf0c8b346a1b20b158b8f8a86e}{H\+W\+\_\+\+R\+T\+C\+\_\+ms2\+Tick}} (\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} time\+Micro\+Sec)
+\begin{DoxyCompactList}\small\item\em converts time in ms to time in ticks \end{DoxyCompactList}\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga8db2858eda135777ea359e20185c8524}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Tick2ms}} (uint32\+\_\+t tick)
+\begin{DoxyCompactList}\small\item\em converts time in ticks to time in ms \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga09cec56d54c13de658fafdd003390771}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Alarm}} (uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Set the alarm \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga7961116aa831950b62a413ecbbcfb02a}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Elapsed\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer elapsed time since the last Alarm was set \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0d80bf1ac3a9704f4b4b9d672f38daa}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Value}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga227be06e4dc1332d46ff12519db183b5}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Stop\+Alarm}} (void)
+\begin{DoxyCompactList}\small\item\em Stop the Alarm \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gae8ae8ef64d3025701112d509285006d4}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Irq\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em R\+TC I\+RQ Handler on the R\+TC Alarm \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gadad8cbf36cbe8a65bc1c70109146e307}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Delay\+Ms}} (uint32\+\_\+t delay)
+\begin{DoxyCompactList}\small\item\em a delay of delay ms by polling R\+TC \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gad0a54228cfe8473d90b901ebd76de1d5}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context}} (void)
+\begin{DoxyCompactList}\small\item\em set Time Reference set also the R\+T\+C\+\_\+\+Date\+Struct and R\+T\+C\+\_\+\+Time\+Struct \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga1d964c4efab63ea6a4b4ba8f3773e5b0}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Get\+Timer\+Context}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+TC timer Reference \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{hw__rtc_8c_a0cc445fee543cc142d19757f0f583a21}{H\+W\+\_\+\+R\+T\+C\+\_\+\+Initalized}} = false
+\begin{DoxyCompactList}\small\item\em Indicates if the R\+TC is already Initalized or not \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{hw__rtc_8c_a9851a50ef4baf062b775d0cbd7c117b5}{Mcu\+Wake\+Up\+Time\+Initialized}} = false
+\begin{DoxyCompactList}\small\item\em compensates M\+CU wakeup time \end{DoxyCompactList}\item 
+static int16\+\_\+t \mbox{\hyperlink{hw__rtc_8c_a0d22e01d28d80ec5b4630686aec08e81}{Mcu\+Wake\+Up\+Time\+Cal}} = 0
+\begin{DoxyCompactList}\small\item\em compensates M\+CU wakeup time \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \mbox{\hyperlink{hw__rtc_8c_a158d7c21ca90ace02ea9a6345f722689}{Days\+In\+Month}} \mbox{[}$\,$\mbox{]} = \{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 \}
+\item 
+static const uint8\+\_\+t \mbox{\hyperlink{hw__rtc_8c_aa0bc1427a9adc71a783c0b19e30f0384}{Days\+In\+Month\+Leap\+Year}} \mbox{[}$\,$\mbox{]} = \{ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 \}
+\item 
+static R\+T\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}{Rtc\+Handle}} =\{0\}
+\item 
+static R\+T\+C\+\_\+\+Alarm\+Type\+Def \mbox{\hyperlink{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}{R\+T\+C\+\_\+\+Alarm\+Structure}}
+\item 
+static \mbox{\hyperlink{struct_rtc_timer_context__t}{Rtc\+Timer\+Context\+\_\+t}} \mbox{\hyperlink{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}{Rtc\+Timer\+Context}}
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{hw__rtc_8c_ab4fc49ac0b9e4fccffe78ecdb418912f}\label{hw__rtc_8c_ab4fc49ac0b9e4fccffe78ecdb418912f}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR@{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR}}
+\index{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR@{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR}{COMMON\_FACTOR}}
+{\footnotesize\ttfamily \#define C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR~3}
+
+
+
+hw\+\_\+rtc.\+c 파일의 102 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a661badebd0364de871f2cd2d0b185c55}\label{hw__rtc_8c_a661badebd0364de871f2cd2d0b185c55}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!C\+O\+N\+V\+\_\+\+D\+E\+N\+OM@{C\+O\+N\+V\+\_\+\+D\+E\+N\+OM}}
+\index{C\+O\+N\+V\+\_\+\+D\+E\+N\+OM@{C\+O\+N\+V\+\_\+\+D\+E\+N\+OM}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{C\+O\+N\+V\+\_\+\+D\+E\+N\+OM}{CONV\_DENOM}}
+{\footnotesize\ttfamily \#define C\+O\+N\+V\+\_\+\+D\+E\+N\+OM~(1$<$$<$(\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}}-\/\mbox{\hyperlink{hw__rtc_8c_ab4fc49ac0b9e4fccffe78ecdb418912f}{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR}}))}
+
+
+
+hw\+\_\+rtc.\+c 파일의 104 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a8dbad53513ea56467eac68d23a1baf49}\label{hw__rtc_8c_a8dbad53513ea56467eac68d23a1baf49}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!C\+O\+N\+V\+\_\+\+N\+U\+M\+ER@{C\+O\+N\+V\+\_\+\+N\+U\+M\+ER}}
+\index{C\+O\+N\+V\+\_\+\+N\+U\+M\+ER@{C\+O\+N\+V\+\_\+\+N\+U\+M\+ER}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{C\+O\+N\+V\+\_\+\+N\+U\+M\+ER}{CONV\_NUMER}}
+{\footnotesize\ttfamily \#define C\+O\+N\+V\+\_\+\+N\+U\+M\+ER~(\mbox{\hyperlink{hw__rtc_8c_a5976f980e4aecbba0ab173b8e73f70d9}{M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}$>$$>$\mbox{\hyperlink{hw__rtc_8c_ab4fc49ac0b9e4fccffe78ecdb418912f}{C\+O\+M\+M\+O\+N\+\_\+\+F\+A\+C\+T\+OR}})}
+
+
+
+hw\+\_\+rtc.\+c 파일의 103 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a05269e1eafff6166976130c476ebf507}\label{hw__rtc_8c_a05269e1eafff6166976130c476ebf507}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR@{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR}}
+\index{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR@{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR}{DAYS\_IN\_LEAP\_YEAR}}
+{\footnotesize\ttfamily \#define D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+L\+E\+A\+P\+\_\+\+Y\+E\+AR~(uint32\+\_\+t) 366}
+
+
+
+hw\+\_\+rtc.\+c 파일의 106 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a86ee3d0452a7ab1bcfcf3fed56876304}\label{hw__rtc_8c_a86ee3d0452a7ab1bcfcf3fed56876304}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+L\+E\+AP@{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+L\+E\+AP}}
+\index{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+L\+E\+AP@{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+L\+E\+AP}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+L\+E\+AP}{DAYS\_IN\_MONTH\_CORRECTION\_LEAP}}
+{\footnotesize\ttfamily \#define D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+L\+E\+AP~((uint32\+\_\+t) 0x445550 )}
+
+
+
+hw\+\_\+rtc.\+c 파일의 121 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_adff7c2bae448b6eb8630747d64bdbe06}\label{hw__rtc_8c_adff7c2bae448b6eb8630747d64bdbe06}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+RM@{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+RM}}
+\index{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+RM@{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+RM}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+RM}{DAYS\_IN\_MONTH\_CORRECTION\_NORM}}
+{\footnotesize\ttfamily \#define D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+M\+O\+N\+T\+H\+\_\+\+C\+O\+R\+R\+E\+C\+T\+I\+O\+N\+\_\+\+N\+O\+RM~((uint32\+\_\+t) 0x99\+A\+A\+A0 )}
+
+
+
+hw\+\_\+rtc.\+c 파일의 120 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a6d40c3278339e38839749bf1704a60cc}\label{hw__rtc_8c_a6d40c3278339e38839749bf1704a60cc}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+Y\+E\+AR@{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+Y\+E\+AR}}
+\index{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+Y\+E\+AR@{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+Y\+E\+AR}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+Y\+E\+AR}{DAYS\_IN\_YEAR}}
+{\footnotesize\ttfamily \#define D\+A\+Y\+S\+\_\+\+I\+N\+\_\+\+Y\+E\+AR~(uint32\+\_\+t) 365}
+
+
+
+hw\+\_\+rtc.\+c 파일의 108 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a4b8edf0de0e3751031e15807e73a6f8d}\label{hw__rtc_8c_a4b8edf0de0e3751031e15807e73a6f8d}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!D\+I\+VC@{D\+I\+VC}}
+\index{D\+I\+VC@{D\+I\+VC}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{D\+I\+VC}{DIVC}}
+{\footnotesize\ttfamily \#define D\+I\+VC(\begin{DoxyParamCaption}\item[{}]{X,  }\item[{}]{N }\end{DoxyParamCaption})~( ( (X) + (N) -\/1 ) / (N) )}
+
+
+
+hw\+\_\+rtc.\+c 파일의 125 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_acbe201bd95d21f649360773cb20ef4ff}\label{hw__rtc_8c_acbe201bd95d21f649360773cb20ef4ff}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!H\+O\+U\+R\+S\+\_\+\+I\+N\+\_\+1\+D\+AY@{H\+O\+U\+R\+S\+\_\+\+I\+N\+\_\+1\+D\+AY}}
+\index{H\+O\+U\+R\+S\+\_\+\+I\+N\+\_\+1\+D\+AY@{H\+O\+U\+R\+S\+\_\+\+I\+N\+\_\+1\+D\+AY}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{H\+O\+U\+R\+S\+\_\+\+I\+N\+\_\+1\+D\+AY}{HOURS\_IN\_1DAY}}
+{\footnotesize\ttfamily \#define H\+O\+U\+R\+S\+\_\+\+I\+N\+\_\+1\+D\+AY~(uint32\+\_\+t) 24}
+
+
+
+hw\+\_\+rtc.\+c 파일의 118 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a4edfe64a5628c3b0b6e41d234443dce2}\label{hw__rtc_8c_a4edfe64a5628c3b0b6e41d234443dce2}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!H\+W\+\_\+\+R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+SK@{H\+W\+\_\+\+R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+SK}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+SK@{H\+W\+\_\+\+R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+SK}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+SK}{HW\_RTC\_ALARMSUBSECONDMASK}}
+{\footnotesize\ttfamily \#define H\+W\+\_\+\+R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+SK~R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+S\+U\+B\+S\+E\+C\+O\+N\+D\+M\+A\+S\+K\+\_\+\+S\+S14\+\_\+10}
+
+
+
+hw\+\_\+rtc.\+c 파일의 92 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a9d5b1559769779b90b2a3de5757e0038}\label{hw__rtc_8c_a9d5b1559769779b90b2a3de5757e0038}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!M\+I\+N\+\_\+\+A\+L\+A\+R\+M\+\_\+\+D\+E\+L\+AY@{M\+I\+N\+\_\+\+A\+L\+A\+R\+M\+\_\+\+D\+E\+L\+AY}}
+\index{M\+I\+N\+\_\+\+A\+L\+A\+R\+M\+\_\+\+D\+E\+L\+AY@{M\+I\+N\+\_\+\+A\+L\+A\+R\+M\+\_\+\+D\+E\+L\+AY}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{M\+I\+N\+\_\+\+A\+L\+A\+R\+M\+\_\+\+D\+E\+L\+AY}{MIN\_ALARM\_DELAY}}
+{\footnotesize\ttfamily \#define M\+I\+N\+\_\+\+A\+L\+A\+R\+M\+\_\+\+D\+E\+L\+AY~3 /$\ast$ in ticks $\ast$/}
+
+
+
+hw\+\_\+rtc.\+c 파일의 79 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_ae81e1b62f553cf38d5272acf84475f19}\label{hw__rtc_8c_ae81e1b62f553cf38d5272acf84475f19}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!M\+I\+N\+U\+T\+E\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR@{M\+I\+N\+U\+T\+E\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR}}
+\index{M\+I\+N\+U\+T\+E\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR@{M\+I\+N\+U\+T\+E\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{M\+I\+N\+U\+T\+E\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR}{MINUTES\_IN\_1HOUR}}
+{\footnotesize\ttfamily \#define M\+I\+N\+U\+T\+E\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR~(uint32\+\_\+t) 60}
+
+
+
+hw\+\_\+rtc.\+c 파일의 116 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a5976f980e4aecbba0ab173b8e73f70d9}\label{hw__rtc_8c_a5976f980e4aecbba0ab173b8e73f70d9}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER@{M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}
+\index{M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER@{M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}{MSEC\_NUMBER}}
+{\footnotesize\ttfamily \#define M\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER~(\mbox{\hyperlink{hw__rtc_8c_af3934d5d924c9a3b9f9bee6cc9e25945}{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}/1000)}
+
+
+
+hw\+\_\+rtc.\+c 파일의 99 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}\label{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S@{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}}
+\index{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S@{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}{N\_PREDIV\_S}}
+{\footnotesize\ttfamily \#define N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S~10}
+
+
+
+hw\+\_\+rtc.\+c 파일의 82 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a21e79e29c67db99f090e9996df18e2c7}\label{hw__rtc_8c_a21e79e29c67db99f090e9996df18e2c7}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!P\+R\+E\+D\+I\+V\+\_\+A@{P\+R\+E\+D\+I\+V\+\_\+A}}
+\index{P\+R\+E\+D\+I\+V\+\_\+A@{P\+R\+E\+D\+I\+V\+\_\+A}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{P\+R\+E\+D\+I\+V\+\_\+A}{PREDIV\_A}}
+{\footnotesize\ttfamily \#define P\+R\+E\+D\+I\+V\+\_\+A~(1$<$$<$(15-\/\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}}))-\/1}
+
+
+
+hw\+\_\+rtc.\+c 파일의 88 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}\label{hw__rtc_8c_a8647306f20268ae27f137e06f9e642fc}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!P\+R\+E\+D\+I\+V\+\_\+S@{P\+R\+E\+D\+I\+V\+\_\+S}}
+\index{P\+R\+E\+D\+I\+V\+\_\+S@{P\+R\+E\+D\+I\+V\+\_\+S}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{P\+R\+E\+D\+I\+V\+\_\+S}{PREDIV\_S}}
+{\footnotesize\ttfamily \#define P\+R\+E\+D\+I\+V\+\_\+S~((1$<$$<$\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}})-\/1)}
+
+
+
+hw\+\_\+rtc.\+c 파일의 85 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a72bd8d096a8ba24daacc79e30844e20c}\label{hw__rtc_8c_a72bd8d096a8ba24daacc79e30844e20c}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+SE@{R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+SE}}
+\index{R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+SE@{R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+SE}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+SE}{RTC\_ALARM\_TIME\_BASE}}
+{\footnotesize\ttfamily \#define R\+T\+C\+\_\+\+A\+L\+A\+R\+M\+\_\+\+T\+I\+M\+E\+\_\+\+B\+A\+SE~(\mbox{\hyperlink{hw__rtc_8c_af3934d5d924c9a3b9f9bee6cc9e25945}{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}$>$$>$\mbox{\hyperlink{hw__rtc_8c_a5fce31e2c7437f8f58b0c67a9b2cd037}{N\+\_\+\+P\+R\+E\+D\+I\+V\+\_\+S}})}
+
+
+
+hw\+\_\+rtc.\+c 파일의 100 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_acf2bd16d86f1ebf56e73b38adeafadf3}\label{hw__rtc_8c_acf2bd16d86f1ebf56e73b38adeafadf3}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+D\+AY@{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+D\+AY}}
+\index{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+D\+AY@{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+D\+AY}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+D\+AY}{SECONDS\_IN\_1DAY}}
+{\footnotesize\ttfamily \#define S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+D\+AY~(uint32\+\_\+t) 86400}
+
+
+
+hw\+\_\+rtc.\+c 파일의 110 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a49351bd0651fa15e2a33dd94ba993002}\label{hw__rtc_8c_a49351bd0651fa15e2a33dd94ba993002}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR@{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR}}
+\index{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR@{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR}{SECONDS\_IN\_1HOUR}}
+{\footnotesize\ttfamily \#define S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+H\+O\+UR~(uint32\+\_\+t) 3600}
+
+
+
+hw\+\_\+rtc.\+c 파일의 112 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a6bb348cf6aae2bfed39e2edd5ce0383a}\label{hw__rtc_8c_a6bb348cf6aae2bfed39e2edd5ce0383a}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+M\+I\+N\+U\+TE@{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+M\+I\+N\+U\+TE}}
+\index{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+M\+I\+N\+U\+TE@{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+M\+I\+N\+U\+TE}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+M\+I\+N\+U\+TE}{SECONDS\_IN\_1MINUTE}}
+{\footnotesize\ttfamily \#define S\+E\+C\+O\+N\+D\+S\+\_\+\+I\+N\+\_\+1\+M\+I\+N\+U\+TE~(uint32\+\_\+t) 60}
+
+
+
+hw\+\_\+rtc.\+c 파일의 114 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_af3934d5d924c9a3b9f9bee6cc9e25945}\label{hw__rtc_8c_af3934d5d924c9a3b9f9bee6cc9e25945}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER@{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}}
+\index{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER@{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER}{USEC\_NUMBER}}
+{\footnotesize\ttfamily \#define U\+S\+E\+C\+\_\+\+N\+U\+M\+B\+ER~1000000}
+
+
+
+hw\+\_\+rtc.\+c 파일의 98 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{hw__rtc_8c_a158d7c21ca90ace02ea9a6345f722689}\label{hw__rtc_8c_a158d7c21ca90ace02ea9a6345f722689}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!Days\+In\+Month@{Days\+In\+Month}}
+\index{Days\+In\+Month@{Days\+In\+Month}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{Days\+In\+Month}{DaysInMonth}}
+{\footnotesize\ttfamily const uint8\+\_\+t Days\+In\+Month\mbox{[}$\,$\mbox{]} = \{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 \}\hspace{0.3cm}{\ttfamily [static]}}
+
+Number of days in each month on a normal year 
+
+hw\+\_\+rtc.\+c 파일의 150 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_aa0bc1427a9adc71a783c0b19e30f0384}\label{hw__rtc_8c_aa0bc1427a9adc71a783c0b19e30f0384}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!Days\+In\+Month\+Leap\+Year@{Days\+In\+Month\+Leap\+Year}}
+\index{Days\+In\+Month\+Leap\+Year@{Days\+In\+Month\+Leap\+Year}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{Days\+In\+Month\+Leap\+Year}{DaysInMonthLeapYear}}
+{\footnotesize\ttfamily const uint8\+\_\+t Days\+In\+Month\+Leap\+Year\mbox{[}$\,$\mbox{]} = \{ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 \}\hspace{0.3cm}{\ttfamily [static]}}
+
+Number of days in each month on a leap year 
+
+hw\+\_\+rtc.\+c 파일의 155 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a0cc445fee543cc142d19757f0f583a21}\label{hw__rtc_8c_a0cc445fee543cc142d19757f0f583a21}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!H\+W\+\_\+\+R\+T\+C\+\_\+\+Initalized@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Initalized}}
+\index{H\+W\+\_\+\+R\+T\+C\+\_\+\+Initalized@{H\+W\+\_\+\+R\+T\+C\+\_\+\+Initalized}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+R\+T\+C\+\_\+\+Initalized}{HW\_RTC\_Initalized}}
+{\footnotesize\ttfamily bool H\+W\+\_\+\+R\+T\+C\+\_\+\+Initalized = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Indicates if the R\+TC is already Initalized or not 
+
+
+
+hw\+\_\+rtc.\+c 파일의 133 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a0d22e01d28d80ec5b4630686aec08e81}\label{hw__rtc_8c_a0d22e01d28d80ec5b4630686aec08e81}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!Mcu\+Wake\+Up\+Time\+Cal@{Mcu\+Wake\+Up\+Time\+Cal}}
+\index{Mcu\+Wake\+Up\+Time\+Cal@{Mcu\+Wake\+Up\+Time\+Cal}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{Mcu\+Wake\+Up\+Time\+Cal}{McuWakeUpTimeCal}}
+{\footnotesize\ttfamily int16\+\_\+t Mcu\+Wake\+Up\+Time\+Cal = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+compensates M\+CU wakeup time 
+
+
+
+hw\+\_\+rtc.\+c 파일의 145 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a9851a50ef4baf062b775d0cbd7c117b5}\label{hw__rtc_8c_a9851a50ef4baf062b775d0cbd7c117b5}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!Mcu\+Wake\+Up\+Time\+Initialized@{Mcu\+Wake\+Up\+Time\+Initialized}}
+\index{Mcu\+Wake\+Up\+Time\+Initialized@{Mcu\+Wake\+Up\+Time\+Initialized}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{Mcu\+Wake\+Up\+Time\+Initialized}{McuWakeUpTimeInitialized}}
+{\footnotesize\ttfamily bool Mcu\+Wake\+Up\+Time\+Initialized = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+compensates M\+CU wakeup time 
+
+
+
+hw\+\_\+rtc.\+c 파일의 139 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}\label{hw__rtc_8c_aa4fc8fc521debc197e4e3becd4c532a9}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!R\+T\+C\+\_\+\+Alarm\+Structure@{R\+T\+C\+\_\+\+Alarm\+Structure}}
+\index{R\+T\+C\+\_\+\+Alarm\+Structure@{R\+T\+C\+\_\+\+Alarm\+Structure}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{R\+T\+C\+\_\+\+Alarm\+Structure}{RTC\_AlarmStructure}}
+{\footnotesize\ttfamily R\+T\+C\+\_\+\+Alarm\+Type\+Def R\+T\+C\+\_\+\+Alarm\+Structure\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+hw\+\_\+rtc.\+c 파일의 159 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}\label{hw__rtc_8c_af5a469a44a56337e00dc30b13e2bc051}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!Rtc\+Handle@{Rtc\+Handle}}
+\index{Rtc\+Handle@{Rtc\+Handle}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{Rtc\+Handle}{RtcHandle}}
+{\footnotesize\ttfamily R\+T\+C\+\_\+\+Handle\+Type\+Def Rtc\+Handle =\{0\}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+hw\+\_\+rtc.\+c 파일의 157 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}\label{hw__rtc_8c_a0e042f0e024135713eeb5896d77a2356}} 
+\index{hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}!Rtc\+Timer\+Context@{Rtc\+Timer\+Context}}
+\index{Rtc\+Timer\+Context@{Rtc\+Timer\+Context}!hw\+\_\+rtc.\+c@{hw\+\_\+rtc.\+c}}
+\subsubsection{\texorpdfstring{Rtc\+Timer\+Context}{RtcTimerContext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_rtc_timer_context__t}{Rtc\+Timer\+Context\+\_\+t}} Rtc\+Timer\+Context\hspace{0.3cm}{\ttfamily [static]}}
+
+Keep the value of the R\+TC timer when the R\+TC alarm is set Set with the H\+W\+\_\+\+R\+T\+C\+\_\+\+Set\+Timer\+Context function Value is kept as a Reference to calculate alarm 
+
+hw\+\_\+rtc.\+c 파일의 166 번째 라인에서 정의되었습니다.
+

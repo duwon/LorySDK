@@ -1,0 +1,460 @@
+\hypertarget{lora-test_8c}{}\section{Lora\+Lib/\+Core/lora-\/test.c 파일 참조}
+\label{lora-test_8c}\index{Lora\+Lib/\+Core/lora-\/test.\+c@{Lora\+Lib/\+Core/lora-\/test.\+c}}
+{\ttfamily \#include \char`\"{}hw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lo\+Ra\+Mac.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lo\+Ra\+Mac\+Test.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lora.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lora-\/test.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time\+Server.\+h\char`\"{}}\newline
+lora-\/test.c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{데이터 구조}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_compliance_test__s}{Compliance\+Test\+\_\+s}}
+\end{DoxyCompactItemize}
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lora-test_8c_aad2182ae6fe516e22d6393ca3a357896}{T\+E\+S\+T\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}}~5000
+\end{DoxyCompactItemize}
+\subsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_compliance_test__s}{Compliance\+Test\+\_\+s}} \mbox{\hyperlink{lora-test_8c_a53a6b20274f31e34166b30bb372bb6aa}{Compliance\+Test\+\_\+t}}
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{lora-test_8c_a2e3edcd940d4df35743fe87783f89bbc}{On\+Certif\+Tx\+Next\+Packet\+Timer\+Event}} (void)
+\begin{DoxyCompactList}\small\item\em Function executed on Tx\+Next\+Packet Timeout event \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{lora-test_8c_a735361add977554215fd3e1e70b74760}{certif\+\_\+tx}} (void)
+\item 
+bool \mbox{\hyperlink{lora-test_8c_ae856642063d609fa42633f12c85fa318}{certif\+\_\+running}} (void)
+\item 
+void \mbox{\hyperlink{lora-test_8c_afd08e01f379119849a415a1d98e44c0d}{certif\+\_\+\+Down\+Link\+Increment}} (void)
+\item 
+void \mbox{\hyperlink{lora-test_8c_a39763fc2f0d7f70bf980b9508cd7e021}{certif\+\_\+link\+Check}} (\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga73d9d9e11e282a6c258c4d22865fe824}{Mlme\+Confirm\+\_\+t}} $\ast$mlme\+Confirm)
+\item 
+void \mbox{\hyperlink{lora-test_8c_ad5e51928ecf0cca8d4f33f9e9c10aba4}{certif\+\_\+rx}} (\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga202591b6553d63fae89bd42787496616}{Mcps\+Indication\+\_\+t}} $\ast$mcps\+Indication, \mbox{\hyperlink{group___l_o_r_a_m_a_c_gab12f7f7d9bdfb8067d56f7c9f1297d95}{Mlme\+Req\+Join\+\_\+t}} $\ast$\mbox{\hyperlink{lora_8c_aaa245b1db1384dd6fc0257bc479e760c}{Join\+Parameters}})
+\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} \mbox{\hyperlink{lora-test_8c_a0c9bb346324d81b31bd460c40b151cdd}{Certif\+Tx\+Next\+Packet\+Timer}}
+\item 
+static \mbox{\hyperlink{lora-test_8c_a53a6b20274f31e34166b30bb372bb6aa}{Compliance\+Test\+\_\+t}} \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certif\+Param}}
+\item 
+static \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20}{Lora\+Confirm\+\_\+t}} \mbox{\hyperlink{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}{Is\+Tx\+Confirmed}}
+\item 
+static bool \mbox{\hyperlink{lora-test_8c_ac9f809d4636721961e690fd82f6bafc7}{Adr\+Enable\+Init}}
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{lora-test_8c_aad2182ae6fe516e22d6393ca3a357896}\label{lora-test_8c_aad2182ae6fe516e22d6393ca3a357896}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!T\+E\+S\+T\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE@{T\+E\+S\+T\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}}
+\index{T\+E\+S\+T\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE@{T\+E\+S\+T\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{T\+E\+S\+T\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE}{TEST\_TX\_DUTYCYCLE}}
+{\footnotesize\ttfamily \#define T\+E\+S\+T\+\_\+\+T\+X\+\_\+\+D\+U\+T\+Y\+C\+Y\+C\+LE~5000}
+
+
+
+lora-\/test.\+c 파일의 86 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{타입정의 문서화}
+\mbox{\Hypertarget{lora-test_8c_a53a6b20274f31e34166b30bb372bb6aa}\label{lora-test_8c_a53a6b20274f31e34166b30bb372bb6aa}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!Compliance\+Test\+\_\+t@{Compliance\+Test\+\_\+t}}
+\index{Compliance\+Test\+\_\+t@{Compliance\+Test\+\_\+t}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{Compliance\+Test\+\_\+t}{ComplianceTest\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_compliance_test__s}{Compliance\+Test\+\_\+s}} \mbox{\hyperlink{lora-test_8c_a53a6b20274f31e34166b30bb372bb6aa}{Compliance\+Test\+\_\+t}}}
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{lora-test_8c_afd08e01f379119849a415a1d98e44c0d}\label{lora-test_8c_afd08e01f379119849a415a1d98e44c0d}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!certif\+\_\+\+Down\+Link\+Increment@{certif\+\_\+\+Down\+Link\+Increment}}
+\index{certif\+\_\+\+Down\+Link\+Increment@{certif\+\_\+\+Down\+Link\+Increment}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{certif\+\_\+\+Down\+Link\+Increment()}{certif\_DownLinkIncrement()}}
+{\footnotesize\ttfamily void certif\+\_\+\+Down\+Link\+Increment (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+lora-\/test.\+c 파일의 108 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+109 \{
+110     \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a76fae6cae1874b9700238a561ef49305}{DownLinkCounter}}++;
+111 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{lora-test_8c_a39763fc2f0d7f70bf980b9508cd7e021}\label{lora-test_8c_a39763fc2f0d7f70bf980b9508cd7e021}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!certif\+\_\+link\+Check@{certif\+\_\+link\+Check}}
+\index{certif\+\_\+link\+Check@{certif\+\_\+link\+Check}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{certif\+\_\+link\+Check()}{certif\_linkCheck()}}
+{\footnotesize\ttfamily void certif\+\_\+link\+Check (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga73d9d9e11e282a6c258c4d22865fe824}{Mlme\+Confirm\+\_\+t}} $\ast$}]{mlme\+Confirm }\end{DoxyParamCaption})}
+
+
+
+lora-\/test.\+c 파일의 113 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+114 \{
+115   \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_adeaa3c79dc995e74f45bffef6c768edb}{LinkCheck}} = \textcolor{keyword}{true};
+116   \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a60502ba4c33cf0435f086a1a9f1b5116}{DemodMargin}} = mlmeConfirm->\mbox{\hyperlink{structs_mlme_confirm_a60502ba4c33cf0435f086a1a9f1b5116}{DemodMargin}};
+117   \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_ac2fbb4be8e3cc46943038a1796010d71}{NbGateways}} = mlmeConfirm->\mbox{\hyperlink{structs_mlme_confirm_ac2fbb4be8e3cc46943038a1796010d71}{NbGateways}};
+118 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{lora-test_8c_ae856642063d609fa42633f12c85fa318}\label{lora-test_8c_ae856642063d609fa42633f12c85fa318}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!certif\+\_\+running@{certif\+\_\+running}}
+\index{certif\+\_\+running@{certif\+\_\+running}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{certif\+\_\+running()}{certif\_running()}}
+{\footnotesize\ttfamily bool certif\+\_\+running (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+lora-\/test.\+c 파일의 103 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+104 \{
+105     \textcolor{keywordflow}{return} \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_ae2e97f1ebd7c956e2c68d1209eabd4b1}{Running}};
+106 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{lora-test_8c_ad5e51928ecf0cca8d4f33f9e9c10aba4}\label{lora-test_8c_ad5e51928ecf0cca8d4f33f9e9c10aba4}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!certif\+\_\+rx@{certif\+\_\+rx}}
+\index{certif\+\_\+rx@{certif\+\_\+rx}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{certif\+\_\+rx()}{certif\_rx()}}
+{\footnotesize\ttfamily void certif\+\_\+rx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga202591b6553d63fae89bd42787496616}{Mcps\+Indication\+\_\+t}} $\ast$}]{mcps\+Indication,  }\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_gab12f7f7d9bdfb8067d56f7c9f1297d95}{Mlme\+Req\+Join\+\_\+t}} $\ast$}]{Join\+Parameters }\end{DoxyParamCaption})}
+
+
+
+lora-\/test.\+c 파일의 188 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+189 \{
+190   \textcolor{keywordflow}{if}( \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_ae2e97f1ebd7c956e2c68d1209eabd4b1}{Running}} == \textcolor{keyword}{false} )
+191   \{
+192       \textcolor{comment}{// Check compliance test enable command (i)}
+193       \textcolor{keywordflow}{if}( ( mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_abf449ca64f34dbb66a7c5bf70fd55753}{BufferSize}} == 4 ) &&
+194           ( mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[0] == 0x01 ) &&
+195           ( mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[1] == 0x01 ) &&
+196           ( mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[2] == 0x01 ) &&
+197           ( mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[3] == 0x01 ) )
+198       \{
+199           \mbox{\hyperlink{structe_mib_request_confirm}{MibRequestConfirm\_t}} \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}};
+200           \mbox{\hyperlink{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}{IsTxConfirmed}} = \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{LORAWAN\_UNCONFIRMED\_MSG}};
+201           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}} = 2;
+202           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a76fae6cae1874b9700238a561ef49305}{DownLinkCounter}} = 0;
+203           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_adeaa3c79dc995e74f45bffef6c768edb}{LinkCheck}} = \textcolor{keyword}{false};
+204           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a60502ba4c33cf0435f086a1a9f1b5116}{DemodMargin}} = 0;
+205           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_ac2fbb4be8e3cc46943038a1796010d71}{NbGateways}} = 0;
+206           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_ae2e97f1ebd7c956e2c68d1209eabd4b1}{Running}} = \textcolor{keyword}{true};
+207           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} = 1;
+208 
+209           \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a756ff0b66217e3e4ddd0442c8aa56802}{MIB\_ADR}};
+210 
+211           \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga3e208a4f73213aa801eeb9d9da7b71dd}{LoRaMacMibGetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+212           \mbox{\hyperlink{lora-test_8c_ac9f809d4636721961e690fd82f6bafc7}{AdrEnableInit}}=\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a04efa8698eeea64f27b216d64e598c0d}{AdrEnable}};
+213           
+214           \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a756ff0b66217e3e4ddd0442c8aa56802}{MIB\_ADR}};
+215           \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a04efa8698eeea64f27b216d64e598c0d}{AdrEnable}} = \textcolor{keyword}{true};
+216           \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+217 
+218 \textcolor{preprocessor}{  #if defined( REGION\_EU868 )}
+219           \mbox{\hyperlink{group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865}{LoRaMacTestSetDutyCycleOn}}( \textcolor{keyword}{false} );
+220 \textcolor{preprocessor}{  #endif}
+221 
+222          
+223         \mbox{\hyperlink{time_server_8c_a7e41004e0cd39ba368fb7d83c2cfd550}{TimerInit}}( &\mbox{\hyperlink{lora-test_8c_a0c9bb346324d81b31bd460c40b151cdd}{CertifTxNextPacketTimer}}, 
+      \mbox{\hyperlink{lora-test_8c_a2e3edcd940d4df35743fe87783f89bbc}{OnCertifTxNextPacketTimerEvent}} );
+224         \mbox{\hyperlink{time_server_8c_ad56c30124de6deefb3e32bbee2a4ba46}{TimerSetValue}}( &\mbox{\hyperlink{lora-test_8c_a0c9bb346324d81b31bd460c40b151cdd}{CertifTxNextPacketTimer}},  
+      \mbox{\hyperlink{lora-test_8c_aad2182ae6fe516e22d6393ca3a357896}{TEST\_TX\_DUTYCYCLE}}); 
+225         
+226         \textcolor{comment}{/*confirm test mode activation */}
+227         \mbox{\hyperlink{lora-test_8c_a735361add977554215fd3e1e70b74760}{certif\_tx}}( );
+228       \}
+229   \}
+230 
+231   \textcolor{keywordflow}{else}
+232   \{
+233       \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} = mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[0];
+234       \textcolor{keywordflow}{switch}( \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} )
+235       \{
+236         \textcolor{keywordflow}{case} 0: \textcolor{comment}{// Check compliance test disable command (ii)}
+237         \{
+238           
+239           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a76fae6cae1874b9700238a561ef49305}{DownLinkCounter}} = 0;
+240           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_ae2e97f1ebd7c956e2c68d1209eabd4b1}{Running}} = \textcolor{keyword}{false};
+241           
+242           \mbox{\hyperlink{structe_mib_request_confirm}{MibRequestConfirm\_t}} \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}};
+243           \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a756ff0b66217e3e4ddd0442c8aa56802}{MIB\_ADR}};
+244           \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a04efa8698eeea64f27b216d64e598c0d}{AdrEnable}} = \mbox{\hyperlink{lora-test_8c_ac9f809d4636721961e690fd82f6bafc7}{AdrEnableInit}};
+245           \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+246 \textcolor{preprocessor}{  #if defined( REGION\_EU868 )}
+247           \mbox{\hyperlink{group___l_o_r_a_m_a_c_t_e_s_t_gacee5e0492e548af9e1ec5a995e460865}{LoRaMacTestSetDutyCycleOn}}( \textcolor{keyword}{true} );
+248 \textcolor{preprocessor}{  #endif}
+249           
+250           \textcolor{keywordflow}{break};
+251         \}
+252         \textcolor{keywordflow}{case} 1: \textcolor{comment}{// (iii, iv)}
+253           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}} = 2;
+254           \textcolor{keywordflow}{break};
+255         \textcolor{keywordflow}{case} 2: \textcolor{comment}{// Enable confirmed messages (v)}
+256           \mbox{\hyperlink{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}{IsTxConfirmed}} = \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20a10490b6d39a4ebf5cddd2fdbddebb729}{LORAWAN\_CONFIRMED\_MSG}};
+257           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} = 1;
+258           \textcolor{keywordflow}{break};
+259         \textcolor{keywordflow}{case} 3:  \textcolor{comment}{// Disable confirmed messages (vi)}
+260           \mbox{\hyperlink{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}{IsTxConfirmed}} = \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{LORAWAN\_UNCONFIRMED\_MSG}};
+261           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} = 1;
+262           \textcolor{keywordflow}{break};
+263         \textcolor{keywordflow}{case} 4: \textcolor{comment}{// (vii)}
+264           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}} = mcpsIndication->
+      \mbox{\hyperlink{structs_mcps_indication_abf449ca64f34dbb66a7c5bf70fd55753}{BufferSize}};
+265 
+266           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}}[0] = 4;
+267           \textcolor{keywordflow}{for}( uint8\_t i = 1; i < \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}}; i++ )
+268           \{
+269               \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}}[i] = mcpsIndication->
+      \mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[i] + 1;
+270           \}
+271           \textcolor{keywordflow}{break};
+272         \textcolor{keywordflow}{case} 5: \textcolor{comment}{// (viii)}
+273         \{
+274           \mbox{\hyperlink{structs_mlme_req}{MlmeReq\_t}} mlmeReq;
+275           mlmeReq.\mbox{\hyperlink{structs_mlme_req_a83b9239b834fa1a95fba118c0a392a8b}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga320f4c08fe99747b08463689be624f7ba57ba2a5951a2a4637ff0e574c0e48750}{MLME\_LINK\_CHECK}};
+276           \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga097113f30feecc17c780940ff74af33e}{LoRaMacMlmeRequest}}( &mlmeReq );
+277           \textcolor{keywordflow}{break};
+278         \}      
+279         \textcolor{keywordflow}{case} 6: \textcolor{comment}{// (ix)}
+280         \{
+281             \mbox{\hyperlink{structs_mlme_req}{MlmeReq\_t}} mlmeReq;
+282 
+283             \textcolor{comment}{// Disable TestMode and revert back to normal operation}
+284 
+285             \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a76fae6cae1874b9700238a561ef49305}{DownLinkCounter}} = 0;
+286             \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_ae2e97f1ebd7c956e2c68d1209eabd4b1}{Running}} = \textcolor{keyword}{false};
+287 
+288             \mbox{\hyperlink{structe_mib_request_confirm}{MibRequestConfirm\_t}} \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}};
+289             \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_ada1f9249fb28125c69bdfacfaeeae0e2}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a756ff0b66217e3e4ddd0442c8aa56802}{MIB\_ADR}};
+290             \mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}}.\mbox{\hyperlink{structe_mib_request_confirm_afb8c77b3200d879d36beed691fb71f8d}{Param}}.\mbox{\hyperlink{unionu_mib_param_a04efa8698eeea64f27b216d64e598c0d}{AdrEnable}} = \mbox{\hyperlink{lora-test_8c_ac9f809d4636721961e690fd82f6bafc7}{AdrEnableInit}};
+291             \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga7a4ee0ced221591206b09630d4a70844}{LoRaMacMibSetRequestConfirm}}( &\mbox{\hyperlink{lora_8c_a553baee9b2c1a2c0aa6334bb5560f3d1}{mibReq}} );
+292 
+293             mlmeReq.\mbox{\hyperlink{structs_mlme_req_a83b9239b834fa1a95fba118c0a392a8b}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga320f4c08fe99747b08463689be624f7ba475ad5dea1c4c13b93b31095c665e92e}{MLME\_JOIN}};
+294             mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_a172a908e5643a97e1e911d97d8b2c363}{Join}} = *\mbox{\hyperlink{lora_8c_aaa245b1db1384dd6fc0257bc479e760c}{JoinParameters}};
+295 
+296             \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga097113f30feecc17c780940ff74af33e}{LoRaMacMlmeRequest}}( &mlmeReq );
+297             \textcolor{keywordflow}{break};
+298         \}
+299 
+300         \textcolor{keywordflow}{case} 7: \textcolor{comment}{// (x)}
+301         \{
+302           \textcolor{keywordflow}{if}( mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_abf449ca64f34dbb66a7c5bf70fd55753}{BufferSize}} == 3 )
+303           \{
+304               \mbox{\hyperlink{structs_mlme_req}{MlmeReq\_t}} mlmeReq;
+305               mlmeReq.\mbox{\hyperlink{structs_mlme_req_a83b9239b834fa1a95fba118c0a392a8b}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga320f4c08fe99747b08463689be624f7ba7633734852fb50e0f241ae8059b0aed1}{MLME\_TXCW}};
+306               mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_aa69808af2b2999fc4b8b409b593173ab}{TxCw}}.\mbox{\hyperlink{structs_mlme_req_tx_cw_ae1c58f120c7eef7bb71a5e3bfeaeb795}{Timeout}} = ( uint16\_t )( ( mcpsIndication->
+      \mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[1] << 8 ) | mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[2] );
+307               \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga097113f30feecc17c780940ff74af33e}{LoRaMacMlmeRequest}}( &mlmeReq );
+308           \}
+309           \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_abf449ca64f34dbb66a7c5bf70fd55753}{BufferSize}} == 7 )
+310           \{
+311               \mbox{\hyperlink{structs_mlme_req}{MlmeReq\_t}} mlmeReq;
+312               mlmeReq.\mbox{\hyperlink{structs_mlme_req_a83b9239b834fa1a95fba118c0a392a8b}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga320f4c08fe99747b08463689be624f7ba9a6b50c77269c8fbff9a5a6d33574503}{MLME\_TXCW\_1}};
+313               mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_aa69808af2b2999fc4b8b409b593173ab}{TxCw}}.\mbox{\hyperlink{structs_mlme_req_tx_cw_ae1c58f120c7eef7bb71a5e3bfeaeb795}{Timeout}} = ( uint16\_t )( ( mcpsIndication->
+      \mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[1] << 8 ) | mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[2] );
+314               mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_aa69808af2b2999fc4b8b409b593173ab}{TxCw}}.\mbox{\hyperlink{structs_mlme_req_tx_cw_ade3d190636488dad9a89b19446b7acf1}{Frequency}} = ( uint32\_t )( ( mcpsIndication->
+      \mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[3] << 16 ) | ( mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[4] << 8 ) | mcpsIndication->
+      \mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[5] ) * 100;
+315               mlmeReq.\mbox{\hyperlink{structs_mlme_req_ae8fae82634858192f75515c1b7daaadc}{Req}}.\mbox{\hyperlink{unions_mlme_req_1_1u_mlme_param_aa69808af2b2999fc4b8b409b593173ab}{TxCw}}.\mbox{\hyperlink{structs_mlme_req_tx_cw_ab44615b5dd16068c5a1bfb228b72c081}{Power}} = mcpsIndication->\mbox{\hyperlink{structs_mcps_indication_a095175dabcb7cd83bddf2bea50371121}{Buffer}}[6];
+316               \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga097113f30feecc17c780940ff74af33e}{LoRaMacMlmeRequest}}( &mlmeReq );
+317           \}
+318           \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} = 1;
+319           \textcolor{keywordflow}{break};
+320         \}
+321         \textcolor{keywordflow}{default}:                  
+322           \textcolor{keywordflow}{break};
+323         \}
+324     \}
+325   
+326     \textcolor{keywordflow}{if} ( \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_ae2e97f1ebd7c956e2c68d1209eabd4b1}{Running}} == \textcolor{keyword}{false} )
+327     \{
+328       \textcolor{comment}{/*cerification test stops*/}
+329       \mbox{\hyperlink{time_server_8c_a8ae899c4e8a9abf49d825d6959aa6bcb}{TimerStop}}( &\mbox{\hyperlink{lora-test_8c_a0c9bb346324d81b31bd460c40b151cdd}{CertifTxNextPacketTimer}} );
+330     \}
+331 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{lora-test_8c_a735361add977554215fd3e1e70b74760}\label{lora-test_8c_a735361add977554215fd3e1e70b74760}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!certif\+\_\+tx@{certif\+\_\+tx}}
+\index{certif\+\_\+tx@{certif\+\_\+tx}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{certif\+\_\+tx()}{certif\_tx()}}
+{\footnotesize\ttfamily static bool certif\+\_\+tx (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+lora-\/test.\+c 파일의 120 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+121 \{
+122   \mbox{\hyperlink{structs_mcps_req}{McpsReq\_t}} mcpsReq;
+123   \mbox{\hyperlink{structs_lo_ra_mac_tx_info}{LoRaMacTxInfo\_t}} txInfo;
+124   
+125   \textcolor{keywordflow}{if}( \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_adeaa3c79dc995e74f45bffef6c768edb}{LinkCheck}} == \textcolor{keyword}{true} )
+126   \{
+127     \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_adeaa3c79dc995e74f45bffef6c768edb}{LinkCheck}} = \textcolor{keyword}{false};
+128     \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}} = 3;
+129     \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}}[0] = 5;
+130     \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}}[1] = \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.
+      \mbox{\hyperlink{struct_compliance_test__s_a60502ba4c33cf0435f086a1a9f1b5116}{DemodMargin}};
+131     \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}}[2] = \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.
+      \mbox{\hyperlink{struct_compliance_test__s_ac2fbb4be8e3cc46943038a1796010d71}{NbGateways}};
+132     \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} = 1;
+133   \}
+134   \textcolor{keywordflow}{else}
+135   \{
+136     \textcolor{keywordflow}{switch}( \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} )
+137     \{
+138     \textcolor{keywordflow}{case} 4:
+139       \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a9ac4c1f881137da2601ed5d333bb5989}{State}} = 1;
+140       \textcolor{keywordflow}{break};
+141     \textcolor{keywordflow}{case} 1:
+142       \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}} = 2;
+143       \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}}[0] = \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.
+      \mbox{\hyperlink{struct_compliance_test__s_a76fae6cae1874b9700238a561ef49305}{DownLinkCounter}} >> 8;
+144       \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}}[1] = \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.
+      \mbox{\hyperlink{struct_compliance_test__s_a76fae6cae1874b9700238a561ef49305}{DownLinkCounter}};
+145       \textcolor{keywordflow}{break};
+146     \}
+147   \}
+148     
+149   \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8b0aeaf75f9404ce01da9b202252c231}{LoRaMacQueryTxPossible}}( \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.
+      \mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}}, &txInfo ) != \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga1d18f26b344040b3ec5c3db662919661a03db5fca052313edb3823c014b653a74}{LORAMAC\_STATUS\_OK}} )
+150   \{
+151       \textcolor{comment}{// Send empty frame in order to flush MAC commands}
+152       mcpsReq.\mbox{\hyperlink{structs_mcps_req_a29993a5d65888bf0f36ec406896bb540}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga7b080a046606f23fe030d0aa6d2a0e30a340afc087e96410da04d07fb0470f84a}{MCPS\_UNCONFIRMED}};
+153       mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a2e9f11cf5a8f2a797999359bedee31af}{fBuffer}} = NULL;
+154       mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a6b4fc83528d7391a193516d9f4ba985b}{fBufferSize}} = 0;
+155       mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_ae2f6080f3aa0e9485c55513ca56bb24d}{Datarate}} = \mbox{\hyperlink{group___r_e_g_i_o_n_ga6c4ef966b4f3d5eb7597b087f2b97095}{DR\_0}};
+156   \}
+157   \textcolor{keywordflow}{else}
+158   \{
+159       \textcolor{keywordflow}{if}( \mbox{\hyperlink{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}{IsTxConfirmed}} == \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20add3f5b126ef79b95cc42f0ea8baec262}{LORAWAN\_UNCONFIRMED\_MSG}} )
+160       \{
+161           mcpsReq.\mbox{\hyperlink{structs_mcps_req_a29993a5d65888bf0f36ec406896bb540}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga7b080a046606f23fe030d0aa6d2a0e30a340afc087e96410da04d07fb0470f84a}{MCPS\_UNCONFIRMED}};
+162           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a2973de9ac0ab5e876b80362bc4c6a88b}{fPort}} = \mbox{\hyperlink{lora-test_8h_a36fba7ec3073a500e5a2caaf0c361a99}{CERTIF\_PORT}};
+163           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a6b4fc83528d7391a193516d9f4ba985b}{fBufferSize}} = 
+      \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.\mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}};
+164           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_a2e9f11cf5a8f2a797999359bedee31af}{fBuffer}} = &(\mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.
+      \mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}});
+165           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_a490d6060b7d5f999539375d160304e9c}{Unconfirmed}}.\mbox{\hyperlink{structs_mcps_req_unconfirmed_ae2f6080f3aa0e9485c55513ca56bb24d}{Datarate}} = \mbox{\hyperlink{group___r_e_g_i_o_n_ga6c4ef966b4f3d5eb7597b087f2b97095}{DR\_0}};
+166       \}
+167       \textcolor{keywordflow}{else}
+168       \{
+169           mcpsReq.\mbox{\hyperlink{structs_mcps_req_a29993a5d65888bf0f36ec406896bb540}{Type}} = \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga7b080a046606f23fe030d0aa6d2a0e30a5eb18aef0f2abda0d56add7e868b8546}{MCPS\_CONFIRMED}};
+170           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_a2973de9ac0ab5e876b80362bc4c6a88b}{fPort}} = \mbox{\hyperlink{lora-test_8h_a36fba7ec3073a500e5a2caaf0c361a99}{CERTIF\_PORT}};
+171           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_a6b4fc83528d7391a193516d9f4ba985b}{fBufferSize}} = \mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.
+      \mbox{\hyperlink{struct_compliance_test__s_a0d291179d144227d52882be5e1d67832}{DataBufferSize}};
+172           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_a2e9f11cf5a8f2a797999359bedee31af}{fBuffer}} = &(\mbox{\hyperlink{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}{certifParam}}.
+      \mbox{\hyperlink{struct_compliance_test__s_a506f79cac5e441df28fe82e76dbbc932}{DataBuffer}});
+173           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_a9da59688c25c389a323e4d155fca3a47}{NbTrials}} = 8;
+174           mcpsReq.\mbox{\hyperlink{structs_mcps_req_ae97f4a2d64d47abdc1715093e4b27373}{Req}}.\mbox{\hyperlink{unions_mcps_req_1_1u_mcps_param_aa6b3511826dee52ed1b057c1762f4afa}{Confirmed}}.\mbox{\hyperlink{structs_mcps_req_confirmed_ae2f6080f3aa0e9485c55513ca56bb24d}{Datarate}} = \mbox{\hyperlink{group___r_e_g_i_o_n_ga6c4ef966b4f3d5eb7597b087f2b97095}{DR\_0}};
+175       \}
+176   \}
+177 
+178   \textcolor{comment}{/*cerification test on-going*/}
+179   \mbox{\hyperlink{time_server_8c_acd2c1f05aa1976f3bbedd389c8710a78}{TimerStart}}( &\mbox{\hyperlink{lora-test_8c_a0c9bb346324d81b31bd460c40b151cdd}{CertifTxNextPacketTimer}} );
+180     
+181   \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga79768f8a3c22aaff84d4dfcc77ad508c}{LoRaMacMcpsRequest}}( &mcpsReq ) == \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga1d18f26b344040b3ec5c3db662919661a03db5fca052313edb3823c014b653a74}{LORAMAC\_STATUS\_OK}} )
+182   \{
+183       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+184   \}
+185     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+186 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\mbox{\Hypertarget{lora-test_8c_a2e3edcd940d4df35743fe87783f89bbc}\label{lora-test_8c_a2e3edcd940d4df35743fe87783f89bbc}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!On\+Certif\+Tx\+Next\+Packet\+Timer\+Event@{On\+Certif\+Tx\+Next\+Packet\+Timer\+Event}}
+\index{On\+Certif\+Tx\+Next\+Packet\+Timer\+Event@{On\+Certif\+Tx\+Next\+Packet\+Timer\+Event}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{On\+Certif\+Tx\+Next\+Packet\+Timer\+Event()}{OnCertifTxNextPacketTimerEvent()}}
+{\footnotesize\ttfamily static void On\+Certif\+Tx\+Next\+Packet\+Timer\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Function executed on Tx\+Next\+Packet Timeout event 
+
+
+
+lora-\/test.\+c 파일의 336 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+337 \{
+338     \mbox{\hyperlink{lora-test_8c_a735361add977554215fd3e1e70b74760}{certif\_tx}}( );
+339 
+340 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{lora-test_8c_ac9f809d4636721961e690fd82f6bafc7}\label{lora-test_8c_ac9f809d4636721961e690fd82f6bafc7}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!Adr\+Enable\+Init@{Adr\+Enable\+Init}}
+\index{Adr\+Enable\+Init@{Adr\+Enable\+Init}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{Adr\+Enable\+Init}{AdrEnableInit}}
+{\footnotesize\ttfamily bool Adr\+Enable\+Init\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+lora-\/test.\+c 파일의 95 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}\label{lora-test_8c_afed64ac962fb28f92cbc92acb72b0b7a}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!certif\+Param@{certif\+Param}}
+\index{certif\+Param@{certif\+Param}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{certif\+Param}{certifParam}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lora-test_8c_a53a6b20274f31e34166b30bb372bb6aa}{Compliance\+Test\+\_\+t}} certif\+Param\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+lora-\/test.\+c 파일의 93 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{lora-test_8c_a0c9bb346324d81b31bd460c40b151cdd}\label{lora-test_8c_a0c9bb346324d81b31bd460c40b151cdd}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!Certif\+Tx\+Next\+Packet\+Timer@{Certif\+Tx\+Next\+Packet\+Timer}}
+\index{Certif\+Tx\+Next\+Packet\+Timer@{Certif\+Tx\+Next\+Packet\+Timer}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{Certif\+Tx\+Next\+Packet\+Timer}{CertifTxNextPacketTimer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{time_server_8h_ae706369dabb8aa6c6075f25119b052a5}{Timer\+Event\+\_\+t}} Certif\+Tx\+Next\+Packet\+Timer\hspace{0.3cm}{\ttfamily [static]}}
+
+Timer to handle the application data transmission duty cycle 
+
+lora-\/test.\+c 파일의 92 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}\label{lora-test_8c_aeeb75e9eb8da494fe7cbf16abf51427a}} 
+\index{lora-\/test.\+c@{lora-\/test.\+c}!Is\+Tx\+Confirmed@{Is\+Tx\+Confirmed}}
+\index{Is\+Tx\+Confirmed@{Is\+Tx\+Confirmed}!lora-\/test.\+c@{lora-\/test.\+c}}
+\subsubsection{\texorpdfstring{Is\+Tx\+Confirmed}{IsTxConfirmed}}
+{\footnotesize\ttfamily \mbox{\hyperlink{lora_8h_abb50b325793cb04a67bdef9c8c198c20}{Lora\+Confirm\+\_\+t}} Is\+Tx\+Confirmed\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+lora-\/test.\+c 파일의 94 번째 라인에서 정의되었습니다.
+

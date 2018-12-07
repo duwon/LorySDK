@@ -72,6 +72,10 @@ static GpioIrqHandler *GpioIrq[16] = { NULL };
 static uint8_t HW_GPIO_GetBitPos(uint16_t GPIO_Pin);
 
 /* Exported functions ---------------------------------------------------------*/
+/** @defgroup LorySDK_GPIO_Functions GPIO Functions
+  * @{
+  */ 
+
 /*!
  * @brief Initializes the given GPIO object
  *
@@ -191,5 +195,10 @@ static uint8_t HW_GPIO_GetBitPos(uint16_t GPIO_Pin)
   
   return PinPos;
 }
+
+/**
+  * @}
+  */ 
+
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

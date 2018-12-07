@@ -1,0 +1,40 @@
+digraph "OnButtonTimerEvent"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node318 [label="OnButtonTimerEvent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node318 -> Node319 [color="midnightblue",fontsize="10",style="solid"];
+  Node319 [label="TimerStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#acd2c1f05aa1976f3bbedd389c8710a78",tooltip="Starts and adds the timer object to the list of timer events "];
+  Node319 -> Node320 [color="midnightblue",fontsize="10",style="solid"];
+  Node320 [label="TimerExists",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#a496e7edd41e6441d879e27d0043444f5",tooltip="Check if the Object to be added is not already in the list "];
+  Node319 -> Node321 [color="midnightblue",fontsize="10",style="solid"];
+  Node321 [label="HW_RTC_SetTimerContext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gad0a54228cfe8473d90b901ebd76de1d5",tooltip="Set the RTC timer Reference "];
+  Node321 -> Node322 [color="midnightblue",fontsize="10",style="solid"];
+  Node322 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gaf81b8dc866a5c7b125355b55e3953387",tooltip="get current time from calendar in ticks "];
+  Node319 -> Node323 [color="midnightblue",fontsize="10",style="solid"];
+  Node323 [label="TimerInsertNewHeadTimer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#abeff03f3b0a3356be8c833bb93d24458",tooltip="Adds or replace the head timer of the list. "];
+  Node323 -> Node324 [color="midnightblue",fontsize="10",style="solid"];
+  Node324 [label="TimerSetTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#af90925c5246bd6bbc2863d08d4cca3a9",tooltip="Sets a timeout with the duration \"timestamp\" "];
+  Node324 -> Node325 [color="midnightblue",fontsize="10",style="solid"];
+  Node325 [label="HW_RTC_GetMinimumTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga254f9e5c17daff978fef15be01021c51",tooltip="Return the minimum timeout the RTC is able to handle "];
+  Node324 -> Node326 [color="midnightblue",fontsize="10",style="solid"];
+  Node326 [label="HW_RTC_GetTimerElapsedTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga7961116aa831950b62a413ecbbcfb02a",tooltip="Get the RTC timer elapsed time since the last Reference was set "];
+  Node326 -> Node322 [color="midnightblue",fontsize="10",style="solid"];
+  Node324 -> Node327 [color="midnightblue",fontsize="10",style="solid"];
+  Node327 [label="HW_RTC_SetAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga09cec56d54c13de658fafdd003390771",tooltip="Set the alarm "];
+  Node327 -> Node326 [color="midnightblue",fontsize="10",style="solid"];
+  Node327 -> Node328 [color="midnightblue",fontsize="10",style="solid"];
+  Node328 [label="LPM_SetStopMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ac8a0ff787d7d417b9e1f0697a1d5fd6d",tooltip="This API notifies the low power manager if the specified user allows the Off mode or not..."];
+  Node327 -> Node329 [color="midnightblue",fontsize="10",style="solid"];
+  Node329 [label="LPM_GetMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ae9107e412181f10977b724c346cebd45",tooltip="This API returns the Low Power Mode selected that will be applied when the system will enter low powe..."];
+  Node327 -> Node330 [color="midnightblue",fontsize="10",style="solid"];
+  Node330 [label="HW_RTC_StartWakeUpAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga60703fcfc4abd73a2efc980e8bb6ad27",tooltip="start wake up alarm "];
+  Node330 -> Node331 [color="midnightblue",fontsize="10",style="solid"];
+  Node331 [label="HW_RTC_StopAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga227be06e4dc1332d46ff12519db183b5",tooltip="Stop the Alarm "];
+  Node319 -> Node326 [color="midnightblue",fontsize="10",style="solid"];
+  Node319 -> Node332 [color="midnightblue",fontsize="10",style="solid"];
+  Node332 [label="TimerInsertTimer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#a0901cb54acad3ea19d052c0d00d547e3",tooltip="Adds a timer to the list. "];
+  Node318 -> Node333 [color="midnightblue",fontsize="10",style="solid"];
+  Node333 [label="BSP_PB_GetState",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___b_u_t_t_o_n___functions.html#ga8f0978b6cffda9c67266ddfdb3a0abf7",tooltip="Returns the selected Button state. "];
+}

@@ -1,0 +1,724 @@
+\hypertarget{struct_radio__s}{}\section{Radio\+\_\+s 구조체 참조}
+\label{struct_radio__s}\index{Radio\+\_\+s@{Radio\+\_\+s}}
+
+
+Radio driver definition  
+
+
+
+
+{\ttfamily \#include $<$radio.\+h$>$}
+
+
+
+Radio\+\_\+s에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a83cf0df693579d453bad2d5b7d5565ed}{Io\+Init}} )(void)
+\begin{DoxyCompactList}\small\item\em Initializes the io \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_ad96e15c082765bd1e893b4a5e6c39f8c}{Io\+De\+Init}} )(void)
+\begin{DoxyCompactList}\small\item\em Deinitializes the io \end{DoxyCompactList}\item 
+uint32\+\_\+t($\ast$ \mbox{\hyperlink{struct_radio__s_a976a50280beda4c9dd58b8354affb6b4}{Init}} )(\mbox{\hyperlink{struct_radio_events__t}{Radio\+Events\+\_\+t}} $\ast$events)
+\begin{DoxyCompactList}\small\item\em Initializes the radio \end{DoxyCompactList}\item 
+\mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}{Radio\+State\+\_\+t}}($\ast$ \mbox{\hyperlink{struct_radio__s_a8d469520cd62ec3004a50fcaa31d8c72}{Get\+Status}} )(void)
+\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a72519c61045a1c4dd51233ff0e374628}{Set\+Modem}} )(\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem)
+\begin{DoxyCompactList}\small\item\em Configures the radio with the given modem \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a691bfd16e5be0274cbfe0d7454749f12}{Set\+Channel}} )(uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Sets the channel frequency \end{DoxyCompactList}\item 
+bool($\ast$ \mbox{\hyperlink{struct_radio__s_a4c8c593c3c380636ec2ca7c452d59281}{Is\+Channel\+Free}} )(\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint32\+\_\+t freq, int16\+\_\+t rssi\+Thresh, uint32\+\_\+t max\+Carrier\+Sense\+Time)
+\begin{DoxyCompactList}\small\item\em Checks if the channel is free for the given time \end{DoxyCompactList}\item 
+uint32\+\_\+t($\ast$ \mbox{\hyperlink{struct_radio__s_a334bf05b91b26c5e6faf6bbf6737eab9}{Random}} )(void)
+\begin{DoxyCompactList}\small\item\em Generates a 32 bits random value based on the R\+S\+SI readings \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_ae4e2616b2534ce84bf4110dc6d31f82f}{Set\+Rx\+Config}} )(\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint32\+\_\+t bandwidth, uint32\+\_\+t datarate, uint8\+\_\+t coderate, uint32\+\_\+t bandwidth\+Afc, uint16\+\_\+t preamble\+Len, uint16\+\_\+t symb\+Timeout, bool fix\+Len, uint8\+\_\+t payload\+Len, bool crc\+On, bool freq\+Hop\+On, uint8\+\_\+t hop\+Period, bool iq\+Inverted, bool rx\+Continuous)
+\begin{DoxyCompactList}\small\item\em Sets the reception parameters \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a52823b01ffc876df28bf986abc706db7}{Set\+Tx\+Config}} )(\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, int8\+\_\+t power, uint32\+\_\+t fdev, uint32\+\_\+t bandwidth, uint32\+\_\+t datarate, uint8\+\_\+t coderate, uint16\+\_\+t preamble\+Len, bool fix\+Len, bool crc\+On, bool freq\+Hop\+On, uint8\+\_\+t hop\+Period, bool iq\+Inverted, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Sets the transmission parameters \end{DoxyCompactList}\item 
+bool($\ast$ \mbox{\hyperlink{struct_radio__s_a984f224d5ef26fb8a35f77d664f384df}{Check\+Rf\+Frequency}} )(uint32\+\_\+t frequency)
+\begin{DoxyCompactList}\small\item\em Checks if the given RF frequency is supported by the hardware \end{DoxyCompactList}\item 
+uint32\+\_\+t($\ast$ \mbox{\hyperlink{struct_radio__s_a030d3e891a70725d55e6e547e00f9278}{Time\+On\+Air}} )(\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint8\+\_\+t pkt\+Len)
+\begin{DoxyCompactList}\small\item\em Computes the packet time on air in ms for the given payload \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a84c3ad8e921fef613c838563197adc6c}{Send}} )(uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Sends the buffer of size. Prepares the packet to be sent and sets the radio in transmission \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a5792613816e79c465be4169c0bc020cb}{Sleep}} )(void)
+\begin{DoxyCompactList}\small\item\em Sets the radio in sleep mode \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_ad1d3253de93d8fd1eee59da2a1c794ec}{Standby}} )(void)
+\begin{DoxyCompactList}\small\item\em Sets the radio in standby mode \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a28354465b3df8db25bd766e54c96d837}{Rx}} )(uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Sets the radio in reception mode for the given time \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a6896222d46a4b809dde1e916ee6d5d6b}{Start\+Cad}} )(void)
+\begin{DoxyCompactList}\small\item\em Start a Channel Activity Detection \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a33dccb0bc830d9a68ec0c2e75b74e541}{Set\+Tx\+Continuous\+Wave}} )(uint32\+\_\+t freq, int8\+\_\+t power, uint16\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Sets the radio in continuous wave transmission mode \end{DoxyCompactList}\item 
+int16\+\_\+t($\ast$ \mbox{\hyperlink{struct_radio__s_ad973f70640c019eb62ac88f25fb9b75f}{Rssi}} )(\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem)
+\begin{DoxyCompactList}\small\item\em Reads the current R\+S\+SI value \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_aa10c31bc66c525698fd57d5dea5a888a}{Write}} )(uint16\+\_\+t addr, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Writes the radio register at the specified address \end{DoxyCompactList}\item 
+uint8\+\_\+t($\ast$ \mbox{\hyperlink{struct_radio__s_a37d2eb5c32dc2461524b7f611627cb37}{Read}} )(uint16\+\_\+t addr)
+\begin{DoxyCompactList}\small\item\em Reads the radio register at the specified address \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a781ffc8e38fd30e4148890c8062c70f5}{Write\+Buffer}} )(uint16\+\_\+t addr, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Writes multiple radio registers starting at address \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a95dd91574c0eeb271533bd62bf9a1d7e}{Read\+Buffer}} )(uint16\+\_\+t addr, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Reads multiple radio registers starting at address \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a19598b798e8b165378b397515c673d1c}{Set\+Max\+Payload\+Length}} )(\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint8\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em Sets the maximum payload length. \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_a2221e3fed07a50bc7437d1204a04a7ec}{Set\+Public\+Network}} )(bool enable)
+\begin{DoxyCompactList}\small\item\em Sets the network to public or private. Updates the sync byte. \end{DoxyCompactList}\item 
+uint32\+\_\+t($\ast$ \mbox{\hyperlink{struct_radio__s_aa6c05429af1a9f479d4720d95d0ee774}{Get\+Wakeup\+Time}} )(void)
+\begin{DoxyCompactList}\small\item\em Gets the time required for the board plus radio to get out of sleep.\mbox{[}ms\mbox{]} \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_ae5865dd1b58fc4f6d086f2de5c993c02}{Irq\+Process}} )(void)
+\begin{DoxyCompactList}\small\item\em Process radio irq \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_abb6a28b218d2e018c09f79449a5f4fd9}{Rx\+Boosted}} )(uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Sets the radio in reception mode with Max L\+NA gain for the given time \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_radio__s_aa0ec8ed3a51984978c447f45a7699356}{Set\+Rx\+Duty\+Cycle}} )(uint32\+\_\+t rx\+Time, uint32\+\_\+t sleep\+Time)
+\begin{DoxyCompactList}\small\item\em Sets the Rx duty cycle management parameters \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Radio driver definition 
+
+radio.\+h 파일의 99 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{struct_radio__s_a984f224d5ef26fb8a35f77d664f384df}\label{struct_radio__s_a984f224d5ef26fb8a35f77d664f384df}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Check\+Rf\+Frequency@{Check\+Rf\+Frequency}}
+\index{Check\+Rf\+Frequency@{Check\+Rf\+Frequency}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Check\+Rf\+Frequency}{CheckRfFrequency}}
+{\footnotesize\ttfamily bool( $\ast$ Check\+Rf\+Frequency) (uint32\+\_\+t frequency)}
+
+
+
+Checks if the given RF frequency is supported by the hardware 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & frequency RF frequency to be checked \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em is\+Supported} & \mbox{[}true\+: supported, false\+: unsupported\mbox{]} \\
+\hline
+\end{DoxyRetVals}
+
+
+radio.\+h 파일의 248 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a8d469520cd62ec3004a50fcaa31d8c72}\label{struct_radio__s_a8d469520cd62ec3004a50fcaa31d8c72}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Get\+Status@{Get\+Status}}
+\index{Get\+Status@{Get\+Status}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Get\+Status}{GetStatus}}
+{\footnotesize\ttfamily \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}{Radio\+State\+\_\+t}}( $\ast$ Get\+Status) (void)}
+
+Return current radio status
+
+
+\begin{DoxyParams}{매개변수}
+{\em status} & Radio status.\mbox{[}R\+F\+\_\+\+I\+D\+LE, R\+F\+\_\+\+R\+X\+\_\+\+R\+U\+N\+N\+I\+NG, R\+F\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 121 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_aa6c05429af1a9f479d4720d95d0ee774}\label{struct_radio__s_aa6c05429af1a9f479d4720d95d0ee774}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Get\+Wakeup\+Time@{Get\+Wakeup\+Time}}
+\index{Get\+Wakeup\+Time@{Get\+Wakeup\+Time}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Get\+Wakeup\+Time}{GetWakeupTime}}
+{\footnotesize\ttfamily uint32\+\_\+t( $\ast$ Get\+Wakeup\+Time) (void)}
+
+
+
+Gets the time required for the board plus radio to get out of sleep.\mbox{[}ms\mbox{]} 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em time} & Radio plus board wakeup time in ms. \\
+\hline
+\end{DoxyRetVals}
+
+
+radio.\+h 파일의 350 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a976a50280beda4c9dd58b8354affb6b4}\label{struct_radio__s_a976a50280beda4c9dd58b8354affb6b4}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Init@{Init}}
+\index{Init@{Init}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Init}{Init}}
+{\footnotesize\ttfamily uint32\+\_\+t( $\ast$ Init) (\mbox{\hyperlink{struct_radio_events__t}{Radio\+Events\+\_\+t}} $\ast$events)}
+
+
+
+Initializes the radio 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & events Structure containing the driver callback functions \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & returns radio\+Wake\+Up\+Time \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 115 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_ad96e15c082765bd1e893b4a5e6c39f8c}\label{struct_radio__s_ad96e15c082765bd1e893b4a5e6c39f8c}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Io\+De\+Init@{Io\+De\+Init}}
+\index{Io\+De\+Init@{Io\+De\+Init}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Io\+De\+Init}{IoDeInit}}
+{\footnotesize\ttfamily void( $\ast$ Io\+De\+Init) (void)}
+
+
+
+Deinitializes the io 
+
+
+
+radio.\+h 파일의 108 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a83cf0df693579d453bad2d5b7d5565ed}\label{struct_radio__s_a83cf0df693579d453bad2d5b7d5565ed}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Io\+Init@{Io\+Init}}
+\index{Io\+Init@{Io\+Init}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Io\+Init}{IoInit}}
+{\footnotesize\ttfamily void( $\ast$ Io\+Init) (void)}
+
+
+
+Initializes the io 
+
+
+
+radio.\+h 파일의 104 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_ae5865dd1b58fc4f6d086f2de5c993c02}\label{struct_radio__s_ae5865dd1b58fc4f6d086f2de5c993c02}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Irq\+Process@{Irq\+Process}}
+\index{Irq\+Process@{Irq\+Process}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Irq\+Process}{IrqProcess}}
+{\footnotesize\ttfamily void( $\ast$ Irq\+Process) (void)}
+
+
+
+Process radio irq 
+
+
+
+radio.\+h 파일의 354 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a4c8c593c3c380636ec2ca7c452d59281}\label{struct_radio__s_a4c8c593c3c380636ec2ca7c452d59281}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Is\+Channel\+Free@{Is\+Channel\+Free}}
+\index{Is\+Channel\+Free@{Is\+Channel\+Free}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Is\+Channel\+Free}{IsChannelFree}}
+{\footnotesize\ttfamily bool( $\ast$ Is\+Channel\+Free) (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint32\+\_\+t freq, int16\+\_\+t rssi\+Thresh, uint32\+\_\+t max\+Carrier\+Sense\+Time)}
+
+
+
+Checks if the channel is free for the given time 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & freq Channel RF frequency \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & rssi\+Thresh R\+S\+SI threshold \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & max\+Carrier\+Sense\+Time Max time while the R\+S\+SI is measured\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em is\+Free} & \mbox{[}true\+: Channel is free, false\+: Channel is not free\mbox{]} \\
+\hline
+\end{DoxyRetVals}
+
+
+radio.\+h 파일의 144 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a334bf05b91b26c5e6faf6bbf6737eab9}\label{struct_radio__s_a334bf05b91b26c5e6faf6bbf6737eab9}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Random@{Random}}
+\index{Random@{Random}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Random}{Random}}
+{\footnotesize\ttfamily uint32\+\_\+t( $\ast$ Random) (void)}
+
+
+
+Generates a 32 bits random value based on the R\+S\+SI readings 
+
+\begin{DoxyRemark}{Remarks}
+This function sets the radio in Lo\+Ra modem mode and disables all interrupts. After calling this function either Radio.\+Set\+Rx\+Config or Radio.\+Set\+Tx\+Config functions must be called.
+\end{DoxyRemark}
+
+\begin{DoxyRetVals}{반환값}
+{\em random\+Value} & 32 bits random value \\
+\hline
+\end{DoxyRetVals}
+
+
+radio.\+h 파일의 155 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a37d2eb5c32dc2461524b7f611627cb37}\label{struct_radio__s_a37d2eb5c32dc2461524b7f611627cb37}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Read@{Read}}
+\index{Read@{Read}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Read}{Read}}
+{\footnotesize\ttfamily uint8\+\_\+t( $\ast$ Read) (uint16\+\_\+t addr)}
+
+
+
+Reads the radio register at the specified address 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & addr Register address \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em data} & Register value \\
+\hline
+\end{DoxyRetVals}
+
+
+radio.\+h 파일의 313 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a95dd91574c0eeb271533bd62bf9a1d7e}\label{struct_radio__s_a95dd91574c0eeb271533bd62bf9a1d7e}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Read\+Buffer@{Read\+Buffer}}
+\index{Read\+Buffer@{Read\+Buffer}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Read\+Buffer}{ReadBuffer}}
+{\footnotesize\ttfamily void( $\ast$ Read\+Buffer) (uint16\+\_\+t addr, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)}
+
+
+
+Reads multiple radio registers starting at address 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & addr First Radio register address \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & buffer Buffer where to copy the registers data \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size Number of registers to be read \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 329 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_ad973f70640c019eb62ac88f25fb9b75f}\label{struct_radio__s_ad973f70640c019eb62ac88f25fb9b75f}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Rssi@{Rssi}}
+\index{Rssi@{Rssi}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Rssi}{Rssi}}
+{\footnotesize\ttfamily int16\+\_\+t( $\ast$ Rssi) (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem)}
+
+
+
+Reads the current R\+S\+SI value 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em rssi\+Value} & Current R\+S\+SI value in \mbox{[}d\+Bm\mbox{]} \\
+\hline
+\end{DoxyRetVals}
+
+
+radio.\+h 파일의 299 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a28354465b3df8db25bd766e54c96d837}\label{struct_radio__s_a28354465b3df8db25bd766e54c96d837}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Rx@{Rx}}
+\index{Rx@{Rx}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Rx}{Rx}}
+{\footnotesize\ttfamily void( $\ast$ Rx) (uint32\+\_\+t timeout)}
+
+
+
+Sets the radio in reception mode for the given time 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & timeout Reception timeout \mbox{[}ms\mbox{]} \mbox{[}0\+: continuous, others timeout\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 281 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_abb6a28b218d2e018c09f79449a5f4fd9}\label{struct_radio__s_abb6a28b218d2e018c09f79449a5f4fd9}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Rx\+Boosted@{Rx\+Boosted}}
+\index{Rx\+Boosted@{Rx\+Boosted}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Rx\+Boosted}{RxBoosted}}
+{\footnotesize\ttfamily void( $\ast$ Rx\+Boosted) (uint32\+\_\+t timeout)}
+
+
+
+Sets the radio in reception mode with Max L\+NA gain for the given time 
+
+\begin{DoxyRemark}{Remarks}
+Available on S\+X126x radios only.
+\end{DoxyRemark}
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & timeout Reception timeout \mbox{[}ms\mbox{]} \mbox{[}0\+: continuous, others timeout\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 366 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a84c3ad8e921fef613c838563197adc6c}\label{struct_radio__s_a84c3ad8e921fef613c838563197adc6c}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Send@{Send}}
+\index{Send@{Send}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Send}{Send}}
+{\footnotesize\ttfamily void( $\ast$ Send) (uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)}
+
+
+
+Sends the buffer of size. Prepares the packet to be sent and sets the radio in transmission 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer Buffer pointer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size Buffer size \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 267 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a691bfd16e5be0274cbfe0d7454749f12}\label{struct_radio__s_a691bfd16e5be0274cbfe0d7454749f12}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Set\+Channel@{Set\+Channel}}
+\index{Set\+Channel@{Set\+Channel}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Set\+Channel}{SetChannel}}
+{\footnotesize\ttfamily void( $\ast$ Set\+Channel) (uint32\+\_\+t freq)}
+
+
+
+Sets the channel frequency 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & freq Channel RF frequency \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 133 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a19598b798e8b165378b397515c673d1c}\label{struct_radio__s_a19598b798e8b165378b397515c673d1c}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Set\+Max\+Payload\+Length@{Set\+Max\+Payload\+Length}}
+\index{Set\+Max\+Payload\+Length@{Set\+Max\+Payload\+Length}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Set\+Max\+Payload\+Length}{SetMaxPayloadLength}}
+{\footnotesize\ttfamily void( $\ast$ Set\+Max\+Payload\+Length) (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint8\+\_\+t max)}
+
+
+
+Sets the maximum payload length. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & max Maximum payload length in bytes \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 336 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a72519c61045a1c4dd51233ff0e374628}\label{struct_radio__s_a72519c61045a1c4dd51233ff0e374628}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Set\+Modem@{Set\+Modem}}
+\index{Set\+Modem@{Set\+Modem}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Set\+Modem}{SetModem}}
+{\footnotesize\ttfamily void( $\ast$ Set\+Modem) (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem)}
+
+
+
+Configures the radio with the given modem 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 127 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a2221e3fed07a50bc7437d1204a04a7ec}\label{struct_radio__s_a2221e3fed07a50bc7437d1204a04a7ec}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Set\+Public\+Network@{Set\+Public\+Network}}
+\index{Set\+Public\+Network@{Set\+Public\+Network}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Set\+Public\+Network}{SetPublicNetwork}}
+{\footnotesize\ttfamily void( $\ast$ Set\+Public\+Network) (bool enable)}
+
+
+
+Sets the network to public or private. Updates the sync byte. 
+
+\begin{DoxyRemark}{Remarks}
+Applies to Lo\+Ra modem only
+\end{DoxyRemark}
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & enable if true, it enables a public network \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 344 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_ae4e2616b2534ce84bf4110dc6d31f82f}\label{struct_radio__s_ae4e2616b2534ce84bf4110dc6d31f82f}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Set\+Rx\+Config@{Set\+Rx\+Config}}
+\index{Set\+Rx\+Config@{Set\+Rx\+Config}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Set\+Rx\+Config}{SetRxConfig}}
+{\footnotesize\ttfamily void( $\ast$ Set\+Rx\+Config) (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint32\+\_\+t bandwidth, uint32\+\_\+t datarate, uint8\+\_\+t coderate, uint32\+\_\+t bandwidth\+Afc, uint16\+\_\+t preamble\+Len, uint16\+\_\+t symb\+Timeout, bool fix\+Len, uint8\+\_\+t payload\+Len, bool crc\+On, bool freq\+Hop\+On, uint8\+\_\+t hop\+Period, bool iq\+Inverted, bool rx\+Continuous)}
+
+
+
+Sets the reception parameters 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & bandwidth Sets the bandwidth F\+SK \+: $>$= 2600 and $<$= 250000 Hz Lo\+Ra\+: \mbox{[}0\+: 125 k\+Hz, 1\+: 250 k\+Hz, 2\+: 500 k\+Hz, 3\+: Reserved\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & datarate Sets the Datarate F\+SK \+: 600..300000 bits/s Lo\+Ra\+: \mbox{[}6\+: 64, 7\+: 128, 8\+: 256, 9\+: 512, 10\+: 1024, 11\+: 2048, 12\+: 4096 chips\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & coderate Sets the coding rate (Lo\+Ra only) F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}1\+: 4/5, 2\+: 4/6, 3\+: 4/7, 4\+: 4/8\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & bandwidth\+Afc Sets the A\+FC Bandwidth (F\+SK only) F\+SK \+: $>$= 2600 and $<$= 250000 Hz Lo\+Ra\+: N/A ( set to 0 ) \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & preamble\+Len Sets the Preamble length F\+SK \+: Number of bytes Lo\+Ra\+: Length in symbols (the hardware adds 4 more symbols) \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & symb\+Timeout Sets the Rx\+Single timeout value F\+SK \+: timeout in number of bytes Lo\+Ra\+: timeout in symbols \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & fix\+Len Fixed length packets \mbox{[}0\+: variable, 1\+: fixed\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & payload\+Len Sets payload length when fixed length is used \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & crc\+On Enables/\+Disables the C\+RC \mbox{[}0\+: O\+FF, 1\+: ON\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & freq\+Hop\+On Enables disables the intra-\/packet frequency hopping F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}0\+: O\+FF, 1\+: ON\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & hop\+Period Number of symbols between each hop F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: Number of symbols \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & iq\+Inverted Inverts IQ signals (Lo\+Ra only) F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}0\+: not inverted, 1\+: inverted\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & rx\+Continuous Sets the reception in continuous mode \mbox{[}false\+: single mode, true\+: continuous mode\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 195 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_aa0ec8ed3a51984978c447f45a7699356}\label{struct_radio__s_aa0ec8ed3a51984978c447f45a7699356}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Set\+Rx\+Duty\+Cycle@{Set\+Rx\+Duty\+Cycle}}
+\index{Set\+Rx\+Duty\+Cycle@{Set\+Rx\+Duty\+Cycle}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Set\+Rx\+Duty\+Cycle}{SetRxDutyCycle}}
+{\footnotesize\ttfamily void( $\ast$ Set\+Rx\+Duty\+Cycle) (uint32\+\_\+t rx\+Time, uint32\+\_\+t sleep\+Time)}
+
+
+
+Sets the Rx duty cycle management parameters 
+
+\begin{DoxyRemark}{Remarks}
+Available on S\+X126x radios only.
+\end{DoxyRemark}
+
+\begin{DoxyParams}[1]{매개변수}
+\mbox{\tt in}  & {\em rx\+Time} & Structure describing reception timeout value \\
+\hline
+\mbox{\tt in}  & {\em sleep\+Time} & Structure describing sleep timeout value \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 375 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a52823b01ffc876df28bf986abc706db7}\label{struct_radio__s_a52823b01ffc876df28bf986abc706db7}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Set\+Tx\+Config@{Set\+Tx\+Config}}
+\index{Set\+Tx\+Config@{Set\+Tx\+Config}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Set\+Tx\+Config}{SetTxConfig}}
+{\footnotesize\ttfamily void( $\ast$ Set\+Tx\+Config) (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, int8\+\_\+t power, uint32\+\_\+t fdev, uint32\+\_\+t bandwidth, uint32\+\_\+t datarate, uint8\+\_\+t coderate, uint16\+\_\+t preamble\+Len, bool fix\+Len, bool crc\+On, bool freq\+Hop\+On, uint8\+\_\+t hop\+Period, bool iq\+Inverted, uint32\+\_\+t timeout)}
+
+
+
+Sets the transmission parameters 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & power Sets the output power \mbox{[}d\+Bm\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & fdev Sets the frequency deviation (F\+SK only) F\+SK \+: \mbox{[}Hz\mbox{]} Lo\+Ra\+: 0 \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & bandwidth Sets the bandwidth (Lo\+Ra only) F\+SK \+: 0 Lo\+Ra\+: \mbox{[}0\+: 125 k\+Hz, 1\+: 250 k\+Hz, 2\+: 500 k\+Hz, 3\+: Reserved\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & datarate Sets the Datarate F\+SK \+: 600..300000 bits/s Lo\+Ra\+: \mbox{[}6\+: 64, 7\+: 128, 8\+: 256, 9\+: 512, 10\+: 1024, 11\+: 2048, 12\+: 4096 chips\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & coderate Sets the coding rate (Lo\+Ra only) F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}1\+: 4/5, 2\+: 4/6, 3\+: 4/7, 4\+: 4/8\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & preamble\+Len Sets the preamble length F\+SK \+: Number of bytes Lo\+Ra\+: Length in symbols (the hardware adds 4 more symbols) \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & fix\+Len Fixed length packets \mbox{[}0\+: variable, 1\+: fixed\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & crc\+On Enables disables the C\+RC \mbox{[}0\+: O\+FF, 1\+: ON\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & freq\+Hop\+On Enables disables the intra-\/packet frequency hopping F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}0\+: O\+FF, 1\+: ON\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & hop\+Period Number of symbols between each hop F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: Number of symbols \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & iq\+Inverted Inverts IQ signals (Lo\+Ra only) F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}0\+: not inverted, 1\+: inverted\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & timeout Transmission timeout \mbox{[}ms\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 237 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a33dccb0bc830d9a68ec0c2e75b74e541}\label{struct_radio__s_a33dccb0bc830d9a68ec0c2e75b74e541}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Set\+Tx\+Continuous\+Wave@{Set\+Tx\+Continuous\+Wave}}
+\index{Set\+Tx\+Continuous\+Wave@{Set\+Tx\+Continuous\+Wave}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Set\+Tx\+Continuous\+Wave}{SetTxContinuousWave}}
+{\footnotesize\ttfamily void( $\ast$ Set\+Tx\+Continuous\+Wave) (uint32\+\_\+t freq, int8\+\_\+t power, uint16\+\_\+t time)}
+
+
+
+Sets the radio in continuous wave transmission mode 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & freq Channel RF frequency \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & power Sets the output power \mbox{[}d\+Bm\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & time Transmission mode timeout \mbox{[}s\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 293 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a5792613816e79c465be4169c0bc020cb}\label{struct_radio__s_a5792613816e79c465be4169c0bc020cb}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Sleep@{Sleep}}
+\index{Sleep@{Sleep}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Sleep}{Sleep}}
+{\footnotesize\ttfamily void( $\ast$ Sleep) (void)}
+
+
+
+Sets the radio in sleep mode 
+
+
+
+radio.\+h 파일의 271 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_ad1d3253de93d8fd1eee59da2a1c794ec}\label{struct_radio__s_ad1d3253de93d8fd1eee59da2a1c794ec}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Standby@{Standby}}
+\index{Standby@{Standby}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Standby}{Standby}}
+{\footnotesize\ttfamily void( $\ast$ Standby) (void)}
+
+
+
+Sets the radio in standby mode 
+
+
+
+radio.\+h 파일의 275 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a6896222d46a4b809dde1e916ee6d5d6b}\label{struct_radio__s_a6896222d46a4b809dde1e916ee6d5d6b}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Start\+Cad@{Start\+Cad}}
+\index{Start\+Cad@{Start\+Cad}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Start\+Cad}{StartCad}}
+{\footnotesize\ttfamily void( $\ast$ Start\+Cad) (void)}
+
+
+
+Start a Channel Activity Detection 
+
+
+
+radio.\+h 파일의 285 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a030d3e891a70725d55e6e547e00f9278}\label{struct_radio__s_a030d3e891a70725d55e6e547e00f9278}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Time\+On\+Air@{Time\+On\+Air}}
+\index{Time\+On\+Air@{Time\+On\+Air}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Time\+On\+Air}{TimeOnAir}}
+{\footnotesize\ttfamily uint32\+\_\+t( $\ast$ Time\+On\+Air) (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint8\+\_\+t pkt\+Len)}
+
+
+
+Computes the packet time on air in ms for the given payload 
+
+Can only be called once Set\+Rx\+Config or Set\+Tx\+Config have been called
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & pkt\+Len Packet payload length\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em air\+Time} & Computed air\+Time (ms) for the given packet payload length \\
+\hline
+\end{DoxyRetVals}
+
+
+radio.\+h 파일의 259 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_aa10c31bc66c525698fd57d5dea5a888a}\label{struct_radio__s_aa10c31bc66c525698fd57d5dea5a888a}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Write@{Write}}
+\index{Write@{Write}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Write}{Write}}
+{\footnotesize\ttfamily void( $\ast$ Write) (uint16\+\_\+t addr, uint8\+\_\+t data)}
+
+
+
+Writes the radio register at the specified address 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & addr Register address \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & data New register value \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 306 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_radio__s_a781ffc8e38fd30e4148890c8062c70f5}\label{struct_radio__s_a781ffc8e38fd30e4148890c8062c70f5}} 
+\index{Radio\+\_\+s@{Radio\+\_\+s}!Write\+Buffer@{Write\+Buffer}}
+\index{Write\+Buffer@{Write\+Buffer}!Radio\+\_\+s@{Radio\+\_\+s}}
+\subsubsection{\texorpdfstring{Write\+Buffer}{WriteBuffer}}
+{\footnotesize\ttfamily void( $\ast$ Write\+Buffer) (uint16\+\_\+t addr, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)}
+
+
+
+Writes multiple radio registers starting at address 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & addr First Radio register address \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer Buffer containing the new register\textquotesingle{}s values \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size Number of registers to be written \\
+\hline
+\end{DoxyParams}
+
+
+radio.\+h 파일의 321 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Phy/\mbox{\hyperlink{radio_8h}{radio.\+h}}\end{DoxyCompactItemize}

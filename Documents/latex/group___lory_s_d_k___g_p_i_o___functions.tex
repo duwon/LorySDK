@@ -1,0 +1,265 @@
+\hypertarget{group___lory_s_d_k___g_p_i_o___functions}{}\section{G\+P\+IO Functions}
+\label{group___lory_s_d_k___g_p_i_o___functions}\index{G\+P\+I\+O Functions@{G\+P\+I\+O Functions}}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$port, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, G\+P\+I\+O\+\_\+\+Init\+Type\+Def $\ast$init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the given G\+P\+IO object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga1dcd4c3db791178fee479a8e54155573}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint32\+\_\+t prio, \mbox{\hyperlink{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}{Gpio\+Irq\+Handler}} $\ast$irq\+Handler)
+\begin{DoxyCompactList}\small\item\em Records the interrupt handler for the G\+P\+IO object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga9e4743d66ccc7e19b6cf051376ff5ce0}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler}} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Execute the interrupt from the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Writes the given value to the G\+P\+IO output \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga56b12661dd88a5efa2ea9ee2aed4f82f}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the current G\+P\+IO input value \end{DoxyCompactList}\item 
+static uint8\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga047b5023e2411e910f43fe0ae7df38a7}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Bit\+Pos}} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Get the position of the bit set in the G\+P\+I\+O\+\_\+\+Pin \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{group___lory_s_d_k___g_p_i_o___functions_ga047b5023e2411e910f43fe0ae7df38a7}\label{group___lory_s_d_k___g_p_i_o___functions_ga047b5023e2411e910f43fe0ae7df38a7}} 
+\index{G\+P\+I\+O Functions@{G\+P\+I\+O Functions}!H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Bit\+Pos@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Bit\+Pos}}
+\index{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Bit\+Pos@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Bit\+Pos}!G\+P\+I\+O Functions@{G\+P\+I\+O Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Bit\+Pos()}{HW\_GPIO\_GetBitPos()}}
+{\footnotesize\ttfamily static uint8\+\_\+t H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Bit\+Pos (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the position of the bit set in the G\+P\+I\+O\+\_\+\+Pin 
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). All port bits are not necessarily available on all G\+P\+I\+Os. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em the} & position of the bit \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+gpio.\+c 파일의 187 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+188 \{
+189   uint8\_t PinPos=0;
+190   
+191   \textcolor{keywordflow}{if} ( ( GPIO\_Pin & 0xFF00 ) != 0) \{ PinPos |= 0x8; \}
+192   \textcolor{keywordflow}{if} ( ( GPIO\_Pin & 0xF0F0 ) != 0) \{ PinPos |= 0x4; \}
+193   \textcolor{keywordflow}{if} ( ( GPIO\_Pin & 0xCCCC ) != 0) \{ PinPos |= 0x2; \}
+194   \textcolor{keywordflow}{if} ( ( GPIO\_Pin & 0xAAAA ) != 0) \{ PinPos |= 0x1; \}
+195   
+196   \textcolor{keywordflow}{return} PinPos;
+197 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 0
+\mbox{\Hypertarget{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}\label{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}} 
+\index{G\+P\+I\+O Functions@{G\+P\+I\+O Functions}!H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init}}
+\index{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init}!G\+P\+I\+O Functions@{G\+P\+I\+O Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init()}{HW\_GPIO\_Init()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{port,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{G\+P\+I\+O\+\_\+\+Init\+Type\+Def $\ast$}]{init\+Struct }\end{DoxyParamCaption})}
+
+
+
+Initializes the given G\+P\+IO object 
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+Ox} & where x can be (A..E and H) \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). All port bits are not necessarily available on all G\+P\+I\+Os. \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & init\+Struct G\+P\+I\+O\+\_\+\+Init\+Type\+Def intit structure \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+gpio.\+c 파일의 89 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+90 \{
+91 
+92   \mbox{\hyperlink{hw__msp_8h_a4241d15e667eaf97c70d7f31c46b4d2f}{RCC\_GPIO\_CLK\_ENABLE}}(  (uint32\_t) port);
+93 
+94   initStruct->Pin = GPIO\_Pin ;
+95 
+96   HAL\_GPIO\_Init( port, initStruct );
+97 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{group___lory_s_d_k___g_p_i_o___functions_ga9e4743d66ccc7e19b6cf051376ff5ce0}\label{group___lory_s_d_k___g_p_i_o___functions_ga9e4743d66ccc7e19b6cf051376ff5ce0}} 
+\index{G\+P\+I\+O Functions@{G\+P\+I\+O Functions}!H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler}}
+\index{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler}!G\+P\+I\+O Functions@{G\+P\+I\+O Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler()}{HW\_GPIO\_IrqHandler()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Execute the interrupt from the object 
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). All port bits are not necessarily available on all G\+P\+I\+Os. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+gpio.\+c 파일의 140 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+141 \{
+142   uint32\_t BitPos = \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga047b5023e2411e910f43fe0ae7df38a7}{HW\_GPIO\_GetBitPos}}( GPIO\_Pin );
+143   
+144   \textcolor{keywordflow}{if} ( \mbox{\hyperlink{hw__gpio_8c_a6831d3079d34f8de886dc6349615b17f}{GpioIrq}}[ BitPos ]  != NULL)
+145   \{
+146     \mbox{\hyperlink{hw__gpio_8c_a6831d3079d34f8de886dc6349615b17f}{GpioIrq}}[ BitPos ] ( );
+147   \}
+148 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{group___lory_s_d_k___g_p_i_o___functions_ga56b12661dd88a5efa2ea9ee2aed4f82f}\label{group___lory_s_d_k___g_p_i_o___functions_ga56b12661dd88a5efa2ea9ee2aed4f82f}} 
+\index{G\+P\+I\+O Functions@{G\+P\+I\+O Functions}!H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read}}
+\index{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read}!G\+P\+I\+O Functions@{G\+P\+I\+O Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read()}{HW\_GPIO\_Read()}}
+{\footnotesize\ttfamily uint32\+\_\+t H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Reads the current G\+P\+IO input value 
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+Ox} & where x can be (A..E and H) \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). All port bits are not necessarily available on all G\+P\+I\+Os. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em value} & Current G\+P\+IO input value \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+gpio.\+c 파일의 173 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+174 \{
+175   \textcolor{keywordflow}{return} HAL\_GPIO\_ReadPin( GPIOx, GPIO\_Pin);
+176 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___lory_s_d_k___g_p_i_o___functions_ga1dcd4c3db791178fee479a8e54155573}\label{group___lory_s_d_k___g_p_i_o___functions_ga1dcd4c3db791178fee479a8e54155573}} 
+\index{G\+P\+I\+O Functions@{G\+P\+I\+O Functions}!H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq}}
+\index{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq}!G\+P\+I\+O Functions@{G\+P\+I\+O Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq()}{HW\_GPIO\_SetIrq()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint32\+\_\+t}]{prio,  }\item[{\mbox{\hyperlink{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}{Gpio\+Irq\+Handler}} $\ast$}]{irq\+Handler }\end{DoxyParamCaption})}
+
+
+
+Records the interrupt handler for the G\+P\+IO object 
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+Ox} & where x can be (A..E and H) \\
+\hline
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). All port bits are not necessarily available on all G\+P\+I\+Os. \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & prio N\+V\+IC priority (0 is highest) \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & irq\+Handler points to the function to execute \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+gpio.\+c 파일의 110 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+111 \{
+112   IRQn\_Type IRQnb;
+113   
+114   uint32\_t BitPos = \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga047b5023e2411e910f43fe0ae7df38a7}{HW\_GPIO\_GetBitPos}}( GPIO\_Pin ) ;
+115   
+116   \textcolor{keywordflow}{if} ( irqHandler != NULL)
+117   \{
+118     \mbox{\hyperlink{hw__gpio_8c_a6831d3079d34f8de886dc6349615b17f}{GpioIrq}}[ BitPos ] = irqHandler;
+119 
+120     IRQnb = \mbox{\hyperlink{hw__gpio_8h_a76162872c9d09bf5bbdba7f98206af1a}{MSP\_GetIRQn}}( GPIO\_Pin );
+121 
+122     HAL\_NVIC\_SetPriority( IRQnb , prio, 0);
+123     
+124     HAL\_NVIC\_EnableIRQ( IRQnb );
+125   \}
+126   \textcolor{keywordflow}{else}
+127   \{
+128     \mbox{\hyperlink{hw__gpio_8c_a6831d3079d34f8de886dc6349615b17f}{GpioIrq}}[ BitPos ] = NULL;
+129   \}
+130 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}\label{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}} 
+\index{G\+P\+I\+O Functions@{G\+P\+I\+O Functions}!H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write}}
+\index{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write@{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write}!G\+P\+I\+O Functions@{G\+P\+I\+O Functions}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write()}{HW\_GPIO\_Write()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write (\begin{DoxyParamCaption}\item[{G\+P\+I\+O\+\_\+\+Type\+Def $\ast$}]{G\+P\+I\+Ox,  }\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin,  }\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Writes the given value to the G\+P\+IO output 
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+O\+\_\+\+Pin} & specifies the port bit to be written. This parameter can be one of G\+P\+I\+O\+\_\+\+P\+I\+N\+\_\+x where x can be (0..15). All port bits are not necessarily available on all G\+P\+I\+Os. \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & value New G\+P\+IO output value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw\+\_\+gpio.\+c 파일의 159 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+160 \{
+161   HAL\_GPIO\_WritePin( GPIOx, GPIO\_Pin , (GPIO\_PinState) value );
+162 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6

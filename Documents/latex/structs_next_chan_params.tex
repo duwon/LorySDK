@@ -1,0 +1,88 @@
+\hypertarget{structs_next_chan_params}{}\section{s\+Next\+Chan\+Params 구조체 참조}
+\label{structs_next_chan_params}\index{s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}}
+
+
+{\ttfamily \#include $<$Region.\+h$>$}
+
+
+
+s\+Next\+Chan\+Params에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{structs_next_chan_params_a3609676d2d3b7c00e25615324b35cb26}{Aggr\+Time\+Off}}
+\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{structs_next_chan_params_a381b728f60b185ecf3313e974c18768b}{Last\+Aggr\+Tx}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{structs_next_chan_params_ae2f6080f3aa0e9485c55513ca56bb24d}{Datarate}}
+\item 
+bool \mbox{\hyperlink{structs_next_chan_params_ac2f6caa0f3b02d2ac5056c3ee7c22652}{Joined}}
+\item 
+bool \mbox{\hyperlink{structs_next_chan_params_a4d755868e0e80089462286c3ba6a6f18}{Duty\+Cycle\+Enabled}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Parameter structure for the function Region\+Next\+Channel. 
+
+Region.\+h 파일의 1073 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_next_chan_params_a3609676d2d3b7c00e25615324b35cb26}\label{structs_next_chan_params_a3609676d2d3b7c00e25615324b35cb26}} 
+\index{s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}!Aggr\+Time\+Off@{Aggr\+Time\+Off}}
+\index{Aggr\+Time\+Off@{Aggr\+Time\+Off}!s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}}
+\subsubsection{\texorpdfstring{Aggr\+Time\+Off}{AggrTimeOff}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Aggr\+Time\+Off}
+
+Aggregated time-\/off time. 
+
+Region.\+h 파일의 1078 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_next_chan_params_ae2f6080f3aa0e9485c55513ca56bb24d}\label{structs_next_chan_params_ae2f6080f3aa0e9485c55513ca56bb24d}} 
+\index{s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}!Datarate@{Datarate}}
+\index{Datarate@{Datarate}!s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}}
+\subsubsection{\texorpdfstring{Datarate}{Datarate}}
+{\footnotesize\ttfamily int8\+\_\+t Datarate}
+
+Current datarate. 
+
+Region.\+h 파일의 1086 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_next_chan_params_a4d755868e0e80089462286c3ba6a6f18}\label{structs_next_chan_params_a4d755868e0e80089462286c3ba6a6f18}} 
+\index{s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}!Duty\+Cycle\+Enabled@{Duty\+Cycle\+Enabled}}
+\index{Duty\+Cycle\+Enabled@{Duty\+Cycle\+Enabled}!s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}}
+\subsubsection{\texorpdfstring{Duty\+Cycle\+Enabled}{DutyCycleEnabled}}
+{\footnotesize\ttfamily bool Duty\+Cycle\+Enabled}
+
+Set to true, if the duty cycle is enabled, otherwise false. 
+
+Region.\+h 파일의 1094 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_next_chan_params_ac2f6caa0f3b02d2ac5056c3ee7c22652}\label{structs_next_chan_params_ac2f6caa0f3b02d2ac5056c3ee7c22652}} 
+\index{s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}!Joined@{Joined}}
+\index{Joined@{Joined}!s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}}
+\subsubsection{\texorpdfstring{Joined}{Joined}}
+{\footnotesize\ttfamily bool Joined}
+
+Set to true, if the node has already joined a network, otherwise false. 
+
+Region.\+h 파일의 1090 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_next_chan_params_a381b728f60b185ecf3313e974c18768b}\label{structs_next_chan_params_a381b728f60b185ecf3313e974c18768b}} 
+\index{s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}!Last\+Aggr\+Tx@{Last\+Aggr\+Tx}}
+\index{Last\+Aggr\+Tx@{Last\+Aggr\+Tx}!s\+Next\+Chan\+Params@{s\+Next\+Chan\+Params}}
+\subsubsection{\texorpdfstring{Last\+Aggr\+Tx}{LastAggrTx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Last\+Aggr\+Tx}
+
+Time of the last aggregated TX. 
+
+Region.\+h 파일의 1082 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/region/\mbox{\hyperlink{_region_8h}{Region.\+h}}\end{DoxyCompactItemize}

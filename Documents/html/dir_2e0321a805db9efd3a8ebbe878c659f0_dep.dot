@@ -1,0 +1,11 @@
+digraph "Projects/DockingStation/inc" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_2d5c189dde566096c30f6275caec84be {
+    graph [ bgcolor="#ddddee", pencolor="black", label="DockingStation" fontname="Helvetica", fontsize="10", URL="dir_2d5c189dde566096c30f6275caec84be.html"]
+  dir_2e0321a805db9efd3a8ebbe878c659f0 [shape=box, label="inc", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_2e0321a805db9efd3a8ebbe878c659f0.html"];
+  }
+  dir_878635d2ccdb6aa6ab3ba685c8bd0903 [shape=box label="LoraLib" fillcolor="white" style="filled" color="red" URL="dir_878635d2ccdb6aa6ab3ba685c8bd0903.html"];
+  dir_2e0321a805db9efd3a8ebbe878c659f0->dir_878635d2ccdb6aa6ab3ba685c8bd0903 [headlabel="3", labeldistance=1.5 headhref="dir_000015_000003.html"];
+}

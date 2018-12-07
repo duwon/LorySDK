@@ -1,0 +1,136 @@
+\hypertarget{structs_mcps_confirm}{}\section{s\+Mcps\+Confirm 구조체 참조}
+\label{structs_mcps_confirm}\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+
+
+{\ttfamily \#include $<$Lo\+Ra\+Mac.\+h$>$}
+
+
+
+s\+Mcps\+Confirm에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga670d0c87a52aeb13391f303a4cf94f00}{Mcps\+\_\+t}} \mbox{\hyperlink{structs_mcps_confirm_ab5da7b8ef4530ebd1fb2005f950a2b0b}{Mcps\+Request}}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_gac6ffc346a4c767f7a743c87a686c51b4}{Lo\+Ra\+Mac\+Event\+Info\+Status\+\_\+t}} \mbox{\hyperlink{structs_mcps_confirm_ab360e499d5a7a9e0aa7b4df7239633b5}{Status}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_confirm_a780280c12645b2666878162aab5d8cad}{Datarate}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{structs_mcps_confirm_a037b4f849fa8ed4aa1d3c58aef2b28ec}{Tx\+Power}}
+\item 
+bool \mbox{\hyperlink{structs_mcps_confirm_ac59e1bd1c9450c7d136c7f475be89ded}{Ack\+Received}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structs_mcps_confirm_a87c781229ed6a79169564bbed6581f29}{Nb\+Retries}}
+\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{structs_mcps_confirm_aa17a8607485db100d315e74853dd217e}{Tx\+Time\+On\+Air}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structs_mcps_confirm_ae8c54ca277e4d7295dfd498889e42fdd}{Up\+Link\+Counter}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structs_mcps_confirm_ae82bf9242a014164f9f6907f29782c44}{Channel}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra\+M\+AC M\+C\+P\+S-\/\+Confirm 
+
+Lo\+Ra\+Mac.\+h 파일의 827 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_mcps_confirm_ac59e1bd1c9450c7d136c7f475be89ded}\label{structs_mcps_confirm_ac59e1bd1c9450c7d136c7f475be89ded}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Ack\+Received@{Ack\+Received}}
+\index{Ack\+Received@{Ack\+Received}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Ack\+Received}{AckReceived}}
+{\footnotesize\ttfamily bool Ack\+Received}
+
+Set if an acknowledgement was received 
+
+Lo\+Ra\+Mac.\+h 파일의 848 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_confirm_ae82bf9242a014164f9f6907f29782c44}\label{structs_mcps_confirm_ae82bf9242a014164f9f6907f29782c44}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Channel@{Channel}}
+\index{Channel@{Channel}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Channel}{Channel}}
+{\footnotesize\ttfamily uint32\+\_\+t Channel}
+
+The uplink channel related to the frame 
+
+Lo\+Ra\+Mac.\+h 파일의 864 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_confirm_a780280c12645b2666878162aab5d8cad}\label{structs_mcps_confirm_a780280c12645b2666878162aab5d8cad}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Datarate@{Datarate}}
+\index{Datarate@{Datarate}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Datarate}{Datarate}}
+{\footnotesize\ttfamily uint8\+\_\+t Datarate}
+
+Uplink datarate 
+
+Lo\+Ra\+Mac.\+h 파일의 840 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_confirm_ab5da7b8ef4530ebd1fb2005f950a2b0b}\label{structs_mcps_confirm_ab5da7b8ef4530ebd1fb2005f950a2b0b}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Mcps\+Request@{Mcps\+Request}}
+\index{Mcps\+Request@{Mcps\+Request}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Mcps\+Request}{McpsRequest}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga670d0c87a52aeb13391f303a4cf94f00}{Mcps\+\_\+t}} Mcps\+Request}
+
+Holds the previously performed M\+C\+P\+S-\/\+Request 
+
+Lo\+Ra\+Mac.\+h 파일의 832 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_confirm_a87c781229ed6a79169564bbed6581f29}\label{structs_mcps_confirm_a87c781229ed6a79169564bbed6581f29}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Nb\+Retries@{Nb\+Retries}}
+\index{Nb\+Retries@{Nb\+Retries}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Nb\+Retries}{NbRetries}}
+{\footnotesize\ttfamily uint8\+\_\+t Nb\+Retries}
+
+Provides the number of retransmissions 
+
+Lo\+Ra\+Mac.\+h 파일의 852 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_confirm_ab360e499d5a7a9e0aa7b4df7239633b5}\label{structs_mcps_confirm_ab360e499d5a7a9e0aa7b4df7239633b5}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Status@{Status}}
+\index{Status@{Status}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_gac6ffc346a4c767f7a743c87a686c51b4}{Lo\+Ra\+Mac\+Event\+Info\+Status\+\_\+t}} Status}
+
+Status of the operation 
+
+Lo\+Ra\+Mac.\+h 파일의 836 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_confirm_a037b4f849fa8ed4aa1d3c58aef2b28ec}\label{structs_mcps_confirm_a037b4f849fa8ed4aa1d3c58aef2b28ec}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Tx\+Power@{Tx\+Power}}
+\index{Tx\+Power@{Tx\+Power}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Tx\+Power}{TxPower}}
+{\footnotesize\ttfamily int8\+\_\+t Tx\+Power}
+
+Transmission power 
+
+Lo\+Ra\+Mac.\+h 파일의 844 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_confirm_aa17a8607485db100d315e74853dd217e}\label{structs_mcps_confirm_aa17a8607485db100d315e74853dd217e}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Tx\+Time\+On\+Air@{Tx\+Time\+On\+Air}}
+\index{Tx\+Time\+On\+Air@{Tx\+Time\+On\+Air}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Tx\+Time\+On\+Air}{TxTimeOnAir}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Tx\+Time\+On\+Air}
+
+The transmission time on air of the frame 
+
+Lo\+Ra\+Mac.\+h 파일의 856 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_mcps_confirm_ae8c54ca277e4d7295dfd498889e42fdd}\label{structs_mcps_confirm_ae8c54ca277e4d7295dfd498889e42fdd}} 
+\index{s\+Mcps\+Confirm@{s\+Mcps\+Confirm}!Up\+Link\+Counter@{Up\+Link\+Counter}}
+\index{Up\+Link\+Counter@{Up\+Link\+Counter}!s\+Mcps\+Confirm@{s\+Mcps\+Confirm}}
+\subsubsection{\texorpdfstring{Up\+Link\+Counter}{UpLinkCounter}}
+{\footnotesize\ttfamily uint32\+\_\+t Up\+Link\+Counter}
+
+The uplink counter value related to the frame 
+
+Lo\+Ra\+Mac.\+h 파일의 860 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/\mbox{\hyperlink{_lo_ra_mac_8h}{Lo\+Ra\+Mac.\+h}}\end{DoxyCompactItemize}

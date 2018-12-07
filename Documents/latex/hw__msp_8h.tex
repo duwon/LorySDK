@@ -1,0 +1,431 @@
+\hypertarget{hw__msp_8h}{}\section{Projects/\+Docking\+Station/inc/hw\+\_\+msp.h 파일 참조}
+\label{hw__msp_8h}\index{Projects/\+Docking\+Station/inc/hw\+\_\+msp.\+h@{Projects/\+Docking\+Station/inc/hw\+\_\+msp.\+h}}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{hw__msp_8h_a4241d15e667eaf97c70d7f31c46b4d2f}{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}}(\+\_\+\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em G\+P\+I\+Os Macro \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{hw__msp_8h_a423f2a6deba76dabb87285c2a3ea855b}{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE}}(\+\_\+\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{hw__msp_8h_a40660973b9d57d78bc7e6e56a7a1bf42}{H\+W\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the boards peripherals. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__msp_8h_a0f154385db13f7a12ea2c5e263cdda44}{H\+W\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De-\/initializes the target board peripherals to decrease power consumption. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{hw__msp_8h_a3402576dea29f5b4f23d8ffed55e06c2}{H\+W\+\_\+\+Get\+Random\+Seed}} (void)
+\begin{DoxyCompactList}\small\item\em This function return a random seed \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__msp_8h_a5256ed7f349b8c486e4d493481605dc6}{H\+W\+\_\+\+Get\+Unique\+Id}} (uint8\+\_\+t $\ast$id)
+\begin{DoxyCompactList}\small\item\em Gets the board 64 bits unique ID \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__msp_8h_ae0b472e1189be5e329038fea642cb0ef}{H\+W\+\_\+\+Enter\+Stop\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Initializes the HW and enters stope mode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__msp_8h_a1e33960ab1058402bd12029f20e51a73}{H\+W\+\_\+\+Exit\+Stop\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Exits stop mode and Initializes the HW \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__msp_8h_a1324dee0097fb6ff4079ec2279bd6e71}{H\+W\+\_\+\+Enter\+Sleep\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em Enters Low Power Sleep Mode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__msp_8h_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration The system Clock is configured as follow \+: System Clock source = P\+LL (H\+SI) S\+Y\+S\+C\+L\+K(\+Hz) = 32000000 H\+C\+L\+K(\+Hz) = 32000000 A\+HB Prescaler = 1 A\+P\+B1 Prescaler = 1 A\+P\+B2 Prescaler = 1 H\+SI Frequency(\+Hz) = 16000000 P\+L\+L\+M\+UL = 6 P\+L\+L\+D\+IV = 3 Flash Latency(\+W\+S) = 1 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{hw__msp_8h_a80fa39e9fbfefb112ec977b339a66ab8}{H\+W\+\_\+\+Gpio\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Configure all G\+P\+IO\textquotesingle{}s to Analog input to reduce the power consumption \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{hw__msp_8h_a423f2a6deba76dabb87285c2a3ea855b}\label{hw__msp_8h_a423f2a6deba76dabb87285c2a3ea855b}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE@{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE}}
+\index{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE@{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE}{RCC\_GPIO\_CLK\_DISABLE}}
+{\footnotesize\ttfamily \#define R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+D\+I\+S\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries 값\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                    \(\backslash\)
+    switch( \_\_GPIO\_PORT\_\_)                                \(\backslash\)
+    \{                                                     \(\backslash\)
+      case GPIOA\_BASE: \_\_HAL\_RCC\_GPIOA\_CLK\_DISABLE(); \textcolor{keywordflow}{break};    \(\backslash\)
+      case GPIOB\_BASE: \_\_HAL\_RCC\_GPIOB\_CLK\_DISABLE(); \textcolor{keywordflow}{break};    \(\backslash\)
+      case GPIOC\_BASE: \_\_HAL\_RCC\_GPIOC\_CLK\_DISABLE(); \textcolor{keywordflow}{break};    \(\backslash\)
+      case GPIOD\_BASE: \_\_HAL\_RCC\_GPIOD\_CLK\_DISABLE(); \textcolor{keywordflow}{break};    \(\backslash\)
+      case GPIOH\_BASE: \textcolor{keywordflow}{default}:  \_\_HAL\_RCC\_GPIOH\_CLK\_ENABLE(); \(\backslash\)
+    \}                                                    \(\backslash\)
+  \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+
+
+hw\+\_\+msp.\+h 파일의 94 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{hw__msp_8h_a4241d15e667eaf97c70d7f31c46b4d2f}\label{hw__msp_8h_a4241d15e667eaf97c70d7f31c46b4d2f}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}}
+\index{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE@{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE}{RCC\_GPIO\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define R\+C\+C\+\_\+\+G\+P\+I\+O\+\_\+\+C\+L\+K\+\_\+\+E\+N\+A\+B\+LE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+G\+P\+I\+O\+\_\+\+P\+O\+R\+T\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries 값\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do} \{                                                    \(\backslash\)
+    switch( \_\_GPIO\_PORT\_\_)                                \(\backslash\)
+    \{                                                     \(\backslash\)
+      case GPIOA\_BASE: \_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE(); \textcolor{keywordflow}{break};    \(\backslash\)
+      case GPIOB\_BASE: \_\_HAL\_RCC\_GPIOB\_CLK\_ENABLE(); \textcolor{keywordflow}{break};    \(\backslash\)
+      case GPIOC\_BASE: \_\_HAL\_RCC\_GPIOC\_CLK\_ENABLE(); \textcolor{keywordflow}{break};    \(\backslash\)
+      case GPIOD\_BASE: \_\_HAL\_RCC\_GPIOD\_CLK\_ENABLE(); \textcolor{keywordflow}{break};    \(\backslash\)
+      case GPIOH\_BASE: \textcolor{keywordflow}{default}:  \_\_HAL\_RCC\_GPIOH\_CLK\_ENABLE(); \(\backslash\)
+    \}                                                    \(\backslash\)
+  \} \textcolor{keywordflow}{while}(0)
+\end{DoxyCode}
+
+
+G\+P\+I\+Os Macro 
+
+
+
+hw\+\_\+msp.\+h 파일의 82 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{hw__msp_8h_a0f154385db13f7a12ea2c5e263cdda44}\label{hw__msp_8h_a0f154385db13f7a12ea2c5e263cdda44}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!H\+W\+\_\+\+De\+Init@{H\+W\+\_\+\+De\+Init}}
+\index{H\+W\+\_\+\+De\+Init@{H\+W\+\_\+\+De\+Init}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+De\+Init()}{HW\_DeInit()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+De-\/initializes the target board peripherals to decrease power consumption. 
+
+De-\/initializes the target board peripherals to decrease power consumption.
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw.\+c 파일의 111 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+112 \{
+113  
+114   \mbox{\hyperlink{vcom_8h_ab7d710d9088dc080df3013b4d118e410}{vcom\_DeInit}}( );
+115    
+116   \mbox{\hyperlink{hw_8c_a42f749e5ad22fb12abd313992aa25b5d}{McuInitialized}} = \textcolor{keyword}{false};
+117 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{hw__msp_8h_a1324dee0097fb6ff4079ec2279bd6e71}\label{hw__msp_8h_a1324dee0097fb6ff4079ec2279bd6e71}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!H\+W\+\_\+\+Enter\+Sleep\+Mode@{H\+W\+\_\+\+Enter\+Sleep\+Mode}}
+\index{H\+W\+\_\+\+Enter\+Sleep\+Mode@{H\+W\+\_\+\+Enter\+Sleep\+Mode}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Enter\+Sleep\+Mode()}{HW\_EnterSleepMode()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+Enter\+Sleep\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enters Low Power Sleep Mode 
+
+\begin{DoxyNote}{주의}
+A\+RM exists the function when waking up 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em none} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{hw__msp_8h_ae0b472e1189be5e329038fea642cb0ef}\label{hw__msp_8h_ae0b472e1189be5e329038fea642cb0ef}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!H\+W\+\_\+\+Enter\+Stop\+Mode@{H\+W\+\_\+\+Enter\+Stop\+Mode}}
+\index{H\+W\+\_\+\+Enter\+Stop\+Mode@{H\+W\+\_\+\+Enter\+Stop\+Mode}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Enter\+Stop\+Mode()}{HW\_EnterStopMode()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+Enter\+Stop\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the HW and enters stope mode 
+
+\mbox{\Hypertarget{hw__msp_8h_a1e33960ab1058402bd12029f20e51a73}\label{hw__msp_8h_a1e33960ab1058402bd12029f20e51a73}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!H\+W\+\_\+\+Exit\+Stop\+Mode@{H\+W\+\_\+\+Exit\+Stop\+Mode}}
+\index{H\+W\+\_\+\+Exit\+Stop\+Mode@{H\+W\+\_\+\+Exit\+Stop\+Mode}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Exit\+Stop\+Mode()}{HW\_ExitStopMode()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+Exit\+Stop\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Exits stop mode and Initializes the HW 
+
+\mbox{\Hypertarget{hw__msp_8h_a3402576dea29f5b4f23d8ffed55e06c2}\label{hw__msp_8h_a3402576dea29f5b4f23d8ffed55e06c2}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!H\+W\+\_\+\+Get\+Random\+Seed@{H\+W\+\_\+\+Get\+Random\+Seed}}
+\index{H\+W\+\_\+\+Get\+Random\+Seed@{H\+W\+\_\+\+Get\+Random\+Seed}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Get\+Random\+Seed()}{HW\_GetRandomSeed()}}
+{\footnotesize\ttfamily uint32\+\_\+t H\+W\+\_\+\+Get\+Random\+Seed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function return a random seed 
+
+Returns a pseudo random seed generated using the M\+CU Unique ID
+
+
+\begin{DoxyRetVals}{반환값}
+{\em seed} & Generated pseudo random seed\\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyNote}{주의}
+based on the device unique ID 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em see} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw.\+c 파일의 235 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+236 \{
+237   \textcolor{keywordflow}{return} ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_ae9e0e1185f86f6ae7aa50b109fc423cc}{ID1}} ) ^ ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_abbb71547df5cc7788a2312ede1c4f9f9}{ID2}} ) ^ ( *( uint32\_t* )
+      \mbox{\hyperlink{hw_8c_a74e834603283d49c89509493d77dc85d}{ID3}} ) );
+238 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{hw__msp_8h_a5256ed7f349b8c486e4d493481605dc6}\label{hw__msp_8h_a5256ed7f349b8c486e4d493481605dc6}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!H\+W\+\_\+\+Get\+Unique\+Id@{H\+W\+\_\+\+Get\+Unique\+Id}}
+\index{H\+W\+\_\+\+Get\+Unique\+Id@{H\+W\+\_\+\+Get\+Unique\+Id}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Get\+Unique\+Id()}{HW\_GetUniqueId()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+Get\+Unique\+Id (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{id }\end{DoxyParamCaption})}
+
+
+
+Gets the board 64 bits unique ID 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & id Pointer to an array that will contain the Unique ID\\
+\hline
+\end{DoxyParams}
+Gets the board 64 bits unique ID
+
+
+\begin{DoxyParams}{매개변수}
+{\em unique} & ID \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em none} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw.\+c 파일의 245 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+246 \{
+247     \textcolor{keywordtype}{id}[7] = ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_ae9e0e1185f86f6ae7aa50b109fc423cc}{ID1}} )+ ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_a74e834603283d49c89509493d77dc85d}{ID3}} ) ) >> 24;
+248     \textcolor{keywordtype}{id}[6] = ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_ae9e0e1185f86f6ae7aa50b109fc423cc}{ID1}} )+ ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_a74e834603283d49c89509493d77dc85d}{ID3}} ) ) >> 16;
+249     \textcolor{keywordtype}{id}[5] = ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_ae9e0e1185f86f6ae7aa50b109fc423cc}{ID1}} )+ ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_a74e834603283d49c89509493d77dc85d}{ID3}} ) ) >> 8;
+250     \textcolor{keywordtype}{id}[4] = ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_ae9e0e1185f86f6ae7aa50b109fc423cc}{ID1}} )+ ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_a74e834603283d49c89509493d77dc85d}{ID3}} ) );
+251     \textcolor{keywordtype}{id}[3] = ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_abbb71547df5cc7788a2312ede1c4f9f9}{ID2}} ) ) >> 24;
+252     \textcolor{keywordtype}{id}[2] = ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_abbb71547df5cc7788a2312ede1c4f9f9}{ID2}} ) ) >> 16;
+253     \textcolor{keywordtype}{id}[1] = ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_abbb71547df5cc7788a2312ede1c4f9f9}{ID2}} ) ) >> 8;
+254     \textcolor{keywordtype}{id}[0] = ( ( *( uint32\_t* )\mbox{\hyperlink{hw_8c_abbb71547df5cc7788a2312ede1c4f9f9}{ID2}} ) );
+255 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{hw__msp_8h_a80fa39e9fbfefb112ec977b339a66ab8}\label{hw__msp_8h_a80fa39e9fbfefb112ec977b339a66ab8}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!H\+W\+\_\+\+Gpio\+Init@{H\+W\+\_\+\+Gpio\+Init}}
+\index{H\+W\+\_\+\+Gpio\+Init@{H\+W\+\_\+\+Gpio\+Init}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Gpio\+Init()}{HW\_GpioInit()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+Gpio\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Configure all G\+P\+IO\textquotesingle{}s to Analog input to reduce the power consumption 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw.\+c 파일의 142 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+143 \{
+144   GPIO\_InitTypeDef GPIO\_InitStruct=\{0\};
+145 
+146   \textcolor{comment}{/* Configure all GPIO as analog to reduce current consumption on non used IOs */}
+147   \textcolor{comment}{/* Enable GPIOs clock */}
+148   \_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE();
+149   \_\_HAL\_RCC\_GPIOB\_CLK\_ENABLE();
+150   \_\_HAL\_RCC\_GPIOC\_CLK\_ENABLE();
+151   \_\_HAL\_RCC\_GPIOD\_CLK\_ENABLE();
+152   \_\_HAL\_RCC\_GPIOH\_CLK\_ENABLE();
+153 
+154   GPIO\_InitStruct.Mode = GPIO\_MODE\_ANALOG;
+155   GPIO\_InitStruct.Pull = GPIO\_NOPULL;
+156   \textcolor{comment}{/* All GPIOs except debug pins (SWCLK and SWD) */}
+157   GPIO\_InitStruct.Pin = GPIO\_PIN\_All & (~( GPIO\_PIN\_13 | GPIO\_PIN\_14) );
+158   HAL\_GPIO\_Init(GPIOA, &GPIO\_InitStruct);
+159   
+160   \textcolor{comment}{/* All GPIOs */}
+161   GPIO\_InitStruct.Pin = GPIO\_PIN\_All;
+162   HAL\_GPIO\_Init(GPIOB, &GPIO\_InitStruct);
+163   HAL\_GPIO\_Init(GPIOC, &GPIO\_InitStruct);
+164   HAL\_GPIO\_Init(GPIOD, &GPIO\_InitStruct);
+165   HAL\_GPIO\_Init(GPIOH, &GPIO\_InitStruct);
+166 
+167   \textcolor{comment}{/* Disable GPIOs clock */}
+168   \_\_HAL\_RCC\_GPIOA\_CLK\_DISABLE();
+169   \_\_HAL\_RCC\_GPIOB\_CLK\_DISABLE();
+170   \_\_HAL\_RCC\_GPIOC\_CLK\_DISABLE();
+171   \_\_HAL\_RCC\_GPIOD\_CLK\_DISABLE();
+172   \_\_HAL\_RCC\_GPIOH\_CLK\_DISABLE();
+173 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{hw__msp_8h_a40660973b9d57d78bc7e6e56a7a1bf42}\label{hw__msp_8h_a40660973b9d57d78bc7e6e56a7a1bf42}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!H\+W\+\_\+\+Init@{H\+W\+\_\+\+Init}}
+\index{H\+W\+\_\+\+Init@{H\+W\+\_\+\+Init}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{H\+W\+\_\+\+Init()}{HW\_Init()}}
+{\footnotesize\ttfamily void H\+W\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the boards peripherals. 
+
+Initializes the boards peripherals.
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw.\+c 파일의 81 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+82 \{
+83   \textcolor{keywordflow}{if}( \mbox{\hyperlink{hw_8c_a42f749e5ad22fb12abd313992aa25b5d}{McuInitialized}} == \textcolor{keyword}{false} )
+84   \{
+85         
+86     \mbox{\hyperlink{vcom_8h_a0eddddd521185a7cbf876b1af08b879a}{vcom\_Init}}( );
+87     \mbox{\hyperlink{vcom_8h_a1f464e950a4fa11e8821b5c725921a15}{PRINTF}}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)n\(\backslash\)r\(\backslash\)nLorawan Starting....."});
+88 
+89     \mbox{\hyperlink{group___lory_s_d_k___l_e_d___functions_gab58a4f16a476a53653c5c400e3bed158}{BSP\_LED\_Init}}(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecda1d7d2c7fd52cbef6c97fb5f45cda24f9}{LED\_RDY}});
+90         \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_ae5565e715aeed2aee5be898a084a4d5e}{LED\_On}}(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecda1d7d2c7fd52cbef6c97fb5f45cda24f9}{LED\_RDY}});
+91         
+92     \mbox{\hyperlink{group___docking_station___r_f___power___functions_ga46ccfec03200a24f3737fc8015e2d5f7}{BSP\_SX1276POWER\_Init}}();
+93     \mbox{\hyperlink{group___docking_station___r_f___power___functions_gaef6814f684bbf7fa47adda1abc4c1129}{BSP\_SX1276POWER\_On}}();
+94         
+95     \mbox{\hyperlink{group___b_u_t_t_o_n___functions_gad31c8db50a71c1f6dbfe132d72ba0bc6}{BSP\_PB\_Init}}(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a643816dfbad5c734fc25a29ce8d35bb1a6ef88d3915166e6fc061a578a51eafd0}{BUTTON\_KEY}},\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a48825b7c7d851c440ef8e808fd9d8f0aa9411f3542831027b24c493abfb998522}{BUTTON\_MODE\_GPIO}});
+96         
+97     \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_ga3021a4a33084812668411847ec35d71d}{HW\_RTC\_Init}}( );
+98         \mbox{\hyperlink{hw__spi_8h_a3a11e3e6514321f6bf576e3069331ddd}{HW\_SPI\_Init}}( );
+99 
+100         \mbox{\hyperlink{sx1276mb1las_8c_acf9fe61a72c16fa29a0dc449d23e3820}{Radio}}.\mbox{\hyperlink{struct_radio__s_a83cf0df693579d453bad2d5b7d5565ed}{IoInit}}( );
+101         
+102     \mbox{\hyperlink{hw_8c_a42f749e5ad22fb12abd313992aa25b5d}{McuInitialized}} = \textcolor{keyword}{true};
+103   \}
+104 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{hw__msp_8h_a70af21c671abfcc773614a9a4f63d920}\label{hw__msp_8h_a70af21c671abfcc773614a9a4f63d920}} 
+\index{hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}!System\+Clock\+\_\+\+Config@{System\+Clock\+\_\+\+Config}}
+\index{System\+Clock\+\_\+\+Config@{System\+Clock\+\_\+\+Config}!hw\+\_\+msp.\+h@{hw\+\_\+msp.\+h}}
+\subsubsection{\texorpdfstring{System\+Clock\+\_\+\+Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration The system Clock is configured as follow \+: System Clock source = P\+LL (H\+SI) S\+Y\+S\+C\+L\+K(\+Hz) = 32000000 H\+C\+L\+K(\+Hz) = 32000000 A\+HB Prescaler = 1 A\+P\+B1 Prescaler = 1 A\+P\+B2 Prescaler = 1 H\+SI Frequency(\+Hz) = 16000000 P\+L\+L\+M\+UL = 6 P\+L\+L\+D\+IV = 3 Flash Latency(\+W\+S) = 1 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+hw.\+c 파일의 191 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+192 \{
+193   RCC\_ClkInitTypeDef RCC\_ClkInitStruct = \{0\};
+194   RCC\_OscInitTypeDef RCC\_OscInitStruct = \{0\};
+195 
+196   \textcolor{comment}{/* Enable HSE Oscillator and Activate PLL with HSE as source */}
+197   RCC\_OscInitStruct.OscillatorType      = RCC\_OSCILLATORTYPE\_HSI;
+198   RCC\_OscInitStruct.HSIState            = RCC\_HSI\_ON;
+199   RCC\_OscInitStruct.HSICalibrationValue = RCC\_HSICALIBRATION\_DEFAULT;
+200   RCC\_OscInitStruct.PLL.PLLState        = RCC\_PLL\_ON;
+201   RCC\_OscInitStruct.PLL.PLLSource       = RCC\_PLLSOURCE\_HSI;
+202   RCC\_OscInitStruct.PLL.PLLMUL          = RCC\_PLL\_MUL6;
+203   RCC\_OscInitStruct.PLL.PLLDIV          = RCC\_PLL\_DIV3;
+204 
+205   \textcolor{keywordflow}{if} (HAL\_RCC\_OscConfig(&RCC\_OscInitStruct) != HAL\_OK)
+206   \{
+207     \mbox{\hyperlink{hw__conf_8h_a5593abbf196bdbd410b0939ef878b9d1}{Error\_Handler}}();
+208   \}
+209 
+210   \textcolor{comment}{/* Set Voltage scale1 as MCU will run at 32MHz */}
+211   \_\_HAL\_RCC\_PWR\_CLK\_ENABLE();
+212   \_\_HAL\_PWR\_VOLTAGESCALING\_CONFIG(PWR\_REGULATOR\_VOLTAGE\_SCALE1);
+213   
+214   \textcolor{comment}{/* Poll VOSF bit of in PWR\_CSR. Wait until it is reset to 0 */}
+215   \textcolor{keywordflow}{while} (\_\_HAL\_PWR\_GET\_FLAG(PWR\_FLAG\_VOS) != RESET) \{\};
+216 
+217   \textcolor{comment}{/* Select PLL as system clock source and configure the HCLK, PCLK1 and PCLK2}
+218 \textcolor{comment}{  clocks dividers */}
+219   RCC\_ClkInitStruct.ClockType = (RCC\_CLOCKTYPE\_SYSCLK | RCC\_CLOCKTYPE\_HCLK | RCC\_CLOCKTYPE\_PCLK1 | 
+      RCC\_CLOCKTYPE\_PCLK2);
+220   RCC\_ClkInitStruct.SYSCLKSource = RCC\_SYSCLKSOURCE\_PLLCLK;
+221   RCC\_ClkInitStruct.AHBCLKDivider = RCC\_SYSCLK\_DIV1;
+222   RCC\_ClkInitStruct.APB1CLKDivider = RCC\_HCLK\_DIV1;
+223   RCC\_ClkInitStruct.APB2CLKDivider = RCC\_HCLK\_DIV1;
+224   \textcolor{keywordflow}{if} (HAL\_RCC\_ClockConfig(&RCC\_ClkInitStruct, FLASH\_LATENCY\_1) != HAL\_OK)
+225   \{
+226     \mbox{\hyperlink{hw__conf_8h_a5593abbf196bdbd410b0939ef878b9d1}{Error\_Handler}}();
+227   \}
+228 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5

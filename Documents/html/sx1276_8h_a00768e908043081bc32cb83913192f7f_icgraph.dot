@@ -1,0 +1,20 @@
+digraph "SX1276SetChannel"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node233 [label="SX1276SetChannel",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node233 -> Node234 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node234 [label="SX1276IsChannelFree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8h.html#a29f26f7258f8fcd5c27800295639d7c7",tooltip="Checks if the channel is free for the given time "];
+  Node233 -> Node235 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node235 [label="RxChainCalibration",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8h.html#a72e6a30988e816e052a5cb0066dbec83"];
+  Node235 -> Node236 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node236 [label="SX1276Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8h.html#a19a9ddff3f878b85e42c7571485fe3c8",tooltip="Initializes the radio "];
+  Node235 -> Node237 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node237 [label="SX1276OnTimeoutIrq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a3eda1c409a0269313a079389593d75cb",tooltip="Tx & Rx timeout timer callback "];
+  Node237 -> Node236 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node233 -> Node238 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node238 [label="SX1276SetRx",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8h.html#a8c2df9351fbde83379717dc6f76e5c11",tooltip="Sets the radio in reception mode for the given time "];
+  Node233 -> Node239 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node239 [label="SX1276SetTxContinuousWave",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8h.html#ac77895b054eb64df0ee2fa97061efae8",tooltip="Sets the radio in continuous wave transmission mode "];
+}

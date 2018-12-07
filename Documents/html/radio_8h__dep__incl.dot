@@ -1,0 +1,37 @@
+digraph "LoraLib/Phy/radio.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="LoraLib/Phy/radio.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Drivers/sx1276/sx1276.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html",tooltip="SX1276 driver implementation "];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Drivers/sx1276mb1las\l/sx1276mb1las.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276mb1las_8c.html"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="LoraLib/Mac/LoRaMac.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8h.html",tooltip="LoRa MAC layer implementation "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="LoraLib/Core/lora-test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora-test_8c.html"];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="LoraLib/Core/lora.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora_8h.html"];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="LoraLib/Core/lora.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora_8c.html"];
+  Node8 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Projects/DockingStation\l/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html"];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="LoraLib/Mac/LoRaMac.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html",tooltip="LoRa MAC layer implementation "];
+  Node6 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="LoraLib/Mac/region\l/Region.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_8c.html",tooltip="Region implementation. "];
+  Node6 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="LoraLib/Mac/region\l/RegionCommon.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_common_8h.html",tooltip="Region independent implementations which are common to all regions. "];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="LoraLib/Mac/region\l/RegionCommon.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_common_8c.html",tooltip="LoRa MAC common region implementation "];
+  Node13 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="LoraLib/Mac/region\l/RegionUS915-Hybrid.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_u_s915-_hybrid_8c.html",tooltip="Region implementation for US915 Hybrid "];
+  Node6 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="LoraLib/Mac/region\l/RegionUS915-Hybrid.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_u_s915-_hybrid_8h.html",tooltip="Region definition for US915 "];
+  Node16 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Projects/DockingStation\l/src/hw.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html"];
+}

@@ -1,0 +1,36 @@
+digraph "LoraLib/Mac/timer.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node21 [label="LoraLib/Mac/timer.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node21 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node22 [label="LoraLib/Mac/LoRaMac.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8h.html",tooltip="LoRa MAC layer implementation "];
+  Node22 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node23 [label="LoraLib/Core/lora-test.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora-test_8c.html"];
+  Node22 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node24 [label="LoraLib/Core/lora.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora_8h.html"];
+  Node24 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node24 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node25 [label="LoraLib/Core/lora.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora_8c.html"];
+  Node24 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node26 [label="Projects/DockingStation\l/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html"];
+  Node22 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node22 -> Node27 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node27 [label="LoraLib/Mac/LoRaMac.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html",tooltip="LoRa MAC layer implementation "];
+  Node22 -> Node28 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node28 [label="LoraLib/Mac/region\l/Region.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_8c.html",tooltip="Region implementation. "];
+  Node22 -> Node29 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node29 [label="LoraLib/Mac/region\l/RegionCommon.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_common_8h.html",tooltip="Region independent implementations which are common to all regions. "];
+  Node29 -> Node30 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node30 [label="LoraLib/Mac/region\l/RegionCommon.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_common_8c.html",tooltip="LoRa MAC common region implementation "];
+  Node29 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node31 [label="LoraLib/Mac/region\l/RegionUS915-Hybrid.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_u_s915-_hybrid_8c.html",tooltip="Region implementation for US915 Hybrid "];
+  Node22 -> Node32 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node32 [label="LoraLib/Mac/region\l/RegionUS915-Hybrid.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_u_s915-_hybrid_8h.html",tooltip="Region definition for US915 "];
+  Node32 -> Node31 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node21 -> Node33 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node33 [label="LoraLib/Mac/region\l/Region.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_8h.html",tooltip="Region implementation. "];
+  Node33 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node33 -> Node22 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node33 -> Node27 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

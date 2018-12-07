@@ -1,0 +1,180 @@
+\hypertarget{_lo_ra_mac_crypto_8c}{}\section{Lora\+Lib/\+Mac/\+Lo\+Ra\+Mac\+Crypto.c 파일 참조}
+\label{_lo_ra_mac_crypto_8c}\index{Lora\+Lib/\+Mac/\+Lo\+Ra\+Mac\+Crypto.\+c@{Lora\+Lib/\+Mac/\+Lo\+Ra\+Mac\+Crypto.\+c}}
+
+
+Lo\+Ra M\+AC layer cryptography implementation  
+
+
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}aes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cmac.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Lo\+Ra\+Mac\+Crypto.\+h\char`\"{}}\newline
+Lo\+Ra\+Mac\+Crypto.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a5c3d9a633ffde7d6b49116095bf4395e}{L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+I\+C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+B0\+\_\+\+S\+I\+ZE}}~16
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga6ee265070494b83255e7fdc4dff985da}{Lo\+Ra\+Mac\+Compute\+Mic}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint32\+\_\+t address, uint8\+\_\+t dir, uint32\+\_\+t sequence\+Counter, uint32\+\_\+t $\ast$mic)
+\begin{DoxyCompactList}\small\item\em Computes the Lo\+Ra\+M\+AC frame M\+IC field \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga50339e60abea2186ca7e584b489718b1}{Lo\+Ra\+Mac\+Payload\+Encrypt}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint32\+\_\+t address, uint8\+\_\+t dir, uint32\+\_\+t sequence\+Counter, uint8\+\_\+t $\ast$enc\+Buffer)
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_ga41f9ba19f61b195420914ed58c8b94c7}{Lo\+Ra\+Mac\+Payload\+Decrypt}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint32\+\_\+t address, uint8\+\_\+t dir, uint32\+\_\+t sequence\+Counter, uint8\+\_\+t $\ast$dec\+Buffer)
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gac9216af326316c9e7f207d4e73aed199}{Lo\+Ra\+Mac\+Join\+Compute\+Mic}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint32\+\_\+t $\ast$mic)
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gac2379cd7cbeb6febaa2a7be5d9f04b5c}{Lo\+Ra\+Mac\+Join\+Decrypt}} (const uint8\+\_\+t $\ast$buffer, uint16\+\_\+t size, const uint8\+\_\+t $\ast$key, uint8\+\_\+t $\ast$dec\+Buffer)
+\item 
+void \mbox{\hyperlink{group___l_o_r_a_m_a_c___c_r_y_p_t_o_gad6fc2ace27fa388ec860fc2e5ae1f544}{Lo\+Ra\+Mac\+Join\+Compute\+S\+Keys}} (const uint8\+\_\+t $\ast$key, const uint8\+\_\+t $\ast$app\+Nonce, uint16\+\_\+t dev\+Nonce, uint8\+\_\+t $\ast$nwk\+S\+Key, uint8\+\_\+t $\ast$app\+S\+Key)
+\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}{Mic\+Block\+B0}} \mbox{[}$\,$\mbox{]}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}{Mic}} \mbox{[}16\mbox{]}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}{a\+Block}} \mbox{[}$\,$\mbox{]}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{_lo_ra_mac_crypto_8c_af3c68fef5488da81bfffbc456373746b}{s\+Block}} \mbox{[}$\,$\mbox{]}
+\item 
+static \mbox{\hyperlink{structaes__context}{aes\+\_\+context}} \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}{Aes\+Context}}
+\item 
+static \mbox{\hyperlink{cmac_8h_af41c475ab2b2b5fdf68252112c391434}{A\+E\+S\+\_\+\+C\+M\+A\+C\+\_\+\+C\+TX}} \mbox{\hyperlink{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}{Aes\+Cmac\+Ctx}} \mbox{[}1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra M\+AC layer cryptography implementation 
+
+\begin{DoxyCopyright}{Copyright}
+Revised B\+SD License, see section L\+I\+C\+E\+N\+SE.
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+  \_\_\_\_\_\_                              \_
+ / \_\_\_\_\_)             \_              | |
+( (\_\_\_\_  \_\_\_\_\_ \_\_\_\_ \_| |\_ \_\_\_\_\_  \_\_\_\_| |\_\_
+ \(\backslash\)\_\_\_\_ \(\backslash\)| \_\_\_ |    (\_   \_) \_\_\_ |/ \_\_\_)  \_ \(\backslash\)
+ \_\_\_\_\_) ) \_\_\_\_| | | || |\_| \_\_\_\_( (\_\_\_| | | |
+(\_\_\_\_\_\_/|\_\_\_\_\_)\_|\_|\_| \(\backslash\)\_\_)\_\_\_\_\_)\(\backslash\)\_\_\_\_)\_| |\_|
+(C)2013-2017 Semtech
+
+ \_\_\_ \_\_\_\_\_ \_   \_\_\_ \_  \_\_\_\_\_ \_\_\_  \_\_\_  \_\_\_ \_\_\_
+/ \_\_|\_   \_/\_\(\backslash\) / \_\_| |/ / \_\_/ \_ \(\backslash\)| \_ \(\backslash\)/ \_\_| \_\_|
+\(\backslash\)\_\_ \(\backslash\) | |/ \_ \(\backslash\) (\_\_| \textcolor{stringliteral}{' <| \_| (\_) |   / (\_\_| \_|}
+\textcolor{stringliteral}{|\_\_\_/ |\_/\_/ \(\backslash\)\_\(\backslash\)\_\_\_|\_|\(\backslash\)\_\(\backslash\)\_| \(\backslash\)\_\_\_/|\_|\_\(\backslash\)\(\backslash\)\_\_\_|\_\_\_|}
+\textcolor{stringliteral}{embedded.connectivity.solutions===============}
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{작성자}
+Miguel Luis ( Semtech )
+
+Gregory Cristian ( Semtech )
+
+Daniel Jaeckle ( S\+T\+A\+C\+K\+F\+O\+R\+CE ) 
+\end{DoxyAuthor}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{_lo_ra_mac_crypto_8c_a5c3d9a633ffde7d6b49116095bf4395e}\label{_lo_ra_mac_crypto_8c_a5c3d9a633ffde7d6b49116095bf4395e}} 
+\index{Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}!L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+I\+C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+B0\+\_\+\+S\+I\+ZE@{L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+I\+C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+B0\+\_\+\+S\+I\+ZE}}
+\index{L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+I\+C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+B0\+\_\+\+S\+I\+ZE@{L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+I\+C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+B0\+\_\+\+S\+I\+ZE}!Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+I\+C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+B0\+\_\+\+S\+I\+ZE}{LORAMAC\_MIC\_BLOCK\_B0\_SIZE}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+I\+C\+\_\+\+B\+L\+O\+C\+K\+\_\+\+B0\+\_\+\+S\+I\+ZE~16}
+
+C\+M\+A\+C/\+A\+ES Message Integrity Code (M\+IC) Block B0 size 
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 41 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}\label{_lo_ra_mac_crypto_8c_abd9ef98e1c4826c3eae0aeb76c0b7629}} 
+\index{Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}!a\+Block@{a\+Block}}
+\index{a\+Block@{a\+Block}!Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}}
+\subsubsection{\texorpdfstring{a\+Block}{aBlock}}
+{\footnotesize\ttfamily uint8\+\_\+t a\+Block\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}
+= \{ 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                          \}
+\end{DoxyCode}
+Encryption a\+Block and s\+Block 
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 60 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}\label{_lo_ra_mac_crypto_8c_a25127fdfb4e4a4118cd89fa3af0f785f}} 
+\index{Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}!Aes\+Cmac\+Ctx@{Aes\+Cmac\+Ctx}}
+\index{Aes\+Cmac\+Ctx@{Aes\+Cmac\+Ctx}!Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}}
+\subsubsection{\texorpdfstring{Aes\+Cmac\+Ctx}{AesCmacCtx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{cmac_8h_af41c475ab2b2b5fdf68252112c391434}{A\+E\+S\+\_\+\+C\+M\+A\+C\+\_\+\+C\+TX}} Aes\+Cmac\+Ctx\mbox{[}1\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+C\+M\+AC computation context variable 
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 75 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}\label{_lo_ra_mac_crypto_8c_a3bd634efd0dfb2a63534d8091949e208}} 
+\index{Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}!Aes\+Context@{Aes\+Context}}
+\index{Aes\+Context@{Aes\+Context}!Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}}
+\subsubsection{\texorpdfstring{Aes\+Context}{AesContext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structaes__context}{aes\+\_\+context}} Aes\+Context\hspace{0.3cm}{\ttfamily [static]}}
+
+A\+ES computation context variable 
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 70 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}\label{_lo_ra_mac_crypto_8c_a61e2b75611626e7360cc4f138d172192}} 
+\index{Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}!Mic@{Mic}}
+\index{Mic@{Mic}!Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}}
+\subsubsection{\texorpdfstring{Mic}{Mic}}
+{\footnotesize\ttfamily uint8\+\_\+t Mic\mbox{[}16\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Contains the computed M\+IC field.
+
+\begin{DoxyRemark}{Remarks}
+Only the 4 first bytes are used 
+\end{DoxyRemark}
+
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 55 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}\label{_lo_ra_mac_crypto_8c_ac7a8e1988885a9f0378d05d497a1ebba}} 
+\index{Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}!Mic\+Block\+B0@{Mic\+Block\+B0}}
+\index{Mic\+Block\+B0@{Mic\+Block\+B0}!Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}}
+\subsubsection{\texorpdfstring{Mic\+Block\+B0}{MicBlockB0}}
+{\footnotesize\ttfamily uint8\+\_\+t Mic\+Block\+B0\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}
+= \{ 0x49, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                              \}
+\end{DoxyCode}
+M\+IC field computation initial data 
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 46 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_lo_ra_mac_crypto_8c_af3c68fef5488da81bfffbc456373746b}\label{_lo_ra_mac_crypto_8c_af3c68fef5488da81bfffbc456373746b}} 
+\index{Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}!s\+Block@{s\+Block}}
+\index{s\+Block@{s\+Block}!Lo\+Ra\+Mac\+Crypto.\+c@{Lo\+Ra\+Mac\+Crypto.\+c}}
+\subsubsection{\texorpdfstring{s\+Block}{sBlock}}
+{\footnotesize\ttfamily uint8\+\_\+t s\+Block\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}
+= \{ 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                          \}
+\end{DoxyCode}
+
+
+Lo\+Ra\+Mac\+Crypto.\+c 파일의 63 번째 라인에서 정의되었습니다.
+

@@ -1,0 +1,26 @@
+digraph "RegionIN865LinkAdrReq"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node56 [label="RegionIN865LinkAdrReq",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node56 -> Node57 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node57 [label="RegionCommonParseLinkAdrReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#ga8403c78482dbb901014dba48b75d78e8",tooltip="Parses the parameter of an LinkAdrRequest. This is a generic function and valid for all regions..."];
+  Node56 -> Node58 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node58 [label="RegionIN865GetPhyParam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_i_n865.html#ga209a89a7195dbbee8428bbcd0133d986",tooltip="The function gets a value of a specific phy attribute. "];
+  Node58 -> Node59 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node59 [label="GetNextLowerTxDr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_i_n865_8c.html#ae06574681e2f7c3f3e604878c81743aa"];
+  Node58 -> Node60 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node60 [label="randr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$utilities_8c.html#af5d8ad6dae489ac64821e7d4f004595d",tooltip="Computes a random number between min and max "];
+  Node60 -> Node61 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node61 [label="rand1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$utilities_8c.html#a682de7091382ea1fcb2919b0f1cf6cdc"];
+  Node56 -> Node62 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node62 [label="RegionCommonLinkAdrReqVerify\lParams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#ga2c87f98f09793dc7fa63a9801feeed73",tooltip="Verifies and updates the datarate, the TX power and the number of repetitions of a LinkAdrRequest..."];
+  Node62 -> Node63 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node63 [label="RegionCommonChanVerifyDr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#ga94ce5c6e759081853eb06d1dcffdab25",tooltip="Verifies, if a datarate is available on an active channel. This is a generic function and valid for a..."];
+  Node63 -> Node64 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node64 [label="RegionCommonValueInRange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#gafdd1c80d953e18d755a631b72a9c3bd3",tooltip="Verifies, if a value is in a given range. This is a generic function and valid for all regions..."];
+  Node62 -> Node64 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node56 -> Node65 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node65 [label="memset1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$utilities_8c.html#a272ed6d691263d9762c98ed720b1fa3a",tooltip="Set size elements of dst array with value "];
+}

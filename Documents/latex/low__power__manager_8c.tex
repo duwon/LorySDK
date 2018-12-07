@@ -1,0 +1,483 @@
+\hypertarget{low__power__manager_8c}{}\section{Lora\+Lib/\+Utilities/low\+\_\+power\+\_\+manager.c 파일 참조}
+\label{low__power__manager_8c}\index{Lora\+Lib/\+Utilities/low\+\_\+power\+\_\+manager.\+c@{Lora\+Lib/\+Utilities/low\+\_\+power\+\_\+manager.\+c}}
+
+
+Low Power Manager  
+
+
+{\ttfamily \#include \char`\"{}hw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}low\+\_\+power\+\_\+manager.\+h\char`\"{}}\newline
+low\+\_\+power\+\_\+manager.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{low__power__manager_8c_ad7400bf9ef582509093958cd1674397a}{L\+P\+M\+\_\+\+Set\+Off\+Mode}} (\mbox{\hyperlink{utilities__conf_8h_acfda396432d3ff49786067a2271b5946}{L\+P\+M\+\_\+\+Id\+\_\+t}} id, \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57}{L\+P\+M\+\_\+\+Set\+Mode\+\_\+t}} mode)
+\item 
+void \mbox{\hyperlink{low__power__manager_8c_ac8a0ff787d7d417b9e1f0697a1d5fd6d}{L\+P\+M\+\_\+\+Set\+Stop\+Mode}} (\mbox{\hyperlink{utilities__conf_8h_acfda396432d3ff49786067a2271b5946}{L\+P\+M\+\_\+\+Id\+\_\+t}} id, \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57}{L\+P\+M\+\_\+\+Set\+Mode\+\_\+t}} mode)
+\begin{DoxyCompactList}\small\item\em This A\+PI notifies the low power manager if the specified user allows the Off mode or not. When the application does not require the system clock, it enters Stop Mode if at least one user disallow Off Mode. Otherwise, it enters Off Mode. The default mode selection for all users is Off mode enabled \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{low__power__manager_8c_a8173fa7c3aad5bb718c9ebf5ba44efe3}{L\+P\+M\+\_\+\+Enter\+Low\+Power}} (void)
+\begin{DoxyCompactList}\small\item\em This A\+PI shall be used by the application when there is no more code to execute so that the system may enter low-\/power mode. The mode selected depends on the information received from L\+P\+M\+\_\+\+Off\+Mode\+Selection() and L\+P\+M\+\_\+\+Sysclock\+Request() This function shall be called in critical section \end{DoxyCompactList}\item 
+\mbox{\hyperlink{low__power__manager_8h_acb31a7bf1fa8d421505bf31482304507}{L\+P\+M\+\_\+\+Get\+Mode\+\_\+t}} \mbox{\hyperlink{low__power__manager_8c_ae9107e412181f10977b724c346cebd45}{L\+P\+M\+\_\+\+Get\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em This A\+PI returns the Low Power Mode selected that will be applied when the system will enter low power mode if there is no update between the time the mode is read with this A\+PI and the time the system enters low power mode. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{low__power__manager_8c_aa72da8f6f3ded1c363ef332188410817}{L\+P\+M\+\_\+\+Enter\+Sleep\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before entering Sleep Mode \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{low__power__manager_8c_a51c6a5b8b2b0e5ffaec105315f920542}{L\+P\+M\+\_\+\+Exit\+Sleep\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before getting out from Sleep Mode \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{low__power__manager_8c_a99b28b82a8dd7f41d5df9a21eb08571a}{L\+P\+M\+\_\+\+Enter\+Stop\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before entering Stop Mode \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{low__power__manager_8c_ab2008a0e801c42db2e1215df90b1b1aa}{L\+P\+M\+\_\+\+Exit\+Stop\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before getting out from Stop Mode. This is where the application should reconfigure the clock tree when needed \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{low__power__manager_8c_aaab7e51a1c2e5bb7abb1b313fcce7141}{L\+P\+M\+\_\+\+Enter\+Off\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before entering Off mode. This is where the application could save data in the retention memory as the R\+AM memory content will be lost \end{DoxyCompactList}\item 
+\+\_\+\+\_\+weak void \mbox{\hyperlink{low__power__manager_8c_ac6f445b2b27e125b53ded39c5c5c00cd}{L\+P\+M\+\_\+\+Exit\+Off\+Mode}} (void)
+\begin{DoxyCompactList}\small\item\em This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before getting out from Off mode. This can only happen when the Off mode is finally not entered. In that case, the application may reverse some configurations done before entering Off mode. When Off mode is successful, the system is reset when getting out from this low-\/power mode \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{low__power__manager_8c_a0fa17475002e1493fdd09697f771fe12}{Stop\+Mode\+Disable}} = 0
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{low__power__manager_8c_a41006f8fa1fa3e665fc5f9ff61ac7268}{Off\+Mode\+Disable}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Low Power Manager 
+
+\begin{DoxyAuthor}{작성자}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{버전}
+V1.\+1.\+5 
+\end{DoxyVersion}
+\begin{DoxyDate}{날짜}
+30-\/\+March-\/2018 
+\end{DoxyDate}
+\begin{DoxyAttention}{주의}
+
+\end{DoxyAttention}
+\subsubsection*{\begin{center}\copyright{} Copyright (c) 2016 S\+T\+Microelectronics International N.\+V. All rights reserved.\end{center} }
+
+Redistribution and use in source and binary forms, with or without modification, are permitted, provided that the following conditions are met\+:
+
+
+\begin{DoxyEnumerate}
+\item Redistribution of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of other contributors to this software may be used to endorse or promote products derived from this software without specific written permission.
+\item This software, including modifications and/or derivative works of this software, must execute solely and exclusively on microcontroller or microprocessor devices manufactured by or for S\+T\+Microelectronics.
+\item Redistribution and use of this software other than as permitted under this license is void and will automatically terminate your rights under this license.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY S\+T\+M\+I\+C\+R\+O\+E\+L\+E\+C\+T\+R\+O\+N\+I\+CS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS, I\+M\+P\+L\+I\+ED OR S\+T\+A\+T\+U\+T\+O\+RY W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY, F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+ND N\+O\+N-\/\+I\+N\+F\+R\+I\+N\+G\+E\+M\+E\+NT OF T\+H\+I\+RD P\+A\+R\+TY I\+N\+T\+E\+L\+L\+E\+C\+T\+U\+AL P\+R\+O\+P\+E\+R\+TY R\+I\+G\+H\+TS A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED TO T\+HE F\+U\+L\+L\+E\+ST E\+X\+T\+E\+NT P\+E\+R\+M\+I\+T\+T\+ED BY L\+AW. IN NO E\+V\+E\+NT S\+H\+A\+LL S\+T\+M\+I\+C\+R\+O\+E\+L\+E\+C\+T\+R\+O\+N\+I\+CS OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{low__power__manager_8c_a8173fa7c3aad5bb718c9ebf5ba44efe3}\label{low__power__manager_8c_a8173fa7c3aad5bb718c9ebf5ba44efe3}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Enter\+Low\+Power@{L\+P\+M\+\_\+\+Enter\+Low\+Power}}
+\index{L\+P\+M\+\_\+\+Enter\+Low\+Power@{L\+P\+M\+\_\+\+Enter\+Low\+Power}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Enter\+Low\+Power()}{LPM\_EnterLowPower()}}
+{\footnotesize\ttfamily void L\+P\+M\+\_\+\+Enter\+Low\+Power (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This A\+PI shall be used by the application when there is no more code to execute so that the system may enter low-\/power mode. The mode selected depends on the information received from L\+P\+M\+\_\+\+Off\+Mode\+Selection() and L\+P\+M\+\_\+\+Sysclock\+Request() This function shall be called in critical section 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+S\+L\+E\+EP mode is required
+
+S\+T\+OP mode is required
+
+O\+FF mode is required
+
+low\+\_\+power\+\_\+manager.\+c 파일의 117 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+118 \{
+119   \textcolor{keywordflow}{if}( \mbox{\hyperlink{low__power__manager_8c_a0fa17475002e1493fdd09697f771fe12}{StopModeDisable}} )
+120   \{
+124     \mbox{\hyperlink{low__power__manager_8c_aa72da8f6f3ded1c363ef332188410817}{LPM\_EnterSleepMode}}();
+125     \mbox{\hyperlink{low__power__manager_8c_a51c6a5b8b2b0e5ffaec105315f920542}{LPM\_ExitSleepMode}}();
+126   \}
+127   \textcolor{keywordflow}{else}
+128   \{ 
+129     \textcolor{keywordflow}{if}( \mbox{\hyperlink{low__power__manager_8c_a41006f8fa1fa3e665fc5f9ff61ac7268}{OffModeDisable}} )
+130     \{
+134       \mbox{\hyperlink{low__power__manager_8c_a99b28b82a8dd7f41d5df9a21eb08571a}{LPM\_EnterStopMode}}();
+135       \mbox{\hyperlink{low__power__manager_8c_ab2008a0e801c42db2e1215df90b1b1aa}{LPM\_ExitStopMode}}();
+136     \}
+137     \textcolor{keywordflow}{else}
+138     \{
+142       \mbox{\hyperlink{low__power__manager_8c_aaab7e51a1c2e5bb7abb1b313fcce7141}{LPM\_EnterOffMode}}();
+143       \mbox{\hyperlink{low__power__manager_8c_ac6f445b2b27e125b53ded39c5c5c00cd}{LPM\_ExitOffMode}}();
+144     \}
+145   \}
+146 
+147   \textcolor{keywordflow}{return};
+148 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{low__power__manager_8c_aaab7e51a1c2e5bb7abb1b313fcce7141}\label{low__power__manager_8c_aaab7e51a1c2e5bb7abb1b313fcce7141}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Enter\+Off\+Mode@{L\+P\+M\+\_\+\+Enter\+Off\+Mode}}
+\index{L\+P\+M\+\_\+\+Enter\+Off\+Mode@{L\+P\+M\+\_\+\+Enter\+Off\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Enter\+Off\+Mode()}{LPM\_EnterOffMode()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void L\+P\+M\+\_\+\+Enter\+Off\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before entering Off mode. This is where the application could save data in the retention memory as the R\+AM memory content will be lost 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 183 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+183 \{\}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{low__power__manager_8c_aa72da8f6f3ded1c363ef332188410817}\label{low__power__manager_8c_aa72da8f6f3ded1c363ef332188410817}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Enter\+Sleep\+Mode@{L\+P\+M\+\_\+\+Enter\+Sleep\+Mode}}
+\index{L\+P\+M\+\_\+\+Enter\+Sleep\+Mode@{L\+P\+M\+\_\+\+Enter\+Sleep\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Enter\+Sleep\+Mode()}{LPM\_EnterSleepMode()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void L\+P\+M\+\_\+\+Enter\+Sleep\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before entering Sleep Mode 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 179 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+179 \{\}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{low__power__manager_8c_a99b28b82a8dd7f41d5df9a21eb08571a}\label{low__power__manager_8c_a99b28b82a8dd7f41d5df9a21eb08571a}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Enter\+Stop\+Mode@{L\+P\+M\+\_\+\+Enter\+Stop\+Mode}}
+\index{L\+P\+M\+\_\+\+Enter\+Stop\+Mode@{L\+P\+M\+\_\+\+Enter\+Stop\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Enter\+Stop\+Mode()}{LPM\_EnterStopMode()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void L\+P\+M\+\_\+\+Enter\+Stop\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before entering Stop Mode 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 181 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+181 \{\}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{low__power__manager_8c_ac6f445b2b27e125b53ded39c5c5c00cd}\label{low__power__manager_8c_ac6f445b2b27e125b53ded39c5c5c00cd}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Exit\+Off\+Mode@{L\+P\+M\+\_\+\+Exit\+Off\+Mode}}
+\index{L\+P\+M\+\_\+\+Exit\+Off\+Mode@{L\+P\+M\+\_\+\+Exit\+Off\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Exit\+Off\+Mode()}{LPM\_ExitOffMode()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void L\+P\+M\+\_\+\+Exit\+Off\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before getting out from Off mode. This can only happen when the Off mode is finally not entered. In that case, the application may reverse some configurations done before entering Off mode. When Off mode is successful, the system is reset when getting out from this low-\/power mode 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 184 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+184 \{\}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{low__power__manager_8c_a51c6a5b8b2b0e5ffaec105315f920542}\label{low__power__manager_8c_a51c6a5b8b2b0e5ffaec105315f920542}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Exit\+Sleep\+Mode@{L\+P\+M\+\_\+\+Exit\+Sleep\+Mode}}
+\index{L\+P\+M\+\_\+\+Exit\+Sleep\+Mode@{L\+P\+M\+\_\+\+Exit\+Sleep\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Exit\+Sleep\+Mode()}{LPM\_ExitSleepMode()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void L\+P\+M\+\_\+\+Exit\+Sleep\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before getting out from Sleep Mode 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 180 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+180 \{\}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\mbox{\Hypertarget{low__power__manager_8c_ab2008a0e801c42db2e1215df90b1b1aa}\label{low__power__manager_8c_ab2008a0e801c42db2e1215df90b1b1aa}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Exit\+Stop\+Mode@{L\+P\+M\+\_\+\+Exit\+Stop\+Mode}}
+\index{L\+P\+M\+\_\+\+Exit\+Stop\+Mode@{L\+P\+M\+\_\+\+Exit\+Stop\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Exit\+Stop\+Mode()}{LPM\_ExitStopMode()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void L\+P\+M\+\_\+\+Exit\+Stop\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This A\+PI is called by the low power manager in a critical section (P\+R\+I\+M\+A\+SK bit set) to allow the application to implement dedicated code before getting out from Stop Mode. This is where the application should reconfigure the clock tree when needed 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 182 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+182 \{\}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\mbox{\Hypertarget{low__power__manager_8c_ae9107e412181f10977b724c346cebd45}\label{low__power__manager_8c_ae9107e412181f10977b724c346cebd45}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Get\+Mode@{L\+P\+M\+\_\+\+Get\+Mode}}
+\index{L\+P\+M\+\_\+\+Get\+Mode@{L\+P\+M\+\_\+\+Get\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Get\+Mode()}{LPM\_GetMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{low__power__manager_8h_acb31a7bf1fa8d421505bf31482304507}{L\+P\+M\+\_\+\+Get\+Mode\+\_\+t}} L\+P\+M\+\_\+\+Get\+Mode (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This A\+PI returns the Low Power Mode selected that will be applied when the system will enter low power mode if there is no update between the time the mode is read with this A\+PI and the time the system enters low power mode. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em L\+P\+M\+\_\+\+Mode\+Selected\+\_\+t} & \\
+\hline
+\end{DoxyRetVals}
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 150 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+151 \{
+152   \mbox{\hyperlink{low__power__manager_8h_acb31a7bf1fa8d421505bf31482304507}{LPM\_GetMode\_t}} mode\_selected;
+153 
+154   \mbox{\hyperlink{utilities_8h_a6b5ac3331353a25a25e666b004b3aaef}{BACKUP\_PRIMASK}}();
+155   
+156   \mbox{\hyperlink{utilities_8h_a8b665b7df8fbc1b5d693fa71fd48a7b7}{DISABLE\_IRQ}}( );
+157 
+158   \textcolor{keywordflow}{if}(\mbox{\hyperlink{low__power__manager_8c_a0fa17475002e1493fdd09697f771fe12}{StopModeDisable}} )
+159   \{
+160     mode\_selected = \mbox{\hyperlink{low__power__manager_8h_acb31a7bf1fa8d421505bf31482304507a26767bc04b0d5ff4c4a8c3ef63b62b05}{LPM\_SleepMode}};
+161   \}
+162   \textcolor{keywordflow}{else}
+163   \{
+164     \textcolor{keywordflow}{if}(\mbox{\hyperlink{low__power__manager_8c_a41006f8fa1fa3e665fc5f9ff61ac7268}{OffModeDisable}})
+165     \{
+166       mode\_selected = \mbox{\hyperlink{low__power__manager_8h_acb31a7bf1fa8d421505bf31482304507a6cee594fb7226567d00054894c0b4c39}{LPM\_StopMode}};
+167     \}
+168     \textcolor{keywordflow}{else}
+169     \{
+170       mode\_selected = \mbox{\hyperlink{low__power__manager_8h_acb31a7bf1fa8d421505bf31482304507a69c6e4387896ade87585bea3b7f79511}{LPM\_OffMode}};
+171     \}
+172   \}
+173 
+174   \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}( );
+175 
+176   \textcolor{keywordflow}{return} mode\_selected;
+177 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+\mbox{\Hypertarget{low__power__manager_8c_ad7400bf9ef582509093958cd1674397a}\label{low__power__manager_8c_ad7400bf9ef582509093958cd1674397a}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Set\+Off\+Mode@{L\+P\+M\+\_\+\+Set\+Off\+Mode}}
+\index{L\+P\+M\+\_\+\+Set\+Off\+Mode@{L\+P\+M\+\_\+\+Set\+Off\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Set\+Off\+Mode()}{LPM\_SetOffMode()}}
+{\footnotesize\ttfamily void L\+P\+M\+\_\+\+Set\+Off\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utilities__conf_8h_acfda396432d3ff49786067a2271b5946}{L\+P\+M\+\_\+\+Id\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57}{L\+P\+M\+\_\+\+Set\+Mode\+\_\+t}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 62 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+63 \{
+64   \mbox{\hyperlink{utilities_8h_a6b5ac3331353a25a25e666b004b3aaef}{BACKUP\_PRIMASK}}();
+65   
+66   \mbox{\hyperlink{utilities_8h_a8b665b7df8fbc1b5d693fa71fd48a7b7}{DISABLE\_IRQ}}( );
+67   
+68   
+69   \textcolor{keywordflow}{switch}(mode)
+70   \{
+71     \textcolor{keywordflow}{case} \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57aa998d97d7b8eb3b6234e5b69fce1f375}{LPM\_Disable}}:
+72     \{
+73       \mbox{\hyperlink{low__power__manager_8c_a41006f8fa1fa3e665fc5f9ff61ac7268}{OffModeDisable}} |= (uint32\_t)\textcolor{keywordtype}{id};
+74       \textcolor{keywordflow}{break};
+75     \}
+76     \textcolor{keywordflow}{case} \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57a6fdf7ef1f943192b3507c74647d6d46c}{LPM\_Enable}}:
+77     \{
+78       \mbox{\hyperlink{low__power__manager_8c_a41006f8fa1fa3e665fc5f9ff61ac7268}{OffModeDisable}} &= ~(uint32\_t)\textcolor{keywordtype}{id};
+79       \textcolor{keywordflow}{break};
+80     \}
+81     \textcolor{keywordflow}{default}:
+82       \textcolor{keywordflow}{break};
+83   \}
+84   
+85   \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}( );
+86 
+87   \textcolor{keywordflow}{return};
+88 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{low__power__manager_8c_ac8a0ff787d7d417b9e1f0697a1d5fd6d}\label{low__power__manager_8c_ac8a0ff787d7d417b9e1f0697a1d5fd6d}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!L\+P\+M\+\_\+\+Set\+Stop\+Mode@{L\+P\+M\+\_\+\+Set\+Stop\+Mode}}
+\index{L\+P\+M\+\_\+\+Set\+Stop\+Mode@{L\+P\+M\+\_\+\+Set\+Stop\+Mode}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{L\+P\+M\+\_\+\+Set\+Stop\+Mode()}{LPM\_SetStopMode()}}
+{\footnotesize\ttfamily void L\+P\+M\+\_\+\+Set\+Stop\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{utilities__conf_8h_acfda396432d3ff49786067a2271b5946}{L\+P\+M\+\_\+\+Id\+\_\+t}}}]{id,  }\item[{\mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57}{L\+P\+M\+\_\+\+Set\+Mode\+\_\+t}}}]{mode }\end{DoxyParamCaption})}
+
+
+
+This A\+PI notifies the low power manager if the specified user allows the Off mode or not. When the application does not require the system clock, it enters Stop Mode if at least one user disallow Off Mode. Otherwise, it enters Off Mode. The default mode selection for all users is Off mode enabled 
+
+
+\begin{DoxyParams}{매개변수}
+{\em id} & process Id \\
+\hline
+{\em mode} & mode selected \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 90 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+91 \{
+92   \mbox{\hyperlink{utilities_8h_a6b5ac3331353a25a25e666b004b3aaef}{BACKUP\_PRIMASK}}();
+93   
+94   \mbox{\hyperlink{utilities_8h_a8b665b7df8fbc1b5d693fa71fd48a7b7}{DISABLE\_IRQ}}( );
+95   
+96   
+97   \textcolor{keywordflow}{switch}(mode)
+98   \{
+99     \textcolor{keywordflow}{case} \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57aa998d97d7b8eb3b6234e5b69fce1f375}{LPM\_Disable}}:
+100     \{
+101       \mbox{\hyperlink{low__power__manager_8c_a0fa17475002e1493fdd09697f771fe12}{StopModeDisable}} |= (uint32\_t)\textcolor{keywordtype}{id};
+102       \textcolor{keywordflow}{break};
+103     \}
+104     \textcolor{keywordflow}{case} \mbox{\hyperlink{low__power__manager_8h_a271e41b451de2369d381b2976f39de57a6fdf7ef1f943192b3507c74647d6d46c}{LPM\_Enable}}:
+105     \{
+106       \mbox{\hyperlink{low__power__manager_8c_a0fa17475002e1493fdd09697f771fe12}{StopModeDisable}} &= ~(uint32\_t)\textcolor{keywordtype}{id};
+107       \textcolor{keywordflow}{break};
+108     \}
+109     \textcolor{keywordflow}{default}:
+110       \textcolor{keywordflow}{break};
+111   \}
+112   \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}( );
+113 
+114   \textcolor{keywordflow}{return};
+115 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{low__power__manager_8c_a41006f8fa1fa3e665fc5f9ff61ac7268}\label{low__power__manager_8c_a41006f8fa1fa3e665fc5f9ff61ac7268}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!Off\+Mode\+Disable@{Off\+Mode\+Disable}}
+\index{Off\+Mode\+Disable@{Off\+Mode\+Disable}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{Off\+Mode\+Disable}{OffModeDisable}}
+{\footnotesize\ttfamily uint32\+\_\+t Off\+Mode\+Disable = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 57 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{low__power__manager_8c_a0fa17475002e1493fdd09697f771fe12}\label{low__power__manager_8c_a0fa17475002e1493fdd09697f771fe12}} 
+\index{low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}!Stop\+Mode\+Disable@{Stop\+Mode\+Disable}}
+\index{Stop\+Mode\+Disable@{Stop\+Mode\+Disable}!low\+\_\+power\+\_\+manager.\+c@{low\+\_\+power\+\_\+manager.\+c}}
+\subsubsection{\texorpdfstring{Stop\+Mode\+Disable}{StopModeDisable}}
+{\footnotesize\ttfamily uint32\+\_\+t Stop\+Mode\+Disable = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+low\+\_\+power\+\_\+manager.\+c 파일의 56 번째 라인에서 정의되었습니다.
+

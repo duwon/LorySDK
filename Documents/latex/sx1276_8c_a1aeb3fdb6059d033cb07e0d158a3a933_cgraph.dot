@@ -1,0 +1,21 @@
+digraph "SX1276OnDio3Irq"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node158 [label="SX1276OnDio3Irq",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node158 -> Node159 [color="midnightblue",fontsize="10",style="solid"];
+  Node159 [label="SX1276Read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a1c0054da62dacb13d6286a7cfe01d863",tooltip="Reads the radio register at the specified address "];
+  Node159 -> Node160 [color="midnightblue",fontsize="10",style="solid"];
+  Node160 [label="SX1276ReadBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a9b3df4400813ac6aed7b77f400436ad0",tooltip="Reads multiple radio registers starting at address "];
+  Node160 -> Node161 [color="midnightblue",fontsize="10",style="solid"];
+  Node161 [label="HW_GPIO_Write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___g_p_i_o___functions.html#ga64b37e6d4da7e8f148c92f898aed98de",tooltip="Writes the given value to the GPIO output "];
+  Node160 -> Node162 [color="midnightblue",fontsize="10",style="solid"];
+  Node162 [label="HW_SPI_InOut",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__spi_8h.html#ae0d3f21fb84de59193e82bd1943d5563",tooltip="Sends outData and receives inData "];
+  Node158 -> Node163 [color="midnightblue",fontsize="10",style="solid"];
+  Node163 [label="SX1276Write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a15374c2bed5d3ff2d6b95fdf177b645e",tooltip="Writes the radio register at the specified address "];
+  Node163 -> Node164 [color="midnightblue",fontsize="10",style="solid"];
+  Node164 [label="SX1276WriteBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#aba51c12ba7f6d704cdeed69201507983",tooltip="Writes multiple radio registers starting at address "];
+  Node164 -> Node161 [color="midnightblue",fontsize="10",style="solid"];
+  Node164 -> Node162 [color="midnightblue",fontsize="10",style="solid"];
+}

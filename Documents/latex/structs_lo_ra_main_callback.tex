@@ -1,0 +1,198 @@
+\hypertarget{structs_lo_ra_main_callback}{}\section{s\+Lo\+Ra\+Main\+Callback 구조체 참조}
+\label{structs_lo_ra_main_callback}\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+
+
+{\ttfamily \#include $<$lora.\+h$>$}
+
+
+
+s\+Lo\+Ra\+Main\+Callback에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t($\ast$ \mbox{\hyperlink{structs_lo_ra_main_callback_ac4412349f783b6e7653afd9e3725f436}{Board\+Get\+Battery\+Level}} )(void)
+\begin{DoxyCompactList}\small\item\em Get the current battery level \end{DoxyCompactList}\item 
+uint16\+\_\+t($\ast$ \mbox{\hyperlink{structs_lo_ra_main_callback_a58bad07f3a00abe8a00ae1f25f6ab596}{Board\+Get\+Temperature\+Level}} )(void)
+\begin{DoxyCompactList}\small\item\em Get the current temperature \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{structs_lo_ra_main_callback_a977e227d039bd23ba078f393a856fe3d}{Board\+Get\+Unique\+Id}} )(uint8\+\_\+t $\ast$id)
+\begin{DoxyCompactList}\small\item\em Gets the board 64 bits unique ID \end{DoxyCompactList}\item 
+uint32\+\_\+t($\ast$ \mbox{\hyperlink{structs_lo_ra_main_callback_a37eb88e46a53c5b95593370b046fd9c0}{Board\+Get\+Random\+Seed}} )(void)
+\item 
+void($\ast$ \mbox{\hyperlink{structs_lo_ra_main_callback_a22b1f2ac1a4f3880461e48becfc4530c}{L\+O\+R\+A\+\_\+\+Rx\+Data}} )(\mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{App\+Data}})
+\begin{DoxyCompactList}\small\item\em Process Rx Data received from Lora network \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{structs_lo_ra_main_callback_a956862bc1dcb958fc8b232f61535c5aa}{L\+O\+R\+A\+\_\+\+Has\+Joined}} )(void)
+\begin{DoxyCompactList}\small\item\em callback indicating End\+Node has jsu joiny \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{structs_lo_ra_main_callback_abfbc0131a4d9b3702c8fb93228f342a8}{L\+O\+R\+A\+\_\+\+Confirm\+Class}} )(\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}} Class)
+\begin{DoxyCompactList}\small\item\em Confirms the class change \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{structs_lo_ra_main_callback_a1155e4044eaa6ca31a53fc0d14d9414b}{L\+O\+R\+A\+\_\+\+Tx\+Needed}} )(void)
+\begin{DoxyCompactList}\small\item\em callback indicating an uplink transmission is needed to allow a pending downlink transmission \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+lora.\+h 파일의 161 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_lo_ra_main_callback_ac4412349f783b6e7653afd9e3725f436}\label{structs_lo_ra_main_callback_ac4412349f783b6e7653afd9e3725f436}} 
+\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}!Board\+Get\+Battery\+Level@{Board\+Get\+Battery\+Level}}
+\index{Board\+Get\+Battery\+Level@{Board\+Get\+Battery\+Level}!s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+\subsubsection{\texorpdfstring{Board\+Get\+Battery\+Level}{BoardGetBatteryLevel}}
+{\footnotesize\ttfamily uint8\+\_\+t( $\ast$ Board\+Get\+Battery\+Level) (void)}
+
+
+
+Get the current battery level 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em value} & battery level ( 0\+: very low, 254\+: fully charged ) \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+h 파일의 168 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_lo_ra_main_callback_a37eb88e46a53c5b95593370b046fd9c0}\label{structs_lo_ra_main_callback_a37eb88e46a53c5b95593370b046fd9c0}} 
+\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}!Board\+Get\+Random\+Seed@{Board\+Get\+Random\+Seed}}
+\index{Board\+Get\+Random\+Seed@{Board\+Get\+Random\+Seed}!s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+\subsubsection{\texorpdfstring{Board\+Get\+Random\+Seed}{BoardGetRandomSeed}}
+{\footnotesize\ttfamily uint32\+\_\+t( $\ast$ Board\+Get\+Random\+Seed) (void)}
+
+Returns a pseudo random seed generated using the M\+CU Unique ID
+
+
+\begin{DoxyRetVals}{반환값}
+{\em seed} & Generated pseudo random seed \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+h 파일의 186 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_lo_ra_main_callback_a58bad07f3a00abe8a00ae1f25f6ab596}\label{structs_lo_ra_main_callback_a58bad07f3a00abe8a00ae1f25f6ab596}} 
+\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}!Board\+Get\+Temperature\+Level@{Board\+Get\+Temperature\+Level}}
+\index{Board\+Get\+Temperature\+Level@{Board\+Get\+Temperature\+Level}!s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+\subsubsection{\texorpdfstring{Board\+Get\+Temperature\+Level}{BoardGetTemperatureLevel}}
+{\footnotesize\ttfamily uint16\+\_\+t( $\ast$ Board\+Get\+Temperature\+Level) (void)}
+
+
+
+Get the current temperature 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em value} & temperature in degree\+Celcius( q7.\+8 ) \\
+\hline
+\end{DoxyRetVals}
+
+
+lora.\+h 파일의 174 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_lo_ra_main_callback_a977e227d039bd23ba078f393a856fe3d}\label{structs_lo_ra_main_callback_a977e227d039bd23ba078f393a856fe3d}} 
+\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}!Board\+Get\+Unique\+Id@{Board\+Get\+Unique\+Id}}
+\index{Board\+Get\+Unique\+Id@{Board\+Get\+Unique\+Id}!s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+\subsubsection{\texorpdfstring{Board\+Get\+Unique\+Id}{BoardGetUniqueId}}
+{\footnotesize\ttfamily void( $\ast$ Board\+Get\+Unique\+Id) (uint8\+\_\+t $\ast$id)}
+
+
+
+Gets the board 64 bits unique ID 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & id Pointer to an array that will contain the Unique ID \\
+\hline
+\end{DoxyParams}
+
+
+lora.\+h 파일의 180 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_lo_ra_main_callback_abfbc0131a4d9b3702c8fb93228f342a8}\label{structs_lo_ra_main_callback_abfbc0131a4d9b3702c8fb93228f342a8}} 
+\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}!L\+O\+R\+A\+\_\+\+Confirm\+Class@{L\+O\+R\+A\+\_\+\+Confirm\+Class}}
+\index{L\+O\+R\+A\+\_\+\+Confirm\+Class@{L\+O\+R\+A\+\_\+\+Confirm\+Class}!s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Confirm\+Class}{LORA\_ConfirmClass}}
+{\footnotesize\ttfamily void( $\ast$ L\+O\+R\+A\+\_\+\+Confirm\+Class) (\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}} Class)}
+
+
+
+Confirms the class change 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & App\+Data is a buffer to process\\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & port is a Application port on wicth Appdata will be sent\\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & length is the number of recieved bytes \\
+\hline
+\end{DoxyParams}
+
+
+lora.\+h 파일의 210 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_lo_ra_main_callback_a956862bc1dcb958fc8b232f61535c5aa}\label{structs_lo_ra_main_callback_a956862bc1dcb958fc8b232f61535c5aa}} 
+\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}!L\+O\+R\+A\+\_\+\+Has\+Joined@{L\+O\+R\+A\+\_\+\+Has\+Joined}}
+\index{L\+O\+R\+A\+\_\+\+Has\+Joined@{L\+O\+R\+A\+\_\+\+Has\+Joined}!s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Has\+Joined}{LORA\_HasJoined}}
+{\footnotesize\ttfamily void( $\ast$ L\+O\+R\+A\+\_\+\+Has\+Joined) (void)}
+
+
+
+callback indicating End\+Node has jsu joiny 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & None \\
+\hline
+\end{DoxyParams}
+
+
+lora.\+h 파일의 200 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_lo_ra_main_callback_a22b1f2ac1a4f3880461e48becfc4530c}\label{structs_lo_ra_main_callback_a22b1f2ac1a4f3880461e48becfc4530c}} 
+\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}!L\+O\+R\+A\+\_\+\+Rx\+Data@{L\+O\+R\+A\+\_\+\+Rx\+Data}}
+\index{L\+O\+R\+A\+\_\+\+Rx\+Data@{L\+O\+R\+A\+\_\+\+Rx\+Data}!s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Rx\+Data}{LORA\_RxData}}
+{\footnotesize\ttfamily void( $\ast$ L\+O\+R\+A\+\_\+\+Rx\+Data) (\mbox{\hyperlink{structlora___app_data__t}{lora\+\_\+\+App\+Data\+\_\+t}} $\ast$\mbox{\hyperlink{main_8c_a666c0952dd06ca69c3d85952b8c1c8d5}{App\+Data}})}
+
+
+
+Process Rx Data received from Lora network 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & App\+Data structure \\
+\hline
+\end{DoxyParams}
+
+
+lora.\+h 파일의 193 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_lo_ra_main_callback_a1155e4044eaa6ca31a53fc0d14d9414b}\label{structs_lo_ra_main_callback_a1155e4044eaa6ca31a53fc0d14d9414b}} 
+\index{s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}!L\+O\+R\+A\+\_\+\+Tx\+Needed@{L\+O\+R\+A\+\_\+\+Tx\+Needed}}
+\index{L\+O\+R\+A\+\_\+\+Tx\+Needed@{L\+O\+R\+A\+\_\+\+Tx\+Needed}!s\+Lo\+Ra\+Main\+Callback@{s\+Lo\+Ra\+Main\+Callback}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+Tx\+Needed}{LORA\_TxNeeded}}
+{\footnotesize\ttfamily void( $\ast$ L\+O\+R\+A\+\_\+\+Tx\+Needed) (void)}
+
+
+
+callback indicating an uplink transmission is needed to allow a pending downlink transmission 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & None \\
+\hline
+\end{DoxyParams}
+
+
+lora.\+h 파일의 217 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Core/\mbox{\hyperlink{lora_8h}{lora.\+h}}\end{DoxyCompactItemize}

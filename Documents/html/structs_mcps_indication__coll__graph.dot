@@ -1,0 +1,6 @@
+digraph "sMcpsIndication"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{sMcpsIndication\n|+ McpsIndication\l+ Status\l+ Multicast\l+ Port\l+ RxDatarate\l+ FramePending\l+ Buffer\l+ BufferSize\l+ RxData\l+ Rssi\l+ Snr\l+ RxSlot\l+ AckReceived\l+ DownLinkCounter\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

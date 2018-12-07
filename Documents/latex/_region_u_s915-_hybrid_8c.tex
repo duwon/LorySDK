@@ -1,0 +1,472 @@
+\hypertarget{_region_u_s915-_hybrid_8c}{}\section{Lora\+Lib/\+Mac/region/\+Region\+U\+S915-\/\+Hybrid.c 파일 참조}
+\label{_region_u_s915-_hybrid_8c}\index{Lora\+Lib/\+Mac/region/\+Region\+U\+S915-\/\+Hybrid.\+c@{Lora\+Lib/\+Mac/region/\+Region\+U\+S915-\/\+Hybrid.\+c}}
+
+
+Region implementation for U\+S915 Hybrid  
+
+
+{\ttfamily \#include \char`\"{}utilities.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Region\+Common.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Region\+U\+S915-\/\+Hybrid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+Region\+U\+S915-\/\+Hybrid.c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}~6
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static int8\+\_\+t \mbox{\hyperlink{_region_u_s915-_hybrid_8c_ae06574681e2f7c3f3e604878c81743aa}{Get\+Next\+Lower\+Tx\+Dr}} (int8\+\_\+t dr, int8\+\_\+t min\+Dr)
+\item 
+static uint32\+\_\+t \mbox{\hyperlink{_region_u_s915-_hybrid_8c_afbe81e6d36760141722791d216d4ac60}{Get\+Bandwidth}} (uint32\+\_\+t dr\+Index)
+\item 
+static void \mbox{\hyperlink{_region_u_s915-_hybrid_8c_ac8aa2da46dca1566e730ffda2650f947}{Reenable\+Channels}} (uint16\+\_\+t mask, uint16\+\_\+t $\ast$channels\+Mask)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a8628e96fecf706f9925739e9c91535e7}{Count\+Bits}} (uint16\+\_\+t mask, uint8\+\_\+t nb\+Bits)
+\item 
+static int8\+\_\+t \mbox{\hyperlink{_region_u_s915-_hybrid_8c_af2821991c6e6dad3e196b01f6cf1d542}{Limit\+Tx\+Power}} (int8\+\_\+t tx\+Power, int8\+\_\+t max\+Band\+Tx\+Power, int8\+\_\+t datarate, uint16\+\_\+t $\ast$channels\+Mask)
+\item 
+static bool \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a15a15fb81475f8a2ff4c6c5a60aa291d}{Validate\+Channels\+Mask}} (uint16\+\_\+t $\ast$channels\+Mask)
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a43fc7f3f4d15301eebe5c4a8b64b3f51}{Count\+Nb\+Of\+Enabled\+Channels}} (uint8\+\_\+t datarate, uint16\+\_\+t $\ast$channels\+Mask, \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} $\ast$channels, \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} $\ast$bands, uint8\+\_\+t $\ast$enabled\+Channels, uint8\+\_\+t $\ast$delay\+Tx)
+\item 
+\mbox{\hyperlink{group___r_e_g_i_o_n_gaed159b26e5c4677236b6e8677019db30}{Phy\+Param\+\_\+t}} \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gaf078bd0d293c1a677ca53b7b6ca96c6e}{Region\+U\+S915\+Hybrid\+Get\+Phy\+Param}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gab471483fff904f4f89bbc03f7fc380ab}{Get\+Phy\+Params\+\_\+t}} $\ast$get\+Phy)
+\begin{DoxyCompactList}\small\item\em The function gets a value of a specific phy attribute. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gaffb1cec48663f7fc2d7aeae9411e3d76}{Region\+U\+S915\+Hybrid\+Set\+Band\+Tx\+Done}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gad0524aa0673c0814a71e7a4f9cade3fc}{Set\+Band\+Tx\+Done\+Params\+\_\+t}} $\ast$tx\+Done)
+\begin{DoxyCompactList}\small\item\em Updates the last TX done parameters of the current channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga05e578b7048a754fbd73b71d3a938a7f}{Region\+U\+S915\+Hybrid\+Init\+Defaults}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gaddc73ae10673ec925724e7870363bda9}{Init\+Type\+\_\+t}} type)
+\begin{DoxyCompactList}\small\item\em Initializes the channels masks and the channels. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga0fb0094a0833782259c6be87d3d4b141}{Region\+U\+S915\+Hybrid\+Verify}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga966d97bc2f25df1c09e92e60ef652276}{Verify\+Params\+\_\+t}} $\ast$verify, \mbox{\hyperlink{group___r_e_g_i_o_n_ga9445b07fdf77581ecfaf389970e635f8}{Phy\+Attribute\+\_\+t}} phy\+Attribute)
+\begin{DoxyCompactList}\small\item\em Verifies a parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gadf2edbcb9c0e296e8de9fe4a40fc96ee}{Region\+U\+S915\+Hybrid\+Apply\+C\+F\+List}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga71588e9ad07e34b78fa91d51881fd3c6}{Apply\+C\+F\+List\+Params\+\_\+t}} $\ast$apply\+C\+F\+List)
+\begin{DoxyCompactList}\small\item\em The function parses the input buffer and sets up the channels of the CF list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gab7d8969e0b1037572a6703d7995c44e3}{Region\+U\+S915\+Hybrid\+Chan\+Mask\+Set}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga6d24f7da136006410827dfb29f6b9b9e}{Chan\+Mask\+Set\+Params\+\_\+t}} $\ast$chan\+Mask\+Set)
+\begin{DoxyCompactList}\small\item\em Sets a channels mask. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga6cf3188c00bf9a9eaa7c62686dd4b391}{Region\+U\+S915\+Hybrid\+Adr\+Next}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga567c2742622326b350b4e91bbf61b4ce}{Adr\+Next\+Params\+\_\+t}} $\ast$adr\+Next, int8\+\_\+t $\ast$dr\+Out, int8\+\_\+t $\ast$tx\+Pow\+Out, uint32\+\_\+t $\ast$adr\+Ack\+Counter)
+\begin{DoxyCompactList}\small\item\em Calculates the next datarate to set, when A\+DR is on or off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gaf5cfd5576e5648a2a0bb12a982beb973}{Region\+U\+S915\+Hybrid\+Compute\+Rx\+Window\+Parameters}} (int8\+\_\+t datarate, uint8\+\_\+t min\+Rx\+Symbols, uint32\+\_\+t rx\+Error, \mbox{\hyperlink{group___r_e_g_i_o_n_ga375c038078dfcfc7ef14280021db719e}{Rx\+Config\+Params\+\_\+t}} $\ast$rx\+Config\+Params)
+\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga0f982743b1649a9491067676307a2e75}{Region\+U\+S915\+Hybrid\+Rx\+Config}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga375c038078dfcfc7ef14280021db719e}{Rx\+Config\+Params\+\_\+t}} $\ast$rx\+Config, int8\+\_\+t $\ast$datarate)
+\begin{DoxyCompactList}\small\item\em Configuration of the RX windows. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gaad87151c4921c1caae24b3b8bb4135b9}{Region\+U\+S915\+Hybrid\+Tx\+Config}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gabed730d4d04b0b60d4b6d1966d3f21d3}{Tx\+Config\+Params\+\_\+t}} $\ast$tx\+Config, int8\+\_\+t $\ast$tx\+Power, \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} $\ast$tx\+Time\+On\+Air)
+\begin{DoxyCompactList}\small\item\em TX configuration. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gade4dc50b11235e0a6675b0d22240dea2}{Region\+U\+S915\+Hybrid\+Link\+Adr\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gad4af503e8d4de1846129e26a799a1e8e}{Link\+Adr\+Req\+Params\+\_\+t}} $\ast$link\+Adr\+Req, int8\+\_\+t $\ast$dr\+Out, int8\+\_\+t $\ast$tx\+Pow\+Out, uint8\+\_\+t $\ast$nb\+Rep\+Out, uint8\+\_\+t $\ast$nb\+Bytes\+Parsed)
+\begin{DoxyCompactList}\small\item\em The function processes a Link A\+DR Request. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gaaee00f3fbfae1f41b0eec05d8b564177}{Region\+U\+S915\+Hybrid\+Rx\+Param\+Setup\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga7165f282c670c728c36d534df2285157}{Rx\+Param\+Setup\+Req\+Params\+\_\+t}} $\ast$rx\+Param\+Setup\+Req)
+\begin{DoxyCompactList}\small\item\em The function processes a RX Parameter Setup Request. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga8555b0827350263310c34afbb060842e}{Region\+U\+S915\+Hybrid\+New\+Channel\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gae2abcdb6dbb843c9faf5fd3009eca9d6}{New\+Channel\+Req\+Params\+\_\+t}} $\ast$new\+Channel\+Req)
+\begin{DoxyCompactList}\small\item\em The function processes a Channel Request. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gaea3f732a576b39e66791fb8e319b39a9}{Region\+U\+S915\+Hybrid\+Tx\+Param\+Setup\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga26836ef2996e70410e42ef471073f855}{Tx\+Param\+Setup\+Req\+Params\+\_\+t}} $\ast$tx\+Param\+Setup\+Req)
+\begin{DoxyCompactList}\small\item\em The function processes a TX Param\+Setup Request. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga0656307062a414233d72e9cf68e5763c}{Region\+U\+S915\+Hybrid\+Dl\+Channel\+Req}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gae0d608ff1f8ea0a430e4f9a4c38ec7f3}{Dl\+Channel\+Req\+Params\+\_\+t}} $\ast$dl\+Channel\+Req)
+\begin{DoxyCompactList}\small\item\em The function processes a Dl\+Channel Request. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gac169f8bcedf244520310b47ba0877a0c}{Region\+U\+S915\+Hybrid\+Alternate\+Dr}} (int8\+\_\+t current\+Dr)
+\begin{DoxyCompactList}\small\item\em Alternates the datarate of the channel for the join request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga410890efd066c15fb3452cf8ae8362e9}{Region\+U\+S915\+Hybrid\+Calc\+Back\+Off}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga7c5c9a8da174e6679eded8257dc92fd9}{Calc\+Back\+Off\+Params\+\_\+t}} $\ast$calc\+Back\+Off)
+\begin{DoxyCompactList}\small\item\em Calculates the back-\/off time. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga30bd25657e10480f8605ee951b0ecfbd}{Lo\+Ra\+Mac\+Status\+\_\+t}} \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gae74c05f827a9ed78b0ec0cacdec45f28}{Region\+U\+S915\+Hybrid\+Next\+Channel}} (\mbox{\hyperlink{group___r_e_g_i_o_n_ga115f5e83afae352c0a3dcdc193374040}{Next\+Chan\+Params\+\_\+t}} $\ast$next\+Chan\+Params, uint8\+\_\+t $\ast$channel, \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} $\ast$time, \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} $\ast$aggregated\+Time\+Off)
+\begin{DoxyCompactList}\small\item\em Searches and set the next random available channel \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga30bd25657e10480f8605ee951b0ecfbd}{Lo\+Ra\+Mac\+Status\+\_\+t}} \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga82fc4da7c52d7b26a8fcd8704c8af9ab}{Region\+U\+S915\+Hybrid\+Channel\+Add}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gab1c5f3aa06614283202906cef4417860}{Channel\+Add\+Params\+\_\+t}} $\ast$channel\+Add)
+\begin{DoxyCompactList}\small\item\em Adds a channel. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga01abfdc17109559ec3375226baf72331}{Region\+U\+S915\+Hybrid\+Channels\+Remove}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gaa37468560d2fc81a977b57a48e5d72c0}{Channel\+Remove\+Params\+\_\+t}} $\ast$channel\+Remove)
+\begin{DoxyCompactList}\small\item\em Removes a channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gad7b0e2c75aff473cd0c4287d4c6f24d1}{Region\+U\+S915\+Hybrid\+Set\+Continuous\+Wave}} (\mbox{\hyperlink{group___r_e_g_i_o_n_gaf39bb5ba06921139c6d17f88a8d518cd}{Continuous\+Wave\+Params\+\_\+t}} $\ast$continuous\+Wave)
+\begin{DoxyCompactList}\small\item\em Sets the radio into continuous wave mode. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gaa90275764dd76f7122c3253d2eab2c2f}{Region\+U\+S915\+Hybrid\+Apply\+Dr\+Offset}} (uint8\+\_\+t downlink\+Dwell\+Time, int8\+\_\+t dr, int8\+\_\+t dr\+Offset)
+\begin{DoxyCompactList}\small\item\em Computes new datarate according to the given offset \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a2781ea69a73fdddcc54719ec4775751f}{Channels}} \mbox{[}\mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga977b73cbf7a5d15e2bf543fad5f35710}{U\+S915\+\_\+\+H\+Y\+B\+R\+I\+D\+\_\+\+M\+A\+X\+\_\+\+N\+B\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}\mbox{]}
+\item 
+static \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} \mbox{\hyperlink{_region_u_s915-_hybrid_8c_acdf8c87a5e1e73b468dbf151f92e2273}{Bands}} \mbox{[}\mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga1ddb8622d642ac6254b04f9020ccfcf7}{U\+S915\+\_\+\+H\+Y\+B\+R\+I\+D\+\_\+\+M\+A\+X\+\_\+\+N\+B\+\_\+\+B\+A\+N\+DS}}\mbox{]}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a2188957b5ca6af8092154d7ccbfa5757}{Channels\+Mask}} \mbox{[}\mbox{\hyperlink{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a567333cec639a004655cc1717e9d0928}{Channels\+Mask\+Remaining}} \mbox{[}\mbox{\hyperlink{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{_region_u_s915-_hybrid_8c_ac127b19779301713d5ed92eb03366a2d}{Channels\+Default\+Mask}} \mbox{[}\mbox{\hyperlink{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Region implementation for U\+S915 Hybrid 
+
+\begin{DoxyCopyright}{Copyright}
+Revised B\+SD License, see section L\+I\+C\+E\+N\+SE.
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+  \_\_\_\_\_\_                              \_
+ / \_\_\_\_\_)             \_              | |
+( (\_\_\_\_  \_\_\_\_\_ \_\_\_\_ \_| |\_ \_\_\_\_\_  \_\_\_\_| |\_\_
+ \(\backslash\)\_\_\_\_ \(\backslash\)| \_\_\_ |    (\_   \_) \_\_\_ |/ \_\_\_)  \_ \(\backslash\)
+ \_\_\_\_\_) ) \_\_\_\_| | | || |\_| \_\_\_\_( (\_\_\_| | | |
+(\_\_\_\_\_\_/|\_\_\_\_\_)\_|\_|\_| \(\backslash\)\_\_)\_\_\_\_\_)\(\backslash\)\_\_\_\_)\_| |\_|
+(C)2013-2017 Semtech
+
+ \_\_\_ \_\_\_\_\_ \_   \_\_\_ \_  \_\_\_\_\_ \_\_\_  \_\_\_  \_\_\_ \_\_\_
+/ \_\_|\_   \_/\_\(\backslash\) / \_\_| |/ / \_\_/ \_ \(\backslash\)| \_ \(\backslash\)/ \_\_| \_\_|
+\(\backslash\)\_\_ \(\backslash\) | |/ \_ \(\backslash\) (\_\_| \textcolor{stringliteral}{' <| \_| (\_) |   / (\_\_| \_|}
+\textcolor{stringliteral}{|\_\_\_/ |\_/\_/ \(\backslash\)\_\(\backslash\)\_\_\_|\_|\(\backslash\)\_\(\backslash\)\_| \(\backslash\)\_\_\_/|\_|\_\(\backslash\)\(\backslash\)\_\_\_|\_\_\_|}
+\textcolor{stringliteral}{embedded.connectivity.solutions===============}
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{작성자}
+Miguel Luis ( Semtech )
+
+Gregory Cristian ( Semtech )
+
+Daniel Jaeckle ( S\+T\+A\+C\+K\+F\+O\+R\+CE ) 
+\end{DoxyAuthor}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}\label{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}
+\index{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE@{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}{CHANNELS\_MASK\_SIZE}}
+{\footnotesize\ttfamily \#define C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE~6}
+
+
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 38 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_a8628e96fecf706f9925739e9c91535e7}\label{_region_u_s915-_hybrid_8c_a8628e96fecf706f9925739e9c91535e7}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Count\+Bits@{Count\+Bits}}
+\index{Count\+Bits@{Count\+Bits}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Count\+Bits()}{CountBits()}}
+{\footnotesize\ttfamily static uint8\+\_\+t Count\+Bits (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mask,  }\item[{uint8\+\_\+t}]{nb\+Bits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 119 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+120 \{
+121     uint8\_t nbActiveBits = 0;
+122 
+123     \textcolor{keywordflow}{for}( uint8\_t j = 0; j < nbBits; j++ )
+124     \{
+125         \textcolor{keywordflow}{if}( ( mask & ( 1 << j ) ) == ( 1 << j ) )
+126         \{
+127             nbActiveBits++;
+128         \}
+129     \}
+130     \textcolor{keywordflow}{return} nbActiveBits;
+131 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_a43fc7f3f4d15301eebe5c4a8b64b3f51}\label{_region_u_s915-_hybrid_8c_a43fc7f3f4d15301eebe5c4a8b64b3f51}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Count\+Nb\+Of\+Enabled\+Channels@{Count\+Nb\+Of\+Enabled\+Channels}}
+\index{Count\+Nb\+Of\+Enabled\+Channels@{Count\+Nb\+Of\+Enabled\+Channels}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Count\+Nb\+Of\+Enabled\+Channels()}{CountNbOfEnabledChannels()}}
+{\footnotesize\ttfamily static uint8\+\_\+t Count\+Nb\+Of\+Enabled\+Channels (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{datarate,  }\item[{uint16\+\_\+t $\ast$}]{channels\+Mask,  }\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} $\ast$}]{channels,  }\item[{\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} $\ast$}]{bands,  }\item[{uint8\+\_\+t $\ast$}]{enabled\+Channels,  }\item[{uint8\+\_\+t $\ast$}]{delay\+Tx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 209 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+210 \{
+211     uint8\_t nbEnabledChannels = 0;
+212     uint8\_t delayTransmission = 0;
+213 
+214     \textcolor{keywordflow}{for}( uint8\_t i = 0, k = 0; i < \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga977b73cbf7a5d15e2bf543fad5f35710}{US915\_HYBRID\_MAX\_NB\_CHANNELS}}; i += 16, k++ )
+215     \{
+216         \textcolor{keywordflow}{for}( uint8\_t j = 0; j < 16; j++ )
+217         \{
+218             \textcolor{keywordflow}{if}( ( channelsMask[k] & ( 1 << j ) ) != 0 )
+219             \{
+220                 \textcolor{keywordflow}{if}( channels[i + j].Frequency == 0 )
+221                 \{ \textcolor{comment}{// Check if the channel is enabled}
+222                     \textcolor{keywordflow}{continue};
+223                 \}
+224                 \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___r_e_g_i_o_n_c_o_m_m_o_n_gafdd1c80d953e18d755a631b72a9c3bd3}{RegionCommonValueInRange}}( datarate, channels[i + j].DrRange.
+      Fields.Min,
+225                                               channels[i + j].DrRange.Fields.Max ) == \textcolor{keyword}{false} )
+226                 \{ \textcolor{comment}{// Check if the current channel selection supports the given datarate}
+227                     \textcolor{keywordflow}{continue};
+228                 \}
+229                 \textcolor{keywordflow}{if}( bands[channels[i + j].Band].TimeOff > 0 )
+230                 \{ \textcolor{comment}{// Check if the band is available for transmission}
+231                     delayTransmission++;
+232                     \textcolor{keywordflow}{continue};
+233                 \}
+234                 enabledChannels[nbEnabledChannels++] = i + j;
+235             \}
+236         \}
+237     \}
+238 
+239     *delayTx = delayTransmission;
+240     \textcolor{keywordflow}{return} nbEnabledChannels;
+241 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_afbe81e6d36760141722791d216d4ac60}\label{_region_u_s915-_hybrid_8c_afbe81e6d36760141722791d216d4ac60}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Get\+Bandwidth@{Get\+Bandwidth}}
+\index{Get\+Bandwidth@{Get\+Bandwidth}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Get\+Bandwidth()}{GetBandwidth()}}
+{\footnotesize\ttfamily static uint32\+\_\+t Get\+Bandwidth (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{dr\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 85 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+86 \{
+87     \textcolor{keywordflow}{switch}( \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gada3976d142cb9c990e9af2567ff8ecca}{BandwidthsUS915\_HYBRID}}[drIndex] )
+88     \{
+89         \textcolor{keywordflow}{default}:
+90         \textcolor{keywordflow}{case} 125000:
+91             \textcolor{keywordflow}{return} 0;
+92         \textcolor{keywordflow}{case} 250000:
+93             \textcolor{keywordflow}{return} 1;
+94         \textcolor{keywordflow}{case} 500000:
+95             \textcolor{keywordflow}{return} 2;
+96     \}
+97 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_ae06574681e2f7c3f3e604878c81743aa}\label{_region_u_s915-_hybrid_8c_ae06574681e2f7c3f3e604878c81743aa}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Get\+Next\+Lower\+Tx\+Dr@{Get\+Next\+Lower\+Tx\+Dr}}
+\index{Get\+Next\+Lower\+Tx\+Dr@{Get\+Next\+Lower\+Tx\+Dr}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Get\+Next\+Lower\+Tx\+Dr()}{GetNextLowerTxDr()}}
+{\footnotesize\ttfamily static int8\+\_\+t Get\+Next\+Lower\+Tx\+Dr (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{dr,  }\item[{int8\+\_\+t}]{min\+Dr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 70 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+71 \{
+72     uint8\_t nextLowerDr = 0;
+73 
+74     \textcolor{keywordflow}{if}( dr == minDr )
+75     \{
+76         nextLowerDr = minDr;
+77     \}
+78     \textcolor{keywordflow}{else}
+79     \{
+80         nextLowerDr = dr - 1;
+81     \}
+82     \textcolor{keywordflow}{return} nextLowerDr;
+83 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_af2821991c6e6dad3e196b01f6cf1d542}\label{_region_u_s915-_hybrid_8c_af2821991c6e6dad3e196b01f6cf1d542}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Limit\+Tx\+Power@{Limit\+Tx\+Power}}
+\index{Limit\+Tx\+Power@{Limit\+Tx\+Power}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Limit\+Tx\+Power()}{LimitTxPower()}}
+{\footnotesize\ttfamily static int8\+\_\+t Limit\+Tx\+Power (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{tx\+Power,  }\item[{int8\+\_\+t}]{max\+Band\+Tx\+Power,  }\item[{int8\+\_\+t}]{datarate,  }\item[{uint16\+\_\+t $\ast$}]{channels\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 133 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+134 \{
+135     int8\_t txPowerResult = txPower;
+136 
+137     \textcolor{comment}{// Limit tx power to the band max}
+138     txPowerResult =  \mbox{\hyperlink{utilities_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}( txPower, maxBandTxPower );
+139 
+140     \textcolor{keywordflow}{if}( datarate == \mbox{\hyperlink{group___r_e_g_i_o_n_ga6ceba6158a7dab238e9d0b846fb47a0c}{DR\_4}} )
+141     \{\textcolor{comment}{// Limit tx power to max 26dBm}
+142         txPowerResult = \mbox{\hyperlink{utilities_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}( txPower, \mbox{\hyperlink{group___r_e_g_i_o_n_gaf308ada92d6393ca5ae171ffc462c74c}{TX\_POWER\_2}} );
+143     \}
+144     \textcolor{keywordflow}{else}
+145     \{
+146         \textcolor{keywordflow}{if}( \mbox{\hyperlink{group___r_e_g_i_o_n_c_o_m_m_o_n_gac23f0831812f610f57f42f6cf87368c9}{RegionCommonCountChannels}}( channelsMask, 0, 4 ) < 50 )
+147         \{\textcolor{comment}{// Limit tx power to max 21dBm}
+148             txPowerResult = \mbox{\hyperlink{utilities_8h_afa99ec4acc4ecb2dc3c2d05da15d0e3f}{MAX}}( txPower, \mbox{\hyperlink{group___r_e_g_i_o_n_ga0149d52581db80901b5bc1adf0aedd1d}{TX\_POWER\_5}} );
+149         \}
+150     \}
+151     \textcolor{keywordflow}{return} txPowerResult;
+152 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_ac8aa2da46dca1566e730ffda2650f947}\label{_region_u_s915-_hybrid_8c_ac8aa2da46dca1566e730ffda2650f947}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Reenable\+Channels@{Reenable\+Channels}}
+\index{Reenable\+Channels@{Reenable\+Channels}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Reenable\+Channels()}{ReenableChannels()}}
+{\footnotesize\ttfamily static void Reenable\+Channels (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mask,  }\item[{uint16\+\_\+t $\ast$}]{channels\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 99 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+100 \{
+101     uint16\_t blockMask = mask;
+102 
+103     \textcolor{keywordflow}{for}( uint8\_t i = 0, j = 0; i < 4; i++, j += 2 )
+104     \{
+105         channelsMask[i] = 0;
+106         \textcolor{keywordflow}{if}( ( blockMask & ( 1 << j ) ) != 0 )
+107         \{
+108             channelsMask[i] |= 0x00FF;
+109         \}
+110         \textcolor{keywordflow}{if}( ( blockMask & ( 1 << ( j + 1 ) ) ) != 0 )
+111         \{
+112             channelsMask[i] |= 0xFF00;
+113         \}
+114     \}
+115     channelsMask[4] = blockMask;
+116     channelsMask[5] = 0x0000;
+117 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_a15a15fb81475f8a2ff4c6c5a60aa291d}\label{_region_u_s915-_hybrid_8c_a15a15fb81475f8a2ff4c6c5a60aa291d}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Validate\+Channels\+Mask@{Validate\+Channels\+Mask}}
+\index{Validate\+Channels\+Mask@{Validate\+Channels\+Mask}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Validate\+Channels\+Mask()}{ValidateChannelsMask()}}
+{\footnotesize\ttfamily static bool Validate\+Channels\+Mask (\begin{DoxyParamCaption}\item[{uint16\+\_\+t $\ast$}]{channels\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 154 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+155 \{
+156     \textcolor{keywordtype}{bool} chanMaskState = \textcolor{keyword}{false};
+157     uint16\_t block1 = 0;
+158     uint16\_t block2 = 0;
+159     uint8\_t index = 0;
+160     uint16\_t channelsMaskCpy[6];
+161 
+162     \textcolor{comment}{// Copy channels mask to not change the input}
+163     \textcolor{keywordflow}{for}( uint8\_t i = 0; i < 4; i++ )
+164     \{
+165         channelsMaskCpy[i] = channelsMask[i];
+166     \}
+167 
+168     \textcolor{keywordflow}{for}( uint8\_t i = 0; i < 4; i++ )
+169     \{
+170         block1 = channelsMaskCpy[i] & 0x00FF;
+171         block2 = channelsMaskCpy[i] & 0xFF00;
+172 
+173         \textcolor{keywordflow}{if}( \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a8628e96fecf706f9925739e9c91535e7}{CountBits}}( block1, 16 ) > 1 )
+174         \{
+175             channelsMaskCpy[i] &= block1;
+176             channelsMaskCpy[4] = 1 << ( i * 2 );
+177             chanMaskState = \textcolor{keyword}{true};
+178             index = i;
+179             \textcolor{keywordflow}{break};
+180         \}
+181         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( \mbox{\hyperlink{_region_u_s915-_hybrid_8c_a8628e96fecf706f9925739e9c91535e7}{CountBits}}( block2, 16 ) > 1 )
+182         \{
+183             channelsMaskCpy[i] &= block2;
+184             channelsMaskCpy[4] = 1 << ( i * 2 + 1 );
+185             chanMaskState = \textcolor{keyword}{true};
+186             index = i;
+187             \textcolor{keywordflow}{break};
+188         \}
+189     \}
+190 
+191     \textcolor{comment}{// Do only change the channel mask, if we have found a valid block.}
+192     \textcolor{keywordflow}{if}( chanMaskState == \textcolor{keyword}{true} )
+193     \{
+194         \textcolor{comment}{// Copy channels mask back again}
+195         \textcolor{keywordflow}{for}( uint8\_t i = 0; i < 4; i++ )
+196         \{
+197             channelsMask[i] = channelsMaskCpy[i];
+198 
+199             \textcolor{keywordflow}{if}( i != index )
+200             \{
+201                 channelsMask[i] = 0;
+202             \}
+203         \}
+204         channelsMask[4] = channelsMaskCpy[4];
+205     \}
+206     \textcolor{keywordflow}{return} chanMaskState;
+207 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_acdf8c87a5e1e73b468dbf151f92e2273}\label{_region_u_s915-_hybrid_8c_acdf8c87a5e1e73b468dbf151f92e2273}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Bands@{Bands}}
+\index{Bands@{Bands}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Bands}{Bands}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f49721ee96ceb52c80a896ab11a2ed8}{Band\+\_\+t}} Bands\mbox{[}\mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga1ddb8622d642ac6254b04f9020ccfcf7}{U\+S915\+\_\+\+H\+Y\+B\+R\+I\+D\+\_\+\+M\+A\+X\+\_\+\+N\+B\+\_\+\+B\+A\+N\+DS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries 초기값\+:}
+\begin{DoxyCode}
+=
+\{
+    \mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_gaf373565fbcca15762d7f9209e78daa6c}{US915\_HYBRID\_BAND0}}
+\}
+\end{DoxyCode}
+Lo\+Ra\+Mac bands 
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 49 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_a2781ea69a73fdddcc54719ec4775751f}\label{_region_u_s915-_hybrid_8c_a2781ea69a73fdddcc54719ec4775751f}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Channels@{Channels}}
+\index{Channels@{Channels}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Channels}{Channels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} Channels\mbox{[}\mbox{\hyperlink{group___r_e_g_i_o_n_u_s915_h_y_b_ga977b73cbf7a5d15e2bf543fad5f35710}{U\+S915\+\_\+\+H\+Y\+B\+R\+I\+D\+\_\+\+M\+A\+X\+\_\+\+N\+B\+\_\+\+C\+H\+A\+N\+N\+E\+LS}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Lo\+Ra\+M\+AC channels 
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 44 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_ac127b19779301713d5ed92eb03366a2d}\label{_region_u_s915-_hybrid_8c_ac127b19779301713d5ed92eb03366a2d}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Channels\+Default\+Mask@{Channels\+Default\+Mask}}
+\index{Channels\+Default\+Mask@{Channels\+Default\+Mask}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Channels\+Default\+Mask}{ChannelsDefaultMask}}
+{\footnotesize\ttfamily uint16\+\_\+t Channels\+Default\+Mask\mbox{[}\mbox{\hyperlink{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Lo\+Ra\+Mac channels default mask 
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 67 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_a2188957b5ca6af8092154d7ccbfa5757}\label{_region_u_s915-_hybrid_8c_a2188957b5ca6af8092154d7ccbfa5757}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Channels\+Mask@{Channels\+Mask}}
+\index{Channels\+Mask@{Channels\+Mask}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Channels\+Mask}{ChannelsMask}}
+{\footnotesize\ttfamily uint16\+\_\+t Channels\+Mask\mbox{[}\mbox{\hyperlink{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Lo\+Ra\+Mac channels mask 
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 57 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{_region_u_s915-_hybrid_8c_a567333cec639a004655cc1717e9d0928}\label{_region_u_s915-_hybrid_8c_a567333cec639a004655cc1717e9d0928}} 
+\index{Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}!Channels\+Mask\+Remaining@{Channels\+Mask\+Remaining}}
+\index{Channels\+Mask\+Remaining@{Channels\+Mask\+Remaining}!Region\+U\+S915-\/\+Hybrid.\+c@{Region\+U\+S915-\/\+Hybrid.\+c}}
+\subsubsection{\texorpdfstring{Channels\+Mask\+Remaining}{ChannelsMaskRemaining}}
+{\footnotesize\ttfamily uint16\+\_\+t Channels\+Mask\+Remaining\mbox{[}\mbox{\hyperlink{_region_u_s915-_hybrid_8c_a1b20a8de3ae59c0b063fb313f0c70890}{C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+S\+K\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+Lo\+Ra\+Mac channels remaining 
+
+Region\+U\+S915-\/\+Hybrid.\+c 파일의 62 번째 라인에서 정의되었습니다.
+

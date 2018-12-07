@@ -1,0 +1,45 @@
+digraph "SX1276SetStby"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node537 [label="SX1276SetStby",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node537 -> Node538 [color="midnightblue",fontsize="10",style="solid"];
+  Node538 [label="TimerStop",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#a8ae899c4e8a9abf49d825d6959aa6bcb",tooltip="Stops and removes the timer object from the list of timer events "];
+  Node538 -> Node539 [color="midnightblue",fontsize="10",style="solid"];
+  Node539 [label="TimerSetTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$time_server_8c.html#af90925c5246bd6bbc2863d08d4cca3a9",tooltip="Sets a timeout with the duration \"timestamp\" "];
+  Node539 -> Node540 [color="midnightblue",fontsize="10",style="solid"];
+  Node540 [label="HW_RTC_GetMinimumTimeout",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga254f9e5c17daff978fef15be01021c51",tooltip="Return the minimum timeout the RTC is able to handle "];
+  Node539 -> Node541 [color="midnightblue",fontsize="10",style="solid"];
+  Node541 [label="HW_RTC_GetTimerElapsedTime",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga7961116aa831950b62a413ecbbcfb02a",tooltip="Get the RTC timer elapsed time since the last Reference was set "];
+  Node541 -> Node542 [color="midnightblue",fontsize="10",style="solid"];
+  Node542 [label="HW_RTC_GetCalendarValue",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#gaf81b8dc866a5c7b125355b55e3953387",tooltip="get current time from calendar in ticks "];
+  Node539 -> Node543 [color="midnightblue",fontsize="10",style="solid"];
+  Node543 [label="HW_RTC_SetAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga09cec56d54c13de658fafdd003390771",tooltip="Set the alarm "];
+  Node543 -> Node541 [color="midnightblue",fontsize="10",style="solid"];
+  Node543 -> Node544 [color="midnightblue",fontsize="10",style="solid"];
+  Node544 [label="LPM_SetStopMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ac8a0ff787d7d417b9e1f0697a1d5fd6d",tooltip="This API notifies the low power manager if the specified user allows the Off mode or not..."];
+  Node543 -> Node545 [color="midnightblue",fontsize="10",style="solid"];
+  Node545 [label="LPM_GetMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$low__power__manager_8c.html#ae9107e412181f10977b724c346cebd45",tooltip="This API returns the Low Power Mode selected that will be applied when the system will enter low powe..."];
+  Node543 -> Node546 [color="midnightblue",fontsize="10",style="solid"];
+  Node546 [label="HW_RTC_StartWakeUpAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga60703fcfc4abd73a2efc980e8bb6ad27",tooltip="start wake up alarm "];
+  Node546 -> Node547 [color="midnightblue",fontsize="10",style="solid"];
+  Node547 [label="HW_RTC_StopAlarm",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___r_t_c___functions.html#ga227be06e4dc1332d46ff12519db183b5",tooltip="Stop the Alarm "];
+  Node538 -> Node547 [color="midnightblue",fontsize="10",style="solid"];
+  Node537 -> Node548 [color="midnightblue",fontsize="10",style="solid"];
+  Node548 [label="SX1276SetOpMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#aaaac2e0d7b5bd63fabf38a235d27a452",tooltip="Sets the SX1276 operating mode "];
+  Node548 -> Node549 [color="midnightblue",fontsize="10",style="solid"];
+  Node549 [label="SX1276Write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a15374c2bed5d3ff2d6b95fdf177b645e",tooltip="Writes the radio register at the specified address "];
+  Node549 -> Node550 [color="midnightblue",fontsize="10",style="solid"];
+  Node550 [label="SX1276WriteBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#aba51c12ba7f6d704cdeed69201507983",tooltip="Writes multiple radio registers starting at address "];
+  Node550 -> Node551 [color="midnightblue",fontsize="10",style="solid"];
+  Node551 [label="HW_GPIO_Write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___g_p_i_o___functions.html#ga64b37e6d4da7e8f148c92f898aed98de",tooltip="Writes the given value to the GPIO output "];
+  Node550 -> Node552 [color="midnightblue",fontsize="10",style="solid"];
+  Node552 [label="HW_SPI_InOut",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__spi_8h.html#ae0d3f21fb84de59193e82bd1943d5563",tooltip="Sends outData and receives inData "];
+  Node548 -> Node553 [color="midnightblue",fontsize="10",style="solid"];
+  Node553 [label="SX1276Read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a1c0054da62dacb13d6286a7cfe01d863",tooltip="Reads the radio register at the specified address "];
+  Node553 -> Node554 [color="midnightblue",fontsize="10",style="solid"];
+  Node554 [label="SX1276ReadBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a9b3df4400813ac6aed7b77f400436ad0",tooltip="Reads multiple radio registers starting at address "];
+  Node554 -> Node551 [color="midnightblue",fontsize="10",style="solid"];
+  Node554 -> Node552 [color="midnightblue",fontsize="10",style="solid"];
+}

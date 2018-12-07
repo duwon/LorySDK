@@ -1,0 +1,6 @@
+digraph "sRxConfigParams"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{sRxConfigParams\n|+ Channel\l+ Datarate\l+ Bandwidth\l+ DrOffset\l+ Frequency\l+ WindowTimeout\l+ WindowOffset\l+ DownlinkDwellTime\l+ RepeaterSupport\l+ RxContinuous\l+ RxSlot\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.14"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>LorySDK: Projects/DockingStation/inc/bsp.h 소스 파일</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">LorySDK
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 다음에 의해 생성됨 :  Doxygen 1.8.14 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'검색');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','검색');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('bsp_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">bsp.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="bsp_8h.html">이 파일의 문서화 페이지로 가기</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Define to prevent recursive inclusion -------------------------------------*/</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#ifndef __BSP_H__</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#define __BSP_H__</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; <span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/* Includes ------------------------------------------------------------------*/</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="hw_8h.html">hw.h</a>&quot;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;     </div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* Exported types ------------------------------------------------------------*/</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/* Exported constants --------------------------------------------------------*/</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/* External variables --------------------------------------------------------*/</span></div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">/* Exported macros -----------------------------------------------------------*/</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">/* Exported functions ------------------------------------------------------- */</span> </div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___lory_s_d_k___l_e_d___functions.html#gab58a4f16a476a53653c5c400e3bed158">BSP_LED_Init</a>(<a class="code" href="_lory_s_d_k__hw__conf_8h.html#aa059704b7ca945eb9c1e7f2c3d03fecd">Led_TypeDef</a> Led);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___lory_s_d_k___l_e_d___functions.html#ga8cb1d5b32557d492b8bf0f7109bd6d3f">BSP_LED_DeInit</a>(<a class="code" href="_lory_s_d_k__hw__conf_8h.html#aa059704b7ca945eb9c1e7f2c3d03fecd">Led_TypeDef</a> Led);</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___lory_s_d_k___l_e_d___functions.html#gaee9c16b16384834c69efabf58f423d6f">BSP_LED_On</a>(<a class="code" href="_lory_s_d_k__hw__conf_8h.html#aa059704b7ca945eb9c1e7f2c3d03fecd">Led_TypeDef</a> Led);</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___lory_s_d_k___l_e_d___functions.html#gaef268680154ca15c45066d64d41f9467">BSP_LED_Off</a>(<a class="code" href="_lory_s_d_k__hw__conf_8h.html#aa059704b7ca945eb9c1e7f2c3d03fecd">Led_TypeDef</a> Led);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___lory_s_d_k___l_e_d___functions.html#ga1b9eabba7d498f41d6f16587ec0f9732">BSP_LED_Toggle</a>(<a class="code" href="_lory_s_d_k__hw__conf_8h.html#aa059704b7ca945eb9c1e7f2c3d03fecd">Led_TypeDef</a> Led);     </div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;     </div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___b_u_t_t_o_n___functions.html#gad31c8db50a71c1f6dbfe132d72ba0bc6">BSP_PB_Init</a>(<a class="code" href="_lory_s_d_k__hw__conf_8h.html#a643816dfbad5c734fc25a29ce8d35bb1">Button_TypeDef</a> Button, <a class="code" href="_lory_s_d_k__hw__conf_8h.html#a48825b7c7d851c440ef8e808fd9d8f0a">ButtonMode_TypeDef</a> ButtonMode);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___b_u_t_t_o_n___functions.html#gac1bd746e7f6037d50ca3784ebe05686e">BSP_PB_DeInit</a>(<a class="code" href="_lory_s_d_k__hw__conf_8h.html#a643816dfbad5c734fc25a29ce8d35bb1">Button_TypeDef</a> Button);</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;uint32_t        <a class="code" href="group___b_u_t_t_o_n___functions.html#ga8f0978b6cffda9c67266ddfdb3a0abf7">BSP_PB_GetState</a>(<a class="code" href="_lory_s_d_k__hw__conf_8h.html#a643816dfbad5c734fc25a29ce8d35bb1">Button_TypeDef</a> Button);</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___docking_station___r_f___power___functions.html#ga46ccfec03200a24f3737fc8015e2d5f7">BSP_SX1276POWER_Init</a>( <span class="keywordtype">void</span> );</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___docking_station___r_f___power___functions.html#ga42c7cbbf0254f5f11135797d083bcb2c">BSP_SX1276POWER_DeInit</a>( <span class="keywordtype">void</span> );</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___docking_station___r_f___power___functions.html#gaef6814f684bbf7fa47adda1abc4c1129">BSP_SX1276POWER_On</a>( <span class="keywordtype">void</span> );</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span>            <a class="code" href="group___docking_station___r_f___power___functions.html#ga0514aa0607414fb41ea7e37a58ce6307">BSP_SX1276POWER_Off</a>( <span class="keywordtype">void</span> );</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __BSP_H__ */</span><span class="preprocessor"></span></div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/</span></div><div class="ttc" id="_lory_s_d_k__hw__conf_8h_html_aa059704b7ca945eb9c1e7f2c3d03fecd"><div class="ttname"><a href="_lory_s_d_k__hw__conf_8h.html#aa059704b7ca945eb9c1e7f2c3d03fecd">Led_TypeDef</a></div><div class="ttdeci">Led_TypeDef</div><div class="ttdef"><b>Definition:</b> <a href="_lory_s_d_k__hw__conf_8h_source.html#l00019">LorySDK_hw_conf.h:19</a></div></div>
+<div class="ttc" id="_lory_s_d_k__hw__conf_8h_html_a643816dfbad5c734fc25a29ce8d35bb1"><div class="ttname"><a href="_lory_s_d_k__hw__conf_8h.html#a643816dfbad5c734fc25a29ce8d35bb1">Button_TypeDef</a></div><div class="ttdeci">Button_TypeDef</div><div class="ttdef"><b>Definition:</b> <a href="_lory_s_d_k__hw__conf_8h_source.html#l00025">LorySDK_hw_conf.h:25</a></div></div>
+<div class="ttc" id="group___docking_station___r_f___power___functions_html_ga46ccfec03200a24f3737fc8015e2d5f7"><div class="ttname"><a href="group___docking_station___r_f___power___functions.html#ga46ccfec03200a24f3737fc8015e2d5f7">BSP_SX1276POWER_Init</a></div><div class="ttdeci">void BSP_SX1276POWER_Init(void)</div><div class="ttdoc">Configure RF Power GPIO. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00200">bsp.c:200</a></div></div>
+<div class="ttc" id="group___lory_s_d_k___l_e_d___functions_html_gab58a4f16a476a53653c5c400e3bed158"><div class="ttname"><a href="group___lory_s_d_k___l_e_d___functions.html#gab58a4f16a476a53653c5c400e3bed158">BSP_LED_Init</a></div><div class="ttdeci">void BSP_LED_Init(Led_TypeDef Led)</div><div class="ttdoc">Configures LED GPIO. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00034">bsp.c:34</a></div></div>
+<div class="ttc" id="group___docking_station___r_f___power___functions_html_ga0514aa0607414fb41ea7e37a58ce6307"><div class="ttname"><a href="group___docking_station___r_f___power___functions.html#ga0514aa0607414fb41ea7e37a58ce6307">BSP_SX1276POWER_Off</a></div><div class="ttdeci">void BSP_SX1276POWER_Off(void)</div><div class="ttdoc">Power off SX1276. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00247">bsp.c:247</a></div></div>
+<div class="ttc" id="group___lory_s_d_k___l_e_d___functions_html_ga8cb1d5b32557d492b8bf0f7109bd6d3f"><div class="ttname"><a href="group___lory_s_d_k___l_e_d___functions.html#ga8cb1d5b32557d492b8bf0f7109bd6d3f">BSP_LED_DeInit</a></div><div class="ttdeci">void BSP_LED_DeInit(Led_TypeDef Led)</div><div class="ttdoc">DeInit LEDs. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00061">bsp.c:61</a></div></div>
+<div class="ttc" id="group___b_u_t_t_o_n___functions_html_gad31c8db50a71c1f6dbfe132d72ba0bc6"><div class="ttname"><a href="group___b_u_t_t_o_n___functions.html#gad31c8db50a71c1f6dbfe132d72ba0bc6">BSP_PB_Init</a></div><div class="ttdeci">void BSP_PB_Init(Button_TypeDef Button, ButtonMode_TypeDef ButtonMode)</div><div class="ttdoc">Configures Button GPIO and EXTI Line. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00127">bsp.c:127</a></div></div>
+<div class="ttc" id="hw_8h_html"><div class="ttname"><a href="hw_8h.html">hw.h</a></div></div>
+<div class="ttc" id="group___lory_s_d_k___l_e_d___functions_html_gaee9c16b16384834c69efabf58f423d6f"><div class="ttname"><a href="group___lory_s_d_k___l_e_d___functions.html#gaee9c16b16384834c69efabf58f423d6f">BSP_LED_On</a></div><div class="ttdeci">void BSP_LED_On(Led_TypeDef Led)</div><div class="ttdoc">Turns selected LED On. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00079">bsp.c:79</a></div></div>
+<div class="ttc" id="group___lory_s_d_k___l_e_d___functions_html_gaef268680154ca15c45066d64d41f9467"><div class="ttname"><a href="group___lory_s_d_k___l_e_d___functions.html#gaef268680154ca15c45066d64d41f9467">BSP_LED_Off</a></div><div class="ttdeci">void BSP_LED_Off(Led_TypeDef Led)</div><div class="ttdoc">Turns selected LED Off. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00091">bsp.c:91</a></div></div>
+<div class="ttc" id="group___b_u_t_t_o_n___functions_html_gac1bd746e7f6037d50ca3784ebe05686e"><div class="ttname"><a href="group___b_u_t_t_o_n___functions.html#gac1bd746e7f6037d50ca3784ebe05686e">BSP_PB_DeInit</a></div><div class="ttdeci">void BSP_PB_DeInit(Button_TypeDef Button)</div><div class="ttdoc">Push Button DeInit. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00166">bsp.c:166</a></div></div>
+<div class="ttc" id="group___lory_s_d_k___l_e_d___functions_html_ga1b9eabba7d498f41d6f16587ec0f9732"><div class="ttname"><a href="group___lory_s_d_k___l_e_d___functions.html#ga1b9eabba7d498f41d6f16587ec0f9732">BSP_LED_Toggle</a></div><div class="ttdeci">void BSP_LED_Toggle(Led_TypeDef Led)</div><div class="ttdoc">Toggles the selected LED. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00103">bsp.c:103</a></div></div>
+<div class="ttc" id="group___docking_station___r_f___power___functions_html_gaef6814f684bbf7fa47adda1abc4c1129"><div class="ttname"><a href="group___docking_station___r_f___power___functions.html#gaef6814f684bbf7fa47adda1abc4c1129">BSP_SX1276POWER_On</a></div><div class="ttdeci">void BSP_SX1276POWER_On(void)</div><div class="ttdoc">Power on SX1276. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00237">bsp.c:237</a></div></div>
+<div class="ttc" id="group___b_u_t_t_o_n___functions_html_ga8f0978b6cffda9c67266ddfdb3a0abf7"><div class="ttname"><a href="group___b_u_t_t_o_n___functions.html#ga8f0978b6cffda9c67266ddfdb3a0abf7">BSP_PB_GetState</a></div><div class="ttdeci">uint32_t BSP_PB_GetState(Button_TypeDef Button)</div><div class="ttdoc">Returns the selected Button state. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00182">bsp.c:182</a></div></div>
+<div class="ttc" id="group___docking_station___r_f___power___functions_html_ga42c7cbbf0254f5f11135797d083bcb2c"><div class="ttname"><a href="group___docking_station___r_f___power___functions.html#ga42c7cbbf0254f5f11135797d083bcb2c">BSP_SX1276POWER_DeInit</a></div><div class="ttdeci">void BSP_SX1276POWER_DeInit(void)</div><div class="ttdoc">DeInit RF Power GPIO. </div><div class="ttdef"><b>Definition:</b> <a href="bsp_8c_source.html#l00221">bsp.c:221</a></div></div>
+<div class="ttc" id="_lory_s_d_k__hw__conf_8h_html_a48825b7c7d851c440ef8e808fd9d8f0a"><div class="ttname"><a href="_lory_s_d_k__hw__conf_8h.html#a48825b7c7d851c440ef8e808fd9d8f0a">ButtonMode_TypeDef</a></div><div class="ttdeci">ButtonMode_TypeDef</div><div class="ttdef"><b>Definition:</b> <a href="_lory_s_d_k__hw__conf_8h_source.html#l00032">LorySDK_hw_conf.h:32</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_7a6499598ddcfcabe96e224cb4a6d834.html">Projects</a></li><li class="navelem"><a class="el" href="dir_2d5c189dde566096c30f6275caec84be.html">DockingStation</a></li><li class="navelem"><a class="el" href="dir_2e0321a805db9efd3a8ebbe878c659f0.html">inc</a></li><li class="navelem"><a class="el" href="bsp_8h.html">bsp.h</a></li>
+    <li class="footer">다음에 의해 생성됨 : 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
+  </ul>
+</div>
+</body>
+</html>

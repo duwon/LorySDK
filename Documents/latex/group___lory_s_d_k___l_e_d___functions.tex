@@ -1,0 +1,206 @@
+\hypertarget{group___lory_s_d_k___l_e_d___functions}{}\section{L\+ED Functions}
+\label{group___lory_s_d_k___l_e_d___functions}\index{L\+E\+D Functions@{L\+E\+D Functions}}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group___lory_s_d_k___l_e_d___functions_gab58a4f16a476a53653c5c400e3bed158}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Init}} (\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}} Led)
+\begin{DoxyCompactList}\small\item\em Configures L\+ED G\+P\+IO. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___l_e_d___functions_ga8cb1d5b32557d492b8bf0f7109bd6d3f}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+De\+Init}} (\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}} Led)
+\begin{DoxyCompactList}\small\item\em De\+Init L\+E\+Ds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___l_e_d___functions_gaee9c16b16384834c69efabf58f423d6f}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+On}} (\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}} Led)
+\begin{DoxyCompactList}\small\item\em Turns selected L\+ED On. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___l_e_d___functions_gaef268680154ca15c45066d64d41f9467}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Off}} (\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}} Led)
+\begin{DoxyCompactList}\small\item\em Turns selected L\+ED Off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___l_e_d___functions_ga1b9eabba7d498f41d6f16587ec0f9732}{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Toggle}} (\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}} Led)
+\begin{DoxyCompactList}\small\item\em Toggles the selected L\+ED. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{group___lory_s_d_k___l_e_d___functions_ga8cb1d5b32557d492b8bf0f7109bd6d3f}\label{group___lory_s_d_k___l_e_d___functions_ga8cb1d5b32557d492b8bf0f7109bd6d3f}} 
+\index{L\+E\+D Functions@{L\+E\+D Functions}!B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+De\+Init@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+De\+Init}}
+\index{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+De\+Init@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+De\+Init}!L\+E\+D Functions@{L\+E\+D Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+De\+Init()}{BSP\_LED\_DeInit()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}}}]{Led }\end{DoxyParamCaption})}
+
+
+
+De\+Init L\+E\+Ds. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Led} & L\+ED to be de-\/init. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item L\+E\+D\+\_\+\+R\+DY \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{주의}
+Led De\+Init does not disable the G\+P\+IO clock nor disable the Mfx 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 61 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+62 \{
+63   GPIO\_InitTypeDef  gpio\_init\_structure;
+64 
+65   \textcolor{comment}{/* Turn off LED */}
+66   HAL\_GPIO\_WritePin(\mbox{\hyperlink{bsp_8c_a1127c0cf12e4ec7a66f2a64cd7407218}{LED\_PORT}}[Led],\mbox{\hyperlink{bsp_8c_a51722a2d3aff3970f123a94ac62b908f}{LED\_PIN}}[Led], GPIO\_PIN\_RESET);
+67   \textcolor{comment}{/* DeInit the GPIO\_LED pin */}
+68   gpio\_init\_structure.Pin = \mbox{\hyperlink{bsp_8c_a51722a2d3aff3970f123a94ac62b908f}{LED\_PIN}}[Led];
+69   HAL\_GPIO\_DeInit(\mbox{\hyperlink{bsp_8c_a1127c0cf12e4ec7a66f2a64cd7407218}{LED\_PORT}}[Led], gpio\_init\_structure.Pin);
+70 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___lory_s_d_k___l_e_d___functions_gab58a4f16a476a53653c5c400e3bed158}\label{group___lory_s_d_k___l_e_d___functions_gab58a4f16a476a53653c5c400e3bed158}} 
+\index{L\+E\+D Functions@{L\+E\+D Functions}!B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Init@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Init}}
+\index{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Init@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Init}!L\+E\+D Functions@{L\+E\+D Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Init()}{BSP\_LED\_Init()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}}}]{Led }\end{DoxyParamCaption})}
+
+
+
+Configures L\+ED G\+P\+IO. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Led} & Led to be configured. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item L\+E\+D\+\_\+\+R\+DY \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 34 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+35 \{
+36   GPIO\_InitTypeDef  gpioinitstruct;
+37   
+38   \textcolor{comment}{/* Enable the GPIO\_LED Clock */}
+39   \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a32faaf3f04d44e7eddce1d781587fc57}{LEDx\_GPIO\_CLK\_ENABLE}}(Led);
+40 
+41   \textcolor{comment}{/* Configure the GPIO\_LED pin */}
+42   gpioinitstruct.Pin    = \mbox{\hyperlink{bsp_8c_a51722a2d3aff3970f123a94ac62b908f}{LED\_PIN}}[Led];
+43   gpioinitstruct.Mode   = GPIO\_MODE\_OUTPUT\_PP;
+44   gpioinitstruct.Pull   = GPIO\_NOPULL;
+45   gpioinitstruct.Speed  = GPIO\_SPEED\_FREQ\_HIGH;
+46   
+47   HAL\_GPIO\_Init(\mbox{\hyperlink{bsp_8c_a1127c0cf12e4ec7a66f2a64cd7407218}{LED\_PORT}}[Led], &gpioinitstruct);
+48 
+49   \textcolor{comment}{/* Reset PIN to switch off the LED */}
+50   HAL\_GPIO\_WritePin(\mbox{\hyperlink{bsp_8c_a1127c0cf12e4ec7a66f2a64cd7407218}{LED\_PORT}}[Led],\mbox{\hyperlink{bsp_8c_a51722a2d3aff3970f123a94ac62b908f}{LED\_PIN}}[Led], GPIO\_PIN\_RESET);
+51 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 0
+\mbox{\Hypertarget{group___lory_s_d_k___l_e_d___functions_gaef268680154ca15c45066d64d41f9467}\label{group___lory_s_d_k___l_e_d___functions_gaef268680154ca15c45066d64d41f9467}} 
+\index{L\+E\+D Functions@{L\+E\+D Functions}!B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Off@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Off}}
+\index{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Off@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Off}!L\+E\+D Functions@{L\+E\+D Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Off()}{BSP\_LED\_Off()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Off (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}}}]{Led }\end{DoxyParamCaption})}
+
+
+
+Turns selected L\+ED Off. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Led} & Specifies the Led to be set off. This parameter can be one of following parameters\+: \begin{DoxyItemize}
+\item L\+E\+D\+\_\+\+R\+DY \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 91 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+92 \{
+93   HAL\_GPIO\_WritePin(\mbox{\hyperlink{bsp_8c_a1127c0cf12e4ec7a66f2a64cd7407218}{LED\_PORT}}[Led], \mbox{\hyperlink{bsp_8c_a51722a2d3aff3970f123a94ac62b908f}{LED\_PIN}}[Led], GPIO\_PIN\_SET); 
+94 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___lory_s_d_k___l_e_d___functions_gaee9c16b16384834c69efabf58f423d6f}\label{group___lory_s_d_k___l_e_d___functions_gaee9c16b16384834c69efabf58f423d6f}} 
+\index{L\+E\+D Functions@{L\+E\+D Functions}!B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+On@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+On}}
+\index{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+On@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+On}!L\+E\+D Functions@{L\+E\+D Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+On()}{BSP\_LED\_On()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+On (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}}}]{Led }\end{DoxyParamCaption})}
+
+
+
+Turns selected L\+ED On. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Led} & Specifies the Led to be set on. This parameter can be one of following parameters\+: \begin{DoxyItemize}
+\item L\+E\+D\+\_\+\+R\+DY \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 79 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+80 \{
+81   HAL\_GPIO\_WritePin(\mbox{\hyperlink{bsp_8c_a1127c0cf12e4ec7a66f2a64cd7407218}{LED\_PORT}}[Led], \mbox{\hyperlink{bsp_8c_a51722a2d3aff3970f123a94ac62b908f}{LED\_PIN}}[Led], GPIO\_PIN\_RESET); 
+82 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{group___lory_s_d_k___l_e_d___functions_ga1b9eabba7d498f41d6f16587ec0f9732}\label{group___lory_s_d_k___l_e_d___functions_ga1b9eabba7d498f41d6f16587ec0f9732}} 
+\index{L\+E\+D Functions@{L\+E\+D Functions}!B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Toggle@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Toggle}}
+\index{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Toggle@{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Toggle}!L\+E\+D Functions@{L\+E\+D Functions}}
+\subsubsection{\texorpdfstring{B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Toggle()}{BSP\_LED\_Toggle()}}
+{\footnotesize\ttfamily void B\+S\+P\+\_\+\+L\+E\+D\+\_\+\+Toggle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa059704b7ca945eb9c1e7f2c3d03fecd}{Led\+\_\+\+Type\+Def}}}]{Led }\end{DoxyParamCaption})}
+
+
+
+Toggles the selected L\+ED. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em Led} & Specifies the Led to be toggled. This parameter can be one of following parameters\+: \begin{DoxyItemize}
+\item L\+E\+D\+\_\+\+R\+DY \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+bsp.\+c 파일의 103 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+104 \{
+105   HAL\_GPIO\_TogglePin(\mbox{\hyperlink{bsp_8c_a1127c0cf12e4ec7a66f2a64cd7407218}{LED\_PORT}}[Led], \mbox{\hyperlink{bsp_8c_a51722a2d3aff3970f123a94ac62b908f}{LED\_PIN}}[Led]);
+106 \}
+\end{DoxyCode}

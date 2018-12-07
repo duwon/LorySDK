@@ -1,0 +1,21 @@
+digraph "ProcessMacCommands"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node488 [label="ProcessMacCommands",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node488 -> Node489 [color="midnightblue",fontsize="10",style="solid"];
+  Node489 [label="RegionLinkAdrReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#gae82a94e6d4141122e1a20b5ba1936c8e",tooltip="The function processes a Link ADR Request. "];
+  Node488 -> Node490 [color="midnightblue",fontsize="10",style="solid"];
+  Node490 [label="AddMacCommand",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html#ab27d901e29d6f16957f783c94781ef70",tooltip="Adds a new MAC command to be sent. "];
+  Node490 -> Node491 [color="midnightblue",fontsize="10",style="solid"];
+  Node491 [label="SetMlmeScheduleUplinkIndication",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_lo_ra_mac_8c.html#ab0c0f938f7421b03f6890047f20df489",tooltip="Configures the events to trigger an MLME-Indication with a MLME type of MLME_SCHEDULE_UPLINK. "];
+  Node488 -> Node492 [color="midnightblue",fontsize="10",style="solid"];
+  Node492 [label="RegionRxParamSetupReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#ga485a820155fded42235a0d14d5918a7d",tooltip="The function processes a RX Parameter Setup Request. "];
+  Node488 -> Node493 [color="midnightblue",fontsize="10",style="solid"];
+  Node493 [label="RegionNewChannelReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#gadca654538335b4395c8d54642b83e2d4",tooltip="The function processes a New Channel Request. "];
+  Node488 -> Node494 [color="midnightblue",fontsize="10",style="solid"];
+  Node494 [label="RegionTxParamSetupReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#ga50dbaca7bf982330c183614302d525c4",tooltip="The function processes a TX ParamSetup Request. "];
+  Node488 -> Node495 [color="midnightblue",fontsize="10",style="solid"];
+  Node495 [label="RegionDlChannelReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n.html#ga54f7c22677b2d0628e9914f53501d4b8",tooltip="The function processes a DlChannel Request. "];
+}

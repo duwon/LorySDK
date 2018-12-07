@@ -1,0 +1,530 @@
+\hypertarget{vcom_8c}{}\section{Projects/\+Docking\+Station/src/vcom.c 파일 참조}
+\label{vcom_8c}\index{Projects/\+Docking\+Station/src/vcom.\+c@{Projects/\+Docking\+Station/src/vcom.\+c}}
+{\ttfamily \#include \char`\"{}hw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vcom.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+vcom.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{B\+U\+F\+S\+I\+ZE}}~256
+\item 
+\#define \mbox{\hyperlink{vcom_8c_adf790028387f564823582f390c84081f}{U\+S\+A\+R\+T\+X\+\_\+\+I\+R\+Qn}}~U\+S\+A\+R\+T3\+\_\+\+I\+R\+Qn
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vcom_8c_a0eddddd521185a7cbf876b1af08b879a}{vcom\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Init the V\+C\+OM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vcom_8c_ab7d710d9088dc080df3013b4d118e410}{vcom\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De\+Init the V\+C\+OM. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vcom_8c_acb3f88e854837d13d6a7b900975e54eb}{vcom\+\_\+\+Send}} (char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Records string on circular Buffer and set SW interrupt \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vcom_8c_a042904239f38c26793f81eb6ae6411d0}{vcom\+\_\+\+Print}} (void)
+\begin{DoxyCompactList}\small\item\em Sends circular Buffer on com port in IT mode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vcom_8c_a4c637ab3c510d774d6249dd693158723}{vcom\+\_\+\+Send\+\_\+\+Lp}} (char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Records string on circular Buffer \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vcom_8c_a0e553b32211877322f949b14801bbfa7}{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT M\+SP Initialization This function configures the hardware resources used in this example\+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vcom_8c_aa6608584adfa555b835442b2e0f531c2}{vcom\+\_\+\+Io\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Init the V\+C\+OM I\+Os. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vcom_8c_af123b0d36772ca23451b5e1ded6438e7}{vcom\+\_\+\+Io\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em De\+Init the V\+C\+OM I\+Os. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{vcom_8c_a718f39804e3b910d738a0e1e46151188}{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+De\+Init}} (U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$huart)
+\begin{DoxyCompactList}\small\item\em U\+A\+RT M\+SP De\+Init \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static char \mbox{\hyperlink{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}{buff}} \mbox{[}\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{B\+U\+F\+S\+I\+ZE}}\mbox{]}
+\item 
+\+\_\+\+\_\+\+IO uint16\+\_\+t \mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}} =0
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{vcom_8c_aeef9e1fd52f7afe722902444f2730e50}{ir}} =0
+\item 
+static U\+A\+R\+T\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{Uart\+Handle}}
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}\label{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}} 
+\index{vcom.\+c@{vcom.\+c}!B\+U\+F\+S\+I\+ZE@{B\+U\+F\+S\+I\+ZE}}
+\index{B\+U\+F\+S\+I\+ZE@{B\+U\+F\+S\+I\+ZE}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{B\+U\+F\+S\+I\+ZE}{BUFSIZE}}
+{\footnotesize\ttfamily \#define B\+U\+F\+S\+I\+ZE~256}
+
+
+
+vcom.\+c 파일의 54 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{vcom_8c_adf790028387f564823582f390c84081f}\label{vcom_8c_adf790028387f564823582f390c84081f}} 
+\index{vcom.\+c@{vcom.\+c}!U\+S\+A\+R\+T\+X\+\_\+\+I\+R\+Qn@{U\+S\+A\+R\+T\+X\+\_\+\+I\+R\+Qn}}
+\index{U\+S\+A\+R\+T\+X\+\_\+\+I\+R\+Qn@{U\+S\+A\+R\+T\+X\+\_\+\+I\+R\+Qn}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{U\+S\+A\+R\+T\+X\+\_\+\+I\+R\+Qn}{USARTX\_IRQn}}
+{\footnotesize\ttfamily \#define U\+S\+A\+R\+T\+X\+\_\+\+I\+R\+Qn~U\+S\+A\+R\+T3\+\_\+\+I\+R\+Qn}
+
+
+
+vcom.\+c 파일의 55 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{vcom_8c_a718f39804e3b910d738a0e1e46151188}\label{vcom_8c_a718f39804e3b910d738a0e1e46151188}} 
+\index{vcom.\+c@{vcom.\+c}!H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+De\+Init@{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+De\+Init}}
+\index{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+De\+Init@{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+De\+Init}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+De\+Init()}{HAL\_UART\_MspDeInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+
+
+U\+A\+RT M\+SP De\+Init 
+
+
+\begin{DoxyParams}{매개변수}
+{\em huart} & uart handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+vcom.\+c 파일의 257 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+258 \{
+259   \mbox{\hyperlink{vcom_8c_af123b0d36772ca23451b5e1ded6438e7}{vcom\_IoDeInit}}( );
+260 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{vcom_8c_a0e553b32211877322f949b14801bbfa7}\label{vcom_8c_a0e553b32211877322f949b14801bbfa7}} 
+\index{vcom.\+c@{vcom.\+c}!H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init@{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init}}
+\index{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init@{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init()}{HAL\_UART\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{U\+A\+R\+T\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
+
+
+
+U\+A\+RT M\+SP Initialization This function configures the hardware resources used in this example\+: 
+
+
+\begin{DoxyItemize}
+\item Peripheral\textquotesingle{}s clock enable
+\item Peripheral\textquotesingle{}s G\+P\+IO Configuration ~\newline
+ -\/ N\+V\+IC configuration for U\+A\+RT interrupt request enable 
+\begin{DoxyParams}{매개변수}
+{\em huart} & U\+A\+RT handle pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+\end{DoxyItemize}
+
+vcom.\+c 파일의 201 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+202 \{
+203   
+204   \textcolor{comment}{/*##-1- Enable peripherals and GPIO Clocks #################################*/}
+205 
+206   \textcolor{comment}{/* Enable USART1 clock */}
+207   \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a04ac510e8c75576cc8a1e920bdf28d87}{USARTX\_CLK\_ENABLE}}(); 
+208   
+209   \textcolor{comment}{/*##-2- Configure peripheral GPIO ##########################################*/}  
+210   \mbox{\hyperlink{vcom_8c_aa6608584adfa555b835442b2e0f531c2}{vcom\_IoInit}}( );
+211 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+\mbox{\Hypertarget{vcom_8c_ab7d710d9088dc080df3013b4d118e410}\label{vcom_8c_ab7d710d9088dc080df3013b4d118e410}} 
+\index{vcom.\+c@{vcom.\+c}!vcom\+\_\+\+De\+Init@{vcom\+\_\+\+De\+Init}}
+\index{vcom\+\_\+\+De\+Init@{vcom\+\_\+\+De\+Init}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{vcom\+\_\+\+De\+Init()}{vcom\_DeInit()}}
+{\footnotesize\ttfamily void vcom\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+De\+Init the V\+C\+OM. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+None 
+\end{DoxyReturn}
+
+
+vcom.\+c 파일의 101 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+102 \{
+103 \textcolor{preprocessor}{#if 1}
+104   HAL\_UART\_DeInit(&\mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}});
+105 \textcolor{preprocessor}{#endif}
+106 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{vcom_8c_a0eddddd521185a7cbf876b1af08b879a}\label{vcom_8c_a0eddddd521185a7cbf876b1af08b879a}} 
+\index{vcom.\+c@{vcom.\+c}!vcom\+\_\+\+Init@{vcom\+\_\+\+Init}}
+\index{vcom\+\_\+\+Init@{vcom\+\_\+\+Init}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{vcom\+\_\+\+Init()}{vcom\_Init()}}
+{\footnotesize\ttfamily void vcom\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Init the V\+C\+OM. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+None 
+\end{DoxyReturn}
+
+
+vcom.\+c 파일의 71 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+72 \{
+73   \textcolor{comment}{/*## Configure the UART peripheral ######################################*/}
+74   \textcolor{comment}{/* Put the USART peripheral in the Asynchronous mode (UART Mode) */}
+75   \textcolor{comment}{/* UART1 configured as follow:}
+76 \textcolor{comment}{      - Word Length = 8 Bits}
+77 \textcolor{comment}{      - Stop Bit = One Stop bit}
+78 \textcolor{comment}{      - Parity = ODD parity}
+79 \textcolor{comment}{      - BaudRate = 921600 baud}
+80 \textcolor{comment}{      - Hardware flow control disabled (RTS and CTS signals) */}
+81   \mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}}.Instance        = \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_ab828c1a27d489fd0a24f7f4bcc7180ac}{USARTX}};
+82   
+83   \mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}}.Init.BaudRate   = 115200;
+84   \mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}}.Init.WordLength = UART\_WORDLENGTH\_8B;
+85   \mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}}.Init.StopBits   = UART\_STOPBITS\_1;
+86   \mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}}.Init.Parity     = UART\_PARITY\_NONE;
+87   \mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}}.Init.HwFlowCtl  = UART\_HWCONTROL\_NONE;
+88   \mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}}.Init.Mode       = UART\_MODE\_TX\_RX;
+89   
+90   \textcolor{keywordflow}{if}(HAL\_UART\_Init(&\mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}}) != HAL\_OK)
+91   \{
+92     \textcolor{comment}{/* Initialization Error */}
+93     \mbox{\hyperlink{hw__conf_8h_a5593abbf196bdbd410b0939ef878b9d1}{Error\_Handler}}(); 
+94   \}
+95   
+96   HAL\_NVIC\_SetPriority(\mbox{\hyperlink{vcom_8c_adf790028387f564823582f390c84081f}{USARTX\_IRQn}}, 0x1, 0);
+97   HAL\_NVIC\_EnableIRQ(\mbox{\hyperlink{vcom_8c_adf790028387f564823582f390c84081f}{USARTX\_IRQn}});
+98 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{vcom_8c_af123b0d36772ca23451b5e1ded6438e7}\label{vcom_8c_af123b0d36772ca23451b5e1ded6438e7}} 
+\index{vcom.\+c@{vcom.\+c}!vcom\+\_\+\+Io\+De\+Init@{vcom\+\_\+\+Io\+De\+Init}}
+\index{vcom\+\_\+\+Io\+De\+Init@{vcom\+\_\+\+Io\+De\+Init}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{vcom\+\_\+\+Io\+De\+Init()}{vcom\_IoDeInit()}}
+{\footnotesize\ttfamily void vcom\+\_\+\+Io\+De\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+De\+Init the V\+C\+OM I\+Os. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+None 
+\end{DoxyReturn}
+
+
+vcom.\+c 파일의 235 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+236 \{
+237   GPIO\_InitTypeDef GPIO\_InitStructure=\{0\};
+238   
+239   \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a639ab98e9d054f8644e352ae8325328a}{USARTX\_TX\_GPIO\_CLK\_ENABLE}}();
+240   \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_ac0fc00e6ba946738725f86c7f165e100}{USARTX\_RX\_GPIO\_CLK\_ENABLE}}();
+241 
+242   GPIO\_InitStructure.Mode = GPIO\_MODE\_ANALOG;
+243   GPIO\_InitStructure.Pull = GPIO\_NOPULL;
+244   
+245   GPIO\_InitStructure.Pin =  \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aaf5b323b2b55e586f2de30c962599451}{USARTX\_TX\_PIN}} ;
+246   HAL\_GPIO\_Init(  \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a0a150279d34a57356779501a6fdf0256}{USARTX\_TX\_GPIO\_PORT}}, &GPIO\_InitStructure );
+247   
+248   GPIO\_InitStructure.Pin =  \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aaa48724f989f28b73a44cbc687847156}{USARTX\_RX\_PIN}} ;
+249   HAL\_GPIO\_Init(  \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa9609461b284146b9e957854543df799}{USARTX\_RX\_GPIO\_PORT}}, &GPIO\_InitStructure ); 
+250 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{vcom_8c_aa6608584adfa555b835442b2e0f531c2}\label{vcom_8c_aa6608584adfa555b835442b2e0f531c2}} 
+\index{vcom.\+c@{vcom.\+c}!vcom\+\_\+\+Io\+Init@{vcom\+\_\+\+Io\+Init}}
+\index{vcom\+\_\+\+Io\+Init@{vcom\+\_\+\+Io\+Init}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{vcom\+\_\+\+Io\+Init()}{vcom\_IoInit()}}
+{\footnotesize\ttfamily void vcom\+\_\+\+Io\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Init the V\+C\+OM I\+Os. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+None 
+\end{DoxyReturn}
+
+
+vcom.\+c 파일의 213 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+214 \{
+215   GPIO\_InitTypeDef  GPIO\_InitStruct=\{0\};
+216     \textcolor{comment}{/* Enable GPIO TX/RX clock */}
+217   \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a639ab98e9d054f8644e352ae8325328a}{USARTX\_TX\_GPIO\_CLK\_ENABLE}}();
+218   \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_ac0fc00e6ba946738725f86c7f165e100}{USARTX\_RX\_GPIO\_CLK\_ENABLE}}();
+219     \textcolor{comment}{/* UART TX GPIO pin configuration  */}
+220   GPIO\_InitStruct.Pin       = \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aaf5b323b2b55e586f2de30c962599451}{USARTX\_TX\_PIN}};
+221   GPIO\_InitStruct.Mode      = GPIO\_MODE\_AF\_PP;
+222   GPIO\_InitStruct.Pull      = GPIO\_PULLUP;
+223   GPIO\_InitStruct.Speed     = GPIO\_SPEED\_HIGH;
+224   GPIO\_InitStruct.Alternate = \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_ab56eedae326de98326f57b4138bd986a}{USARTX\_TX\_AF}};
+225 
+226   HAL\_GPIO\_Init(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a0a150279d34a57356779501a6fdf0256}{USARTX\_TX\_GPIO\_PORT}}, &GPIO\_InitStruct);
+227 
+228   \textcolor{comment}{/* UART RX GPIO pin configuration  */}
+229   GPIO\_InitStruct.Pin = \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aaa48724f989f28b73a44cbc687847156}{USARTX\_RX\_PIN}};
+230   GPIO\_InitStruct.Alternate = \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_acb980b7598705e21c4e6b04dae7f4e69}{USARTX\_RX\_AF}};
+231 
+232   HAL\_GPIO\_Init(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_aa9609461b284146b9e957854543df799}{USARTX\_RX\_GPIO\_PORT}}, &GPIO\_InitStruct);
+233 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\mbox{\Hypertarget{vcom_8c_a042904239f38c26793f81eb6ae6411d0}\label{vcom_8c_a042904239f38c26793f81eb6ae6411d0}} 
+\index{vcom.\+c@{vcom.\+c}!vcom\+\_\+\+Print@{vcom\+\_\+\+Print}}
+\index{vcom\+\_\+\+Print@{vcom\+\_\+\+Print}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{vcom\+\_\+\+Print()}{vcom\_Print()}}
+{\footnotesize\ttfamily void vcom\+\_\+\+Print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sends circular Buffer on com port in IT mode 
+
+\begin{DoxyNote}{주의}
+called from low Priority interrupt 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+None 
+\end{DoxyReturn}
+
+
+vcom.\+c 파일의 143 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+144 \{
+145   \textcolor{keywordtype}{char}* CurChar;
+146   \textcolor{keywordflow}{while}( ( (\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}+\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{BUFSIZE}}-\mbox{\hyperlink{vcom_8c_aeef9e1fd52f7afe722902444f2730e50}{ir}})%\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{BUFSIZE}}) >0 )
+147   \{
+148     \mbox{\hyperlink{utilities_8h_a6b5ac3331353a25a25e666b004b3aaef}{BACKUP\_PRIMASK}}();
+149     \mbox{\hyperlink{utilities_8h_a8b665b7df8fbc1b5d693fa71fd48a7b7}{DISABLE\_IRQ}}();
+150     
+151     CurChar = &\mbox{\hyperlink{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}{buff}}[\mbox{\hyperlink{vcom_8c_aeef9e1fd52f7afe722902444f2730e50}{ir}}];
+152     \mbox{\hyperlink{vcom_8c_aeef9e1fd52f7afe722902444f2730e50}{ir}}= (\mbox{\hyperlink{vcom_8c_aeef9e1fd52f7afe722902444f2730e50}{ir}}+1) %\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{BUFSIZE}};
+153     
+154     \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}();
+155     
+156     HAL\_UART\_Transmit(&\mbox{\hyperlink{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}{UartHandle}},(uint8\_t *) CurChar, 1, 300);    
+157   \}
+158   HAL\_NVIC\_ClearPendingIRQ(\mbox{\hyperlink{vcom_8c_adf790028387f564823582f390c84081f}{USARTX\_IRQn}});
+159 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\mbox{\Hypertarget{vcom_8c_acb3f88e854837d13d6a7b900975e54eb}\label{vcom_8c_acb3f88e854837d13d6a7b900975e54eb}} 
+\index{vcom.\+c@{vcom.\+c}!vcom\+\_\+\+Send@{vcom\+\_\+\+Send}}
+\index{vcom\+\_\+\+Send@{vcom\+\_\+\+Send}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{vcom\+\_\+\+Send()}{vcom\_Send()}}
+{\footnotesize\ttfamily void vcom\+\_\+\+Send (\begin{DoxyParamCaption}\item[{char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Records string on circular Buffer and set SW interrupt 
+
+\begin{DoxyNote}{주의}
+Set N\+V\+IC to call vcom\+\_\+\+Send 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+None 
+\end{DoxyReturn}
+
+
+vcom.\+c 파일의 108 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+109 \{
+110   va\_list args;
+111   va\_start(args, format);
+112   uint8\_t len;
+113   uint8\_t lenTop;
+114   \textcolor{keywordtype}{char} tempBuff[128];
+115   
+116   \mbox{\hyperlink{utilities_8h_a6b5ac3331353a25a25e666b004b3aaef}{BACKUP\_PRIMASK}}();
+117   \mbox{\hyperlink{utilities_8h_a8b665b7df8fbc1b5d693fa71fd48a7b7}{DISABLE\_IRQ}}();
+118   
+119   \textcolor{comment}{/*convert into string at buff[0] of length iw*/}
+120   len = vsprintf(&tempBuff[0], format, args);
+121   
+122   \textcolor{keywordflow}{if} (\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}+len<\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{BUFSIZE}})
+123   \{
+124     memcpy( &\mbox{\hyperlink{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}{buff}}[\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}], &tempBuff[0], len);
+125     \mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}+=len;
+126   \}
+127   \textcolor{keywordflow}{else}
+128   \{
+129     lenTop=\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{BUFSIZE}}-\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}};
+130     memcpy( &\mbox{\hyperlink{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}{buff}}[\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}], &tempBuff[0], lenTop);
+131     len-=lenTop;
+132     memcpy( &\mbox{\hyperlink{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}{buff}}[0], &tempBuff[lenTop], len);
+133     \mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}} = len;
+134   \}
+135   \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}();
+136   
+137   HAL\_NVIC\_SetPendingIRQ(\mbox{\hyperlink{vcom_8c_adf790028387f564823582f390c84081f}{USARTX\_IRQn}});
+138     
+139   va\_end(args);
+140 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{vcom_8c_a4c637ab3c510d774d6249dd693158723}\label{vcom_8c_a4c637ab3c510d774d6249dd693158723}} 
+\index{vcom.\+c@{vcom.\+c}!vcom\+\_\+\+Send\+\_\+\+Lp@{vcom\+\_\+\+Send\+\_\+\+Lp}}
+\index{vcom\+\_\+\+Send\+\_\+\+Lp@{vcom\+\_\+\+Send\+\_\+\+Lp}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{vcom\+\_\+\+Send\+\_\+\+Lp()}{vcom\_Send\_Lp()}}
+{\footnotesize\ttfamily void vcom\+\_\+\+Send\+\_\+\+Lp (\begin{DoxyParamCaption}\item[{char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Records string on circular Buffer 
+
+\begin{DoxyNote}{주의}
+To be called only from critical section from low power section Other wise use vcom\+\_\+\+Send 
+\end{DoxyNote}
+
+\begin{DoxyParams}{매개변수}
+{\em string} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{반환값}
+None 
+\end{DoxyReturn}
+
+
+vcom.\+c 파일의 161 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+162 \{
+163   va\_list args;
+164   va\_start(args, format);
+165   uint8\_t len;
+166   uint8\_t lenTop;
+167   \textcolor{keywordtype}{char} tempBuff[128];
+168   
+169   \mbox{\hyperlink{utilities_8h_a6b5ac3331353a25a25e666b004b3aaef}{BACKUP\_PRIMASK}}();
+170   \mbox{\hyperlink{utilities_8h_a8b665b7df8fbc1b5d693fa71fd48a7b7}{DISABLE\_IRQ}}();
+171   
+172   \textcolor{comment}{/*convert into string at buff[0] of length iw*/}
+173   len = vsprintf(&tempBuff[0], format, args);
+174   
+175   \textcolor{keywordflow}{if} (\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}+len<\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{BUFSIZE}})
+176   \{
+177     memcpy( &\mbox{\hyperlink{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}{buff}}[\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}], &tempBuff[0], len);
+178     \mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}+=len;
+179   \}
+180   \textcolor{keywordflow}{else}
+181   \{
+182     lenTop=\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{BUFSIZE}}-\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}};
+183     memcpy( &\mbox{\hyperlink{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}{buff}}[\mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}}], &tempBuff[0], lenTop);
+184     len-=lenTop;
+185     memcpy( &\mbox{\hyperlink{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}{buff}}[0], &tempBuff[lenTop], len);
+186     \mbox{\hyperlink{vcom_8c_abcce4652a785df82216f257219bc8443}{iw}} = len;
+187   \}
+188   \mbox{\hyperlink{utilities_8h_afc5e26acf22c121720851b2242a38a54}{RESTORE\_PRIMASK}}();  
+189   
+190   va\_end(args);
+191 \}
+\end{DoxyCode}
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}\label{vcom_8c_aade3a58aeb7b5fe4c36ef119e7027a5f}} 
+\index{vcom.\+c@{vcom.\+c}!buff@{buff}}
+\index{buff@{buff}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{buff}{buff}}
+{\footnotesize\ttfamily char buff\mbox{[}\mbox{\hyperlink{vcom_8c_aeca034f67218340ecb2261a22c2f3dcd}{B\+U\+F\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+vcom.\+c 파일의 60 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{vcom_8c_aeef9e1fd52f7afe722902444f2730e50}\label{vcom_8c_aeef9e1fd52f7afe722902444f2730e50}} 
+\index{vcom.\+c@{vcom.\+c}!ir@{ir}}
+\index{ir@{ir}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{ir}{ir}}
+{\footnotesize\ttfamily uint16\+\_\+t ir =0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+vcom.\+c 파일의 64 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{vcom_8c_abcce4652a785df82216f257219bc8443}\label{vcom_8c_abcce4652a785df82216f257219bc8443}} 
+\index{vcom.\+c@{vcom.\+c}!iw@{iw}}
+\index{iw@{iw}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{iw}{iw}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+IO uint16\+\_\+t iw =0}
+
+
+
+vcom.\+c 파일의 62 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}\label{vcom_8c_a2d3238638f25fd8e78b21dc8e5efd348}} 
+\index{vcom.\+c@{vcom.\+c}!Uart\+Handle@{Uart\+Handle}}
+\index{Uart\+Handle@{Uart\+Handle}!vcom.\+c@{vcom.\+c}}
+\subsubsection{\texorpdfstring{Uart\+Handle}{UartHandle}}
+{\footnotesize\ttfamily U\+A\+R\+T\+\_\+\+Handle\+Type\+Def Uart\+Handle\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+vcom.\+c 파일의 66 번째 라인에서 정의되었습니다.
+

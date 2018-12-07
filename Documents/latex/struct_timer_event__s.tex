@@ -1,0 +1,109 @@
+\hypertarget{struct_timer_event__s}{}\section{Timer\+Event\+\_\+s 구조체 참조}
+\label{struct_timer_event__s}\index{Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}}
+
+
+Timer object description  
+
+
+
+
+{\ttfamily \#include $<$time\+Server.\+h$>$}
+
+
+
+Timer\+Event\+\_\+s에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}{Timestamp}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_timer_event__s_a670045cfad50e7e4b3a31c0119d6e4fd}{Reload\+Value}}
+\begin{DoxyCompactList}\small\item\em Expiring timer value in ticks from Timer\+Context \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_timer_event__s_af5cb1246be24f89c7a5f720af0c92559}{Is\+Running}}
+\begin{DoxyCompactList}\small\item\em Reload Value when Timer is restarted \end{DoxyCompactList}\item 
+void($\ast$ \mbox{\hyperlink{struct_timer_event__s_ad008a5ba5a1c8dea486486fae73fd421}{Callback}} )(void)
+\begin{DoxyCompactList}\small\item\em Is the timer currently running \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_timer_event__s}{Timer\+Event\+\_\+s}} $\ast$ \mbox{\hyperlink{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}{Next}}
+\begin{DoxyCompactList}\small\item\em Timer I\+RQ callback function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Timer object description 
+
+time\+Server.\+h 파일의 78 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{struct_timer_event__s_ad008a5ba5a1c8dea486486fae73fd421}\label{struct_timer_event__s_ad008a5ba5a1c8dea486486fae73fd421}} 
+\index{Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}!Callback@{Callback}}
+\index{Callback@{Callback}!Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}}
+\subsubsection{\texorpdfstring{Callback}{Callback}}
+{\footnotesize\ttfamily void( $\ast$ Callback) (void)}
+
+
+
+Is the timer currently running 
+
+
+
+time\+Server.\+h 파일의 83 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_timer_event__s_af5cb1246be24f89c7a5f720af0c92559}\label{struct_timer_event__s_af5cb1246be24f89c7a5f720af0c92559}} 
+\index{Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}!Is\+Running@{Is\+Running}}
+\index{Is\+Running@{Is\+Running}!Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}}
+\subsubsection{\texorpdfstring{Is\+Running}{IsRunning}}
+{\footnotesize\ttfamily bool Is\+Running}
+
+
+
+Reload Value when Timer is restarted 
+
+
+
+time\+Server.\+h 파일의 82 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}\label{struct_timer_event__s_ab4d4ae1079c4e3d4842a2cdf30ffad86}} 
+\index{Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}!Next@{Next}}
+\index{Next@{Next}!Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}}
+\subsubsection{\texorpdfstring{Next}{Next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_timer_event__s}{Timer\+Event\+\_\+s}}$\ast$ Next}
+
+
+
+Timer I\+RQ callback function 
+
+
+
+time\+Server.\+h 파일의 84 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_timer_event__s_a670045cfad50e7e4b3a31c0119d6e4fd}\label{struct_timer_event__s_a670045cfad50e7e4b3a31c0119d6e4fd}} 
+\index{Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}!Reload\+Value@{Reload\+Value}}
+\index{Reload\+Value@{Reload\+Value}!Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}}
+\subsubsection{\texorpdfstring{Reload\+Value}{ReloadValue}}
+{\footnotesize\ttfamily uint32\+\_\+t Reload\+Value}
+
+
+
+Expiring timer value in ticks from Timer\+Context 
+
+
+
+time\+Server.\+h 파일의 81 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}\label{struct_timer_event__s_ae6678057e9ed5db32d6d2db84671c146}} 
+\index{Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!Timer\+Event\+\_\+s@{Timer\+Event\+\_\+s}}
+\subsubsection{\texorpdfstring{Timestamp}{Timestamp}}
+{\footnotesize\ttfamily uint32\+\_\+t Timestamp}
+
+
+
+time\+Server.\+h 파일의 80 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Utilities/\mbox{\hyperlink{time_server_8h}{time\+Server.\+h}}\end{DoxyCompactItemize}

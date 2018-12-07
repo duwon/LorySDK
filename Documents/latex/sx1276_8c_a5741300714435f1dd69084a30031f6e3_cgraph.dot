@@ -1,0 +1,15 @@
+digraph "SX1276ReadRssi"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node299 [label="SX1276ReadRssi",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node299 -> Node300 [color="midnightblue",fontsize="10",style="solid"];
+  Node300 [label="SX1276Read",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a1c0054da62dacb13d6286a7cfe01d863",tooltip="Reads the radio register at the specified address "];
+  Node300 -> Node301 [color="midnightblue",fontsize="10",style="solid"];
+  Node301 [label="SX1276ReadBuffer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_8c.html#a9b3df4400813ac6aed7b77f400436ad0",tooltip="Reads multiple radio registers starting at address "];
+  Node301 -> Node302 [color="midnightblue",fontsize="10",style="solid"];
+  Node302 [label="HW_GPIO_Write",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___g_p_i_o___functions.html#ga64b37e6d4da7e8f148c92f898aed98de",tooltip="Writes the given value to the GPIO output "];
+  Node301 -> Node303 [color="midnightblue",fontsize="10",style="solid"];
+  Node303 [label="HW_SPI_InOut",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__spi_8h.html#ae0d3f21fb84de59193e82bd1943d5563",tooltip="Sends outData and receives inData "];
+}

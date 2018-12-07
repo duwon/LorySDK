@@ -1,0 +1,10 @@
+digraph "Drivers/sx1276/sx1276.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node0 [label="Drivers/sx1276/sx1276.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 [label="sx1276Regs-Fsk.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_regs-_fsk_8h.html",tooltip="SX1276 FSK modem registers and bits definitions "];
+  Node0 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="sx1276Regs-LoRa.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$sx1276_regs-_lo_ra_8h.html",tooltip="SX1276 LoRa modem registers and bits definitions "];
+}

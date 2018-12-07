@@ -1,0 +1,13 @@
+digraph "SX1276IoIrqInit"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node24 [label="SX1276IoIrqInit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node24 -> Node25 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node25 [label="HW_GPIO_SetIrq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___g_p_i_o___functions.html#ga1dcd4c3db791178fee479a8e54155573",tooltip="Records the interrupt handler for the GPIO object "];
+  Node25 -> Node26 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node26 [label="HW_GPIO_GetBitPos",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___lory_s_d_k___g_p_i_o___functions.html#ga047b5023e2411e910f43fe0ae7df38a7",tooltip="Get the position of the bit set in the GPIO_Pin "];
+  Node25 -> Node27 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node27 [label="MSP_GetIRQn",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw__gpio_8h.html#a76162872c9d09bf5bbdba7f98206af1a",tooltip="Gets IRQ number as a function of the GPIO_Pin. "];
+}

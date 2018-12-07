@@ -1,0 +1,38 @@
+\hypertarget{hw__gpio_8c}{}\section{Projects/\+Docking\+Station/src/hw\+\_\+gpio.c 파일 참조}
+\label{hw__gpio_8c}\index{Projects/\+Docking\+Station/src/hw\+\_\+gpio.\+c@{Projects/\+Docking\+Station/src/hw\+\_\+gpio.\+c}}
+{\ttfamily \#include \char`\"{}hw.\+h\char`\"{}}\newline
+hw\+\_\+gpio.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+static uint8\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga047b5023e2411e910f43fe0ae7df38a7}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Get\+Bit\+Pos}} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Get the position of the bit set in the G\+P\+I\+O\+\_\+\+Pin \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$port, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, G\+P\+I\+O\+\_\+\+Init\+Type\+Def $\ast$init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the given G\+P\+IO object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga1dcd4c3db791178fee479a8e54155573}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint32\+\_\+t prio, \mbox{\hyperlink{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}{Gpio\+Irq\+Handler}} $\ast$irq\+Handler)
+\begin{DoxyCompactList}\small\item\em Records the interrupt handler for the G\+P\+IO object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga9e4743d66ccc7e19b6cf051376ff5ce0}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler}} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Execute the interrupt from the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Writes the given value to the G\+P\+IO output \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga56b12661dd88a5efa2ea9ee2aed4f82f}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the current G\+P\+IO input value \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}{Gpio\+Irq\+Handler}} $\ast$ \mbox{\hyperlink{hw__gpio_8c_a6831d3079d34f8de886dc6349615b17f}{Gpio\+Irq}} \mbox{[}16\mbox{]} = \{ N\+U\+LL \}
+\end{DoxyCompactItemize}
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{hw__gpio_8c_a6831d3079d34f8de886dc6349615b17f}\label{hw__gpio_8c_a6831d3079d34f8de886dc6349615b17f}} 
+\index{hw\+\_\+gpio.\+c@{hw\+\_\+gpio.\+c}!Gpio\+Irq@{Gpio\+Irq}}
+\index{Gpio\+Irq@{Gpio\+Irq}!hw\+\_\+gpio.\+c@{hw\+\_\+gpio.\+c}}
+\subsubsection{\texorpdfstring{Gpio\+Irq}{GpioIrq}}
+{\footnotesize\ttfamily \mbox{\hyperlink{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}{Gpio\+Irq\+Handler}}$\ast$ Gpio\+Irq\mbox{[}16\mbox{]} = \{ N\+U\+LL \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+hw\+\_\+gpio.\+c 파일의 68 번째 라인에서 정의되었습니다.
+

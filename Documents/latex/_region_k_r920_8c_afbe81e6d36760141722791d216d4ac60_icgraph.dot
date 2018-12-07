@@ -1,0 +1,11 @@
+digraph "GetBandwidth"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node5 [label="GetBandwidth",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="RegionKR920ComputeRxWindow\lParameters",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_k_r920.html#ga051e60df35d85cbf2e4089bbd8fd6290"];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="RegionKR920TxConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_k_r920.html#gaa6c50a19f3f9238b8e296d74295059e3",tooltip="TX configuration. "];
+}

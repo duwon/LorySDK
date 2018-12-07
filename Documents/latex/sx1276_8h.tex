@@ -1,0 +1,2238 @@
+\hypertarget{sx1276_8h}{}\section{Drivers/sx1276/sx1276.h 파일 참조}
+\label{sx1276_8h}\index{Drivers/sx1276/sx1276.\+h@{Drivers/sx1276/sx1276.\+h}}
+
+
+S\+X1276 driver implementation  
+
+
+{\ttfamily \#include \char`\"{}sx1276\+Regs-\/\+Fsk.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sx1276\+Regs-\/\+Lo\+Ra.\+h\char`\"{}}\newline
+sx1276.\+h에 대한 include 의존 그래프
+% FIG 0
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 1
+\subsection*{데이터 구조}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_radio_fsk_settings__t}{Radio\+Fsk\+Settings\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_radio_fsk_packet_handler__t}{Radio\+Fsk\+Packet\+Handler\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_radio_lo_ra_settings__t}{Radio\+Lo\+Ra\+Settings\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_radio_lo_ra_packet_handler__t}{Radio\+Lo\+Ra\+Packet\+Handler\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_radio_settings__t}{Radio\+Settings\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{struct_s_x1276__s}{S\+X1276\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{structs_board_callback}{s\+Board\+Callback}}
+\end{DoxyCompactItemize}
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_a42ef173c36527c948a507929f25f8e49}{R\+A\+D\+I\+O\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME}}~2
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_a51ad727a195c907dda006b5a40467136}{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH}}~525000000
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_a3a91534e6b1d9c4f1a179a495c38d7fe}{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+S\+Y\+N\+C\+W\+O\+RD}}~0x12
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_ac2b07e04414b57bcebcb1eea5ba5ea70}{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+S\+Y\+N\+C\+W\+O\+RD}}~0x34
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_a3d24a8ac8f673b60ac35b6d92fe72747}{X\+T\+A\+L\+\_\+\+F\+R\+EQ}}~32000000
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_ad7977f4d7c0acbc564d01fb225f94630}{F\+R\+E\+Q\+\_\+\+S\+T\+EP}}~61.\+03515625
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}{F\+R\+E\+Q\+\_\+\+S\+T\+E\+P\+\_\+8}}~15625 /$\ast$ \mbox{\hyperlink{sx1276_8h_ad7977f4d7c0acbc564d01fb225f94630}{F\+R\+E\+Q\+\_\+\+S\+T\+EP}}$<$$<$8 $\ast$/
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_abef7202d2ca987f0fe762a046d5cec52}{R\+A\+D\+I\+O\+\_\+\+I\+N\+I\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+V\+A\+L\+UE}}
+\begin{DoxyCompactList}\small\item\em Radio hardware registers initialization definition \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{sx1276_8h_a398fcca28fef483bd7b9ea7345a805a0}{S\+X\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+T\+O\+\_\+\+F\+R\+EQ}}(channel,  freq)
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_ab5f9f10543ab6e2b52e98b9ade9f1ada}{S\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+T\+O\+\_\+\+C\+H\+A\+N\+N\+EL}}(channel,  freq)
+\item 
+\#define \mbox{\hyperlink{sx1276_8h_a739a2a1a0047c98ac1b18ecd25dac092}{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}~256
+\end{DoxyCompactItemize}
+\subsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_s_x1276__s}{S\+X1276\+\_\+s}} \mbox{\hyperlink{sx1276_8h_acf7f83d7d25c85897b88fcdc94345e56}{S\+X1276\+\_\+t}}
+\item 
+typedef void() \mbox{\hyperlink{sx1276_8h_af462584f307238535daaea42f6ce791c}{Dio\+Irq\+Handler}}(void)
+\item 
+typedef struct \mbox{\hyperlink{structs_board_callback}{s\+Board\+Callback}} \mbox{\hyperlink{sx1276_8h_ad4ece8886feb1126f7cf786676572610}{Lo\+Ra\+Board\+Callback\+\_\+t}}
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sx1276_8h_afad8cc2a5afd223af9eba509bfaa15f4}{S\+X1276\+Board\+Init}} (\mbox{\hyperlink{sx1276_8h_ad4ece8886feb1126f7cf786676572610}{Lo\+Ra\+Board\+Callback\+\_\+t}} $\ast$callbacks)
+\item 
+void \mbox{\hyperlink{sx1276_8h_a593daed5ce70e7cb25545345e547816b}{S\+X1276\+Reset}} (void)
+\begin{DoxyCompactList}\small\item\em Resets the S\+X1276 \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{sx1276_8h_a19a9ddff3f878b85e42c7571485fe3c8}{S\+X1276\+Init}} (\mbox{\hyperlink{struct_radio_events__t}{Radio\+Events\+\_\+t}} $\ast$events)
+\begin{DoxyCompactList}\small\item\em Initializes the radio \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_aaaac2e0d7b5bd63fabf38a235d27a452}{S\+X1276\+Set\+Op\+Mode}} (uint8\+\_\+t op\+Mode)
+\begin{DoxyCompactList}\small\item\em Sets the S\+X1276 operating mode \end{DoxyCompactList}\item 
+\mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}{Radio\+State\+\_\+t}} \mbox{\hyperlink{sx1276_8h_ad70a0b1db3593630b1124653b6374944}{S\+X1276\+Get\+Status}} (void)
+\item 
+void \mbox{\hyperlink{sx1276_8h_a8325968bbefefab02537762dd274aa8b}{S\+X1276\+Set\+Modem}} (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem)
+\begin{DoxyCompactList}\small\item\em Configures the radio with the given modem \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a00768e908043081bc32cb83913192f7f}{S\+X1276\+Set\+Channel}} (uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Sets the channel configuration \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{sx1276_8h_a29f26f7258f8fcd5c27800295639d7c7}{S\+X1276\+Is\+Channel\+Free}} (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint32\+\_\+t freq, int16\+\_\+t rssi\+Thresh, uint32\+\_\+t max\+Carrier\+Sense\+Time)
+\begin{DoxyCompactList}\small\item\em Checks if the channel is free for the given time \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{sx1276_8h_a9ba39c96b8e339b06dd24543920fd2f7}{S\+X1276\+Random}} (void)
+\begin{DoxyCompactList}\small\item\em Generates a 32 bits random value based on the R\+S\+SI readings \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a6a66ceb9e18a33aaff10d384fa493cf8}{S\+X1276\+Set\+Rx\+Config}} (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint32\+\_\+t bandwidth, uint32\+\_\+t datarate, uint8\+\_\+t coderate, uint32\+\_\+t bandwidth\+Afc, uint16\+\_\+t preamble\+Len, uint16\+\_\+t symb\+Timeout, bool fix\+Len, uint8\+\_\+t payload\+Len, bool crc\+On, bool freq\+Hop\+On, uint8\+\_\+t hop\+Period, bool iq\+Inverted, bool rx\+Continuous)
+\begin{DoxyCompactList}\small\item\em Sets the reception parameters \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a805df2c0c4aa1630eeeb17177a600269}{S\+X1276\+Set\+Tx\+Config}} (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, int8\+\_\+t power, uint32\+\_\+t fdev, uint32\+\_\+t bandwidth, uint32\+\_\+t datarate, uint8\+\_\+t coderate, uint16\+\_\+t preamble\+Len, bool fix\+Len, bool crc\+On, bool freq\+Hop\+On, uint8\+\_\+t hop\+Period, bool iq\+Inverted, uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Sets the transmission parameters \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{sx1276_8h_a2d0bda0e5f9a4cce63284461e356b5e2}{S\+X1276\+Get\+Time\+On\+Air}} (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint8\+\_\+t pkt\+Len)
+\begin{DoxyCompactList}\small\item\em Computes the packet time on air in ms for the given payload \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a901a3dcdbf26005e0f3f2def3e3d83b3}{S\+X1276\+Send}} (uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Sends the buffer of size. Prepares the packet to be sent and sets the radio in transmission \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a32a7b8c477b2f400f96a3255e1ab7620}{S\+X1276\+Set\+Sleep}} (void)
+\begin{DoxyCompactList}\small\item\em Sets the radio in sleep mode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_aaef7a98104b400b235ef76de0cfb17df}{S\+X1276\+Set\+Stby}} (void)
+\begin{DoxyCompactList}\small\item\em Sets the radio in standby mode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a8c2df9351fbde83379717dc6f76e5c11}{S\+X1276\+Set\+Rx}} (uint32\+\_\+t timeout)
+\begin{DoxyCompactList}\small\item\em Sets the radio in reception mode for the given time \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a9958c574c62b2235c4f3d4d6571854db}{S\+X1276\+Start\+Cad}} (void)
+\begin{DoxyCompactList}\small\item\em Start a Channel Activity Detection \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_ac77895b054eb64df0ee2fa97061efae8}{S\+X1276\+Set\+Tx\+Continuous\+Wave}} (uint32\+\_\+t freq, int8\+\_\+t power, uint16\+\_\+t time)
+\begin{DoxyCompactList}\small\item\em Sets the radio in continuous wave transmission mode \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{sx1276_8h_a5741300714435f1dd69084a30031f6e3}{S\+X1276\+Read\+Rssi}} (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem)
+\begin{DoxyCompactList}\small\item\em Reads the current R\+S\+SI value \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a72e6a30988e816e052a5cb0066dbec83}{Rx\+Chain\+Calibration}} (void)
+\item 
+void \mbox{\hyperlink{sx1276_8h_a6f3fb048fd4b9f79b232f60d77c0bb0a}{S\+X1276\+Set\+Sync\+Word}} (uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Set a Sync\+Sword in the radio \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a15374c2bed5d3ff2d6b95fdf177b645e}{S\+X1276\+Write}} (uint16\+\_\+t addr, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Writes the radio register at the specified address \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{sx1276_8h_a1c0054da62dacb13d6286a7cfe01d863}{S\+X1276\+Read}} (uint16\+\_\+t addr)
+\begin{DoxyCompactList}\small\item\em Reads the radio register at the specified address \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_aba51c12ba7f6d704cdeed69201507983}{S\+X1276\+Write\+Buffer}} (uint16\+\_\+t addr, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Writes multiple radio registers starting at address \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a9b3df4400813ac6aed7b77f400436ad0}{S\+X1276\+Read\+Buffer}} (uint16\+\_\+t addr, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Reads multiple radio registers starting at address \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_aac0bb6d289a1afe69f550cb148f3bac8}{S\+X1276\+Set\+Max\+Payload\+Length}} (\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}} modem, uint8\+\_\+t max)
+\begin{DoxyCompactList}\small\item\em Sets the maximum payload length. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sx1276_8h_a8acacaf2d3e05a712a90f587d1908c6c}{S\+X1276\+Set\+Public\+Network}} (bool enable)
+\begin{DoxyCompactList}\small\item\em Sets the network to public or private. Updates the sync byte. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{sx1276_8h_ab153589dd08582a94b22263f7a655a46}{S\+X1276\+Get\+Wakeup\+Time}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the time required for the board plus radio to get out of sleep.\mbox{[}ms\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{변수}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sx1276_8h_acf7f83d7d25c85897b88fcdc94345e56}{S\+X1276\+\_\+t}} \mbox{\hyperlink{sx1276_8h_a91a81a798b3d849e2cc114c18bf9c5cc}{S\+X1276}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+S\+X1276 driver implementation 
+
+\begin{DoxyCopyright}{Copyright}
+Revised B\+SD License, see section L\+I\+C\+E\+N\+SE.
+\end{DoxyCopyright}
+
+\begin{DoxyCode}
+  \_\_\_\_\_\_                              \_
+ / \_\_\_\_\_)             \_              | |
+( (\_\_\_\_  \_\_\_\_\_ \_\_\_\_ \_| |\_ \_\_\_\_\_  \_\_\_\_| |\_\_
+ \(\backslash\)\_\_\_\_ \(\backslash\)| \_\_\_ |    (\_   \_) \_\_\_ |/ \_\_\_)  \_ \(\backslash\)
+ \_\_\_\_\_) ) \_\_\_\_| | | || |\_| \_\_\_\_( (\_\_\_| | | |
+(\_\_\_\_\_\_/|\_\_\_\_\_)\_|\_|\_| \(\backslash\)\_\_)\_\_\_\_\_)\(\backslash\)\_\_\_\_)\_| |\_|
+(C)2013-2017 Semtech
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{작성자}
+Miguel Luis ( Semtech )
+
+Gregory Cristian ( Semtech ) 
+\end{DoxyAuthor}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{sx1276_8h_ad7977f4d7c0acbc564d01fb225f94630}\label{sx1276_8h_ad7977f4d7c0acbc564d01fb225f94630}} 
+\index{sx1276.\+h@{sx1276.\+h}!F\+R\+E\+Q\+\_\+\+S\+T\+EP@{F\+R\+E\+Q\+\_\+\+S\+T\+EP}}
+\index{F\+R\+E\+Q\+\_\+\+S\+T\+EP@{F\+R\+E\+Q\+\_\+\+S\+T\+EP}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{F\+R\+E\+Q\+\_\+\+S\+T\+EP}{FREQ\_STEP}}
+{\footnotesize\ttfamily \#define F\+R\+E\+Q\+\_\+\+S\+T\+EP~61.\+03515625}
+
+
+
+sx1276.\+h 파일의 182 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}\label{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}} 
+\index{sx1276.\+h@{sx1276.\+h}!F\+R\+E\+Q\+\_\+\+S\+T\+E\+P\+\_\+8@{F\+R\+E\+Q\+\_\+\+S\+T\+E\+P\+\_\+8}}
+\index{F\+R\+E\+Q\+\_\+\+S\+T\+E\+P\+\_\+8@{F\+R\+E\+Q\+\_\+\+S\+T\+E\+P\+\_\+8}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{F\+R\+E\+Q\+\_\+\+S\+T\+E\+P\+\_\+8}{FREQ\_STEP\_8}}
+{\footnotesize\ttfamily \#define F\+R\+E\+Q\+\_\+\+S\+T\+E\+P\+\_\+8~15625 /$\ast$ \mbox{\hyperlink{sx1276_8h_ad7977f4d7c0acbc564d01fb225f94630}{F\+R\+E\+Q\+\_\+\+S\+T\+EP}}$<$$<$8 $\ast$/}
+
+
+
+sx1276.\+h 파일의 183 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_a3a91534e6b1d9c4f1a179a495c38d7fe}\label{sx1276_8h_a3a91534e6b1d9c4f1a179a495c38d7fe}} 
+\index{sx1276.\+h@{sx1276.\+h}!L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+S\+Y\+N\+C\+W\+O\+RD@{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+S\+Y\+N\+C\+W\+O\+RD}}
+\index{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+S\+Y\+N\+C\+W\+O\+RD@{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+S\+Y\+N\+C\+W\+O\+RD}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+S\+Y\+N\+C\+W\+O\+RD}{LORA\_MAC\_PRIVATE\_SYNCWORD}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+R\+I\+V\+A\+T\+E\+\_\+\+S\+Y\+N\+C\+W\+O\+RD~0x12}
+
+Sync word for Private Lo\+Ra networks 
+
+sx1276.\+h 파일의 74 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_ac2b07e04414b57bcebcb1eea5ba5ea70}\label{sx1276_8h_ac2b07e04414b57bcebcb1eea5ba5ea70}} 
+\index{sx1276.\+h@{sx1276.\+h}!L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+S\+Y\+N\+C\+W\+O\+RD@{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+S\+Y\+N\+C\+W\+O\+RD}}
+\index{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+S\+Y\+N\+C\+W\+O\+RD@{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+S\+Y\+N\+C\+W\+O\+RD}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+S\+Y\+N\+C\+W\+O\+RD}{LORA\_MAC\_PUBLIC\_SYNCWORD}}
+{\footnotesize\ttfamily \#define L\+O\+R\+A\+\_\+\+M\+A\+C\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+S\+Y\+N\+C\+W\+O\+RD~0x34}
+
+Sync word for Public Lo\+Ra networks 
+
+sx1276.\+h 파일의 79 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_abef7202d2ca987f0fe762a046d5cec52}\label{sx1276_8h_abef7202d2ca987f0fe762a046d5cec52}} 
+\index{sx1276.\+h@{sx1276.\+h}!R\+A\+D\+I\+O\+\_\+\+I\+N\+I\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+V\+A\+L\+UE@{R\+A\+D\+I\+O\+\_\+\+I\+N\+I\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+V\+A\+L\+UE}}
+\index{R\+A\+D\+I\+O\+\_\+\+I\+N\+I\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+V\+A\+L\+UE@{R\+A\+D\+I\+O\+\_\+\+I\+N\+I\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+V\+A\+L\+UE}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{R\+A\+D\+I\+O\+\_\+\+I\+N\+I\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+V\+A\+L\+UE}{RADIO\_INIT\_REGISTERS\_VALUE}}
+{\footnotesize\ttfamily \#define R\+A\+D\+I\+O\+\_\+\+I\+N\+I\+T\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+S\+\_\+\+V\+A\+L\+UE}
+
+{\bfseries 값\+:}
+\begin{DoxyCode}
+\{                                                 \(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_ab08aa4c56ad75b3e715a1115330109ca}{REG\_LNA}}                , 0x23 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a6bba52e363d49d2783439eb8062d90c8}{REG\_RXCONFIG}}           , 0x1E \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a9ba1a67481c3ba0a454cb4873e4db10b}{REG\_RSSICONFIG}}         , 0xD2 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a04f60f1d03035cf80cebff9648a894c0}{REG\_AFCFEI}}             , 0x01 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a8acf717d67c4e7f4b92a25653ddb495c}{REG\_PREAMBLEDETECT}}     , 0xAA \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a1edb093ed684495473ecd2e97e3a49c2}{REG\_OSC}}                , 0x07 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_ae80bd3142a5c405bf7063ac7b0e8e101}{REG\_SYNCCONFIG}}         , 0x12 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a4d0160e654656b6cd6426c295c8e131b}{REG\_SYNCVALUE1}}         , 0xC1 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a840d780f6d455dc828e2ec8217e9043a}{REG\_SYNCVALUE2}}         , 0x94 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_af89062529e96d32eecd0f89963d52adf}{REG\_SYNCVALUE3}}         , 0xC1 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a035c91c3eea7209c78ac5bda775940cc}{REG\_PACKETCONFIG1}}      , 0xD8 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_a18b41b1ddfbe6eb514f74431b5d76792}{REG\_FIFOTHRESH}}         , 0x8F \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_aeb557bae3e3e5ffb390a6f6a61ac686d}{REG\_IMAGECAL}}           , 0x02 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}}        , 0x00 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} , \mbox{\hyperlink{sx1276_regs-_fsk_8h_aec8b1ddf72925f502675593fabcc469f}{REG\_DIOMAPPING2}}        , 0x30 \},\(\backslash\)
+    \{ \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}, \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ae71e7acfa7c8c737e55349e72c71349f}{REG\_LR\_PAYLOADMAXLENGTH}}, 0x40 \},\(\backslash\)
+\}                                                 \(\backslash\)
+\end{DoxyCode}
+
+
+Radio hardware registers initialization definition 
+
+\begin{DoxyRemark}{Remarks}
+Can be automatically generated by the S\+X1276 G\+UI (not yet implemented) 
+\end{DoxyRemark}
+
+
+sx1276.\+h 파일의 190 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_a42ef173c36527c948a507929f25f8e49}\label{sx1276_8h_a42ef173c36527c948a507929f25f8e49}} 
+\index{sx1276.\+h@{sx1276.\+h}!R\+A\+D\+I\+O\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME@{R\+A\+D\+I\+O\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME}}
+\index{R\+A\+D\+I\+O\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME@{R\+A\+D\+I\+O\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{R\+A\+D\+I\+O\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME}{RADIO\_WAKEUP\_TIME}}
+{\footnotesize\ttfamily \#define R\+A\+D\+I\+O\+\_\+\+W\+A\+K\+E\+U\+P\+\_\+\+T\+I\+ME~2}
+
+Radio wake-\/up time from sleep 
+
+sx1276.\+h 파일의 68 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_a51ad727a195c907dda006b5a40467136}\label{sx1276_8h_a51ad727a195c907dda006b5a40467136}} 
+\index{sx1276.\+h@{sx1276.\+h}!R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH@{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH}}
+\index{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH@{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH}{RF\_MID\_BAND\_THRESH}}
+{\footnotesize\ttfamily \#define R\+F\+\_\+\+M\+I\+D\+\_\+\+B\+A\+N\+D\+\_\+\+T\+H\+R\+E\+SH~525000000}
+
+
+
+sx1276.\+h 파일의 70 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_a739a2a1a0047c98ac1b18ecd25dac092}\label{sx1276_8h_a739a2a1a0047c98ac1b18ecd25dac092}} 
+\index{sx1276.\+h@{sx1276.\+h}!R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}{RX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define R\+X\+\_\+\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE~256}
+
+
+
+sx1276.\+h 파일의 230 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_a398fcca28fef483bd7b9ea7345a805a0}\label{sx1276_8h_a398fcca28fef483bd7b9ea7345a805a0}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+T\+O\+\_\+\+F\+R\+EQ@{S\+X\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+T\+O\+\_\+\+F\+R\+EQ}}
+\index{S\+X\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+T\+O\+\_\+\+F\+R\+EQ@{S\+X\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+T\+O\+\_\+\+F\+R\+EQ}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+T\+O\+\_\+\+F\+R\+EQ}{SX\_CHANNEL\_TO\_FREQ}}
+{\footnotesize\ttfamily \#define S\+X\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+T\+O\+\_\+\+F\+R\+EQ(\begin{DoxyParamCaption}\item[{}]{channel,  }\item[{}]{freq }\end{DoxyParamCaption})}
+
+{\bfseries 값\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}                                                                                              \(\backslash\)
+    \{                                                                                               \(\backslash\)
+        uint32\_t initialChanInt, initialChanFrac;                                                   \(\backslash\)
+        initialChanInt = channel  >> 8;                                                             \(\backslash\)
+        initialChanFrac = channel - ( initialChanInt << 8 );                                        \(\backslash\)
+        freq = initialChanInt * \mbox{\hyperlink{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}{FREQ\_STEP\_8}} + ( ( initialChanFrac * 
+      \mbox{\hyperlink{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}{FREQ\_STEP\_8}} + ( 128 ) ) >> 8 ); \(\backslash\)
+    \}\textcolor{keywordflow}{while}( 0 )
+\end{DoxyCode}
+
+
+sx1276.\+h 파일의 211 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_ab5f9f10543ab6e2b52e98b9ade9f1ada}\label{sx1276_8h_ab5f9f10543ab6e2b52e98b9ade9f1ada}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+T\+O\+\_\+\+C\+H\+A\+N\+N\+EL@{S\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+T\+O\+\_\+\+C\+H\+A\+N\+N\+EL}}
+\index{S\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+T\+O\+\_\+\+C\+H\+A\+N\+N\+EL@{S\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+T\+O\+\_\+\+C\+H\+A\+N\+N\+EL}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+T\+O\+\_\+\+C\+H\+A\+N\+N\+EL}{SX\_FREQ\_TO\_CHANNEL}}
+{\footnotesize\ttfamily \#define S\+X\+\_\+\+F\+R\+E\+Q\+\_\+\+T\+O\+\_\+\+C\+H\+A\+N\+N\+EL(\begin{DoxyParamCaption}\item[{}]{channel,  }\item[{}]{freq }\end{DoxyParamCaption})}
+
+{\bfseries 값\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{do}                                                                                                         
+         \(\backslash\)
+    \{                                                                                                      
+             \(\backslash\)
+        uint32\_t initialFreqInt, initialFreqFrac;                                                          
+             \(\backslash\)
+        initialFreqInt = freq / \mbox{\hyperlink{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}{FREQ\_STEP\_8}};                                                    
+                        \(\backslash\)
+        initialFreqFrac = freq - ( initialFreqInt * \mbox{\hyperlink{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}{FREQ\_STEP\_8}} );                              
+                        \(\backslash\)
+        channel = ( initialFreqInt << 8 ) + ( ( ( initialFreqFrac << 8 ) + ( 
+      \mbox{\hyperlink{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}{FREQ\_STEP\_8}} / 2 ) ) / \mbox{\hyperlink{sx1276_8h_a0336ee1c2a498b2556d444cc28f32ba7}{FREQ\_STEP\_8}} ); \(\backslash\)
+    \}\textcolor{keywordflow}{while}( 0 )
+\end{DoxyCode}
+
+
+sx1276.\+h 파일의 221 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_a3d24a8ac8f673b60ac35b6d92fe72747}\label{sx1276_8h_a3d24a8ac8f673b60ac35b6d92fe72747}} 
+\index{sx1276.\+h@{sx1276.\+h}!X\+T\+A\+L\+\_\+\+F\+R\+EQ@{X\+T\+A\+L\+\_\+\+F\+R\+EQ}}
+\index{X\+T\+A\+L\+\_\+\+F\+R\+EQ@{X\+T\+A\+L\+\_\+\+F\+R\+EQ}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{X\+T\+A\+L\+\_\+\+F\+R\+EQ}{XTAL\_FREQ}}
+{\footnotesize\ttfamily \#define X\+T\+A\+L\+\_\+\+F\+R\+EQ~32000000}
+
+S\+X1276 definitions 
+
+sx1276.\+h 파일의 181 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{타입정의 문서화}
+\mbox{\Hypertarget{sx1276_8h_af462584f307238535daaea42f6ce791c}\label{sx1276_8h_af462584f307238535daaea42f6ce791c}} 
+\index{sx1276.\+h@{sx1276.\+h}!Dio\+Irq\+Handler@{Dio\+Irq\+Handler}}
+\index{Dio\+Irq\+Handler@{Dio\+Irq\+Handler}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{Dio\+Irq\+Handler}{DioIrqHandler}}
+{\footnotesize\ttfamily typedef void() Dio\+Irq\+Handler(void)}
+
+Hardware IO I\+RQ callback function definition 
+
+sx1276.\+h 파일의 176 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{sx1276_8h_ad4ece8886feb1126f7cf786676572610}\label{sx1276_8h_ad4ece8886feb1126f7cf786676572610}} 
+\index{sx1276.\+h@{sx1276.\+h}!Lo\+Ra\+Board\+Callback\+\_\+t@{Lo\+Ra\+Board\+Callback\+\_\+t}}
+\index{Lo\+Ra\+Board\+Callback\+\_\+t@{Lo\+Ra\+Board\+Callback\+\_\+t}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{Lo\+Ra\+Board\+Callback\+\_\+t}{LoRaBoardCallback\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structs_board_callback}{s\+Board\+Callback}} \mbox{\hyperlink{sx1276_8h_ad4ece8886feb1126f7cf786676572610}{Lo\+Ra\+Board\+Callback\+\_\+t}}}
+
+\mbox{\Hypertarget{sx1276_8h_acf7f83d7d25c85897b88fcdc94345e56}\label{sx1276_8h_acf7f83d7d25c85897b88fcdc94345e56}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+\_\+t@{S\+X1276\+\_\+t}}
+\index{S\+X1276\+\_\+t@{S\+X1276\+\_\+t}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+\_\+t}{SX1276\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_s_x1276__s}{S\+X1276\+\_\+s}} \mbox{\hyperlink{sx1276_8h_acf7f83d7d25c85897b88fcdc94345e56}{S\+X1276\+\_\+t}}}
+
+Radio hardware and global parameters 
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{sx1276_8h_a72e6a30988e816e052a5cb0066dbec83}\label{sx1276_8h_a72e6a30988e816e052a5cb0066dbec83}} 
+\index{sx1276.\+h@{sx1276.\+h}!Rx\+Chain\+Calibration@{Rx\+Chain\+Calibration}}
+\index{Rx\+Chain\+Calibration@{Rx\+Chain\+Calibration}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{Rx\+Chain\+Calibration()}{RxChainCalibration()}}
+{\footnotesize\ttfamily void Rx\+Chain\+Calibration (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Performs the Rx chain calibration for LF and HF bands \begin{DoxyRemark}{Remarks}
+Must be called just after the reset so all registers are at their default values 
+\end{DoxyRemark}
+
+
+sx1276.\+c 파일의 382 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+383 \{
+384     uint8\_t regPaConfigInitVal;
+385     uint32\_t initialFreq;
+386     uint32\_t channel;
+387 
+388     \textcolor{comment}{// Save context}
+389     regPaConfigInitVal = \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a36b48e41982d4b0d0b6758a5e1ba398e}{REG\_PACONFIG}} );
+390 
+391     channel = ( ( ( uint32\_t )\mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a80711d5ed54cc1aa69666b92ea78c353}{REG\_FRFMSB}} ) << 16 ) |
+392                 ( ( uint32\_t )\mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ad80489ab7d36cc8d9c725ab45f77c731}{REG\_FRFMID}} ) << 8 ) |
+393                 ( ( uint32\_t )\mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a3f6b75c6bcb9bb8631cd7fa7151dd934}{REG\_FRFLSB}} ) ) );
+394 
+395     \mbox{\hyperlink{sx1276_8h_a398fcca28fef483bd7b9ea7345a805a0}{SX\_CHANNEL\_TO\_FREQ}}(channel, initialFreq);
+396 
+397     \textcolor{comment}{// Cut the PA just in case, RFO output, power = -1 dBm}
+398     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a36b48e41982d4b0d0b6758a5e1ba398e}{REG\_PACONFIG}}, 0x00 );
+399 
+400     \textcolor{comment}{// Launch Rx chain calibration for LF band}
+401     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aeb557bae3e3e5ffb390a6f6a61ac686d}{REG\_IMAGECAL}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_aeb557bae3e3e5ffb390a6f6a61ac686d}{REG\_IMAGECAL}} ) & \mbox{\hyperlink{sx1276_regs-_fsk_8h_a93dde986266fcd5b36345279f7eb2307}{RF\_IMAGECAL\_IMAGECAL\_MASK}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_af1223b6f247482b1d7327c213b8b0864}{RF\_IMAGECAL\_IMAGECAL\_START}} );
+402     \textcolor{keywordflow}{while}( ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aeb557bae3e3e5ffb390a6f6a61ac686d}{REG\_IMAGECAL}} ) & 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a491baca7615a667462dbb91548b46e53}{RF\_IMAGECAL\_IMAGECAL\_RUNNING}} ) == 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a491baca7615a667462dbb91548b46e53}{RF\_IMAGECAL\_IMAGECAL\_RUNNING}} )
+403     \{
+404     \}
+405 
+406     \textcolor{comment}{// Sets a Frequency in HF band}
+407     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}( 868000000 );
+408 
+409     \textcolor{comment}{// Launch Rx chain calibration for HF band}
+410     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aeb557bae3e3e5ffb390a6f6a61ac686d}{REG\_IMAGECAL}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_aeb557bae3e3e5ffb390a6f6a61ac686d}{REG\_IMAGECAL}} ) & \mbox{\hyperlink{sx1276_regs-_fsk_8h_a93dde986266fcd5b36345279f7eb2307}{RF\_IMAGECAL\_IMAGECAL\_MASK}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_af1223b6f247482b1d7327c213b8b0864}{RF\_IMAGECAL\_IMAGECAL\_START}} );
+411     \textcolor{keywordflow}{while}( ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aeb557bae3e3e5ffb390a6f6a61ac686d}{REG\_IMAGECAL}} ) & 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a491baca7615a667462dbb91548b46e53}{RF\_IMAGECAL\_IMAGECAL\_RUNNING}} ) == 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a491baca7615a667462dbb91548b46e53}{RF\_IMAGECAL\_IMAGECAL\_RUNNING}} )
+412     \{
+413     \}
+414 
+415     \textcolor{comment}{// Restore context}
+416     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a36b48e41982d4b0d0b6758a5e1ba398e}{REG\_PACONFIG}}, regPaConfigInitVal );
+417     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}( initialFreq );
+418 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 3
+\mbox{\Hypertarget{sx1276_8h_afad8cc2a5afd223af9eba509bfaa15f4}\label{sx1276_8h_afad8cc2a5afd223af9eba509bfaa15f4}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Board\+Init@{S\+X1276\+Board\+Init}}
+\index{S\+X1276\+Board\+Init@{S\+X1276\+Board\+Init}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Board\+Init()}{SX1276BoardInit()}}
+{\footnotesize\ttfamily void S\+X1276\+Board\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sx1276_8h_ad4ece8886feb1126f7cf786676572610}{Lo\+Ra\+Board\+Callback\+\_\+t}} $\ast$}]{callbacks }\end{DoxyParamCaption})}
+
+============================================================================ \subsection*{Public functions prototypes }
+
+sx1276.\+c 파일의 253 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+254 \{
+255     \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}} =callbacks;
+256 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 4
+\mbox{\Hypertarget{sx1276_8h_ad70a0b1db3593630b1124653b6374944}\label{sx1276_8h_ad70a0b1db3593630b1124653b6374944}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Get\+Status@{S\+X1276\+Get\+Status}}
+\index{S\+X1276\+Get\+Status@{S\+X1276\+Get\+Status}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Get\+Status()}{SX1276GetStatus()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5}{Radio\+State\+\_\+t}} S\+X1276\+Get\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Return current radio status
+
+
+\begin{DoxyParams}{매개변수}
+{\em status} & Radio status.\mbox{[}R\+F\+\_\+\+I\+D\+LE, R\+F\+\_\+\+R\+X\+\_\+\+R\+U\+N\+N\+I\+NG, R\+F\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 292 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+293 \{
+294     \textcolor{keywordflow}{return} \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a7c6fbd4973c8e0d1868c82747d589c3d}{State}};
+295 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{sx1276_8h_a2d0bda0e5f9a4cce63284461e356b5e2}\label{sx1276_8h_a2d0bda0e5f9a4cce63284461e356b5e2}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Get\+Time\+On\+Air@{S\+X1276\+Get\+Time\+On\+Air}}
+\index{S\+X1276\+Get\+Time\+On\+Air@{S\+X1276\+Get\+Time\+On\+Air}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Get\+Time\+On\+Air()}{SX1276GetTimeOnAir()}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+X1276\+Get\+Time\+On\+Air (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}}}]{modem,  }\item[{uint8\+\_\+t}]{pkt\+Len }\end{DoxyParamCaption})}
+
+
+
+Computes the packet time on air in ms for the given payload 
+
+Can only be called once Set\+Rx\+Config or Set\+Tx\+Config have been called
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & pkt\+Len Packet payload length\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em air\+Time} & Computed air\+Time (ms) for the given packet payload length \\
+\hline
+\end{DoxyRetVals}
+
+
+sx1276.\+c 파일의 744 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+745 \{
+746     uint32\_t airTime = 0;
+747 
+748     \textcolor{keywordflow}{switch}( modem )
+749     \{
+750     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+751         \{
+752             airTime = (uint32\_t) round( ( 8 * ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_aba9cfa7d2470ee0e474fa6442d68f994}{PreambleLen}} +
+753                                      ( ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ae80bd3142a5c405bf7063ac7b0e8e101}{REG\_SYNCCONFIG}} ) & ~
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a470d9a45389bc8f22f4eee11937274fc}{RF\_SYNCCONFIG\_SYNCSIZE\_MASK}} ) + 1 ) +
+754                                      ( ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.
+      \mbox{\hyperlink{struct_radio_fsk_settings__t_a5595c2171f2df06f2dc36c58902eb890}{FixLen}} == 0x01 ) ? 0.0 : 1.0 ) +
+755                                      ( ( ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a035c91c3eea7209c78ac5bda775940cc}{REG\_PACKETCONFIG1}} ) & ~\mbox{\hyperlink{sx1276_regs-_fsk_8h_aa6ade0d8733661fe9b5909e83f82ff8d}{RF\_PACKETCONFIG1\_ADDRSFILTERING\_MASK}}
+       ) != 0x00 ) ? 1.0 : 0 ) +
+756                                      pktLen +
+757                                      ( ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.
+      \mbox{\hyperlink{struct_radio_fsk_settings__t_a97bd90b59a970e4bb2195cf648a380d3}{CrcOn}} == 0x01 ) ? 2.0 : 0 ) ) /
+758                                      \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.
+      \mbox{\hyperlink{struct_radio_fsk_settings__t_a4bac4b1fd8c58112bafb1514fc95ad46}{Datarate}} ) * 1000 );
+759         \}
+760         \textcolor{keywordflow}{break};
+761     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+762         \{
+763             \textcolor{keywordtype}{double} bw = 0.0;
+764             \textcolor{comment}{// REMARK: When using LoRa modem only bandwidths 125, 250 and 500 kHz are supported}
+765             \textcolor{keywordflow}{switch}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a318fb6591ed9e732fef8c459c246e8cb}{Bandwidth}} )
+766             \{
+767             \textcolor{comment}{//case 0: // 7.8 kHz}
+768             \textcolor{comment}{//    bw = 7800;}
+769             \textcolor{comment}{//    break;}
+770             \textcolor{comment}{//case 1: // 10.4 kHz}
+771             \textcolor{comment}{//    bw = 10400;}
+772             \textcolor{comment}{//    break;}
+773             \textcolor{comment}{//case 2: // 15.6 kHz}
+774             \textcolor{comment}{//    bw = 15600;}
+775             \textcolor{comment}{//    break;}
+776             \textcolor{comment}{//case 3: // 20.8 kHz}
+777             \textcolor{comment}{//    bw = 20800;}
+778             \textcolor{comment}{//    break;}
+779             \textcolor{comment}{//case 4: // 31.2 kHz}
+780             \textcolor{comment}{//    bw = 31200;}
+781             \textcolor{comment}{//    break;}
+782             \textcolor{comment}{//case 5: // 41.4 kHz}
+783             \textcolor{comment}{//    bw = 41400;}
+784             \textcolor{comment}{//    break;}
+785             \textcolor{comment}{//case 6: // 62.5 kHz}
+786             \textcolor{comment}{//    bw = 62500;}
+787             \textcolor{comment}{//    break;}
+788             \textcolor{keywordflow}{case} 7: \textcolor{comment}{// 125 kHz}
+789                 bw = 125000;
+790                 \textcolor{keywordflow}{break};
+791             \textcolor{keywordflow}{case} 8: \textcolor{comment}{// 250 kHz}
+792                 bw = 250000;
+793                 \textcolor{keywordflow}{break};
+794             \textcolor{keywordflow}{case} 9: \textcolor{comment}{// 500 kHz}
+795                 bw = 500000;
+796                 \textcolor{keywordflow}{break};
+797             \}
+798 
+799             \textcolor{comment}{// Symbol rate : time for one symbol (secs)}
+800             \textcolor{keywordtype}{double} rs = bw / ( 1 << \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.
+      \mbox{\hyperlink{struct_radio_lo_ra_settings__t_a4bac4b1fd8c58112bafb1514fc95ad46}{Datarate}} );
+801             \textcolor{keywordtype}{double} ts = 1 / rs;
+802             \textcolor{comment}{// time of preamble}
+803             \textcolor{keywordtype}{double} tPreamble = ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.
+      \mbox{\hyperlink{struct_radio_lo_ra_settings__t_aba9cfa7d2470ee0e474fa6442d68f994}{PreambleLen}} + 4.25 ) * ts;
+804             \textcolor{comment}{// Symbol length of payload and time}
+805             \textcolor{keywordtype}{double} tmp = ceil( ( 8 * pktLen - 4 * \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a4bac4b1fd8c58112bafb1514fc95ad46}{Datarate}} +
+806                                  28 + 16 * \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.
+      \mbox{\hyperlink{struct_radio_lo_ra_settings__t_a97bd90b59a970e4bb2195cf648a380d3}{CrcOn}} -
+807                                  ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a5595c2171f2df06f2dc36c58902eb890}{FixLen}} ? 20 : 0 ) ) /
+808                                  ( \textcolor{keywordtype}{double} )( 4 * ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a4bac4b1fd8c58112bafb1514fc95ad46}{Datarate}} -
+809                                  ( ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.
+      \mbox{\hyperlink{struct_radio_lo_ra_settings__t_aa31ed68ea167b5abf2f3e3aba9f23b86}{LowDatarateOptimize}} > 0 ) ? 2 : 0 ) ) ) ) *
+810                                  ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.
+      \mbox{\hyperlink{struct_radio_lo_ra_settings__t_abb9fc996b28014f5d9b5d68ec359dc58}{Coderate}} + 4 );
+811             \textcolor{keywordtype}{double} nPayload = 8 + ( ( tmp > 0 ) ? tmp : 0 );
+812             \textcolor{keywordtype}{double} tPayload = nPayload * ts;
+813             \textcolor{comment}{// Time on air}
+814             \textcolor{keywordtype}{double} tOnAir = tPreamble + tPayload;
+815             \textcolor{comment}{// return ms secs}
+816             airTime = (uint32\_t) floor( tOnAir * 1000 + 0.999 );
+817         \}
+818         \textcolor{keywordflow}{break};
+819     \}
+820     \textcolor{keywordflow}{return} airTime;
+821 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 5
+\mbox{\Hypertarget{sx1276_8h_ab153589dd08582a94b22263f7a655a46}\label{sx1276_8h_ab153589dd08582a94b22263f7a655a46}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Get\+Wakeup\+Time@{S\+X1276\+Get\+Wakeup\+Time}}
+\index{S\+X1276\+Get\+Wakeup\+Time@{S\+X1276\+Get\+Wakeup\+Time}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Get\+Wakeup\+Time()}{SX1276GetWakeupTime()}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+X1276\+Get\+Wakeup\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the time required for the board plus radio to get out of sleep.\mbox{[}ms\mbox{]} 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em time} & Radio plus board wakeup time in ms. \\
+\hline
+\end{DoxyRetVals}
+
+
+sx1276.\+c 파일의 1395 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1396 \{
+1397     \textcolor{keywordflow}{return} ( uint32\_t )\mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->
+      \mbox{\hyperlink{structs_board_callback_a731a806acb4adddba9464cf0b4b6dd9e}{SX1276BoardGetWakeTime}}( ) + \mbox{\hyperlink{sx1276_8h_a42ef173c36527c948a507929f25f8e49}{RADIO\_WAKEUP\_TIME}};\textcolor{comment}{// BOARD\_WAKEUP\_TIME;}
+1398 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{sx1276_8h_a19a9ddff3f878b85e42c7571485fe3c8}\label{sx1276_8h_a19a9ddff3f878b85e42c7571485fe3c8}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Init@{S\+X1276\+Init}}
+\index{S\+X1276\+Init@{S\+X1276\+Init}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Init()}{SX1276Init()}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+X1276\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_radio_events__t}{Radio\+Events\+\_\+t}} $\ast$}]{events }\end{DoxyParamCaption})}
+
+
+
+Initializes the radio 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & events Structure containing the driver callback functions \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & returns the wake up time of the radio and associated board \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 258 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+259 \{
+260     uint8\_t i;
+261 
+262     \mbox{\hyperlink{sx1276_8c_a34676a408700fd1c0c176e9990d52bc5}{RadioEvents}} = events;
+263 
+264     \textcolor{comment}{// Initialize driver timeout timers}
+265     \mbox{\hyperlink{time_server_8c_a7e41004e0cd39ba368fb7d83c2cfd550}{TimerInit}}( &\mbox{\hyperlink{sx1276_8c_a7dfcad4f3c97547289d6550410bf81f4}{TxTimeoutTimer}}, \mbox{\hyperlink{sx1276_8c_a3eda1c409a0269313a079389593d75cb}{SX1276OnTimeoutIrq}} );
+266     \mbox{\hyperlink{time_server_8c_a7e41004e0cd39ba368fb7d83c2cfd550}{TimerInit}}( &\mbox{\hyperlink{sx1276_8c_aee89c92e5cb79fd352b43dc60505abcd}{RxTimeoutTimer}}, \mbox{\hyperlink{sx1276_8c_a3eda1c409a0269313a079389593d75cb}{SX1276OnTimeoutIrq}} );
+267     \mbox{\hyperlink{time_server_8c_a7e41004e0cd39ba368fb7d83c2cfd550}{TimerInit}}( &\mbox{\hyperlink{sx1276_8c_ae87c84654f83ec000c8f6d373982ab97}{RxTimeoutSyncWord}}, \mbox{\hyperlink{sx1276_8c_a3eda1c409a0269313a079389593d75cb}{SX1276OnTimeoutIrq}} );
+268 
+269     \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->\mbox{\hyperlink{structs_board_callback_ad7ed5ef4ab2e13b2839e6df3b1f049a3}{SX1276BoardSetXO}}( SET );
+270 
+271     \mbox{\hyperlink{sx1276_8c_a593daed5ce70e7cb25545345e547816b}{SX1276Reset}}( );
+272 
+273     \mbox{\hyperlink{sx1276_8c_a72e6a30988e816e052a5cb0066dbec83}{RxChainCalibration}}( );
+274 
+275     \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a2b5cd905a9116a8a462c28a2d17c483a}{RF\_OPMODE\_SLEEP}} );
+276 
+277     \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->\mbox{\hyperlink{structs_board_callback_a400401342a36091fbcf88f1a8ef81db7}{SX1276BoardIoIrqInit}}( 
+      \mbox{\hyperlink{sx1276_8c_a54dad26405aa74d20ad277910373da2f}{DioIrq}} );
+278 
+279     \textcolor{keywordflow}{for}( i = 0; i < \textcolor{keyword}{sizeof}( \mbox{\hyperlink{sx1276_8c_a85205d43e6b6ad129adfd3f7bb098717}{RadioRegsInit}} ) / \textcolor{keyword}{sizeof}( 
+      \mbox{\hyperlink{struct_radio_registers__t}{RadioRegisters\_t}} ); i++ )
+280     \{
+281         \mbox{\hyperlink{sx1276_8c_a8325968bbefefab02537762dd274aa8b}{SX1276SetModem}}( \mbox{\hyperlink{sx1276_8c_a85205d43e6b6ad129adfd3f7bb098717}{RadioRegsInit}}[i].Modem );
+282         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_8c_a85205d43e6b6ad129adfd3f7bb098717}{RadioRegsInit}}[i].Addr, 
+      \mbox{\hyperlink{sx1276_8c_a85205d43e6b6ad129adfd3f7bb098717}{RadioRegsInit}}[i].Value );
+283     \}
+284 
+285     \mbox{\hyperlink{sx1276_8c_a8325968bbefefab02537762dd274aa8b}{SX1276SetModem}}( \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} );
+286 
+287     \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a7c6fbd4973c8e0d1868c82747d589c3d}{State}} = \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a89c1ff89fc074c1c80f96d186c99f899}{RF\_IDLE}};
+288 
+289     \textcolor{keywordflow}{return} ( uint32\_t )\mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->
+      \mbox{\hyperlink{structs_board_callback_a731a806acb4adddba9464cf0b4b6dd9e}{SX1276BoardGetWakeTime}}( ) + \mbox{\hyperlink{sx1276_8h_a42ef173c36527c948a507929f25f8e49}{RADIO\_WAKEUP\_TIME}};\textcolor{comment}{// BOARD\_WAKEUP\_TIME;}
+290 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 6
+\mbox{\Hypertarget{sx1276_8h_a29f26f7258f8fcd5c27800295639d7c7}\label{sx1276_8h_a29f26f7258f8fcd5c27800295639d7c7}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Is\+Channel\+Free@{S\+X1276\+Is\+Channel\+Free}}
+\index{S\+X1276\+Is\+Channel\+Free@{S\+X1276\+Is\+Channel\+Free}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Is\+Channel\+Free()}{SX1276IsChannelFree()}}
+{\footnotesize\ttfamily bool S\+X1276\+Is\+Channel\+Free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}}}]{modem,  }\item[{uint32\+\_\+t}]{freq,  }\item[{int16\+\_\+t}]{rssi\+Thresh,  }\item[{uint32\+\_\+t}]{max\+Carrier\+Sense\+Time }\end{DoxyParamCaption})}
+
+
+
+Checks if the channel is free for the given time 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & freq Channel RF frequency \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & rssi\+Thresh R\+S\+SI threshold \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & max\+Carrier\+Sense\+Time Max time while the R\+S\+SI is measured\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em is\+Free} & \mbox{[}true\+: Channel is free, false\+: Channel is not free\mbox{]} \\
+\hline
+\end{DoxyRetVals}
+
+
+sx1276.\+c 파일의 310 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+311 \{
+312     \textcolor{keywordtype}{bool} status = \textcolor{keyword}{true};
+313     int16\_t rssi = 0;
+314     uint32\_t carrierSenseTime = 0;
+315 
+316     \mbox{\hyperlink{sx1276_8c_a8325968bbefefab02537762dd274aa8b}{SX1276SetModem}}( modem );
+317 
+318     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}( freq );
+319 
+320     \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a7a13dffe3a61d783cdbbb0ac11cc85b2}{RF\_OPMODE\_RECEIVER}} );
+321 
+322     \mbox{\hyperlink{delay_8c_ae3a1c1a7a5024cf50a2e8672927f40cc}{DelayMs}}( 1 );
+323 
+324     carrierSenseTime = \mbox{\hyperlink{time_server_8c_a2b801c1a13b71247424701f9a034f7ca}{TimerGetCurrentTime}}( );
+325 
+326     \textcolor{comment}{// Perform carrier sense for maxCarrierSenseTime}
+327     \textcolor{keywordflow}{while}( \mbox{\hyperlink{time_server_8c_a9ca7e27f3d6474daff63f2e093a2e91e}{TimerGetElapsedTime}}( carrierSenseTime ) < maxCarrierSenseTime )
+328     \{
+329         rssi = \mbox{\hyperlink{sx1276_8c_a5741300714435f1dd69084a30031f6e3}{SX1276ReadRssi}}( modem );
+330 
+331         \textcolor{keywordflow}{if}( rssi > rssiThresh )
+332         \{
+333             status = \textcolor{keyword}{false};
+334             \textcolor{keywordflow}{break};
+335         \}
+336     \}
+337     \mbox{\hyperlink{sx1276_8c_a32a7b8c477b2f400f96a3255e1ab7620}{SX1276SetSleep}}( );
+338     \textcolor{keywordflow}{return} status;
+339 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 7
+\mbox{\Hypertarget{sx1276_8h_a9ba39c96b8e339b06dd24543920fd2f7}\label{sx1276_8h_a9ba39c96b8e339b06dd24543920fd2f7}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Random@{S\+X1276\+Random}}
+\index{S\+X1276\+Random@{S\+X1276\+Random}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Random()}{SX1276Random()}}
+{\footnotesize\ttfamily uint32\+\_\+t S\+X1276\+Random (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Generates a 32 bits random value based on the R\+S\+SI readings 
+
+\begin{DoxyRemark}{Remarks}
+This function sets the radio in Lo\+Ra modem mode and disables all interrupts. After calling this function either S\+X1276\+Set\+Rx\+Config or S\+X1276\+Set\+Tx\+Config functions must be called.
+\end{DoxyRemark}
+
+\begin{DoxyRetVals}{반환값}
+{\em random\+Value} & 32 bits random value \\
+\hline
+\end{DoxyRetVals}
+
+
+sx1276.\+c 파일의 341 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+342 \{
+343     uint8\_t i;
+344     uint32\_t rnd = 0;
+345 
+346     \textcolor{comment}{/*}
+347 \textcolor{comment}{     * Radio setup for random number generation}
+348 \textcolor{comment}{     */}
+349     \textcolor{comment}{// Set LoRa modem ON}
+350     \mbox{\hyperlink{sx1276_8c_a8325968bbefefab02537762dd274aa8b}{SX1276SetModem}}( \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}} );
+351 
+352     \textcolor{comment}{// Disable LoRa modem interrupts}
+353     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a2b50ca91ed7db2035a2183b37506eec8}{REG\_LR\_IRQFLAGSMASK}}, 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a12d5b2ce439396e7033053c929b815bf}{RFLR\_IRQFLAGS\_RXTIMEOUT}} |
+354                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a7bdc1e0f642b272cef8fc3f81ab8d95e}{RFLR\_IRQFLAGS\_RXDONE}} |
+355                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a2b91f96d488f7d08d8fd543a7a5eb76b}{RFLR\_IRQFLAGS\_PAYLOADCRCERROR}} |
+356                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a56f64bf676430c4ce2cc672d3bfde2b8}{RFLR\_IRQFLAGS\_VALIDHEADER}} |
+357                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a15a27d43d8ec6b82bcd31857c35e9f09}{RFLR\_IRQFLAGS\_TXDONE}} |
+358                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a44fee83993ca42bbd77370fc82c2fc91}{RFLR\_IRQFLAGS\_CADDONE}} |
+359                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a781c17401f3c0f94e56cd76d43ca0271}{RFLR\_IRQFLAGS\_FHSSCHANGEDCHANNEL}} |
+360                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a301a9870f807e6c4f54ad608da0549ed}{RFLR\_IRQFLAGS\_CADDETECTED}} );
+361 
+362     \textcolor{comment}{// Set radio in continuous reception}
+363     \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a7a13dffe3a61d783cdbbb0ac11cc85b2}{RF\_OPMODE\_RECEIVER}} );
+364 
+365     \textcolor{keywordflow}{for}( i = 0; i < 32; i++ )
+366     \{
+367         \mbox{\hyperlink{delay_8c_ae3a1c1a7a5024cf50a2e8672927f40cc}{DelayMs}}( 1 );
+368         \textcolor{comment}{// Unfiltered RSSI value reading. Only takes the LSB value}
+369         rnd |= ( ( uint32\_t )\mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a98748f71ec5ffb1945bf8fa7a91a5d45}{REG\_LR\_RSSIWIDEBAND}} ) & 0x01 ) << i;
+370     \}
+371 
+372     \mbox{\hyperlink{sx1276_8c_a32a7b8c477b2f400f96a3255e1ab7620}{SX1276SetSleep}}( );
+373 
+374     \textcolor{keywordflow}{return} rnd;
+375 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 8
+\mbox{\Hypertarget{sx1276_8h_a1c0054da62dacb13d6286a7cfe01d863}\label{sx1276_8h_a1c0054da62dacb13d6286a7cfe01d863}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Read@{S\+X1276\+Read}}
+\index{S\+X1276\+Read@{S\+X1276\+Read}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Read()}{SX1276Read()}}
+{\footnotesize\ttfamily uint8\+\_\+t S\+X1276\+Read (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+
+
+Reads the radio register at the specified address 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & addr Register address \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em data} & Register value \\
+\hline
+\end{DoxyRetVals}
+
+
+sx1276.\+c 파일의 1309 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1310 \{
+1311     uint8\_t data;
+1312     \mbox{\hyperlink{sx1276_8c_a9b3df4400813ac6aed7b77f400436ad0}{SX1276ReadBuffer}}( addr, &data, 1 );
+1313     \textcolor{keywordflow}{return} data;
+1314 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 9
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 10
+\mbox{\Hypertarget{sx1276_8h_a9b3df4400813ac6aed7b77f400436ad0}\label{sx1276_8h_a9b3df4400813ac6aed7b77f400436ad0}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Read\+Buffer@{S\+X1276\+Read\+Buffer}}
+\index{S\+X1276\+Read\+Buffer@{S\+X1276\+Read\+Buffer}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Read\+Buffer()}{SX1276ReadBuffer()}}
+{\footnotesize\ttfamily void S\+X1276\+Read\+Buffer (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Reads multiple radio registers starting at address 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & addr First Radio register address \\
+\hline
+{\em \mbox{[}\+O\+U\+T\mbox{]}} & buffer Buffer where to copy the registers data \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size Number of registers to be read \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 1333 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1334 \{
+1335     uint8\_t i;
+1336 
+1337     \textcolor{comment}{//NSS = 0;}
+1338     \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_af38dc62dd556ab94739deb56a6aeba22}{RADIO\_NSS\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a95e5a9f989319ebc0679d80521953832}{RADIO\_NSS\_PIN}}, 0 );
+1339 
+1340     \mbox{\hyperlink{hw__spi_8h_ae0d3f21fb84de59193e82bd1943d5563}{HW\_SPI\_InOut}}( addr & 0x7F );
+1341 
+1342     \textcolor{keywordflow}{for}( i = 0; i < size; i++ )
+1343     \{
+1344         buffer[i] = \mbox{\hyperlink{hw__spi_8h_ae0d3f21fb84de59193e82bd1943d5563}{HW\_SPI\_InOut}}( 0 );
+1345     \}
+1346 
+1347     \textcolor{comment}{//NSS = 1;}
+1348     \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_af38dc62dd556ab94739deb56a6aeba22}{RADIO\_NSS\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a95e5a9f989319ebc0679d80521953832}{RADIO\_NSS\_PIN}}, 1 );
+1349 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 11
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 12
+\mbox{\Hypertarget{sx1276_8h_a5741300714435f1dd69084a30031f6e3}\label{sx1276_8h_a5741300714435f1dd69084a30031f6e3}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Read\+Rssi@{S\+X1276\+Read\+Rssi}}
+\index{S\+X1276\+Read\+Rssi@{S\+X1276\+Read\+Rssi}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Read\+Rssi()}{SX1276ReadRssi()}}
+{\footnotesize\ttfamily int16\+\_\+t S\+X1276\+Read\+Rssi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}}}]{modem }\end{DoxyParamCaption})}
+
+
+
+Reads the current R\+S\+SI value 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em rssi\+Value} & Current R\+S\+SI value in \mbox{[}d\+Bm\mbox{]} \\
+\hline
+\end{DoxyRetVals}
+
+
+sx1276.\+c 파일의 1197 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1198 \{
+1199     int16\_t rssi = 0;
+1200 
+1201     \textcolor{keywordflow}{switch}( modem )
+1202     \{
+1203     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+1204         rssi = -( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a7ff36314652a235acc13fa6ab5504e3d}{REG\_RSSIVALUE}} ) >> 1 );
+1205         \textcolor{keywordflow}{break};
+1206     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+1207         \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} > \mbox{\hyperlink{sx1276_8h_a51ad727a195c907dda006b5a40467136}{RF\_MID\_BAND\_THRESH}} )
+1208         \{
+1209             rssi = \mbox{\hyperlink{sx1276_8c_ab5dc23476160340984a003c7a7ab9ef6}{RSSI\_OFFSET\_HF}} + \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a51636b899dd268fa04ddfa2c66329f05}{REG\_LR\_RSSIVALUE}} );
+1210         \}
+1211         \textcolor{keywordflow}{else}
+1212         \{
+1213             rssi = \mbox{\hyperlink{sx1276_8c_ab77d55822a59f8bf947a409624084335}{RSSI\_OFFSET\_LF}} + \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a51636b899dd268fa04ddfa2c66329f05}{REG\_LR\_RSSIVALUE}} );
+1214         \}
+1215         \textcolor{keywordflow}{break};
+1216     \textcolor{keywordflow}{default}:
+1217         rssi = -1;
+1218         \textcolor{keywordflow}{break};
+1219     \}
+1220     \textcolor{keywordflow}{return} rssi;
+1221 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 13
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 14
+\mbox{\Hypertarget{sx1276_8h_a593daed5ce70e7cb25545345e547816b}\label{sx1276_8h_a593daed5ce70e7cb25545345e547816b}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Reset@{S\+X1276\+Reset}}
+\index{S\+X1276\+Reset@{S\+X1276\+Reset}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Reset()}{SX1276Reset()}}
+{\footnotesize\ttfamily void S\+X1276\+Reset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Resets the S\+X1276 
+
+
+
+sx1276.\+c 파일의 1223 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1224 \{
+1225     GPIO\_InitTypeDef initStruct = \{ 0 \};
+1226 
+1227     initStruct.Mode =GPIO\_MODE\_OUTPUT\_PP;
+1228     initStruct.Pull = GPIO\_NOPULL;
+1229     initStruct.Speed = GPIO\_SPEED\_HIGH;
+1230 
+1231     \textcolor{comment}{// Set RESET pin to 0}
+1232     \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{HW\_GPIO\_Init}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a27b8d582816a335cda6c4eb7d962d7e7}{RADIO\_RESET\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a1428ea48170cf97d49ccac74f1ae7ebd}{RADIO\_RESET\_PIN}}, &initStruct
+       );
+1233     \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a27b8d582816a335cda6c4eb7d962d7e7}{RADIO\_RESET\_PORT}}, 
+      \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a1428ea48170cf97d49ccac74f1ae7ebd}{RADIO\_RESET\_PIN}}, 0 );
+1234 
+1235     \textcolor{comment}{// Wait 1 ms}
+1236     \mbox{\hyperlink{delay_8c_ae3a1c1a7a5024cf50a2e8672927f40cc}{DelayMs}}( 1 );
+1237 
+1238     \textcolor{comment}{// Configure RESET as input}
+1239     \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}(\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a27b8d582816a335cda6c4eb7d962d7e7}{RADIO\_RESET\_PORT}},\mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a1428ea48170cf97d49ccac74f1ae7ebd}{RADIO\_RESET\_PIN}},1);
+1240 
+1241     \textcolor{comment}{// Wait 6 ms}
+1242     \mbox{\hyperlink{delay_8c_ae3a1c1a7a5024cf50a2e8672927f40cc}{DelayMs}}( 6 );
+1243 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 15
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 16
+\mbox{\Hypertarget{sx1276_8h_a901a3dcdbf26005e0f3f2def3e3d83b3}\label{sx1276_8h_a901a3dcdbf26005e0f3f2def3e3d83b3}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Send@{S\+X1276\+Send}}
+\index{S\+X1276\+Send@{S\+X1276\+Send}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Send()}{SX1276Send()}}
+{\footnotesize\ttfamily void S\+X1276\+Send (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Sends the buffer of size. Prepares the packet to be sent and sets the radio in transmission 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer Buffer pointer \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size Buffer size \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 823 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+824 \{
+825     uint32\_t txTimeout = 0;
+826 
+827     \textcolor{keywordflow}{switch}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} )
+828     \{
+829     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+830         \{
+831             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a494ce893cf63b9392915f08010d79244}{NbBytes}} = 0;
+832             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.\mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a7da24467a0654ce2d1b0d8d0a09eee4b}{Size}} = size;
+833 
+834             \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a5595c2171f2df06f2dc36c58902eb890}{FixLen}} == \textcolor{keyword}{false} )
+835             \{
+836                 \mbox{\hyperlink{sx1276_8c_a6bb158ae216d4a685695ce5db5f2205f}{SX1276WriteFifo}}( ( uint8\_t* )&size, 1 );
+837             \}
+838             \textcolor{keywordflow}{else}
+839             \{
+840                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac1f66aa74c41653c8d30ce6b92af3769}{REG\_PAYLOADLENGTH}}, size );
+841             \}
+842 
+843             \textcolor{keywordflow}{if}( ( size > 0 ) && ( size <= 64 ) )
+844             \{
+845                 \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a78ff61b19a17979295892ab899554676}{ChunkSize}} = size;
+846             \}
+847             \textcolor{keywordflow}{else}
+848             \{
+849                 \mbox{\hyperlink{utilities_8c_abfbe672c7136122f16c9214bc4ba8d21}{memcpy1}}( \mbox{\hyperlink{sx1276_8c_a99af6b461a08aa4b014fda498a149f3d}{RxTxBuffer}}, buffer, size );
+850                 \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a78ff61b19a17979295892ab899554676}{ChunkSize}} = 32;
+851             \}
+852 
+853             \textcolor{comment}{// Write payload buffer}
+854             \mbox{\hyperlink{sx1276_8c_a6bb158ae216d4a685695ce5db5f2205f}{SX1276WriteFifo}}( buffer, \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.\mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a78ff61b19a17979295892ab899554676}{ChunkSize}} );
+855             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a494ce893cf63b9392915f08010d79244}{NbBytes}} += \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a78ff61b19a17979295892ab899554676}{ChunkSize}};
+856             txTimeout = \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a51e578bc6e36b50abdbf3c91be46bc5b}{TxTimeout}};
+857         \}
+858         \textcolor{keywordflow}{break};
+859     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+860         \{
+861             \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_ae72a925b57b29eb0c1fcd0334a972c0a}{IqInverted}} == \textcolor{keyword}{true} )
+862             \{
+863                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_afc2779efc44625851e1d056f48fa1f0c}{REG\_LR\_INVERTIQ}}, ( ( 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_afc2779efc44625851e1d056f48fa1f0c}{REG\_LR\_INVERTIQ}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a105fb2d297f6c79929c49e9af746abe6}{RFLR\_INVERTIQ\_TX\_MASK}} & 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_acd90b646213ae78994111ee2653940b1}{RFLR\_INVERTIQ\_RX\_MASK}} ) | \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a9c9c9827af6cdbca76caa24df62ccc8e}{RFLR\_INVERTIQ\_RX\_OFF}} | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aee577d02af06b8226f3e880bd0e06e0c}{RFLR\_INVERTIQ\_TX\_ON}} ) );
+864                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a83e2628ed2b5dcf9d0a30e7317b9a560}{REG\_LR\_INVERTIQ2}}, 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a9eb231f472e12e3a0f4ee8b9dd2586b7}{RFLR\_INVERTIQ2\_ON}} );
+865             \}
+866             \textcolor{keywordflow}{else}
+867             \{
+868                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_afc2779efc44625851e1d056f48fa1f0c}{REG\_LR\_INVERTIQ}}, ( ( 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_afc2779efc44625851e1d056f48fa1f0c}{REG\_LR\_INVERTIQ}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a105fb2d297f6c79929c49e9af746abe6}{RFLR\_INVERTIQ\_TX\_MASK}} & 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_acd90b646213ae78994111ee2653940b1}{RFLR\_INVERTIQ\_RX\_MASK}} ) | \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a9c9c9827af6cdbca76caa24df62ccc8e}{RFLR\_INVERTIQ\_RX\_OFF}} | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a0a85cfee5ae010b871c747d507065d14}{RFLR\_INVERTIQ\_TX\_OFF}} ) );
+869                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a83e2628ed2b5dcf9d0a30e7317b9a560}{REG\_LR\_INVERTIQ2}}, 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aebe752d4de9fd54dac7d4be3ce195b16}{RFLR\_INVERTIQ2\_OFF}} );
+870             \}
+871 
+872             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a4d98a38298aaafb08b5fcc86c5e964b8}{LoRaPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_lo_ra_packet_handler__t_ace31de7598e85e87624c4e7d8e5d112c}{Size}} = size;
+873 
+874             \textcolor{comment}{// Initializes the payload size}
+875             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a702e1e9ac301d26eb08fed50b90c6718}{REG\_LR\_PAYLOADLENGTH}}, size );
+876 
+877             \textcolor{comment}{// Full buffer used for Tx}
+878             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a317be2161e52b7ae141564e19598de85}{REG\_LR\_FIFOTXBASEADDR}}, 0 );
+879             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abdc4c3b5c640a1069f7be689ad5bd908}{REG\_LR\_FIFOADDRPTR}}, 0 );
+880 
+881             \textcolor{comment}{// FIFO operations can not take place in Sleep mode}
+882             \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}} ) & ~\mbox{\hyperlink{sx1276_regs-_fsk_8h_a85461827ea27e5138c9198c75f1bdf6e}{RF\_OPMODE\_MASK}} ) == 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a2b5cd905a9116a8a462c28a2d17c483a}{RF\_OPMODE\_SLEEP}} )
+883             \{
+884                 \mbox{\hyperlink{sx1276_8c_aaef7a98104b400b235ef76de0cfb17df}{SX1276SetStby}}( );
+885                 \mbox{\hyperlink{delay_8c_ae3a1c1a7a5024cf50a2e8672927f40cc}{DelayMs}}( 1 );
+886             \}
+887             \textcolor{comment}{// Write payload buffer}
+888             \mbox{\hyperlink{sx1276_8c_a6bb158ae216d4a685695ce5db5f2205f}{SX1276WriteFifo}}( buffer, size );
+889             txTimeout = \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a51e578bc6e36b50abdbf3c91be46bc5b}{TxTimeout}};
+890         \}
+891         \textcolor{keywordflow}{break};
+892     \}
+893 
+894     \mbox{\hyperlink{sx1276_8c_a4aea9f6f1070dfd4e4b73bb5ddc1fe38}{SX1276SetTx}}( txTimeout );
+895 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 17
+\mbox{\Hypertarget{sx1276_8h_a00768e908043081bc32cb83913192f7f}\label{sx1276_8h_a00768e908043081bc32cb83913192f7f}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Channel@{S\+X1276\+Set\+Channel}}
+\index{S\+X1276\+Set\+Channel@{S\+X1276\+Set\+Channel}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Channel()}{SX1276SetChannel()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Channel (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{freq }\end{DoxyParamCaption})}
+
+
+
+Sets the channel configuration 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & freq Channel RF frequency \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 297 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+298 \{
+299     uint32\_t channel;
+300 
+301     \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} = freq;
+302 
+303     \mbox{\hyperlink{sx1276_8h_ab5f9f10543ab6e2b52e98b9ade9f1ada}{SX\_FREQ\_TO\_CHANNEL}}( channel, freq );
+304 
+305     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a80711d5ed54cc1aa69666b92ea78c353}{REG\_FRFMSB}}, ( uint8\_t )( ( channel >> 16 ) & 0xFF ) );
+306     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ad80489ab7d36cc8d9c725ab45f77c731}{REG\_FRFMID}}, ( uint8\_t )( ( channel >> 8 ) & 0xFF ) );
+307     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a3f6b75c6bcb9bb8631cd7fa7151dd934}{REG\_FRFLSB}}, ( uint8\_t )( channel & 0xFF ) );
+308 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 18
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 19
+\mbox{\Hypertarget{sx1276_8h_aac0bb6d289a1afe69f550cb148f3bac8}\label{sx1276_8h_aac0bb6d289a1afe69f550cb148f3bac8}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Max\+Payload\+Length@{S\+X1276\+Set\+Max\+Payload\+Length}}
+\index{S\+X1276\+Set\+Max\+Payload\+Length@{S\+X1276\+Set\+Max\+Payload\+Length}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Max\+Payload\+Length()}{SX1276SetMaxPayloadLength()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Max\+Payload\+Length (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}}}]{modem,  }\item[{uint8\+\_\+t}]{max }\end{DoxyParamCaption})}
+
+
+
+Sets the maximum payload length. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & max Maximum payload length in bytes \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 1361 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1362 \{
+1363     \mbox{\hyperlink{sx1276_8c_a8325968bbefefab02537762dd274aa8b}{SX1276SetModem}}( modem );
+1364 
+1365     \textcolor{keywordflow}{switch}( modem )
+1366     \{
+1367     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+1368         \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a5595c2171f2df06f2dc36c58902eb890}{FixLen}} == \textcolor{keyword}{false} )
+1369         \{
+1370             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac1f66aa74c41653c8d30ce6b92af3769}{REG\_PAYLOADLENGTH}}, max );
+1371         \}
+1372         \textcolor{keywordflow}{break};
+1373     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+1374         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ae71e7acfa7c8c737e55349e72c71349f}{REG\_LR\_PAYLOADMAXLENGTH}}, max );
+1375         \textcolor{keywordflow}{break};
+1376     \}
+1377 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 20
+\mbox{\Hypertarget{sx1276_8h_a8325968bbefefab02537762dd274aa8b}\label{sx1276_8h_a8325968bbefefab02537762dd274aa8b}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Modem@{S\+X1276\+Set\+Modem}}
+\index{S\+X1276\+Set\+Modem@{S\+X1276\+Set\+Modem}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Modem()}{SX1276SetModem()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Modem (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}}}]{modem }\end{DoxyParamCaption})}
+
+
+
+Configures the radio with the given modem 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 1267 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1268 \{
+1269     \textcolor{keywordflow}{if}( ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}} ) & 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a4d9b59767f3e421ed4b6a5857c1007bf}{RFLR\_OPMODE\_LONGRANGEMODE\_ON}} ) != 0 )
+1270     \{
+1271         \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} = \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}};
+1272     \}
+1273     \textcolor{keywordflow}{else}
+1274     \{
+1275         \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} = \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}};
+1276     \}
+1277 
+1278     \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} == modem )
+1279     \{
+1280         \textcolor{keywordflow}{return};
+1281     \}
+1282 
+1283     \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} = modem;
+1284     \textcolor{keywordflow}{switch}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} )
+1285     \{
+1286     \textcolor{keywordflow}{default}:
+1287     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+1288         \mbox{\hyperlink{sx1276_8c_a32a7b8c477b2f400f96a3255e1ab7620}{SX1276SetSleep}}( );
+1289         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a4f5c6acc1ecbded1e724e4d8d4614a4d}{RFLR\_OPMODE\_LONGRANGEMODE\_MASK}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abb6cc4dc044295367651d11fb77508bd}{RFLR\_OPMODE\_LONGRANGEMODE\_OFF}} );
+1290 
+1291         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}}, 0x00 );
+1292         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aec8b1ddf72925f502675593fabcc469f}{REG\_DIOMAPPING2}}, 0x30 ); \textcolor{comment}{// DIO5=ModeReady}
+1293         \textcolor{keywordflow}{break};
+1294     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+1295         \mbox{\hyperlink{sx1276_8c_a32a7b8c477b2f400f96a3255e1ab7620}{SX1276SetSleep}}( );
+1296         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a4f5c6acc1ecbded1e724e4d8d4614a4d}{RFLR\_OPMODE\_LONGRANGEMODE\_MASK}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a4d9b59767f3e421ed4b6a5857c1007bf}{RFLR\_OPMODE\_LONGRANGEMODE\_ON}} );
+1297 
+1298         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}}, 0x00 );
+1299         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aec8b1ddf72925f502675593fabcc469f}{REG\_DIOMAPPING2}}, 0x00 );
+1300         \textcolor{keywordflow}{break};
+1301     \}
+1302 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 21
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 22
+\mbox{\Hypertarget{sx1276_8h_aaaac2e0d7b5bd63fabf38a235d27a452}\label{sx1276_8h_aaaac2e0d7b5bd63fabf38a235d27a452}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Op\+Mode@{S\+X1276\+Set\+Op\+Mode}}
+\index{S\+X1276\+Set\+Op\+Mode@{S\+X1276\+Set\+Op\+Mode}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Op\+Mode()}{SX1276SetOpMode()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Op\+Mode (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{op\+Mode }\end{DoxyParamCaption})}
+
+
+
+Sets the S\+X1276 operating mode 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & op\+Mode New operating mode \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 1245 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1246 \{
+1247     \textcolor{keywordflow}{if}( opMode == \mbox{\hyperlink{sx1276_regs-_fsk_8h_a2b5cd905a9116a8a462c28a2d17c483a}{RF\_OPMODE\_SLEEP}} )
+1248     \{
+1249       \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}} ) & \mbox{\hyperlink{sx1276_regs-_fsk_8h_a85461827ea27e5138c9198c75f1bdf6e}{RF\_OPMODE\_MASK}} ) | opMode );
+1250       
+1251       \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->\mbox{\hyperlink{structs_board_callback_a05048f8c28130f39b11552ccd1668125}{SX1276BoardSetAntSwLowPower}}( \textcolor{keyword}{true} );
+1252       
+1253       \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->\mbox{\hyperlink{structs_board_callback_ad7ed5ef4ab2e13b2839e6df3b1f049a3}{SX1276BoardSetXO}}( RESET ); 
+1254     \}
+1255     \textcolor{keywordflow}{else}
+1256     \{
+1257       \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->\mbox{\hyperlink{structs_board_callback_ad7ed5ef4ab2e13b2839e6df3b1f049a3}{SX1276BoardSetXO}}( SET ); 
+1258       
+1259       \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->\mbox{\hyperlink{structs_board_callback_a05048f8c28130f39b11552ccd1668125}{SX1276BoardSetAntSwLowPower}}( \textcolor{keyword}{false} )
+      ;
+1260       
+1261       \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->\mbox{\hyperlink{structs_board_callback_aff31b16510fde832787af55c87e9d1b7}{SX1276BoardSetAntSw}}( opMode );
+1262       
+1263       \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_af3f25ba8cab1ad2c10ee96089d5a21be}{REG\_OPMODE}} ) & \mbox{\hyperlink{sx1276_regs-_fsk_8h_a85461827ea27e5138c9198c75f1bdf6e}{RF\_OPMODE\_MASK}} ) | opMode );
+1264     \}
+1265 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 23
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 24
+\mbox{\Hypertarget{sx1276_8h_a8acacaf2d3e05a712a90f587d1908c6c}\label{sx1276_8h_a8acacaf2d3e05a712a90f587d1908c6c}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Public\+Network@{S\+X1276\+Set\+Public\+Network}}
+\index{S\+X1276\+Set\+Public\+Network@{S\+X1276\+Set\+Public\+Network}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Public\+Network()}{SX1276SetPublicNetwork()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Public\+Network (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})}
+
+
+
+Sets the network to public or private. Updates the sync byte. 
+
+\begin{DoxyRemark}{Remarks}
+Applies to Lo\+Ra modem only
+\end{DoxyRemark}
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & enable if true, it enables a public network \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 1379 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1380 \{
+1381     \mbox{\hyperlink{sx1276_8c_a8325968bbefefab02537762dd274aa8b}{SX1276SetModem}}( \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}} );
+1382     \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_ad5c7c76904042bd86508425be3b91a05}{PublicNetwork}} = enable;
+1383     \textcolor{keywordflow}{if}( enable == \textcolor{keyword}{true} )
+1384     \{
+1385         \textcolor{comment}{// Change LoRa modem SyncWord}
+1386         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a9da3702bd320fa729cb809d07ef0c38a}{REG\_LR\_SYNCWORD}}, 
+      \mbox{\hyperlink{sx1276_8h_ac2b07e04414b57bcebcb1eea5ba5ea70}{LORA\_MAC\_PUBLIC\_SYNCWORD}} );
+1387     \}
+1388     \textcolor{keywordflow}{else}
+1389     \{
+1390         \textcolor{comment}{// Change LoRa modem SyncWord}
+1391         \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a9da3702bd320fa729cb809d07ef0c38a}{REG\_LR\_SYNCWORD}}, 
+      \mbox{\hyperlink{sx1276_8h_a3a91534e6b1d9c4f1a179a495c38d7fe}{LORA\_MAC\_PRIVATE\_SYNCWORD}} );
+1392     \}
+1393 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 25
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 26
+\mbox{\Hypertarget{sx1276_8h_a8c2df9351fbde83379717dc6f76e5c11}\label{sx1276_8h_a8c2df9351fbde83379717dc6f76e5c11}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Rx@{S\+X1276\+Set\+Rx}}
+\index{S\+X1276\+Set\+Rx@{S\+X1276\+Set\+Rx}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Rx()}{SX1276SetRx()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Rx (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Sets the radio in reception mode for the given time 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & timeout Reception timeout \mbox{[}ms\mbox{]} \mbox{[}0\+: continuous, others timeout\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 915 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+916 \{
+917     \textcolor{keywordtype}{bool} rxContinuous = \textcolor{keyword}{false};
+918 
+919     \textcolor{keywordflow}{switch}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} )
+920     \{
+921     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+922         \{
+923             rxContinuous = \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_ad155d9bae95f09d927ca588dc4f4734a}{RxContinuous}};
+924 
+925             \textcolor{comment}{// DIO0=PayloadReady}
+926             \textcolor{comment}{// DIO1=FifoLevel}
+927             \textcolor{comment}{// DIO2=SyncAddr}
+928             \textcolor{comment}{// DIO3=FifoEmpty}
+929             \textcolor{comment}{// DIO4=Preamble}
+930             \textcolor{comment}{// DIO5=ModeReady}
+931             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}} ) & \mbox{\hyperlink{sx1276_regs-_fsk_8h_a9be88c0f522b9fb1e8a43008a84cb4e5}{RF\_DIOMAPPING1\_DIO0\_MASK}} &
+932                                                                             
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_aa92615e9def963f8881f657746524eac}{RF\_DIOMAPPING1\_DIO1\_MASK}} &
+933                                                                             
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a428631edbba8ef725a4a6b3be1b6fb8a}{RF\_DIOMAPPING1\_DIO2\_MASK}} ) |
+934                                                                             
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a848521495c2f6025a438a89cd4fe7943}{RF\_DIOMAPPING1\_DIO0\_00}} |
+935                                                                             
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_abd43e3d4350c26e574afbde538b06ad6}{RF\_DIOMAPPING1\_DIO1\_00}} |
+936                                                                             
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a8f9393d8018c3a4699ac487c2e133a55}{RF\_DIOMAPPING1\_DIO2\_11}} );
+937 
+938             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aec8b1ddf72925f502675593fabcc469f}{REG\_DIOMAPPING2}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_aec8b1ddf72925f502675593fabcc469f}{REG\_DIOMAPPING2}} ) & \mbox{\hyperlink{sx1276_regs-_fsk_8h_a9415ebcccf7fd73e9c6e9de0b71a4be8}{RF\_DIOMAPPING2\_DIO4\_MASK}} &
+939                                                                             
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_aa2e45e0e210e6bb7c122982f17433ad4}{RF\_DIOMAPPING2\_MAP\_MASK}} ) |
+940                                                                             
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a04ef85b93c2ee7e32c2992dbcf60781c}{RF\_DIOMAPPING2\_DIO4\_11}} |
+941                                                                             
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a6a4137adde392024770632b94ce5b78a}{RF\_DIOMAPPING2\_MAP\_PREAMBLEDETECT}} );
+942 
+943             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_acca8dea20d49c991dc4c7b5dc6ca755b}{FifoThresh}} = \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a18b41b1ddfbe6eb514f74431b5d76792}{REG\_FIFOTHRESH}} ) & 0x3F;
+944 
+945             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a6bba52e363d49d2783439eb8062d90c8}{REG\_RXCONFIG}}, 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a1565ab71874bf162f92304ed92a3560c}{RF\_RXCONFIG\_AFCAUTO\_ON}} | \mbox{\hyperlink{sx1276_regs-_fsk_8h_a6d9c9a618b195915a59cfffeae490a76}{RF\_RXCONFIG\_AGCAUTO\_ON}} | 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a46818be362acfd8e971b2ba909a5bd48}{RF\_RXCONFIG\_RXTRIGER\_PREAMBLEDETECT}} );
+946 
+947             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a825f96ea9f64333634d9cdc9c20396cf}{PreambleDetected}} = \textcolor{keyword}{false};
+948             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a0cad12deb5c547254760b5d04bcf6eac}{SyncWordDetected}} = \textcolor{keyword}{false};
+949             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.
+      \mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a494ce893cf63b9392915f08010d79244}{NbBytes}} = 0;
+950             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_afc9f5de24be5808af3c3a5275fdd8031}{FskPacketHandler}}.\mbox{\hyperlink{struct_radio_fsk_packet_handler__t_a7da24467a0654ce2d1b0d8d0a09eee4b}{Size}} = 0;
+951         \}
+952         \textcolor{keywordflow}{break};
+953     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+954         \{
+955             \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_ae72a925b57b29eb0c1fcd0334a972c0a}{IqInverted}} == \textcolor{keyword}{true} )
+956             \{
+957                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_afc2779efc44625851e1d056f48fa1f0c}{REG\_LR\_INVERTIQ}}, ( ( 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_afc2779efc44625851e1d056f48fa1f0c}{REG\_LR\_INVERTIQ}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a105fb2d297f6c79929c49e9af746abe6}{RFLR\_INVERTIQ\_TX\_MASK}} & 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_acd90b646213ae78994111ee2653940b1}{RFLR\_INVERTIQ\_RX\_MASK}} ) | \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a2dfdb9bc15c1adca8287a01803ed2672}{RFLR\_INVERTIQ\_RX\_ON}} | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a0a85cfee5ae010b871c747d507065d14}{RFLR\_INVERTIQ\_TX\_OFF}} ) );
+958                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a83e2628ed2b5dcf9d0a30e7317b9a560}{REG\_LR\_INVERTIQ2}}, 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a9eb231f472e12e3a0f4ee8b9dd2586b7}{RFLR\_INVERTIQ2\_ON}} );
+959             \}
+960             \textcolor{keywordflow}{else}
+961             \{
+962                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_afc2779efc44625851e1d056f48fa1f0c}{REG\_LR\_INVERTIQ}}, ( ( 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_afc2779efc44625851e1d056f48fa1f0c}{REG\_LR\_INVERTIQ}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a105fb2d297f6c79929c49e9af746abe6}{RFLR\_INVERTIQ\_TX\_MASK}} & 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_acd90b646213ae78994111ee2653940b1}{RFLR\_INVERTIQ\_RX\_MASK}} ) | \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a9c9c9827af6cdbca76caa24df62ccc8e}{RFLR\_INVERTIQ\_RX\_OFF}} | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a0a85cfee5ae010b871c747d507065d14}{RFLR\_INVERTIQ\_TX\_OFF}} ) );
+963                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a83e2628ed2b5dcf9d0a30e7317b9a560}{REG\_LR\_INVERTIQ2}}, 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aebe752d4de9fd54dac7d4be3ce195b16}{RFLR\_INVERTIQ2\_OFF}} );
+964             \}
+965 
+966             \textcolor{comment}{// ERRATA 2.3 - Receiver Spurious Reception of a LoRa Signal}
+967             \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a318fb6591ed9e732fef8c459c246e8cb}{Bandwidth}} < 9 )
+968             \{
+969                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}}, 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}} ) & 0x7F );
+970                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a74451ab459bd0f482dde3ee50592390b}{REG\_LR\_TEST30}}, 0x00 );
+971                 \textcolor{keywordflow}{switch}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a318fb6591ed9e732fef8c459c246e8cb}{Bandwidth}} )
+972                 \{
+973                 \textcolor{keywordflow}{case} 0: \textcolor{comment}{// 7.8 kHz}
+974                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x48 );
+975                     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}(\mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} + 7810 );
+976                     \textcolor{keywordflow}{break};
+977                 \textcolor{keywordflow}{case} 1: \textcolor{comment}{// 10.4 kHz}
+978                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x44 );
+979                     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}(\mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} + 10420 );
+980                     \textcolor{keywordflow}{break};
+981                 \textcolor{keywordflow}{case} 2: \textcolor{comment}{// 15.6 kHz}
+982                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x44 );
+983                     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}(\mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} + 15620 );
+984                     \textcolor{keywordflow}{break};
+985                 \textcolor{keywordflow}{case} 3: \textcolor{comment}{// 20.8 kHz}
+986                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x44 );
+987                     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}(\mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} + 20830 );
+988                     \textcolor{keywordflow}{break};
+989                 \textcolor{keywordflow}{case} 4: \textcolor{comment}{// 31.2 kHz}
+990                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x44 );
+991                     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}(\mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} + 31250 );
+992                     \textcolor{keywordflow}{break};
+993                 \textcolor{keywordflow}{case} 5: \textcolor{comment}{// 41.4 kHz}
+994                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x44 );
+995                     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}(\mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.
+      \mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} + 41670 );
+996                     \textcolor{keywordflow}{break};
+997                 \textcolor{keywordflow}{case} 6: \textcolor{comment}{// 62.5 kHz}
+998                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x40 );
+999                     \textcolor{keywordflow}{break};
+1000                 \textcolor{keywordflow}{case} 7: \textcolor{comment}{// 125 kHz}
+1001                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x40 );
+1002                     \textcolor{keywordflow}{break};
+1003                 \textcolor{keywordflow}{case} 8: \textcolor{comment}{// 250 kHz}
+1004                     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af5f1829a69cb2a95243952ffa751a4c9}{REG\_LR\_TEST2F}}, 0x40 );
+1005                     \textcolor{keywordflow}{break};
+1006                 \}
+1007             \}
+1008             \textcolor{keywordflow}{else}
+1009             \{
+1010                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}}, 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}} ) | 0x80 );
+1011             \}
+1012 
+1013             rxContinuous = \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_ad155d9bae95f09d927ca588dc4f4734a}{RxContinuous}};
+1014 
+1015             \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a84cd8f4535bc2447be083a8e1dc3b1e7}{FreqHopOn}} == \textcolor{keyword}{true} )
+1016             \{
+1017                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a2b50ca91ed7db2035a2183b37506eec8}{REG\_LR\_IRQFLAGSMASK}}, \textcolor{comment}{//RFLR\_IRQFLAGS\_RXTIMEOUT |}
+1018                                                   \textcolor{comment}{//RFLR\_IRQFLAGS\_RXDONE |}
+1019                                                   \textcolor{comment}{//RFLR\_IRQFLAGS\_PAYLOADCRCERROR |}
+1020                                                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a56f64bf676430c4ce2cc672d3bfde2b8}{RFLR\_IRQFLAGS\_VALIDHEADER}} |
+1021                                                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a15a27d43d8ec6b82bcd31857c35e9f09}{RFLR\_IRQFLAGS\_TXDONE}} |
+1022                                                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a44fee83993ca42bbd77370fc82c2fc91}{RFLR\_IRQFLAGS\_CADDONE}} |
+1023                                                   \textcolor{comment}{//RFLR\_IRQFLAGS\_FHSSCHANGEDCHANNEL |}
+1024                                                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a301a9870f807e6c4f54ad608da0549ed}{RFLR\_IRQFLAGS\_CADDETECTED}} );
+1025 
+1026                 \textcolor{comment}{// DIO0=RxDone, DIO2=FhssChangeChannel}
+1027                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}}, ( 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}} ) & 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af758e474cda2159002abe0e6180d7cd1}{RFLR\_DIOMAPPING1\_DIO0\_MASK}} & 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ac0828a1effa434c36dd94a983d54375d}{RFLR\_DIOMAPPING1\_DIO2\_MASK}}  ) | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ab6265039b78b19a1a30b1219633cd48b}{RFLR\_DIOMAPPING1\_DIO0\_00}} | \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a2f0f04b85bbb762368832a1b37ac7711}{RFLR\_DIOMAPPING1\_DIO2\_00}} );
+1028             \}
+1029             \textcolor{keywordflow}{else}
+1030             \{
+1031                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a2b50ca91ed7db2035a2183b37506eec8}{REG\_LR\_IRQFLAGSMASK}}, \textcolor{comment}{//RFLR\_IRQFLAGS\_RXTIMEOUT |}
+1032                                                   \textcolor{comment}{//RFLR\_IRQFLAGS\_RXDONE |}
+1033                                                   \textcolor{comment}{//RFLR\_IRQFLAGS\_PAYLOADCRCERROR |}
+1034                                                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a56f64bf676430c4ce2cc672d3bfde2b8}{RFLR\_IRQFLAGS\_VALIDHEADER}} |
+1035                                                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a15a27d43d8ec6b82bcd31857c35e9f09}{RFLR\_IRQFLAGS\_TXDONE}} |
+1036                                                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a44fee83993ca42bbd77370fc82c2fc91}{RFLR\_IRQFLAGS\_CADDONE}} |
+1037                                                   
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a781c17401f3c0f94e56cd76d43ca0271}{RFLR\_IRQFLAGS\_FHSSCHANGEDCHANNEL}} |
+1038                                                   \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a301a9870f807e6c4f54ad608da0549ed}{RFLR\_IRQFLAGS\_CADDETECTED}} );
+1039 
+1040                 \textcolor{comment}{// DIO0=RxDone}
+1041                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}}, ( 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}} ) & 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af758e474cda2159002abe0e6180d7cd1}{RFLR\_DIOMAPPING1\_DIO0\_MASK}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ab6265039b78b19a1a30b1219633cd48b}{RFLR\_DIOMAPPING1\_DIO0\_00}} );
+1042             \}
+1043             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ad0c1f657286b341e8a305fcc546ff391}{REG\_LR\_FIFORXBASEADDR}}, 0 );
+1044             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abdc4c3b5c640a1069f7be689ad5bd908}{REG\_LR\_FIFOADDRPTR}}, 0 );
+1045         \}
+1046         \textcolor{keywordflow}{break};
+1047     \}
+1048 
+1049     memset( \mbox{\hyperlink{sx1276_8c_a99af6b461a08aa4b014fda498a149f3d}{RxTxBuffer}}, 0, ( \textcolor{keywordtype}{size\_t} )\mbox{\hyperlink{sx1276_8h_a739a2a1a0047c98ac1b18ecd25dac092}{RX\_BUFFER\_SIZE}} );
+1050 
+1051     \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a7c6fbd4973c8e0d1868c82747d589c3d}{State}} = \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a5a6a549e66aa54871013a612aa2aba45}{RF\_RX\_RUNNING}};
+1052     \textcolor{keywordflow}{if}( timeout != 0 )
+1053     \{
+1054         \mbox{\hyperlink{time_server_8c_ad56c30124de6deefb3e32bbee2a4ba46}{TimerSetValue}}( &\mbox{\hyperlink{sx1276_8c_aee89c92e5cb79fd352b43dc60505abcd}{RxTimeoutTimer}}, timeout );
+1055         \mbox{\hyperlink{time_server_8c_acd2c1f05aa1976f3bbedd389c8710a78}{TimerStart}}( &\mbox{\hyperlink{sx1276_8c_aee89c92e5cb79fd352b43dc60505abcd}{RxTimeoutTimer}} );
+1056     \}
+1057 
+1058     \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} == \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}} )
+1059     \{
+1060         \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a7a13dffe3a61d783cdbbb0ac11cc85b2}{RF\_OPMODE\_RECEIVER}} );
+1061 
+1062         \textcolor{keywordflow}{if}( rxContinuous == \textcolor{keyword}{false} )
+1063         \{
+1064             \mbox{\hyperlink{time_server_8c_ad56c30124de6deefb3e32bbee2a4ba46}{TimerSetValue}}( &\mbox{\hyperlink{sx1276_8c_ae87c84654f83ec000c8f6d373982ab97}{RxTimeoutSyncWord}}, 
+      \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a9b3685b3004d4b5e89875b2fe6324e74}{RxSingleTimeout}} );
+1065             \mbox{\hyperlink{time_server_8c_acd2c1f05aa1976f3bbedd389c8710a78}{TimerStart}}( &\mbox{\hyperlink{sx1276_8c_ae87c84654f83ec000c8f6d373982ab97}{RxTimeoutSyncWord}} );
+1066         \}
+1067     \}
+1068     \textcolor{keywordflow}{else}
+1069     \{
+1070         \textcolor{keywordflow}{if}( rxContinuous == \textcolor{keyword}{true} )
+1071         \{
+1072             \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a18ffa4e2930797bbeb71fd15ae77dfe0}{RFLR\_OPMODE\_RECEIVER}} );
+1073         \}
+1074         \textcolor{keywordflow}{else}
+1075         \{
+1076             \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a0cfa7959ea68f8e81d1ee04e8a3ef596}{RFLR\_OPMODE\_RECEIVER\_SINGLE}} );
+1077         \}
+1078     \}
+1079 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 27
+\mbox{\Hypertarget{sx1276_8h_a6a66ceb9e18a33aaff10d384fa493cf8}\label{sx1276_8h_a6a66ceb9e18a33aaff10d384fa493cf8}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Rx\+Config@{S\+X1276\+Set\+Rx\+Config}}
+\index{S\+X1276\+Set\+Rx\+Config@{S\+X1276\+Set\+Rx\+Config}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Rx\+Config()}{SX1276SetRxConfig()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Rx\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}}}]{modem,  }\item[{uint32\+\_\+t}]{bandwidth,  }\item[{uint32\+\_\+t}]{datarate,  }\item[{uint8\+\_\+t}]{coderate,  }\item[{uint32\+\_\+t}]{bandwidth\+Afc,  }\item[{uint16\+\_\+t}]{preamble\+Len,  }\item[{uint16\+\_\+t}]{symb\+Timeout,  }\item[{bool}]{fix\+Len,  }\item[{uint8\+\_\+t}]{payload\+Len,  }\item[{bool}]{crc\+On,  }\item[{bool}]{freq\+Hop\+On,  }\item[{uint8\+\_\+t}]{hop\+Period,  }\item[{bool}]{iq\+Inverted,  }\item[{bool}]{rx\+Continuous }\end{DoxyParamCaption})}
+
+
+
+Sets the reception parameters 
+
+\begin{DoxyRemark}{Remarks}
+When using Lo\+Ra modem only bandwidths 125, 250 and 500 k\+Hz are supported
+\end{DoxyRemark}
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & bandwidth Sets the bandwidth F\+SK \+: $>$= 2600 and $<$= 250000 Hz Lo\+Ra\+: \mbox{[}0\+: 125 k\+Hz, 1\+: 250 k\+Hz, 2\+: 500 k\+Hz, 3\+: Reserved\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & datarate Sets the Datarate F\+SK \+: 600..300000 bits/s Lo\+Ra\+: \mbox{[}6\+: 64, 7\+: 128, 8\+: 256, 9\+: 512, 10\+: 1024, 11\+: 2048, 12\+: 4096 chips\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & coderate Sets the coding rate (Lo\+Ra only) F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}1\+: 4/5, 2\+: 4/6, 3\+: 4/7, 4\+: 4/8\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & bandwidth\+Afc Sets the A\+FC Bandwidth (F\+SK only) F\+SK \+: $>$= 2600 and $<$= 250000 Hz Lo\+Ra\+: N/A ( set to 0 ) \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & preamble\+Len Sets the Preamble length F\+SK \+: Number of bytes Lo\+Ra\+: Length in symbols (the hardware adds 4 more symbols) \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & symb\+Timeout Sets the Rx\+Single timeout value F\+SK \+: timeout number of bytes Lo\+Ra\+: timeout in symbols \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & fix\+Len Fixed length packets \mbox{[}0\+: variable, 1\+: fixed\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & payload\+Len Sets payload length when fixed length is used \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & crc\+On Enables/\+Disables the C\+RC \mbox{[}0\+: O\+FF, 1\+: ON\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & freq\+Hop\+On Enables disables the intra-\/packet frequency hopping F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}0\+: O\+FF, 1\+: ON\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & hop\+Period Number of symbols between each hop F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: Number of symbols \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & iq\+Inverted Inverts IQ signals (Lo\+Ra only) F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}0\+: not inverted, 1\+: inverted\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & rx\+Continuous Sets the reception in continuous mode \mbox{[}false\+: single mode, true\+: continuous mode\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 441 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+448 \{
+449     \mbox{\hyperlink{sx1276_8c_a8325968bbefefab02537762dd274aa8b}{SX1276SetModem}}( modem );
+450 
+451     \textcolor{keywordflow}{switch}( modem )
+452     \{
+453     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+454         \{
+455             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a318fb6591ed9e732fef8c459c246e8cb}{Bandwidth}} = bandwidth;
+456             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a4bac4b1fd8c58112bafb1514fc95ad46}{Datarate}} = datarate;
+457             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a6f8e2d2bd8e8f21428d582dc8a003eea}{BandwidthAfc}} = bandwidthAfc;
+458             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a5595c2171f2df06f2dc36c58902eb890}{FixLen}} = fixLen;
+459             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_aaa50a56616dec6cdf36915d97722c413}{PayloadLen}} = payloadLen;
+460             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a97bd90b59a970e4bb2195cf648a380d3}{CrcOn}} = crcOn;
+461             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_ae72a925b57b29eb0c1fcd0334a972c0a}{IqInverted}} = iqInverted;
+462             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_ad155d9bae95f09d927ca588dc4f4734a}{RxContinuous}} = rxContinuous;
+463             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_aba9cfa7d2470ee0e474fa6442d68f994}{PreambleLen}} = preambleLen;
+464             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a9b3685b3004d4b5e89875b2fe6324e74}{RxSingleTimeout}} = ( uint32\_t )( symbTimeout
+       * ( ( 1.0 / ( \textcolor{keywordtype}{double} )datarate ) * 8.0 ) * 1000 );
+465 
+466             datarate = ( uint16\_t )( ( \textcolor{keywordtype}{double} )\mbox{\hyperlink{sx1276_8h_a3d24a8ac8f673b60ac35b6d92fe72747}{XTAL\_FREQ}} / ( double )datarate );
+467             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a967024927a998c8b00e76015c0444d11}{REG\_BITRATEMSB}}, ( uint8\_t )( datarate >> 8 ) );
+468             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ab7321068986e253c5e0c4c00f592339b}{REG\_BITRATELSB}}, ( uint8\_t )( datarate & 0xFF ) );
+469 
+470             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a1bbbafd83ab10909a8dd5385fd0dfff8}{REG\_RXBW}}, \mbox{\hyperlink{sx1276_8c_a5741183f1536f5764d86ac28c25ea99b}{GetFskBandwidthRegValue}}( 
+      bandwidth ) );
+471             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aa4a7b5b5d63e9f8ef8f8dc4d7984753c}{REG\_AFCBW}}, \mbox{\hyperlink{sx1276_8c_a5741183f1536f5764d86ac28c25ea99b}{GetFskBandwidthRegValue}}( 
+      bandwidthAfc ) );
+472 
+473             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ab8a433a9dd9c4cebe485d1a1b49cfd4b}{REG\_PREAMBLEMSB}}, ( uint8\_t )( ( preambleLen >> 8 ) & 0
+      xFF ) );
+474             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a342040215f26acdefd5c95ec7c8ce828}{REG\_PREAMBLELSB}}, ( uint8\_t )( preambleLen & 0xFF ) );
+475 
+476             \textcolor{keywordflow}{if}( fixLen == 1 )
+477             \{
+478                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac1f66aa74c41653c8d30ce6b92af3769}{REG\_PAYLOADLENGTH}}, payloadLen );
+479             \}
+480             \textcolor{keywordflow}{else}
+481             \{
+482                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac1f66aa74c41653c8d30ce6b92af3769}{REG\_PAYLOADLENGTH}}, 0xFF ); \textcolor{comment}{// Set payload length
+       to the maximum}
+483             \}
+484 
+485             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a035c91c3eea7209c78ac5bda775940cc}{REG\_PACKETCONFIG1}},
+486                          ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a035c91c3eea7209c78ac5bda775940cc}{REG\_PACKETCONFIG1}} ) &
+487                            \mbox{\hyperlink{sx1276_regs-_fsk_8h_ad7dcff9e6dc9092816aea02a997fbce2}{RF\_PACKETCONFIG1\_CRC\_MASK}} &
+488                            \mbox{\hyperlink{sx1276_regs-_fsk_8h_a49a5b9d17a41eac837198daf073a8bc2}{RF\_PACKETCONFIG1\_PACKETFORMAT\_MASK}} ) |
+489                            ( ( fixLen == 1 ) ? 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a9bcb87a30f7c182b7434cb87fdcb8187}{RF\_PACKETCONFIG1\_PACKETFORMAT\_FIXED}} : 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a3ea46ce872f527e487bfc9ad5bc04fda}{RF\_PACKETCONFIG1\_PACKETFORMAT\_VARIABLE}} ) |
+490                            ( crcOn << 4 ) );
+491             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a519d7b5db6ab8bb6013226eaef9756c8}{REG\_PACKETCONFIG2}}, ( 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a519d7b5db6ab8bb6013226eaef9756c8}{REG\_PACKETCONFIG2}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a4796ee777b3c32fa2a8ae19b434a1b99}{RF\_PACKETCONFIG2\_DATAMODE\_PACKET}} ) );
+492         \}
+493         \textcolor{keywordflow}{break};
+494     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+495         \{
+496             \textcolor{keywordflow}{if}( bandwidth > 2 )
+497             \{
+498                 \textcolor{comment}{// Fatal error: When using LoRa modem only bandwidths 125, 250 and 500 kHz are supported}
+499                 \textcolor{keywordflow}{while}( 1 );
+500             \}
+501             bandwidth += 7;
+502             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a318fb6591ed9e732fef8c459c246e8cb}{Bandwidth}} = bandwidth;
+503             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a4bac4b1fd8c58112bafb1514fc95ad46}{Datarate}} = datarate;
+504             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_abb9fc996b28014f5d9b5d68ec359dc58}{Coderate}} = coderate;
+505             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_aba9cfa7d2470ee0e474fa6442d68f994}{PreambleLen}} = preambleLen;
+506             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a5595c2171f2df06f2dc36c58902eb890}{FixLen}} = fixLen;
+507             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_aaa50a56616dec6cdf36915d97722c413}{PayloadLen}} = payloadLen;
+508             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a97bd90b59a970e4bb2195cf648a380d3}{CrcOn}} = crcOn;
+509             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a84cd8f4535bc2447be083a8e1dc3b1e7}{FreqHopOn}} = freqHopOn;
+510             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a9d16142b366001eb65bfd9afdc04361d}{HopPeriod}} = hopPeriod;
+511             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_ae72a925b57b29eb0c1fcd0334a972c0a}{IqInverted}} = iqInverted;
+512             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_ad155d9bae95f09d927ca588dc4f4734a}{RxContinuous}} = rxContinuous;
+513 
+514             \textcolor{keywordflow}{if}( datarate > 12 )
+515             \{
+516                 datarate = 12;
+517             \}
+518             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( datarate < 6 )
+519             \{
+520                 datarate = 6;
+521             \}
+522 
+523             \textcolor{keywordflow}{if}( ( ( bandwidth == 7 ) && ( ( datarate == 11 ) || ( datarate == 12 ) ) ) ||
+524                 ( ( bandwidth == 8 ) && ( datarate == 12 ) ) )
+525             \{
+526                 \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_aa31ed68ea167b5abf2f3e3aba9f23b86}{LowDatarateOptimize}} = 0x01;
+527             \}
+528             \textcolor{keywordflow}{else}
+529             \{
+530                 \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_aa31ed68ea167b5abf2f3e3aba9f23b86}{LowDatarateOptimize}} = 0x00;
+531             \}
+532 
+533             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af759d830088be4284079ba8aa75d98ae}{REG\_LR\_MODEMCONFIG1}},
+534                          ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af759d830088be4284079ba8aa75d98ae}{REG\_LR\_MODEMCONFIG1}} ) &
+535                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ab1aa24187e882f0f54896b50ccae77d4}{RFLR\_MODEMCONFIG1\_BW\_MASK}} &
+536                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aeb0ea5fbbb7ec90fca31ca87481597c1}{RFLR\_MODEMCONFIG1\_CODINGRATE\_MASK}} &
+537                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a5c3e8f169b7fd6a7c8c064f00aca22b5}{RFLR\_MODEMCONFIG1\_IMPLICITHEADER\_MASK}} ) |
+538                            ( bandwidth << 4 ) | ( coderate << 1 ) |
+539                            fixLen );
+540 
+541             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ae96f87f817a89b1240cfdc89f17b6e30}{REG\_LR\_MODEMCONFIG2}},
+542                          ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ae96f87f817a89b1240cfdc89f17b6e30}{REG\_LR\_MODEMCONFIG2}} ) &
+543                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ac76e1fabdc6072d4f6110c17b1b6d34d}{RFLR\_MODEMCONFIG2\_SF\_MASK}} &
+544                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a6a4d6c789643526dc38fda7cb00d2a46}{RFLR\_MODEMCONFIG2\_RXPAYLOADCRC\_MASK}} &
+545                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a6a9255e1645c7a286b74c1a03980a7a1}{RFLR\_MODEMCONFIG2\_SYMBTIMEOUTMSB\_MASK}} ) |
+546                            ( datarate << 4 ) | ( crcOn << 2 ) |
+547                            ( ( symbTimeout >> 8 ) & ~
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a6a9255e1645c7a286b74c1a03980a7a1}{RFLR\_MODEMCONFIG2\_SYMBTIMEOUTMSB\_MASK}} ) );
+548 
+549             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aecf214e63c69601e543629269b0401c7}{REG\_LR\_MODEMCONFIG3}},
+550                          ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aecf214e63c69601e543629269b0401c7}{REG\_LR\_MODEMCONFIG3}} ) &
+551                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_acc0d112fd4a7d3bf0325e1e17701702c}{RFLR\_MODEMCONFIG3\_LOWDATARATEOPTIMIZE\_MASK}}
+       ) |
+552                            ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.
+      \mbox{\hyperlink{struct_radio_lo_ra_settings__t_aa31ed68ea167b5abf2f3e3aba9f23b86}{LowDatarateOptimize}} << 3 ) );
+553 
+554             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a7759fc860cf446c7e1a92a823a89ea31}{REG\_LR\_SYMBTIMEOUTLSB}}, ( uint8\_t )( symbTimeout & 
+      0xFF ) );
+555 
+556             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a786457a6b4788117f8a2b994e68344ba}{REG\_LR\_PREAMBLEMSB}}, ( uint8\_t )( ( preambleLen >> 8 )
+       & 0xFF ) );
+557             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a4449a1e2b055269d13034ebb4ba705b2}{REG\_LR\_PREAMBLELSB}}, ( uint8\_t )( preambleLen & 0xFF )
+       );
+558 
+559             \textcolor{keywordflow}{if}( fixLen == 1 )
+560             \{
+561                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a702e1e9ac301d26eb08fed50b90c6718}{REG\_LR\_PAYLOADLENGTH}}, payloadLen );
+562             \}
+563 
+564             \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a84cd8f4535bc2447be083a8e1dc3b1e7}{FreqHopOn}} == \textcolor{keyword}{true} )
+565             \{
+566                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af71d93b5478ef3e6058e3787a1095503}{REG\_LR\_PLLHOP}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af71d93b5478ef3e6058e3787a1095503}{REG\_LR\_PLLHOP}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ac5ab476a5c458941851fdd45d4dd863c}{RFLR\_PLLHOP\_FASTHOP\_MASK}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abeb38c8feecc22921c7099f076dd6996}{RFLR\_PLLHOP\_FASTHOP\_ON}} );
+567                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a829b59cc8b18d86904af96d1dc60add2}{REG\_LR\_HOPPERIOD}}, \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.
+      \mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a9d16142b366001eb65bfd9afdc04361d}{HopPeriod}} );
+568             \}
+569 
+570             \textcolor{keywordflow}{if}( ( bandwidth == 9 ) && ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_ae82bf9242a014164f9f6907f29782c44}{Channel}} > 
+      \mbox{\hyperlink{sx1276_8h_a51ad727a195c907dda006b5a40467136}{RF\_MID\_BAND\_THRESH}} ) )
+571             \{
+572                 \textcolor{comment}{// ERRATA 2.1 - Sensitivity Optimization with a 500 kHz Bandwidth}
+573                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a08173e8721d25c6ab32e8aa4c157751d}{REG\_LR\_TEST36}}, 0x02 );
+574                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a4dd28b78370d8732b9d149f71826e62d}{REG\_LR\_TEST3A}}, 0x64 );
+575             \}
+576             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( bandwidth == 9 )
+577             \{
+578                 \textcolor{comment}{// ERRATA 2.1 - Sensitivity Optimization with a 500 kHz Bandwidth}
+579                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a08173e8721d25c6ab32e8aa4c157751d}{REG\_LR\_TEST36}}, 0x02 );
+580                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a4dd28b78370d8732b9d149f71826e62d}{REG\_LR\_TEST3A}}, 0x7F );
+581             \}
+582             \textcolor{keywordflow}{else}
+583             \{
+584                 \textcolor{comment}{// ERRATA 2.1 - Sensitivity Optimization with a 500 kHz Bandwidth}
+585                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a08173e8721d25c6ab32e8aa4c157751d}{REG\_LR\_TEST36}}, 0x03 );
+586             \}
+587 
+588             \textcolor{keywordflow}{if}( datarate == 6 )
+589             \{
+590                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}},
+591                              ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}} ) &
+592                                \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aeb175d9d741f888838066955df3e4edb}{RFLR\_DETECTIONOPTIMIZE\_MASK}} ) |
+593                                \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aac16a729154e667b90de0819e702433a}{RFLR\_DETECTIONOPTIMIZE\_SF6}} );
+594                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abc835e71071bd5f3bd52f54168d6e4b7}{REG\_LR\_DETECTIONTHRESHOLD}},
+595                              \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a8833cf246a93bf07dca0b0c60fb31eef}{RFLR\_DETECTIONTHRESH\_SF6}} );
+596             \}
+597             \textcolor{keywordflow}{else}
+598             \{
+599                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}},
+600                              ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}} ) &
+601                              \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aeb175d9d741f888838066955df3e4edb}{RFLR\_DETECTIONOPTIMIZE\_MASK}} ) |
+602                              \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ad88e1ef10bcff41afc4074ce1d489320}{RFLR\_DETECTIONOPTIMIZE\_SF7\_TO\_SF12}} );
+603                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abc835e71071bd5f3bd52f54168d6e4b7}{REG\_LR\_DETECTIONTHRESHOLD}},
+604                              \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a0b071b81b299c33f0dc61036cb00b5c8}{RFLR\_DETECTIONTHRESH\_SF7\_TO\_SF12}} );
+605             \}
+606         \}
+607         \textcolor{keywordflow}{break};
+608     \}
+609 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 28
+\mbox{\Hypertarget{sx1276_8h_a32a7b8c477b2f400f96a3255e1ab7620}\label{sx1276_8h_a32a7b8c477b2f400f96a3255e1ab7620}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Sleep@{S\+X1276\+Set\+Sleep}}
+\index{S\+X1276\+Set\+Sleep@{S\+X1276\+Set\+Sleep}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Sleep()}{SX1276SetSleep()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Sleep (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sets the radio in sleep mode 
+
+
+
+sx1276.\+c 파일의 897 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+898 \{
+899     \mbox{\hyperlink{time_server_8c_a8ae899c4e8a9abf49d825d6959aa6bcb}{TimerStop}}( &\mbox{\hyperlink{sx1276_8c_aee89c92e5cb79fd352b43dc60505abcd}{RxTimeoutTimer}} );
+900     \mbox{\hyperlink{time_server_8c_a8ae899c4e8a9abf49d825d6959aa6bcb}{TimerStop}}( &\mbox{\hyperlink{sx1276_8c_a7dfcad4f3c97547289d6550410bf81f4}{TxTimeoutTimer}} );
+901 
+902     \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a2b5cd905a9116a8a462c28a2d17c483a}{RF\_OPMODE\_SLEEP}} );
+903     \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a7c6fbd4973c8e0d1868c82747d589c3d}{State}} = \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a89c1ff89fc074c1c80f96d186c99f899}{RF\_IDLE}};
+904 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 29
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 30
+\mbox{\Hypertarget{sx1276_8h_aaef7a98104b400b235ef76de0cfb17df}\label{sx1276_8h_aaef7a98104b400b235ef76de0cfb17df}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Stby@{S\+X1276\+Set\+Stby}}
+\index{S\+X1276\+Set\+Stby@{S\+X1276\+Set\+Stby}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Stby()}{SX1276SetStby()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Stby (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Sets the radio in standby mode 
+
+
+
+sx1276.\+c 파일의 906 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+907 \{
+908     \mbox{\hyperlink{time_server_8c_a8ae899c4e8a9abf49d825d6959aa6bcb}{TimerStop}}( &\mbox{\hyperlink{sx1276_8c_aee89c92e5cb79fd352b43dc60505abcd}{RxTimeoutTimer}} );
+909     \mbox{\hyperlink{time_server_8c_a8ae899c4e8a9abf49d825d6959aa6bcb}{TimerStop}}( &\mbox{\hyperlink{sx1276_8c_a7dfcad4f3c97547289d6550410bf81f4}{TxTimeoutTimer}} );
+910 
+911     \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a8061431d06917243c6409c4a014c3592}{RF\_OPMODE\_STANDBY}} );
+912     \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a7c6fbd4973c8e0d1868c82747d589c3d}{State}} = \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a89c1ff89fc074c1c80f96d186c99f899}{RF\_IDLE}};
+913 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 31
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 32
+\mbox{\Hypertarget{sx1276_8h_a6f3fb048fd4b9f79b232f60d77c0bb0a}\label{sx1276_8h_a6f3fb048fd4b9f79b232f60d77c0bb0a}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Sync\+Word@{S\+X1276\+Set\+Sync\+Word}}
+\index{S\+X1276\+Set\+Sync\+Word@{S\+X1276\+Set\+Sync\+Word}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Sync\+Word()}{SX1276SetSyncWord()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Sync\+Word (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Set a Sync\+Sword in the radio 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & data Sync\+Sword \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sx1276_8h_a805df2c0c4aa1630eeeb17177a600269}\label{sx1276_8h_a805df2c0c4aa1630eeeb17177a600269}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Tx\+Config@{S\+X1276\+Set\+Tx\+Config}}
+\index{S\+X1276\+Set\+Tx\+Config@{S\+X1276\+Set\+Tx\+Config}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Tx\+Config()}{SX1276SetTxConfig()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Tx\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057}{Radio\+Modems\+\_\+t}}}]{modem,  }\item[{int8\+\_\+t}]{power,  }\item[{uint32\+\_\+t}]{fdev,  }\item[{uint32\+\_\+t}]{bandwidth,  }\item[{uint32\+\_\+t}]{datarate,  }\item[{uint8\+\_\+t}]{coderate,  }\item[{uint16\+\_\+t}]{preamble\+Len,  }\item[{bool}]{fix\+Len,  }\item[{bool}]{crc\+On,  }\item[{bool}]{freq\+Hop\+On,  }\item[{uint8\+\_\+t}]{hop\+Period,  }\item[{bool}]{iq\+Inverted,  }\item[{uint32\+\_\+t}]{timeout }\end{DoxyParamCaption})}
+
+
+
+Sets the transmission parameters 
+
+\begin{DoxyRemark}{Remarks}
+When using Lo\+Ra modem only bandwidths 125, 250 and 500 k\+Hz are supported
+\end{DoxyRemark}
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & modem Radio modem to be used \mbox{[}0\+: F\+SK, 1\+: Lo\+Ra\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & power Sets the output power \mbox{[}d\+Bm\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & fdev Sets the frequency deviation (F\+SK only) F\+SK \+: \mbox{[}Hz\mbox{]} Lo\+Ra\+: 0 \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & bandwidth Sets the bandwidth (Lo\+Ra only) F\+SK \+: 0 Lo\+Ra\+: \mbox{[}0\+: 125 k\+Hz, 1\+: 250 k\+Hz, 2\+: 500 k\+Hz, 3\+: Reserved\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & datarate Sets the Datarate F\+SK \+: 600..300000 bits/s Lo\+Ra\+: \mbox{[}6\+: 64, 7\+: 128, 8\+: 256, 9\+: 512, 10\+: 1024, 11\+: 2048, 12\+: 4096 chips\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & coderate Sets the coding rate (Lo\+Ra only) F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}1\+: 4/5, 2\+: 4/6, 3\+: 4/7, 4\+: 4/8\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & preamble\+Len Sets the preamble length F\+SK \+: Number of bytes Lo\+Ra\+: Length in symbols (the hardware adds 4 more symbols) \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & fix\+Len Fixed length packets \mbox{[}0\+: variable, 1\+: fixed\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & crc\+On Enables disables the C\+RC \mbox{[}0\+: O\+FF, 1\+: ON\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & freq\+Hop\+On Enables disables the intra-\/packet frequency hopping F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}0\+: O\+FF, 1\+: ON\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & hop\+Period Number of symbols between each hop F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: Number of symbols \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & iq\+Inverted Inverts IQ signals (Lo\+Ra only) F\+SK \+: N/A ( set to 0 ) Lo\+Ra\+: \mbox{[}0\+: not inverted, 1\+: inverted\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & timeout Transmission timeout \mbox{[}ms\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 611 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+616 \{
+617     \mbox{\hyperlink{sx1276_8c_a8325968bbefefab02537762dd274aa8b}{SX1276SetModem}}( modem );
+618 
+619     \mbox{\hyperlink{sx1276_8c_a9ab4f1c4c3361fa3f344c5886472b674}{LoRaBoardCallbacks}}->\mbox{\hyperlink{structs_board_callback_aa681fd32fe9ab596fbc60624d0510bb6}{SX1276BoardSetRfTxPower}}( power );
+620 
+621     \textcolor{keywordflow}{switch}( modem )
+622     \{
+623     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+624         \{
+625             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a6ebc6ad47329ddd2d5e0d30ae0310a1e}{Power}} = power;
+626             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_aae7d47b98bf3e853d76b63a4923df37a}{Fdev}} = fdev;
+627             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a318fb6591ed9e732fef8c459c246e8cb}{Bandwidth}} = bandwidth;
+628             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a4bac4b1fd8c58112bafb1514fc95ad46}{Datarate}} = datarate;
+629             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_aba9cfa7d2470ee0e474fa6442d68f994}{PreambleLen}} = preambleLen;
+630             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a5595c2171f2df06f2dc36c58902eb890}{FixLen}} = fixLen;
+631             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a97bd90b59a970e4bb2195cf648a380d3}{CrcOn}} = crcOn;
+632             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_ae72a925b57b29eb0c1fcd0334a972c0a}{IqInverted}} = iqInverted;
+633             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a1f8d25186ba3f7d3cb39a541c1cdb1e8}{Fsk}}.\mbox{\hyperlink{struct_radio_fsk_settings__t_a51e578bc6e36b50abdbf3c91be46bc5b}{TxTimeout}} = timeout;
+634 
+635             fdev = ( uint16\_t )( ( \textcolor{keywordtype}{double} )fdev / ( double )\mbox{\hyperlink{sx1276_8h_ad7977f4d7c0acbc564d01fb225f94630}{FREQ\_STEP}} );
+636             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac9a9ad053f237a88ac9ef4e9f1eb6902}{REG\_FDEVMSB}}, ( uint8\_t )( fdev >> 8 ) );
+637             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a41b897af0ba110c4450e54887148acda}{REG\_FDEVLSB}}, ( uint8\_t )( fdev & 0xFF ) );
+638 
+639             datarate = ( uint16\_t )( ( \textcolor{keywordtype}{double} )\mbox{\hyperlink{sx1276_8h_a3d24a8ac8f673b60ac35b6d92fe72747}{XTAL\_FREQ}} / ( double )datarate );
+640             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a967024927a998c8b00e76015c0444d11}{REG\_BITRATEMSB}}, ( uint8\_t )( datarate >> 8 ) );
+641             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ab7321068986e253c5e0c4c00f592339b}{REG\_BITRATELSB}}, ( uint8\_t )( datarate & 0xFF ) );
+642 
+643             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ab8a433a9dd9c4cebe485d1a1b49cfd4b}{REG\_PREAMBLEMSB}}, ( preambleLen >> 8 ) & 0x00FF );
+644             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a342040215f26acdefd5c95ec7c8ce828}{REG\_PREAMBLELSB}}, preambleLen & 0xFF );
+645 
+646             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a035c91c3eea7209c78ac5bda775940cc}{REG\_PACKETCONFIG1}},
+647                          ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a035c91c3eea7209c78ac5bda775940cc}{REG\_PACKETCONFIG1}} ) &
+648                            \mbox{\hyperlink{sx1276_regs-_fsk_8h_ad7dcff9e6dc9092816aea02a997fbce2}{RF\_PACKETCONFIG1\_CRC\_MASK}} &
+649                            \mbox{\hyperlink{sx1276_regs-_fsk_8h_a49a5b9d17a41eac837198daf073a8bc2}{RF\_PACKETCONFIG1\_PACKETFORMAT\_MASK}} ) |
+650                            ( ( fixLen == 1 ) ? 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a9bcb87a30f7c182b7434cb87fdcb8187}{RF\_PACKETCONFIG1\_PACKETFORMAT\_FIXED}} : 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a3ea46ce872f527e487bfc9ad5bc04fda}{RF\_PACKETCONFIG1\_PACKETFORMAT\_VARIABLE}} ) |
+651                            ( crcOn << 4 ) );
+652             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a519d7b5db6ab8bb6013226eaef9756c8}{REG\_PACKETCONFIG2}}, ( 
+      \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a519d7b5db6ab8bb6013226eaef9756c8}{REG\_PACKETCONFIG2}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a4796ee777b3c32fa2a8ae19b434a1b99}{RF\_PACKETCONFIG2\_DATAMODE\_PACKET}} ) );
+653         \}
+654         \textcolor{keywordflow}{break};
+655     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+656         \{
+657             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a6ebc6ad47329ddd2d5e0d30ae0310a1e}{Power}} = power;
+658             \textcolor{keywordflow}{if}( bandwidth > 2 )
+659             \{
+660                 \textcolor{comment}{// Fatal error: When using LoRa modem only bandwidths 125, 250 and 500 kHz are supported}
+661                 \textcolor{keywordflow}{while}( 1 );
+662             \}
+663             bandwidth += 7;
+664             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a318fb6591ed9e732fef8c459c246e8cb}{Bandwidth}} = bandwidth;
+665             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a4bac4b1fd8c58112bafb1514fc95ad46}{Datarate}} = datarate;
+666             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_abb9fc996b28014f5d9b5d68ec359dc58}{Coderate}} = coderate;
+667             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_aba9cfa7d2470ee0e474fa6442d68f994}{PreambleLen}} = preambleLen;
+668             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a5595c2171f2df06f2dc36c58902eb890}{FixLen}} = fixLen;
+669             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a84cd8f4535bc2447be083a8e1dc3b1e7}{FreqHopOn}} = freqHopOn;
+670             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a9d16142b366001eb65bfd9afdc04361d}{HopPeriod}} = hopPeriod;
+671             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a97bd90b59a970e4bb2195cf648a380d3}{CrcOn}} = crcOn;
+672             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_ae72a925b57b29eb0c1fcd0334a972c0a}{IqInverted}} = iqInverted;
+673             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a51e578bc6e36b50abdbf3c91be46bc5b}{TxTimeout}} = timeout;
+674 
+675             \textcolor{keywordflow}{if}( datarate > 12 )
+676             \{
+677                 datarate = 12;
+678             \}
+679             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}( datarate < 6 )
+680             \{
+681                 datarate = 6;
+682             \}
+683             \textcolor{keywordflow}{if}( ( ( bandwidth == 7 ) && ( ( datarate == 11 ) || ( datarate == 12 ) ) ) ||
+684                 ( ( bandwidth == 8 ) && ( datarate == 12 ) ) )
+685             \{
+686                 \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_aa31ed68ea167b5abf2f3e3aba9f23b86}{LowDatarateOptimize}} = 0x01;
+687             \}
+688             \textcolor{keywordflow}{else}
+689             \{
+690                 \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_aa31ed68ea167b5abf2f3e3aba9f23b86}{LowDatarateOptimize}} = 0x00;
+691             \}
+692 
+693             \textcolor{keywordflow}{if}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a84cd8f4535bc2447be083a8e1dc3b1e7}{FreqHopOn}} == \textcolor{keyword}{true} )
+694             \{
+695                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af71d93b5478ef3e6058e3787a1095503}{REG\_LR\_PLLHOP}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af71d93b5478ef3e6058e3787a1095503}{REG\_LR\_PLLHOP}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ac5ab476a5c458941851fdd45d4dd863c}{RFLR\_PLLHOP\_FASTHOP\_MASK}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abeb38c8feecc22921c7099f076dd6996}{RFLR\_PLLHOP\_FASTHOP\_ON}} );
+696                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a829b59cc8b18d86904af96d1dc60add2}{REG\_LR\_HOPPERIOD}}, \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.
+      \mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.\mbox{\hyperlink{struct_radio_lo_ra_settings__t_a9d16142b366001eb65bfd9afdc04361d}{HopPeriod}} );
+697             \}
+698 
+699             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af759d830088be4284079ba8aa75d98ae}{REG\_LR\_MODEMCONFIG1}},
+700                          ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_af759d830088be4284079ba8aa75d98ae}{REG\_LR\_MODEMCONFIG1}} ) &
+701                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ab1aa24187e882f0f54896b50ccae77d4}{RFLR\_MODEMCONFIG1\_BW\_MASK}} &
+702                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aeb0ea5fbbb7ec90fca31ca87481597c1}{RFLR\_MODEMCONFIG1\_CODINGRATE\_MASK}} &
+703                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a5c3e8f169b7fd6a7c8c064f00aca22b5}{RFLR\_MODEMCONFIG1\_IMPLICITHEADER\_MASK}} ) |
+704                            ( bandwidth << 4 ) | ( coderate << 1 ) |
+705                            fixLen );
+706 
+707             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ae96f87f817a89b1240cfdc89f17b6e30}{REG\_LR\_MODEMCONFIG2}},
+708                          ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ae96f87f817a89b1240cfdc89f17b6e30}{REG\_LR\_MODEMCONFIG2}} ) &
+709                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ac76e1fabdc6072d4f6110c17b1b6d34d}{RFLR\_MODEMCONFIG2\_SF\_MASK}} &
+710                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a6a4d6c789643526dc38fda7cb00d2a46}{RFLR\_MODEMCONFIG2\_RXPAYLOADCRC\_MASK}} ) |
+711                            ( datarate << 4 ) | ( crcOn << 2 ) );
+712 
+713             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aecf214e63c69601e543629269b0401c7}{REG\_LR\_MODEMCONFIG3}},
+714                          ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aecf214e63c69601e543629269b0401c7}{REG\_LR\_MODEMCONFIG3}} ) &
+715                            \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_acc0d112fd4a7d3bf0325e1e17701702c}{RFLR\_MODEMCONFIG3\_LOWDATARATEOPTIMIZE\_MASK}}
+       ) |
+716                            ( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a33cfe7ab9aa28cc24b778d89d7175a57}{LoRa}}.
+      \mbox{\hyperlink{struct_radio_lo_ra_settings__t_aa31ed68ea167b5abf2f3e3aba9f23b86}{LowDatarateOptimize}} << 3 ) );
+717 
+718             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a786457a6b4788117f8a2b994e68344ba}{REG\_LR\_PREAMBLEMSB}}, ( preambleLen >> 8 ) & 0x00FF );
+719             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a4449a1e2b055269d13034ebb4ba705b2}{REG\_LR\_PREAMBLELSB}}, preambleLen & 0xFF );
+720 
+721             \textcolor{keywordflow}{if}( datarate == 6 )
+722             \{
+723                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}},
+724                              ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}} ) &
+725                                \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aeb175d9d741f888838066955df3e4edb}{RFLR\_DETECTIONOPTIMIZE\_MASK}} ) |
+726                                \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aac16a729154e667b90de0819e702433a}{RFLR\_DETECTIONOPTIMIZE\_SF6}} );
+727                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abc835e71071bd5f3bd52f54168d6e4b7}{REG\_LR\_DETECTIONTHRESHOLD}},
+728                              \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a8833cf246a93bf07dca0b0c60fb31eef}{RFLR\_DETECTIONTHRESH\_SF6}} );
+729             \}
+730             \textcolor{keywordflow}{else}
+731             \{
+732                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}},
+733                              ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a62883b6ca8e236af4d331a31e55c67b3}{REG\_LR\_DETECTOPTIMIZE}} ) &
+734                              \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_aeb175d9d741f888838066955df3e4edb}{RFLR\_DETECTIONOPTIMIZE\_MASK}} ) |
+735                              \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_ad88e1ef10bcff41afc4074ce1d489320}{RFLR\_DETECTIONOPTIMIZE\_SF7\_TO\_SF12}} );
+736                 \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_abc835e71071bd5f3bd52f54168d6e4b7}{REG\_LR\_DETECTIONTHRESHOLD}},
+737                              \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a0b071b81b299c33f0dc61036cb00b5c8}{RFLR\_DETECTIONTHRESH\_SF7\_TO\_SF12}} );
+738             \}
+739         \}
+740         \textcolor{keywordflow}{break};
+741     \}
+742 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 33
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 34
+\mbox{\Hypertarget{sx1276_8h_ac77895b054eb64df0ee2fa97061efae8}\label{sx1276_8h_ac77895b054eb64df0ee2fa97061efae8}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Set\+Tx\+Continuous\+Wave@{S\+X1276\+Set\+Tx\+Continuous\+Wave}}
+\index{S\+X1276\+Set\+Tx\+Continuous\+Wave@{S\+X1276\+Set\+Tx\+Continuous\+Wave}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Set\+Tx\+Continuous\+Wave()}{SX1276SetTxContinuousWave()}}
+{\footnotesize\ttfamily void S\+X1276\+Set\+Tx\+Continuous\+Wave (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{freq,  }\item[{int8\+\_\+t}]{power,  }\item[{uint16\+\_\+t}]{time }\end{DoxyParamCaption})}
+
+
+
+Sets the radio in continuous wave transmission mode 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & freq Channel RF frequency \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & power Sets the output power \mbox{[}d\+Bm\mbox{]} \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & time Transmission mode timeout \mbox{[}s\mbox{]} \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 1177 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1178 \{
+1179     uint32\_t timeout = ( uint32\_t )( time * 1000 );
+1180 
+1181     \mbox{\hyperlink{sx1276_8c_a00768e908043081bc32cb83913192f7f}{SX1276SetChannel}}( freq );
+1182 
+1183     \mbox{\hyperlink{sx1276_8c_a805df2c0c4aa1630eeeb17177a600269}{SX1276SetTxConfig}}( \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}, power, 0, 0, 4800, 0, 5, \textcolor{keyword}{false}, \textcolor{keyword}{false}, 0, 0, 0,
+       timeout );
+1184 
+1185     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a519d7b5db6ab8bb6013226eaef9756c8}{REG\_PACKETCONFIG2}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a519d7b5db6ab8bb6013226eaef9756c8}{REG\_PACKETCONFIG2}} ) & \mbox{\hyperlink{sx1276_regs-_fsk_8h_abb4848f4bf2f260a572db2e1b7fa8f0b}{RF\_PACKETCONFIG2\_DATAMODE\_MASK}} ) );
+1186     \textcolor{comment}{// Disable radio interrupts}
+1187     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}}, 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a9ff81336dba9556766eab5557d307c61}{RF\_DIOMAPPING1\_DIO0\_11}} | \mbox{\hyperlink{sx1276_regs-_fsk_8h_a5c6e8e60356b10f7742d5dc73ddd03af}{RF\_DIOMAPPING1\_DIO1\_11}} );
+1188     \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_aec8b1ddf72925f502675593fabcc469f}{REG\_DIOMAPPING2}}, 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_a6d6eff0baca6f8041d58b483f29c1477}{RF\_DIOMAPPING2\_DIO4\_10}} | \mbox{\hyperlink{sx1276_regs-_fsk_8h_a259874b1f6f9963873c96de8b0bb6c30}{RF\_DIOMAPPING2\_DIO5\_10}} );
+1189 
+1190     \mbox{\hyperlink{time_server_8c_ad56c30124de6deefb3e32bbee2a4ba46}{TimerSetValue}}( &\mbox{\hyperlink{sx1276_8c_a7dfcad4f3c97547289d6550410bf81f4}{TxTimeoutTimer}}, timeout );
+1191 
+1192     \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a7c6fbd4973c8e0d1868c82747d589c3d}{State}} = \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5add0cb5bc08318df9a5e688f4802ed99d}{RF\_TX\_RUNNING}};
+1193     \mbox{\hyperlink{time_server_8c_acd2c1f05aa1976f3bbedd389c8710a78}{TimerStart}}( &\mbox{\hyperlink{sx1276_8c_a7dfcad4f3c97547289d6550410bf81f4}{TxTimeoutTimer}} );
+1194     \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_a9851bc9741460e2c48415a59f9e3f5ba}{RF\_OPMODE\_TRANSMITTER}} );
+1195 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 35
+\mbox{\Hypertarget{sx1276_8h_a9958c574c62b2235c4f3d4d6571854db}\label{sx1276_8h_a9958c574c62b2235c4f3d4d6571854db}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Start\+Cad@{S\+X1276\+Start\+Cad}}
+\index{S\+X1276\+Start\+Cad@{S\+X1276\+Start\+Cad}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Start\+Cad()}{SX1276StartCad()}}
+{\footnotesize\ttfamily void S\+X1276\+Start\+Cad (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Start a Channel Activity Detection 
+
+
+
+sx1276.\+c 파일의 1144 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1145 \{
+1146     \textcolor{keywordflow}{switch}( \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a3490469594ac68c5d2dea9260e6a1536}{Modem}} )
+1147     \{
+1148     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057af43891b8bf8129d6ee0bfe83217822a5}{MODEM\_FSK}}:
+1149         \{
+1150 
+1151         \}
+1152         \textcolor{keywordflow}{break};
+1153     \textcolor{keywordflow}{case} \mbox{\hyperlink{radio_8h_a992ef7a5b7f52975ba7bd8dd97740057abeb331e097974ea65b07d74df9e85a8e}{MODEM\_LORA}}:
+1154         \{
+1155             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a2b50ca91ed7db2035a2183b37506eec8}{REG\_LR\_IRQFLAGSMASK}}, 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a12d5b2ce439396e7033053c929b815bf}{RFLR\_IRQFLAGS\_RXTIMEOUT}} |
+1156                                         \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a7bdc1e0f642b272cef8fc3f81ab8d95e}{RFLR\_IRQFLAGS\_RXDONE}} |
+1157                                         \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a2b91f96d488f7d08d8fd543a7a5eb76b}{RFLR\_IRQFLAGS\_PAYLOADCRCERROR}} |
+1158                                         \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a56f64bf676430c4ce2cc672d3bfde2b8}{RFLR\_IRQFLAGS\_VALIDHEADER}} |
+1159                                         \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a15a27d43d8ec6b82bcd31857c35e9f09}{RFLR\_IRQFLAGS\_TXDONE}} |
+1160                                         \textcolor{comment}{//RFLR\_IRQFLAGS\_CADDONE |}
+1161                                         \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a781c17401f3c0f94e56cd76d43ca0271}{RFLR\_IRQFLAGS\_FHSSCHANGEDCHANNEL}} \textcolor{comment}{//
+       |}
+1162                                         \textcolor{comment}{//RFLR\_IRQFLAGS\_CADDETECTED}
+1163                                         );
+1164 
+1165             \textcolor{comment}{// DIO3=CADDone}
+1166             \mbox{\hyperlink{sx1276_8c_a15374c2bed5d3ff2d6b95fdf177b645e}{SX1276Write}}( \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}}, ( \mbox{\hyperlink{sx1276_8c_a1c0054da62dacb13d6286a7cfe01d863}{SX1276Read}}( 
+      \mbox{\hyperlink{sx1276_regs-_fsk_8h_ac16d5678e98fa6ab73655240a11f9b69}{REG\_DIOMAPPING1}} ) & \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a671275ba8790f890b2cab8745c0e5da9}{RFLR\_DIOMAPPING1\_DIO3\_MASK}} ) | 
+      \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a551ae1e5f5fca17d8b1866ef33d8c625}{RFLR\_DIOMAPPING1\_DIO3\_00}} );
+1167 
+1168             \mbox{\hyperlink{sx1276_8c_a91a81a798b3d849e2cc114c18bf9c5cc}{SX1276}}.\mbox{\hyperlink{struct_s_x1276__s_a7f3afe44d774d48ff7bd99cb074effd2}{Settings}}.\mbox{\hyperlink{struct_radio_settings__t_a7c6fbd4973c8e0d1868c82747d589c3d}{State}} = \mbox{\hyperlink{radio_8h_a2f3fa4ad0237c4ace94aa99086aac9f5a6798b346c6d95e2970d33ccd04c5d39c}{RF\_CAD}};
+1169             \mbox{\hyperlink{sx1276_8c_aaaac2e0d7b5bd63fabf38a235d27a452}{SX1276SetOpMode}}( \mbox{\hyperlink{sx1276_regs-_lo_ra_8h_a8e3c7ec4d0aceedae1069a3b6d8d6bd2}{RFLR\_OPMODE\_CAD}} );
+1170         \}
+1171         \textcolor{keywordflow}{break};
+1172     \textcolor{keywordflow}{default}:
+1173         \textcolor{keywordflow}{break};
+1174     \}
+1175 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 36
+\mbox{\Hypertarget{sx1276_8h_a15374c2bed5d3ff2d6b95fdf177b645e}\label{sx1276_8h_a15374c2bed5d3ff2d6b95fdf177b645e}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Write@{S\+X1276\+Write}}
+\index{S\+X1276\+Write@{S\+X1276\+Write}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Write()}{SX1276Write()}}
+{\footnotesize\ttfamily void S\+X1276\+Write (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Writes the radio register at the specified address 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & addr Register address \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & data New register value \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 1304 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1305 \{
+1306     \mbox{\hyperlink{sx1276_8c_aba51c12ba7f6d704cdeed69201507983}{SX1276WriteBuffer}}( addr, &data, 1 );
+1307 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 37
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 38
+\mbox{\Hypertarget{sx1276_8h_aba51c12ba7f6d704cdeed69201507983}\label{sx1276_8h_aba51c12ba7f6d704cdeed69201507983}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276\+Write\+Buffer@{S\+X1276\+Write\+Buffer}}
+\index{S\+X1276\+Write\+Buffer@{S\+X1276\+Write\+Buffer}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276\+Write\+Buffer()}{SX1276WriteBuffer()}}
+{\footnotesize\ttfamily void S\+X1276\+Write\+Buffer (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{addr,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Writes multiple radio registers starting at address 
+
+
+\begin{DoxyParams}{매개변수}
+{\em \mbox{[}\+I\+N\mbox{]}} & addr First Radio register address \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & buffer Buffer containing the new register\textquotesingle{}s values \\
+\hline
+{\em \mbox{[}\+I\+N\mbox{]}} & size Number of registers to be written \\
+\hline
+\end{DoxyParams}
+
+
+sx1276.\+c 파일의 1316 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+1317 \{
+1318     uint8\_t i;
+1319 
+1320     \textcolor{comment}{//NSS = 0;}
+1321     \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_af38dc62dd556ab94739deb56a6aeba22}{RADIO\_NSS\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a95e5a9f989319ebc0679d80521953832}{RADIO\_NSS\_PIN}}, 0 );
+1322 
+1323     \mbox{\hyperlink{hw__spi_8h_ae0d3f21fb84de59193e82bd1943d5563}{HW\_SPI\_InOut}}( addr | 0x80 );
+1324     \textcolor{keywordflow}{for}( i = 0; i < size; i++ )
+1325     \{
+1326         \mbox{\hyperlink{hw__spi_8h_ae0d3f21fb84de59193e82bd1943d5563}{HW\_SPI\_InOut}}( buffer[i] );
+1327     \}
+1328 
+1329     \textcolor{comment}{//NSS = 1;}
+1330     \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{HW\_GPIO\_Write}}( \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_af38dc62dd556ab94739deb56a6aeba22}{RADIO\_NSS\_PORT}}, \mbox{\hyperlink{_lory_s_d_k__hw__conf_8h_a95e5a9f989319ebc0679d80521953832}{RADIO\_NSS\_PIN}}, 1 );
+1331 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 39
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 40
+
+
+\subsection{변수 문서화}
+\mbox{\Hypertarget{sx1276_8h_a91a81a798b3d849e2cc114c18bf9c5cc}\label{sx1276_8h_a91a81a798b3d849e2cc114c18bf9c5cc}} 
+\index{sx1276.\+h@{sx1276.\+h}!S\+X1276@{S\+X1276}}
+\index{S\+X1276@{S\+X1276}!sx1276.\+h@{sx1276.\+h}}
+\subsubsection{\texorpdfstring{S\+X1276}{SX1276}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sx1276_8h_acf7f83d7d25c85897b88fcdc94345e56}{S\+X1276\+\_\+t}} S\+X1276}
+
+Radio hardware and global parameters 
+
+sx1276.\+c 파일의 234 번째 라인에서 정의되었습니다.
+

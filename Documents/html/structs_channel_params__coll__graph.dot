@@ -1,0 +1,10 @@
+digraph "sChannelParams"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="{sChannelParams\n|+ Frequency\l+ Rx1Frequency\l+ Band\l|}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [color="grey25",fontsize="10",style="solid",label=" +DrRange" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node2 [label="{uDrRange\n|+ Value\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$unionu_dr_range.html"];
+  Node3 -> Node2 [color="grey25",fontsize="10",style="solid",label=" +Fields" ,arrowhead="odiamond",fontname="Helvetica"];
+  Node3 [label="{sFields\n|+ Min\l+ Max\l|}",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structu_dr_range_1_1s_fields.html"];
+}

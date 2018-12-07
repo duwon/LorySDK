@@ -1,0 +1,100 @@
+\hypertarget{debug_8h}{}\section{Projects/\+Docking\+Station/inc/debug.h 파일 참조}
+\label{debug_8h}\index{Projects/\+Docking\+Station/inc/debug.\+h@{Projects/\+Docking\+Station/inc/debug.\+h}}
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}hw\+\_\+conf.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vcom.\+h\char`\"{}}\newline
+debug.\+h에 대한 include 의존 그래프
+% FIG 0
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 1
+\subsection*{매크로}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{debug_8h_a0a3cbed166abc5cefe200d2420dcb304}{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+W\+R\+I\+TE}}(gpio,  n,  x)
+\item 
+\#define \mbox{\hyperlink{debug_8h_acb644fa2c4f5ed928a67bb22f1c62f76}{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+S\+ET}}(gpio,  n)
+\item 
+\#define \mbox{\hyperlink{debug_8h_a496556e3aa60c2b583a7660b944506db}{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+R\+ST}}(gpio,  n)
+\item 
+\#define \mbox{\hyperlink{debug_8h_a32adf79142f0a426b5e782fb7cd4cad3}{D\+BG}}(x)~do\{  \} while(0)
+\item 
+\#define \mbox{\hyperlink{debug_8h_abb51675b100c68d4729acede2f0cc7b6}{D\+B\+G\+\_\+\+P\+R\+I\+N\+TF}}(...)
+\item 
+\#define \mbox{\hyperlink{debug_8h_a75cf565592d709a549bdc1a79b19d89b}{D\+B\+G\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+C\+R\+I\+T\+I\+C\+AL}}(...)
+\item 
+\#define \mbox{\hyperlink{debug_8h_a0318ed394bd9c35b91bb374db6dbbf5f}{D\+B\+G\+\_\+\+R\+T\+C\+\_\+\+O\+U\+T\+P\+UT}}~R\+T\+C\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+D\+I\+S\+A\+B\+LE;
+\end{DoxyCompactItemize}
+
+
+\subsection{매크로 문서화}
+\mbox{\Hypertarget{debug_8h_a32adf79142f0a426b5e782fb7cd4cad3}\label{debug_8h_a32adf79142f0a426b5e782fb7cd4cad3}} 
+\index{debug.\+h@{debug.\+h}!D\+BG@{D\+BG}}
+\index{D\+BG@{D\+BG}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{D\+BG}{DBG}}
+{\footnotesize\ttfamily \#define D\+BG(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~do\{  \} while(0)}
+
+
+
+debug.\+h 파일의 109 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{debug_8h_a496556e3aa60c2b583a7660b944506db}\label{debug_8h_a496556e3aa60c2b583a7660b944506db}} 
+\index{debug.\+h@{debug.\+h}!D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+R\+ST@{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+R\+ST}}
+\index{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+R\+ST@{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+R\+ST}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+R\+ST}{DBG\_GPIO\_RST}}
+{\footnotesize\ttfamily \#define D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+R\+ST(\begin{DoxyParamCaption}\item[{}]{gpio,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+
+
+debug.\+h 파일의 107 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{debug_8h_acb644fa2c4f5ed928a67bb22f1c62f76}\label{debug_8h_acb644fa2c4f5ed928a67bb22f1c62f76}} 
+\index{debug.\+h@{debug.\+h}!D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+S\+ET@{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+S\+ET}}
+\index{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+S\+ET@{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+S\+ET}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+S\+ET}{DBG\_GPIO\_SET}}
+{\footnotesize\ttfamily \#define D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+S\+ET(\begin{DoxyParamCaption}\item[{}]{gpio,  }\item[{}]{n }\end{DoxyParamCaption})}
+
+
+
+debug.\+h 파일의 105 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{debug_8h_a0a3cbed166abc5cefe200d2420dcb304}\label{debug_8h_a0a3cbed166abc5cefe200d2420dcb304}} 
+\index{debug.\+h@{debug.\+h}!D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+W\+R\+I\+TE@{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+W\+R\+I\+TE}}
+\index{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+W\+R\+I\+TE@{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+W\+R\+I\+TE}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+W\+R\+I\+TE}{DBG\_GPIO\_WRITE}}
+{\footnotesize\ttfamily \#define D\+B\+G\+\_\+\+G\+P\+I\+O\+\_\+\+W\+R\+I\+TE(\begin{DoxyParamCaption}\item[{}]{gpio,  }\item[{}]{n,  }\item[{}]{x }\end{DoxyParamCaption})}
+
+
+
+debug.\+h 파일의 103 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{debug_8h_abb51675b100c68d4729acede2f0cc7b6}\label{debug_8h_abb51675b100c68d4729acede2f0cc7b6}} 
+\index{debug.\+h@{debug.\+h}!D\+B\+G\+\_\+\+P\+R\+I\+N\+TF@{D\+B\+G\+\_\+\+P\+R\+I\+N\+TF}}
+\index{D\+B\+G\+\_\+\+P\+R\+I\+N\+TF@{D\+B\+G\+\_\+\+P\+R\+I\+N\+TF}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{D\+B\+G\+\_\+\+P\+R\+I\+N\+TF}{DBG\_PRINTF}}
+{\footnotesize\ttfamily \#define D\+B\+G\+\_\+\+P\+R\+I\+N\+TF(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+debug.\+h 파일의 111 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{debug_8h_a75cf565592d709a549bdc1a79b19d89b}\label{debug_8h_a75cf565592d709a549bdc1a79b19d89b}} 
+\index{debug.\+h@{debug.\+h}!D\+B\+G\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+C\+R\+I\+T\+I\+C\+AL@{D\+B\+G\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+C\+R\+I\+T\+I\+C\+AL}}
+\index{D\+B\+G\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+C\+R\+I\+T\+I\+C\+AL@{D\+B\+G\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+C\+R\+I\+T\+I\+C\+AL}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{D\+B\+G\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+C\+R\+I\+T\+I\+C\+AL}{DBG\_PRINTF\_CRITICAL}}
+{\footnotesize\ttfamily \#define D\+B\+G\+\_\+\+P\+R\+I\+N\+T\+F\+\_\+\+C\+R\+I\+T\+I\+C\+AL(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+debug.\+h 파일의 113 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{debug_8h_a0318ed394bd9c35b91bb374db6dbbf5f}\label{debug_8h_a0318ed394bd9c35b91bb374db6dbbf5f}} 
+\index{debug.\+h@{debug.\+h}!D\+B\+G\+\_\+\+R\+T\+C\+\_\+\+O\+U\+T\+P\+UT@{D\+B\+G\+\_\+\+R\+T\+C\+\_\+\+O\+U\+T\+P\+UT}}
+\index{D\+B\+G\+\_\+\+R\+T\+C\+\_\+\+O\+U\+T\+P\+UT@{D\+B\+G\+\_\+\+R\+T\+C\+\_\+\+O\+U\+T\+P\+UT}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{D\+B\+G\+\_\+\+R\+T\+C\+\_\+\+O\+U\+T\+P\+UT}{DBG\_RTC\_OUTPUT}}
+{\footnotesize\ttfamily \#define D\+B\+G\+\_\+\+R\+T\+C\+\_\+\+O\+U\+T\+P\+UT~R\+T\+C\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+D\+I\+S\+A\+B\+LE;}
+
+
+
+debug.\+h 파일의 115 번째 라인에서 정의되었습니다.
+

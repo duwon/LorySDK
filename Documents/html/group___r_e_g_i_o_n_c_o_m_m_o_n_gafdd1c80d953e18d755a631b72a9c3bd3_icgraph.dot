@@ -1,0 +1,22 @@
+digraph "RegionCommonValueInRange"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node63 [label="RegionCommonValueInRange",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node63 -> Node64 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node64 [label="RegionCommonChanVerifyDr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#ga94ce5c6e759081853eb06d1dcffdab25",tooltip="Verifies, if a datarate is available on an active channel. This is a generic function and valid for a..."];
+  Node64 -> Node65 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node65 [label="RegionCommonLinkAdrReqVerify\lParams",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_c_o_m_m_o_n.html#ga2c87f98f09793dc7fa63a9801feeed73",tooltip="Verifies and updates the datarate, the TX power and the number of repetitions of a LinkAdrRequest..."];
+  Node65 -> Node66 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node66 [label="RegionUS915HybridLinkAdrReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gade4dc50b11235e0a6675b0d22240dea2",tooltip="The function processes a Link ADR Request. "];
+  Node63 -> Node65 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node63 -> Node67 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node67 [label="CountNbOfEnabledChannels",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_region_u_s915-_hybrid_8c.html#a43fc7f3f4d15301eebe5c4a8b64b3f51"];
+  Node67 -> Node68 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node68 [label="RegionUS915HybridNextChannel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gae74c05f827a9ed78b0ec0cacdec45f28",tooltip="Searches and set the next random available channel "];
+  Node63 -> Node69 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node69 [label="RegionUS915HybridVerify",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#ga0fb0094a0833782259c6be87d3d4b141",tooltip="Verifies a parameter. "];
+  Node63 -> Node70 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node70 [label="RegionUS915HybridRxParam\lSetupReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gaaee00f3fbfae1f41b0eec05d8b564177",tooltip="The function processes a RX Parameter Setup Request. "];
+}

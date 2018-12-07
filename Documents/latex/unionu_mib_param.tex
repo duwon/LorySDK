@@ -1,0 +1,462 @@
+\hypertarget{unionu_mib_param}{}\section{u\+Mib\+Param 공용체 참조}
+\label{unionu_mib_param}\index{u\+Mib\+Param@{u\+Mib\+Param}}
+
+
+{\ttfamily \#include $<$Lo\+Ra\+Mac.\+h$>$}
+
+
+
+u\+Mib\+Param에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}} \mbox{\hyperlink{unionu_mib_param_a1ca946ebc53171e9f0f1fc39c005a7a6}{Class}}
+\item 
+bool \mbox{\hyperlink{unionu_mib_param_a1a4811dfe6101a9f87ecb1aaaf61e6c7}{Is\+Network\+Joined}}
+\item 
+bool \mbox{\hyperlink{unionu_mib_param_a04efa8698eeea64f27b216d64e598c0d}{Adr\+Enable}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_a84a14c879508144e9961372ace234169}{Net\+ID}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_a8644153b1c46ffcaeb2b44b5544a2c1a}{Dev\+Addr}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{unionu_mib_param_a04e90b783b4e6841ecda8d32d10dc90e}{Nwk\+S\+Key}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{unionu_mib_param_a46a2c1c82bda378fb02d20db36bbe414}{App\+S\+Key}}
+\item 
+bool \mbox{\hyperlink{unionu_mib_param_aff3bd8c7ac1d2fe36ed22c15c25273aa}{Enable\+Public\+Network}}
+\item 
+bool \mbox{\hyperlink{unionu_mib_param_a6af0230b4a6c8b1caf81b8eb6be2ca1f}{Enable\+Repeater\+Support}}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}} $\ast$ \mbox{\hyperlink{unionu_mib_param_ad8f366dd9087f9cdaa4f7021f2d6e2b9}{Channel\+List}}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f57f29481ea92c24f6af04b96a95e0f}{Rx2\+Channel\+Params\+\_\+t}} \mbox{\hyperlink{unionu_mib_param_aa0fbe93ff398020c65d2431af19368e8}{Rx2\+Channel}}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f57f29481ea92c24f6af04b96a95e0f}{Rx2\+Channel\+Params\+\_\+t}} \mbox{\hyperlink{unionu_mib_param_a0fc23f09c886e3ce57ed0bd2061b336a}{Rx2\+Default\+Channel}}
+\item 
+uint16\+\_\+t $\ast$ \mbox{\hyperlink{unionu_mib_param_aed7477cfc6166e3ee0499b898443426a}{Channels\+Mask}}
+\item 
+uint16\+\_\+t $\ast$ \mbox{\hyperlink{unionu_mib_param_ac22764d7ec77150f51f49a3c8839f161}{Channels\+Default\+Mask}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{unionu_mib_param_ab2d109f5c6312dc56dfc9842bb6f141b}{Channel\+Nb\+Rep}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_ace391217d534408b8f2af268a4ef0945}{Max\+Rx\+Window}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_a426f0e1108ebe3ba1b05c2853c0b0c3a}{Receive\+Delay1}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_a67fbe3fba2eb31f8879ea22674dd50d8}{Receive\+Delay2}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_a59ed32d2c7ce6d0b2011da8b0109b391}{Join\+Accept\+Delay1}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_ae4a12f9dc83c6cedcf8afc05fb9ea06f}{Join\+Accept\+Delay2}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{unionu_mib_param_a69f274bb7ff03f12dbda701c3576ac62}{Channels\+Default\+Datarate}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{unionu_mib_param_a6c741587260d08d1b883922ce9ca345e}{Channels\+Datarate}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{unionu_mib_param_af926e909a910970adb9eccc849020c71}{Channels\+Default\+Tx\+Power}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{unionu_mib_param_ad015aefb498e98276b4102f847b05d0e}{Channels\+Tx\+Power}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_ae8c54ca277e4d7295dfd498889e42fdd}{Up\+Link\+Counter}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_a7a566925baf83b1b3da9209dfa4bb79a}{Down\+Link\+Counter}}
+\item 
+\mbox{\hyperlink{group___l_o_r_a_m_a_c_ga02d2523505cac70954c043074087ea65}{Multicast\+Params\+\_\+t}} $\ast$ \mbox{\hyperlink{unionu_mib_param_ab0f9cda74f301d191aa5f7d7090c1557}{Multicast\+List}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{unionu_mib_param_a62adc341212fe903e9995966051c5fee}{System\+Max\+Rx\+Error}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{unionu_mib_param_ab33f97482f9af163d593cf103a2ccf1c}{Min\+Rx\+Symbols}}
+\item 
+float \mbox{\hyperlink{unionu_mib_param_a727eaefd87f898a5238118573968962c}{Antenna\+Gain}}
+\item 
+float \mbox{\hyperlink{unionu_mib_param_a3679fa4ff6ab120429480da6aa8a017d}{Default\+Antenna\+Gain}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra\+M\+AC M\+IB parameters 
+
+Lo\+Ra\+Mac.\+h 파일의 1354 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{unionu_mib_param_a04efa8698eeea64f27b216d64e598c0d}\label{unionu_mib_param_a04efa8698eeea64f27b216d64e598c0d}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Adr\+Enable@{Adr\+Enable}}
+\index{Adr\+Enable@{Adr\+Enable}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Adr\+Enable}{AdrEnable}}
+{\footnotesize\ttfamily bool Adr\+Enable}
+
+Activation state of A\+DR
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a756ff0b66217e3e4ddd0442c8aa56802}{M\+I\+B\+\_\+\+A\+DR}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1373 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a727eaefd87f898a5238118573968962c}\label{unionu_mib_param_a727eaefd87f898a5238118573968962c}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Antenna\+Gain@{Antenna\+Gain}}
+\index{Antenna\+Gain@{Antenna\+Gain}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Antenna\+Gain}{AntennaGain}}
+{\footnotesize\ttfamily float Antenna\+Gain}
+
+Antenna gain
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a268b2f7da53dbc25655a7bdcc7e6128e}{M\+I\+B\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+G\+A\+IN}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1535 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a46a2c1c82bda378fb02d20db36bbe414}\label{unionu_mib_param_a46a2c1c82bda378fb02d20db36bbe414}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!App\+S\+Key@{App\+S\+Key}}
+\index{App\+S\+Key@{App\+S\+Key}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{App\+S\+Key}{AppSKey}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ App\+S\+Key}
+
+Application session key
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ae65b7c035d9969666eb5e26a2b3c19fd}{M\+I\+B\+\_\+\+A\+P\+P\+\_\+\+S\+K\+EY}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1397 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ad8f366dd9087f9cdaa4f7021f2d6e2b9}\label{unionu_mib_param_ad8f366dd9087f9cdaa4f7021f2d6e2b9}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Channel\+List@{Channel\+List}}
+\index{Channel\+List@{Channel\+List}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Channel\+List}{ChannelList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga1360ca6f82c6d125ea43a9dad9b56184}{Channel\+Params\+\_\+t}}$\ast$ Channel\+List}
+
+Lo\+Ra\+W\+AN Channel
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a0236aae7748c12308383eab208a3cc5a}{M\+I\+B\+\_\+\+C\+H\+A\+N\+N\+E\+LS}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1415 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ab2d109f5c6312dc56dfc9842bb6f141b}\label{unionu_mib_param_ab2d109f5c6312dc56dfc9842bb6f141b}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Channel\+Nb\+Rep@{Channel\+Nb\+Rep}}
+\index{Channel\+Nb\+Rep@{Channel\+Nb\+Rep}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Channel\+Nb\+Rep}{ChannelNbRep}}
+{\footnotesize\ttfamily uint8\+\_\+t Channel\+Nb\+Rep}
+
+Number of frame repetitions
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61af8775ceffd8bc73429e43eac205383ea}{M\+I\+B\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+N\+B\+\_\+\+R\+EP}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1445 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a6c741587260d08d1b883922ce9ca345e}\label{unionu_mib_param_a6c741587260d08d1b883922ce9ca345e}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Channels\+Datarate@{Channels\+Datarate}}
+\index{Channels\+Datarate@{Channels\+Datarate}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Channels\+Datarate}{ChannelsDatarate}}
+{\footnotesize\ttfamily int8\+\_\+t Channels\+Datarate}
+
+Channels data rate
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a78f3b4e3ae4ebaacb478073d2a2ec4f1}{M\+I\+B\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+D\+A\+T\+A\+R\+A\+TE}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1487 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a69f274bb7ff03f12dbda701c3576ac62}\label{unionu_mib_param_a69f274bb7ff03f12dbda701c3576ac62}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Channels\+Default\+Datarate@{Channels\+Default\+Datarate}}
+\index{Channels\+Default\+Datarate@{Channels\+Default\+Datarate}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Channels\+Default\+Datarate}{ChannelsDefaultDatarate}}
+{\footnotesize\ttfamily int8\+\_\+t Channels\+Default\+Datarate}
+
+Channels data rate
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61addef34adbf844ace9eeea97ae93da918}{M\+I\+B\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+R\+A\+TE}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1481 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ac22764d7ec77150f51f49a3c8839f161}\label{unionu_mib_param_ac22764d7ec77150f51f49a3c8839f161}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Channels\+Default\+Mask@{Channels\+Default\+Mask}}
+\index{Channels\+Default\+Mask@{Channels\+Default\+Mask}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Channels\+Default\+Mask}{ChannelsDefaultMask}}
+{\footnotesize\ttfamily uint16\+\_\+t$\ast$ Channels\+Default\+Mask}
+
+Default channel mask
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a59afc276ca425cd4055ff5cb5b5fa946}{M\+I\+B\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+M\+A\+SK}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1439 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_af926e909a910970adb9eccc849020c71}\label{unionu_mib_param_af926e909a910970adb9eccc849020c71}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Channels\+Default\+Tx\+Power@{Channels\+Default\+Tx\+Power}}
+\index{Channels\+Default\+Tx\+Power@{Channels\+Default\+Tx\+Power}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Channels\+Default\+Tx\+Power}{ChannelsDefaultTxPower}}
+{\footnotesize\ttfamily int8\+\_\+t Channels\+Default\+Tx\+Power}
+
+Channels TX power
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a9c5b2d3ad2caf87710b09e8a6e68cc6a}{M\+I\+B\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+X\+\_\+\+P\+O\+W\+ER}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1493 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_aed7477cfc6166e3ee0499b898443426a}\label{unionu_mib_param_aed7477cfc6166e3ee0499b898443426a}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Channels\+Mask@{Channels\+Mask}}
+\index{Channels\+Mask@{Channels\+Mask}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Channels\+Mask}{ChannelsMask}}
+{\footnotesize\ttfamily uint16\+\_\+t$\ast$ Channels\+Mask}
+
+Channel mask
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61aafe40b1c0e252d607876423247feab62}{M\+I\+B\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+M\+A\+SK}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1433 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ad015aefb498e98276b4102f847b05d0e}\label{unionu_mib_param_ad015aefb498e98276b4102f847b05d0e}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Channels\+Tx\+Power@{Channels\+Tx\+Power}}
+\index{Channels\+Tx\+Power@{Channels\+Tx\+Power}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Channels\+Tx\+Power}{ChannelsTxPower}}
+{\footnotesize\ttfamily int8\+\_\+t Channels\+Tx\+Power}
+
+Channels TX power
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ae42f1a0c858ffdb283e0236a24ab6398}{M\+I\+B\+\_\+\+C\+H\+A\+N\+N\+E\+L\+S\+\_\+\+T\+X\+\_\+\+P\+O\+W\+ER}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1499 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a1ca946ebc53171e9f0f1fc39c005a7a6}\label{unionu_mib_param_a1ca946ebc53171e9f0f1fc39c005a7a6}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Class@{Class}}
+\index{Class@{Class}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Class}{Class}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga29dc2e097802faaf8fbd0e18ff99695f}{Device\+Class\+\_\+t}} Class}
+
+Lo\+Ra\+W\+AN device class
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ac0426517132356c9977dcdafa5ab3a7f}{M\+I\+B\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+C\+L\+A\+SS}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1361 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a3679fa4ff6ab120429480da6aa8a017d}\label{unionu_mib_param_a3679fa4ff6ab120429480da6aa8a017d}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Default\+Antenna\+Gain@{Default\+Antenna\+Gain}}
+\index{Default\+Antenna\+Gain@{Default\+Antenna\+Gain}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Default\+Antenna\+Gain}{DefaultAntennaGain}}
+{\footnotesize\ttfamily float Default\+Antenna\+Gain}
+
+Default antenna gain
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61afdc28fdfdbed01cb4c4ea59e0c9b9994}{M\+I\+B\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+A\+N\+T\+E\+N\+N\+A\+\_\+\+G\+A\+IN}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1541 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a8644153b1c46ffcaeb2b44b5544a2c1a}\label{unionu_mib_param_a8644153b1c46ffcaeb2b44b5544a2c1a}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Dev\+Addr@{Dev\+Addr}}
+\index{Dev\+Addr@{Dev\+Addr}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Dev\+Addr}{DevAddr}}
+{\footnotesize\ttfamily uint32\+\_\+t Dev\+Addr}
+
+End-\/device address
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ab1459b05690ffa347a71393006b526ac}{M\+I\+B\+\_\+\+D\+E\+V\+\_\+\+A\+D\+DR}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1385 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a7a566925baf83b1b3da9209dfa4bb79a}\label{unionu_mib_param_a7a566925baf83b1b3da9209dfa4bb79a}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Down\+Link\+Counter@{Down\+Link\+Counter}}
+\index{Down\+Link\+Counter@{Down\+Link\+Counter}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Down\+Link\+Counter}{DownLinkCounter}}
+{\footnotesize\ttfamily uint32\+\_\+t Down\+Link\+Counter}
+
+Lo\+Ra\+W\+AN Down-\/link counter
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ae75b53deee33594312d1d2987c24b698}{M\+I\+B\+\_\+\+D\+O\+W\+N\+L\+I\+N\+K\+\_\+\+C\+O\+U\+N\+T\+ER}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1511 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_aff3bd8c7ac1d2fe36ed22c15c25273aa}\label{unionu_mib_param_aff3bd8c7ac1d2fe36ed22c15c25273aa}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Enable\+Public\+Network@{Enable\+Public\+Network}}
+\index{Enable\+Public\+Network@{Enable\+Public\+Network}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Enable\+Public\+Network}{EnablePublicNetwork}}
+{\footnotesize\ttfamily bool Enable\+Public\+Network}
+
+Enable or disable a public network
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ab2819c46ba94b53c1fb2c3a0bfa75e48}{M\+I\+B\+\_\+\+P\+U\+B\+L\+I\+C\+\_\+\+N\+E\+T\+W\+O\+RK}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1403 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a6af0230b4a6c8b1caf81b8eb6be2ca1f}\label{unionu_mib_param_a6af0230b4a6c8b1caf81b8eb6be2ca1f}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Enable\+Repeater\+Support@{Enable\+Repeater\+Support}}
+\index{Enable\+Repeater\+Support@{Enable\+Repeater\+Support}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Enable\+Repeater\+Support}{EnableRepeaterSupport}}
+{\footnotesize\ttfamily bool Enable\+Repeater\+Support}
+
+Enable or disable repeater support
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a2d0a50cc4dd24771854bd138934ef3e5}{M\+I\+B\+\_\+\+R\+E\+P\+E\+A\+T\+E\+R\+\_\+\+S\+U\+P\+P\+O\+RT}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1409 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a1a4811dfe6101a9f87ecb1aaaf61e6c7}\label{unionu_mib_param_a1a4811dfe6101a9f87ecb1aaaf61e6c7}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Is\+Network\+Joined@{Is\+Network\+Joined}}
+\index{Is\+Network\+Joined@{Is\+Network\+Joined}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Is\+Network\+Joined}{IsNetworkJoined}}
+{\footnotesize\ttfamily bool Is\+Network\+Joined}
+
+Lo\+Ra\+W\+AN network joined attribute
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a2e2a91bfbbb7bbbe1467eec239effbd0}{M\+I\+B\+\_\+\+N\+E\+T\+W\+O\+R\+K\+\_\+\+J\+O\+I\+N\+ED}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1367 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a59ed32d2c7ce6d0b2011da8b0109b391}\label{unionu_mib_param_a59ed32d2c7ce6d0b2011da8b0109b391}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Join\+Accept\+Delay1@{Join\+Accept\+Delay1}}
+\index{Join\+Accept\+Delay1@{Join\+Accept\+Delay1}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Join\+Accept\+Delay1}{JoinAcceptDelay1}}
+{\footnotesize\ttfamily uint32\+\_\+t Join\+Accept\+Delay1}
+
+Join accept delay 1
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a3fa6b527109f8a6d5994ddaf7e9b0bd1}{M\+I\+B\+\_\+\+J\+O\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+D\+E\+L\+A\+Y\+\_\+1}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1469 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ae4a12f9dc83c6cedcf8afc05fb9ea06f}\label{unionu_mib_param_ae4a12f9dc83c6cedcf8afc05fb9ea06f}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Join\+Accept\+Delay2@{Join\+Accept\+Delay2}}
+\index{Join\+Accept\+Delay2@{Join\+Accept\+Delay2}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Join\+Accept\+Delay2}{JoinAcceptDelay2}}
+{\footnotesize\ttfamily uint32\+\_\+t Join\+Accept\+Delay2}
+
+Join accept delay 2
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61aa1ca7d4484b41008a69d5d786cfd6a20}{M\+I\+B\+\_\+\+J\+O\+I\+N\+\_\+\+A\+C\+C\+E\+P\+T\+\_\+\+D\+E\+L\+A\+Y\+\_\+2}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1475 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ace391217d534408b8f2af268a4ef0945}\label{unionu_mib_param_ace391217d534408b8f2af268a4ef0945}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Max\+Rx\+Window@{Max\+Rx\+Window}}
+\index{Max\+Rx\+Window@{Max\+Rx\+Window}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Max\+Rx\+Window}{MaxRxWindow}}
+{\footnotesize\ttfamily uint32\+\_\+t Max\+Rx\+Window}
+
+Maximum receive window duration
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ad6ba0cae3e33f0cf042ded8936d965da}{M\+I\+B\+\_\+\+M\+A\+X\+\_\+\+R\+X\+\_\+\+W\+I\+N\+D\+O\+W\+\_\+\+D\+U\+R\+A\+T\+I\+ON}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1451 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ab33f97482f9af163d593cf103a2ccf1c}\label{unionu_mib_param_ab33f97482f9af163d593cf103a2ccf1c}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Min\+Rx\+Symbols@{Min\+Rx\+Symbols}}
+\index{Min\+Rx\+Symbols@{Min\+Rx\+Symbols}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Min\+Rx\+Symbols}{MinRxSymbols}}
+{\footnotesize\ttfamily uint8\+\_\+t Min\+Rx\+Symbols}
+
+Minimum required number of symbols to detect an Rx frame
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a82fb27fd6414d2bde20a7a00c80e26a1}{M\+I\+B\+\_\+\+M\+I\+N\+\_\+\+R\+X\+\_\+\+S\+Y\+M\+B\+O\+LS}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1529 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ab0f9cda74f301d191aa5f7d7090c1557}\label{unionu_mib_param_ab0f9cda74f301d191aa5f7d7090c1557}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Multicast\+List@{Multicast\+List}}
+\index{Multicast\+List@{Multicast\+List}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Multicast\+List}{MulticastList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga02d2523505cac70954c043074087ea65}{Multicast\+Params\+\_\+t}}$\ast$ Multicast\+List}
+
+Multicast channel
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61af8ac424460fccb3115c6fe6ccb450862}{M\+I\+B\+\_\+\+M\+U\+L\+T\+I\+C\+A\+S\+T\+\_\+\+C\+H\+A\+N\+N\+EL}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1517 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a84a14c879508144e9961372ace234169}\label{unionu_mib_param_a84a14c879508144e9961372ace234169}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Net\+ID@{Net\+ID}}
+\index{Net\+ID@{Net\+ID}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Net\+ID}{NetID}}
+{\footnotesize\ttfamily uint32\+\_\+t Net\+ID}
+
+Network identifier
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a982c4b7cc1e276633134aa89298c96b0}{M\+I\+B\+\_\+\+N\+E\+T\+\_\+\+ID}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1379 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a04e90b783b4e6841ecda8d32d10dc90e}\label{unionu_mib_param_a04e90b783b4e6841ecda8d32d10dc90e}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Nwk\+S\+Key@{Nwk\+S\+Key}}
+\index{Nwk\+S\+Key@{Nwk\+S\+Key}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Nwk\+S\+Key}{NwkSKey}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ Nwk\+S\+Key}
+
+Network session key
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a60d7688e714c9b140648aadd2e7ab36e}{M\+I\+B\+\_\+\+N\+W\+K\+\_\+\+S\+K\+EY}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1391 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a426f0e1108ebe3ba1b05c2853c0b0c3a}\label{unionu_mib_param_a426f0e1108ebe3ba1b05c2853c0b0c3a}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Receive\+Delay1@{Receive\+Delay1}}
+\index{Receive\+Delay1@{Receive\+Delay1}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Receive\+Delay1}{ReceiveDelay1}}
+{\footnotesize\ttfamily uint32\+\_\+t Receive\+Delay1}
+
+Receive delay 1
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61aa3511cfca5a46654d97b022d50c82ae8}{M\+I\+B\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+D\+E\+L\+A\+Y\+\_\+1}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1457 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a67fbe3fba2eb31f8879ea22674dd50d8}\label{unionu_mib_param_a67fbe3fba2eb31f8879ea22674dd50d8}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Receive\+Delay2@{Receive\+Delay2}}
+\index{Receive\+Delay2@{Receive\+Delay2}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Receive\+Delay2}{ReceiveDelay2}}
+{\footnotesize\ttfamily uint32\+\_\+t Receive\+Delay2}
+
+Receive delay 2
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a3d147bf887f0d7317cb2930335857000}{M\+I\+B\+\_\+\+R\+E\+C\+E\+I\+V\+E\+\_\+\+D\+E\+L\+A\+Y\+\_\+2}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1463 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_aa0fbe93ff398020c65d2431af19368e8}\label{unionu_mib_param_aa0fbe93ff398020c65d2431af19368e8}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Rx2\+Channel@{Rx2\+Channel}}
+\index{Rx2\+Channel@{Rx2\+Channel}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Rx2\+Channel}{Rx2Channel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f57f29481ea92c24f6af04b96a95e0f}{Rx2\+Channel\+Params\+\_\+t}} Rx2\+Channel}
+
+Channel for the receive window 2
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61a60fe29749b57c7a5315e9c1475269ba3}{M\+I\+B\+\_\+\+R\+X2\+\_\+\+C\+H\+A\+N\+N\+EL}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1421 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a0fc23f09c886e3ce57ed0bd2061b336a}\label{unionu_mib_param_a0fc23f09c886e3ce57ed0bd2061b336a}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Rx2\+Default\+Channel@{Rx2\+Default\+Channel}}
+\index{Rx2\+Default\+Channel@{Rx2\+Default\+Channel}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Rx2\+Default\+Channel}{Rx2DefaultChannel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_o_r_a_m_a_c_ga8f57f29481ea92c24f6af04b96a95e0f}{Rx2\+Channel\+Params\+\_\+t}} Rx2\+Default\+Channel}
+
+Channel for the receive window 2
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ac3a212e314ab58f78007ce812187179d}{M\+I\+B\+\_\+\+R\+X2\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+H\+A\+N\+N\+EL}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1427 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_a62adc341212fe903e9995966051c5fee}\label{unionu_mib_param_a62adc341212fe903e9995966051c5fee}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!System\+Max\+Rx\+Error@{System\+Max\+Rx\+Error}}
+\index{System\+Max\+Rx\+Error@{System\+Max\+Rx\+Error}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{System\+Max\+Rx\+Error}{SystemMaxRxError}}
+{\footnotesize\ttfamily uint32\+\_\+t System\+Max\+Rx\+Error}
+
+System overall timing error in milliseconds.
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ad5d382841f32fba944bdb68b25699e45}{M\+I\+B\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+M\+A\+X\+\_\+\+R\+X\+\_\+\+E\+R\+R\+OR}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1523 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{unionu_mib_param_ae8c54ca277e4d7295dfd498889e42fdd}\label{unionu_mib_param_ae8c54ca277e4d7295dfd498889e42fdd}} 
+\index{u\+Mib\+Param@{u\+Mib\+Param}!Up\+Link\+Counter@{Up\+Link\+Counter}}
+\index{Up\+Link\+Counter@{Up\+Link\+Counter}!u\+Mib\+Param@{u\+Mib\+Param}}
+\subsubsection{\texorpdfstring{Up\+Link\+Counter}{UpLinkCounter}}
+{\footnotesize\ttfamily uint32\+\_\+t Up\+Link\+Counter}
+
+Lo\+Ra\+W\+AN Up-\/link counter
+
+Related M\+IB type\+: \mbox{\hyperlink{group___l_o_r_a_m_a_c_gga32ea83d13a3f5bb4b3ec2ace2319ab61ad0d2e0023858ce3fab3647fa97428d84}{M\+I\+B\+\_\+\+U\+P\+L\+I\+N\+K\+\_\+\+C\+O\+U\+N\+T\+ER}} 
+
+Lo\+Ra\+Mac.\+h 파일의 1505 번째 라인에서 정의되었습니다.
+
+
+
+이 공용체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/\mbox{\hyperlink{_lo_ra_mac_8h}{Lo\+Ra\+Mac.\+h}}\end{DoxyCompactItemize}

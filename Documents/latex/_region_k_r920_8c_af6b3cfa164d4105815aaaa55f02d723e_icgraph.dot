@@ -1,0 +1,15 @@
+digraph "VerifyTxFreq"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node22 [label="VerifyTxFreq",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node22 -> Node23 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node23 [label="RegionKR920DlChannelReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_k_r920.html#gaf071acd0ac6c6839c90ff7ee9192fbf6",tooltip="The function processes a DlChannel Request. "];
+  Node22 -> Node24 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node24 [label="RegionKR920ChannelAdd",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_k_r920.html#gaca1aceccde474cc473e09dc3113ec876",tooltip="Adds a channel. "];
+  Node24 -> Node25 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node25 [label="RegionKR920ApplyCFList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_k_r920.html#ga7b758b39bc0f003f90deaa751a596b02",tooltip="The function parses the input buffer and sets up the channels of the CF list. "];
+  Node24 -> Node26 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node26 [label="RegionKR920NewChannelReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_k_r920.html#gab6853b28eeb36ffabfe8c7c77bcd305d",tooltip="The function processes a Channel Request. "];
+}

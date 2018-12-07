@@ -1,0 +1,19 @@
+digraph "randr"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node92 [label="randr",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node92 -> Node93 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node93 [label="LORA_Init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lora_8h.html#a60e6c21550fcaf1cadb87454348046ad",tooltip="Lora Initialisation "];
+  Node93 -> Node94 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node94 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe",tooltip="Main program "];
+  Node92 -> Node95 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node95 [label="RegionUS915HybridGetPhyParam",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gaf078bd0d293c1a677ca53b7b6ca96c6e",tooltip="The function gets a value of a specific phy attribute. "];
+  Node95 -> Node96 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node96 [label="RegionUS915HybridAdrNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#ga6cf3188c00bf9a9eaa7c62686dd4b391",tooltip="Calculates the next datarate to set, when ADR is on or off. "];
+  Node95 -> Node97 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node97 [label="RegionUS915HybridLinkAdrReq",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gade4dc50b11235e0a6675b0d22240dea2",tooltip="The function processes a Link ADR Request. "];
+  Node92 -> Node98 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node98 [label="RegionUS915HybridNextChannel",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___r_e_g_i_o_n_u_s915_h_y_b.html#gae74c05f827a9ed78b0ec0cacdec45f28",tooltip="Searches and set the next random available channel "];
+}

@@ -1,0 +1,890 @@
+
+
+ / \+\_\+\+\_\+\+\_\+\+\_\+\+\_\+) \+\_\+ $\vert$ $\vert$ ( (\+\_\+\+\_\+\+\_\+\+\_\+ \+\_\+\+\_\+\+\_\+\+\_\+\+\_\+ \+\_\+\+\_\+\+\_\+\+\_\+ \+\_\+$\vert$ $\vert$\+\_\+ \+\_\+\+\_\+\+\_\+\+\_\+\+\_\+ \+\_\+\+\_\+\+\_\+\+\_\+$\vert$ $\vert$\+\_\+\+\_\+ \+\_\+\+\_\+\+\_\+\+\_\+ $|$ \+\_\+\+\_\+\+\_\+ $\vert$ (\+\_\+ \+\_\+) \+\_\+\+\_\+\+\_\+ $\vert$/ \+\_\+\+\_\+\+\_\+) \+\_\+ \textbackslash{} \+\_\+\+\_\+\+\_\+\+\_\+\+\_\+) ) \+\_\+\+\_\+\+\_\+\+\_\+$\vert$ $\vert$ $\vert$ $\vert$$\vert$ $\vert$\+\_\+$\vert$ \+\_\+\+\_\+\+\_\+\+\_\+( (\+\_\+\+\_\+\+\_\+$\vert$ $\vert$ $\vert$ $\vert$ (\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+/$\vert$\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+)\+\_\+$\vert$\+\_\+$\vert$\+\_\+$\vert$ \+\_\+\+\_\+)\+\_\+\+\_\+\+\_\+\+\_\+\+\_\+)\+\_\+\+\_\+\+\_\+\+\_\+)\+\_\+$\vert$ $\vert$\+\_\+$\vert$ (C)2013-\/2018 Semtech
+
+
+
+ / \+\_\+\+\_\+$\vert$\+\_\+ \+\_\+/\+\_\+\textbackslash{} / \+\_\+\+\_\+$\vert$ $\vert$/ / \+\_\+\+\_\+/ \+\_\+ $|$ \+\_\+ \textbackslash{}/ \+\_\+\+\_\+$\vert$ \+\_\+\+\_\+$\vert$ \+\_\+\+\_\+ \textbackslash{} $\vert$ $\vert$/ \+\_\+ \textbackslash{} (\+\_\+\+\_\+$\vert$ \textquotesingle{} $<$$\vert$ \+\_\+$\vert$ (\+\_\+) $\vert$ / (\+\_\+\+\_\+$\vert$ \+\_\+$\vert$ $\vert$\+\_\+\+\_\+\+\_\+/ $\vert$\+\_\+/\+\_\+/ \+\_\+\+\_\+\+\_\+\+\_\+$\vert$\+\_\+$\vert$\+\_\+\+\_\+$\vert$ \+\_\+\+\_\+\+\_\+/$\vert$\+\_\+$\vert$\+\_\+$\vert$\+\_\+\+\_\+\+\_\+$\vert$ embedded.\+connectivity.\+solutions===============
+
+\subsection*{Introduction}
+
+The aim of this project is to show an example of the endpoint Lo\+Ra\+W\+AN stack implementation.
+
+This Lo\+Ra\+W\+AN stack implements all regions defined in \char`\"{}\+Lo\+Ra\+W\+A\+N Regional Parameters v1.\+0.\+2r\+B\char`\"{} document. Class A and Class C endpoint implementation is fully compatible with \char`\"{}\+Lo\+Ra\+W\+A\+N specification 1.\+0.\+2\char`\"{}.
+
+Each Lo\+Ra\+W\+AN application example includes the Lo\+Ra\+W\+AN certification protocol implementation.
+
+S\+X1272/76 radio drivers are also provided. In case only point to point links are required a Ping-\/\+Pong application is provided as example.
+
+{\itshape The Lo\+Ra\+W\+AN stack A\+PI documentation can be found at\+: \href{http://stackforce.github.io/LoRaMac-doc/}{\tt http\+://stackforce.\+github.\+io/\+Lo\+Ra\+Mac-\/doc/}}
+
+\subsection*{System schematic and definitions}
+
+The available supported hardware platforms schematics can be found in the Doc directory.
+
+\subsection*{Acknowledgments}
+
+The mbed (\href{https://mbed.org/}{\tt https\+://mbed.\+org/}) project was used at the beginning as source of inspiration.
+
+This program uses the A\+ES algorithm implementation (\href{http://www.gladman.me.uk/}{\tt http\+://www.\+gladman.\+me.\+uk/}) by Brian Gladman.
+
+This program uses the C\+M\+AC algorithm implementation (\href{http://www.cse.chalmers.se/research/group/dcs/masters/contikisec/}{\tt http\+://www.\+cse.\+chalmers.\+se/research/group/dcs/masters/contikisec/}) by Lander Casado, Philippas Tsigas.
+
+\subsection*{Dependencies}
+
+This program depends on specific hardware platforms. Currently the supported platforms are\+:
+
+
+\begin{DoxyItemize}
+\item Lo\+Ra\+Mote
+\begin{DoxyItemize}
+\item {\bfseries M\+CU} \+: S\+T\+M32\+L151\+CB -\/ 128K F\+L\+A\+SH, 10K R\+AM, Timers, S\+PI, I2C, U\+S\+A\+RT, U\+SB 2.\+0 full-\/speed device/host/\+O\+TG controller, D\+AC, A\+DC, D\+MA
+\item {\bfseries R\+A\+D\+IO} \+: S\+X1272
+\item {\bfseries A\+N\+T\+E\+N\+NA} \+: Printed circuit antenna
+\item {\bfseries B\+U\+T\+T\+O\+NS} \+: No
+\item {\bfseries L\+E\+DS} \+: 3
+\item {\bfseries S\+E\+N\+S\+O\+RS} \+: Proximity, Magnetic, 3 axis Accelerometer, Pressure, Temperature
+\item {\bfseries G\+PS} \+: Yes, U\+P501 module
+\item {\bfseries E\+X\+T\+E\+N\+S\+I\+ON H\+E\+A\+D\+ER} \+: Yes, 20 pins
+\item {\bfseries R\+E\+M\+A\+RK} \+: The M\+CU and Radio are on an I\+M\+ST i\+M880A module
+\end{DoxyItemize}
+\item Mote\+II
+\begin{DoxyItemize}
+\item {\bfseries M\+CU} \+: S\+T\+M32\+L051\+C8 -\/ 64K F\+L\+A\+SH, 8K R\+AM, Timers, S\+PI, I2C, U\+S\+A\+RT, U\+SB 2.\+0 full-\/speed device/host/\+O\+TG controller (Not used), D\+AC, A\+DC, D\+MA
+\item {\bfseries R\+A\+D\+IO} \+: S\+X1272
+\item {\bfseries A\+N\+T\+E\+N\+NA} \+: Printed circuit antenna
+\item {\bfseries B\+U\+T\+T\+O\+NS} \+: 3
+\item {\bfseries L\+E\+DS} \+: 3
+\item {\bfseries S\+E\+N\+S\+O\+RS} \+: Magnetic, 3 axis Accelerometer, Pressure, Temperature
+\item {\bfseries G\+PS} \+: Yes, P\+A\+M7Q module
+\item {\bfseries Display} \+: O\+L\+ED
+\item {\bfseries S\+T-\/\+Link} \+: Yes, M\+B\+ED like
+\item {\bfseries E\+X\+T\+E\+N\+S\+I\+ON H\+E\+A\+D\+ER} \+: Yes, 20 pins
+\item {\bfseries R\+E\+M\+A\+RK} \+: The M\+CU and Radio are on an I\+M\+ST i\+M881A module
+\end{DoxyItemize}
+\item N\+A\+Mote72
+\begin{DoxyItemize}
+\item {\bfseries M\+CU} \+: S\+T\+M32\+L152\+RC -\/ 256K F\+L\+A\+SH, 32K R\+AM, Timers, S\+PI, I2C, U\+S\+A\+RT, U\+SB 2.\+0 full-\/speed device/host/\+O\+TG controller (Not used), D\+AC, A\+DC, D\+MA
+\item {\bfseries R\+A\+D\+IO} \+: S\+X1272
+\item {\bfseries A\+N\+T\+E\+N\+NA} \+: Printed circuit antenna
+\item {\bfseries B\+U\+T\+T\+O\+NS} \+: No
+\item {\bfseries L\+E\+DS} \+: 4
+\item {\bfseries S\+E\+N\+S\+O\+RS} \+: Magnetic, 3 axis Accelerometer, Pressure, Temperature
+\item {\bfseries G\+PS} \+: Yes, S\+I\+M39\+EA module
+\item {\bfseries Display} \+: No
+\item {\bfseries S\+T-\/\+Link} \+: Yes, M\+B\+ED like
+\item {\bfseries E\+X\+T\+E\+N\+S\+I\+ON H\+E\+A\+D\+ER} \+: Yes, Arduino connectors
+\item {\bfseries R\+E\+M\+A\+RK} \+: None
+\end{DoxyItemize}
+\item S\+A\+M\+L21
+\begin{DoxyItemize}
+\item S\+A\+M\+L21 platform documentation
+\end{DoxyItemize}
+\item Sensor\+Node
+\begin{DoxyItemize}
+\item {\bfseries M\+CU} \+: S\+T\+M32\+L151\+C\+B\+U6 -\/ 128K F\+L\+A\+SH, 16K R\+AM, Timers, S\+PI, I2C, U\+S\+A\+RT, U\+SB 2.\+0 full-\/speed device/host/\+O\+TG controller, D\+AC, A\+DC, D\+MA
+\item {\bfseries R\+A\+D\+IO} \+: S\+X1276
+\item {\bfseries A\+N\+T\+E\+N\+NA} \+: Printed circuit antenna
+\item {\bfseries B\+U\+T\+T\+O\+NS} \+: Power O\+N/\+O\+FF, General purpose button
+\item {\bfseries L\+E\+DS} \+: 3
+\item {\bfseries S\+E\+N\+S\+O\+RS} \+: Proximity, Magnetic, 3 axis Accelerometer, Pressure, Temperature
+\item {\bfseries G\+PS} \+: Yes, S\+I\+M39\+EA module
+\item {\bfseries E\+X\+T\+E\+N\+S\+I\+ON}\+: No
+\item {\bfseries R\+E\+M\+A\+RK} \+: None
+\end{DoxyItemize}
+\item S\+K-\/i\+M880A ( I\+M\+ST starter kit )
+\begin{DoxyItemize}
+\item {\bfseries M\+CU} \+: S\+T\+M32\+L151\+CB -\/ 128K F\+L\+A\+SH, 10K R\+AM, Timers, S\+PI, I2C, U\+S\+A\+RT, U\+SB 2.\+0 full-\/speed device/host/\+O\+TG controller, D\+AC, A\+DC, D\+MA
+\item {\bfseries R\+A\+D\+IO} \+: S\+X1272
+\item {\bfseries A\+N\+T\+E\+N\+NA} \+: Connector for external antenna
+\item {\bfseries B\+U\+T\+T\+O\+NS} \+: 1 Reset, 3 buttons + 2 D\+I\+P-\/\+Switch
+\item {\bfseries L\+E\+DS} \+: 3
+\item {\bfseries S\+E\+N\+S\+O\+RS} \+: Potentiometer
+\item {\bfseries G\+PS} \+: Possible through pin header G\+PS module connection
+\item {\bfseries S\+D\+C\+A\+RD} \+: No
+\item {\bfseries E\+X\+T\+E\+N\+S\+I\+ON H\+E\+A\+D\+ER} \+: Yes, all I\+M\+ST i\+M880A module pins
+\item {\bfseries R\+E\+M\+A\+RK} \+: None
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection*{Usage}
+
+A C\+M\+A\+KE building system is used in order to generate the right set of files to compile and debug the different projects.
+
+Further information can be found in Development environment document.
+
+\subsection*{Changelog}
+
+\subsubsection*{2018-\/03-\/07, V4.\+4.\+1}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Release based on \char`\"{}\+Lo\+Ra\+W\+A\+N specification 1.\+0.\+2\char`\"{} and \char`\"{}\+Lo\+Ra\+W\+A\+N Regional Parameters v1.\+0.\+2r\+B\char`\"{}
+\item Added S\+X126x radio support.
+\item Added Nucleo\+L073 and Nucleo\+L152 board platforms support.
+\item Added Microchip/\+Atmel S\+A\+M\+L21 Xplained Pro hardware platform support.
+\item Added C\+M\+A\+KE build system support
+\item Removed Co\+I\+DE projects support
+\item Removed Keil projects support
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Git\+Hub reported issues corrections. Please refer to \href{https://github.com/Lora-net/LoRaMac-node/milestone/1}{\tt Release Version 4.\+4.\+1}
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+{\bfseries Lo\+Ra\+W\+AN certification results}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Region  }&\textbf{ Verdict  }&\textbf{ \# Test houses  }&\textbf{ Comments   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Region  }&\textbf{ Verdict  }&\textbf{ \# Test houses  }&\textbf{ Comments   }\\\cline{1-4}
+\endhead
+E\+U868  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &0  &-\/   \\\cline{1-4}
+U\+S915  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &0  &-\/   \\\cline{1-4}
+C\+N779  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &0  &No certification specification -\/ tests based on E\+U868 certification   \\\cline{1-4}
+E\+U433  &$<$font color=\char`\"{}orange\char`\"{}$>$Not tested$<$/font$>$  &0  &No certification specification -\/ tests based on E\+U868 certification   \\\cline{1-4}
+A\+U915  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &0  &No certification specification -\/ tests based on U\+S915 certification   \\\cline{1-4}
+C\+N470  &$<$font color=\char`\"{}orange\char`\"{}$>$Not tested$<$/font$>$  &0  &No certification specification   \\\cline{1-4}
+A\+S923  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &0  &-\/   \\\cline{1-4}
+K\+R920  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &0  &-\/   \\\cline{1-4}
+I\+N865  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &0  &-\/   \\\cline{1-4}
+\end{longtabu}
+
+
+\subsubsection*{2017-\/09-\/08, V4.\+4.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item First release based on \char`\"{}\+Lo\+Ra\+W\+A\+N specification 1.\+0.\+2\char`\"{} and \char`\"{}\+Lo\+Ra\+W\+A\+N Regional Parameters v1.\+0.\+2r\+B\char`\"{}
+\item This version has passed the Lo\+Ra-\/\+Alliance compliance tests for the regions shown in the below table.
+\item Git\+Hub reported issues corrections.
+\item Updated radio driver to perform the L\+BT carrier sense continuously for a given period of time.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Git\+Hub reported issues corrections.
+\item Updated implementation to support 1.\+0.\+2 specification additions.
+\item Added the support for all \char`\"{}\+Lo\+Ra\+W\+A\+N Regional Parameters v1.\+0.\+2r\+B\char`\"{} document defined regions.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+{\bfseries Lo\+Ra\+W\+AN certification results}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Region  }&\textbf{ Verdict  }&\textbf{ \# Test houses  }&\textbf{ Comments   }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Region  }&\textbf{ Verdict  }&\textbf{ \# Test houses  }&\textbf{ Comments   }\\\cline{1-4}
+\endhead
+E\+U868  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &2  &-\/   \\\cline{1-4}
+U\+S915  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &2  &-\/   \\\cline{1-4}
+C\+N779  &$<$font color=\char`\"{}orange\char`\"{}$>$Partial P\+A\+SS$<$/font$>$  &1  &No certification specification -\/ tests based on E\+U868 certification -\/ All tests P\+A\+SS except 1. Join Accept Rx2 parameters not being applied (under investigation)   \\\cline{1-4}
+E\+U433  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &1  &No certification specification -\/ tests based on E\+U868 certification   \\\cline{1-4}
+A\+U915  &$<$font color=\char`\"{}orange\char`\"{}$>$Not tested yet$<$/font$>$  &0  &No certification specification   \\\cline{1-4}
+C\+N470  &$<$font color=\char`\"{}orange\char`\"{}$>$Not tested yet$<$/font$>$  &0  &No certification specification   \\\cline{1-4}
+A\+S923  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &2  &-\/   \\\cline{1-4}
+K\+R920  &$<$font color=\char`\"{}green\char`\"{}$>$P\+A\+SS$<$/font$>$  &1  &As of today only one test house has sent a report. We decided to perform the release anyway   \\\cline{1-4}
+I\+N865  &$<$font color=\char`\"{}orange\char`\"{}$>$P\+A\+SS$<$/font$>$  &1  &No certification specification -\/ tests based on E\+U868 certification   \\\cline{1-4}
+\end{longtabu}
+
+
+\subsubsection*{2017-\/04-\/19, V4.\+3.\+2}
+
+
+\begin{DoxyItemize}
+\item General (Last release based on Lo\+Ra\+W\+AN specification 1.\+0.\+1)
+\begin{DoxyEnumerate}
+\item This version has passed E\+U868 and U\+S915 Lo\+Ra-\/\+Alliance compliance tests.
+\item Git\+Hub reported issues corrections.
+\item Added an algorithm to automatically compute the Rx windows parameters. (Window symbol\+Timeout and Offset from downlink expected time)
+\item Added a workaround to reset the radio in case a Tx\+Timeout occurs.
+\item Modified F\+SK modem handling to use the provided symbol\+Timeout (1 symbol equals 1 byte) when in Rx\+Single mode.
+\item Added newly defined Tx\+Cw(\+Tx Continuous Wave) certification protocol command.
+\item Added a fix for an overflow issue that could happen with Nmea\+String\+Size variable.
+\item Improved Gpio\+Mcu\+Init function to first configure the output pin state before activating the pin.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Git\+Hub reported issues corrections.
+\item Changed the Adr\+Ack\+Counter handling as expected by the test houses.
+\item Fix an issue where the node stopped transmitting.
+\item Removed useless Lo\+Ra\+Mac\+Payload buffer.
+\item M\+AC layer indications handling simplification.
+\item Relocate parameter settings from Reset\+Mac\+Parameters to the initialization.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2017-\/02-\/27, V4.\+3.\+1}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item This version has passed E\+U868 and U\+S915 Lo\+Ra-\/\+Alliance compliance tests.
+\item Update the M\+AC layer in order to be Lo\+Ra\+W\+AN version 1.\+0.\+1 compliant (Mainly U\+S915 bug fixes)
+\item Removed api-\/v3 support from the project.
+\item Git\+Hub reported issues corrections.
+\item Updated Sensor\+Node projects according to the new M\+CU reference S\+T\+M32\+L151\+C\+B\+U6. Bigger memories.
+\item Addition of Mote\+II platform based on the I\+M\+ST module i\+M881A (S\+T\+M32\+L051\+C8)
+\item Addition of N\+A\+Mote72 platform
+\item Correct compliance test protocol command 0x06 behavior
+\item Added Tx\+Cw (Tx continuous wave) Lo\+Ra\+W\+AN compliance protocol command.
+\item Added Tx\+Continuous\+Wave support to the radio drivers.
+\item Updated ST H\+AL drivers.
+\begin{DoxyItemize}
+\item S\+T\+M32\+L1xx\+\_\+\+H\+A\+L-\/\+Driver \+: V1.\+2.\+0
+\item S\+T\+M32\+L0xx\+\_\+\+H\+A\+L\+\_\+\+Driver \+: V1.\+7.\+0
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item US band corrections in order to pass the Lo\+Ra\+W\+AN certification.
+\item Git\+Hub reported issues corrections.
+\item Add region C\+N470 support.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2016-\/06-\/22, V4.\+3.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item This version has passed all Lo\+Ra-\/\+Alliance compliance tests.
+\item Update the M\+AC layer in order to be Lo\+Ra\+W\+AN version 1.\+0.\+1 compliant
+\item Applied to all application files the certification protocol change for Lo\+Ra\+W\+AN 1.\+0.\+1 compliance tests.
+
+{\bfseries R\+E\+M\+A\+RK}\+: api-\/v3 application files aren\textquotesingle{}t updated.
+\item Add radio R\+X\+\_\+\+T\+I\+M\+E\+O\+UT irq clear into the irq handler.
+\item Removed the end less loop from H\+A\+L\+\_\+\+U\+A\+R\+T\+\_\+\+Error\+Callback.
+\item Update of the S\+T\+M32\+L0 H\+AL to version 1.\+6.\+0
+\item Consolidated the line endings across all project files. Windows line endings has been choose for almost every file.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Updated maximum payload size for US band.
+\item Update datarate offset table for US band.
+\item Make M\+AC commands sticky
+\item Add retransmission back-\/off
+\item Remove the Tx\+Power limitation for US band on Lo\+Ra\+Mac\+Mib\+Set\+Request\+Confirm function. The power will be limited anyway when the Send\+Frame\+On\+Channel functions is called.
+\item Issue(\#81)\+: Bug fix in function Lo\+Ra\+Mac\+Mlme\+Request case M\+L\+M\+E\+\_\+\+J\+O\+IN. Function will return L\+O\+R\+A\+M\+A\+C\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+B\+U\+SY in case the M\+AC is in status M\+A\+C\+\_\+\+T\+X\+\_\+\+D\+E\+L\+A\+Y\+ED.
+\item Add debug pin support to Lo\+Ra\+Mote platform.
+\item Updated and improved M\+P\+L3115 device driver.
+\item Issue(\#83)\+: Bug fix in parameter validation
+\item Issue(\#84)\+: Fix issue of Calibrate\+Timer function.
+\item R\+TC driver major update
+\item Applied pull request \#87.
+\item Add a function to verify the RX frequency of window 2 for US band.
+\item Issue(\#88)\+: Bug fix in function Prepare\+Frame where repeated M\+AC commands were not handled correctly.
+\item Bug fix in On\+Radio\+Rx\+Done. Node now drops frames on port 0 with f\+Opts $>$ 0.
+\item Bug fix in On\+Radio\+Rx\+Done. Node now receives frames with f\+Opts $>$ 0 when no payload is present.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2016-\/05-\/13, V4.\+2.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item This version has passed all Lo\+Ra-\/\+Alliance compliance tests.
+\item Update S\+T\+M32\+L1xx\+\_\+\+H\+A\+L\+\_\+\+Driver version to 1.\+5. Update related drivers and implementations accordingly.
+
+{\bfseries R\+E\+M\+A\+RK}\+: This change implies that the time base had to be changed from microseconds to milliseconds.
+\item Corrected the frequency check condition for // E\+R\+R\+A\+TA 2.\+1 -\/ Sensitivity Optimization with a 500 k\+Hz Bandwidth
+\item Optimize radio drivers regarding F\+SK P\+ER
+\item Resolve issue when calling S\+X127x\+Init function more than once
+\item Add a definition for the Lo\+Ra\+W\+AN device address. Add an I\+E\+E\+E\+\_\+\+O\+UI for the Lo\+Ra\+W\+AN device E\+UI.
+\item Add a definition for the default datarate.
+\item Issue(\#66) correction of functions S\+X1276\+Set\+Op\+Mode and S\+X1272\+Set\+Op\+Mode.
+\item Issue(\#68)\+: Fix for low level RF switch control.
+\item Increase R\+TC tick frequency for higher resolution.
+\item Update the radio wake up time.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Issue(\#56) correction
+\item Update channel mask handling for U\+S915 hybrid mode to support any block in the channel mask.
+\item Issue(\#63) correct the maximum payload length in RX mode.
+\item Fix Tx power setting loss for repeated join requests on US band.
+\item Introduce individual M\+IN and M\+AX datarates for RX and TX.
+\item Add the possibility to set and get the Channels\+Default\+Datarate.
+\item Optimization of the RX symbol timeout.
+\item Issue(\#59)\+: Add the possibility to set the uplink and downlink counter.
+\item Replace definition L\+O\+R\+A\+M\+A\+C\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+A\+T\+A\+R\+A\+TE by Channels\+Default\+Datarate in Lo\+Ra\+Mac\+Channel\+Add.
+\item Issue(\#72)\+: Fix of possible array overrun in Lo\+Ra\+Mac\+Channel\+Remove.
+\item Introduce a new status M\+A\+C\+\_\+\+R\+X\+\_\+\+A\+B\+O\+RT. Reset M\+A\+C\+\_\+\+T\+X\+\_\+\+R\+U\+N\+N\+I\+NG only in On\+Mac\+State\+Check\+Timer\+Event.
+\item Accept M\+AC information of duplicated, confirmed downlinks.
+\item Issue(\#74)\+: Drop frames with a downlink counter difference greater or equal to M\+A\+X\+\_\+\+F\+C\+N\+T\+\_\+\+G\+AP.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2016-\/03-\/10, V4.\+1.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item This version has passed all mandatory Lo\+Ra-\/\+Alliance compliance tests.
+
+{\itshape One of the optional tests is unsuccessful (F\+SK downlinks P\+ER on Rx1 and Rx2 windows) and is currently under investigation.}
+\item Removed support for Raisonance Ride7 I\+DE (Reduces the amount of work to be done at each new release)
+\item Removed the Bleeper-\/72 and Bleeper-\/76 platforms support as these are now deprecated.
+\item Application state machine. Relocate setting sleep state and update the duty cycle in compliance test mode.
+\item Bug fix in Timer\+Irq\+Handler. Now, it is possible to insert timers in callback.
+\item Changed Timer\+Hw\+Delay\+Ms function to be re-\/entrant.
+\item Corrected F\+SK modem packets bigger than 64 bytes handling (Issue \#36)
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Rename attribute nb\+Retries to Nb\+Trials in structure Mcps\+Req\+Confirmed\+\_\+t. (Issue \#37)
+\item Updated implementation of Set\+Next\+Channel. Added enabling default channels in case of join request. (Issue \#39)
+\item Add missing documentation about M\+I\+B\+\_\+\+R\+E\+P\+E\+A\+T\+E\+R\+\_\+\+S\+U\+P\+P\+O\+RT. (Issue \#42).
+\item Add a new Lo\+Ra\+Mac\+State to allow adding channels during TX procedure. (Issue \#43)
+\item Relocate the activation of Lo\+Ra\+Mac\+Flags.\+Bits.\+Mcps\+Ind in On\+Radio\+Rx\+Done.
+\item Add a new function Prepare\+Rx\+Done\+Abort to prepare a break-\/out of On\+Radio\+Rx\+Done in case of an error
+\item Activate default channels in case all others are disabled. (Issue \#39)
+\item Bug fix in setting the default channel in case none is enabled.
+\item S\+R\+V\+\_\+\+M\+A\+C\+\_\+\+N\+E\+W\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+R\+EQ M\+AC command added a fix to the mac\+Index variable on U\+S915 band.
+\item Start the Mac\+State\+Check\+Timer in On\+Rx\+Done and related error cases with a short interval to handle events promptly. (Issue \#44)
+\item Reset status of Node\+Ack\+Requested if we received an A\+CK or in case of timeout.
+\item Removed additional E\+U868 channels from the Lo\+Ra\+W\+AN implementation files. Git\+Hub (Issue \#49) The creation of these additional channels has been moved to the application example.
+\item Improved and corrected Adr\+Next\+Dr function.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2015-\/12-\/18, V4.\+0.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item S\+T\+A\+C\+K\+F\+O\+R\+CE new A\+PI integration
+\item Reverse the E\+U\+Is arrays in the M\+AC layer.
+\item Lo\+Ra\+W\+AN certification protocol implementation
+\item All reported issues and Pull requests have been addressed.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2015-\/10-\/06, V3.\+4.\+1}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Bug fixes
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Corrected downlink counter roll over management when several downlinks were missed.
+\item Corrected the Radio maximum payload length management. Radio was filtering received frames with a length bigger than the transmitted one.
+\item Applied Pull request \#22 solution proposition.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2015-\/10-\/30, V3.\+4.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Changed all applications in order to have preprocessing definitions on top of the files and added relevant comments
+\item Applications L\+ED control is no more done into the timer callback functions but instead on the main while loop.
+\item Added Timer\+Stop function calls to each timer event callback.
+\item Corrected timings comments. Timing values are most of the time us based.
+\item Changed types names for stdint.\+h names. Helps on code portability
+\item Renamed rand and srand to rand1 and srand1. Helps on code portability
+\item Added some missing variables casts. Helps on code portability
+\item Removed N\+U\+LL definition from board.\+h
+\item Added const variable attribute when necessary to functions prototypes
+\item Moved I\+D1, I\+D2 and I\+D3 definition from board.\+h to board.\+c, usb-\/cdc-\/board.\+c and usb-\/dfu-\/board.\+c
+\item Removed the definition of R\+A\+N\+D\+\_\+\+S\+E\+ED. It has been replaced by a function named Board\+Get\+Random\+Seed
+\item Renamed Board\+Measure\+Batterie\+Level to Board\+Get\+Battery\+Level
+\item Added Set\+Max\+Payload\+Length A\+PI function to S\+X1272 and S\+X1276 radio drivers
+\item Changed the name of Radio A\+PI Status function to Get\+Status
+\item A\+E\+S/\+C\+M\+AC Changed types names for stdint.\+h names. Helps on code portability (Issue \#20)
+\item Moved \+\_\+\+\_\+ffs function from \mbox{\hyperlink{utilities_8h}{utilities.\+h}} to spi-\/board.\+c. This function is only used there.
+\item \mbox{\hyperlink{utilities_8c}{Utilities.\+c}} removed fputc function redefinition.
+\item Replaced the usage of \+\_\+\+\_\+\+IO attribute by volatile.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Added support for the U\+S915 band (Normal mode and hybrid mode. Hybrid mode is a temporary configuration up until servers support it automatically) (Issue \#16)
+\item Corrected and simplified the downlink sequence counter management.
+\item Removed the usage of P\+A\+C\+K\+ED attribute for data structures.
+\item Renamed Lo\+Ra\+Mac\+Event\+\_\+t into Lo\+Ra\+Mac\+Callbacks\+\_\+t and added a function pointer for getting battery level status
+\item Renamed Lo\+Ra\+Mac\+Set\+Duty\+Cycle\+On into Lo\+Ra\+Mac\+Set\+Test\+Duty\+Cycle\+On
+\item Renamed Lo\+Ra\+Mac\+Set\+Mic\+Test into Lo\+Ra\+Mac\+Test\+Set\+Mic
+\item Increased the P\+HY buffer size to 250
+\item Removed Is\+Channel\+Free check on Lo\+Ra\+Mac\+Set\+Next\+Channel function. Lo\+Ra\+W\+AN is an A\+L\+H\+OA protocol. (Pull request \#8)
+\item Lo\+Ra\+Mac\+Event\+Info.\+Tx\+Datarate now returns Lo\+Ra\+W\+AN datarate (D\+R0 -\/$>$ D\+R7) instead of (S\+F12 -\/$>$ D\+F7)
+\item Corrected channel mask management for E\+U868 band.
+\item Corrected Lo\+Ra\+Mac\+Prepare\+Frame behavior function when no applicative payload is present.
+\item Lo\+Ra\+Mac-\/board.\+h now implements the settings for the P\+HY layers specified by Lo\+Ra\+W\+AN 1.\+0 specification. ( E\+U433, C\+N780, E\+U868, U\+S915 ) (Issue \#19)
+\item Added L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+I\+N\+\_\+\+R\+X1\+\_\+\+D\+R\+\_\+\+O\+F\+F\+S\+ET and L\+O\+R\+A\+M\+A\+C\+\_\+\+M\+A\+X\+\_\+\+R\+X1\+\_\+\+D\+R\+\_\+\+O\+F\+F\+S\+ET definitions to Lo\+Ra\+Mac-\/board.\+h. Can be different upon used P\+HY layer
+\item Added the limitation of output power according to the number of enabled channels for U\+S915 band.
+\item Added the limitation of the applicative payload length according to the datarate. Does not yet take in account the M\+AC commands buffer. (Issue \#15)
+\item Corrected Mac\+Command\+Buffer\+Index management. (Issue \#18)
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2015-\/08-\/07, v3.\+3.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Added the support for Lo\+Ra\+W\+AN Class C devices.
+\item Implemented the radios errata note workarounds. S\+X1276 errata 2.\+3 \char`\"{}\+Receiver Spurious Reception of a Lo\+Ra Signal\char`\"{} is not yet implemented.
+\item Increased F\+SK Sync\+Word timeout value in order to listen for longer time if a down link is available or not. Makes F\+SK downlink more reliable.
+\item Increased the U\+A\+RT U\+SB F\+I\+FO buffer size in order to handle bigger chunks of data.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Renamed data rates as per Lo\+Ra\+W\+AN specification.
+\item Added the support for Lo\+Ra\+W\+AN Class C devices.
+\item Handling of the M\+AC commands was done incorrectly the condition to verify the length of the buffer has changed from $<$ to $<$=.
+\item Added the possibility to change the channel mask and number of repetitions trough S\+R\+V\+\_\+\+M\+A\+C\+\_\+\+L\+I\+N\+K\+\_\+\+A\+D\+R\+\_\+\+R\+EQ command when A\+DR is disabled.
+\item Corrected Rx1\+Dr\+Offset management. In previous version D\+R1 was missing for all offsets.
+\item Changed confirmed messages function to use default datarate when A\+DR control is off.
+\item After a Join accept the node falls back to the default datarate. Enables the user to Join a network using a different datarate from its own default one.
+\item Corrected default F\+SK channel frequency.
+\item Solved a firmware freezing when one of the following situations arrived in On\+Rx\+Done callback\+: bad address, bad M\+IC, bad frame. (Pull request \#10)
+\item Moved the M\+AC commands processing to the right places. F\+Opts field before the Payload and Port 0 just after the decryption. (Pull request \#9)
+\item Weird conditions to check datarate on cmd mac S\+R\+V\+\_\+\+M\+A\+C\+\_\+\+N\+E\+W\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+R\+EQ (Pull request \#7)
+\item Ignore join accept message if already joined (Pull request \#6)
+\item Channel index verification should use OR on S\+R\+V\+\_\+\+M\+A\+C\+\_\+\+N\+E\+W\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+R\+EQ command (Pull request \#5)
+\item Corrected the C\+F\+List management on Join\+Accept. The for loop indexes were wrong. (Pull request \#4)
+\item Correction of A\+ES key size (Pull request \#3)
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2015-\/04-\/30, v3.\+2.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Updated Lo\+Ra\+Mac implementation according to Lo\+Ra\+W\+AN R1.\+0 specification
+\item General cosmetics corrections
+\item Added the support of packed structures when using I\+AR tool chain
+\item Timers\+: Added a function to get the time in us.
+\item Timers\+: Added a typedef for time variables (Timer\+Time\+\_\+t)
+\item Radios\+: Changed the Time\+On\+Air radio function to return a uint32\+\_\+t value instead of a double. The value is in us.
+\item Radios\+: Corrected the 250 k\+Hz bandwidth choice for the F\+SK modem
+\item G\+PS\+: Added a function that returns if the G\+PS has a fix or not.
+\item G\+PS\+: Changed the Get\+Position functions to return a latitude and longitude of 0 and altitude of 65535 when no G\+PS fix.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+W\+AN
+\begin{DoxyEnumerate}
+\item Removed support for previous Lo\+Ra\+Mac/\+Lo\+Ra\+W\+AN specifications
+\item Added missing M\+AC commands and updated others when necessary
+\begin{DoxyItemize}
+\item Corrected the Port 0 M\+AC commands decryption
+\item Changed the way the upper layer is notified. Now it is only notified when all the operations are finished.
+
+When a ClassA Tx cycle starts a timer is launched to check every second if everything is finished.
+\item Added a new parameter to Lo\+Ra\+Mac\+Event\+Flags structure that indicates on which Rx window the data has been received.
+\item Added a new parameter to Lo\+Ra\+Mac\+Event\+Flags structure that indicates if there is applicative data on the received payload.
+\item Corrected A\+DR M\+AC command behavior
+\item Duty\+Cycle enforcement implementation (E\+U868 P\+HY only)
+
+{\bfseries R\+E\+M\+A\+RK 1} {\itshape The regulatory duty cycle enforcement is enabled by default which means that for lower data rates the node may not transmit a new frame as quickly as requested. The formula used to compute the node idle time is}
+
+{\itshape Toff = Time\+On\+Air / Duty\+Cycle -\/ Tx\+Time\+On\+Air}
+
+{\itshape Example\+:} {\itshape A device just transmitted a 0.\+5 s long frame on one default channel. This channel is in a sub-\/band allowing 1\% duty-\/cycle. Therefore this whole sub-\/band (868 M\+Hz -\/ 868.\+6 M\+Hz) will be unavailable for 49.\+5 s.}
+
+{\bfseries R\+E\+M\+A\+RK 2} {\itshape The duty cycle enforcement can be disabled for test purposes by calling the Lo\+Ra\+Mac\+Set\+Duty\+Cycle\+On function with false parameter.}
+\item Implemented aggregated duty cycle management
+\item Added a function to create new channels
+\item Implemented the missing features on the Join\+Accept M\+AC command
+\item Updated Lo\+Ra\+Mac\+Join\+Decrypt function to handle the C\+F\+List field.
+\end{DoxyItemize}
+\item Due to duty cycle management the applicative A\+PI has changed. All applications must be updated accordingly.
+\item Added the possibility to chose to use either public or private networks
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2015-\/01-\/30, v3.\+1.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Started to add support for Coo\+Cox Co\+I\+DE Integrated Development Environment. Currently only Lo\+Ra\+Mote and Sensor\+Node platform projects are available.
+\item Updated G\+CC compiler linker scripts.
+\item Added the support of different tool chains for the Hard\+Fault\+\_\+\+Handler function.
+\item Corrected Radio drivers I\&Q signals inversion to be possible in Rx and in Tx. Added some missing radio state machine initialization.
+\item Changed the R\+S\+SI values type from int8\+\_\+t to int16\+\_\+t. We can have R\+S\+SI values below -\/128 d\+Bm.
+\item Corrected S\+NR computation on Rx\+Done interrupt.
+\item Updated radio A\+PI to support F\+H\+SS and C\+AD handling.
+\item Corrected in Set\+Rx\+Config function the F\+SK modem preamble register name.
+\item Added an invalid bandwidth to the Bandwidths table in order to avoid an error when selecting 250 k\+Hz bandwidth when using F\+SK modem.
+\item Corrected R\+TC alarm setup which could be set to an invalid date.
+\item Added another timer in order increment the tick counter without blocking the normal timer count.
+\item Added the possibility to switch between low power timers and normal timers on the fly.
+\item I2C driver corrected the 2 bytes internal address management. Corrected buffer read function when more that 1 byte was to be read. Added a function to wait for the I2C bus to become I\+D\+LE.
+\item Added an I2C E\+E\+P\+R\+OM driver.
+\item Corrected and improved U\+SB Virtual C\+OM Port management files. Corrected the U\+SB C\+DC and U\+SB U\+A\+RT drivers.
+\item Added the possibility to analyze a hard fault interrupt.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+Mac
+\begin{DoxyEnumerate}
+\item Corrected Rx\+Window2 Datarate management.
+\item Srv\+Ack\+Requested variable was never reset.
+\item Corrected tst\+Indoor applications for Lo\+Ra\+Mac R3.\+0 support.
+\item Lo\+Ra\+Mac added the possibility to configure almost all the M\+AC parameters.
+\item Corrected the Lo\+Ra\+Mac\+Set\+Next\+Channel function.
+\item Corrected the port 0 M\+AC command decoding.
+\item Changed all structures declarations to be packed.
+\item Corrected the Acknowledgment retries management when only 1 trial is needed. Before the device was issuing at least 2 trials.
+\item Corrected server mac new channel req answer.
+\item Added the functions to read the Up and Down Link sequence counters.
+\item Corrected S\+R\+V\+\_\+\+M\+A\+C\+\_\+\+R\+X2\+\_\+\+S\+E\+T\+U\+P\+\_\+\+R\+EQ frequency handling. Added a 100 multiplication.
+\item Corrected S\+R\+V\+\_\+\+M\+A\+C\+\_\+\+N\+E\+W\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+R\+EQ. Removed the Duty\+Cycle parameter decoding.
+\item Automatically activate the channel once it is created.
+\item Corrected Nb\+Rep\+Timeout\+Timer initial value. Rx\+Window2\+Delay already contains Rx\+Window1\+Delay in it.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2014-\/07-\/18, v3.\+0.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Added to Radio A\+PI the possibility to select the modem.
+\item Corrected R\+S\+SI reading formulas as well as changed the R\+S\+SI and S\+NR values from double to int8\+\_\+t type.
+\item Changed radio callbacks events to timeout when it is a timeout event and error when it is a C\+RC error.
+\item Radio A\+PI updated.
+\item Updated ping-\/pong applications.
+\item Updated tx-\/cw applications.
+\item Updated Lo\+Ra\+Mac applications in order to handle Lo\+Ra\+Mac returned functions calls status.
+\item Updated Lo\+Ra\+Mac applications to toggle L\+E\+D2 each time there is an application payload down link.
+\item Updated tst\+Indoor application to handle correctly more than 6 channels.
+\item Changed the M\+P\+L3115 altitude variable from unsigned to signed value.
+\item Replaced the usage of pow(2, n) by defining P\+O\+W2 functions. Saves $\sim$2 K\+Bytes of code.
+\item Corrected an issue potentially arriving when L\+O\+W\+\_\+\+P\+O\+W\+E\+R\+\_\+\+M\+O\+D\+E\+\_\+\+E\+N\+A\+B\+LE wasn\textquotesingle{}t defined. A timer interrupt could be generated while the Timer\+List could already be emptied.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+Mac
+\begin{DoxyEnumerate}
+\item Implemented Lo\+Ra\+Mac specification R3.\+0 changes.
+\item M\+AC commands implemented
+\begin{DoxyItemize}
+\item Link\+Check\+Req {\bfseries Y\+ES}
+\item Link\+Check\+Ans {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Req {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Ans {\bfseries Y\+ES}
+\item Duty\+Cycle\+Req {\bfseries Y\+ES}
+\item Duty\+Cycle\+Ans {\bfseries Y\+ES}
+\item Rx2\+Setup\+Req {\bfseries Y\+ES}
+\item Rx2\+Setup\+Ans {\bfseries Y\+ES}
+\item Dev\+Status\+Req {\bfseries Y\+ES}
+\item Dev\+Status\+Ans {\bfseries Y\+ES}
+\item Join\+Req {\bfseries Y\+ES}
+\item Join\+Accept {\bfseries Y\+ES}
+\item New\+Channel\+Req {\bfseries Y\+ES}
+\item New\+Channel\+Ans {\bfseries Y\+ES}
+\end{DoxyItemize}
+\item Features implemented
+\begin{DoxyItemize}
+\item Possibility to shut-\/down the device {\bfseries Y\+ES}
+
+Possible by issuing Duty\+Cycle\+Req M\+AC command.
+\item Duty cycle management enforcement {\bfseries NO}
+\item Acknowledgments retries {\bfseries Y\+ES}
+\item Unconfirmed messages retries {\bfseries Y\+ES}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2014-\/07-\/10, v2.\+3.\+R\+C2}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Corrected all radios antenna switch low power mode handling.
+\item S\+X1276\+: Corrected antenna switch control.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2014-\/06-\/06, v2.\+3.\+R\+C1}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Added the support for S\+X1276 radio.
+\item Radio continuous reception mode correction.
+\item Radio driver Rx\+Done callback function A\+PI has changed ( size parameter is no more a pointer). Previous function prototype\+:
+
+void ( $\ast$\+Rx\+Done )( uint8\+\_\+t $\ast$payload, uint16\+\_\+t $\ast$size, double rssi, double snr, uint8\+\_\+t raw\+Snr );
+
+New function prototype\+: \begin{DoxyVerb} void    ( *RxDone )( uint8_t *payload, uint16_t size, double rssi, double snr, uint8_t rawSnr );
+\end{DoxyVerb}
+
+\item Added Bleeper-\/76 and Sensor\+Node platforms support.
+\item Added to the radio drivers a function that generates a random value from R\+S\+SI readings.
+\item Added a project to transmit a continuous wave and a project to measure the the radio sensitivity.
+\item Added a bootloader project for the Lo\+Ra\+Mote and Sensor\+Node platforms.
+\item The Lo\+Ra\+Mac application for Bleeper platforms now sends the Selector and L\+ED status plus the sensors values.
+\begin{DoxyItemize}
+\item The application payload for the Bleeper platforms is as follows\+:
+
+Lo\+Ra\+Mac port 1\+: \begin{DoxyVerb} { 0xX0/0xX1, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }
+  ----------  ----------  ----------  ----------  ----
+       |           |           |           |        |
+ SELECTOR/LED  PRESSURE   TEMPERATURE  ALTITUDE  BATTERY
+ MSB nibble = SELECTOR               (barometric)
+ LSB bit    = LED
+\end{DoxyVerb}
+
+\end{DoxyItemize}
+\item Redefined rand() and srand() standard C functions. These functions are redefined in order to get the same behavior across different compiler tool chains implementations.
+\item G\+PS driver improvements. Made independent of the board platform.
+\item Simplified the R\+TC management.
+\item Added a function to the timer driver that checks if a timer is already in the list or not.
+\item Added the U\+A\+RT Overrun bit exception handling to the U\+A\+RT driver.
+\item Removed dependency of spi-\/board files to the \char`\"{}\+\_\+\+\_\+builtin\+\_\+ffs\char`\"{} function. This function is only available on G\+NU compiler tool suite. Removed --gnu compiler option from Keil projects. Added own \+\_\+\+\_\+ffs function implementation to \mbox{\hyperlink{utilities_8h}{utilities.\+h}} file.
+\item Removed obsolete class1 devices support.
+\item Known bugs correction.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+Mac
+\begin{DoxyEnumerate}
+\item M\+AC commands implemented
+\begin{DoxyItemize}
+\item Link\+Check\+Req {\bfseries Y\+ES}
+\item Link\+Check\+Ans {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Req {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Ans {\bfseries Y\+ES}
+\item Duty\+Cycle\+Req {\bfseries Y\+ES} (Lo\+Ra\+Mac specification R2.\+2.\+1)
+\item Duty\+Cycle\+Ans {\bfseries Y\+ES} (Lo\+Ra\+Mac specification R2.\+2.\+1)
+\item Rx2\+Setup\+Req {\bfseries Y\+ES} (Lo\+Ra\+Mac specification R2.\+2.\+1)
+\item Rx2\+Setup\+Ans {\bfseries Y\+ES} (Lo\+Ra\+Mac specification R2.\+2.\+1)
+\item Dev\+Status\+Req {\bfseries Y\+ES}
+\item Dev\+Status\+Ans {\bfseries Y\+ES}
+\item Join\+Req {\bfseries Y\+ES}
+\item Join\+Accept {\bfseries Y\+ES} (Lo\+Ra\+Mac specification R2.\+2.\+1)
+\item New\+Channel\+Req {\bfseries Y\+ES} (Lo\+Ra\+Mac specification R2.\+2.\+1)
+\item New\+Channel\+Ans {\bfseries Y\+ES} (Lo\+Ra\+Mac specification R2.\+2.\+1)
+\end{DoxyItemize}
+\item Features implemented
+\begin{DoxyItemize}
+\item Possibility to shut-\/down the device {\bfseries Y\+ES}
+
+Possible by issuing Duty\+Cycle\+Req M\+AC command.
+\item Duty cycle management enforcement {\bfseries NO}
+\item Acknowledgments retries {\bfseries W\+O\+RK IN P\+R\+O\+G\+R\+E\+SS}
+
+Not fully debugged. Disabled by default.
+\item Unconfirmed messages retries {\bfseries W\+O\+RK IN P\+R\+O\+G\+R\+E\+SS} (Lo\+Ra\+Mac specification R2.\+2.\+1)
+\end{DoxyItemize}
+\item Implemented Lo\+Ra\+Mac specification R2.\+2.\+1 changes.
+\item Due to new specification the Lo\+Ra\+Mac\+Init\+Nwk\+Ids Lo\+Ra\+Mac A\+PI function had to be modified.
+
+Previous function prototype\+: \begin{DoxyVerb} void LoRaMacInitNwkIds( uint32_t devAddr, uint8_t *nwkSKey, uint8_t *appSKey );
+\end{DoxyVerb}
+
+
+New function prototype\+: \begin{DoxyVerb} void LoRaMacInitNwkIds( uint32_t netID, uint32_t devAddr, uint8_t *nwkSKey, uint8_t *appSKey );
+\end{DoxyVerb}
+
+\item Changed the Lo\+Ra\+Mac channels management.
+\item Lo\+Ra\+Mac channels definition has been moved to Lo\+Ra\+Mac-\/board.\+h file located in each specific board directory.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2014-\/04-\/07, v2.\+2.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item Added I\+M\+ST S\+K-\/i\+M880A starter kit board support to the project.
+\begin{DoxyItemize}
+\item The application payload for the S\+K-\/i\+M880A platform is as follows\+:
+\end{DoxyItemize}
+
+Lo\+Ra\+Mac port 3\+: \begin{DoxyVerb} { 0x00/0x01, 0x00, 0x00, 0x00 }
+  ----------  ----- ----------
+       |        |       |
+      LED     POTI     VDD
+\end{DoxyVerb}
+
+\item Ping-\/\+Pong applications have been split per supported board.
+\item Corrected the S\+X1272 output power management. Added a variable to store the current Radio channel. Added missing F\+SK bit definition.
+\item Made fifo functions coding style coherent with the project.
+\item U\+A\+RT driver is now independent of the used M\+CU
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2014-\/03-\/28, v2.\+1.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item The timers and R\+TC management has been rewritten.
+\item Improved the U\+A\+RT and U\+P501 G\+PS drivers.
+\item Corrected G\+P\+IO pin names management.
+\item Corrected the antenna switch management in the S\+X1272 driver.
+\item Added to the radio driver the possibility to choose the preamble length and rx\+Single symbol timeout in reception.
+\item Added Hex coder selector driver for the Bleeper board.
+\item Changed copyright Unicode character to (C) in all source files.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+Mac
+\begin{DoxyEnumerate}
+\item M\+AC commands implemented
+\begin{DoxyItemize}
+\item Link\+Check\+Req {\bfseries Y\+ES}
+\item Link\+Check\+Ans {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Req {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Ans {\bfseries Y\+ES}
+\item Dev\+Status\+Req {\bfseries Y\+ES}
+\item Dev\+Status\+Ans {\bfseries Y\+ES}
+\item Join\+Req {\bfseries Y\+ES}
+\item Join\+Accept {\bfseries Y\+ES}
+\end{DoxyItemize}
+\item Added acknowledgments retries management. Split the Lo\+Ra\+Mac\+Send\+On\+Channel function in Lo\+Ra\+Mac\+Prepare\+Frame and Lo\+Ra\+Mac\+Send\+Frame\+On\+Channel. Lo\+Ra\+Mac\+Send\+On\+Channel now calls the 2 newly defined functions. ~\newline
+ {\bfseries W\+A\+R\+N\+I\+NG}\+: By default the acknowledgment retries specific code isn\textquotesingle{}t enabled. The current \href{http://iot.semtech.com}{\tt http\+://iot.\+semtech.\+com} server version doesn\textquotesingle{}t support it.
+\item Corrected issues on Join\+Request and Join\+Accept M\+AC commands. Added L\+O\+R\+A\+M\+A\+C\+\_\+\+E\+V\+E\+N\+T\+\_\+\+I\+N\+F\+O\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+M\+A\+C\+\_\+\+E\+R\+R\+OR event info status.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2014-\/02-\/21, v2.\+0.\+0}
+
+
+\begin{DoxyItemize}
+\item General
+\begin{DoxyEnumerate}
+\item The Lo\+Ra\+Mac applications now sends the L\+ED status plus the sensors values. For the Lo\+Ra\+Mote platform the application also sends the G\+PS coordinates.
+\begin{DoxyItemize}
+\item The application payload for the Bleeper platform is as follows\+:
+
+Lo\+Ra\+Mac port 1\+: \begin{DoxyVerb} { 0x00/0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }
+  ----------  ----------  ----------  ----------  ----
+       |           |           |           |        |
+      LED      PRESSURE   TEMPERATURE  ALTITUDE  BATTERY
+                                     (barometric)
+\end{DoxyVerb}
+
+\item The application payload for the Lo\+Ra\+Mote platform is as follows\+:
+
+Lo\+Ra\+Mac port 2\+: \begin{DoxyVerb} { 0x00/0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 }
+  ----------  ----------  ----------  ----------  ----  ----------------  ----------------  ----------
+       |           |           |           |        |           |                 |              |
+      LED      PRESSURE   TEMPERATURE  ALTITUDE  BATTERY    LATITUDE          LONGITUDE      ALTITUDE
+                                     (barometric)                                              (gps)
+\end{DoxyVerb}
+
+\end{DoxyItemize}
+\item Adapted applications to the new M\+AC layer A\+PI.
+\item Added sensors drivers implementation.
+\item Corrected new or known issues.
+\end{DoxyEnumerate}
+\item Lo\+Ra\+Mac
+\begin{DoxyEnumerate}
+\item M\+AC commands implemented
+\begin{DoxyItemize}
+\item Link\+Check\+Req {\bfseries Y\+ES}
+\item Link\+Check\+Ans {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Req {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Ans {\bfseries Y\+ES}
+\item Dev\+Status\+Req {\bfseries Y\+ES}
+\item Dev\+Status\+Ans {\bfseries Y\+ES}
+\item Join\+Req {\bfseries Y\+ES (Not tested)}
+\item Join\+Accept {\bfseries Y\+ES (Not tested)}
+\end{DoxyItemize}
+\item New M\+AC layer application A\+PI implementation.
+\end{DoxyEnumerate}
+\item Timers and R\+TC.
+\begin{DoxyEnumerate}
+\item Still some issues. They will be corrected on next revisions of the firmware.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2014-\/01-\/24, v1.\+1.\+0}
+
+
+\begin{DoxyItemize}
+\item Lo\+Ra\+Mac
+\begin{DoxyEnumerate}
+\item M\+AC commands implemented
+\begin{DoxyItemize}
+\item Link\+Check\+Req {\bfseries NO}
+\item Link\+Check\+Ans {\bfseries NO}
+\item Link\+A\+D\+R\+Req {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Ans {\bfseries Y\+ES}
+\item Dev\+Status\+Req {\bfseries Y\+ES}
+\item Dev\+Status\+Ans {\bfseries Y\+ES}
+\end{DoxyItemize}
+\item Implemented an application L\+ED control If the server sends on port 1 an application payload of one byte with the following contents\+: \begin{DoxyVerb}0: LED off
+1: LED on
+\end{DoxyVerb}
+ The node transmits periodically on port 1 the L\+ED status on 1st byte and the message \char`\"{}\+Hello World!!!!\char`\"{} the array looks like\+: \begin{DoxyVerb}{ 0, 'H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd', '!', '!', '!', '!' }
+\end{DoxyVerb}
+
+\end{DoxyEnumerate}
+\item Timers and R\+TC.
+\begin{DoxyEnumerate}
+\item Corrected issues existing in the previous version
+\item Known bugs are\+:
+\begin{DoxyItemize}
+\item There is an issue when launching an asynchronous Timer. Will be solved in a future version
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2014-\/01-\/20, v1.\+1.\+R\+C1}
+
+
+\begin{DoxyItemize}
+\item Added Doc directory. The directory contains\+:
+\begin{DoxyEnumerate}
+\item Lo\+Ra M\+AC specification
+\item Bleeper board schematic
+\end{DoxyEnumerate}
+\item Lo\+Ra\+Mac has been updated according to Release1 of the specification. Main changes are\+:
+\begin{DoxyEnumerate}
+\item M\+AC A\+PI changed.
+\item Frame format.
+\item ClassA first A\+DR implementation.
+\item M\+AC commands implemented
+\begin{DoxyItemize}
+\item Link\+Check\+Req {\bfseries NO}
+\item Link\+Check\+Ans {\bfseries NO}
+\item Link\+A\+D\+R\+Req {\bfseries Y\+ES}
+\item Link\+A\+D\+R\+Ans {\bfseries NO}
+\item Dev\+Status\+Req {\bfseries NO}
+\item Dev\+Status\+Ans {\bfseries NO}
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+\item Timers and R\+TC rewriting. Known bugs are\+:
+\begin{DoxyEnumerate}
+\item The Radio wakeup time is taken in account for all timings.
+\item When opening the second reception window the microcontroller sometimes doesn\textquotesingle{}t enter in low power mode.
+\end{DoxyEnumerate}
+\end{DoxyItemize}
+
+\subsubsection*{2013-\/11-\/28, v1.\+0.\+0}
+
+
+\begin{DoxyItemize}
+\item Initial version of the Lo\+Ra M\+AC node firmware implementation. 
+\end{DoxyItemize}

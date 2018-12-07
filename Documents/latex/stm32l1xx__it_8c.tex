@@ -1,0 +1,522 @@
+\hypertarget{stm32l1xx__it_8c}{}\section{Projects/\+Docking\+Station/src/stm32l1xx\+\_\+it.c 파일 참조}
+\label{stm32l1xx__it_8c}\index{Projects/\+Docking\+Station/src/stm32l1xx\+\_\+it.\+c@{Projects/\+Docking\+Station/src/stm32l1xx\+\_\+it.\+c}}
+
+
+Interrupt Service Routines.  
+
+
+{\ttfamily \#include \char`\"{}hw.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32l1xx\+\_\+it.\+h\char`\"{}}\newline
+stm32l1xx\+\_\+it.\+c에 대한 include 의존 그래프
+% FIG 0
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}{N\+M\+I\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles N\+MI exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}{Hard\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Hard Fault exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a3150f74512510287a942624aa9b44cc5}{Mem\+Manage\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Memory Manage exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}{Bus\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Bus Fault exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}{Usage\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Usage Fault exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a3e5ddb3df0d62f2dc357e64a3f04a6ce}{S\+V\+C\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles S\+V\+Call exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}{Debug\+Mon\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Debug Monitor exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a6303e1f258cbdc1f970ce579cc015623}{Pend\+S\+V\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Pend\+S\+VC exception. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_ab5e09814056d617c521549e542639b7e}{Sys\+Tick\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Sys\+Tick Handler. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a0d108a3468b2051548183ee5ca2158a0}{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a4da4fb52ec579671d337938e78f9a207}{R\+T\+C\+\_\+\+Alarm\+\_\+\+I\+R\+Q\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a17e9789a29a87d2df54f12b94dd1a0b6}{E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a49cfdd46eb8d0ef3e1987514aa9343dc}{E\+X\+T\+I1\+\_\+\+I\+R\+Q\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}{E\+X\+T\+I2\+\_\+\+I\+R\+Q\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a30c045de96d18ec9c67a7b9e4350920f}{E\+X\+T\+I3\+\_\+\+I\+R\+Q\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a290cb997018c8d85d4b965b4a242842f}{E\+X\+T\+I4\+\_\+\+I\+R\+Q\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a7b2096b8b2643286dc3a7e5110e5ae85}{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler}} (void)
+\item 
+void \mbox{\hyperlink{stm32l1xx__it_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}{E\+X\+T\+I15\+\_\+10\+\_\+\+I\+R\+Q\+Handler}} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Interrupt Service Routines. 
+
+C\+O\+P\+Y\+R\+I\+G\+H\+T(c) 2018 S\+T\+Microelectronics
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+:
+\begin{DoxyEnumerate}
+\item Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+\item Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+\item Neither the name of S\+T\+Microelectronics nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+\end{DoxyEnumerate}
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE. 
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}\label{stm32l1xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!Bus\+Fault\+\_\+\+Handler@{Bus\+Fault\+\_\+\+Handler}}
+\index{Bus\+Fault\+\_\+\+Handler@{Bus\+Fault\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{Bus\+Fault\+\_\+\+Handler()}{BusFault\_Handler()}}
+{\footnotesize\ttfamily void Bus\+Fault\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles Bus Fault exception. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 94 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+95 \{
+96   \textcolor{comment}{/* Go to infinite loop when Bus Fault exception occurs */}
+97   \textcolor{keywordflow}{while} (1)
+98   \{
+99   \}
+100 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}\label{stm32l1xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!Debug\+Mon\+\_\+\+Handler@{Debug\+Mon\+\_\+\+Handler}}
+\index{Debug\+Mon\+\_\+\+Handler@{Debug\+Mon\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{Debug\+Mon\+\_\+\+Handler()}{DebugMon\_Handler()}}
+{\footnotesize\ttfamily void Debug\+Mon\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles Debug Monitor exception. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 129 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+130 \{
+131 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a17e9789a29a87d2df54f12b94dd1a0b6}\label{stm32l1xx__it_8c_a17e9789a29a87d2df54f12b94dd1a0b6}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler}}
+\index{E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler()}{EXTI0\_IRQHandler()}}
+{\footnotesize\ttfamily void E\+X\+T\+I0\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 163 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+164 \{
+165 
+166   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_0 );
+167 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}\label{stm32l1xx__it_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!E\+X\+T\+I15\+\_\+10\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I15\+\_\+10\+\_\+\+I\+R\+Q\+Handler}}
+\index{E\+X\+T\+I15\+\_\+10\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I15\+\_\+10\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{E\+X\+T\+I15\+\_\+10\+\_\+\+I\+R\+Q\+Handler()}{EXTI15\_10\_IRQHandler()}}
+{\footnotesize\ttfamily void E\+X\+T\+I15\+\_\+10\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 207 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+208 \{
+209 
+210   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_10 );
+211   
+212   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_11 );
+213 
+214   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_12 );
+215 
+216   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_13 );
+217 
+218   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_14 );
+219 
+220   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_15 );
+221 
+222 
+223 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a49cfdd46eb8d0ef3e1987514aa9343dc}\label{stm32l1xx__it_8c_a49cfdd46eb8d0ef3e1987514aa9343dc}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!E\+X\+T\+I1\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I1\+\_\+\+I\+R\+Q\+Handler}}
+\index{E\+X\+T\+I1\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I1\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{E\+X\+T\+I1\+\_\+\+I\+R\+Q\+Handler()}{EXTI1\_IRQHandler()}}
+{\footnotesize\ttfamily void E\+X\+T\+I1\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 169 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+170 \{
+171 
+172   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_1 );
+173 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}\label{stm32l1xx__it_8c_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!E\+X\+T\+I2\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I2\+\_\+\+I\+R\+Q\+Handler}}
+\index{E\+X\+T\+I2\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I2\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{E\+X\+T\+I2\+\_\+\+I\+R\+Q\+Handler()}{EXTI2\_IRQHandler()}}
+{\footnotesize\ttfamily void E\+X\+T\+I2\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 175 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+176 \{
+177 
+178   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_2 );
+179 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a30c045de96d18ec9c67a7b9e4350920f}\label{stm32l1xx__it_8c_a30c045de96d18ec9c67a7b9e4350920f}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!E\+X\+T\+I3\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I3\+\_\+\+I\+R\+Q\+Handler}}
+\index{E\+X\+T\+I3\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I3\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{E\+X\+T\+I3\+\_\+\+I\+R\+Q\+Handler()}{EXTI3\_IRQHandler()}}
+{\footnotesize\ttfamily void E\+X\+T\+I3\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 181 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+182 \{
+183 
+184   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_3 );
+185 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a290cb997018c8d85d4b965b4a242842f}\label{stm32l1xx__it_8c_a290cb997018c8d85d4b965b4a242842f}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!E\+X\+T\+I4\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I4\+\_\+\+I\+R\+Q\+Handler}}
+\index{E\+X\+T\+I4\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I4\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{E\+X\+T\+I4\+\_\+\+I\+R\+Q\+Handler()}{EXTI4\_IRQHandler()}}
+{\footnotesize\ttfamily void E\+X\+T\+I4\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 187 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+188 \{
+189 
+190   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_4 );
+191 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a7b2096b8b2643286dc3a7e5110e5ae85}\label{stm32l1xx__it_8c_a7b2096b8b2643286dc3a7e5110e5ae85}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler}}
+\index{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler@{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler()}{EXTI9\_5\_IRQHandler()}}
+{\footnotesize\ttfamily void E\+X\+T\+I9\+\_\+5\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 193 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+194 \{
+195 
+196   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_5 );
+197 
+198   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_6 );
+199   
+200   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_7 );
+201 
+202   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_8 );
+203 
+204   HAL\_GPIO\_EXTI\_IRQHandler( GPIO\_PIN\_9 );
+205 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}\label{stm32l1xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!Hard\+Fault\+\_\+\+Handler@{Hard\+Fault\+\_\+\+Handler}}
+\index{Hard\+Fault\+\_\+\+Handler@{Hard\+Fault\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{Hard\+Fault\+\_\+\+Handler()}{HardFault\_Handler()}}
+{\footnotesize\ttfamily void Hard\+Fault\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles Hard Fault exception. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 66 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+67 \{
+68   \textcolor{keywordflow}{while}(1)
+69   \{
+70     \_\_NOP();
+71   \}
+72 
+73 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a3150f74512510287a942624aa9b44cc5}\label{stm32l1xx__it_8c_a3150f74512510287a942624aa9b44cc5}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!Mem\+Manage\+\_\+\+Handler@{Mem\+Manage\+\_\+\+Handler}}
+\index{Mem\+Manage\+\_\+\+Handler@{Mem\+Manage\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{Mem\+Manage\+\_\+\+Handler()}{MemManage\_Handler()}}
+{\footnotesize\ttfamily void Mem\+Manage\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles Memory Manage exception. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 81 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+82 \{
+83   \textcolor{comment}{/* Go to infinite loop when Memory Manage exception occurs */}
+84   \textcolor{keywordflow}{while} (1)
+85   \{
+86   \}
+87 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}\label{stm32l1xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!N\+M\+I\+\_\+\+Handler@{N\+M\+I\+\_\+\+Handler}}
+\index{N\+M\+I\+\_\+\+Handler@{N\+M\+I\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{N\+M\+I\+\_\+\+Handler()}{NMI\_Handler()}}
+{\footnotesize\ttfamily void N\+M\+I\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles N\+MI exception. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 54 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+55 \{
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a6303e1f258cbdc1f970ce579cc015623}\label{stm32l1xx__it_8c_a6303e1f258cbdc1f970ce579cc015623}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!Pend\+S\+V\+\_\+\+Handler@{Pend\+S\+V\+\_\+\+Handler}}
+\index{Pend\+S\+V\+\_\+\+Handler@{Pend\+S\+V\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{Pend\+S\+V\+\_\+\+Handler()}{PendSV\_Handler()}}
+{\footnotesize\ttfamily void Pend\+S\+V\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles Pend\+S\+VC exception. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 138 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+139 \{
+140 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a4da4fb52ec579671d337938e78f9a207}\label{stm32l1xx__it_8c_a4da4fb52ec579671d337938e78f9a207}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!R\+T\+C\+\_\+\+Alarm\+\_\+\+I\+R\+Q\+Handler@{R\+T\+C\+\_\+\+Alarm\+\_\+\+I\+R\+Q\+Handler}}
+\index{R\+T\+C\+\_\+\+Alarm\+\_\+\+I\+R\+Q\+Handler@{R\+T\+C\+\_\+\+Alarm\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{R\+T\+C\+\_\+\+Alarm\+\_\+\+I\+R\+Q\+Handler()}{RTC\_Alarm\_IRQHandler()}}
+{\footnotesize\ttfamily void R\+T\+C\+\_\+\+Alarm\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 158 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+159 \{
+160   \mbox{\hyperlink{group___lory_s_d_k___r_t_c___functions_gae8ae8ef64d3025701112d509285006d4}{HW\_RTC\_IrqHandler}} ( );
+161 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1
+\mbox{\Hypertarget{stm32l1xx__it_8c_a3e5ddb3df0d62f2dc357e64a3f04a6ce}\label{stm32l1xx__it_8c_a3e5ddb3df0d62f2dc357e64a3f04a6ce}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!S\+V\+C\+\_\+\+Handler@{S\+V\+C\+\_\+\+Handler}}
+\index{S\+V\+C\+\_\+\+Handler@{S\+V\+C\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{S\+V\+C\+\_\+\+Handler()}{SVC\_Handler()}}
+{\footnotesize\ttfamily void S\+V\+C\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles S\+V\+Call exception. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 120 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+121 \{
+122 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_ab5e09814056d617c521549e542639b7e}\label{stm32l1xx__it_8c_ab5e09814056d617c521549e542639b7e}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!Sys\+Tick\+\_\+\+Handler@{Sys\+Tick\+\_\+\+Handler}}
+\index{Sys\+Tick\+\_\+\+Handler@{Sys\+Tick\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{Sys\+Tick\+\_\+\+Handler()}{SysTick\_Handler()}}
+{\footnotesize\ttfamily void Sys\+Tick\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles Sys\+Tick Handler. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 147 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+148 \{
+149   HAL\_IncTick();
+150   \textcolor{comment}{//HAL\_SYSTICK\_IRQHandler( );  }
+151 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}\label{stm32l1xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!Usage\+Fault\+\_\+\+Handler@{Usage\+Fault\+\_\+\+Handler}}
+\index{Usage\+Fault\+\_\+\+Handler@{Usage\+Fault\+\_\+\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{Usage\+Fault\+\_\+\+Handler()}{UsageFault\_Handler()}}
+{\footnotesize\ttfamily void Usage\+Fault\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function handles Usage Fault exception. 
+
+
+\begin{DoxyParams}{매개변수}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+it.\+c 파일의 107 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+108 \{
+109   \textcolor{comment}{/* Go to infinite loop when Usage Fault exception occurs */}
+110   \textcolor{keywordflow}{while} (1)
+111   \{
+112   \}
+113 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{stm32l1xx__it_8c_a0d108a3468b2051548183ee5ca2158a0}\label{stm32l1xx__it_8c_a0d108a3468b2051548183ee5ca2158a0}} 
+\index{stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}!U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler@{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler}}
+\index{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler@{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler}!stm32l1xx\+\_\+it.\+c@{stm32l1xx\+\_\+it.\+c}}
+\subsubsection{\texorpdfstring{U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler()}{USART3\_IRQHandler()}}
+{\footnotesize\ttfamily void U\+S\+A\+R\+T3\+\_\+\+I\+R\+Q\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+stm32l1xx\+\_\+it.\+c 파일의 153 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+154 \{
+155    \mbox{\hyperlink{vcom_8h_a042904239f38c26793f81eb6ae6411d0}{vcom\_Print}}( );
+156 \}
+\end{DoxyCode}
+이 함수 내부에서 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 2

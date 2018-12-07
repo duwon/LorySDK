@@ -1,0 +1,88 @@
+\hypertarget{structs_band}{}\section{s\+Band 구조체 참조}
+\label{structs_band}\index{s\+Band@{s\+Band}}
+
+
+{\ttfamily \#include $<$Lo\+Ra\+Mac.\+h$>$}
+
+
+
+s\+Band에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structs_band_a9ab2dfbcbe5e7e43c95ff6a436886139}{D\+Cycle}}
+\item 
+int8\+\_\+t \mbox{\hyperlink{structs_band_a1b9d27384fedab3a94167b8e9bf9b432}{Tx\+Max\+Power}}
+\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{structs_band_a0e59dea87537a3d472a44694fc2be894}{Last\+Join\+Tx\+Done\+Time}}
+\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{structs_band_a7316dfb002c4e0015fceeb727020fe5c}{Last\+Tx\+Done\+Time}}
+\item 
+\mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} \mbox{\hyperlink{structs_band_a4de67f0652eb4259907c41ea8056c318}{Time\+Off}}
+\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra\+M\+AC band parameters definition 
+
+Lo\+Ra\+Mac.\+h 파일의 142 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_band_a9ab2dfbcbe5e7e43c95ff6a436886139}\label{structs_band_a9ab2dfbcbe5e7e43c95ff6a436886139}} 
+\index{s\+Band@{s\+Band}!D\+Cycle@{D\+Cycle}}
+\index{D\+Cycle@{D\+Cycle}!s\+Band@{s\+Band}}
+\subsubsection{\texorpdfstring{D\+Cycle}{DCycle}}
+{\footnotesize\ttfamily uint16\+\_\+t D\+Cycle}
+
+Duty cycle 
+
+Lo\+Ra\+Mac.\+h 파일의 147 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_band_a0e59dea87537a3d472a44694fc2be894}\label{structs_band_a0e59dea87537a3d472a44694fc2be894}} 
+\index{s\+Band@{s\+Band}!Last\+Join\+Tx\+Done\+Time@{Last\+Join\+Tx\+Done\+Time}}
+\index{Last\+Join\+Tx\+Done\+Time@{Last\+Join\+Tx\+Done\+Time}!s\+Band@{s\+Band}}
+\subsubsection{\texorpdfstring{Last\+Join\+Tx\+Done\+Time}{LastJoinTxDoneTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Last\+Join\+Tx\+Done\+Time}
+
+Time stamp of the last Join\+Req Tx frame. 
+
+Lo\+Ra\+Mac.\+h 파일의 155 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_band_a7316dfb002c4e0015fceeb727020fe5c}\label{structs_band_a7316dfb002c4e0015fceeb727020fe5c}} 
+\index{s\+Band@{s\+Band}!Last\+Tx\+Done\+Time@{Last\+Tx\+Done\+Time}}
+\index{Last\+Tx\+Done\+Time@{Last\+Tx\+Done\+Time}!s\+Band@{s\+Band}}
+\subsubsection{\texorpdfstring{Last\+Tx\+Done\+Time}{LastTxDoneTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Last\+Tx\+Done\+Time}
+
+Time stamp of the last Tx frame 
+
+Lo\+Ra\+Mac.\+h 파일의 159 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_band_a4de67f0652eb4259907c41ea8056c318}\label{structs_band_a4de67f0652eb4259907c41ea8056c318}} 
+\index{s\+Band@{s\+Band}!Time\+Off@{Time\+Off}}
+\index{Time\+Off@{Time\+Off}!s\+Band@{s\+Band}}
+\subsubsection{\texorpdfstring{Time\+Off}{TimeOff}}
+{\footnotesize\ttfamily \mbox{\hyperlink{utilities_8h_a4215ca43d3e953099ea758ce428599d0}{Timer\+Time\+\_\+t}} Time\+Off}
+
+Holds the time where the device is off 
+
+Lo\+Ra\+Mac.\+h 파일의 163 번째 라인에서 정의되었습니다.
+
+\mbox{\Hypertarget{structs_band_a1b9d27384fedab3a94167b8e9bf9b432}\label{structs_band_a1b9d27384fedab3a94167b8e9bf9b432}} 
+\index{s\+Band@{s\+Band}!Tx\+Max\+Power@{Tx\+Max\+Power}}
+\index{Tx\+Max\+Power@{Tx\+Max\+Power}!s\+Band@{s\+Band}}
+\subsubsection{\texorpdfstring{Tx\+Max\+Power}{TxMaxPower}}
+{\footnotesize\ttfamily int8\+\_\+t Tx\+Max\+Power}
+
+Maximum Tx power 
+
+Lo\+Ra\+Mac.\+h 파일의 151 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/\mbox{\hyperlink{_lo_ra_mac_8h}{Lo\+Ra\+Mac.\+h}}\end{DoxyCompactItemize}

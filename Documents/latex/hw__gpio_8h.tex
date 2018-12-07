@@ -1,0 +1,93 @@
+\hypertarget{hw__gpio_8h}{}\section{Projects/\+Docking\+Station/inc/hw\+\_\+gpio.h 파일 참조}
+\label{hw__gpio_8h}\index{Projects/\+Docking\+Station/inc/hw\+\_\+gpio.\+h@{Projects/\+Docking\+Station/inc/hw\+\_\+gpio.\+h}}
+이 그래프는 이 파일을 직/간접적으로 include 하는 파일들을 보여줍니다.\+:
+% FIG 0
+\subsection*{타입정의}
+\begin{DoxyCompactItemize}
+\item 
+typedef void() \mbox{\hyperlink{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}{Gpio\+Irq\+Handler}}(void)
+\end{DoxyCompactItemize}
+\subsection*{함수}
+\begin{DoxyCompactItemize}
+\item 
+I\+R\+Qn\+\_\+\+Type \mbox{\hyperlink{hw__gpio_8h_a76162872c9d09bf5bbdba7f98206af1a}{M\+S\+P\+\_\+\+Get\+I\+R\+Qn}} (uint16\+\_\+t gpio\+Pin)
+\begin{DoxyCompactList}\small\item\em Gets I\+RQ number as a function of the G\+P\+I\+O\+\_\+\+Pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga2c3bac7bc9d78434e5e8ec915d1a933b}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Init}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, G\+P\+I\+O\+\_\+\+Init\+Type\+Def $\ast$init\+Struct)
+\begin{DoxyCompactList}\small\item\em Initializes the given G\+P\+IO object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga1dcd4c3db791178fee479a8e54155573}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Set\+Irq}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint32\+\_\+t prio, \mbox{\hyperlink{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}{Gpio\+Irq\+Handler}} $\ast$irq\+Handler)
+\begin{DoxyCompactList}\small\item\em Records the interrupt handler for the G\+P\+IO object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga9e4743d66ccc7e19b6cf051376ff5ce0}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Irq\+Handler}} (uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Execute the interrupt from the object \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga64b37e6d4da7e8f148c92f898aed98de}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Write}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin, uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Writes the given value to the G\+P\+IO output \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___lory_s_d_k___g_p_i_o___functions_ga56b12661dd88a5efa2ea9ee2aed4f82f}{H\+W\+\_\+\+G\+P\+I\+O\+\_\+\+Read}} (G\+P\+I\+O\+\_\+\+Type\+Def $\ast$G\+P\+I\+Ox, uint16\+\_\+t G\+P\+I\+O\+\_\+\+Pin)
+\begin{DoxyCompactList}\small\item\em Reads the current G\+P\+IO input value \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{타입정의 문서화}
+\mbox{\Hypertarget{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}\label{hw__gpio_8h_a9984a02338950deee6416208cdc73a08}} 
+\index{hw\+\_\+gpio.\+h@{hw\+\_\+gpio.\+h}!Gpio\+Irq\+Handler@{Gpio\+Irq\+Handler}}
+\index{Gpio\+Irq\+Handler@{Gpio\+Irq\+Handler}!hw\+\_\+gpio.\+h@{hw\+\_\+gpio.\+h}}
+\subsubsection{\texorpdfstring{Gpio\+Irq\+Handler}{GpioIrqHandler}}
+{\footnotesize\ttfamily typedef void() Gpio\+Irq\+Handler(void)}
+
+
+
+hw\+\_\+gpio.\+h 파일의 73 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{함수 문서화}
+\mbox{\Hypertarget{hw__gpio_8h_a76162872c9d09bf5bbdba7f98206af1a}\label{hw__gpio_8h_a76162872c9d09bf5bbdba7f98206af1a}} 
+\index{hw\+\_\+gpio.\+h@{hw\+\_\+gpio.\+h}!M\+S\+P\+\_\+\+Get\+I\+R\+Qn@{M\+S\+P\+\_\+\+Get\+I\+R\+Qn}}
+\index{M\+S\+P\+\_\+\+Get\+I\+R\+Qn@{M\+S\+P\+\_\+\+Get\+I\+R\+Qn}!hw\+\_\+gpio.\+h@{hw\+\_\+gpio.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+P\+\_\+\+Get\+I\+R\+Qn()}{MSP\_GetIRQn()}}
+{\footnotesize\ttfamily I\+R\+Qn\+\_\+\+Type M\+S\+P\+\_\+\+Get\+I\+R\+Qn (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{G\+P\+I\+O\+\_\+\+Pin }\end{DoxyParamCaption})}
+
+
+
+Gets I\+RQ number as a function of the G\+P\+I\+O\+\_\+\+Pin. 
+
+G\+P\+IO I\+RQ handler function prototype
+
+
+\begin{DoxyParams}{매개변수}
+{\em G\+P\+I\+O\+\_\+\+Pin} & Specifies the pins connected to the E\+X\+TI line. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{반환값}
+{\em I\+RQ} & number \\
+\hline
+\end{DoxyRetVals}
+
+
+stm32l1xx\+\_\+hal\+\_\+msp.\+c 파일의 199 번째 라인에서 정의되었습니다.
+
+
+\begin{DoxyCode}
+200 \{
+201   \textcolor{keywordflow}{switch}( GPIO\_Pin )
+202   \{
+203     \textcolor{keywordflow}{case} GPIO\_PIN\_0:  \textcolor{keywordflow}{return} EXTI0\_IRQn;
+204     \textcolor{keywordflow}{case} GPIO\_PIN\_1:  \textcolor{keywordflow}{return} EXTI1\_IRQn;
+205     \textcolor{keywordflow}{case} GPIO\_PIN\_2:  \textcolor{keywordflow}{return} EXTI2\_IRQn;
+206     \textcolor{keywordflow}{case} GPIO\_PIN\_3:  \textcolor{keywordflow}{return} EXTI3\_IRQn;
+207     \textcolor{keywordflow}{case} GPIO\_PIN\_4:  \textcolor{keywordflow}{return} EXTI4\_IRQn;
+208     \textcolor{keywordflow}{case} GPIO\_PIN\_5:  
+209     \textcolor{keywordflow}{case} GPIO\_PIN\_6:
+210     \textcolor{keywordflow}{case} GPIO\_PIN\_7:
+211     \textcolor{keywordflow}{case} GPIO\_PIN\_8:
+212     \textcolor{keywordflow}{case} GPIO\_PIN\_9:  \textcolor{keywordflow}{return} EXTI9\_5\_IRQn;
+213     \textcolor{keywordflow}{case} GPIO\_PIN\_10:
+214     \textcolor{keywordflow}{case} GPIO\_PIN\_11:
+215     \textcolor{keywordflow}{case} GPIO\_PIN\_12:
+216     \textcolor{keywordflow}{case} GPIO\_PIN\_13:
+217     \textcolor{keywordflow}{case} GPIO\_PIN\_14:
+218     \textcolor{keywordflow}{case} GPIO\_PIN\_15: 
+219     \textcolor{keywordflow}{default}: \textcolor{keywordflow}{return} EXTI15\_10\_IRQn;
+220   \}
+221 \}
+\end{DoxyCode}
+이 함수를 호출하는 함수들에 대한 그래프입니다.\+:
+% FIG 1

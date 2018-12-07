@@ -1,0 +1,13 @@
+digraph "vcom_IoInit"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node13 [label="vcom_IoInit",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="HW_IoInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html#aa3f8d771164a10a0885f7a467a46d684",tooltip="This function Initializes the hardware Ios "];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="LPM_ExitStopMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$hw_8c.html#a04976d6794610b55c560b434c0d08c8b",tooltip="Exists Low Power Stop Mode "];
+  Node13 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="HAL_UART_MspInit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$vcom_8c.html#a0e553b32211877322f949b14801bbfa7",tooltip="UART MSP Initialization This function configures the hardware resources used in this example: ..."];
+}

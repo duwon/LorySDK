@@ -1,0 +1,49 @@
+\hypertarget{structs_lo_ra_mac_callback}{}\section{s\+Lo\+Ra\+Mac\+Callback 구조체 참조}
+\label{structs_lo_ra_mac_callback}\index{s\+Lo\+Ra\+Mac\+Callback@{s\+Lo\+Ra\+Mac\+Callback}}
+
+
+{\ttfamily \#include $<$Lo\+Ra\+Mac.\+h$>$}
+
+
+
+s\+Lo\+Ra\+Mac\+Callback에 대한 협력 다이어그램\+:
+% FIG 0
+\subsection*{데이터 필드}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t($\ast$ \mbox{\hyperlink{structs_lo_ra_mac_callback_ae0f26df23b50220cf30bc5a1db6bfefa}{Get\+Battery\+Level}} )(void)
+\begin{DoxyCompactList}\small\item\em Measures the battery level \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{상세한 설명}
+Lo\+Ra\+M\+AC callback structure 
+
+Lo\+Ra\+Mac.\+h 파일의 1721 번째 라인에서 정의되었습니다.
+
+
+
+\subsection{필드 문서화}
+\mbox{\Hypertarget{structs_lo_ra_mac_callback_ae0f26df23b50220cf30bc5a1db6bfefa}\label{structs_lo_ra_mac_callback_ae0f26df23b50220cf30bc5a1db6bfefa}} 
+\index{s\+Lo\+Ra\+Mac\+Callback@{s\+Lo\+Ra\+Mac\+Callback}!Get\+Battery\+Level@{Get\+Battery\+Level}}
+\index{Get\+Battery\+Level@{Get\+Battery\+Level}!s\+Lo\+Ra\+Mac\+Callback@{s\+Lo\+Ra\+Mac\+Callback}}
+\subsubsection{\texorpdfstring{Get\+Battery\+Level}{GetBatteryLevel}}
+{\footnotesize\ttfamily uint8\+\_\+t( $\ast$ Get\+Battery\+Level) (void)}
+
+
+
+Measures the battery level 
+
+
+\begin{DoxyRetVals}{반환값}
+{\em Battery} & level \mbox{[}0\+: node is connected to an external power source, 1..254\+: battery level, where 1 is the minimum and 254 is the maximum value, 255\+: the node was not able to measure the battery level\mbox{]} \\
+\hline
+\end{DoxyRetVals}
+
+
+Lo\+Ra\+Mac.\+h 파일의 1731 번째 라인에서 정의되었습니다.
+
+
+
+이 구조체에 대한 문서화 페이지는 다음의 파일로부터 생성되었습니다.\+:\begin{DoxyCompactItemize}
+\item 
+Lora\+Lib/\+Mac/\mbox{\hyperlink{_lo_ra_mac_8h}{Lo\+Ra\+Mac.\+h}}\end{DoxyCompactItemize}
